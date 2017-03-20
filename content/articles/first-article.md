@@ -1,12 +1,11 @@
 ---
-slug: ""
+Author: Glenn McComb
+Description: ''
 resources: []
-title: Is this a title?
+slug: ''
+title: First Article
 date: 2017-03-20T10:10:44.177Z
 content: Something something.
-Description: ""
-Author: "Glenn McComb"
-
 ---
 
 Something something.
