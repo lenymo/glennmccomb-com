@@ -1,0 +1,60 @@
+//
+//  MEDIA QUERIES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$breakpoint-xs: 544px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 992px;
+$breakpoint-lg: 1200px;
+
+
+//
+//  RESPOND ABOVE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// @include respond-above(md) {}
+@mixin respond-above($breakpoint) {
+  @if $breakpoint == 'xs' {
+    @media all and (min-width: $breakpoint-xs) {
+      @content;
+    }
+  } @else if $breakpoint == 'sm' {
+    @media all and (min-width: $breakpoint-sm) {
+      @content;
+    }
+  } @else if $breakpoint == 'md' {
+    @media all and (min-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $breakpoint == 'lg' {
+    @media all and (min-width: $breakpoint-lg) {
+      @content;
+    }
+  }
+}
+
+
+//
+//  RESPOND BELOW
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// @include respond-below(md) {}
+@mixin respond-below($breakpoint) {
+  @if $breakpoint == 'xs' {
+    @media all and (max-width: ($breakpoint-xs - 1)) {
+      @content;
+    }
+  } @else if $breakpoint == 'sm' {
+    @media all and (max-width: ($breakpoint-sm - 1)) {
+      @content;
+    }
+  } @else if $breakpoint == 'md' {
+    @media all and (max-width: ($breakpoint-md - 1)) {
+      @content;
+    }
+  } @else if $breakpoint == 'lg' {
+    @media all and (max-width: ($breakpoint-lg - 1)) {
+      @content;
+    }
+  }
+}

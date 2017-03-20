@@ -1,0 +1,64 @@
+@charset 'UTF-8';
+
+
+//
+//  CONFIGURATION & HELPERS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@import 'abstracts/variables';
+@import 'abstracts/color';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+@import 'abstracts/media-queries';
+
+
+//
+//  VENDORS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@import 'vendor/normalize';
+
+
+//
+//  BASE STUFF
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@import 'base/base';
+@import 'base/fonts';
+@import 'base/typography';
+@import 'base/helpers';
+
+
+//
+//  LAYOUT-RELATED SECTIONS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@import 'layout/grid';
+@import 'layout/header';
+@import 'layout/footer';
+
+
+//
+//  COMPONENTS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@import 'components/button';
+
+
+//
+//  PAGE-SPECIFIC STYLES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@import 'pages/home';
+
+
+//
+//  THEMES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@import 'themes/default';
+
+
+// Basic 7-1 structure taken from:
+// https://github.com/HugoGiraudel/sass-boilerplate
+// and https://sass-guidelin.es/#architecture

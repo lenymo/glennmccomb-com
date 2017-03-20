@@ -1,0 +1,178 @@
+//
+//  TYPOGRAPHY
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+
+//
+//  COLOR
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$base-font-color: $color-gray-4;
+
+$link-font-color: $color-primary-lighter;
+$link-font-color-hover: lighten($link-font-color, 5%);
+
+$heading-font-color: $color-primary-darker;
+$heading-link-font-color: $link-font-color;
+$heading-link-font-color-hover: darken($heading-link-font-color, 5%);
+
+
+//
+//  FONT FAMILIES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$base-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$base-line-height: 1.5;
+$base-margin-bottom: $base-font-size * $base-line-height;
+
+
+//
+//  SIZES, WEIGHTS, ETC
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$h1-font-size: rem(48px);
+$h2-font-size: rem(36px);
+$h3-font-size: rem(28px);
+$h4-font-size: rem(24px);
+$h5-font-size: rem(20px);
+$h6-font-size: rem($base-font-size);
+
+$heading-line-height: 1.25;
+$heading-font-family: $base-font-family;
+$heading-font-weight: bold;
+$heading-text-transform: none;    // Default = none
+$heading-letter-spacing: normal;  // Default = normal
+$heading-margin-bottom: $base-font-size * $base-line-height;
+
+$lead-font-size: $h4-font-size;
+
+$small-font-size: rem( $base-font-size * .85 );
+
+$blockquote-font-size: $base-font-size;
+
+
+//
+//  STYLES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+html {
+  font-size: $base-font-size;
+}
+
+body {
+  color: $base-font-color;
+  font-family: $base-font-family;
+  line-height: $base-line-height;
+}
+
+
+//
+//  HEADINGS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+h1, h2, h3, h4, h5, h6 {
+  color: $heading-font-color;
+  font-family: $heading-font-family;
+  font-weight: $heading-font-weight;
+  line-height: $heading-line-height;
+  margin: 0;
+  margin-bottom: $heading-margin-bottom;
+
+  // Text transform
+  @if $heading-text-transform != 'none' {
+    text-transform: $heading-text-transform;
+  }
+
+  // Letter spacing
+  @if $heading-letter-spacing != 'normal' {
+    letter-spacing: $heading-letter-spacing;
+  }
+
+  a {
+    color: $heading-link-font-color;
+
+    &:hover {
+      color: $heading-link-font-color-hover;
+    }
+  }
+}
+
+h1 {
+  font-size: $h1-font-size;
+}
+
+h2 {
+  font-size: $h2-font-size;
+}
+
+h3 {
+  font-size: $h3-font-size;
+}
+
+h4 {
+  font-size: $h4-font-size;
+}
+
+h5 {
+  font-size: $h5-font-size;
+}
+
+h6 {
+  font-size: $h6-font-size;
+}
+
+
+//
+//  LINKS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+a {
+  color: $link-font-color;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $link-font-color-hover;
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+
+//
+//  PARAGRAPH
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+p {
+  margin: 0;
+  margin-bottom: $base-margin-bottom;
+
+  &.lead {
+    font-size: $lead-font-size;
+  }
+}
+
+
+//
+//  BLOCKQUOTE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+blockquote {
+  margin: 0;
+}
+
+
+//
+//  CODE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+pre {
+  background: $color-gray-e;
+  border-radius: 4px;
+  padding: $gutter;
+}

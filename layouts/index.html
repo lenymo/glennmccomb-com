@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="{{ .Description }}">
+  <title>{{ .Title }}</title>
+  
+  {{ partial "head.html" . }}
+  {{ partial "header.html" . }}
+</head>
+<body>
+  <main>
+    {{ range first 10 .Data.Pages }}
+    {{ if eq .Type "articles" }}
+    <article>
+      <h1>
+        <a href="{{ .Permalink }}">
+          {{ .Title }}
+        </a>
+      </h1>
+      {{ .Summary }}
+      <a href="{{ .Permalink }}">
+        Read More
+      </a>
+    </article>
+    {{ end }}
+    {{ end }}
+  </main>
+</body>
+<html>
