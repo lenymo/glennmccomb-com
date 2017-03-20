@@ -1,9 +1,11 @@
 ---
 slug = ""
 resources = []
-title: First Article
-date: 2017-03-20T09:43:51.744Z
-content: This is the content
+title = "First Article"
+date = "2017-03-20T19:47:08+11:00"
 Description = ""
 Author = "Glenn McComb"
+
 ---
+
+Something something.

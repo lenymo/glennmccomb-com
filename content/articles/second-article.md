@@ -1,8 +1,8 @@
 ---
 slug = ""
 resources = []
-date = "2017-03-19T19:47:08+11:00"
 title = "Second Article"
+date = "2017-03-19T19:47:08+11:00"
 Description = ""
 Author = "Glenn McComb"
 
