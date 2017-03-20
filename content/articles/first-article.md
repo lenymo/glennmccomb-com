@@ -1,18 +1,13 @@
 ---
+slug = "second-article"
+resources = []
 title: Second Article
 date: 2017-03-20T09:43:51.744Z
 content: This is the content.
----
-
-+++
-slug = ""
-resources = []
-date = "2017-03-19T19:44:14+11:00"
-title = "First Article"
-Description = ""
 Author = "Glenn McComb"
+Description = ""
 
-+++
+---
 
 Kinfolk bicycle rights cold-pressed coloring book banjo, roof party portland salvia venmo post-ironic subway tile schlitz. Hell of edison bulb DIY, forage readymade blue bottle truffaut chartreuse locavore jianbing selfies. 
 
