@@ -1,11 +1,14 @@
 ---
-slug: ""
+Author: Glenn McComb
+Description: ''
 resources: []
-title: "Second Article"
-date: "2017-03-19T19:47:08+11:00"
-Description: ""
-Author:  "Glenn McComb"
-
+slug: ''
+title: Second Article
+date: '2017-03-19T19:47:08+11:00'
 ---
 
 [Lorem ipsum](http://www.lipsum.com/) dolor sit amet, consectetur adipiscing elit.
+
+## Heading
+
+[Some other text.](/)
