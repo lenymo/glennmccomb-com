@@ -6,6 +6,39 @@
   <title>Content Manager</title>
 
   <link rel="stylesheet" href="https://unpkg.com/netlify-cms@^0.3/dist/cms.css" />
+  <style>
+    /* Header search field. */
+    .cms__FindBar__inputField {
+      background-color: #313a3d;
+      color: #fff;
+    }
+
+    .cms__FindBar__inputField::-webkit-input-placeholder {
+      color: rgba(255,255,255,.5);
+    }
+
+    .cms__FindBar__inputField:-moz-placeholder {
+      color: rgba(255,255,255,.5);
+    }
+
+    .cms__FindBar__inputField::-moz-placeholder {
+      color: rgba(255,255,255,.5);
+    }
+
+    .cms__FindBar__inputField:-ms-input-placeholder {
+      color: rgba(255,255,255,.5);
+    }
+
+    /* Add editor component button. */
+    .cms__BlockMenu__button {
+      background: #3ab7a5;
+      border: 0;
+      color: #fff;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: bold;
+    }
+  </style>
 
 </head>
 <body>
@@ -13,7 +46,7 @@
   <script>
     CMS.registerEditorComponent({
       id: "youtube",
-      label: "Youtube",
+      label: "YouTube",
       icon: 'video',
       fields: [{name: 'id', label: 'YouTube Video ID'}],
       pattern: /^{{<\s?youtube (\S+)\s?>}}/,
@@ -28,6 +61,27 @@
       toPreview: function(obj) {
         return (
           '<img src="http://img.youtube.com/vi/' + obj.id + '/maxresdefault.jpg" alt="Youtube Video"/>'
+        );
+      }
+    });
+
+    CMS.registerEditorComponent({
+      id: "section",
+      label: "Section",
+      icon: 'code',
+      fields: [{name: 'class', label: 'Class'}],
+      pattern: /^{{<\s?section (\S+)\s?>}}\n^{{<\s?\/section \s?>}}/,
+      fromBlock: function(match) {
+        return {
+          class: match[1]
+        };
+      },
+      toBlock: function(obj) {
+        return '{{< section class="' + obj.class + '"" >}} {{< /section >}}';
+      },
+      toPreview: function(obj) {
+        return (
+          ''
         );
       }
     });
