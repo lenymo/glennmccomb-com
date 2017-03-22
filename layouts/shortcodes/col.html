@@ -1,3 +1,3 @@
-<div class="col">
+<div class="col{{ if .Get "columns" }} col-sm-{{ .Get "columns" }}{{ end }}">
   {{ .Inner }}
 </div>

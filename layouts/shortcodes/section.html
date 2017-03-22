@@ -1,0 +1,5 @@
+<section class="section {{ if .Get "class" }}{{ .Get "class" }}{{ end }}">
+  {{ if .Get "container" | eq "yes" }}<div class="container">{{ end }}
+    {{ .Inner }}
+  {{ if .Get "container" | eq "yes" }}</div>{{ end }}
+</section>
