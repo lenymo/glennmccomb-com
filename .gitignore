@@ -1,4 +1,6 @@
+.DS_Store
+.sass-cache
+
 node_modules/
 data/**/hash.*
-# static/
 public/

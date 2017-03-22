@@ -1,3 +1,16 @@
-// -----------------------------------------------------------------------------
+//
+//  HEADER
+//––––––––––––––––––––––––––––––––––––––––––––––––––gbt555['];hpyjy']
+
 // This file contains all styles related to the header of the site/application.
-// -----------------------------------------------------------------------------
+
+.site-header__primary-nav {
+  li {
+    display: inline-block;
+
+    a {
+      display: block;
+      padding: $gutter / 2;
+    }
+  }
+}

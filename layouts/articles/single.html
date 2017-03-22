@@ -1,21 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>{{ .Title }}</title>
-  <meta name="description" content="{{ .Description }}">
+{{ partial "head.html" . }}
+{{ partial "header.html" . }}
 
-  {{ partial "head.html" . }}
-  {{ partial "header.html" . }}
-  
-</head>
-<body>
-  <main>
+  <div class="container">
     <article>
       <h1>{{ .Title }}</h1>
       <date class="date">{{ .Date }}</date>
       {{ .Content }}
     </article>
-  </main>
-</body>
-</html>
+  </div><!-- .container -->
+
+{{ partial "footer.html" . }}
+{{ partial "foot.html" . }}

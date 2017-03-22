@@ -1,1 +1,12 @@
-<link rel="stylesheet" href="/css/main.css" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="{{ .Description }}">
+  <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+  
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+
+<body class="{{ with .Type }}{{ . }}{{ end }}">
+  
