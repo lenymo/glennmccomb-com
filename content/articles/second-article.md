@@ -12,3 +12,7 @@ date: '2017-03-19T19:47:08+11:00'
 ## Heading
 
 [Some other text.](/)
+
+{{< row >}}
+
+{{< /row >}}
