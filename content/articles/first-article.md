@@ -11,5 +11,5 @@ Something something.
 
 ## Another heading
 
-{{< youtubeh98GvPPG7t4 >}}
+{{< youtube h98GvPPG7t4 >}}
 
