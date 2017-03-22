@@ -70,7 +70,7 @@
       label: "Section",
       icon: 'code',
       fields: [{name: 'class', label: 'Class'}],
-      pattern: /^{{<\s?section (\S+)\s?>}}\n^{{<\s?\/section \s?>}}/,
+      pattern: /^{{<\s?section (\S+)\s?>}}\n\n^{{<\s?\/section \s?>}}/,
       fromBlock: function(match) {
         return {
           class: match[1]
