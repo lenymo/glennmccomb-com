@@ -14,3 +14,10 @@ date: '2017-03-19T19:47:08+11:00'
 [Some other text.](/)
 
 {{< row >}}
+  {{< col >}}
+    Within a row and a column
+  {{< /col >}}
+  {{< col >}}
+    Column 2
+  {{< /col >}}
+{{< /row >}}
