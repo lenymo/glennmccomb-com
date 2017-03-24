@@ -1,0 +1,31 @@
+/* Header search field. */
+.cms__FindBar__inputField {
+  background-color: #313a3d;
+  color: #fff;
+}
+
+.cms__FindBar__inputField::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.cms__FindBar__inputField:-moz-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.cms__FindBar__inputField::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.cms__FindBar__inputField:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Add editor component button. */
+.cms__BlockMenu__button {
+  background: #3ab7a5;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+}

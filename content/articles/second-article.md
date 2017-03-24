@@ -1,6 +1,6 @@
 ---
 Author: Glenn McComb
-Description: ''
+description: ''
 resources: []
 slug: 'second-article'
 title: Second Article

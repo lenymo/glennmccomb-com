@@ -1,4 +1,7 @@
 ---
+Author: Glenn McComb
+description: ''
+resources: []
 slug: 'third-article'
 title: Third Article
 date: 2017-03-24T02:28:55.483Z
