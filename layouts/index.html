@@ -3,21 +3,25 @@
 
   <div class="container">
   {{ range first 10 .Data.Pages }}
-  {{ if eq .Type "articles" }}
-  <article>
-    <h1>
+    {{ if eq .Type "articles" }}
+    <article>
+      <h1>
+        <a href="{{ .Permalink }}">
+          {{ .Title }}
+        </a>
+      </h1>
+      {{ .Summary }}
       <a href="{{ .Permalink }}">
-        {{ .Title }}
+        Read More
       </a>
-    </h1>
-    {{ .Summary }}
-    <a href="{{ .Permalink }}">
-      Read More
-    </a>
-  </article>
-  {{ end }}
+    </article>
+    {{ end }}
   {{ end }}
   </div><!-- .container -->
+
+  <p>
+    index: {{ index .Site.Data.settings "settings_test" }}
+  </p>
 
 {{ partial "footer.html" . }}
 {{ partial "foot.html" . }}

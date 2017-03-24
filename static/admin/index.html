@@ -14,6 +14,7 @@
 <body>
   <script src="https://unpkg.com/netlify-cms@^0.3/dist/cms.js"></script>
   <script>
+    // YouTube editor component.
     CMS.registerEditorComponent({
       id: "youtube",
       label: "YouTube",
@@ -36,26 +37,26 @@
     });
 
     // Add a component to add section shortcode.
-    CMS.registerEditorComponent({
-      id: "section",
-      label: "Section",
-      icon: 'code',
-      fields: [{name: 'class', label: 'Class'}],
-      pattern: /^{{<\s?section (\S+)\s?>}}\n\n^{{<\s?\/section \s?>}}/,
-      fromBlock: function(match) {
-        return {
-          class: match[1]
-        };
-      },
-      toBlock: function(obj) {
-        return '{{< section class="' + obj.class + '"" >}} {{< /section >}}';
-      },
-      toPreview: function(obj) {
-        return (
-          ''
-        );
-      }
-    });
+    // CMS.registerEditorComponent({
+    //   id: "section",
+    //   label: "Section",
+    //   icon: 'code',
+    //   fields: [{name: 'class', label: 'Class'}],
+    //   pattern: /^{{<\s?section (\S+)\s?>}}\n\n^{{<\s?\/section \s?>}}/,
+    //   fromBlock: function(match) {
+    //     return {
+    //       class: match[1]
+    //     };
+    //   },
+    //   toBlock: function(obj) {
+    //     return '{{< section class="' + obj.class + '"" >}} {{< /section >}}';
+    //   },
+    //   toPreview: function(obj) {
+    //     return (
+    //       ''
+    //     );
+    //   }
+    // });
   </script>
 </body>
 </html>
