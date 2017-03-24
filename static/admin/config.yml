@@ -28,4 +28,4 @@ collections:
         file: "data/settings.yml"
         description: "General site settings"
         fields:
-          - {label: "Settings Test", name: "settings_test", widget: "string"}
+          - {label: "Settings test", name: "settings_test", widget: "string"}
