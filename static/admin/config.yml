@@ -20,12 +20,12 @@ collections:
       - {label: "SEO Description", name: "description", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
 
-  # - name: "settings"
-  #   label: "Settings"
-  #   files:
-  #     - name: "general"
-  #       label: "General Settings"
-  #       file: "data/settings.yml"
-  #       description: "General site settings"
-  #       fields:
-  #         - {label: "Settings test", name: "settings_test", widget: "string"}
+  - name: "settings"
+    label: "Settings"
+    files:
+      - name: "general"
+        label: "General Settings"
+        file: "data/settings.yml"
+        description: "General site settings"
+        fields:
+          - {label: "Settings test", name: "settings_test", widget: "string"}
