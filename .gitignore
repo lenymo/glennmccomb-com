@@ -1,6 +1,26 @@
+# Mac OS X files
 .DS_Store
-.sass-cache
+ehthumbs.db
+Thumbs.db
 
+.sass-cache
+bower_components/
 node_modules/
+
+# ignore Editor files
+*.sublime-project
+*.sublime-workspace
+
+# Hugo files
 data/**/hash.*
 public/
+
+# ignore packaged files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
