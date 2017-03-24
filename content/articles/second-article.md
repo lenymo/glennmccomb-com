@@ -2,7 +2,7 @@
 Author: Glenn McComb
 description: ''
 resources: []
-slug: 'second-article'
+slug: second-article
 title: Second Article
 date: '2017-03-20T19:47:08+11:00'
 ---
@@ -15,7 +15,7 @@ date: '2017-03-20T19:47:08+11:00'
 
 {{< section class="section-test" >}}
 {{< row >}}
-{{< col offset="1" >}}
+{{< col >}}
 Within a row and a column
 {{< /col >}}
 {{< col >}}
