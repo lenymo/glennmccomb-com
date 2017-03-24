@@ -1,3 +1,14 @@
-<div class="col{{ if .Get "columns" }} col-sm-{{ .Get "columns" }}{{ end }}">
+<!--
+//
+//  COL
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+Params:
+columns="1" // 1-12. Only necessary for custom widths
+offset="1" // 1-11.
+class="example-class"
+
+-->
+<div class="{{ if .Get "columns" }}col-sm-{{ .Get "columns" }}{{ else }}col{{ end }} {{ if .Get "offset" }}offset-sm-{{ .Get "offset" }}{{ end }} {{ if .Get "class" }}{{ .Get "class" }}{{ end }}">
   {{ .Inner }}
 </div>

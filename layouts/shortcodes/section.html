@@ -1,5 +1,15 @@
+<!--
+//
+//  SECTION
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+Params:
+class="example-class"
+container="yes" // Leave blank for no container.
+
+-->
 <section class="section {{ if .Get "class" }}{{ .Get "class" }}{{ end }}">
-  {{ if .Get "container" | eq "yes" }}<div class="container">{{ end }}
+  {{ if .Get "container" }}<div class="container">{{ end }}
     {{ .Inner }}
-  {{ if .Get "container" | eq "yes" }}</div>{{ end }}
+  {{ if .Get "container" }}</div>{{ end }}
 </section>

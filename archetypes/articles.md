@@ -2,7 +2,7 @@
 
 slug = ""
 Author = "Glenn McComb"
-Description = ""
+description = ""
 resources = []
 
 ---

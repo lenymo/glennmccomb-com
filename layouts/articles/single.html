@@ -4,7 +4,7 @@
   <div class="container">
     <article>
       <h1>{{ .Title }}</h1>
-      <date class="date">{{ .Date }}</date>
+      <date class="date"> {{ .Date.Format "January" }} {{ .Date.Format "2" }}{{ if in (slice 1 21 31) .Date.Day}}st{{ else if in (slice 2 22) .Date.Day}}nd{{ else if in (slice 3 23) .Date.Day}}rd{{ else }}th{{ end }}, {{ .Date.Format "2006" }}</date>
       {{ .Content }}
     </article>
   </div><!-- .container -->

@@ -2,9 +2,9 @@
 Author: Glenn McComb
 Description: ''
 resources: []
-slug: ''
+slug: 'first-article'
 title: First Article
-date: 2017-03-20T10:10:44.177Z
+date: 2017-03-19T10:10:44.177Z
 ---
 
 Something something.
