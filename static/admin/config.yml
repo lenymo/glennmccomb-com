@@ -32,9 +32,9 @@ collections:
           - {label: "Settings test", name: "settings_test", widget: "string"}
       
       # Add menu items here.
-      - name: "menu"
-        label: "Menu"
-        file: "config.yml"
-        description: "Main menu in site header"
-        fields:
-          - {label: "Menu items", name: "menu", widget: "list", fields: [{label: "Name", name: "Name", widget: "string"}, {label: "Weight", name: "Weight", widget: "string"}, {label: "Identifier", name: "Identifier", widget: "string"}, {label: "URL", name: "URL", widget: "string"}]}
+      # - name: "menu"
+      #   label: "Menu"
+      #   file: "config.yml"
+      #   description: "Main menu in site header"
+      #   fields:
+      #     - {label: "Menu items", name: "menu", widget: "list", fields: [{label: "Name", name: "Name", widget: "string"}, {label: "Weight", name: "Weight", widget: "string"}, {label: "Identifier", name: "Identifier", widget: "string"}, {label: "URL", name: "URL", widget: "string"}]}
