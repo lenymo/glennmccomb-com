@@ -29,4 +29,8 @@ $site-header-bg-color: $color-primary;
 .site-header__logo {
   display: inline-block;
   vertical-align: top;
+
+  img {
+    vertical-align: top;
+  }
 }

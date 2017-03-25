@@ -12,7 +12,7 @@ $base-font-color: $color-gray-4;
 $link-font-color: $color-primary-lighter;
 $link-font-color-hover: lighten($link-font-color, 5%);
 
-$heading-font-color: $color-primary-darker;
+$heading-font-color: $base-font-color;
 $heading-link-font-color: $link-font-color;
 $heading-link-font-color-hover: darken($heading-link-font-color, 5%);
 

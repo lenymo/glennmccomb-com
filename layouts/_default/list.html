@@ -1,4 +1,5 @@
 {{ partial "head.html" . }}
+
 <body class="articles">
 
   {{ partial "header.html" . }}
@@ -7,17 +8,9 @@
     <div class="container">
     {{ range first 10 .Data.Pages }}
       {{ if eq .Type "articles" }}
-      <article>
-        <h3>
-          <a href="{{ .Permalink }}">
-            {{ .Title }}
-          </a>
-        </h3>
-        {{ .Summary }}
-        <a href="{{ .Permalink }}">
-          Read More
-        </a>
-      </article>
+
+        {{ partial "content-post" . }}
+
       {{ end }}
     {{ end }}
     </div><!-- .container -->
@@ -26,4 +19,5 @@
   {{ partial "footer.html" . }}
   
 </body>
+
 {{ partial "foot.html" . }}
