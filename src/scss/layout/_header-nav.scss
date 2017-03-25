@@ -1,0 +1,17 @@
+//
+//  HEADER NAV
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$header-nav-font-color: rgba($white, .75);
+
+.site-header__nav {
+  li {
+    display: inline-block;
+
+    a {
+      color: $header-nav-font-color;
+      display: block;
+      padding: $gutter / 2;
+    }
+  }
+}

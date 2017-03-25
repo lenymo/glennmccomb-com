@@ -2,15 +2,8 @@
 //  HEADER
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-// This file contains all styles related to the header of the site/application.
+$header-bg-color: $color-primary;
 
-.site-header__primary-nav {
-  li {
-    display: inline-block;
-
-    a {
-      display: block;
-      padding: $gutter / 2;
-    }
-  }
+.site-header {
+  background: $header-bg-color;
 }

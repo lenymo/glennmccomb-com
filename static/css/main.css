@@ -1349,11 +1349,16 @@ html {
   }
 }
 
-.site-header__primary-nav li {
+.site-header {
+  background: #284c71;
+}
+
+.site-header__nav li {
   display: inline-block;
 }
 
-.site-header__primary-nav li a {
+.site-header__nav li a {
+  color: rgba(255, 255, 255, 0.75);
   display: block;
   padding: 7.5px;
 }
@@ -1364,13 +1369,35 @@ html {
   text-align: center;
 }
 
-.site-footer .footer-top {
+.site-footer__top {
   padding: 60px 0;
 }
 
-.site-footer .footer-bottom {
+.site-footer__bottom {
   background: #213f5e;
   padding: 60px 0;
+}
+
+.section {
+  padding: 30px 0;
+}
+
+@media all and (min-width: 576px) {
+  .section {
+    padding: 45px 0;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .section {
+    padding: 60px 0;
+  }
 }
 
 nav ul {

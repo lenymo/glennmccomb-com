@@ -30,12 +30,15 @@
 
 
 //
-//  LAYOUT-RELATED SECTIONS
+//  LAYOUT
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 @import 'layout/grid';
 @import 'layout/header';
+@import 'layout/header-nav';
 @import 'layout/footer';
+@import 'layout/section';
+@import 'layout/page-header';
 
 
 //
@@ -47,10 +50,11 @@
 
 
 //
-//  PAGE-SPECIFIC STYLES
+//  PAGES
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 @import 'pages/home';
+@import 'pages/404';
 
 
 //
