@@ -31,7 +31,7 @@ collections:
         fields:
           - {label: "Settings test", name: "settings_test", widget: "string"}
       
-      Add menu items here.
+      # Add menu items here.
       - name: "menu"
         label: "Menu"
         file: "config.yml"
