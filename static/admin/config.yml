@@ -26,7 +26,7 @@ collections:
     files:
       - name: "site-settings"
         label: "Site Settings"
-        file: "data/site-settings.yml"
+        file: "data/site_settings.yml"
         description: "General site settings"
         fields:
           - {label: "Settings test", name: "settings_test", widget: "string"}
