@@ -1,0 +1,23 @@
+{{ partial "head.html" . }}
+{{ partial "header.html" . }}
+
+  <div class="container">
+  {{ range first 10 .Data.Pages }}
+    {{ if eq .Type "articles" }}
+    <article>
+      <h1>
+        <a href="{{ .Permalink }}">
+          {{ .Title }}
+        </a>
+      </h1>
+      {{ .Summary }}
+      <a href="{{ .Permalink }}">
+        Read More
+      </a>
+    </article>
+    {{ end }}
+  {{ end }}
+  </div><!-- .container -->
+
+{{ partial "footer.html" . }}
+{{ partial "foot.html" . }}
