@@ -2,7 +2,7 @@
   <ul class="site-nav__list">
     {{ $currentPage := . }}
     {{ range .Site.Menus.main }}
-    <li class="site-nav__item{{if $currentPage.IsMenuCurrent "main" . }} -is-active{{end}}">
+    <li class="site-nav__item{{if $currentPage.IsMenuCurrent "main" . }} -is-current{{end}}">
       <a href="{{.URL}}" class="site-nav__link">
         {{ .Name }}
       </a>

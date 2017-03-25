@@ -10,8 +10,10 @@ $white: #fff;
 
 // Utility colors
 $color-primary: #284c71;
-$color-primary-darker: #212f3d;
-$color-primary-lighter: #23609e;
+// $color-primary-darker: #212f3d;
+// $color-primary-lighter: #23609e;
+$color-primary-darker: darken($color-primary, 5%);
+$color-primary-lighter: lighten($color-primary, 5%);
 
 $color-secondary: #ff851b;
 

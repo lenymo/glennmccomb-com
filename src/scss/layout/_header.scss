@@ -2,9 +2,26 @@
 //  HEADER
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-$header-bg-color: $color-primary;
+
+//
+//  LAYOUT
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$site-header-padding: 0;
+
+
+//
+//  COLOR
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$site-header-bg-color: $color-primary;
+
+
+//
+//  STYLES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .site-header {
-  background: $header-bg-color;
-  padding: $gutter/2 0;
+  background: $site-header-bg-color;
+  padding: $site-header-padding;
 }

@@ -5,7 +5,7 @@
 $footer-font-color: rgba($white, .75);
 $footer-bg-color: $color-primary;
 
-$footer-bottom-bg-color: darken($footer-bg-color, 5%);
+$footer-bottom-bg-color: $color-primary-darker;
 
 
 //
@@ -20,7 +20,7 @@ $footer-bottom-bg-color: darken($footer-bg-color, 5%);
 
 
 //
-//  FOOTER BOTTOM
+//  FOOTER TOP
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .site-footer__top {
