@@ -13,7 +13,7 @@ node_modules/
 
 # Hugo files
 data/**/hash.*
-public/
+# public/
 
 # ignore packaged files
 *.7z
