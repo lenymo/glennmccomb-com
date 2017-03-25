@@ -37,4 +37,4 @@ collections:
         file: "config.yml"
         description: "Main menu in site header"
         fields:
-          - {label: "Menu items", name: "menu.main", widget: "list"}
+          - {label: "Menu items", name: "menu.main", widget: "list", fields: [{label: "Name", name: "Name", widget: "string"}, {label: "Weight", name: "Weight", widget: "string"}, {label: "Identifier", name: "Identifier", widget: "string"}, {label: "URL", name: "URL", widget: "string"}]}
