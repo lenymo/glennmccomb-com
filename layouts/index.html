@@ -3,25 +3,25 @@
 
   {{ partial "header.html" . }}
 
-    <section class="section">
-      <div class="container">
-      {{ range first 10 .Data.Pages }}
-        {{ if eq .Type "articles" }}
-        <article>
-          <h3>
-            <a href="{{ .Permalink }}">
-              {{ .Title }}
-            </a>
-          </h3>
-          {{ .Summary }}
+  <section class="section">
+    <div class="container">
+    {{ range first 10 .Data.Pages }}
+      {{ if eq .Type "articles" }}
+      <article>
+        <h3>
           <a href="{{ .Permalink }}">
-            Read More
+            {{ .Title }}
           </a>
-        </article>
-        {{ end }}
+        </h3>
+        {{ .Summary }}
+        <a href="{{ .Permalink }}">
+          Read More
+        </a>
+      </article>
       {{ end }}
-      </div><!-- .container -->
-    </section>
+    {{ end }}
+    </div><!-- .container -->
+  </section>
 
 
   <!-- This pulls in the value of "settings_test" from data/site-settings.yml -->
