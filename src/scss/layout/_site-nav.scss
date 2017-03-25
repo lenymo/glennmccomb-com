@@ -7,6 +7,7 @@
 //  LAYOUT
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
+$site-nav-item-padding: $gutter/2 0;
 $site-nav-item-padding-md: $gutter $gutter*1.5;
 
 
@@ -32,25 +33,33 @@ $site-nav-item-current-bg-color: $color-primary-lighter;
 
 .site-nav__item {
   display: inline-block;
+  width: 100%;
+}
 
+.site-nav__link {
+  background: $site-nav-item-bg-color;
+  color: $site-nav-item-font-color;
+  display: block;
+  padding: $site-nav-item-padding;
+  transition: all .15s ease;
+}
+
+// Current item
+.site-nav__item.-is-current {
   .site-nav__link {
-    background: $site-nav-item-bg-color;
-    color: $site-nav-item-font-color;
-    display: block;
-    padding: $site-nav-item-padding-md;
-    transition: all .15s ease;
-  }
-
-  &.-is-current {
-    .site-nav__link {
-      background: $site-nav-item-current-bg-color;
-      color: $site-nav-item-current-font-color;
-    }
+    background: $site-nav-item-current-bg-color;
+    color: $site-nav-item-current-font-color;
   }
 }
 
 @include respond-above(sm) {
+  .site-nav__item {
+    width: auto;
+  }
+
   .site-nav__link {
+    padding: $site-nav-item-padding-md;
+
     &:hover {
       background: $site-nav-item-bg-color-hover;
       color: $site-nav-item-font-color-hover;

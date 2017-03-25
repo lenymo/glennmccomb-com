@@ -130,16 +130,22 @@ a {
   color: $link-font-color;
   cursor: pointer;
   text-decoration: none;
-
-  &:hover,
-  &:active,
-  &:focus {
-    color: $link-font-color-hover;
-    text-decoration: underline;
-  }
+  
 
   &:focus {
     outline: 0;
+  }
+}
+
+// Hover
+@include respond-above(sm) {
+  a {
+    &:hover,
+    &:active,
+    &:focus {
+      color: $link-font-color-hover;
+      text-decoration: underline;
+    }
   }
 }
 

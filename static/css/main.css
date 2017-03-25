@@ -525,13 +525,15 @@ a {
   text-decoration: none;
 }
 
-a:hover, a:active, a:focus {
-  color: #356597;
-  text-decoration: underline;
-}
-
 a:focus {
   outline: 0;
+}
+
+@media all and (min-width: 768px) {
+  a:hover, a:active, a:focus {
+    color: #356597;
+    text-decoration: underline;
+  }
 }
 
 p {
@@ -1332,13 +1334,14 @@ html {
 
 .site-nav__item {
   display: inline-block;
+  width: 100%;
 }
 
-.site-nav__item .site-nav__link {
+.site-nav__link {
   background: transparent;
   color: rgba(255, 255, 255, 0.75);
   display: block;
-  padding: 15px 22.5px;
+  padding: 7.5px 0;
   -webkit-transition: all .15s ease;
   transition: all .15s ease;
 }
@@ -1349,6 +1352,12 @@ html {
 }
 
 @media all and (min-width: 768px) {
+  .site-nav__item {
+    width: auto;
+  }
+  .site-nav__link {
+    padding: 15px 22.5px;
+  }
   .site-nav__link:hover {
     background: #2f5984;
     color: #fff;
