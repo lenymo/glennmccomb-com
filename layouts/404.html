@@ -1,5 +1,8 @@
 {{ partial "head.html" . }}
-{{ partial "header.html" . }}
+<body class="error-404">
+
+  {{ partial "header.html" . }}
+
 
   <div class="container">
     <h1>404 Not Found</h1>
@@ -7,5 +10,8 @@
     <p>Please head back <a href="/">home</a>.</p>
   </div><!-- .container -->
 
-{{ partial "footer.html" . }}
+
+  {{ partial "footer.html" . }}
+  
+</body>
 {{ partial "foot.html" . }}
