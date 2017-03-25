@@ -7,7 +7,7 @@
 //  LAYOUT
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-$site-nav-item-padding: $gutter/2 0;
+$site-nav-item-padding: $gutter/2 $gutter;
 $site-nav-item-padding-md: $gutter $gutter*1.5;
 
 
@@ -15,14 +15,16 @@ $site-nav-item-padding-md: $gutter $gutter*1.5;
 //  COLOR
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-// Standard
+$site-nav-bg-color: $site-header-bg-color;
+
+// Standard nav item
 $site-nav-item-font-color: rgba($white, .75);
 $site-nav-item-bg-color: transparent;
 
 $site-nav-item-font-color-hover: $white;
 $site-nav-item-bg-color-hover: $color-primary-lighter;
 
-// Current
+// Current nav item
 $site-nav-item-current-font-color: $white;
 $site-nav-item-current-bg-color: $color-primary-lighter;
 
@@ -30,6 +32,15 @@ $site-nav-item-current-bg-color: $color-primary-lighter;
 //
 //  STYLES
 //––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.site-nav {
+  background: $site-nav-bg-color;
+  display: inline-block;
+
+  > .container {
+    position: static;
+  }
+}
 
 .site-nav__item {
   display: inline-block;
@@ -53,6 +64,10 @@ $site-nav-item-current-bg-color: $color-primary-lighter;
 }
 
 @include respond-above(sm) {
+  .site-nav {
+    vertical-align: top;
+  }
+
   .site-nav__item {
     width: auto;
   }

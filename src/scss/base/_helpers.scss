@@ -3,10 +3,66 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 
+//
+//  SHOW / HIDE CLASSES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// Down.
+@include respond-below(xs) {
+  .u-hidden-xs-down {
+    display: none !important;
+  }
+}
+
+@include respond-below(sm) {
+  .u-hidden-sm-down {
+    display: none !important;
+  }
+}
+
+@include respond-below(md) {
+  .u-hidden-md-down {
+    display: none !important;
+  }
+}
+
+@include respond-below(lg) {
+  .u-hidden-lg-down {
+    display: none !important;
+  }
+}
+
+
+// Up.
+@include respond-above(xs) {
+  .u-hidden-sm-up {
+    display: none !important;
+  }
+}
+
+@include respond-above(sm) {
+  .u-hidden-md-up {
+    display: none !important;
+  }
+}
+
+@include respond-above(md) {
+  .u-hidden-lg-up {
+    display: none !important;
+  }
+}
+
+@include respond-above(lg) {
+  .u-hidden-xl-up {
+    display: none !important;
+  }
+}
+
+
 /**
  * Clear inner floats
  */
-.clearfix::after {
+.u-clearfix::after {
   clear: both;
   content: '';
   display: table;
@@ -18,7 +74,7 @@
  * 1. Needed in WebKit-based browsers because of an implementation bug;
  *    See: https://code.google.com/p/chromium/issues/detail?id=457146
  */
-.hide-text {
+.u-hide-text {
   overflow: hidden;
   padding: 0; /* 1 */
   text-indent: 101%;
@@ -30,7 +86,7 @@
  * Shamelessly borrowed from HTML5Boilerplate:
  * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
  */
-.visually-hidden { 
+.u-visually-hidden { 
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;

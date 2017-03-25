@@ -25,3 +25,8 @@ $site-header-bg-color: $color-primary;
   background: $site-header-bg-color;
   padding: $site-header-padding;
 }
+
+.site-header__logo {
+  display: inline-block;
+  vertical-align: top;
+}

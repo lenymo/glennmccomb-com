@@ -15,19 +15,19 @@ $breakpoint-lg: 1200px;
 // @include respond-above(md) {}
 @mixin respond-above($breakpoint) {
   @if $breakpoint == 'xs' {
-    @media all and (min-width: $breakpoint-xs) {
+    @media (min-width: $breakpoint-xs) {
       @content;
     }
   } @else if $breakpoint == 'sm' {
-    @media all and (min-width: $breakpoint-sm) {
+    @media (min-width: $breakpoint-sm) {
       @content;
     }
   } @else if $breakpoint == 'md' {
-    @media all and (min-width: $breakpoint-md) {
+    @media (min-width: $breakpoint-md) {
       @content;
     }
   } @else if $breakpoint == 'lg' {
-    @media all and (min-width: $breakpoint-lg) {
+    @media (min-width: $breakpoint-lg) {
       @content;
     }
   }
@@ -41,19 +41,19 @@ $breakpoint-lg: 1200px;
 // @include respond-below(md) {}
 @mixin respond-below($breakpoint) {
   @if $breakpoint == 'xs' {
-    @media all and (max-width: ($breakpoint-xs - 1)) {
+    @media (max-width: ($breakpoint-xs - 1)) {
       @content;
     }
   } @else if $breakpoint == 'sm' {
-    @media all and (max-width: ($breakpoint-sm - 1)) {
+    @media (max-width: ($breakpoint-sm - 1)) {
       @content;
     }
   } @else if $breakpoint == 'md' {
-    @media all and (max-width: ($breakpoint-md - 1)) {
+    @media (max-width: ($breakpoint-md - 1)) {
       @content;
     }
   } @else if $breakpoint == 'lg' {
-    @media all and (max-width: ($breakpoint-lg - 1)) {
+    @media (max-width: ($breakpoint-lg - 1)) {
       @content;
     }
   }

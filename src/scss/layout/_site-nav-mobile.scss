@@ -1,0 +1,21 @@
+//
+//  SITE NAV MOBILE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@include respond-below(sm) {
+  .site-nav {
+    display: none;
+    left: 0;
+    padding: $gutter 0;
+    position: absolute;
+    top: 56px;
+    width: 100%;
+    z-index: $z-index-site-nav-mobile;
+  }
+
+  .site-nav-is-open {
+    .site-nav {
+      display: block;
+    }
+  }
+}

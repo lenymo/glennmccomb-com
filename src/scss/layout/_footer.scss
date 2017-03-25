@@ -2,10 +2,10 @@
 //  FOOTER
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-$footer-font-color: rgba($white, .75);
-$footer-bg-color: $color-primary;
+$site-footer-font-color: rgba($white, .75);
+$site-footer-bg-color: $color-primary;
 
-$footer-bottom-bg-color: $color-primary-darker;
+$site-footer-bottom-bg-color: $color-primary-darker;
 
 
 //
@@ -13,8 +13,8 @@ $footer-bottom-bg-color: $color-primary-darker;
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .site-footer {
-  background: $footer-bg-color;
-  color: $footer-font-color;
+  background: $site-footer-bg-color;
+  color: $site-footer-font-color;
   text-align: center;
 }
 
@@ -33,6 +33,10 @@ $footer-bottom-bg-color: $color-primary-darker;
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .site-footer__bottom {
-  background: $footer-bottom-bg-color;
+  background: $site-footer-bottom-bg-color;
   padding: $gutter*4 0;
+}
+
+.site-footer__copyright {
+  color: rgba($white, .5);
 }
