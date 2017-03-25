@@ -2,28 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>/articles/third-article/</loc>
+    <loc>/hugo-test/articles/third-article/</loc>
     <lastmod>2017-03-24T02:28:55+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/articles/second-article/</loc>
+    <loc>/hugo-test/articles/second-article/</loc>
     <lastmod>2017-03-20T19:47:08+11:00</lastmod>
   </url>
   
   <url>
-    <loc>/articles/first-article/</loc>
+    <loc>/hugo-test/articles/first-article/</loc>
     <lastmod>2017-03-19T10:10:44+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/articles/</loc>
+    <loc>/hugo-test/articles/</loc>
     <lastmod>2017-03-24T02:28:55+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/</loc>
+    <loc>/hugo-test/</loc>
     <lastmod>2017-03-24T02:28:55+00:00</lastmod>
     <priority>0</priority>
   </url>

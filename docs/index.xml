@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo Netlify CMS test</title>
-    <link>/index.xml</link>
+    <link>/hugo-test/index.xml</link>
     <description>Recent content on Hugo Netlify CMS test</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 24 Mar 2017 02:28:55 +0000</lastBuildDate>
-    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/hugo-test/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Third Article</title>
-      <link>/articles/third-article/</link>
+      <link>/hugo-test/articles/third-article/</link>
       <pubDate>Fri, 24 Mar 2017 02:28:55 +0000</pubDate>
       
-      <guid>/articles/third-article/</guid>
+      <guid>/hugo-test/articles/third-article/</guid>
       <description>&lt;p&gt;So I&amp;rsquo;m not going to do much in here but maybe I should trying some layouts.&lt;/p&gt;
 
 
@@ -46,17 +46,17 @@ Column two
     
     <item>
       <title>Second Article</title>
-      <link>/articles/second-article/</link>
+      <link>/hugo-test/articles/second-article/</link>
       <pubDate>Mon, 20 Mar 2017 19:47:08 +1100</pubDate>
       
-      <guid>/articles/second-article/</guid>
+      <guid>/hugo-test/articles/second-article/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;http://www.lipsum.com/&#34;&gt;Lorem ipsum&lt;/a&gt; dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;
 
 &lt;h2 id=&#34;heading&#34;&gt;Heading&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&#34;/&#34;&gt;Some other text.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;/hugo-test/&#34;&gt;Some other text.&lt;/a&gt;&lt;/p&gt;
 
 
 &lt;section class=&#34;section section-test&#34;&gt;
@@ -87,10 +87,10 @@ Column 2
     
     <item>
       <title>First Article</title>
-      <link>/articles/first-article/</link>
+      <link>/hugo-test/articles/first-article/</link>
       <pubDate>Sun, 19 Mar 2017 10:10:44 +0000</pubDate>
       
-      <guid>/articles/first-article/</guid>
+      <guid>/hugo-test/articles/first-article/</guid>
       <description>
 
 &lt;p&gt;Something something.&lt;/p&gt;
