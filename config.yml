@@ -1,4 +1,4 @@
 languageCode: "en-us"
 title: "Hugo Netlify CMS test"
 baseURL: "/"
-publishDir: "docs"
+publishDir: "docs" # For publishing on GitHub pages (defauly is public/)
