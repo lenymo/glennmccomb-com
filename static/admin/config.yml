@@ -24,9 +24,16 @@ collections:
   - name: "settings"
     label: "Settings"
     files:
-      - name: "general"
-        label: "General Settings"
-        file: "data/settings.yml"
+      - name: "site-settings"
+        label: "Site Settings"
+        file: "data/site-settings.yml"
         description: "General site settings"
         fields:
           - {label: "Settings test", name: "settings_test", widget: "string"}
+
+      - name: "menu"
+        label: "Menu"
+        file: "data/menu.yml"
+        description: "Main menu in site header"
+        fields:
+          - {label: "Menu items", name: "menu", widget: "list"}

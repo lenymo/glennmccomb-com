@@ -23,12 +23,12 @@
       </div><!-- .container -->
     </section>
 
-  <!-- 
-  This pulls in the value of "settings_test" from data/settings.json
+
+  <!-- This pulls in the value of "settings_test" from data/site-settings.yml -->
   <p>
-    index: {{ index .Site.Data.settings "settings_test" }}
+    index: {{ index .Site.Data.site_settings "settings_test" }}
   </p>
-  -->
+
 
   {{ partial "footer.html" . }}
 
