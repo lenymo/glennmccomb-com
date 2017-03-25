@@ -1,4 +1,5 @@
 languageCode: "en-us"
 title: "Hugo Netlify CMS test"
-baseURL: "/hugo-test/" # GitHub base url.
+baseURL: "/hugo-test/" # GitHub base url (repo name).
+# baseURL: "/" # Local base url.
 publishDir: "docs" # For publishing on GitHub pages (defauly is public/)
