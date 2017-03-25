@@ -1,15 +1,15 @@
 //
-//  HEADER NAV
+//  SITE NAV
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-$header-nav-font-color: rgba($white, .75);
+$site-nav-font-color: rgba($white, .75);
 
-.site-header__nav {
+.site-nav {
   li {
     display: inline-block;
 
     a {
-      color: $header-nav-font-color;
+      color: $site-nav-font-color;
       display: block;
       padding: $gutter / 2;
     }

@@ -1351,13 +1351,14 @@ html {
 
 .site-header {
   background: #284c71;
+  padding: 7.5px 0;
 }
 
-.site-header__nav li {
+.site-nav li {
   display: inline-block;
 }
 
-.site-header__nav li a {
+.site-nav li a {
   color: rgba(255, 255, 255, 0.75);
   display: block;
   padding: 7.5px;
@@ -1404,4 +1405,8 @@ nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+nav ul a:hover, nav ul a:active, nav ul a:focus {
+  text-decoration: none;
 }

@@ -5,3 +5,18 @@ baseURL: "/" # Local base url.
 # GitHub pages settings.
 # baseURL: "/hugo-test/" # GitHub base url (repo name).
 # publishDir: "docs" # For publishing on GitHub pages (defauly is public/)
+
+# Menu
+menu:
+  main:
+      - Name: "Home"
+        Pre: ""
+        Weight: 1
+        Identifier: "home"
+        URL: "/"
+
+      - Name: "Articles"
+        Pre: ""
+        Weight: 0
+        Identifier: "articles"
+        URL: "/articles/"
