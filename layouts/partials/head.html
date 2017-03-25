@@ -8,5 +8,5 @@
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css" />
 </head>
 
-<body class="{{ with .Type }}{{ . }}{{ end }}">
+<body class="{{ with .Type }}{{ .Get .Type }}{{ end }}">
   
