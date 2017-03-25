@@ -5,12 +5,12 @@ menu:
   main:
     - Name: "Home"
       Pre: ""
-      Weight: 1
+      Weight: 0
       Identifier: "home"
       URL: "/"
 
     - Name: "Articles"
       Pre: ""
-      Weight: 0
+      Weight: 1
       Identifier: "articles"
       URL: "/articles/"
