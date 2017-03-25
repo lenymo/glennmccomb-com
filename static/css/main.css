@@ -1359,9 +1359,18 @@ html {
 }
 
 .site-footer {
-  background: #eee;
-  padding: 60px 0;
+  background: #284c71;
+  color: rgba(255, 255, 255, 0.75);
   text-align: center;
+}
+
+.site-footer .footer-top {
+  padding: 60px 0;
+}
+
+.site-footer .footer-bottom {
+  background: #213f5e;
+  padding: 60px 0;
 }
 
 nav ul {

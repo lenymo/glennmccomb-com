@@ -4,8 +4,33 @@
 
 // This file contains all styles related to the footer of the site/application.
 
+$footer-font-color: rgba($white, .75);
+$footer-bg-color: $color-primary;
+
+$footer-bottom-bg-color: darken($footer-bg-color, 5%);
+
+
+//
+//  STYLES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
 .site-footer {
-  background: #eee;
-  padding: $gutter*4 0;
+  background: $footer-bg-color;
+  color: $footer-font-color;
   text-align: center;
+  .footer-top {
+    padding: $gutter*4 0;
+  }
+}
+
+
+//
+//  FOOTER BOTTOM
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.site-footer {
+  .footer-bottom {
+    background: $footer-bottom-bg-color;
+    padding: $gutter*4 0;
+  }
 }
