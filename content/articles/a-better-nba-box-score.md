@@ -58,6 +58,8 @@ These stats *do *actually work while a game is live but they’re buggy and I�
 
 You can [download the extension here](https://goo.gl/3DmHU1) and if you have any feedback please reach out [on Twitter](https://twitter.com/lenymo). If you like it please rate it in the Chrome store and share it with your friends.
 
+---
+
 ## Additional notes
 
 * If the advanced stats or play-by-play section ever stop working, try hitting the refresh icon in the bottom right corner.
