@@ -21,3 +21,12 @@ html {
 *, *::before, *::after {
   box-sizing: inherit;
 }
+
+p {
+  font-size: rem(21px);
+  
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+}
