@@ -6,16 +6,24 @@
 
   <section class="section section__article-header">
     <div class="container">
-      <h1 class="">{{ .Title }}</h1>
-      <date class="date">{{ .Date.Format "January" }} {{ .Date.Format "2" }}{{ if in (slice 1 21 31) .Date.Day}}st{{ else if in (slice 2 22) .Date.Day}}nd{{ else if in (slice 3 23) .Date.Day}}rd{{ else }}th{{ end }}, {{ .Date.Format "2006" }}</date>
-    </div>
+      <div class="row">
+        <div class="col-sm-8 offset-sm-2">
+          <h1 class="">{{ .Title }}</h1>
+          <date class="date">{{ .Date.Format "January" }} {{ .Date.Format "2" }}{{ if in (slice 1 21 31) .Date.Day}}st{{ else if in (slice 2 22) .Date.Day}}nd{{ else if in (slice 3 23) .Date.Day}}rd{{ else }}th{{ end }}, {{ .Date.Format "2006" }}</date>
+        </div><!-- .col -->
+      </div><!-- .row -->
+    </div><!-- .container -->
   </section><!-- .section__article-header -->
 
   <section class="section section__article-content">
     <div class="container">
-      <article>
-        {{ .Content }}
-      </article>
+      <div class="row">
+        <div class="col-sm-8 offset-sm-2">
+          <article>
+            {{ .Content }}
+          </article>
+        </div><!-- .col -->
+      </div><!-- .row -->
     </div><!-- .container -->
   </section><!-- .section__article-content -->
 
