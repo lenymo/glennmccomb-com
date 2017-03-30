@@ -36,12 +36,11 @@ collections:
         file: "data/social_links.yml"
         description: "Links to my social media profiles"
         fields:
-          - {label: "Twitter handle", name: "twitter", widget: "string"}
-          - {label: "Twitter URL", name: "twitter_url", widget: "string"}
-          - {label: "Instagram URL", name: "instagram", widget: "string"}
-          - {label: "GitHub URL", name: "github", widget: "string"}
-          - {label: "Dribbble URL", name: "dribbble", widget: "string"}
-          - {label: "LinkedIn URL", name: "linkedin", widget: "string"}
+          - {label: "Twitter", name: "twitter", widget: "string"}
+          - {label: "Instagram", name: "instagram", widget: "string"}
+          - {label: "GitHub", name: "github", widget: "string"}
+          - {label: "Dribbble", name: "dribbble", widget: "string"}
+          - {label: "LinkedIn", name: "linkedin", widget: "string"}
       
       # Add menu items here.
       # - name: "menu"

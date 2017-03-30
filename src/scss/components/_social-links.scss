@@ -3,5 +3,20 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .social-links {
+  
+}
 
+.social-links__item {
+  display: inline-block;
+}
+
+.social-links__link {
+  color: rgba($white, .5);
+  display: block;
+  padding: $gutter/2;
+
+  &:hover {
+    color: rgba($white, .75);
+    text-decoration: none;
+  }
 }
