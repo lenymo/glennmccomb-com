@@ -50,7 +50,8 @@
 
 @import 'components/button';
 @import 'components/nav';
-@import 'components/content-post';
+@import 'components/social-links';
+@import 'components/article-summary';
 
 
 //
@@ -58,6 +59,7 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 @import 'pages/home';
+@import 'pages/single-article';
 @import 'pages/404';
 
 

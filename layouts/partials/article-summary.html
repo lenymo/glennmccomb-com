@@ -1,0 +1,11 @@
+<article class="article-summary">
+  <a href="{{ .Permalink }}" class="article-summary__link" title="{{ .Title }}">
+    <h3 class="article-summary__title">
+      {{ .Title }}
+    </h3>
+    <date class="article-summary__date">{{ .Date.Format "January" }} {{ .Date.Format "2" }}{{ if in (slice 1 21 31) .Date.Day}}st{{ else if in (slice 2 22) .Date.Day}}nd{{ else if in (slice 3 23) .Date.Day}}rd{{ else }}th{{ end }}, {{ .Date.Format "2006" }}</date>
+    <div class="article-summary__excerpt">
+      {{ .Summary }}
+    </div>
+  </a>
+</article>

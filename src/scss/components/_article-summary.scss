@@ -1,0 +1,26 @@
+//
+//  CONTENT POST
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.article-summary {
+  margin-bottom: $gutter * 2;
+}
+
+.article-summary__link {
+  color: $base-font-color;
+  display: block;
+
+  &:hover {
+    color: $base-font-color;
+    text-decoration: none;
+
+    .article-summary__title {
+      text-decoration: underline;
+    }
+  }
+}
+
+.article-summary__title {
+  color: $link-font-color;
+  margin-bottom: 0;
+}

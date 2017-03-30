@@ -22,11 +22,19 @@ html {
   box-sizing: inherit;
 }
 
+
 p {
   font-size: rem(21px);
-  
+
   img {
     height: auto;
     max-width: 100%;
   }
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid $color-gray-e;
+  margin-bottom: $gutter*3;
+  margin-top: $gutter*3;
 }
