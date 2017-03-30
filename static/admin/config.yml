@@ -30,6 +30,18 @@ collections:
         description: "General site settings"
         fields:
           - {label: "Settings test", name: "settings_test", widget: "string"}
+
+      - name: "social-links"
+        label: "Social Links"
+        file: "data/social_links.yml"
+        description: "Links to my social media profiles"
+        fields:
+          - {label: "Twitter handle", name: "twitter", widget: "string"}
+          - {label: "Twitter URL", name: "twitter_url", widget: "string"}
+          - {label: "Instagram URL", name: "instagram", widget: "string"}
+          - {label: "GitHub URL", name: "github", widget: "string"}
+          - {label: "Dribbble URL", name: "dribbble", widget: "string"}
+          - {label: "LinkedIn URL", name: "linkedin", widget: "string"}
       
       # Add menu items here.
       # - name: "menu"
