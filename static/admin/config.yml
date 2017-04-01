@@ -41,6 +41,13 @@ collections:
           - {label: "GitHub", name: "github", widget: "string"}
           - {label: "Dribbble", name: "dribbble", widget: "string"}
           - {label: "LinkedIn", name: "linkedin", widget: "string"}
+
+      - name: "social-links-v2"
+        label: "Social Links v2"
+        file: "data/social_links_v2.yml"
+        description: "Links to my social media profiles"
+        fields:
+          - {label: "Social Links", name: "social-links", widget: "list", fields: [{label: Name, name: name, widget: string}, {label: Identifier, name: identifier, widget: string}, {label: URL, name: url, widget: string}, {label: Icon, name: icon, widget: string}]}
       
       # Add menu items here.
       # - name: "menu"
