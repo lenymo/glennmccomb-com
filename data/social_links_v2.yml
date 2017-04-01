@@ -1,21 +1,21 @@
 social_links:
-  - name: 'Twitter'
-    identifier: 'twitter'
+  - icon: ''
+    identifier: twitter
+    name: Twitter
     url: 'https://twitter.com/lenymo'
-    icon: ''
-  - name: 'Instagram'
-    identifier: 'instagram'
+  - icon: ''
+    identifier: instagram
+    name: Instagram
     url: 'https://www.instagram.com/lenymo'
-    icon: ''
-  - name: 'GitHub'
+  - icon: ''
     identifier: github
+    name: GitHub
     url: 'https://github.com/lenymo'
-    icon: ''
-  - name: 'Dribbble'
-    identifier: 'dribbble'
-    url: 'https://dribbble.com/lenymo'
-    icon: ''
-  - name: 'LinkedIn'
-    identifier: 'linkedin'
+  - icon: ''
+    identifier: linkedin
+    name: LinkedIn
     url: 'https://www.linkedin.com/in/glennmccomb'
-    icon: ''
+  - icon: ''
+    identifier: dribbble
+    name: Dribbble
+    url: 'https://dribbble.com/lenymo'
