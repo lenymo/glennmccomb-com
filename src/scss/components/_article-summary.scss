@@ -10,7 +10,9 @@
   color: $base-font-color;
   display: block;
 
-  &:hover {
+  &:hover,
+  &:active,
+  &:focus {
     color: $base-font-color;
     text-decoration: none;
 
