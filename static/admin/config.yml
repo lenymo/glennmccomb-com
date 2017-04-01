@@ -19,7 +19,7 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "SEO Description", name: "description", widget: "text", required: false, format: "YYYY-MM-DD"}
       - {label: "Body", name: "body", widget: "markdown"}
-      # - {label: Pricing, name: pricing, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Plans, name: plans, widget: list, fields: [{label: Plan, name: plan, widget: string}, {label: Price, name: price, widget: string}, {label: Description, name: description, widget: string}, {label: Items, name: items, widget: list}]}]}
+      - {label: Pricing, name: pricing, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Plans, name: plans, widget: list, fields: [{label: Plan, name: plan, widget: string}, {label: Price, name: price, widget: string}, {label: Description, name: description, widget: string}, {label: Items, name: items, widget: list}]}]}
 
   - name: "settings"
     label: "Settings"
@@ -39,9 +39,9 @@ collections:
           - {label: "Social Links", name: "social_links", widget: "list", fields: [{label: Name, name: name, widget: string}, {label: Identifier, name: identifier, widget: string}, {label: URL, name: url, widget: string}, {label: Icon, name: icon, widget: string}]}
       
       # Add menu items here.
-      # - name: "menu"
-      #   label: "Menu"
-      #   file: "config.yml"
-      #   description: "Main menu in site header"
-      #   fields:
-      #     - {label: "Menu items", name: "menu", widget: "list", fields: [{label: "Name", name: "Name", widget: "string"}, {label: "Weight", name: "Weight", widget: "string"}, {label: "Identifier", name: "Identifier", widget: "string"}, {label: "URL", name: "URL", widget: "string"}]}
+      - name: "menu"
+        label: "Menu"
+        file: "config.yml"
+        description: "Main menu in site header"
+        fields:
+          {label: Pricing, name: pricing, widget: object, fields: [{{label: "Main menu", name: "main", widget: "list", fields: [{label: "Name", name: "Name", widget: "string"}, {label: "Weight", name: "Weight", widget: "string"}, {label: "Identifier", name: "Identifier", widget: "string"}, {label: "URL", name: "URL", widget: "string"}]}}]}
