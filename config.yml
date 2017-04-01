@@ -1,14 +1,13 @@
-languageCode: "en-us"
-title: "Hugo Netlify CMS test"
-baseURL: "/"
+baseURL: /
+languageCode: en-us
 menu:
   main:
-    - Name: "Home"
-      Weight: 0
-      Identifier: "home"
-      URL: "/"
-
-    - Name: "Articles"
+    - Identifier: home
+      Name: Home
+      URL: /
+      Weight: '0'
+    - Identifier: articles
+      Name: Articles
+      URL: /articles/
       Weight: 1
-      Identifier: "articles"
-      URL: "/articles/"
+title: Hugo Netlify CMS test
