@@ -2,12 +2,16 @@ baseURL: /
 languageCode: en-us
 menu:
   main:
-    - Identifier: home
-      Name: Home
-      URL: /
-      Weight: '0'
     - Identifier: articles
       Name: Articles
       URL: /articles/
       Weight: 1
+    - Identifier: home
+      Name: Home
+      URL: /
+      Weight: '0'
+    - Identifier: work
+      Name: Work
+      URL: /work/
+      Weight: '2'
 title: Hugo Netlify CMS test
