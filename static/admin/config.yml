@@ -38,8 +38,7 @@ collections:
         fields:
           - {label: "Social Links", name: "social_links", widget: "list", fields: [{label: Name, name: name, widget: string}, {label: Identifier, name: identifier, widget: string}, {label: URL, name: url, widget: string}, {label: Icon, name: icon, widget: string}]}
       
-      # Add menu items here.
-      - name: "menu"
+      - name: "menu" # Add menu items here.
         label: "Menu"
         file: "config.yml"
         description: "Main menu in site header"
