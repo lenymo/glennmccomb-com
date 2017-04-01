@@ -1,6 +1,6 @@
 <div class="social-links">
   <ul class="social-links__list">
-    {{ range index .Site.Data.social_links_v2 "social_links" }}
+    {{ range index .Site.Data.social_links "social_links" }}
     <li class="social-links__item social-links__item__{{ .identifier }}">
       <a href="{{ .url }}" class="social-links__link" target="_blank">
         {{ .name }}
