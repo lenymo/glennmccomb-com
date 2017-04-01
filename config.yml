@@ -4,13 +4,11 @@ baseURL: "/"
 menu:
   main:
     - Name: "Home"
-      Pre: ""
       Weight: 0
       Identifier: "home"
       URL: "/"
 
     - Name: "Articles"
-      Pre: ""
       Weight: 1
       Identifier: "articles"
       URL: "/articles/"
