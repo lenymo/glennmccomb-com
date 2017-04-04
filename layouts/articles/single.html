@@ -7,7 +7,7 @@
   <section class="section section__article-header {{ with .Params.featured }}-has-featured{{ end }}" {{ with .Params.featured }}style="background-image:url({{ . }})"{{ end }}>
     <div class="container">
       <div class="row">
-        <div class="col-sm-8 offset-sm-2">
+        <div class="col-sm-10 offset-sm-1 col-lg-8 offset-lg-2">
           <h1 class="">{{ .Title }}</h1>
           <date class="date">{{ .Date.Format "January" }} {{ .Date.Format "2" }}{{ if in (slice 1 21 31) .Date.Day}}st{{ else if in (slice 2 22) .Date.Day}}nd{{ else if in (slice 3 23) .Date.Day}}rd{{ else }}th{{ end }}, {{ .Date.Format "2006" }}</date>
         </div><!-- .col -->
@@ -18,7 +18,7 @@
   <section class="section section__article-content">
     <div class="container">
       <div class="row">
-        <div class="col-sm-8 offset-sm-2">
+        <div class="col-sm-10 offset-sm-1 col-lg-8 offset-lg-2">
           <article>
             {{ .Content }}
           </article>

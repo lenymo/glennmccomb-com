@@ -3,8 +3,11 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .section__article-header {
-  background: $color-gray-e;
-  background-size: cover;
+  background-color: $color-gray-e;
+
+  &.-has-featured {
+    background-size: cover;
+  }
 }
 
 .section__article-content {

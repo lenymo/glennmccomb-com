@@ -24,7 +24,7 @@ gulp.task('scss', function () {
     .pipe(autoprefixer({
       browsers : ['last 20 versions']
     }))
-    .pipe(sourcemaps.write('.'))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('static/css'));
 });
 
