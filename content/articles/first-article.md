@@ -4,6 +4,7 @@ description: ''
 resources: []
 slug: first-article
 title: First Article
+featured: /img/uploads/2013-03-10_jerseyMaterial.jpg
 date: 2017-03-19T10:10:44.177Z
 ---
 
