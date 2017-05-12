@@ -22,7 +22,7 @@ In the early stages of development [Kevin Arnovitz](https://twitter.com/kevinar
 
 {{< tweet 794010513583677441 >}}
 
-As a man who appreciates a well baked cookie, I got to work and as you can see below the extension adds quite a few additional team stats. These calculations are based on formulas in [Basketball Reference’s glossary](http://www.basketball-reference.com/about/glossary.html).
+As an NBA fan who appreciates a well baked cookie, I got to work and as you can see below the extension adds quite a few additional team stats. These calculations are based on formulas in [Basketball Reference’s glossary](http://www.basketball-reference.com/about/glossary.html).
 
 ![null](/img/uploads/box-score-stats-team-stats.png)
 
