@@ -1,9 +1,8 @@
 ---
 title: A better NBA box score
-date: 2017-01-21T20:57:11+11:00
+date: 2017-01-21T09:57:11.000Z
 description: null
 ---
-
 After seeing a ton of respected NBA Twitter people — including [LeBron James](https://twitter.com/KingJames/status/784207016877256704) — complaining about poorly designed box scores, I endeavoured to improve on the existing ESPN box score with a [free Chrome extension ](https://goo.gl/3DmHU1)and it’s now my favourite way to follow an NBA game. Between this, Twitter and league pass, I am all set.
 
 ## Layout
@@ -22,7 +21,7 @@ In the early stages of development [Kevin Arnovitz](https://twitter.com/kevinar
 
 {{< tweet 794010513583677441 >}}
 
-As an NBA fan who appreciates a well baked cookie, I got to work and as you can see below the extension adds quite a few additional team stats. These calculations are based on formulas in [Basketball Reference’s glossary](http://www.basketball-reference.com/about/glossary.html).
+As an NBA fan who appreciates a well baked cookie, I got to work. As you can see below the extension adds quite a few additional team stats. These calculations are based on formulas in [Basketball Reference’s glossary](http://www.basketball-reference.com/about/glossary.html).
 
 ![null](/img/uploads/box-score-stats-team-stats.png)
 
@@ -52,7 +51,7 @@ Immediately following a game’s completion, advanced stats can be viewed for in
 
 ![null](/img/uploads/box-score-advanced-stats.png)
 
-These stats *do *actually work while a game is live but they’re buggy and I’m still working on performance tweaks. Hopefully soon these will be available during live games.
+These stats \*do \*actually work while a game is live but they’re buggy and I’m still working on performance tweaks. Hopefully soon these will be available during live games.
 
 ## Sound interesting?
 
@@ -63,15 +62,10 @@ You can [download the extension here](https://goo.gl/3DmHU1) and if you have a
 ## Additional notes
 
 * If the advanced stats or play-by-play section ever stop working, try hitting the refresh icon in the bottom right corner.
-
 * I’d love to be able to figure out who’s on the court at any given time and highlight them somehow but this is proving difficult.
-
 * The extension also works for college basketball although some features are limited.
-
 * There’s a lot of JavaScript running on the page so I don’t recommend having multiple tabs open at the same time. This can start to slow your browser down.
-
 * The extension requires access to your browsing data in order to work. This is just how Chrome extensions work — I don’t track who uses the extension or what other sites they are visiting. That would not be cool. The extension is designed for hoops fans so please trust me on this.
-
 * I have no plans for a Firefox extension. This is a personal project and my time is limited.
 
 ## The original box score
@@ -79,4 +73,3 @@ You can [download the extension here](https://goo.gl/3DmHU1) and if you have a
 For reference below is the original ESPN box score
 
 ![null](/img/uploads/espn-boxscores-before.png)
-
