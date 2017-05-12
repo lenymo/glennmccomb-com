@@ -21,9 +21,11 @@ In the early stages of development [Kevin Arnovitz](https://twitter.com/kevinar
 
 {{< tweet 794010513583677441 >}}
 
-As an NBA fan who appreciates a well baked cookie, I got to work. As you can see below the extension adds quite a few additional team stats. These calculations are based on formulas in [Basketball Reference’s glossary](http://www.basketball-reference.com/about/glossary.html).
+As an NBA fan who appreciates a well baked cookie, I got to work. As you can see below the extension adds quite a few additional team stats.
 
 ![null](/img/uploads/box-score-stats-team-stats.png)
+
+<small>These calculations are based on formulas in [Basketball Reference’s glossary](http://www.basketball-reference.com/about/glossary.html).</small>
 
 True to his word, Arnovitz sent me [delicious baked goods](https://twitter.com/lenymo/status/799756952335060992).
 
@@ -73,3 +75,4 @@ You can [download the extension here](https://goo.gl/3DmHU1) and if you have a
 For reference below is the original ESPN box score
 
 ![null](/img/uploads/espn-boxscores-before.png)
+
