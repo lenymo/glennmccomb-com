@@ -16,6 +16,8 @@ $heading-font-color: $base-font-color;
 $heading-link-font-color: $link-font-color;
 $heading-link-font-color-hover: darken($heading-link-font-color, 5%);
 
+$small-font-color: $color-gray-8;
+
 
 //
 //  FONT FAMILIES
@@ -200,6 +202,26 @@ p {
 
 blockquote {
   margin: 0;
+}
+
+
+//
+//  SMALL
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+small {
+  color: $small-font-color;
+  font-size: $small-font-size;
+
+  a {
+    color: $small-font-color;
+    text-decoration: underline;
+
+    &:hover {
+      color: $small-font-color;
+      text-decoration: none;
+    }
+  }
 }
 
 
