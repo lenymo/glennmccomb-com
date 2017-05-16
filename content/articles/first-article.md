@@ -5,6 +5,8 @@ resources: []
 slug: first-article
 title: First Article
 date: 2017-03-19T10:10:44.177Z
+categories:
+- Dev
 ---
 
 Something something.

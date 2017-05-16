@@ -26,3 +26,24 @@
   color: $link-font-color;
   margin-bottom: 0;
 }
+
+.article-summary__date {
+  display: inline-block;
+}
+
+
+.article-summary__categories {
+  display: inline-block;
+  list-style-type: none;
+}
+
+.article-summary__category {
+  background: #eee;
+  display: inline-block;
+  font-size: rem(10px);
+  font-weight: bold;
+  line-height: 1.1;
+  padding: $gutter/3 $gutter/2;
+  text-transform: uppercase;
+  vertical-align: top;
+}

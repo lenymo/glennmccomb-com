@@ -14,4 +14,7 @@ menu:
       Name: Work
       URL: /work/
       Weight: 2
+taxonomies:
+  category: categories
+  tag: "tags"
 title: Hugo Netlify CMS test

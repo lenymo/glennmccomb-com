@@ -4,6 +4,13 @@
       {{ .Title }}
     </h3>
     <date class="article-summary__date">{{ .Date.Format "January" }} {{ .Date.Format "2" }}{{ if in (slice 1 21 31) .Date.Day}}st{{ else if in (slice 2 22) .Date.Day}}nd{{ else if in (slice 3 23) .Date.Day}}rd{{ else }}th{{ end }}, {{ .Date.Format "2006" }}</date>
+    <ul class="article-summary__categories">
+      {{ range .Params.categories }}
+        <li class="article-summary__category article-summary__category-{{ . | urlize }}">
+          {{ . }}
+        </li>
+      {{ end }}
+    </ul>
     <div class="article-summary__excerpt">
       {{ .Summary }}
     </div>

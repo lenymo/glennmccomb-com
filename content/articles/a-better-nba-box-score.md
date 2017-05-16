@@ -2,6 +2,9 @@
 title: A better NBA box score
 date: 2017-01-21T09:57:11.000Z
 description: null
+categories:
+- NBA
+- Dev
 ---
 After seeing a ton of respected NBA Twitter people — including [LeBron James](https://twitter.com/KingJames/status/784207016877256704) — complaining about poorly designed box scores, I endeavoured to improve on the existing ESPN box score with a [free Chrome extension ](https://goo.gl/3DmHU1)and it’s now my favourite way to follow an NBA game. Between this, Twitter and league pass, I am all set.
 
