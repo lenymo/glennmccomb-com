@@ -6,6 +6,69 @@
   margin-bottom: $gutter * 2;
 }
 
+
+//
+//  DATE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.article-summary__date {
+  // color: $color-gray-6;
+  display: block;
+  font-family: $heading-font-family;
+  position: relative;
+  text-align: center;
+}
+
+.article-summary__date-day {
+  display: block;
+  font-size: rem(36px);
+  font-weight: bold;
+  line-height: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.article-summary__date-day-suffix {
+  font-size: rem(14px);
+  display: none;
+  text-transform: uppercase;
+}
+
+.article-summary__date-month {
+  display: block;
+  font-size: rem(14px);
+  font-weight: bold;
+  letter-spacing: rem(.5px);
+  text-transform: uppercase;
+}
+
+.article-summary__date-year {
+  bottom: -$gutter*1.2;
+  color: $color-gray-d;
+  font-size: rem(14px);
+  left: 50%;
+  letter-spacing: 2px;
+  line-height: 1.2;
+  opacity: 0;
+  position: absolute;
+  transition: all .2s ease;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.article-summary__date {
+  &:hover {
+    .article-summary__date-year {
+      opacity: 1;
+    }
+  }
+}
+
+
+//
+//  LINK
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
 .article-summary__link {
   color: $base-font-color;
   display: block;
@@ -22,13 +85,14 @@
   }
 }
 
+
+//
+//  TITLE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
 .article-summary__title {
   color: $link-font-color;
   margin-bottom: 0;
-}
-
-.article-summary__date {
-  display: inline-block;
 }
 
 

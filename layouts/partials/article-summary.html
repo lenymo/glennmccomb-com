@@ -1,18 +1,31 @@
 <article class="article-summary">
-  <a href="{{ .Permalink }}" class="article-summary__link" title="{{ .Title }}">
-    <h3 class="article-summary__title">
-      {{ .Title }}
-    </h3>
-    <date class="article-summary__date">{{ .Date.Format "January" }} {{ .Date.Format "2" }}{{ if in (slice 1 21 31) .Date.Day}}st{{ else if in (slice 2 22) .Date.Day}}nd{{ else if in (slice 3 23) .Date.Day}}rd{{ else }}th{{ end }}, {{ .Date.Format "2006" }}</date>
-    <ul class="article-summary__categories">
-      {{ range .Params.categories }}
-        <li class="article-summary__category article-summary__category-{{ . | urlize }}">
-          {{ . }}
-        </li>
-      {{ end }}
-    </ul>
-    <div class="article-summary__excerpt">
-      {{ .Summary }}
-    </div>
-  </a>
-</article>
+  <div class="row">
+    <div class="col-sm-2 col-md-2 col-lg-1">
+      <date class="article-summary__date">
+        <span class="article-summary__date-month">{{ .Date.Format "Jan" }}</span>
+        <span class="article-summary__date-day">{{ .Date.Format "2" }}<sup class="article-summary__date-day-suffix">{{ if in (slice 1 21 31) .Date.Day}}st{{ else if in (slice 2 22) .Date.Day}}nd{{ else if in (slice 3 23) .Date.Day}}rd{{ else }}th{{ end }}</sup></span>
+        <span class="article-summary__date-year">{{ .Date.Format "2006" }}</span>
+      </date>
+    </div><!-- .col -->
+
+    <div class="col-sm-8 col-md-8 col-lg-10">
+      <a href="{{ .Permalink }}" class="article-summary__link" title="{{ .Title }}">
+        <h3 class="article-summary__title">
+          {{ .Title }}
+        </h3>
+        <!-- <date class="article-summary__date">{{ .Date.Format "January" }} {{ .Date.Format "2" }}{{ if in (slice 1 21 31) .Date.Day}}st{{ else if in (slice 2 22) .Date.Day}}nd{{ else if in (slice 3 23) .Date.Day}}rd{{ else }}th{{ end }}, {{ .Date.Format "2006" }}</date> -->
+        <ul class="article-summary__categories">
+          {{ range .Params.categories }}
+            <li class="article-summary__category article-summary__category-{{ . | urlize }}">
+              {{ . }}
+            </li>
+          {{ end }}
+        </ul>
+        <div class="article-summary__excerpt">
+          {{ .Summary }}
+        </div>
+      </a>
+    </div><!-- .col -->
+  </div><!-- .row -->
+  
+</article><!-- .article-summary -->

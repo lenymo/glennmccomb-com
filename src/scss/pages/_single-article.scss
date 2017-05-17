@@ -2,14 +2,62 @@
 //  SINGLE ARTICLE
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
+
+//
+//  COLORS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$section-article-header-bg: $color-gray-e;
+
+
+//
+//  ARTICLE HEADER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
 .section__article-header {
-  background-color: $color-gray-e;
+  background-color: $section-article-header-bg;
 
   &.-has-featured {
     background-size: cover;
   }
 }
 
-.section__article-content {
+
+//
+//  CATEGORIES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.article-header__categories {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+// Add a comma after every category besides the last one.
+
+.article-header__category-link {
+  &:after {
+    content: ',';
+  }
+}
+
+.article-header__category {
+  display: inline-block;
+
+  &:last-of-type {
+    .article-header__category-link {
+      &:after {
+        content: '';
+      }
+    }
+  }
+}
+
+
+//
+//  ARTICLE BODY
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.section__article-body {
   
 }

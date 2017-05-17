@@ -4,7 +4,7 @@ description: ''
 resources: []
 slug: first-article
 title: First Article
-date: 2017-03-19T10:10:44.177Z
+date: 2017-02-08T10:10:44.177Z
 categories:
 - Dev
 ---
