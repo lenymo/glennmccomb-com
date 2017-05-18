@@ -4,8 +4,28 @@
 
 
 //
+//  COLORS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$page-header-bg: $color-gray-e;
+
+
+//
+//  STYLES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.section__page-header {
+  background-color: $page-header-bg;
+}
+
+
+//
 //  TITLE
 //––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.page-header__title {
+  margin-bottom: 0;
+}
 
 @include respond-above(xl) {
   .page-header__title {
