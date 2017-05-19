@@ -25,6 +25,7 @@ $small-font-color: $color-gray-8;
 
 $base-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $base-line-height: 1.7;
+$base-margin-bottom-xs: $base-font-size * $base-line-height;
 $base-margin-bottom: $base-font-size * ($base-line-height * 1.5);
 
 $heading-font-family: 'Volkhov', Georgia, Palatino, Garamond, Bookman, sans-serif;
@@ -38,7 +39,8 @@ $heading-line-height: 1.1;
 $heading-font-weight: bold;
 $heading-text-transform: none;    // Default = none
 $heading-letter-spacing: normal;  // Default = normal
-$heading-margin-bottom: $base-font-size * ($base-line-height * 1.5);
+$heading-margin-bottom-xs: $base-margin-bottom-xs;
+$heading-margin-bottom: $base-margin-bottom;
 
 $h1-font-size: rem(48px);
 $h1-font-size-sm: rem(36px);
@@ -97,7 +99,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: $heading-font-weight;
   line-height: $heading-line-height;
   margin: 0;
-  margin-bottom: $heading-margin-bottom;
+  margin-bottom: $heading-margin-bottom-xs;
 
   // Text transform
   @if $heading-text-transform != 'none' {
@@ -115,6 +117,12 @@ h1, h2, h3, h4, h5, h6 {
     &:hover {
       color: $heading-link-font-color-hover;
     }
+  }
+}
+
+@include respond-above(xs) {
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: $base-margin-bottom;
   }
 }
 
@@ -207,7 +215,7 @@ a {
 
 p {
   margin: 0;
-  margin-bottom: $base-margin-bottom;
+  margin-bottom: $base-margin-bottom-xs;
 
   &.lead {
     font-size: $lead-font-size;
@@ -217,6 +225,12 @@ p {
   img {
     height: auto;
     max-width: 100%;
+  }
+}
+
+@include respond-above(xs) {
+  p {
+    margin-bottom: $base-margin-bottom;
   }
 }
 
@@ -268,8 +282,8 @@ ol {
 hr {
   border: 0;
   border-top: 1px solid $color-gray-e;
-  margin-bottom: $gutter*3;
-  margin-top: $gutter*3;
+  margin-bottom: $gutter * 3;
+  margin-top: $gutter * 3;
 }
 
 

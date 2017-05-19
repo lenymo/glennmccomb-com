@@ -181,12 +181,16 @@ $article-font-size-sm: rem(21px);
   ul,
   ol {
     font-size: $article-font-size-xs;
-    margin-bottom: $base-margin-bottom;
+    margin-bottom: $base-margin-bottom-xs;
     margin-left: $gutter * 2;
 
     li {
-      margin-bottom: $base-margin-bottom / 2;
+      margin-bottom: $base-margin-bottom-xs / 2;
     }
+  }
+
+  blockquote {
+    font-size: $article-font-size-xs;
   }
 }
 
@@ -202,6 +206,15 @@ $article-font-size-sm: rem(21px);
 
     ul,
     ol {
+      font-size: $article-font-size-sm;
+      margin-bottom: $base-margin-bottom;
+
+      li {
+        margin-bottom: $base-margin-bottom / 2;
+      }
+    }
+
+    blockquote {
       font-size: $article-font-size-sm;
     }
   }
