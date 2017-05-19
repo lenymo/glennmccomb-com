@@ -160,6 +160,15 @@ $article-font-size-sm: rem(21px);
 //  ARTICLE BODY
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
+@include respond-below(sm) {
+  .section__article-body {
+    .row {
+      padding-left: $gutter * 2;
+      padding-right: $gutter * 2;
+    }
+  }
+}
+
 .article-body {
   p {
     font-size: $article-font-size-xs;
