@@ -7,6 +7,7 @@ var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var uglify = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
+var del = require('del');
 
 
 //
@@ -55,6 +56,21 @@ gulp.task('js', function() {
     .pipe(uglify())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('static/js'));
+});
+
+
+
+//
+//  IMAGES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+gulp.task('images', function() {
+  // del(['static/img/**/*']);
+  gulp.src('src/img/**/*')
+    // .pipe(hash())
+    .pipe(gulp.dest('static/img'));
+    // .pipe(hash.manifest('hash.json')
+    // .pipe(gulp.dest('data/images');
 });
 
 

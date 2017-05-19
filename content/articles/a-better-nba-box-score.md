@@ -6,17 +6,20 @@ categories:
 - NBA
 - Dev
 ---
-After seeing a ton of respected NBA Twitter people — including [LeBron James](https://twitter.com/KingJames/status/784207016877256704) — complaining about poorly designed box scores, I endeavoured to improve on the existing ESPN box score with a [free Chrome extension ](https://goo.gl/3DmHU1)and it’s now my favourite way to follow an NBA game. Between this, Twitter and league pass, I am all set.
+
+{{< lead >}}After seeing a ton of respected NBA Twitter people — including [LeBron James](https://twitter.com/KingJames/status/784207016877256704) — complaining about poorly designed box scores, I endeavoured to improve the existing ESPN box score with a [free Chrome extension](https://goo.gl/3DmHU1).{{< /lead >}}
+
+It's now my favourite way to follow an NBA game. Between this, Twitter and league pass I'm all set.
 
 ## Layout
 
-Using custom CSS I updated the layout of the box score page so as the two teams sit side by side and I stopped the chunky ESPN header from staying fixed at the top of the page as you scroll. Along with a few other visual tweaks, this provides more viewing space for the box scores themselves.
+Using custom CSS I updated the layout of the box score page so as the two teams sit side by side. I stopped the chunky ESPN header from staying fixed at the top of the page as you scroll. Along with a few other visual tweaks, this provides more viewing space for the box scores themselves.
 
 ESPN had left some tasty team stats hidden on the page including fast break points, points in the paint, total team turnovers and flagrant and technical fouls. These are once again visible.
 
 Play-by-play data is added to the page below the box score in an iframe and formatting is added to highlight key plays.
 
-![null](/img/uploads/box-score-layout.jpg)
+{{< row >}}![null](/img/uploads/box-score-layout.jpg) {{< /row >}}
 
 ## More stats please
 

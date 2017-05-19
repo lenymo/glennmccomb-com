@@ -24,8 +24,8 @@ $small-font-color: $color-gray-8;
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 $base-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$base-line-height: 1.5;
-$base-margin-bottom: $base-font-size * $base-line-height;
+$base-line-height: 1.7;
+$base-margin-bottom: $base-font-size * ($base-line-height * 1.5);
 
 $heading-font-family: 'Volkhov', Georgia, Palatino, Garamond, Bookman, sans-serif;
 
@@ -33,6 +33,12 @@ $heading-font-family: 'Volkhov', Georgia, Palatino, Garamond, Bookman, sans-seri
 //
 //  SIZES, WEIGHTS, ETC
 //––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$heading-line-height: 1.1;
+$heading-font-weight: bold;
+$heading-text-transform: none;    // Default = none
+$heading-letter-spacing: normal;  // Default = normal
+$heading-margin-bottom: $base-font-size * ($base-line-height * 1.5);
 
 $h1-font-size: rem(48px);
 $h1-font-size-sm: rem(36px);
@@ -58,13 +64,7 @@ $h5-font-family: $base-font-family;
 $h6-font-size: rem($base-font-size);
 $h6-font-family: $base-font-family;
 
-$heading-line-height: 1.25;
-$heading-font-weight: bold;
-$heading-text-transform: none;    // Default = none
-$heading-letter-spacing: normal;  // Default = normal
-$heading-margin-bottom: $base-font-size * $base-line-height;
-
-$lead-font-size: $h4-font-size;
+$lead-font-size: $h3-font-size;
 
 $small-font-size: rem( $base-font-size * .85 );
 
@@ -211,6 +211,11 @@ p {
   &.lead {
     font-size: $lead-font-size;
   }
+
+  img {
+    height: auto;
+    max-width: 100%;
+  }
 }
 
 
@@ -251,6 +256,18 @@ ul,
 ol {
   margin: 0;
   padding: 0;
+}
+
+
+//
+//  HR
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+hr {
+  border: 0;
+  border-top: 1px solid $color-gray-e;
+  margin-bottom: $gutter*3;
+  margin-top: $gutter*3;
 }
 
 

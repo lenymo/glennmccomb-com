@@ -18,6 +18,18 @@ $page-header-bg: $color-gray-e;
   background-color: $page-header-bg;
 }
 
+@include respond-above(md) {
+  .section__page-header {
+    padding: $gutter*6 0 ;
+  }
+}
+
+@include respond-above(lg) {
+  .section__page-header {
+    padding: $gutter*8 0 ;
+  }
+}
+
 
 //
 //  TITLE

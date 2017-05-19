@@ -6,14 +6,21 @@
 
   <section class="section section__page-header section__article-header {{ with .Params.featured }}-has-featured{{ end }}" {{ with .Params.featured }}style="background-image:url({{ . }})"{{ end }}>
     <div class="container">
+
+      <date class="article-header__date">
+        <span class="article-header__date-month">{{ .Date.Format "Jan" }}</span>
+        <span class="article-header__date-day">{{ .Date.Format "2" }}<sup class="article-header__date-day-suffix">{{ if in (slice 1 21 31) .Date.Day}}st{{ else if in (slice 2 22) .Date.Day}}nd{{ else if in (slice 3 23) .Date.Day}}rd{{ else }}th{{ end }}</sup></span>
+        <span class="article-header__date-year">{{ .Date.Format "2006" }}</span>
+      </date>
+
       <div class="row">
-        <div class="col-sm-10 offset-sm-1 col-lg-8 offset-lg-2">
+        <div class="col-8 offset-3 col-sm-6 offset-sm-3 col-md-8 offset-md-2 col-lg-8 offset-lg-2">
           <hgroup class="page-header__hgroup article-header__hgroup">
             <h1 class="page-header__title article-header__title">
               {{ .Title }}
             </h1>
 
-            <date class="article-header__date">{{ .Date.Format "January" }} {{ .Date.Format "2" }}{{ if in (slice 1 21 31) .Date.Day}}st{{ else if in (slice 2 22) .Date.Day}}nd{{ else if in (slice 3 23) .Date.Day}}rd{{ else }}th{{ end }}, {{ .Date.Format "2006" }}</date>
+            <!-- <date class="article-header__date">{{ .Date.Format "January" }} {{ .Date.Format "2" }}{{ if in (slice 1 21 31) .Date.Day}}st{{ else if in (slice 2 22) .Date.Day}}nd{{ else if in (slice 3 23) .Date.Day}}rd{{ else }}th{{ end }}, {{ .Date.Format "2006" }}</date> -->
 
             <ul class="article-header__categories">
               {{ range .Params.categories }}
@@ -25,14 +32,18 @@
           </hgroup><!-- .article-header__hgroup -->
         </div><!-- .col -->
       </div><!-- .row -->
+    <div class="background-device">
+      <div class="line-thick"></div>
+      <div class="line-thin"></div>
+    </div>
     </div><!-- .container -->
   </section><!-- .section__article-header -->
 
   <section class="section section__article-body">
     <div class="container">
       <div class="row">
-        <div class="col-sm-10 offset-sm-1 col-lg-8 offset-lg-2">
-          <article>
+        <div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+          <article class="article-body">
             {{ .Content }}
           </article>
         </div><!-- .col -->

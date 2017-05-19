@@ -29,8 +29,34 @@ $site-header-bg-color: $color-primary;
 .site-header__logo {
   display: inline-block;
   vertical-align: top;
+  position: relative;
+  z-index: 2;
+}
 
-  img {
-    vertical-align: top;
+.site-header__logo-img {
+  margin-bottom: -11px;
+  margin-top: -5px;
+  margin-right: $gutter;
+  vertical-align: top;
+  width: 70px;
+}
+
+.site-header__logo-svg {
+  height: 70px;
+  margin-bottom: -11px;
+  margin-top: -5px;
+  margin-right: $gutter;
+  vertical-align: top;
+  width: 70px;
+
+  .circle {
+    fill: $color-primary-darker;
+  }
+
+  #g,
+  #m {
+    use {
+      fill: mix($color-primary, $white, 50%);
+    }
   }
 }
