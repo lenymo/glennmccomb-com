@@ -263,6 +263,13 @@ small {
   }
 }
 
+p {
+  small {
+    display: inline-block;
+    line-height: 1.5;
+  }
+}
+
 
 //
 //  LISTS
