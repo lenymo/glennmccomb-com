@@ -1,0 +1,88 @@
+//
+//  ARTICLE DATE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+
+//
+//  VARIABLES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$article-date-font-family: $heading-font-family;
+$article-date-size: 70px;
+
+
+//
+//  STYLES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.article-date {
+  // background: lighten($color-gray-e, 3%);
+  background: rgba($white, .75);
+  // border: 5px solid rgba($black, .1);
+  border-radius: 50%;
+  box-shadow: 0 0 0 7px rgba($black, .05);
+  // color: $color-gray-6;
+  display: block;
+  font-family: $article-date-font-family;
+  height: $article-date-size;
+  left: 0;
+  padding: 10px;
+  position: absolute;
+  text-align: center;
+  transform: translateY(-75%) translateX(13px);
+  top: 50%;
+  width: $article-date-size;
+  z-index: 3;
+}
+
+.article-date__month {
+  // color: $color-secondary;
+  display: block;
+  font-size: rem(14px);
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: rem(.5px);
+  text-transform: uppercase;
+}
+
+.article-date__day {
+  // color: $color-primary;
+  display: block;
+  font-size: rem(36px);
+  font-weight: bold;
+  line-height: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.article-date__day-suffix {
+  font-size: rem(14px);
+  display: none;
+  text-transform: uppercase;
+}
+
+.article-date__year {
+  display: none;
+}
+
+// .article-date__year {
+//   bottom: 0;
+//   color: $color-gray-c;
+//   font-size: rem(12px);
+//   left: 50%;
+//   letter-spacing: 1px;
+//   line-height: 1;
+//   opacity: 0;
+//   position: absolute;
+//   transition: all .2s ease;
+//   transform: translateX(-50%);
+//   z-index: 0;
+// }
+
+// .article-date {
+//   &:hover {
+//     .article-date__year {
+//       opacity: 1;
+//     }
+//   }
+// }

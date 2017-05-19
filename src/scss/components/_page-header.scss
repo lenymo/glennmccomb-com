@@ -44,3 +44,37 @@ $page-header-bg: $color-gray-e;
     font-size: 72px;
   }
 }
+
+
+//
+//  BACKGROUND DEVICE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.background-device {
+  background: rgba($black, .05);
+  height: 50%;
+  height: 100%;
+  left: 0;
+  margin-left: 53px;
+  position: absolute;
+  top: 0;
+  transform: translateX(-100%);
+  width: 600px;
+
+  .line-thick,
+  .line-thin {
+    background: rgba($black, .05);
+    height: 100%;
+    position: absolute;
+  }
+
+  .line-thick {
+    right: 6px;
+    width: 5px;
+  }
+
+  .line-thin {
+    right: 0;
+    width: 3px;
+  }
+}

@@ -1,5 +1,41 @@
 //
-//  CONTENT POST
+//  ARTICLE SUMMARY
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+
+//
+//  SECTION
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.section__articles-summary {
+  padding: 0;
+}
+
+.articles-summary__wrapper {
+  padding: $section-padding-xs;
+}
+
+@include respond-above(xs) {
+  .articles-summary__wrapper {
+    padding: $section-padding-sm;
+  }
+}
+
+@include respond-above(sm) {
+  .articles-summary__wrapper {
+    padding: $section-padding-md;
+  }
+}
+
+@include respond-above(md) {
+  .articles-summary__wrapper {
+    padding: $section-padding-lg;
+  }
+}
+
+
+//
+//  ARTICLE SUMMARY
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .article-summary {
@@ -12,58 +48,19 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .article-summary__date {
-  // color: $color-gray-6;
-  display: block;
-  font-family: $heading-font-family;
-  margin-top: $gutter / 4;
-  position: relative;
-  text-align: center;
-}
+  background: $white;
+  box-shadow: 0 0 0 7px $color-gray-e;
+  height: 50px;
+  top: 0;
+  transform: translateY(0) translateX(22px);
+  width: 50px;
 
-.article-summary__date-day {
-  // color: $color-primary;
-  display: block;
-  font-size: rem(28px);
-  font-weight: bold;
-  line-height: 1;
-  position: relative;
-  z-index: 2;
-}
+  .article-date__month {
+    font-size: rem(10px);
+  }
 
-.article-summary__date-day-suffix {
-  font-size: rem(14px);
-  display: none;
-  text-transform: uppercase;
-}
-
-.article-summary__date-month {
-  // color: $color-secondary;
-  display: block;
-  font-size: rem(12px);
-  font-weight: bold;
-  letter-spacing: rem(.5px);
-  text-transform: uppercase;
-}
-
-.article-summary__date-year {
-  bottom: -$gutter;
-  color: $color-gray-c;
-  font-size: rem(12px);
-  left: 50%;
-  letter-spacing: 1px;
-  line-height: 1.2;
-  opacity: 0;
-  position: absolute;
-  transition: all .2s ease;
-  transform: translateX(-50%);
-  z-index: 0;
-}
-
-.article-summary__date {
-  &:hover {
-    .article-summary__date-year {
-      opacity: 1;
-    }
+  .article-date__day {
+    font-size: rem(24px);
   }
 }
 

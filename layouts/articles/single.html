@@ -7,10 +7,10 @@
   <section class="section section__page-header section__article-header {{ with .Params.featured }}-has-featured{{ end }}" {{ with .Params.featured }}style="background-image:url({{ . }})"{{ end }}>
     <div class="container">
 
-      <date class="article-header__date">
-        <span class="article-header__date-month">{{ .Date.Format "Jan" }}</span>
-        <span class="article-header__date-day">{{ .Date.Format "2" }}<sup class="article-header__date-day-suffix">{{ if in (slice 1 21 31) .Date.Day}}st{{ else if in (slice 2 22) .Date.Day}}nd{{ else if in (slice 3 23) .Date.Day}}rd{{ else }}th{{ end }}</sup></span>
-        <span class="article-header__date-year">{{ .Date.Format "2006" }}</span>
+      <date class="article-date article-header__date">
+        <span class="article-date__month">{{ .Date.Format "Jan" }}</span>
+        <span class="article-date__day">{{ .Date.Format "2" }}<sup class="article-date__day-suffix">{{ if in (slice 1 21 31) .Date.Day}}st{{ else if in (slice 2 22) .Date.Day}}nd{{ else if in (slice 3 23) .Date.Day}}rd{{ else }}th{{ end }}</sup></span>
+        <span class="article-date__year">{{ .Date.Format "2006" }}</span>
       </date>
 
       <div class="row">
