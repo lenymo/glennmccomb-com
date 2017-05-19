@@ -18,15 +18,22 @@
 
   <section class="section section__articles-summary">
     <div class="container">
-    {{ range first 10 .Data.Pages }}
-      {{ if eq .Type "articles" }}
+      <div class="articles-summary__wrapper">
+        {{ range first 10 .Data.Pages }}
+          {{ if eq .Type "articles" }}
 
-        {{ partial "article-summary" . }}
+            {{ partial "article-summary" . }}
 
-      {{ end }}
-    {{ end }}
+          {{ end }}
+        {{ end }}
+
+        <div class="background-device">
+          <div class="line-thick"></div>
+          <div class="line-thin"></div>
+        </div>
+      </div><!-- .articles-summary__wrapper -->
     </div><!-- .container -->
-  </section>
+  </section><!-- .section__articles-summary -->
 
   {{ partial "footer" . }}
   
