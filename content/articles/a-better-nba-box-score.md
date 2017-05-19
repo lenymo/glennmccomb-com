@@ -19,7 +19,7 @@ ESPN had left some tasty team stats hidden on the page including fast break poin
 
 Play-by-play data is added to the page below the box score in an iframe and formatting is added to highlight key plays.
 
-{{< row >}}![null](/img/uploads/box-score-layout.jpg) {{< /row >}}
+![null](/img/uploads/box-score-layout.jpg)
 
 ## More stats please
 
