@@ -20,7 +20,7 @@ $article-font-size-sm: rem(21px);
     height: 50px;
     // padding: 8px;
     transform: translateY(0) translateX(22px);
-    top: $gutter * 3;
+    top: $gutter*6;
     width: 50px;
 
     .article-date__month {
@@ -33,11 +33,33 @@ $article-font-size-sm: rem(21px);
   }
 }
 
+@include respond-above(xs) {
+  .article-header__date {
+    top: $gutter*8;
+    transform: translateY(0) translateX(12px);
+  }
+}
+
+@include respond-above(sm) {
+  .article-header__date {
+    top: $gutter*10;
+    // transform: translateY(0) translateX(12px);
+  }
+}
+
 @include respond-above(md) {
+  .article-header__date {
+    top: $gutter*12;
+    // transform: translateY(0) translateX(12px);
+  }
+}
+
+@include respond-above(lg) {
   .article-header__date {
     height: 100px;
     padding: $gutter;
-    transform: translateY(-65%) translateX(0);
+    transform: translateY(0) translateX(0);
+    top: $gutter*16;
     width: 100px;
 
     .article-date__month {
@@ -83,7 +105,7 @@ $article-font-size-sm: rem(21px);
   }
 
   .page-header__hgroup {
-    padding: $gutter*3 0;
+    padding: $gutter*6 0 $gutter*3;
     position: relative;
     z-index: 2;
   }
@@ -96,7 +118,7 @@ $article-font-size-sm: rem(21px);
 @include respond-above(xs) {
   .section__article-header {
     .page-header__hgroup {
-      padding: $gutter*4 0;
+      padding: $gutter*8 0 $gutter*4;
     }
   }
 }
@@ -104,7 +126,7 @@ $article-font-size-sm: rem(21px);
 @include respond-above(sm) {
   .section__article-header {
     .page-header__hgroup {
-      padding: $gutter*5 0;
+      padding: $gutter*10 0 $gutter*5;
     }
   }
 }
@@ -112,7 +134,7 @@ $article-font-size-sm: rem(21px);
 @include respond-above(md) {
   .section__article-header {
     .page-header__hgroup {
-      padding: $gutter*6 0;
+      padding: $gutter*12 0 $gutter*6;
     }
   }
 }
@@ -120,7 +142,7 @@ $article-font-size-sm: rem(21px);
 @include respond-above(lg) {
   .section__article-header {
     .page-header__hgroup {
-      padding: $gutter*8 0;
+      padding: $gutter*16 0 $gutter*8;
     }
   }
 }
