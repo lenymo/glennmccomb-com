@@ -56,23 +56,23 @@ $article-font-size-sm: rem(21px);
 
 @include respond-above(lg) {
   .article-header__date {
-    height: 100px;
+    height: 80px;
     padding: $gutter;
-    transform: translateY(0) translateX(0);
+    transform: translateY(0) translateX(7px);
     top: $gutter*16;
-    width: 100px;
+    width: 80px;
 
     .article-date__month {
-      font-size: rem(21px);
+      font-size: rem(14px);
       // letter-spacing: rem(2px);
     }
 
     .article-date__day {
-      font-size: rem(54px);
+      font-size: rem(40px);
     }
 
     .article-date__year {
-      font-size: rem(21px);
+      font-size: rem(14px);
     }
   }
 }
