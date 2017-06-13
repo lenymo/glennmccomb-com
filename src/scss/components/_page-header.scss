@@ -74,8 +74,7 @@ $page-header-bg: $color-gray-e;
   transform: translateX(-100%);
   width: 600px;
 
-  .line-thick,
-  .line-thin {
+  .line {
     background: rgba($black, .05);
     height: 100%;
     position: absolute;

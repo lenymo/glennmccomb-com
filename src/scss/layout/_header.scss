@@ -56,7 +56,8 @@ $site-header-bg-color: $color-primary;
   #g,
   #m {
     use {
-      fill: mix($color-primary, $white, 50%);
+      // fill: mix($color-primary, $white, 50%);
+      fill: rgba($white, .5);
     }
   }
 }

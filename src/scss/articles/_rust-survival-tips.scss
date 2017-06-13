@@ -6,8 +6,46 @@ $color-rust-red: #ce4837;
 $color-rust-dark-gray: #232323;
 $color-rust-light-gray: #a4a7a7;
 
+
+//
+//  SITE HEADER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.rust-survival-tips {
+  .site-header {
+    background: $color-rust-red;
+    // background: transparent;
+  }
+
+  .site-header__logo-svg .circle {
+    fill: darken($color-rust-red, 15%);
+  }
+}
+
+
+//
+//  PAGE HEADER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
 .rust-survival-tips {
   .section__page-header {
     background: $color-rust-dark-gray;
+
+    .background-device {
+      background: rgba($black, .5);
+
+      .line {
+        background: rgba($white, .125);
+      }
+    }
+  }
+
+  .article-header__date {
+    background: $color-rust-red;
+    color: $color-rust-dark-gray;
+  }
+
+  .page-header__title {
+    color: $color-rust-light-gray;
   }
 }

@@ -15,18 +15,18 @@ $site-nav-item-padding-md: $gutter $gutter*1.5;
 //  COLOR
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-$site-nav-bg-color: $site-header-bg-color;
+$site-nav-bg-color: transparent;
 
 // Standard nav item
 $site-nav-item-font-color: rgba($white, .75);
 $site-nav-item-bg-color: transparent;
 
 $site-nav-item-font-color-hover: $white;
-$site-nav-item-bg-color-hover: $color-primary-lighter;
+$site-nav-item-bg-color-hover: rgba($white, .1);
 
 // Current nav item
 $site-nav-item-current-font-color: $white;
-$site-nav-item-current-bg-color: $color-primary-lighter;
+$site-nav-item-current-bg-color: rgba($white, .1);
 
 
 //
