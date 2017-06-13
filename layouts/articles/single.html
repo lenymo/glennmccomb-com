@@ -4,7 +4,7 @@
 
   {{ partial "header" . }}
 
-  <section class="section section__page-header section__article-header {{ with .Params.featured }}-has-featured{{ end }} {{ with .Params.dark_bg }}-has-dark-bg{{ end }}" {{ with .Params.featured }}style="background-image:url({{ . }})"{{ end }}>
+  <section class="section section__page-header section__article-header {{ with .Params.featured }}-has-featured{{ end }} {{ with .Params.dark_bg }}-has-dark-bg{{ end }}">
     <div class="container">
 
       <date class="article-date article-header__date">
@@ -32,11 +32,9 @@
           </hgroup><!-- .article-header__hgroup -->
         </div><!-- .col -->
       </div><!-- .row -->
-    <div class="background-device">
-      <div class="line line-thick"></div>
-      <div class="line line-thin"></div>
-    </div>
+    {{ partial "background-device" . }}
     </div><!-- .container -->
+    <div class="article-header__featured" {{ with .Params.featured }}style="background-image:url({{ . }})"{{ end }}></div>
   </section><!-- .section__article-header -->
 
   <section class="section section__article-body">

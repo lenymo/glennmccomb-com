@@ -39,7 +39,7 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .article-summary {
-  margin-bottom: $gutter * 2;
+  margin-bottom: $gutter * 3;
 }
 
 
@@ -92,7 +92,7 @@
 
 .article-summary__title {
   color: $link-font-color;
-  margin-bottom: 0;
+  margin-bottom: $gutter;
 }
 
 
