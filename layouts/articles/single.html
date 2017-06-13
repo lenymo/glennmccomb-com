@@ -1,6 +1,6 @@
 {{ partial "head" . }}
 
-<body class="single-article">
+<body class="single-article {{ with .Params.custom_class }}{{ . }}{{ end }}">
 
   {{ partial "header" . }}
 
