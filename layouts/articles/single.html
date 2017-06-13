@@ -4,7 +4,7 @@
 
   {{ partial "header" . }}
 
-  <section class="section section__page-header section__article-header {{ with .Params.featured }}-has-featured{{ end }}" {{ with .Params.featured }}style="background-image:url({{ . }})"{{ end }}>
+  <section class="section section__page-header section__article-header {{ with .Params.featured }}-has-featured{{ end }} {{ with .Params.dark_bg }}-has-dark-bg{{ end }}" {{ with .Params.featured }}style="background-image:url({{ . }})"{{ end }}>
     <div class="container">
 
       <date class="article-date article-header__date">

@@ -47,6 +47,19 @@ $page-header-bg: $color-gray-e;
 
 
 //
+//  DARK BACKGROUND
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.section__page-header {
+  &.-has-dark-bg {
+    .page-header__title {
+      color: $white;
+    }
+  }
+}
+
+
+//
 //  BACKGROUND DEVICE
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
