@@ -24,6 +24,7 @@ $site-header-bg-color: $color-primary;
 .site-header {
   background: $site-header-bg-color;
   padding: $site-header-padding;
+  z-index: $z-index-site-header;
 }
 
 .site-header__logo {
