@@ -30,7 +30,7 @@ $site-header-bg-color: $color-primary;
   display: inline-block;
   vertical-align: top;
   position: relative;
-  z-index: 2;
+  z-index: $z-index-site-header-logo;
 }
 
 .site-header__logo-img {

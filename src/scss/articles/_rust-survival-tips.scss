@@ -14,11 +14,25 @@ $color-rust-light-gray: #a4a7a7;
 .rust-survival-tips {
   .site-header {
     background: $color-rust-red;
+    // background: $color-rust-dark-gray;
     // background: transparent;
   }
 
   .site-header__logo-svg .circle {
     fill: darken($color-rust-red, 15%);
+    // fill: $color-rust-red;
+    // fill: transparent;
+    // fill: darken($color-rust-dark-gray, 2%);
+    // fill: lighten($color-rust-dark-gray, 10%);
+  }
+     
+  #g,
+  #m {
+    use {
+      // fill: rgba($white, .25);
+      // fill: $color-rust-red;
+      // fill: $color-rust-dark-gray;
+    }
   }
 }
 
@@ -32,7 +46,7 @@ $color-rust-light-gray: #a4a7a7;
     background: $color-rust-dark-gray;
 
     .background-device {
-      background: rgba($black, .5);
+      background: rgba($black, .3);
 
       .line {
         background: rgba($white, .125);
@@ -40,12 +54,18 @@ $color-rust-light-gray: #a4a7a7;
     }
   }
 
+  .article-header__featured-image {
+    opacity: .2;
+  }
+
   .article-header__date {
     background: $color-rust-red;
+    box-shadow: 0 0 0 7px rgba($color-rust-red, .3);
     color: $color-rust-dark-gray;
   }
 
   .page-header__title {
     color: $color-rust-light-gray;
+    color: $white;
   }
 }

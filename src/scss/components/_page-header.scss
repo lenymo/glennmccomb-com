@@ -63,7 +63,9 @@ $page-header-bg: $color-gray-e;
 //  BACKGROUND IMAGE
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-.article-header__featured {
+.article-header__featured-image {
+  background-size: cover;
+  background-position: 50% 50%;
   height: 100%;
   left: 0;
   position: absolute;
@@ -86,6 +88,7 @@ $page-header-bg: $color-gray-e;
   top: 0;
   transform: translateX(-100%);
   width: 600px;
+  z-index: $z-index-background-device;
 
   .line {
     background: rgba($black, .05);
