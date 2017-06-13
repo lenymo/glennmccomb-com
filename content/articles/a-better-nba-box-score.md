@@ -1,10 +1,11 @@
 ---
+categories:
+  - NBA
+  - Dev
 title: A better NBA box score
 date: 2017-01-21T09:57:11.000Z
 description: null
-categories:
-- NBA
-- Dev
+custom_class: better-nba-boxscore
 ---
 
 {{< lead >}}After seeing a ton of respected NBA Twitter people — including [LeBron James](https://twitter.com/KingJames/status/784207016877256704) — complaining about poorly designed box scores, I endeavoured to improve the existing ESPN box score with a [free Chrome extension](https://goo.gl/3DmHU1).{{< /lead >}}
@@ -81,5 +82,6 @@ You can [download the extension here](https://goo.gl/3DmHU1) and if you have a
 For reference below is the original ESPN box score
 
 ![null](/img/uploads/espn-boxscores-before.png)
+
 
 
