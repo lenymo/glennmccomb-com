@@ -16,9 +16,9 @@ The first thing to know about Rust is that you will probably die. A lot. It's a 
 
 ## The Basics
 
-Once you've banged on some trees and [nodes](http://rust.wikia.com/wiki/Rocks) with your rock and collected some hemp there are a few items you'll want to craft (via "Q" or the quick craft menu):
+Once you've banged on some trees and [nodes](http://rust.wikia.com/wiki/Rocks) with your rock and collected some hemp there are a few items you'll want to craft (via "Q" or via the quick craft menu):
 
-- [Paper Map](http://rust.wikia.com/wiki/Paper_Map).
+- [Paper Map](http://rust.wikia.com/wiki/Paper_Map) <small>5 wood</small>
 - [Stone Hatchet](http://rust.wikia.com/wiki/Stone_Hatchet) <small>200 wood, 100 stone</small>
 - [Stone Pick Axe](http://rust.wikia.com/wiki/Stone_Pick_Axe) <small>250 wood, 125 stone</small>
 - [Bow and arrows](http://rust.wikia.com/wiki/Hunting_Bow) <small>200 wood, 50 cloth</small>
