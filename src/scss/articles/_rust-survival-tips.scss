@@ -27,15 +27,16 @@ $color-rust-light-gray: #a4a7a7;
     // fill: $color-rust-red;
     // fill: transparent;
     // fill: darken($color-rust-dark-gray, 2%);
-    // fill: lighten($color-rust-dark-gray, 10%);
-    // fill: $color-rust-dark-gray;
-    fill: rgba($white, .05);
+    // fill: lighten($color-rust-dark-gray, 5%);
+    fill: $color-rust-dark-gray;
+    // fill: rgba($white, .05);
+    // fill: #2d2d33;
   }
      
   #g,
   #m {
     use {
-      // fill: rgba($white, .25);
+      // fill: rgba($white, .15);
       // fill: $color-rust-red;
       // fill: $color-rust-dark-gray;
     }

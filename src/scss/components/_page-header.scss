@@ -37,6 +37,7 @@ $page-header-bg: $color-gray-e;
 
 .page-header__title {
   margin-bottom: 0;
+  letter-spacing: -.05em;
 }
 
 @include respond-above(xl) {
