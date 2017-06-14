@@ -248,7 +248,15 @@ $article-font-size-sm: rem(21px);
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .article-body__full-bleed {
+  margin-bottom: $base-margin-bottom-xs;
+
   img {
     width: 100%;
+  }
+}
+
+@include respond-above(xs) {
+  .article-body__full-bleed {
+    margin-bottom: $base-margin-bottom;
   }
 }
