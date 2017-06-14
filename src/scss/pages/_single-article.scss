@@ -207,7 +207,7 @@ $article-font-size-sm: rem(21px);
     margin-left: $gutter * 2;
 
     li {
-      margin-bottom: $base-margin-bottom-xs / 2;
+      margin-bottom: $base-margin-bottom-xs / 8;
     }
   }
 
@@ -232,7 +232,7 @@ $article-font-size-sm: rem(21px);
       margin-bottom: $base-margin-bottom;
 
       li {
-        margin-bottom: $base-margin-bottom / 2;
+        margin-bottom: $base-margin-bottom / 8;
       }
     }
 
