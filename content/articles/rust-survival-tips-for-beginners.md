@@ -37,9 +37,10 @@ You'll notice I've left clothes off the list. At this early stage unless you're 
 
 A few key objectives in the early game:
 
-1. Find an area to build and get a sleeping bag and stash down.
-2. Build a starter base and add a key lock / code lock.
-3. Craft a furnace.
+1. Find an area to build
+2. Get a sleeping bag and stash down
+3. Build a starter base and add a key lock / code lock
+4. Craft a furnace
 
 There's a lot more to it than this and I'll go into the details below.
 
@@ -94,6 +95,7 @@ Don't get too carried away building your first base. Your main priority here is 
 - [Rustafied getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
 - Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY&t=127s) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
 - Pepper The Red's [Top 10 best ways to survive Rust](https://www.youtube.com/watch?v=pULXsgBP-YY&t=1s). 
+
 
 
 
