@@ -25,11 +25,9 @@ Once you've banged on some trees and [nodes](http://rust.wikia.com/wiki/Rocks) w
 - [Wooden spear](http://rust.wikia.com/wiki/Wooden_Spear) <small>300 wood</small>
 - [Bandages](http://rust.wikia.com/wiki/Bandage) <small>4 cloth</small>
 
-All of these items help you farm resources, heal yourself and kill animals and other players.
+These items help you farm resources, heal yourself and kill animals and other players. My preferred weapon is the bow but the spear is handy for close quarters combat and for popping barrels.
 
-My preferred weapon is the bow but the spear is handy for close quarters combat and for popping barrels.
-
-You'll notice I've left clothes off the list. At this early stage unless you're in the snow there's not much point using cloth to craft clothes. You're better off saving it for a bow and sleeping bag (80 cloth combined)
+You'll notice I've left clothes off the list. At this early stage unless you're in the snow there's not much point using cloth to craft clothes. You're better off saving it for a bow and sleeping bag (80 cloth combined).
 
 
 
@@ -92,6 +90,7 @@ Don't get too carried away building your first base. Your main priority here is 
 - [Rustafied getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
 - Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY&t=127s) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
 - Pepper The Red's [Top 10 best ways to survive Rust](https://www.youtube.com/watch?v=pULXsgBP-YY&t=1s). 
+
 
 
 
