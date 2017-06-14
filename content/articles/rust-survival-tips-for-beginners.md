@@ -35,7 +35,12 @@ You'll notice I've left clothes off the list. At this early stage unless you're 
 {{< /article-body-full-bleed >}}
 
 
-## First things first
+## Choosing a server
+
+In order to figure out the mechanics of the game a quiet server with less than 50 players is a good place to start. Intuition would suggest that Facepunch's official servers are the safest place to start but they're riddled with cheaters and attract a less friendly crowd. A well maintained community server will keep tabs on cheaters and police players who are abusive or disrespectful. If you're playing on your own, look for solo/duo/trio servers as they restrict players to small groups and mean you'll avoid large clans and zergs.
+
+
+## Early game objectives
 
 A few key objectives in the early game:
 
@@ -49,7 +54,7 @@ There's a lot more to it than this and I'll go into the details below.
 
 ## Finding an area to build
 
-You can build just about anywhere on the map (besides around [monuments](http://rust.wikia.com/wiki/Category:Monuments) and [caves](http://rust.wikia.com/wiki/Cave)) but some areas are usually quieter than others. Most monuments draw a crowd and you'll get picked off while trying to make your start.
+You can build just about anywhere on the map (besides around [monuments](http://rust.wikia.com/wiki/Category:Monuments) and [caves](http://rust.wikia.com/wiki/Cave)) but some areas are generally quieter than others. Most monuments draw a crowd and you'll get picked off while trying to make your start.
 
 A good strategy is to quickly bang a tree after you've spawned and craft some paper and then a map. Run away from the beach so you don't get harassed by other nakeds and head inland away from monuments. 
 
