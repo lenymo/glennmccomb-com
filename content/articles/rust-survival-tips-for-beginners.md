@@ -14,6 +14,8 @@ custom_class: rust-survival-tips
 
 The first thing to know about Rust is that you will die. A lot. It's a grind and the more loot you gather the more frustrating it is. It's a part of the game though so don't sweat it, and don't expect sympathy from other players.
 
+<small>NOTE: This article is written at the time of [devblog 163](http://rust.facepunch.com/blog/devblog-163/) and may be out of date and innacurate after future updates.</small>
+
 ## The Basics
 
 Once you've banged on some trees and [nodes](http://rust.wikia.com/wiki/Rocks) with your rock and collected some hemp there are a few items you'll want to craft (via "Q" or the quick craft menu):
@@ -30,14 +32,16 @@ These items help you farm resources, heal yourself and kill animals and other pl
 You'll notice I've left clothes off the list. At this early stage unless you're in the snow there's not much point using cloth to craft clothes. You're better off saving it for a bow and sleeping bag (80 cloth combined).
 
 
+## Choosing a server
+
+In order to figure out the mechanics of the game a quiet server with less than 50 players is a good place to start. Intuition would suggest that Facepunch's official servers are the safest place to start but they're riddled with cheaters and attract a less friendly crowd. 
+
+A well maintained community server will keep tabs on cheaters and police players who are abusive or disrespectful. If you're playing on your own, look for solo/duo/trio servers as they restrict players to small groups and mean you'll avoid large clans and zergs.
+
+
 {{< article-body-full-bleed >}}
 ![Placeholder](http:\/\/via.placeholder.com\/350x50)
 {{< /article-body-full-bleed >}}
-
-
-## Choosing a server
-
-In order to figure out the mechanics of the game a quiet server with less than 50 players is a good place to start. Intuition would suggest that Facepunch's official servers are the safest place to start but they're riddled with cheaters and attract a less friendly crowd. A well maintained community server will keep tabs on cheaters and police players who are abusive or disrespectful. If you're playing on your own, look for solo/duo/trio servers as they restrict players to small groups and mean you'll avoid large clans and zergs.
 
 
 ## Early game objectives
@@ -60,37 +64,39 @@ A good strategy is to quickly bang a tree after you've spawned and craft some pa
 
 Part of the fun of Rust is learning the different characteristics of each area so don't be too fussed where you end up. However, initially the snow is challenging because you will die of cold overnight unless you have clothes and a fire.
 
-I've found the north just south of the snow to be a good place to start.
+I've found the northern parts of the map just south of the snow to be a good starter location.
 
 
 ## Getting a sleeping bag and stash down
 
 Once you've found an area to build you'll want to get a [sleeping bag](http://rust.wikia.com/wiki/Sleeping_Bag) down. Find some tall grass or bushes and plonk it down. This allows you to respawn in the area rather than on a random beach. 
 
-Next up craft a [small stash](http://rust.wikia.com/wiki/Small_Stash) and pop it down somewhere distinct that you will be able to remember. You will need to be able to find it to dump resources or if you respawn. The reason this is important is that you're going to bury your stash underground where no one can see it (including yourself). Because of the difficulties of locating a stash some people prefer a [wooden storage box](http://rust.wikia.com/wiki/Wood_Storage_Box) but this is much easier for other players to find - unless you find a box-sized rock to hide it in (which actually works a treat if you can pull it off).
+Next up craft a [small stash](http://rust.wikia.com/wiki/Small_Stash) and pop it down somewhere distinct that you will be able to remember. You will need to be able to find it to dump resources or if you respawn. The reason this is important is that you're going to bury your stash underground where no one can see it (including yourself). 
 
-Put your main resources in your stash (wood, stone, metal ore, sulfur ore and high quality metal ore) and continue foraging. You'll want to accumulate a decent amount of loot along the lines of:
+Because of the difficulties of locating a stash some people prefer a [wooden storage box](http://rust.wikia.com/wiki/Wood_Storage_Box). While this is easier for you to find, it's also much easier for other players to find. Not that it's possible to find a box-sized rock to hide your box. This works a treat if you can pull it off.
+
+Periodically dump your main resources in your stash (wood, stone, metal ore, sulfur ore and high quality metal ore) and continue foraging. You'll want to accumulate a decent amount of loot something along the lines of:
 
 - 2-4k wood
 - 1-4k stone
 - 300-500 metal ore
 - At least 30 cloth for a sleeping bag
 
-Of course the more you have the better but this is enough for your starter base.
+The more the better but this is enough for your starter base.
 
 
 ## Getting metal fragments
 
-Early on metal frags are difficult to come by. Occasionally a barrel will drop 10-15 of them but that's unusual. However, they're very important to help you get a code lock on the door of your starter base (100 metal frags). Code locks are way more secure than key locks so if you're anywhere near a lighthouse or harbour it's worth your while finding a recycling station and cashing in any components you find. 
+Early on metal frags are difficult to come by. Occasionally a barrel will drop 10-15 of them but that's unusual. However, they're very important to help code lock the door of your starter base (100 metal frags). Code locks are way more secure than key locks so if you're anywhere near a lighthouse or harbour it's worth your while finding a recycling station and cashing in any components you find. 
 
-Gears, pipes, springs and semi-automatic bodies are crucial for later on but propane tanks and sheet metal will give you 50 and 100 metal frags respectively without mortgaging your future too much.
+Gears, pipes, springs and semi-automatic bodies will be useful very soon but you won't miss propane tanks and sheet metal and they'll give you 50 and 100 metal frags respectively.
 
 <small>NOTE: I mention the harbour recycler because harbours have lower tier loot crates and are less attractive to potentially experienced (and probably armed) players.</small>
 
 
 ## Building a starter base
 
-Don't get too carried away building your first base. Your main priority here is to get a safe place to store your loot.
+Don't get too carried away building your first base. Your main priority here is safely securing your loot so you can build up your gear and start causing mayhem.
 
 
 ## Crafting a furnace
