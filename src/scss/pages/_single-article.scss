@@ -198,6 +198,12 @@ $article-font-size-sm: rem(21px);
     &.lead {
       font-size: rem(21px);
     }
+
+    small {
+      a {
+        text-decoration: none;
+      }
+    }
   }
 
   ul,
@@ -208,6 +214,20 @@ $article-font-size-sm: rem(21px);
 
     li {
       margin-bottom: $base-margin-bottom-xs / 8;
+    }
+  }
+
+  p,
+  ul,
+  ol {
+    a {
+      border-bottom: 2px solid $color-gray-e;
+      transition: all .1s ease;
+
+      &:hover {
+        border-bottom: 2px solid $link-font-color-hover;
+        text-decoration: none;
+      }
     }
   }
 
