@@ -10,26 +10,27 @@ custom_class: rust-survival-tips
 ---
 {{< lead >}}A grand introduction.{{< /lead >}}
 
-[Rust](http://rust.facepunch.com/) is one of the most popular titles in a new breed of first-person survival games pioneered by [DayZ](https://www.bistudio.com/games/dayz). The learning curve is savage and there is literally no on-boarding at the moment. The game is in [early access](https://en.wikipedia.org/wiki/Early_access) and [the devs](http://www.facepunchstudios.com/) are planning to improve the experience for first-timers before officially launching. For now though you're on your own. 
+[Rust](http://rust.facepunch.com/) is one of the most popular titles in a new breed of first-person survival games pioneered by [DayZ](https://www.bistudio.com/games/dayz). The learning curve is savage and there is literally no on-boarding at the moment. The game is in [early access](https://en.wikipedia.org/wiki/Early_access) and [the devs](http://www.facepunchstudios.com/) are planning to improve the experience for first-timers before officially launching but for now you're on your own. 
 
-The first thing to know about Rust is that you will die. A lot. It's a grind and the more loot you gather the more frustrating it is. It's a part of the game though so don't sweat it, and don't expect sympathy from other players.
+The first thing to know about Rust is that you will die. A lot. It's a grind and the more loot you gather the more frustrating it is. It's a part of the game though so don't sweat it. And don't expect sympathy from other players.
 
 <small>NOTE: This article is written at the time of [devblog 163](http://rust.facepunch.com/blog/devblog-163/) and may be out of date and innacurate after future updates.</small>
 
 ## The Basics
 
-Once you've banged on some trees and [nodes](http://rust.wikia.com/wiki/Rocks) with your rock and collected some hemp there are a few items you'll want to craft (via "Q" or the quick craft menu):
+Once you've banged on a few trees and [nodes](http://rust.wikia.com/wiki/Rocks) with your rock and collected some hemp there are a few items you'll want to craft (via "Q" or the quick craft menu):
 
 - [Paper Map](http://rust.wikia.com/wiki/Paper_Map) <small>5 wood</small>
 - [Stone Hatchet](http://rust.wikia.com/wiki/Stone_Hatchet) <small>200 wood, 100 stone</small>
 - [Stone Pick Axe](http://rust.wikia.com/wiki/Stone_Pick_Axe) <small>250 wood, 125 stone</small>
-- [Bow and arrows](http://rust.wikia.com/wiki/Hunting_Bow) <small>200 wood, 50 cloth</small>
+- [Bow](http://rust.wikia.com/wiki/Hunting_Bow) <small>200 wood, 50 cloth</small>
+- [Arrows](http://rust.wikia.com/wiki/Wooden_Arrow) <small>25 wood, 10 stone</small>
 - [Wooden spear](http://rust.wikia.com/wiki/Wooden_Spear) <small>300 wood</small>
 - [Bandages](http://rust.wikia.com/wiki/Bandage) <small>4 cloth</small>
 
-These items help you farm resources, heal yourself and kill animals and other players. My preferred weapon is the bow but the spear is handy for close quarters combat and for popping barrels.
+These items help you farm resources, kill animals and other players and heal yourself. My preferred weapon is the bow but the spear is handy for close quarters combat and for popping barrels.
 
-You'll notice I've left clothes off the list. At this early stage unless you're in the snow there's not much point using cloth to craft clothes. You're better off saving it for a bow and sleeping bag (80 cloth combined).
+You'll notice I've left clothes off the list. At this early stage unless you're in the snow there's not much point using your cloth on clothes. You're better off saving it for a bow and sleeping bag (50 and 30 cloth respectively).
 
 
 ## Choosing a server
@@ -50,7 +51,7 @@ A few key objectives in the early game:
 
 1. Find an area to build
 2. Get a sleeping bag and stash down
-3. Build a starter base and add a key lock / code lock
+3. Build a starter base
 4. Craft a furnace
 
 There's a lot more to it than this and I'll go into detail below.
@@ -85,9 +86,11 @@ Periodically dump your main resources in your stash (wood, stone, metal ore, sul
 The more the better but this is enough for your starter base.
 
 
-## Getting metal fragments
+## Getting metal frags
 
-Early on metal frags are difficult to come by. Occasionally a barrel will drop 10-15 of them but that's unusual. However, they're very important to help code lock the door of your starter base (100 metal frags). Code locks are way more secure than key locks so if you're anywhere near a lighthouse or harbour it's worth your while finding a recycling station and cashing in any components you find. 
+Early on metal fragments are difficult to come by. Occasionally a barrel will drop 10-15 of them but that's unusual. You can get metal frags by roasting metal ore but you need 50 [low grade fuel](http://rust.wikia.com/wiki/Low_Grade_Fuel) for a [furnace](http://rust.wikia.com/wiki/Furnace) and that's a challenge in itself. 
+
+However, metal frags very important to help [code lock](http://rust.wikia.com/wiki/Code_Lock) the door of your starter base (100 metal frags). Code locks are way more secure than key locks so if you're anywhere near a lighthouse or harbour it's worth your while finding a recycling station and cashing in any components you find. 
 
 Gears, pipes, springs and semi-automatic bodies will be useful very soon but you won't miss propane tanks and sheet metal and they'll give you 50 and 100 metal frags respectively.
 
@@ -106,7 +109,7 @@ Don't get too carried away building your first base. Your main priority here is 
 ## Further reading
 
 - [Rustafied getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
-- Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY&t=127s) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
+- Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
 - Pepper The Red's [Top 10 best ways to survive Rust](https://www.youtube.com/watch?v=pULXsgBP-YY&t=1s). 
 
 
