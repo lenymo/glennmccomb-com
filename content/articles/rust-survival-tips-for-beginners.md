@@ -10,13 +10,13 @@ custom_class: rust-survival-tips
 ---
 {{< lead >}}A grand introduction.{{< /lead >}}
 
-Rust is currently the most popular title in a new breed of first-person survival games first pioneered by [DayZ](https://www.bistudio.com/games/dayz). The learning curve is savage and there is literally no on-boarding at all. The game is in [early access](https://en.wikipedia.org/wiki/Early_access) and [the devs](http://www.facepunchstudios.com/) are planning to improve the experience for first-timers but for now you're on your own. 
+[Rust](http://rust.facepunch.com/) is one of the most popular titles in a new breed of first-person survival games pioneered by [DayZ](https://www.bistudio.com/games/dayz). The learning curve is savage and there is literally no on-boarding at the moment. The game is in [early access](https://en.wikipedia.org/wiki/Early_access) and [the devs](http://www.facepunchstudios.com/) are planning to improve the experience for first-timers before officially launching. For now though you're on your own. 
 
-The first thing to know about Rust is that you will probably die. A lot. It's a grind and the more loot you gather the more frustrating it is. It's a part of the game though so don't sweat it. And don't expect any sympathy from other players.
+The first thing to know about Rust is that you will die. A lot. It's a grind and the more loot you gather the more frustrating it is. It's a part of the game though so don't sweat it, and don't expect sympathy from other players.
 
 ## The Basics
 
-Once you've banged on some trees and [nodes](http://rust.wikia.com/wiki/Rocks) with your rock and collected some hemp there are a few items you'll want to craft (via "Q" or via the quick craft menu):
+Once you've banged on some trees and [nodes](http://rust.wikia.com/wiki/Rocks) with your rock and collected some hemp there are a few items you'll want to craft (via "Q" or the quick craft menu):
 
 - [Paper Map](http://rust.wikia.com/wiki/Paper_Map) <small>5 wood</small>
 - [Stone Hatchet](http://rust.wikia.com/wiki/Stone_Hatchet) <small>200 wood, 100 stone</small>
@@ -30,16 +30,19 @@ These items help you farm resources, heal yourself and kill animals and other pl
 You'll notice I've left clothes off the list. At this early stage unless you're in the snow there's not much point using cloth to craft clothes. You're better off saving it for a bow and sleeping bag (80 cloth combined).
 
 
-{{< article-full-bleed >}}![Placeholder](http:\/\/via.placeholder.com\/350x100){{< /article-full-bleed >}}
+{{< article-body-full-bleed >}}
+![Placeholder](http:\/\/via.placeholder.com\/350x100)
+{{< /article-body-full-bleed >}}
 
 
 ## First things first
 
 A few key objectives in the early game:
 
-1. Find an area to build and get a sleeping bag and stash down.
-2. Build a starter base and add a key lock / code lock.
-3. Craft a furnace.
+1. Find an area to build
+2. Get a sleeping bag and stash down
+3. Build a starter base and add a key lock / code lock
+4. Craft a furnace
 
 There's a lot more to it than this and I'll go into the details below.
 
@@ -94,6 +97,8 @@ Don't get too carried away building your first base. Your main priority here is 
 - [Rustafied getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
 - Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY&t=127s) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
 - Pepper The Red's [Top 10 best ways to survive Rust](https://www.youtube.com/watch?v=pULXsgBP-YY&t=1s). 
+
+
 
 
 
