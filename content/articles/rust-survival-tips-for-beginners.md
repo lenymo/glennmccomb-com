@@ -16,7 +16,7 @@ The first thing to know about Rust is that you will probably die. A lot. It's a 
 
 ## The Basics
 
-Once you've banged on some trees and [nodes](http://rust.wikia.com/wiki/Rocks) with your rock and collected some hemp there are a few items you'll want to craft (via "Q" or via the quick craft menu):
+Once you've banged on some trees and [nodes](http://rust.wikia.com/wiki/Rocks) with your rock and collected some hemp there are a few items you'll want to craft (via "Q" or the quick craft menu):
 
 - [Paper Map](http://rust.wikia.com/wiki/Paper_Map).
 - [Stone Hatchet](http://rust.wikia.com/wiki/Stone_Hatchet) <small>200 wood, 100 stone</small>
@@ -92,6 +92,7 @@ Don't get too carried away building your first base. Your main priority here is 
 - [Rustafied getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
 - Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY&t=127s) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
 - Pepper The Red's [Top 10 best ways to survive Rust](https://www.youtube.com/watch?v=pULXsgBP-YY&t=1s). 
+
 
 
 
