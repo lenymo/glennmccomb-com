@@ -6,17 +6,29 @@ description: null
 dark_bg: null
 custom_class: rust-survival-tips
 ---
-## These be the tips
+{{< lead >}}A grand introduction.{{< /lead >}}
 
-This is where the content goes.
+Rust is currently the most popular title in a new breed of first-person survival games first pioneered by [DayZ](https://www.bistudio.com/games/dayz). The learning curve is savage and there is literally no on-boarding at all. The game is in [early access](https://en.wikipedia.org/wiki/Early_access) and [the devs](http://www.facepunchstudios.com/) are planning to improve the experience for first-timers but for now you're on your own. 
 
-## 1) Survival tip number one
+## First things first
 
-Taxidermy unicorn sriracha, squid crucifix four loko hexagon trust fund umami air plant occupy palo santo. Meh cred try-hard skateboard twee. Artisan blue bottle taiyaki, twee polaroid drinking vinegar hexagon pork belly portland direct trade. Hot chicken freegan heirloom tilde, pok pok literally edison bulb hexagon single-origin coffee.
+A couple of key objectives in the early game:
 
-## 2) Survival tip number two
+1. Find an area to build and get a sleeping bag and stash down.
+2. Build a starter base and add a key lock / code lock.
+3. Craft a furnace.
 
-Something something something. VHS woke cold-pressed air plant. Etsy organic cornhole jianbing cred whatever, pickled fashion axe echo park hell of actually fixie. Hell of post-ironic sartorial biodiesel art party, schlitz 90's tousled cold-pressed banh mi live-edge plaid.
+There's a lot more to it than this and I'll go into the details below.
+
+## 1) Find an area to build
+
+
+
+## 2) Build a starter base
+
+## 3) Crafting a furnace
+
+
 
 
 
