@@ -49,7 +49,7 @@ A few key objectives in the early game:
 3. Build a starter base and add a key lock / code lock
 4. Craft a furnace
 
-There's a lot more to it than this and I'll go into the details below.
+There's a lot more to it than this and I'll go into detail below.
 
 
 ## Finding an area to build
