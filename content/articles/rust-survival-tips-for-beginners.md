@@ -31,7 +31,7 @@ You'll notice I've left clothes off the list. At this early stage unless you're 
 
 
 {{< article-body-full-bleed >}}
-![Placeholder](http:\/\/via.placeholder.com\/350x100)
+![Placeholder](http:\/\/via.placeholder.com\/350x50)
 {{< /article-body-full-bleed >}}
 
 
