@@ -6,6 +6,10 @@ description: null
 dark_bg: null
 custom_class: rust-survival-tips
 ---
+{{< lead >}}A grand introduction.{{< /lead >}}
+
+Rust is currently the most popular title in a new breed of first-person survival games first pioneered by [DayZ](https://www.bistudio.com/games/dayz). The learning curve is savage and there is literally no on-boarding at all. The game is in [early access](https://en.wikipedia.org/wiki/Early_access) and [the devs](http://www.facepunchstudios.com/) are planning to improve the experience for first-timers but for now you're on your own. 
+
 ## First things first
 
 A couple of key objectives in the early game:
@@ -23,6 +27,7 @@ There's a lot more to it than this and I'll go into the details below.
 ## 2) Build a starter base
 
 ## 3) Crafting a furnace
+
 
 
 
