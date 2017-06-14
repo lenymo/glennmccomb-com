@@ -6,17 +6,23 @@ description: null
 dark_bg: null
 custom_class: rust-survival-tips
 ---
-## These be the tips
+## First things first
 
-This is where the content goes.
+A couple of key objectives in the early game:
 
-## 1) Survival tip number one
+1) Find an area to build and get a sleeping bag and stash down.
+2) Build a starter base and add a key lock / code lock.
+3) Craft a furnace.
 
-Taxidermy unicorn sriracha, squid crucifix four loko hexagon trust fund umami air plant occupy palo santo. Meh cred try-hard skateboard twee. Artisan blue bottle taiyaki, twee polaroid drinking vinegar hexagon pork belly portland direct trade. Hot chicken freegan heirloom tilde, pok pok literally edison bulb hexagon single-origin coffee.
+There's a lot more to it than this and I'll go into the details below.
 
-## 2) Survival tip number two
+## 1) Find an area to build
 
-Something something something. VHS woke cold-pressed air plant. Etsy organic cornhole jianbing cred whatever, pickled fashion axe echo park hell of actually fixie. Hell of post-ironic sartorial biodiesel art party, schlitz 90's tousled cold-pressed banh mi live-edge plaid.
+
+
+## 2) Build a starter base
+
+## 3) Crafting a furnace
 
 
 
