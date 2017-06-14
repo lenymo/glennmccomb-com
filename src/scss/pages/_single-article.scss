@@ -241,3 +241,14 @@ $article-font-size-sm: rem(21px);
     }
   }
 }
+
+
+//
+//  ARTICLE FULL BLEED
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.article-body__full-bleed {
+  img {
+    width: 100%;
+  }
+}
