@@ -48,6 +48,11 @@ A good strategy is to bang
 
 
 
+## Further reading
+
+- [Rustafied getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
+- Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY&t=127s) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
+- Pepper The Red's [Top 10 best ways to survive Rust](https://www.youtube.com/watch?v=pULXsgBP-YY&t=1s). 
 
 
 
