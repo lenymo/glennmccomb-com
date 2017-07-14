@@ -16,6 +16,8 @@ The first thing to know about Rust is that you will die. A lot. It's a grind and
 
 <small>NOTE: This article is written at the time of [devblog 163](http://rust.facepunch.com/blog/devblog-163/) and may be out of date and innacurate after future updates.</small>
 
+---
+
 ## The Basics
 
 Once you've banged on a few trees and [nodes](http://rust.wikia.com/wiki/Rocks) with your rock and collected some hemp there are a few items you'll want to craft (via "Q" or the quick craft menu):
@@ -32,6 +34,7 @@ These items help you farm resources, kill animals and other players and heal you
 
 You'll notice I've left clothes off the list. At this early stage unless you're in the snow there's not much point using your cloth on clothes. You're better off saving it for a bow and sleeping bag (50 and 30 cloth respectively).
 
+---
 
 ## Choosing a server
 
@@ -44,6 +47,7 @@ A well maintained community server will keep tabs on cheaters and police players
 ![Placeholder](http:\/\/via.placeholder.com\/350x50)
 {{< /article-body-full-bleed >}}
 
+---
 
 ## Early game objectives
 
@@ -57,7 +61,7 @@ A few key objectives in the early game:
 There's a lot more to it than this and I'll go into detail below.
 
 
-## Finding an area to build
+### Finding an area to build
 
 You can build just about anywhere on the map (besides around [monuments](http://rust.wikia.com/wiki/Category:Monuments) and [caves](http://rust.wikia.com/wiki/Cave)) but some areas are generally quieter than others. Most monuments draw a crowd and you'll get picked off while trying to make your start.
 
@@ -68,7 +72,7 @@ Part of the fun of Rust is learning the different characteristics of each area s
 I've found the northern parts of the map just south of the snow to be a good starter location.
 
 
-## Getting a sleeping bag and stash down
+### Getting a sleeping bag and stash down
 
 Once you've found an area to build you'll want to get a [sleeping bag](http://rust.wikia.com/wiki/Sleeping_Bag) down. Find some tall grass or bushes and plonk it down. This allows you to respawn in the area rather than on a random beach. 
 
@@ -86,7 +90,7 @@ Periodically dump your main resources in your stash (wood, stone, metal ore, sul
 The more the better but this is enough for your starter base.
 
 
-## Getting metal frags
+### Getting metal frags
 
 Early on metal fragments are difficult to come by. Occasionally a barrel will drop 10-15 of them but that's unusual. You can get metal frags by roasting metal ore but you need 50 [low grade fuel](http://rust.wikia.com/wiki/Low_Grade_Fuel) for a [furnace](http://rust.wikia.com/wiki/Furnace) and that's a challenge in itself. 
 
@@ -97,12 +101,12 @@ Gears, pipes, springs and semi-automatic bodies will be useful very soon but you
 <small>NOTE: I mention the harbour recycler because harbours have lower tier loot crates and are less attractive to potentially experienced (and probably armed) players.</small>
 
 
-## Building a starter base
+### Building a starter base
 
 Don't get too carried away building your first base. Your main priority here is safely securing your loot so you can build up your gear and start causing mayhem.
 
 
-## Crafting a furnace
+### Crafting a furnace
 
 
 
@@ -111,6 +115,7 @@ Don't get too carried away building your first base. Your main priority here is 
 - [Rustafied getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
 - Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
 - Pepper The Red's [Top 10 best ways to survive Rust](https://www.youtube.com/watch?v=pULXsgBP-YY&t=1s). 
+
 
 
 
