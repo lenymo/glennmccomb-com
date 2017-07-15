@@ -25,7 +25,7 @@
         </ul>-->
         {{ end }}
         <div class="article-summary__excerpt">
-          {{ .Summary | markdownify }}
+          {{ printf "%s" .Summary | markdownify }}
         </div>
       </a>
     </div><!-- .col -->
