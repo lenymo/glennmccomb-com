@@ -39,7 +39,13 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .article-summary {
-  margin-bottom: $gutter * 3;
+  margin-bottom: $gutter * 2;
+}
+
+@include respond-above(xs) {
+  .article-summary {
+    margin-bottom: $gutter * 3;
+  }  
 }
 
 
@@ -96,6 +102,10 @@
 }
 
 
+//
+//  CATEGORIES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
 .article-summary__categories {
   display: inline-block;
   list-style-type: none;
@@ -110,4 +120,19 @@
   padding: $gutter/3 $gutter/2;
   text-transform: uppercase;
   vertical-align: top;
+}
+
+
+//
+//  EXCERPT
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.article-summary__excerpt {
+  display: none;
+}
+
+@include respond-above(xs) {
+  .article-summary__excerpt {
+    display: block;
+  }
 }

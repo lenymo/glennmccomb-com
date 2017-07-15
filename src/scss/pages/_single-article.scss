@@ -160,6 +160,11 @@ $article-font-size-sm: rem(21px);
 
 // Add a comma after every category besides the last one.
 .article-header__category-link {
+  font-size: rem(14px);
+  font-weight: bold;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+
   &:after {
     content: ',';
   }
@@ -168,11 +173,20 @@ $article-font-size-sm: rem(21px);
 .article-header__category {
   display: inline-block;
 
+  // Hide comma for last category.
   &:last-of-type {
     .article-header__category-link {
       &:after {
         content: '';
       }
+    }
+  }
+}
+
+.section__article-header {
+  &.-has-dark-bg {
+    .article-header__category-link {
+      color: rgba($white, .3);
     }
   }
 }
