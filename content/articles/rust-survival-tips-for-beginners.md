@@ -10,7 +10,7 @@ custom_class: rust-survival-tips
 ---
 {{< lead >}}A grand introductions.{{< /lead >}}
 
-[Rust](http://rust.facepunch.com/) is one of the most popular titles in a new breed of first-person survival games pioneered by [DayZ](https://www.bistudio.com/games/dayz). The learning curve is savage and there is literally no on-boarding at the moment.<!-- more --> The game is in [early access](https://en.wikipedia.org/wiki/Early_access) and [the devs](http://www.facepunchstudios.com/) are planning to improve the experience for first-timers before officially launching but for now you're on your own. 
+[Rust](http://rust.facepunch.com/) is one of the most popular titles in a new breed of first-person survival games pioneered by [DayZ](https://www.bistudio.com/games/dayz). The learning curve is savage and there is literally no on-boarding at the moment.<!--more--> The game is in [early access](https://en.wikipedia.org/wiki/Early_access) and [the devs](http://www.facepunchstudios.com/) are planning to improve the experience for first-timers before officially launching but for now you're on your own. 
 
 The first thing to know about Rust is that you will die. A lot. It's a grind and the more loot you gather the more frustrating it is. It's a part of the game though so don't sweat it. And don't expect sympathy from other players.
 
