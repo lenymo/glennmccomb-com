@@ -103,7 +103,7 @@ $site-nav-item-current-bg-color: transparent;
     &.-is-current {
       .site-nav__link {
         &:before {
-          background: $white;
+          background: rgba($white, .25);
         }
       }
     }
