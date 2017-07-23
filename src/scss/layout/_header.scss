@@ -27,6 +27,12 @@ $site-header-bg-color: $color-primary;
   z-index: $z-index-site-header;
 }
 
+@include respond-above(sm) {
+  .site-header {
+    border-top: 10px solid $color-primary-lighter;
+  }
+}
+
 .site-header__logo {
   display: inline-block;
   vertical-align: top;

@@ -26,7 +26,7 @@ $site-nav-item-bg-color-hover: rgba($white, .1);
 
 // Current nav item
 $site-nav-item-current-font-color: $white;
-$site-nav-item-current-bg-color: rgba($white, .1);
+$site-nav-item-current-bg-color: transparent;
 
 
 //
@@ -57,10 +57,12 @@ $site-nav-item-current-bg-color: rgba($white, .1);
 }
 
 // Current item
-.site-nav__item.-is-current {
-  .site-nav__link {
-    background: $site-nav-item-current-bg-color;
-    color: $site-nav-item-current-font-color;
+.site-nav__item {
+  &.-is-current {
+    .site-nav__link {
+      background: $site-nav-item-current-bg-color;
+      color: $site-nav-item-current-font-color;
+    }
   }
 }
 
@@ -75,10 +77,35 @@ $site-nav-item-current-bg-color: rgba($white, .1);
 
   .site-nav__link {
     padding: $site-nav-item-padding-md;
+    position: relative;
 
     &:hover {
       background: $site-nav-item-bg-color-hover;
       color: $site-nav-item-font-color-hover;
+    }
+
+    &:before {
+      background: transparent;
+      content: '';
+      margin-top: -10px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 10px;
+      width: 100%;
+    }
+
+    &.-is-current {
+    }
+  }
+
+  .site-nav__item {
+    &.-is-current {
+      .site-nav__link {
+        &:before {
+          background: $white;
+        }
+      }
     }
   }
 }
