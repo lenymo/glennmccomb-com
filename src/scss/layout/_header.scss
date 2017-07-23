@@ -29,7 +29,7 @@ $site-header-bg-color: $color-primary;
 
 @include respond-above(sm) {
   .site-header {
-    border-top: 10px solid $color-primary-lighter;
+    border-top: 8px solid $color-primary-lighter;
   }
 }
 
