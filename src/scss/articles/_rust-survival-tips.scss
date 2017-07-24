@@ -17,6 +17,7 @@ $color-rust-light-gray: #a4a7a7;
     // background: $color-rust-dark-gray;
     background: transparent;
     border-color: rgba($white, .1);
+    border-color: $color-gray-1;
     position: absolute;
     top: 0;
     left: 0;
