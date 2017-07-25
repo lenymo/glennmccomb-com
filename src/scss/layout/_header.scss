@@ -29,7 +29,7 @@ $site-header-bg-color: $color-primary;
 
 @include respond-above(sm) {
   .site-header {
-    border-top: 8px solid $color-primary-lighter;
+    border-top: 5px solid $color-primary-lightest;
   }
 }
 
@@ -42,7 +42,7 @@ $site-header-bg-color: $color-primary;
 
 .site-header__logo-img {
   margin-bottom: -11px;
-  margin-top: -5px;
+  margin-top: -7px;
   margin-right: $gutter;
   vertical-align: top;
   width: 70px;
@@ -51,7 +51,7 @@ $site-header-bg-color: $color-primary;
 .site-header__logo-svg {
   height: 70px;
   margin-bottom: -11px;
-  margin-top: -5px;
+  margin-top: -7px;
   margin-right: $gutter;
   vertical-align: top;
   width: 70px;
@@ -63,8 +63,8 @@ $site-header-bg-color: $color-primary;
   #g,
   #m {
     use {
-      // fill: mix($color-primary, $white, 50%);
-      fill: rgba($white, .5);
+      // fill: rgba($white, .5);
+      fill: mix($color-primary, $white, 50%);
     }
   }
 }

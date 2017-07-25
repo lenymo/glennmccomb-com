@@ -13,7 +13,10 @@ $color-primary: #284c71;
 // $color-primary-darker: #212f3d;
 // $color-primary-lighter: #23609e;
 $color-primary-darker: darken($color-primary, 5%);
+$color-primary-darkest: darken($color-primary, 10%);
+
 $color-primary-lighter: lighten($color-primary, 5%);
+$color-primary-lightest: lighten($color-primary, 10%);
 
 $color-secondary: #ff851b;
 

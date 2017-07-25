@@ -87,11 +87,11 @@ $site-nav-item-current-bg-color: transparent;
     &:before {
       background: transparent;
       content: '';
-      margin-top: -8px;
+      margin-top: -5px;
       position: absolute;
       top: 0;
       left: 0;
-      height: 8px;
+      height: 5px;
       width: 100%;
     }
 
@@ -103,7 +103,8 @@ $site-nav-item-current-bg-color: transparent;
     &.-is-current {
       .site-nav__link {
         &:before {
-          background: rgba($white, .25);
+          // background: rgba($white, .25);
+          background: $color-secondary;
         }
       }
     }

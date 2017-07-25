@@ -38,7 +38,8 @@ $color-rust-light-gray: #a4a7a7;
   #g,
   #m {
     use {
-      // fill: rgba($white, .15);
+      fill: rgba($white, .15);
+      fill: rgba($white, .5);
       // fill: $color-rust-red;
       // fill: $color-rust-dark-gray;
     }
