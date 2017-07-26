@@ -19,6 +19,7 @@ collections:
       - {label: "Featured Image", name: "featured", widget: "image", required: false}
       - {label: "SEO Description", name: "description", widget: "text", required: false, format: "YYYY-MM-DD"}
       - {label: "Dark Background", name: "dark_bg", widget: "boolean", required: false}
+      - {label: "Transparent Header", name: "transparent_header", widget: "boolean", required: false}
       - {label: "Custom Class", name: "custom_class", widget: "string", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
       # - {label: Pricing, name: pricing, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Plans, name: plans, widget: list, fields: [{label: Plan, name: plan, widget: string}, {label: Price, name: price, widget: string}, {label: Description, name: description, widget: string}, {label: Items, name: items, widget: list}]}]}
