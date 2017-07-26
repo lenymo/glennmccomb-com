@@ -35,15 +35,17 @@ Once you've banged on a few trees and [nodes](http://rust.wikia.com/wiki/Rocks) 
 
 These items help you farm resources, kill things and heal yourself. My preferred weapon is the bow but the spear is handy for close quarters combat and for popping barrels.
 
-You'll notice I've left clothes off the list. At this early stage unless you're in the snow there's not much point using your cloth to craft clothes. You're better off saving it for a bow and sleeping bag (50 and 30  respectively).
+You'll notice I've left clothes off the list. At this early stage unless you're in the snow there's not much point using your cloth to craft clothes. You're better off saving it for a bow and sleeping bag (50 and 30 cloth respectively).
 
 ---
 
 ## Choosing a server
 
-In order to figure out the mechanics of the game a quiet server with less than 50 players is a good place to start. Intuition would suggest that Facepunch's official servers are the safest place to start but they're riddled with cheaters and attract a less friendly crowd. 
+In order to figure out the mechanics of the game a quiet server with less than 50 players is a good place to start. Intuition would suggest Facepunch's official servers are the safest place to start but they're riddled with cheaters and attract a less friendly crowd. 
 
 A well maintained community server will keep tabs on cheaters and police players who are abusive or disrespectful. If you're playing on your own, look for solo/duo/trio servers as they restrict players to small groups and mean you'll avoid large clans and zergs.
+
+When you're learning the ropes other players are usually more hindrance than help. Don't be scared to jump on an empty community server.
 
 
 {{< article-body-full-bleed >}}
@@ -118,6 +120,7 @@ Don't get too carried away building your first base. Your main priority here is 
 - [Rustafied getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
 - Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
 - Pepper The Red's [Top 10 best ways to survive Rust](https://www.youtube.com/watch?v=pULXsgBP-YY&t=1s). 
+
 
 
 
