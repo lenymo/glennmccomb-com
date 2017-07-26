@@ -9,7 +9,7 @@ dark_bg: true
 transparent_header: true
 custom_class: rust-survival-tips
 ---
-{{< lead >}}A grand introductions.{{< /lead >}}
+{{< lead >}}A grand introduction.{{< /lead >}}
 
 [Rust](http://rust.facepunch.com/) is one of the most popular titles in a new breed of first-person survival games pioneered by [DayZ](https://www.bistudio.com/games/dayz). The learning curve is savage and there is literally no on-boarding at the moment. The game is in [early access](https://en.wikipedia.org/wiki/Early_access) and [the devs](http://www.facepunchstudios.com/) are planning to improve the experience for first-timers before officially launching but for now you're on your own. 
 
@@ -31,7 +31,7 @@ Once you've banged on a few trees and [nodes](http://rust.wikia.com/wiki/Rocks) 
 - [Wooden spear](http://rust.wikia.com/wiki/Wooden_Spear) <small>300 wood</small>
 - [Bandages](http://rust.wikia.com/wiki/Bandage) <small>4 cloth</small>
 
-<small>TIP: To access the crafting screen press "Q".
+<small>TIP: To access the crafting screen press "Q".</small>
 
 These items help you farm resources, kill things and heal yourself. My preferred weapon is the bow but the spear is handy for close quarters combat and for popping barrels.
 
@@ -118,6 +118,7 @@ Don't get too carried away building your first base. Your main priority here is 
 - [Rustafied getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
 - Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
 - Pepper The Red's [Top 10 best ways to survive Rust](https://www.youtube.com/watch?v=pULXsgBP-YY&t=1s). 
+
 
 
 
