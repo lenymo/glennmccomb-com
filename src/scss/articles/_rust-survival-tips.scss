@@ -11,47 +11,47 @@ $color-rust-light-gray: #a4a7a7;
 //  SITE HEADER
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-.rust-survival-tips {
-  .site-header {
-    // background: $color-rust-red;
-    // background: $color-rust-dark-gray;
-    background: transparent;
-    border-color: rgba($white, .1);
-    border-color: $color-gray-1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-  }
+// .rust-survival-tips {
+//   .site-header {
+//     // background: $color-rust-red;
+//     // background: $color-rust-dark-gray;
+//     background: transparent;
+//     border-color: rgba($white, .1);
+//     border-color: $color-gray-1;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//   }
 
-  .site-header__logo-svg {
-    .circle {
-      // fill: darken($color-rust-red, 15%);
-      // fill: $color-rust-red;
-      // fill: transparent;
-      // fill: darken($color-rust-dark-gray, 2%);
-      // fill: lighten($color-rust-dark-gray, 5%);
-      fill: $color-rust-dark-gray;
-      // fill: rgba($white, .05);
-      // fill: #2d2d33;
-    }
+//   .site-header__logo-svg {
+//     .circle {
+//       // fill: darken($color-rust-red, 15%);
+//       // fill: $color-rust-red;
+//       // fill: transparent;
+//       // fill: darken($color-rust-dark-gray, 2%);
+//       // fill: lighten($color-rust-dark-gray, 5%);
+//       fill: $color-rust-dark-gray;
+//       // fill: rgba($white, .05);
+//       // fill: #2d2d33;
+//     }
 
-    .circle-outer {
-      fill: $color-gray-1;
-      fill: rgba($white, .025);
-    }
+//     .circle-outer {
+//       fill: $color-gray-1;
+//       fill: rgba($white, .025);
+//     }
        
-    #g,
-    #m {
-      use {
-        fill: rgba($white, .15);
-        fill: rgba($white, .4);
-        // fill: $color-rust-red;
-        // fill: $color-rust-dark-gray;
-      }
-    }
-  } 
-}
+//     #g,
+//     #m {
+//       use {
+//         fill: rgba($white, .15);
+//         fill: rgba($white, .4);
+//         // fill: $color-rust-red;
+//         // fill: $color-rust-dark-gray;
+//       }
+//     }
+//   } 
+// }
 
 
 //
