@@ -22,7 +22,7 @@ $site-header-bg-color: $color-primary;
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .site-header {
-  background: $site-header-bg-color;
+  background-color: $site-header-bg-color;
   padding: $site-header-padding;
   z-index: $z-index-site-header;
 }
@@ -30,5 +30,16 @@ $site-header-bg-color: $color-primary;
 @include respond-above(sm) {
   .site-header {
     border-top: 5px solid $color-primary-lightest;
+  }
+}
+
+
+//
+//  TRANSPARENT HEADER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.-has-transparent-site-header {
+  .site-header {
+    background-color: transparent;
   }
 }
