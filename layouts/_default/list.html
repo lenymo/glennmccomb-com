@@ -1,6 +1,6 @@
 {{ partial "head" . }}
 
-<body class="articles">
+<body class="page-{{ .Kind }} {{ .Title | urlize }}">
 
   {{ partial "header" . }}
 
