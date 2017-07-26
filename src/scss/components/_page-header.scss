@@ -16,17 +16,18 @@ $page-header-bg: $color-gray-e;
 
 .section__page-header {
   background-color: $page-header-bg;
+  padding: ($gutter*3 + $site-header-height-lg) 0 $gutter*3;
 }
 
 @include respond-above(md) {
   .section__page-header {
-    padding: $gutter*6 0 ;
+    padding: ($gutter*6 + $site-header-height-lg) 0 $gutter*6;
   }
 }
 
 @include respond-above(lg) {
   .section__page-header {
-    padding: $gutter*8 0 ;
+    padding: ($gutter*8 + $site-header-height-lg) 0 $gutter*8;
   }
 }
 

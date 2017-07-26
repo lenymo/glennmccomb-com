@@ -24,6 +24,10 @@ $site-header-bg-color: $color-primary;
 .site-header {
   background-color: $site-header-bg-color;
   padding: $site-header-padding;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
   z-index: $z-index-site-header;
 }
 
@@ -44,9 +48,5 @@ $site-header-bg-color: $color-primary;
     border-bottom-color: transparent;
     border-top-color: $color-gray-1;
     background-color: transparent;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
   }
 }
