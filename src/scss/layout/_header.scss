@@ -32,39 +32,3 @@ $site-header-bg-color: $color-primary;
     border-top: 5px solid $color-primary-lightest;
   }
 }
-
-.site-header__logo {
-  display: inline-block;
-  vertical-align: top;
-  position: relative;
-  z-index: $z-index-site-header-logo;
-}
-
-.site-header__logo-img {
-  margin-bottom: -11px;
-  margin-top: -7px;
-  margin-right: $gutter;
-  vertical-align: top;
-  width: 70px;
-}
-
-.site-header__logo-svg {
-  height: 70px;
-  margin-bottom: -11px;
-  margin-top: -7px;
-  margin-right: $gutter;
-  vertical-align: top;
-  width: 70px;
-
-  .circle {
-    fill: $color-primary-darker;
-  }
-
-  #g,
-  #m {
-    use {
-      // fill: rgba($white, .5);
-      fill: mix($color-primary, $white, 50%);
-    }
-  }
-}
