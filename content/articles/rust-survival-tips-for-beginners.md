@@ -21,7 +21,7 @@ The first thing to know about Rust is that you will die. A lot. It's a grind and
 
 ## The Basics
 
-Once you've banged on a few trees and [nodes](http://rust.wikia.com/wiki/Rocks) with your rock and collected some hemp there are a few items you'll want to craft (via "Q" or the quick craft menu):
+Once you've banged on a few trees and [nodes](http://rust.wikia.com/wiki/Rocks) with your rock and collected some hemp there are a few items you'll want to craft:
 
 - [Paper Map](http://rust.wikia.com/wiki/Paper_Map) <small>5 wood</small>
 - [Stone Hatchet](http://rust.wikia.com/wiki/Stone_Hatchet) <small>200 wood, 100 stone</small>
@@ -31,9 +31,11 @@ Once you've banged on a few trees and [nodes](http://rust.wikia.com/wiki/Rocks) 
 - [Wooden spear](http://rust.wikia.com/wiki/Wooden_Spear) <small>300 wood</small>
 - [Bandages](http://rust.wikia.com/wiki/Bandage) <small>4 cloth</small>
 
-These items help you farm resources, kill animals and other players and heal yourself. My preferred weapon is the bow but the spear is handy for close quarters combat and for popping barrels.
+<small>TIP: To access the crafting screen press "Q".
 
-You'll notice I've left clothes off the list. At this early stage unless you're in the snow there's not much point using your cloth on clothes. You're better off saving it for a bow and sleeping bag (50 and 30 cloth respectively).
+These items help you farm resources, kill things and heal yourself. My preferred weapon is the bow but the spear is handy for close quarters combat and for popping barrels.
+
+You'll notice I've left clothes off the list. At this early stage unless you're in the snow there's not much point using your cloth to craft clothes. You're better off saving it for a bow and sleeping bag (50 and 30  respectively).
 
 ---
 
@@ -116,6 +118,7 @@ Don't get too carried away building your first base. Your main priority here is 
 - [Rustafied getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
 - Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
 - Pepper The Red's [Top 10 best ways to survive Rust](https://www.youtube.com/watch?v=pULXsgBP-YY&t=1s). 
+
 
 
 
