@@ -11,23 +11,55 @@ $page-header-bg: $color-gray-e;
 
 
 //
+//  LAYOUT
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$page-header-padding-top-xs: $gutter*3 + $site-header-height-sm;
+$page-header-padding-bottom-xs: $gutter * 3;
+
+$page-header-padding-top-sm: $gutter*4 + $site-header-height-sm;
+$page-header-padding-bottom-sm: $gutter * 4;
+
+$page-header-padding-top-md: $gutter*5 + $site-header-height-md;
+$page-header-padding-bottom-md: $gutter * 5;
+
+$page-header-padding-top-lg: $gutter*6 + $site-header-height-lg;
+$page-header-padding-bottom-lg: $gutter * 6;
+
+$page-header-padding-top-xl: $gutter*8 + $site-header-height-lg;
+$page-header-padding-bottom-xl: $gutter * 8;
+
+
+//
 //  STYLES
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .section__page-header {
   background-color: $page-header-bg;
-  padding: ($gutter*3 + $site-header-height-lg) 0 $gutter*3;
+  padding: $page-header-padding-top-xs 0 $page-header-padding-bottom-xs;
+}
+
+@include respond-above(xs) {
+  .section__page-header {
+    padding: $page-header-padding-top-sm 0 $page-header-padding-bottom-sm;
+  }
+}
+
+@include respond-above(sm) {
+  .section__page-header {
+    padding: $page-header-padding-top-md 0 $page-header-padding-bottom-md;
+  }
 }
 
 @include respond-above(md) {
   .section__page-header {
-    padding: ($gutter*6 + $site-header-height-lg) 0 $gutter*6;
+    padding: $page-header-padding-top-lg 0 $page-header-padding-bottom-lg;
   }
 }
 
 @include respond-above(lg) {
   .section__page-header {
-    padding: ($gutter*8 + $site-header-height-lg) 0 $gutter*8;
+    padding: $page-header-padding-top-xl 0 $page-header-padding-bottom-xl;
   }
 }
 
