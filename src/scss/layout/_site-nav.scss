@@ -17,14 +17,15 @@ $site-nav-item-padding-md: $gutter $gutter*1.5;
 
 $site-nav-bg-color: transparent;
 
-// Standard nav item
+// Standard nav item.
 $site-nav-item-font-color: rgba($white, .75);
 $site-nav-item-bg-color: transparent;
 
+// Hover.
 $site-nav-item-font-color-hover: $white;
-$site-nav-item-bg-color-hover: rgba($white, .1);
+$site-nav-item-bg-color-hover: transparent;
 
-// Current nav item
+// Current nav item.
 $site-nav-item-current-font-color: $white;
 $site-nav-item-current-bg-color: transparent;
 
@@ -79,20 +80,25 @@ $site-nav-item-current-bg-color: transparent;
     padding: $site-nav-item-padding-md;
     position: relative;
 
-    &:hover {
-      background: $site-nav-item-bg-color-hover;
-      color: $site-nav-item-font-color-hover;
-    }
-
     &:before {
       background: transparent;
       content: '';
+      height: 5px;
+      left: 0;
       margin-top: -5px;
       position: absolute;
       top: 0;
-      left: 0;
-      height: 5px;
+      transition: all .1s ease;
       width: 100%;
+    }
+
+    &:hover {
+      background: $site-nav-item-bg-color-hover;
+      color: $site-nav-item-font-color-hover;
+
+      &:before {
+        background: $white;
+      }
     }
 
     &.-is-current {

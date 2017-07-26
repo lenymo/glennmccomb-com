@@ -81,3 +81,47 @@ $header-logo-size: 80px;
     }
   }
 }
+
+
+//
+//  TRANSPARENT SITE HEADER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.-has-transparent-site-header {
+  .site-header__logo-svg {
+    .circle {
+      fill: $color-gray-1;
+    }
+
+    .circle-outer {
+      fill: $color-gray-2;
+      // fill: rgba($white, .025);
+    }
+     
+    #g,
+    #m {
+      use {
+        fill: rgba($white, .4);
+      }
+    }
+  }
+}
+
+// Hover.
+@include respond-above(sm) {
+  .-has-transparent-site-header {
+    .site-header__logo {
+      &:hover {
+        .site-header__logo-svg {
+          .circle {
+            fill: $color-gray-1;
+          }
+
+          .circle-outer {
+            fill: $color-gray-1;
+          }
+        }
+      }
+    }
+  }
+}

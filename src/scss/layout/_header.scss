@@ -35,11 +35,16 @@ $site-header-bg-color: $color-primary;
 
 
 //
-//  TRANSPARENT HEADER
+//  TRANSPARENT SITE HEADER
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .-has-transparent-site-header {
   .site-header {
+    border-color: $color-gray-1;
     background-color: transparent;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
   }
 }
