@@ -29,6 +29,7 @@ $site-header-bg-color: $color-primary;
 
 @include respond-above(sm) {
   .site-header {
+    border-bottom: 5px solid $color-primary-lightest;
     border-top: 5px solid $color-primary-lightest;
   }
 }
@@ -40,7 +41,8 @@ $site-header-bg-color: $color-primary;
 
 .-has-transparent-site-header {
   .site-header {
-    border-color: $color-gray-1;
+    border-bottom-color: transparent;
+    border-top-color: $color-gray-1;
     background-color: transparent;
     left: 0;
     position: absolute;
