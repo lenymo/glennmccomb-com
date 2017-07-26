@@ -6,6 +6,7 @@ date: 2017-06-13T01:44:10.521Z
 featured: /img/uploads/article-rust-survival-tips.jpg
 description: null
 dark_bg: true
+transparent_header: true
 custom_class: rust-survival-tips
 ---
 {{< lead >}}A grand introductions.{{< /lead >}}
@@ -115,6 +116,7 @@ Don't get too carried away building your first base. Your main priority here is 
 - [Rustafied getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
 - Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
 - Pepper The Red's [Top 10 best ways to survive Rust](https://www.youtube.com/watch?v=pULXsgBP-YY&t=1s). 
+
 
 
 
