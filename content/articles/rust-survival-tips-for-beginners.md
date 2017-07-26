@@ -52,7 +52,6 @@ When you're learning the ropes other players are usually more hindrance than hel
 ![Placeholder](http:\/\/via.placeholder.com\/350x50)
 {{< /article-body-full-bleed >}}
 
----
 
 ## Early game objectives
 
@@ -120,6 +119,7 @@ Don't get too carried away building your first base. Your main priority here is 
 - [Rustafied getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
 - Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
 - Pepper The Red's [Top 10 best ways to survive Rust](https://www.youtube.com/watch?v=pULXsgBP-YY&t=1s). 
+
 
 
 
