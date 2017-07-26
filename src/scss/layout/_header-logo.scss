@@ -39,6 +39,9 @@ $header-logo-size: 80px;
 
   .circle {
     fill: $color-primary-darker;
+    // stroke: $color-primary-lighter;
+    // stroke-width: 0;
+    transition: all .1s ease;
   }
 
   .circle-outer {
@@ -50,6 +53,31 @@ $header-logo-size: 80px;
     use {
       // fill: rgba($white, .5);
       fill: mix($color-primary, $white, 50%);
+      transition: all .3s ease;
+    }
+  }
+}
+
+
+//
+//  HOVER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@include respond-above(sm) {
+  .site-header__logo {
+    &:hover {
+      .site-header__logo-svg {
+        .circle {
+          fill: $color-primary-lighter;
+        }
+
+        #g,
+        #m {
+          use {
+            fill: $white;
+          }
+        }
+      }
     }
   }
 }
