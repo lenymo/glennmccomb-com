@@ -15,7 +15,7 @@
     padding: 0;
     position: absolute;
     text-align: center;
-    top: 57px;
+    top: $site-header-height-sm;
     transition: all .2s ease;
     width: 100%;
     z-index: $z-index-site-nav-mobile;

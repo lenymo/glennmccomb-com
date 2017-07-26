@@ -22,13 +22,19 @@ $article-font-size-sm: rem(21px);
     transform: translateY(0) translateX(26px);
     top: $gutter*6;
     width: 50px;
+  }
 
-    .article-date__month {
-      font-size: rem(10px);
-    }
+  .article-header__date-month {
+    font-size: rem(10px);
+  }
 
-    .article-date__day {
-      font-size: rem(24px);
+  .article-header__date-day {
+    font-size: rem(24px);
+  }
+
+  .-has-transparent-site-header {
+    .article-header__date {
+      top: $gutter*6 + $site-header-height-sm;
     }
   }
 }
@@ -38,6 +44,12 @@ $article-font-size-sm: rem(21px);
     top: $gutter*8;
     transform: translateY(0) translateX(16px);
   }
+
+  .-has-transparent-site-header {
+    .article-header__date {
+      top: $gutter*8 + $site-header-height-sm;
+    }
+  }
 }
 
 @include respond-above(sm) {
@@ -45,12 +57,24 @@ $article-font-size-sm: rem(21px);
     top: $gutter*10;
     // transform: translateY(0) translateX(12px);
   }
+
+  .-has-transparent-site-header {
+    .article-header__date {
+      top: $gutter*10 + $site-header-height-md;
+    }
+  }
 }
 
 @include respond-above(md) {
   .article-header__date {
     top: $gutter*12;
     // transform: translateY(0) translateX(12px);
+  }
+
+  .-has-transparent-site-header {
+    .article-header__date {
+      top: $gutter*12 + $site-header-height-lg;
+    }
   }
 }
 
@@ -61,20 +85,26 @@ $article-font-size-sm: rem(21px);
     transform: translateY(0) translateX(11px);
     top: $gutter*16;
     width: 80px;
+  }
 
-    .article-date__month {
-      font-size: rem(14px);
-      // letter-spacing: rem(2px);
-    }
-
-    .article-date__day {
-      font-size: rem(40px);
-    }
-
-    .article-date__year {
-      font-size: rem(14px);
+  .-has-transparent-site-header {
+    .article-header__date {
+      top: $gutter*16 + $site-header-height-lg;
     }
   }
+
+  .article-header__date-month {
+    font-size: rem(14px);
+    // letter-spacing: rem(2px);
+  }
+
+  .article-header__date-day {
+    font-size: rem(40px);
+  }
+
+  // .article-header__date-year {
+  //   font-size: rem(14px);
+  // }
 }
 
 
@@ -82,12 +112,12 @@ $article-font-size-sm: rem(21px);
 //  BACKGROUND DEVICE
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-.section__article-header {
-  .background-device {
-    // background: transparent;
-    // height: 50%;
-  }
-}
+// .section__article-header {
+//   .background-device {
+//     background: transparent;
+//     height: 50%;
+//   }
+// }
 
 
 //
@@ -103,11 +133,17 @@ $article-font-size-sm: rem(21px);
   &.-has-featured {
     background-size: cover;
   }
+}
 
-  .page-header__hgroup {
-    padding: $gutter*6 0 $gutter*3;
-    position: relative;
-    z-index: 2;
+.article-header__hgroup {
+  padding: $gutter*6 0 $gutter*3;
+  position: relative;
+  z-index: 2;
+}
+
+.-has-transparent-site-header {
+  .article-header__hgroup {
+    padding: ($gutter*6 + $site-header-height-sm) 0 $gutter*3;
   }
 }
 
@@ -116,33 +152,49 @@ $article-font-size-sm: rem(21px);
 }
 
 @include respond-above(xs) {
-  .section__article-header {
-    .page-header__hgroup {
-      padding: $gutter*8 0 $gutter*4;
+  .article-header__hgroup {
+    padding: $gutter*8 0 $gutter*4;
+  }
+
+  .-has-transparent-site-header {
+    .article-header__hgroup {
+      padding: ($gutter*8 + $site-header-height-sm) 0 $gutter*4;
     }
   }
 }
 
 @include respond-above(sm) {
-  .section__article-header {
-    .page-header__hgroup {
-      padding: $gutter*10 0 $gutter*5;
+  .article-header__hgroup {
+    padding: $gutter*10 0 $gutter*5;
+  }
+  
+  .-has-transparent-site-header {
+    .article-header__hgroup {
+      padding: ($gutter*10 + $site-header-height-md) 0 $gutter*5;
     }
   }
 }
 
 @include respond-above(md) {
-  .section__article-header {
-    .page-header__hgroup {
-      padding: $gutter*12 0 $gutter*6;
+  .article-header__hgroup {
+    padding: $gutter*12 0 $gutter*6;
+  }
+
+  .-has-transparent-site-header {
+    .article-header__hgroup {
+      padding: ($gutter*12 + $site-header-height-lg) 0 $gutter*6;
     }
   }
 }
 
 @include respond-above(lg) {
-  .section__article-header {
-    .page-header__hgroup {
-      padding: $gutter*16 0 $gutter*8;
+  .article-header__hgroup {
+    padding: $gutter*16 0 $gutter*8;
+  }
+
+  .-has-transparent-site-header {
+    .article-header__hgroup {
+      padding: ($gutter*16 + $site-header-height-lg) 0 $gutter*6;
     }
   }
 }

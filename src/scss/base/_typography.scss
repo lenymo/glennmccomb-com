@@ -42,25 +42,25 @@ $heading-letter-spacing: -.025em;  // Default = normal
 $heading-margin-bottom-xs: $base-margin-bottom-xs;
 $heading-margin-bottom: $base-margin-bottom;
 
+$h1-font-size-sm: rem(32px);
 $h1-font-size: rem(48px);
-$h1-font-size-sm: rem(36px);
 $h1-font-size-lg: rem(60px);
 $h1-font-family: $heading-font-family;
 
-$h2-font-size: rem(36px);
 $h2-font-size-sm: rem(28px);
+$h2-font-size: rem(36px);
 $h2-font-family: $heading-font-family;
 
-$h3-font-size: rem(28px);
 $h3-font-size-sm: rem(24px);
+$h3-font-size: rem(28px);
 $h3-font-family: $heading-font-family;
 
-$h4-font-size: rem(24px);
 $h4-font-size-sm: rem(21px);
+$h4-font-size: rem(24px);
 $h4-font-family: $heading-font-family;
 
-$h5-font-size: rem(20px);
 $h5-font-size-sm: rem(18px);
+$h5-font-size: rem(20px);
 $h5-font-family: $base-font-family;
 
 $h6-font-size: rem($base-font-size);
