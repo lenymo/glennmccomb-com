@@ -112,6 +112,7 @@ Don't get too carried away building your first base. Your main priority here is 
 
 ### Crafting a furnace
 
+This is one of the most important milestones in the early games. Once you have a furnace you can begin to smelt metal and sulphur.
 
 
 ## Further reading
