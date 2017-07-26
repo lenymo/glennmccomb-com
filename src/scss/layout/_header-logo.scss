@@ -60,6 +60,18 @@ $header-logo-size: 80px;
 
 
 //
+//  MOBILE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@include respond-below(sm) {
+  .site-header__logo {
+    position: relative;
+    z-index: $z-index-site-header-logo-mobile;
+  }
+}
+
+
+//
 //  HOVER
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
