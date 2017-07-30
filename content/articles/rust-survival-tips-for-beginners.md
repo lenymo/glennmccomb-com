@@ -15,7 +15,7 @@ custom_class: rust-survival-tips
 
 The first thing to know about Rust is that you will die. A lot. And that's ok. It's a grind and the more loot you've gathered when you die the more frustrating it is. It's a part of the game though so don't sweat it, and don't expect sympathy from other players.
 
-<small>**NOTE:** This article is written at the time of [devblog 163](http://rust.facepunch.com/blog/devblog-163/) and may be out of date and innacurate after future updates.</small>
+<small>**NOTE:** This article is written at the time of [devblog 170](https://rust.facepunch.com/blog/devblog170/) and may be out of date and inaccurate after future updates.</small>
 
 ---
 
@@ -120,6 +120,7 @@ This is one of the most important milestones in the early games. Once you have a
 - [Rustafied getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
 - Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
 - Pepper The Red's [Top 10 best ways to survive Rust](https://www.youtube.com/watch?v=pULXsgBP-YY&t=1s). 
+
 
 
 
