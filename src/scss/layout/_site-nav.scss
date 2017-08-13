@@ -28,6 +28,7 @@ $site-nav-item-bg-color-hover: transparent;
 // Current nav item.
 $site-nav-item-current-font-color: $white;
 $site-nav-item-current-bg-color: transparent;
+$site-nav-item-current-border-color: $color-secondary;
 
 
 //
@@ -110,7 +111,8 @@ $site-nav-item-current-bg-color: transparent;
       .site-nav__link {
         &:before {
           // background: rgba($white, .25);
-          background: $color-secondary;
+          background: $site-nav-item-current-border-color;
+          box-shadow: 0 0 5px lighten($site-nav-item-current-border-color, 5%);
         }
       }
     }
