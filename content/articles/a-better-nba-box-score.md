@@ -4,6 +4,7 @@ categories:
   - Development
 title: A better NBA box score
 date: 2017-01-21T09:57:11.000Z
+featured: /img/uploads/espn-nba-boxscore-extension.jpg
 description: null
 custom_class: better-nba-boxscore
 ---
@@ -82,6 +83,7 @@ You can [download the extension here](https://goo.gl/3DmHU1) and if you have a
 For reference below is the original ESPN box score
 
 ![null](/img/uploads/espn-boxscores-before.png)
+
 
 
 
