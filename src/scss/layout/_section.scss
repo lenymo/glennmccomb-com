@@ -2,10 +2,17 @@
 //  SECTION
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-$section-padding-xs: $gutter*2 0;
-$section-padding-sm: $gutter*3 0;
-$section-padding-md: $gutter*4 0;
-$section-padding-lg: $gutter*4 0;
+$section-padding-xs-top-bottom: $gutter*2;
+$section-padding-xs: $section-padding-xs-top-bottom 0;
+
+$section-padding-sm-top-bottom: $gutter*3;
+$section-padding-sm: $section-padding-sm-top-bottom 0;
+
+$section-padding-md-top-bottom: $gutter*4;
+$section-padding-md: $section-padding-md-top-bottom 0;
+
+$section-padding-lg-top-bottom: $gutter*4;
+$section-padding-lg: $section-padding-lg-top-bottom 0;
 
 .section {
   padding: $section-padding-xs;

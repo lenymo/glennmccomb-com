@@ -5,8 +5,9 @@
   {{ partial "header" . }}
 
   <section class="section section__articles-summary">
-    <div class="container">
-      <div class="articles-summary__wrapper">
+    <div class="container container__articles-summary">
+      <div class="row row__articles-summary">
+      <!-- <div class="articles-summary__wrapper"> -->
       
         {{ range first 10 .Data.Pages }}
           {{ if eq .Type "articles" }}
@@ -16,10 +17,9 @@
           {{ end }}
         {{ end }}
 
-        {{ partial "background-device" . }}
-      </div><!-- .article-summary__wrapper -->
+      </div><!-- .row -->
     </div><!-- .container -->
-  </section>
+  </section><!-- .section__articles-summary -->
 
 
   <!-- This pulls in the value of "settings_test" from data/site-settings.yml -->

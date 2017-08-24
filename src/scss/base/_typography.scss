@@ -9,7 +9,7 @@
 
 $base-font-color: $color-gray-4;
 
-$link-font-color: $color-primary-lighter;
+$link-font-color: lighten($color-blue, 7.5%);
 $link-font-color-hover: lighten($link-font-color, 5%);
 
 $heading-font-color: $base-font-color;

@@ -25,12 +25,8 @@ $article-date-size: 70px;
   display: block;
   font-family: $article-date-font-family;
   height: $article-date-size;
-  left: 0;
   padding: 10px;
-  position: absolute;
   text-align: center;
-  transform: translateY(-75%) translateX(13px);
-  top: 50%;
   width: $article-date-size;
   z-index: 3;
 }
@@ -86,3 +82,18 @@ $article-date-size: 70px;
 //     }
 //   }
 // }
+
+
+
+//
+//  PAGE HEADER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.section__page-header {
+  .article-date {
+    left: 0;
+    top: 50%;
+    position: absolute;
+    transform: translateY(-75%) translateX(13px);
+  }
+}

@@ -6,23 +6,11 @@
 // Basics
 $black: #000;
 $white: #fff;
-
-
-// Utility colors
-$color-primary: #284c71;
-// $color-primary-darker: #212f3d;
-// $color-primary-lighter: #23609e;
-$color-primary-darker: darken($color-primary, 5%);
-$color-primary-darkest: darken($color-primary, 10%);
-
-$color-primary-lighter: lighten($color-primary, 5%);
-$color-primary-lightest: lighten($color-primary, 10%);
-
-$color-secondary: #ff851b;
+$color-blue: #284c71;
 
 
 // Grays
-$gray-mixer: $color-primary;
+$gray-mixer: $color-blue;
 $color-gray-e: mix(#eee, $gray-mixer, 99%);
 $color-gray-d: mix(#ddd, $gray-mixer, 98%);
 $color-gray-c: mix(#ccc, $gray-mixer, 97%);
@@ -37,3 +25,17 @@ $color-gray-4: mix(#444, $gray-mixer, 90%);
 $color-gray-3: mix(#333, $gray-mixer, 89%);
 $color-gray-2: mix(#222, $gray-mixer, 88%);
 $color-gray-1: mix(#111, $gray-mixer, 85%);
+
+
+// Utility colors
+// $color-primary: $color-blue;
+$color-primary: mix(#333, $gray-mixer, 60%);
+// $color-primary-darker: #212f3d;
+// $color-primary-lighter: #23609e;
+$color-primary-darker: darken($color-primary, 5%);
+$color-primary-darkest: darken($color-primary, 10%);
+
+$color-primary-lighter: lighten($color-primary, 5%);
+$color-primary-lightest: lighten($color-primary, 10%);
+
+$color-secondary: #ff851b;

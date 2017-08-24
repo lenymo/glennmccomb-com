@@ -1,34 +1,49 @@
-<article class="article-summary">
-  <div class="row">
-    <div class="col-3 col-sm-2 col-md-2 col-lg-1 col-xl-1">
-      <date class="article-date article-summary__date">
-        <span class="article-date__month">{{ .Date.Format "Jan" }}</span>
-        <span class="article-date__day">{{ .Date.Format "2" }}<sup class="article-date__day-suffix">{{ if in (slice 1 21 31) .Date.Day}}st{{ else if in (slice 2 22) .Date.Day}}nd{{ else if in (slice 3 23) .Date.Day}}rd{{ else }}th{{ end }}</sup></span>
-        <span class="article-date__year">{{ .Date.Format "2006" }}</span>
-      </date>
-    </div><!-- .col -->
+<div class="col-sm-6 col-md-4 col__article-summary">
+  <article class="article-summary">
 
-    <div class="col-8 col-sm-10 col-md-8 col-lg-7 col-xl-6">
-      <a href="{{ .Permalink }}" class="article-summary__link" title="{{ .Title }}">
-        <h3 class="article-summary__title">
-          {{ .Title }}
-        </h3>
+    <a href="{{ .Permalink }}" class="article-summary__link" title="{{ .Title }}">
 
-        <!-- <date class="article-summary__date">{{ .Date.Format "January" }} {{ .Date.Format "2" }}{{ if in (slice 1 21 31) .Date.Day}}st{{ else if in (slice 2 22) .Date.Day}}nd{{ else if in (slice 3 23) .Date.Day}}rd{{ else }}th{{ end }}, {{ .Date.Format "2006" }}</date> -->
+      {{ with .Params.featured }}<div class="article-summary__featured-image" style="background-image:url({{ . }})"></div>{{ end }}
+
+      <span class="article-summary__content-wrapper">
+
         {{ if .Params.categories }}
-        <!--<ul class="article-summary__categories">
+        <ul class="article-summary__categories">
           {{ range .Params.categories }}
             <li class="article-summary__category article-summary__category-{{ . | urlize }}">
               {{ . }}
             </li>
           {{ end }}
-        </ul>-->
+        </ul>
         {{ end }}
-        <div class="article-summary__excerpt">
-          {{ .Summary | markdownify }}
-        </div>
-      </a>
-    </div><!-- .col -->
-  </div><!-- .row -->
-  
-</article><!-- .article-summary -->
+
+        <date class="article-date article-summary__date">
+          <span class="article-date__month">{{ .Date.Format "Jan" }}</span>
+          <span class="article-date__day">{{ .Date.Format "2" }}<sup class="article-date__day-suffix">{{ if in (slice 1 21 31) .Date.Day}}st{{ else if in (slice 2 22) .Date.Day}}nd{{ else if in (slice 3 23) .Date.Day}}rd{{ else }}th{{ end }}</sup></span>
+          <span class="article-date__year">{{ .Date.Format "2006" }}</span>
+        </date>
+
+        <h3 class="article-summary__title">
+          {{ .Title }}
+        </h3>
+        
+
+        <p class="article-summary__excerpt">
+          {{ $truncated := .Summary | truncate 140 "" }}
+          {{ $summary := .Summary | markdownify }}
+
+          {{ if gt (len .Summary | markdownify ) (len $truncated | markdownify) }}
+            
+            {{ $truncated }}...
+
+          {{ else }}
+              
+            {{ $summary }}
+
+          {{ end }}
+        </p>
+      </span><!-- .article-summary__content-wrapper -->
+    </a><!-- .article-summary__link -->
+    
+  </article><!-- .article-summary -->
+</div><!-- .col -->
