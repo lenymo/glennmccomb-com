@@ -146,8 +146,6 @@ $page-header-padding-bottom-xl: $gutter * 8;
 // Dark background.
 .section__page-header {
   &.-has-dark-bg {
-    background: $color-rust-dark-gray;
-
     .background-device {
       background: rgba($black, .3);
 
