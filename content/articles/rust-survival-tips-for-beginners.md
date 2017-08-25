@@ -9,7 +9,7 @@ dark_bg: true
 transparent_header: true
 custom_class: rust-survival-tips
 ---
-{{< lead >}}Rust is one of the most popular titles in a new breed of first-person survival games pioneered by DayZ. The learning curve is savage and there is very little on-boarding (at the moment). The game is in [early access](https://en.wikipedia.org/wiki/Early_access) and [the devs](http://www.facepunchstudios.com/) are planning to improve the experience for first-timers before officially launching but for now you're on your own. {{< /lead >}}
+{{< lead >}}[Rust](http://rust.facepunch.com/) is one of the most popular titles in a new breed of first-person survival games pioneered by [DayZ](https://www.bistudio.com/games/dayz). The learning curve is savage and there is very little on-boarding (at the moment). The game is in [early access](https://en.wikipedia.org/wiki/Early_access) and [the devs](http://www.facepunchstudios.com/) are planning to improve the experience for first-timers before officially launching but for now you're on your own. {{< /lead >}}
 
 Rust is one of the most popular titles in a new breed of first-person survival games pioneered by DayZ. The learning curve is savage and there is very little on-boarding (at the moment). The game is in [early access](https://en.wikipedia.org/wiki/Early_access) and [the devs](http://www.facepunchstudios.com/) are planning to improve the experience for first-timers before officially launching but for now you're on your own. 
 
@@ -120,6 +120,7 @@ This is one of the most important milestones in the early games. Once you have a
 - [Rustafied getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
 - Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
 - Pepper The Red's [Top 10 best ways to survive Rust](https://www.youtube.com/watch?v=pULXsgBP-YY&t=1s). 
+
 
 
 
