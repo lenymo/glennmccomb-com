@@ -141,3 +141,19 @@ $page-header-padding-bottom-xl: $gutter * 8;
     width: 3px;
   }
 }
+
+
+// Dark background.
+.section__page-header {
+  &.-has-dark-bg {
+    background: $color-rust-dark-gray;
+
+    .background-device {
+      background: rgba($black, .3);
+
+      .line {
+        background: rgba($white, .125);
+      }
+    }
+  }
+}

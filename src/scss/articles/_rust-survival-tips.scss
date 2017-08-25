@@ -61,14 +61,6 @@ $color-rust-light-gray: #a4a7a7;
 .rust-survival-tips {
   .section__page-header {
     background: $color-rust-dark-gray;
-
-    .background-device {
-      background: rgba($black, .3);
-
-      .line {
-        background: rgba($white, .125);
-      }
-    }
   }
 
   .article-header__featured-image {
