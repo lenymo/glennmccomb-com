@@ -34,17 +34,6 @@
 }
 
 
-// .row__articles-summary {
-//   display: flex;
-//   flex-wrap: wrap;
-// }
-
-// .col__article-summary {
-//   display: flex;
-//   flex-direction: column;
-// }
-
-
 //
 //  ARTICLE SUMMARY
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -52,12 +41,6 @@
 .article-summary {
   margin-bottom: $gutter;
 }
-
-// @include respond-above(xs) {
-//   .article-summary {
-//     margin-bottom: $gutter * 3;
-//   }  
-// }
 
 
 //
@@ -123,7 +106,7 @@
   height: 55px;
   position: absolute;
   right: $gutter;
-  top: -45px;
+  top: -40px;
   width: 55px;
 
   .article-date__month {

@@ -33,69 +33,6 @@ $article-header-padding-bottom-xl: $gutter * 6;
 
 
 //
-//  DATE
-//––––––––––––––––––––––––––––––––––––––––––––––––––
-
-@include respond-below(xs) {
-  .article-header__date {
-    height: 50px;
-    // padding: 8px;
-    transform: translateY(0) translateX(26px);
-    top: $gutter*6 + $site-header-height-sm;
-    width: 50px;
-  }
-
-  .article-header__date-month {
-    font-size: rem(10px);
-  }
-
-  .article-header__date-day {
-    font-size: rem(24px);
-  }
-}
-
-@include respond-above(xs) {
-  .article-header__date {
-    top: $gutter*8 + $site-header-height-sm;
-    transform: translateY(0) translateX(16px);
-  }
-}
-
-@include respond-above(sm) {
-  .article-header__date {
-    top: $gutter*10 + $site-header-height-md;
-    // transform: translateY(0) translateX(12px);
-  }
-}
-
-@include respond-above(md) {
-  .article-header__date {
-    top: $gutter*12 + $site-header-height-lg;
-    // transform: translateY(0) translateX(12px);
-  }
-}
-
-@include respond-above(lg) {
-  .article-header__date {
-    height: 80px;
-    padding: $gutter;
-    transform: translateY(0) translateX(11px);
-    top: $gutter*16 + $site-header-height-lg;
-    width: 80px;
-  }
-
-  .article-header__date-month {
-    font-size: rem(14px);
-    // letter-spacing: rem(2px);
-  }
-
-  .article-header__date-day {
-    font-size: rem(40px);
-  }
-}
-
-
-//
 //  ARTICLE HEADER
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
@@ -139,6 +76,81 @@ $article-header-padding-bottom-xl: $gutter * 6;
 @include respond-above(lg) {
   .article-header__hgroup {
     padding: $article-header-padding-top-xl 0 $article-header-padding-bottom-xl;
+  }
+}
+
+
+//
+//  DATE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.article-header__date {
+  left: 0;
+  top: 50%;
+  position: absolute;
+  transform: translateX(20px);
+}
+
+.section__page-header {
+  .article-header__date {
+    box-shadow: 0 0 0 7px rgba($white, .1);
+  }
+}
+
+@include respond-below(xs) {
+  .article-header__date {
+    height: 50px;
+    // padding: 8px;
+    // transform: translateY(0) translateX(16px);
+    top: $gutter*6 + $site-header-height-sm;
+    width: 50px;
+  }
+
+  .article-header__date-month {
+    font-size: rem(10px);
+  }
+
+  .article-header__date-day {
+    font-size: rem(24px);
+  }
+}
+
+@include respond-above(xs) {
+  .article-header__date {
+    top: $gutter*8 + $site-header-height-sm;
+    transform: translateX(16px);
+  }
+}
+
+@include respond-above(sm) {
+  .article-header__date {
+    top: $gutter*10 + $site-header-height-md;
+    // transform: translateY(0) translateX(12px);
+  }
+}
+
+@include respond-above(md) {
+  .article-header__date {
+    top: $gutter*12 + $site-header-height-lg;
+  }
+}
+
+@include respond-above(lg) {
+  .article-header__date {
+    height: 80px;
+    padding: $gutter*.75;
+    top: $gutter*16 + $site-header-height-lg;
+    transform: translateX(11px);
+    width: 80px;
+  }
+
+  .article-header__date-month {
+    font-size: rem(14px);
+    // letter-spacing: rem(2px);
+  }
+
+  .article-header__date-day {
+    font-size: rem(40px);
   }
 }
 
