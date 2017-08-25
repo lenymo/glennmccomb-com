@@ -58,7 +58,7 @@ This provides context for each stat and allows the action to be pieced together.
 
 ![null](/img/uploads/play-by-play-stats-play-sequence.png)
 
-You no longer need to continually switch between the box score and play-by-play to follow the action.
+This uninspiring example demonstrates that you no longer need to continually switch between the box score and play-by-play to follow the action.
 
 ## Advanced player stats
 
@@ -92,6 +92,7 @@ For reference below is the original ESPN box score
 {{< article-body-full-bleed >}}
 ![null](/img/uploads/espn-boxscores-before.png)
 {{< /article-body-full-bleed >}}
+
 
 
 
