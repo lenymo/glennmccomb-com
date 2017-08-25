@@ -68,7 +68,7 @@ Immediately following a game’s completion, advanced stats can be viewed for in
 ![null](/img/uploads/box-score-advanced-stats.png)
 {{< /article-body-full-bleed >}}
 
-These stats \*do \*actually work while a game is live but they’re buggy and I’m still working on performance tweaks. Hopefully soon these will be available during live games.
+These stats *do* actually work while a game is live but they’re buggy and I’m still working on performance tweaks. Hopefully soon these will be available during live games.
 
 ## Sound interesting?
 
@@ -92,6 +92,7 @@ For reference below is the original ESPN box score
 {{< article-body-full-bleed >}}
 ![null](/img/uploads/espn-boxscores-before.png)
 {{< /article-body-full-bleed >}}
+
 
 
 
