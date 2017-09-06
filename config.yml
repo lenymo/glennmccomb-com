@@ -5,16 +5,16 @@ menu:
     - Identifier: articles
       Name: Articles
       URL: /articles/
-      Weight: 1
+      Weight: '20'
     - Identifier: home
       Name: Home
       URL: /
-      Weight: 0
+      Weight: '10'
     - Identifier: work
       Name: Work
       URL: /work/
-      Weight: 2
+      Weight: '30'
 taxonomies:
   category: categories
-  tag: "tags"
+  tag: tags
 title: Glenn McComb - Designer and Front End Developer
