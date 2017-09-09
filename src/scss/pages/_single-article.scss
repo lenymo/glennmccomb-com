@@ -245,7 +245,9 @@ $article-header-padding-bottom-xl: $gutter * 6;
       border-bottom: 2px solid $color-gray-e;
       transition: all .1s ease;
 
-      &:hover {
+      &:hover,
+      &:active,
+      &:focus {
         border-bottom: 2px solid $link-font-color-hover;
         text-decoration: none;
       }
