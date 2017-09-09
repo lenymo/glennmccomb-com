@@ -115,7 +115,7 @@ To start building you will need [building plan](http://rust.wikia.com/wiki/Build
 
 When placing twig walls, notice that on one side there are criss-crossed logs forming an X. This is the wall's soft side and you don't want it external facing. When placing twig structure, press R to rotate it. If you place something incorrectly you can rotate it using the hammer, but only for a limited time.
 
-Twig is *very* easy to destroy so at the very least you should upgrade your twig to wood. But wood is vulnerable too. It can be burnt using a [flame thrower](http://rust.wikia.com/wiki/Flame_Thrower) and hatchets will eventually break it. Stone is what you should aim for
+Twig is *very* easy to destroy so at the very least you should upgrade your twig to wood. But wood is vulnerable too. It can be burnt using a [flame thrower](http://rust.wikia.com/wiki/Flame_Thrower) and hatchets will eventually break it. Stone is what you should be aiming for. Just make sure you place your walls strong-side out or they can be pick-axed.
 
 #### Key locks
 
@@ -142,6 +142,7 @@ This is one of the most important milestones in the early games. Once you have a
 - [Rustafied getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
 - Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
 - Pepper The Red's [Top 10 best ways to survive Rust](https://www.youtube.com/watch?v=pULXsgBP-YY&t=1s). 
+
 
 
 
