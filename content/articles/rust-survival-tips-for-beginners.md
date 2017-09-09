@@ -121,8 +121,8 @@ Twig is *very* easy to destroy so at the very least you should upgrade your twig
 
 If you don't yet have the metal frags for a [code lock](http://rust.wikia.com/wiki/Code_Lock) that's fine, a [key lock](http://rust.wikia.com/wiki/Lock) will do the trick temporarily. Just be aware that key locks are very insecure for the following reasons:
 
-* If you're killed while carrying your key anywhere near your base your key lets anyone into base.
-* If you lose your key outside your base you won't be able to get back in. And if you don't have a spare key inside your base you can respawn but you won't be able to open your door.
+* If you're killed while carrying your key near your base your key lets anyone into base.
+* If you lose your key outside your base you won't be able to get back in unless you have a spare hidden outside. And if you don't have a spare key inside your base you can respawn to a bag but you won't be able to open your door.
 * Other players can craft a key and there's a slim chance it will open your base. This is called [lock picking](https://www.youtube.com/watch?v=iP3cYn4RonM). If someone creates enough key locks their chances of picking your lock increases.
 
 To avoid disaster when using a key lock:
@@ -142,6 +142,7 @@ This is one of the most important milestones in the early games. Once you have a
 - [Rustafied getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
 - Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
 - Pepper The Red's [Top 10 best ways to survive Rust](https://www.youtube.com/watch?v=pULXsgBP-YY&t=1s). 
+
 
 
 
