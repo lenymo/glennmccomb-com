@@ -80,16 +80,16 @@ Once you've found an area to build you'll want to get a [sleeping bag](http://ru
 
 Next up craft a [small stash](http://rust.wikia.com/wiki/Small_Stash) and pop it down somewhere distinct that you will be able to remember. You'll need to be able to find it to dump resources or if you respawn. The reason this is important is that you're going to bury your stash underground where no one can see it (including yourself). 
 
-Because of the difficulties of locating a stash some people prefer a [wooden storage box](http://rust.wikia.com/wiki/Wood_Storage_Box). While this is easier for you to find, it's also much easier for other players to find. Not that it's possible to find a box-sized rock to hide your box. This works a treat if you can pull it off.
+Because of the difficulties of locating a stash some people prefer a [wooden storage box](http://rust.wikia.com/wiki/Wood_Storage_Box). While this is easier for you to find, it's also much easier for other players to find. Note that it's possible to find a box-sized rock to hide your box which works a treat if you can pull it off.
 
-Periodically dump your main resources in your stash (wood, stone, metal ore, sulfur ore and high quality metal ore) and continue foraging. You'll want to accumulate a decent amount of loot something along the lines of:
+Periodically dump your main resources in your stash (wood, stone, metal ore, sulfur ore and high quality metal ore) and continue foraging. You'll want to accumulate a decent amount of loot along the lines of:
 
 - 2-4k wood
 - 1-4k stone
 - 300-500 metal ore
 - At least 30 cloth for a sleeping bag
 
-The more the better but this is enough for your starter base.
+The more the better, but this is enough for your starter base.
 
 
 ### Getting metal frags
@@ -118,6 +118,7 @@ This is one of the most important milestones in the early games. Once you have a
 - [Rustafied getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
 - Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
 - Pepper The Red's [Top 10 best ways to survive Rust](https://www.youtube.com/watch?v=pULXsgBP-YY&t=1s). 
+
 
 
 
