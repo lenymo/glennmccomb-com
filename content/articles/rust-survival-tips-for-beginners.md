@@ -127,9 +127,9 @@ If you don't yet have the metal frags for a [code lock](http://rust.wikia.com/wi
 
 To avoid disaster when using a key lock:
 
-* Make sure you always have a spare key in your base, and always have a bag in your base.
+* Make sure you always have a spare key in your base and always have a bag in your base.
 * When you go outside hide your key in a stash but don't let anyone see you doing it.
-* In short, get a code lock as soon as you can, even if it's on a wooden door.
+* Get a code lock as soon as you can, even if it's on a wooden door.
 
 
 ### Crafting a furnace
@@ -142,6 +142,7 @@ This is one of the most important milestones in the early games. Once you have a
 - [Rustafied getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
 - Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
 - Pepper The Red's [Top 10 best ways to survive Rust](https://www.youtube.com/watch?v=pULXsgBP-YY&t=1s). 
+
 
 
 
