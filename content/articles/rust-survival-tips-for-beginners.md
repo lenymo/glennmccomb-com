@@ -105,7 +105,7 @@ Gears, pipes, springs and semi-automatic bodies will be useful very soon but you
 
 ### Building a starter base
 
-Don't get too carried away building your first base. Your main priority here is safely securing your loot so you can build up your gear and start causing mayhem.
+Don't get too carried away building your first base. Your main priority here is safely securing your loot so you can build up your gear and start causing mayhem for other players. The best bet is usually a single square foundation with an adjoining triangle foundation. This triangle foundation is the cheapest way to create an airlock, allowing you to "safely" exit your base without someone being able to jump in and grab your main loot.
 
 
 ### Crafting a furnace
@@ -118,6 +118,7 @@ This is one of the most important milestones in the early games. Once you have a
 - [Rustafied getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
 - Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
 - Pepper The Red's [Top 10 best ways to survive Rust](https://www.youtube.com/watch?v=pULXsgBP-YY&t=1s). 
+
 
 
 
