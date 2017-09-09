@@ -92,11 +92,11 @@ Periodically dump your main resources in your stash (wood, stone, metal ore, sul
 The more the better, but this is enough for your starter base.
 
 
-### Getting metal frags
+### Metal frags
 
 Early on metal fragments are difficult to come by. Occasionally a barrel will drop 10-15 of them but that's unusual. You can get metal frags by roasting metal ore but you need 50 [low grade fuel](http://rust.wikia.com/wiki/Low_Grade_Fuel) for a [furnace](http://rust.wikia.com/wiki/Furnace) and that's a challenge in itself. 
 
-However, metal frags are very important to help [code lock](http://rust.wikia.com/wiki/Code_Lock) the door of your starter base (100 metal frags). Code locks are way more secure than key locks so if you're anywhere near a lighthouse or harbour it's worth your while finding a recycling station and cashing in any components you find. 
+However, metal frags are very important to help [code lock](http://rust.wikia.com/wiki/Code_Lock) the door of your starter base (100 metal frags). Code locks are way more secure than [key locks](http://rust.wikia.com/wiki/Lock) so if you're anywhere near a lighthouse or harbour it's worth your while finding a recycling station and cashing in any components you find. 
 
 Gears, pipes, springs and semi-automatic bodies will be useful very soon but you won't miss propane tanks and sheet metal and they'll give you 50 and 100 metal frags respectively.
 
@@ -105,7 +105,31 @@ Gears, pipes, springs and semi-automatic bodies will be useful very soon but you
 
 ### Building a starter base
 
-Don't get too carried away building your first base. Your main priority here is safely securing your loot so you can build up your gear and start causing mayhem for other players. The best bet is usually a single square foundation with an adjoining triangle foundation. This triangle foundation is the cheapest way to create an airlock, allowing you to "safely" exit your base without someone being able to jump in and grab your main loot.
+Don't get too carried away building your first base. Your main priority here is safely securing your loot so you can build up your gear and start causing mayhem for other players. 
+
+The cheapest and most common starter base is a single square foundation with an adjoining triangle foundation. The triangle is creates an airlock and allows you to "safely" leave your base without another player jumping in and grabbing your main loot.
+
+#### Building materials
+
+To start building you will need [building plan](http://rust.wikia.com/wiki/Building_Plan) and a [hammer](http://rust.wikia.com/wiki/Hammer). The building plan allows you to place twig foundations, walls, floors and more. The hammer allows you to upgrade your twig to wood, stone, metal and armoured. 
+
+When placing twig walls, notice that on one side there are criss-crossed logs forming an X. This is the wall's soft side and you don't want it external facing. When placing twig structure, press R to rotate it. If you place something incorrectly you can rotate it using the hammer, but only for a limited time.
+
+Twig is *very* easy to destroy so at the very least you should upgrade your twig to wood. But wood is vulnerable too. It can be burnt using a [flame thrower](http://rust.wikia.com/wiki/Flame_Thrower) and hatchets will eventually break it. Stone is what you should aim for
+
+#### Key locks
+
+If you don't yet have the metal frags for a [code lock](http://rust.wikia.com/wiki/Code_Lock) that's fine, a [key lock](http://rust.wikia.com/wiki/Lock) will do the trick temporarily. Just be aware that key locks are very insecure for the following reasons:
+
+* If you're killed while carrying your key anywhere near your base your key lets anyone into base.
+* If you lose your key outside your base you won't be able to get back in. And if you don't have a spare key inside your base you can respawn but you won't be able to open your door.
+* Other players can craft a key and there's a slim chance it will open your base. This is called [lock picking](https://www.youtube.com/watch?v=iP3cYn4RonM). If someone creates enough key locks their chances of picking your lock increases.
+
+To avoid disaster when using a key lock:
+
+* Make sure you always have a spare key in your base, and always have a bag in your base.
+* When you go outside hide your key in a stash but don't let anyone see you doing it.
+* In short, get a code lock as soon as you can, even if it's on a wooden door.
 
 
 ### Crafting a furnace
@@ -118,6 +142,7 @@ This is one of the most important milestones in the early games. Once you have a
 - [Rustafied getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
 - Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
 - Pepper The Red's [Top 10 best ways to survive Rust](https://www.youtube.com/watch?v=pULXsgBP-YY&t=1s). 
+
 
 
 
