@@ -96,7 +96,7 @@ The more the better, but this is enough for your starter base.
 
 Early on metal fragments are difficult to come by. Occasionally a barrel will drop 10-15 of them but that's unusual. You can get metal frags by smelting metal ore in a small furnace but you need 50 [low grade fuel](http://rust.wikia.com/wiki/Low_Grade_Fuel) for a [furnace](http://rust.wikia.com/wiki/Furnace) and that's a challenge in itself. 
 
-However, metal frags are very important to help [code lock](http://rust.wikia.com/wiki/Code_Lock) the door of your starter base (100 metal frags). Code locks are way more secure than [key locks](http://rust.wikia.com/wiki/Lock). A good way to get metal early on is using a recycler. These can be found at most monuments, so if you're anywhere near a lighthouse, harbour, supermarket or gas station it's cashing in any components you've managed to find. 
+However, metal frags are very important to help [code lock](http://rust.wikia.com/wiki/Code_Lock) the door of your starter base (100 metal frags). Code locks are way more secure than [key locks](http://rust.wikia.com/wiki/Lock). A good way to get metal early on is using a recycler. These can be found at most monuments, so if you're anywhere near a lighthouse, harbour, supermarket or gas station it's worth cashing in any components you've managed to find. 
 
 Gears, pipes, springs and semi-automatic bodies will be useful very soon but you won't miss propane tanks and sheet metal and they'll give you 50 and 100 metal frags respectively.
 
@@ -142,6 +142,7 @@ Crafting a furnace is one of the most important early game milestones. Once you 
 - [Rustafied getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
 - Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
 - Pepper The Red's [Top 10 best ways to survive Rust](https://www.youtube.com/watch?v=pULXsgBP-YY&t=1s). 
+
 
 
 
