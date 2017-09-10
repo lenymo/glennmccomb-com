@@ -94,13 +94,13 @@ The more the better, but this is enough for your starter base.
 
 ### Metal frags
 
-Early on metal fragments are difficult to come by. Occasionally a barrel will drop 10-15 of them but that's unusual. You can get metal frags by roasting metal ore but you need 50 [low grade fuel](http://rust.wikia.com/wiki/Low_Grade_Fuel) for a [furnace](http://rust.wikia.com/wiki/Furnace) and that's a challenge in itself. 
+Early on metal fragments are difficult to come by. Occasionally a barrel will drop 10-15 of them but that's unusual. You can get metal frags by smelting metal ore in a small furnace but you need 50 [low grade fuel](http://rust.wikia.com/wiki/Low_Grade_Fuel) for a [furnace](http://rust.wikia.com/wiki/Furnace) and that's a challenge in itself. 
 
-However, metal frags are very important to help [code lock](http://rust.wikia.com/wiki/Code_Lock) the door of your starter base (100 metal frags). Code locks are way more secure than [key locks](http://rust.wikia.com/wiki/Lock) so if you're anywhere near a lighthouse or harbour it's worth your while finding a recycling station and cashing in any components you find. 
+However, metal frags are very important to help [code lock](http://rust.wikia.com/wiki/Code_Lock) the door of your starter base (100 metal frags). Code locks are way more secure than [key locks](http://rust.wikia.com/wiki/Lock). A good way to get metal early on is using a recycler. These can be found at most monuments, so if you're anywhere near a lighthouse, harbour, supermarket or gas station it's cashing in any components you've managed to find. 
 
 Gears, pipes, springs and semi-automatic bodies will be useful very soon but you won't miss propane tanks and sheet metal and they'll give you 50 and 100 metal frags respectively.
 
-<small>NOTE: I mention the harbour recycler because harbours have lower tier loot crates and are less attractive to potentially experienced (and probably armed) players.</small>
+<small>NOTE: I mention these monuments because they have lower tier loot crates and are less attractive to potentially experienced (and probably armed) players.</small>
 
 
 ### Building a starter base
@@ -123,13 +123,13 @@ If you don't yet have the metal frags for a [code lock](http://rust.wikia.com/wi
 
 * If you're killed while carrying your key near your base your key lets anyone into base.
 * If you lose your key outside your base you won't be able to get back in unless you have a spare hidden outside. And if you don't have a spare key inside your base you can respawn to a bag but you won't be able to open your door.
-* Other players can craft a key and there's a slim chance it will open your base. This is called [lock picking](https://www.youtube.com/watch?v=iP3cYn4RonM). If someone creates enough key locks their chances of picking your lock increases.
+* Other players can craft a key and there's a slim chance it will open your lock. This is called [lock picking](https://www.youtube.com/watch?v=iP3cYn4RonM). If someone creates enough keys their chances of picking your lock increases (chances of a match are estimated at 1/100).
 
 To avoid disaster when using a key lock:
 
-* Make sure you always have a spare key in your base and always have a bag in your base.
-* When you go outside hide your key in a stash but don't let anyone see you doing it.
-* Get a code lock as soon as you can, even if it's on a wooden door.
+* Always have a spare key and sleeping bag in your base.
+* When you go outside, hide your key in a stash but don't let anyone see you doing it.
+* Get a code lock as soon as you can, even if it's only on a wooden door.
 
 
 ### Crafting a furnace
@@ -142,6 +142,7 @@ Crafting a furnace is one of the most important early game milestones. Once you 
 - [Rustafied getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
 - Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
 - Pepper The Red's [Top 10 best ways to survive Rust](https://www.youtube.com/watch?v=pULXsgBP-YY&t=1s). 
+
 
 
 
