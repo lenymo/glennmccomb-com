@@ -119,7 +119,7 @@ Twig is *very* easy to destroy so at the very least you should upgrade your twig
 
 #### Tool cupboard
 
-Placing a tool cupboard (TC) in your base means only you - or anyone else who has access to your TC - can build within a certain radius of where your TC is placed. Other players can build twig near your base but they can't upgrade it. This prevents players from griefing your base by building walls around your door. Place your TC in one of the back corners of your 1x1 and authorise yourself. Having TC auth allows you to destroy structures but only for 10 minutes after it is placed. 
+Placing a tool cupboard (TC) in your base means only you - or anyone else who has access to your TC - can build within a certain radius of where your TC is placed. Other players can build twig near your base but they can't upgrade it. This prevents players from griefing your base by building walls around your door. Place your TC in one of the back corners of your 1x1 and authorise yourself. Having TC auth allows you to destroy structures, but only for 10 minutes after they are placed. 
 
 #### Key locks
 
@@ -146,6 +146,7 @@ Crafting a furnace is one of the most important early game milestones. Once you 
 - [Rustafied getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
 - Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
 - Pepper The Red's [Top 10 best ways to survive Rust](https://www.youtube.com/watch?v=pULXsgBP-YY&t=1s). 
+
 
 
 
