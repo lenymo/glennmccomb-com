@@ -47,7 +47,7 @@ When you're learning the ropes other players are usually more hindrance than hel
 
 
 {{< article-body-full-bleed >}}
-![Placeholder](http:\/\/via.placeholder.com\/350x50)
+![Rust Sunset](/img/uploads/article-rust-survival-tips-sunset.jpg)
 {{< /article-body-full-bleed >}}
 
 
@@ -144,6 +144,7 @@ Crafting a furnace is one of the most important early game milestones. Once you 
 - [Rustafied getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
 - Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
 - Pepper The Red's [Top 10 best ways to survive Rust](https://www.youtube.com/watch?v=pULXsgBP-YY&t=1s). 
+
 
 
 
