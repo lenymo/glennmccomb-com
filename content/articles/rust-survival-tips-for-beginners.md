@@ -132,13 +132,21 @@ If you don't yet have the metal frags for a [code lock](http://rust.wikia.com/wi
 To avoid disaster when using a key lock:
 
 * Always have a spare key and sleeping bag in your base.
-* When you go outside, hide your key in a stash but don't let anyone see you doing it.
-* Get a code lock as soon as you can, even if it's only on a wooden door.
+* When you go outside hide your key in a stash.
+* Get a code lock as soon as you can even if it's on a wooden door.
 
 
 ### Crafting a furnace
 
-Crafting a furnace is one of the most important early game milestones. Once you have a furnace you can begin to smelt metal, sulphur. This is particularly vital if you don't yet have a code lock on your base.
+Crafting a furnace is one of the most important early game milestones. Once you have a furnace you can begin to smelt metal and sulphur. This is particularly vital if you don't yet have a code lock on your base.
+
+The biggest obstacle to crafting a furnace is the 50 low grade fuel. This can be difficult to find early on. Here's how you can find it:
+
+* Killing animals and harvesting them for animal fat (x3 animal fat + x1 cloth = 1 low grade). Craft a [bone knife](http://rust.wikia.com/wiki/Bone_Knife) as soon as you can for max efficiency. If you take down a bear early on you are set.
+* Catching [trout](http://rust.wikia.com/wiki/Small_Trout) in a [fishing trap](http://rust.wikia.com/wiki/Survival_Fish_Trap) will get you 8 animal fat.
+* Cracking red oil barrels. This usually gets you 5 low grade and 15 crude oil.
+* Looting the mining carts found outside mines (see below).
+* Refining [crude oil](http://rust.wikia.com/wiki/Crude_Oil) via an [small oil refinery](http://rust.wikia.com/wiki/Small_Oil_Refinery).
 
 
 ## Further reading
@@ -146,6 +154,7 @@ Crafting a furnace is one of the most important early game milestones. Once you 
 - [Rustafied getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
 - Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
 - Pepper The Red's [Top 10 best ways to survive Rust](https://www.youtube.com/watch?v=pULXsgBP-YY&t=1s). 
+
 
 
 
