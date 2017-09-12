@@ -150,12 +150,22 @@ The biggest obstacle to crafting a furnace is the 50 low grade fuel. This can be
 
 <small>TIP: Craft a [bone knife](http://rust.wikia.com/wiki/Bone_Knife)as soon as you can for max efficiency.</small>
 
+{{< row >}}
+{{< col >}}
+<img src="http://via.placeholder.com/350x150">
+{{< /col >}}
+{{< col >}}
+<img src="http://via.placeholder.com/350x150">
+{{< /col >}}
+{{< /row >}}
+
 
 ## Further reading
 
 - [Rustafied getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
 - Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
 - Pepper The Red's [Top 10 best ways to survive Rust](https://www.youtube.com/watch?v=pULXsgBP-YY&t=1s). 
+
 
 
 
