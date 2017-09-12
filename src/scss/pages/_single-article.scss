@@ -205,9 +205,11 @@ $article-header-padding-bottom-xl: $gutter * 6;
 
 @include respond-below(sm) {
   .section__article-body {
-    .row {
-      padding-left: $gutter * 2;
-      padding-right: $gutter * 2;
+    > .container {
+      > .row {
+        padding-left: $gutter * 2;
+        padding-right: $gutter * 2;
+      }
     }
   }
 }
@@ -237,7 +239,13 @@ $article-header-padding-bottom-xl: $gutter * 6;
     margin-bottom: $base-margin-bottom-xs;
 
     img {
-      margin-bottom: 0;
+      margin-bottom: $gutter / 4;
+    }
+
+    p {
+      color: $small-font-color;
+      font-size: $small-font-size;
+      line-height: 1.4;
     }
   }
 
@@ -291,7 +299,7 @@ $article-header-padding-bottom-xl: $gutter * 6;
       margin-bottom: $base-margin-bottom;
 
       img {
-        margin-bottom: 0;
+        margin-bottom: $gutter / 4;
       }
     }
 
