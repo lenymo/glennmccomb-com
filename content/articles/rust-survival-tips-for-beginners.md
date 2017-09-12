@@ -152,7 +152,7 @@ The biggest obstacle to crafting a furnace is the 50 low grade fuel. This can be
 
 {{< row >}}
 {{< col >}}
-{{< figure src="/img/uploads/article-rust-survival-tips-red-barrel.jpg" caption="A red oil barrel." >}}
+{{< figure src="/img/uploads/article-rust-survival-tips-red-barrel.jpg" caption="An oil barrel." >}}
 {{< /col >}}
 {{< col >}}
 {{< figure src="/img/uploads/article-rust-survival-tips-mining-cart.jpg" caption="Make sure you take the low grade from candle hats and miner's helmets." >}}
