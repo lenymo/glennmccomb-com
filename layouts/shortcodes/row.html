@@ -4,9 +4,9 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 Params:
-NONE
+class="example-class"
 
 -->
-<div class="row">
+<div class="row {{ if .Get "class" }}{{ .Get "class" }}{{ end }}>
   {{ .Inner | markdownify }}
 </div>
