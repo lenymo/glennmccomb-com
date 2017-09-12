@@ -321,6 +321,23 @@ $article-header-padding-bottom-xl: $gutter * 6;
 
 
 //
+//  ARTICLE FOOTER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@include respond-below(sm) {
+  .section__article-footer {
+    > .container {
+      > .row {
+        padding-left: $gutter * 2;
+        padding-right: $gutter * 2;
+      }
+    }
+  }
+}
+
+
+
+//
 //  ARTICLE FULL BLEED
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
