@@ -233,6 +233,14 @@ $article-header-padding-bottom-xl: $gutter * 6;
     max-width: 100%;
   }
 
+  figure {
+    margin-bottom: $base-margin-bottom-xs;
+
+    img {
+      margin-bottom: 0;
+    }
+  }
+
   ul,
   ol {
     font-size: $article-font-size-xs;
@@ -277,6 +285,14 @@ $article-header-padding-bottom-xl: $gutter * 6;
 
     img {
       margin-bottom: $base-margin-bottom;
+    }
+
+    figure {
+      margin-bottom: $base-margin-bottom;
+
+      img {
+        margin-bottom: 0;
+      }
     }
 
     ul,
