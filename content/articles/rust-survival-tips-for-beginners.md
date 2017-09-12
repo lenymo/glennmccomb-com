@@ -151,11 +151,11 @@ The biggest obstacle to crafting a furnace is the 50 low grade fuel. This can be
 <small>TIP: Craft a [bone knife](http://rust.wikia.com/wiki/Bone_Knife)as soon as you can for max efficiency.</small>
 
 {{< row >}}
-{{< col >}}
-<img src="http://via.placeholder.com/350x150">
+{{< col columns="6" >}}
+<img src="http://via.placeholder.com/360x150">
 {{< /col >}}
-{{< col >}}
-<img src="http://via.placeholder.com/350x150">
+{{< col columns="6" >}}
+<img src="http://via.placeholder.com/360x150">
 {{< /col >}}
 {{< /row >}}
 
