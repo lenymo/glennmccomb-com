@@ -144,7 +144,7 @@ The biggest obstacle to crafting a furnace is the 50 low grade fuel. This can be
 
 * Killing animals and harvesting them for animal fat (x3 animal fat + x1 cloth = 1 low grade). Bears are the best and if you take one down early on you are set.
 * Cracking red oil barrels. This usually gets you 5 low grade and 15 crude oil.
-* Looting the mining carts found outside mines (see below).
+* Looting the mining carts found outside mines (can yield 15-20 low grade). Make sure you take low grade from the [candle hat](http://rust.wikia.com/wiki/Candle_Hat) and [miners hat](http://rust.wikia.com/wiki/Miners_Hat).
 * Catching [trout](http://rust.wikia.com/wiki/Small_Trout) in a [fishing trap](http://rust.wikia.com/wiki/Survival_Fish_Trap) will get you 8 animal fat. This seems like a lot of effort when anyone else can loot your trap before you get to it.
 * Refining [crude oil](http://rust.wikia.com/wiki/Crude_Oil) via an [small oil refinery](http://rust.wikia.com/wiki/Small_Oil_Refinery). You can craft an oil refinery yourself or they can be found at certain monuments.
 
@@ -155,7 +155,7 @@ The biggest obstacle to crafting a furnace is the 50 low grade fuel. This can be
 {{< figure src="/img/uploads/article-rust-survival-tips-red-barrel.jpg" caption="An oil barrel." >}}
 {{< /col >}}
 {{< col >}}
-{{< figure src="/img/uploads/article-rust-survival-tips-mining-cart.jpg" caption="Make sure you take low grade from the [candle hat](http://rust.wikia.com/wiki/Candle_Hat) or [miners hat](http://rust.wikia.com/wiki/Miners_Hat)." >}}
+{{< figure src="/img/uploads/article-rust-survival-tips-mining-cart.jpg" caption="Mining cart." >}}
 {{< /col >}}
 {{< /row >}}
 
@@ -164,6 +164,7 @@ The biggest obstacle to crafting a furnace is the 50 low grade fuel. This can be
 - [Rustafied getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
 - Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
 - Pepper The Red's [Top 10 best ways to survive Rust](https://www.youtube.com/watch?v=pULXsgBP-YY&t=1s). 
+
 
 
 
