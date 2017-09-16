@@ -82,7 +82,7 @@ Next up craft a [small stash](http://rust.wikia.com/wiki/Small_Stash) and pop it
 
 Because of the difficulties of locating a stash some people prefer a [wooden storage box](http://rust.wikia.com/wiki/Wood_Storage_Box). While this is easier for you to find, it's also much easier for other players to find. Note that it's possible to find a box-sized rock to hide your box which works a treat if you can pull it off.
 
-![Hidden wooden chest](/img/uploads/article-rust-survival-tips-hidden-chest.gif)
+{{< figure src="/img/uploads/article-rust-survival-tips-hidden-chest.gif" caption="My very poor attempt at hiding a wooden chest." >}}
 
 Periodically dump your main resources in your stash (wood, stone, metal ore, sulfur ore and high quality metal ore) and continue foraging. You'll want to accumulate a decent amount of loot along the lines of:
 
@@ -166,6 +166,7 @@ The biggest obstacle to crafting a furnace is the 50 low grade fuel. This can be
 - [Rustafied getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
 - Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
 - Pepper The Red's [Top 10 best ways to survive Rust](https://www.youtube.com/watch?v=pULXsgBP-YY&t=1s). 
+
 
 
 
