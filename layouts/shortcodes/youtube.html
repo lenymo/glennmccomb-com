@@ -9,8 +9,6 @@ autoplay="true"
 
 -->
 
-{{ if .Get "id" }}
 <div class="iframe-wrapper youtube">
-  <iframe src="//www.youtube.com/embed/{{ .Get "id" }}" {{ if eq "true" .Get "autoplay" }}?autoplay=1{{ end }} allowfullscreen frameborder="0" title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/{{ if .Get "id" }}{{ .Get "id" }}{{ end }}?rel=0&showinfo=0{{ if .Get "autoplay" }}&autoplay=1{{ end }}"  allowfullscreen frameborder="0" title="YouTube Video"></iframe>
 </div>
-{{ end }}
