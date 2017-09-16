@@ -106,7 +106,6 @@ Gears, pipes, springs and semi-automatic bodies will be useful very soon but you
 
 <small>NOTE: I mention these monuments because they have lower tier loot crates and are less attractive to potentially experienced (and probably armed) players.</small>
 
-
 ### Building a starter base
 
 Don't get too carried away building your first base. Your main priority here is safely securing your loot so you can build up your gear and start causing mayhem for other players. 
@@ -172,6 +171,7 @@ The biggest obstacle to crafting a furnace is the 50 low grade fuel. This can be
 - [Rustafied getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
 - Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
 - Pepper The Red's [Top 10 best ways to survive Rust](https://www.youtube.com/watch?v=pULXsgBP-YY&t=1s). 
+
 
 
 
