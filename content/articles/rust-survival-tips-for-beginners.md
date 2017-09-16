@@ -116,6 +116,8 @@ To get your head around base building YouTube is your friend. There are a ton of
 
 {{< youtube id="dKfFY0BBXNQ" >}}
 
+For some additional 1x1 layout ideas I also recommend checking out [Tiny Pirate's vid comparing 1x1 layouts](https://www.youtube.com/watch?v=I8eA0uVMO1s).
+
 #### Building materials
 
 To start building you will need [building plan](http://rust.wikia.com/wiki/Building_Plan) and a [hammer](http://rust.wikia.com/wiki/Hammer). The building plan allows you to place twig foundations, walls, floors and more. The hammer allows you to upgrade your twig to wood, stone, metal and armoured. 
@@ -171,6 +173,7 @@ The biggest obstacle to crafting a furnace is the 50 low grade fuel. This can be
 - [Rustafied getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
 - Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
 - Pepper The Red's [Top 10 best ways to survive Rust](https://www.youtube.com/watch?v=pULXsgBP-YY&t=1s). 
+
 
 
 
