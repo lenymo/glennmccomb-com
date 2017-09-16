@@ -113,6 +113,10 @@ Don't get too carried away building your first base. Your main priority here is 
 
 The cheapest and most common starter base is a single square foundation with an adjoining triangle foundation (commonly referred to as a 1x1). The square foundation has one door leading to the triangle foundation, which in turn has one door leading to the outside world. The triangle creates an airlock allowing you to "safely" leave your base without other players jumping in and grabbing your main loot.
 
+To get your head around base building YouTube is your friend. There are a ton of great base builders out there but for your basic "shit shack" I found [Tiny Pirate's](https://www.youtube.com/channel/UCYS98Ht54rwgF47D4K3AvCw) starter base showdown to be the most useful. Check it out.
+
+{{< youtube dKfFY0BBXNQ >}}
+
 #### Building materials
 
 To start building you will need [building plan](http://rust.wikia.com/wiki/Building_Plan) and a [hammer](http://rust.wikia.com/wiki/Hammer). The building plan allows you to place twig foundations, walls, floors and more. The hammer allows you to upgrade your twig to wood, stone, metal and armoured. 
@@ -168,6 +172,7 @@ The biggest obstacle to crafting a furnace is the 50 low grade fuel. This can be
 - [Rustafied getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
 - Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
 - Pepper The Red's [Top 10 best ways to survive Rust](https://www.youtube.com/watch?v=pULXsgBP-YY&t=1s). 
+
 
 
 
