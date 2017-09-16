@@ -115,7 +115,7 @@ The cheapest and most common starter base is a single square foundation with an 
 
 To get your head around base building YouTube is your friend. There are a ton of great base builders out there but for your basic "shit shack" I found [Tiny Pirate's](https://www.youtube.com/channel/UCYS98Ht54rwgF47D4K3AvCw) starter base showdown to be the most useful. Check it out.
 
-{{< youtube dKfFY0BBXNQ >}}
+{{< youtube id="dKfFY0BBXNQ" >}}
 
 #### Building materials
 
@@ -172,6 +172,7 @@ The biggest obstacle to crafting a furnace is the 50 low grade fuel. This can be
 - [Rustafied getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
 - Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
 - Pepper The Red's [Top 10 best ways to survive Rust](https://www.youtube.com/watch?v=pULXsgBP-YY&t=1s). 
+
 
 
 
