@@ -13,7 +13,7 @@ custom_class: rust-survival-tips
 
 The first thing to know about Rust is that you will die. A lot. And that's ok. It's a grind and the more loot you've gathered when you die the more frustrating it is. It's a part of the game though so don't sweat it, and don't expect sympathy from other players.
 
-<small>**NOTE:** This article is written at the time of [devblog 170](https://rust.facepunch.com/blog/devblog170/) and may be out of date and inaccurate after future updates.</small>
+<small>**NOTE:** This article is written at the time of [devblog 170](https://rust.facepunch.com/blog/devblog-177/) and may be out of date and inaccurate after future updates.</small>
 
 ---
 
@@ -21,7 +21,7 @@ The first thing to know about Rust is that you will die. A lot. And that's ok. I
 
 Once you've banged on a few trees and [nodes](http://rust.wikia.com/wiki/Rocks) with your rock and collected some hemp there are a few items you'll want to craft:
 
-- [Paper Map](http://rust.wikia.com/wiki/Paper_Map) <small>5 wood</small>
+- [Paper Map](http://rust.wikia.com/wiki/Paper_Map) <small>First craft paper (5 wood)</small>
 - [Stone Hatchet](http://rust.wikia.com/wiki/Stone_Hatchet) <small>200 wood, 100 stone</small>
 - [Stone Pick Axe](http://rust.wikia.com/wiki/Stone_Pick_Axe) <small>250 wood, 125 stone</small>
 - [Bow](http://rust.wikia.com/wiki/Hunting_Bow) <small>200 wood, 50 cloth</small>
@@ -78,9 +78,11 @@ I've found the northern parts of the map just south of the snow to be a good sta
 
 Once you've found an area to build you'll want to get a [sleeping bag](http://rust.wikia.com/wiki/Sleeping_Bag) down. Find some tall grass or bushes and plonk it down. This allows you to respawn at your bag rather than on a random beach. 
 
-Next up craft a [small stash](http://rust.wikia.com/wiki/Small_Stash) and pop it down somewhere distinct that you will be able to remember. You'll need to be able to find it to dump resources or if you respawn. The reason this is important is that you're going to bury your stash underground where no one can see it (including yourself). 
+Next up craft a [small stash](http://rust.wikia.com/wiki/Small_Stash) and pop it down somewhere distinct that you will be able to remember. You'll need to be able to find it to dump resources or if you respawn. The reason this is important is that you're going to bury your stash underground where no one can see it (including yourself). To access your stash again you need to look down at the ground where it's buried for several seconds.
 
 Because of the difficulties of locating a stash some people prefer a [wooden storage box](http://rust.wikia.com/wiki/Wood_Storage_Box). While this is easier for you to find, it's also much easier for other players to find. Note that it's possible to find a box-sized rock to hide your box which works a treat if you can pull it off.
+
+![Hidden wooden chest](/img/uploads/article-rust-survival-tips-hidden-chest.gif)
 
 Periodically dump your main resources in your stash (wood, stone, metal ore, sulfur ore and high quality metal ore) and continue foraging. You'll want to accumulate a decent amount of loot along the lines of:
 
@@ -164,6 +166,7 @@ The biggest obstacle to crafting a furnace is the 50 low grade fuel. This can be
 - [Rustafied getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
 - Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
 - Pepper The Red's [Top 10 best ways to survive Rust](https://www.youtube.com/watch?v=pULXsgBP-YY&t=1s). 
+
 
 
 
