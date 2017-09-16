@@ -1,0 +1,16 @@
+<!--
+//
+//  YOUTUBE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+Params:
+id="sdfhkjsdf789"
+autoplay="true"
+
+-->
+
+{{ if .Get "id" }}
+<div class="iframe-wrapper youtube">
+  <iframe src="//www.youtube.com/embed/{{ .Get "id" }}" {{ if eq "true" .Get "autoplay" }}?autoplay=1{{ end }} allowfullscreen frameborder="0" title="YouTube Video"></iframe>
+</div>
+{{ end }}

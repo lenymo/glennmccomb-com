@@ -1,0 +1,30 @@
+//
+//  IFRAME
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+iframe {
+  margin-bottom: $base-margin-bottom-xs;
+}
+
+@include respond-above(sm) {
+  iframe {
+    margin-bottom: $base-margin-bottom;
+  }
+}
+
+
+.iframe-wrapper {
+  height: 0; 
+  overflow: hidden;
+  padding-bottom: 56.25%; 
+  padding-top: 30px; 
+  position: relative;
+
+  iframe {
+    height: 100%;
+    left: 0; 
+    position: absolute; 
+    top: 0; 
+    width: 100%; 
+  }
+}
