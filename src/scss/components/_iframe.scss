@@ -2,19 +2,9 @@
 //  IFRAME
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-iframe {
-  margin-bottom: $base-margin-bottom-xs;
-}
-
-@include respond-above(sm) {
-  iframe {
-    margin-bottom: $base-margin-bottom;
-  }
-}
-
-
 .iframe-wrapper {
   height: 0; 
+  margin-bottom: $base-margin-bottom-xs;
   overflow: hidden;
   padding-bottom: 56.25%; 
   padding-top: 30px; 
@@ -26,5 +16,11 @@ iframe {
     position: absolute; 
     top: 0; 
     width: 100%; 
+  }
+}
+
+@include respond-above(sm) {
+  .iframe-wrapper {
+    margin-bottom: $base-margin-bottom;
   }
 }
