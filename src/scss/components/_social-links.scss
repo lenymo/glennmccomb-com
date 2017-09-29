@@ -15,8 +15,19 @@
   display: block;
   padding: $gutter/2;
 
-  &:hover {
-    color: rgba($white, .75);
+  &:hover,
+  &:focus,
+  &:active {
     text-decoration: none;
+  }
+}
+
+@include respond-above(sm) {
+  .social-links__link {
+    &:hover,
+    &:focus,
+    &:active {
+      color: rgba($white, .75);
+    }
   }
 }
