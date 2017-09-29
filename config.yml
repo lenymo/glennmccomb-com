@@ -1,5 +1,6 @@
 baseURL: /
 languageCode: en-us
+paginate: 1
 menu:
   main:
     - Identifier: articles

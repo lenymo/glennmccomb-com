@@ -1,0 +1,55 @@
+//
+//  PAGINATION
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.pagination {
+  margin: $gutter auto 0;
+}
+
+.pagination__item {
+  display: inline-block;
+  margin-left: $gutter * .125;
+  margin-right: $gutter * .125;
+}
+
+.pagination__link {
+  background: $color-gray-f;
+  border-bottom: 3px solid $color-gray-d;
+  color: $color-primary-lighter;
+  display: block;
+  font-weight: bold;
+  padding: $gutter*.25 $gutter*.75;
+  transition: all .2s ease;
+
+  &:hover {
+    background: $white;
+  }
+}
+
+.pagination__link--current {
+  background: $white;
+  border-bottom-color: $color-secondary;
+  color: $color-secondary;
+  cursor: default;
+
+  &:hover {
+    color: $color-secondary;
+  }
+}
+
+@include respond-above(xs) {
+  .pagination__item {
+    margin-left: $gutter * .25;
+    margin-right: $gutter * .25;
+  }
+
+  .pagination__link {
+    padding: $gutter*.5 $gutter;
+  }
+}
+
+@include respond-above(sm) {
+  .pagination {
+    margin-top: $gutter * 2;
+  }
+}

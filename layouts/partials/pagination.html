@@ -1,0 +1,29 @@
+{{ $baseurl := .Site.BaseURL }}
+{{ $paginator := .Paginator }}
+{{ if gt $paginator.TotalPages 1 }}
+<nav class="pagination">
+  <ul class="pagination__list">
+
+  {{ if $paginator.HasPrev }}
+    <li class="pagination__item pagination__item--previous">
+      <a class="pagination__link pagination__link--previous" href="{{ $paginator.Prev.URL }}"><</a>
+    </li>
+  {{ end }}
+    
+  {{ range $paginator.Pagers }}
+    <li class="pagination__item pagination__item--{{ .PageNumber }}{{ if eq . $paginator }} pagination__item--current{{ end }}">
+      <a href="{{ .URL }}" class="pagination__link pagination__link--{{ .PageNumber }}{{ if eq . $paginator }} pagination__link--current{{ end }}">
+        {{ .PageNumber }}
+      </a>
+    </li>
+  {{ end }}
+
+  {{ if $paginator.HasNext }}
+    <li class="pagination__item pagination__item--next">
+      <a class="pagination__link pagination__link--next" href="{{ $paginator.Next.URL }}">></a>
+    </li>
+  {{ end }}
+
+  </ul><!-- .pagination__list -->
+</nav><!-- .pagination -->
+{{ end }}
