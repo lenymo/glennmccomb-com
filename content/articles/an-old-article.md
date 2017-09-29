@@ -1,6 +1,6 @@
 ---
 title: An old article
-date: 09/29/2016 7:29 PM
+date: 2016-09-29T19:32:52+10:00
 featured: null
 description: null
 dark_bg: null
