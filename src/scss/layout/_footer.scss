@@ -24,12 +24,12 @@ $site-footer-bottom-bg-color: $color-primary-darker;
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .site-footer__top {
-  padding: $gutter*2 0;
+  padding: $gutter 0;
 }
 
 @include respond-above(sm) {
   .site-footer__top {
-    padding: $gutter*4 0;
+    padding: $gutter*1.5 0;
   }  
 }
 
