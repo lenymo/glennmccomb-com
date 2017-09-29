@@ -12,6 +12,11 @@
   margin-right: $gutter * .125;
 }
 
+.pagination__item--previous,
+.pagination__item--next {
+  display: none;
+}
+
 .pagination__link {
   background: $color-gray-f;
   border-bottom: 3px solid $color-gray-d;
@@ -23,6 +28,18 @@
 
   &:hover {
     background: $white;
+  }
+}
+
+.pagination__link--previous,
+.pagination__link--next {
+  background: transparent;
+  border-bottom-color: transparent;
+  color: $color-gray-a;
+
+  &:hover {
+    background: $color-gray-f;
+    border-bottom-color: $color-gray-d;
   }
 }
 
