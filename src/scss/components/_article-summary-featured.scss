@@ -56,10 +56,26 @@
         padding: $gutter * 2;
       }
 
-      // .article-summary__title,
-      // .article-summary__excerpt {
-      //   max-width: 75%;
-      // }
+      .article-summary__date {
+        box-shadow: 0 0 0 8px rgba($black, .05);
+        height: 80px;
+        right: 40px;
+        top: -60px;
+        width: 80px;
+
+        .article-date__month {
+          font-size: rem(18px);
+        }
+
+        .article-date__day {
+          font-size: rem(44px);
+        }
+      }
+
+      .article-summary__categories {
+        right: 140px;
+        top: -40px;
+      }
     }
   }
 }
