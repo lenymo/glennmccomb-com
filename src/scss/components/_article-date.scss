@@ -28,7 +28,7 @@ $article-date-size: 70px;
   padding: 12px;
   text-align: center;
   width: $article-date-size;
-  z-index: 3;
+  z-index: $z-index-article-date;
 }
 
 .article-date__month {

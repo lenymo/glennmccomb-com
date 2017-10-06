@@ -2,10 +2,11 @@
 //  Z-INDEX
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-$z-index-site-nav-mobile: 10;
-$z-index-site-header-logo-mobile: 20;
+$z-index-site-nav-mobile: 200;
+$z-index-site-header-logo-mobile: 210;
 
-$z-index-site-header: 3;
-$z-index-site-header-logo: 4;
+$z-index-site-header: 100;
+$z-index-site-header-logo: 110;
 
 $z-index-background-device: 2;
+$z-index-article-date: 3;

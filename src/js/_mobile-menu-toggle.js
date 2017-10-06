@@ -1,0 +1,65 @@
+//
+//  TOGGLE MOBILE MENU
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+var ToggleMobileMenu = (function() {
+
+
+  function toggleMobileMenu() {
+
+    var siteNavToggle = document.querySelector('.site-nav__nav-toggle');
+
+    // Listen for clicks on the menu toggle.
+    siteNavToggle.addEventListener('click', toggleSiteNav, false);
+
+    function toggleSiteNav() {
+
+      var siteNavOpenClass = 'site-nav-is-open';
+      var siteNavOpenFlag = false;
+
+      var bodyElem = document.querySelector('body');
+      var bodyElemClasses = bodyElem.classList;
+
+      // Loop though all classes on the body element.
+      for (var i = 0; i < bodyElemClasses.length; i++) {
+        
+        // If the menu open class is on the body.
+        if ( bodyElemClasses[i] == siteNavOpenClass ) {
+          siteNavOpenFlag = true;
+          break;
+        }
+      }
+
+      // If the menu is open.
+      if ( siteNavOpenFlag ) {
+
+        // Close the menu.
+        bodyElem.classList.remove(siteNavOpenClass);
+
+      // If the menu is closed.
+      } else {
+
+        // Open the menu.
+        bodyElem.className += ' ' + siteNavOpenClass;
+      }
+    }
+  }
+
+  //
+  //  INIT
+  //––––––––––––––––––––––––––––––––––––––––––––––––––
+
+  function init() {
+    toggleMobileMenu();
+  }
+
+
+  //
+  //  RETURN
+  //––––––––––––––––––––––––––––––––––––––––––––––––––
+
+  return {
+    init: init
+  };
+
+})();

@@ -5,6 +5,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
+var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
 var del = require('del');
@@ -51,8 +52,9 @@ gulp.task('admin-scss', function () {
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 gulp.task('js', function() {
-  gulp.src('src/js/main.js')
+  gulp.src('src/js/*.js')
     .pipe(sourcemaps.init())
+    .pipe(concat('main.min.js'))
     .pipe(uglify())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('static/js'));
@@ -82,7 +84,7 @@ gulp.task('images', function() {
 gulp.task('watch', ['scss', 'admin-scss'], function () {
   gulp.watch('src/scss/**/*', ['scss']);
   gulp.watch('src/admin/scss/**/*', ['admin-scss']);
-  gulp.watch('src/js/main.js', ['js']);
+  gulp.watch('src/js/**/*.js', ['js']);
 });
 
 
