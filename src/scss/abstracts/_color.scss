@@ -30,7 +30,8 @@ $color-gray-1: mix(#111, $gray-mixer, 85%);
 
 // Utility colors
 // $color-primary: $color-blue;
-$color-primary: mix(#333, $gray-mixer, 60%);
+// $color-primary: mix(#333, $gray-mixer, 60%);
+$color-primary: #2f3d4c;
 // $color-primary-darker: #212f3d;
 // $color-primary-lighter: #23609e;
 $color-primary-darker: darken($color-primary, 5%);

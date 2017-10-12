@@ -7,7 +7,7 @@
   <meta name="description" content="{{ .Description }}">
   <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
   
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css" />
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "main.css" }}" />
   <link href="https://fonts.googleapis.com/css?family=Volkhov:400,700" rel="stylesheet">
 </head>
   

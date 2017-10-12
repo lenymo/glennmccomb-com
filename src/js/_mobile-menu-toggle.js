@@ -35,12 +35,14 @@ var ToggleMobileMenu = (function() {
 
         // Close the menu.
         bodyElem.classList.remove(siteNavOpenClass);
+        console.log('Mobile menu was closed...');
 
       // If the menu is closed.
       } else {
 
         // Open the menu.
         bodyElem.className += ' ' + siteNavOpenClass;
+        console.log('Mobile menu was opened.');
       }
     }
   }

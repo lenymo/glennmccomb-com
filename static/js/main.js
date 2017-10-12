@@ -1,2 +1,0 @@
-!function(){function e(){for(var e=!1,n=document.querySelector("body"),t=n.classList,o=0;o<t.length;o++)if("site-nav-is-open"==t[o]){e=!0;break}e?n.classList.remove("site-nav-is-open"):n.className+=" site-nav-is-open"}document.querySelector(".site-nav__nav-toggle").addEventListener("click",e,!1)}(),function(){for(var e=document.links,n=0,t=e.length;n<t;n++)e[n].hostname!=window.location.hostname&&(e[n].target="_blank")}();
-//# sourceMappingURL=main.js.map
