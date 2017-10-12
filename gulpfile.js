@@ -12,7 +12,6 @@ var hash            = require('gulp-hash');
 var del             = require('del');
 
 
-
 //
 //  SCSS
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -43,24 +42,6 @@ gulp.task('scss', function () {
 });
 
 
-
-//
-//  ADMIN SCSS
-//––––––––––––––––––––––––––––––––––––––––––––––––––
-
-// Compile admin SCSS files to CSS
-gulp.task('admin-scss', function () {
-  gulp.src('src/admin/scss/**/*.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(sass({outputStyle : 'expanded'}))
-    .pipe(autoprefixer({
-      browsers : ['last 20 versions']
-    }))
-    .pipe(gulp.dest('static/admin/css'));
-});
-
-
-
 //
 //  JAVASCRIPT
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -85,7 +66,6 @@ gulp.task('js', function() {
 });
 
 
-
 //
 //  IMAGES
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -103,6 +83,22 @@ gulp.task('images', function() {
     })
     // Put the map in the data directory.
     .pipe(gulp.dest('data/images'));
+});
+
+
+//
+//  ADMIN SCSS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// Compile admin SCSS files to CSS
+gulp.task('admin-scss', function () {
+  gulp.src('src/admin/scss/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(sass({outputStyle : 'expanded'}))
+    .pipe(autoprefixer({
+      browsers : ['last 20 versions']
+    }))
+    .pipe(gulp.dest('static/admin/css'));
 });
 
 
