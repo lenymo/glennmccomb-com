@@ -59,16 +59,17 @@
       .article-summary__date {
         box-shadow: 0 0 0 8px rgba($black, .05);
         height: 80px;
+        padding: 14px;
         right: 40px;
         top: -60px;
         width: 80px;
 
         .article-date__month {
-          font-size: rem(18px);
+          font-size: rem(16px);
         }
 
         .article-date__day {
-          font-size: rem(44px);
+          font-size: rem(40px);
         }
       }
 
