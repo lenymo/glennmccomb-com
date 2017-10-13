@@ -11,14 +11,6 @@ $color-rust-dark-gray: #232323;
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .rust-survival-tips {
-  .section__page-header {
-    // background-color: $color-rust-dark-gray;
-  }
-
-  .article-header__featured-image {
-    // opacity: .2;
-  }
-
   .article-header__date {
     background-color: $color-rust-red;
     box-shadow: 0 0 0 7px rgba($color-rust-red, .3);
