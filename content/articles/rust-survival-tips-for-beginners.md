@@ -6,7 +6,6 @@ featured_opacity: 0.2
 dark_bg: true
 transparent_header: true
 custom_class: rust-survival-tips
-page_header_bg_color: #232323
 ---
 {{< lead >}}[Rust](http://rust.facepunch.com/) is one of the most popular titles in a new breed of first-person survival games pioneered by [DayZ](https://www.bistudio.com/games/dayz). The learning curve is savage and there is very little on-boarding (at the moment). The game is in [early access](https://en.wikipedia.org/wiki/Early_access) and [the devs](http://www.facepunchstudios.com/) are planning to improve the experience for first-timers before officially launching. But for now you're on your own. {{< /lead >}}
 
