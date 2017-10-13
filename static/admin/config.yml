@@ -17,6 +17,7 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish date", name: "date", widget: "datetime"}
       - {label: "Featured image", name: "featured", widget: "image", required: false}
+      - {label: "Featured image opacity", name: "featured_opacity", widget: "number", required: false}
       - {label: "SEO description", name: "description", widget: "text", required: false, format: "YYYY-MM-DD"}
       - {label: "Dark background", name: "dark_bg", widget: "boolean", required: false}
       - {label: "Transparent site header", name: "transparent_header", widget: "boolean", required: false}
