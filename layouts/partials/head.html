@@ -10,13 +10,21 @@
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "main.css" }}" />
   <link href="https://fonts.googleapis.com/css?family=Volkhov:400,700" rel="stylesheet">
 
-{{ with .Params.featured_opacity }}
+  {{ with .Params.featured_opacity }}
   <style type="text/css">
     .article-header__featured-image {
       opacity: {{ . }};
     }
   </style>
-{{ end }}
+  {{ end }}
+
+  {{ with .Params.page_header_bg_color }}
+  <style type="text/css">
+    .section__page-header {
+      background-color: {{ . }};
+    }
+  </style>
+  {{ end }}
 
 </head>
   

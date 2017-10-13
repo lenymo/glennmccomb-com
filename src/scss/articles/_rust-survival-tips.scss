@@ -4,7 +4,6 @@
 
 $color-rust-red: #ce4837;
 $color-rust-dark-gray: #232323;
-$color-rust-light-gray: #a4a7a7;
 
 
 //
@@ -13,11 +12,11 @@ $color-rust-light-gray: #a4a7a7;
 
 .rust-survival-tips {
   .section__page-header {
-    background-color: $color-rust-dark-gray;
+    // background-color: $color-rust-dark-gray;
   }
 
   .article-header__featured-image {
-    opacity: .2;
+    // opacity: .2;
   }
 
   .article-header__date {
