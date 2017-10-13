@@ -12,7 +12,6 @@ node_modules/
 *.sublime-workspace
 
 # Hugo files
-data/**/hash.*
 public/
 
 # ignore packaged files
