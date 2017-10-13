@@ -28,6 +28,7 @@
 
   &:hover {
     background: $white;
+    border-bottom-color: $color-gray-c;
   }
 }
 
@@ -50,6 +51,7 @@
   cursor: default;
 
   &:hover {
+    border-bottom-color: $color-secondary;
     color: $color-secondary;
   }
 }

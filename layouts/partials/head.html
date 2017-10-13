@@ -9,5 +9,11 @@
   
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "main.css" }}" />
   <link href="https://fonts.googleapis.com/css?family=Volkhov:400,700" rel="stylesheet">
+
+  {{ with .Params.css_file }}
+    {{ with .Params.css_class }}
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "{{ .Params.css_class }}" }}">
+    {{ end }}
+  {{ end }}
 </head>
   
