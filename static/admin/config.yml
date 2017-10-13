@@ -15,12 +15,13 @@ collections:
     fields: # The fields for each document, usually in front matter
       # - {label: "Layout", name: "layout", widget: "hidden", default: "articles"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "featured", widget: "image", required: false}
-      - {label: "SEO Description", name: "description", widget: "text", required: false, format: "YYYY-MM-DD"}
-      - {label: "Dark Background", name: "dark_bg", widget: "boolean", required: false}
-      - {label: "Transparent Header", name: "transparent_header", widget: "boolean", required: false}
-      - {label: "Custom Class", name: "custom_class", widget: "string", required: false}
+      - {label: "Publish date", name: "date", widget: "datetime"}
+      - {label: "Featured image", name: "featured", widget: "image", required: false}
+      - {label: "SEO description", name: "description", widget: "text", required: false, format: "YYYY-MM-DD"}
+      - {label: "Dark background", name: "dark_bg", widget: "boolean", required: false}
+      - {label: "Transparent site header", name: "transparent_header", widget: "boolean", required: false}
+      - {label: "Custom CSS class", name: "custom_class", widget: "string", required: false}
+      - {label: "Custom CSS file", name: "css_file", widget: "boolean", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
       # - {label: Pricing, name: pricing, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Plans, name: plans, widget: list, fields: [{label: Plan, name: plan, widget: string}, {label: Price, name: price, widget: string}, {label: Description, name: description, widget: string}, {label: Items, name: items, widget: list}]}]}
 
