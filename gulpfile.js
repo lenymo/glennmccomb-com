@@ -10,6 +10,7 @@ var uglify          = require('gulp-uglify');
 var sourcemaps      = require('gulp-sourcemaps');
 var hash            = require('gulp-hash');
 var del             = require('del');
+var argv            = require('yargs').argv;
 
 
 //
@@ -19,26 +20,52 @@ var del             = require('del');
 // Compile admin SCSS files to CSS
 gulp.task('scss', function () {
   del(['static/css/**/*']);
-  gulp.src('src/scss/**/*.scss')
-    .pipe(sourcemaps.init())
-    .pipe(sass().on('error', sass.logError))
-    .pipe(sass({outputStyle : 'contracted'}))
-    .pipe(sourcemaps.write({includeContent: false}))
-    .pipe(sourcemaps.init({loadMaps: true}))
-    .pipe(autoprefixer({
-      browsers : ['last 20 versions']
-    }))
-    .pipe(hash())
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest('static/css'))
 
-    // Create a hash map.
-    .pipe(hash.manifest('hash.json'), {
-      deleteOld: true,
-      sourceDir: 'static/css'
-    })
-    // Put the map in the data directory.
-    .pipe(gulp.dest('data/css'));
+  // Dev.
+  if ( argv.dev === undefined ) {
+
+    gulp.src('src/scss/**/*.scss')
+      .pipe(sass().on('error', sass.logError))
+      .pipe(sass({outputStyle : 'compressed'}))
+      .pipe(autoprefixer({
+        browsers : ['last 20 versions']
+      }))
+      .pipe(hash())
+      .pipe(gulp.dest('static/css'))
+
+      // Create a hash map.
+      .pipe(hash.manifest('hash.json'), {
+        deleteOld: true,
+        sourceDir: 'static/css'
+      })
+      // Put the map in the data directory.
+      .pipe(gulp.dest('data/css'));
+  
+  // Production.
+  } else {
+
+    gulp.src('src/scss/**/*.scss')
+      .pipe(sourcemaps.init())
+      .pipe(sass().on('error', sass.logError))
+      .pipe(sass({outputStyle : 'contracted'}))
+      .pipe(sourcemaps.write({includeContent: false}))
+      .pipe(sourcemaps.init({loadMaps: true}))
+      .pipe(autoprefixer({
+        browsers : ['last 20 versions']
+      }))
+      .pipe(hash())
+      .pipe(sourcemaps.write())
+      .pipe(gulp.dest('static/css'))
+
+      // Create a hash map.
+      .pipe(hash.manifest('hash.json'), {
+        deleteOld: true,
+        sourceDir: 'static/css'
+      })
+      // Put the map in the data directory.
+      .pipe(gulp.dest('data/css'));
+
+  }
 });
 
 
