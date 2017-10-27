@@ -9,26 +9,26 @@
 
 .section__articles-summary {
   background: $color-gray-e;
-  padding-top: $section-padding-xs-top-bottom + $site-header-height-sm;
+  padding-top: $gutter*1.5 + $site-header-height-sm;
   // padding-top: $site-header-height-sm;
 }
 
 @include respond-above(xs) {
   .section__articles-summary {
-    padding-top: $section-padding-sm-top-bottom + $site-header-height-sm;
+    padding-top: $gutter*2 + $site-header-height-sm;
   }
 }
 
 @include respond-above(sm) {
   .section__articles-summary {
-    padding-top: $section-padding-md-top-bottom + $site-header-height-md;
+    padding-top: $gutter*2 + $site-header-height-md;
     // padding-top: $site-header-height-md;
   }
 }
 
 @include respond-above(md) {
   .section__articles-summary {
-    padding-top: $section-padding-lg-top-bottom + $site-header-height-lg;
+    padding-top: $gutter*2 + $site-header-height-lg;
     // padding-top: $site-header-height-lg;
   }
 }
