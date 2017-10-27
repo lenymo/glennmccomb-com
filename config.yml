@@ -11,10 +11,6 @@ menu:
       Name: Home
       URL: /
       Weight: '10'
-    - Identifier: work
-      Name: Work
-      URL: /work/
-      Weight: '30'
 taxonomies:
   category: categories
   tag: tags
