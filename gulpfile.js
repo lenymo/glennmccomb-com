@@ -21,7 +21,7 @@ var argv            = require('yargs').argv;
 gulp.task('scss', function () {
   del(['static/css/**/*']);
 
-  // Dev.
+  // Production.
   if ( argv.dev === undefined ) {
 
     gulp.src('src/scss/**/*.scss')
@@ -41,7 +41,7 @@ gulp.task('scss', function () {
       // Put the map in the data directory.
       .pipe(gulp.dest('data/css'));
   
-  // Production.
+  // Dev.
   } else {
 
     gulp.src('src/scss/**/*.scss')
@@ -75,21 +75,44 @@ gulp.task('scss', function () {
 
 gulp.task('js', function() {
   del(['static/js/**/*']);
-  gulp.src('src/js/*.js')
-    .pipe(sourcemaps.init())
-    .pipe(concat('main.min.js'))
-    .pipe(uglify())
-    .pipe(hash())
-    .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('static/js'))
 
-    // Create a hash map.
-    .pipe(hash.manifest('hash.json'), {
-      deleteOld: true,
-      sourceDir: 'static/js'
-    })
-    // Put the map in the data directory.
-    .pipe(gulp.dest('data/js'));
+  // Production.
+  if ( argv.dev === undefined ) {
+
+    gulp.src('src/js/*.js')
+      .pipe(concat('main.min.js'))
+      .pipe(uglify())
+      .pipe(hash())
+      .pipe(gulp.dest('static/js'))
+
+      // Create a hash map.
+      .pipe(hash.manifest('hash.json'), {
+        deleteOld: true,
+        sourceDir: 'static/js'
+      })
+      // Put the map in the data directory.
+      .pipe(gulp.dest('data/js'));
+
+  // Dev.
+  } else {
+
+    gulp.src('src/js/*.js')
+      .pipe(sourcemaps.init())
+      .pipe(concat('main.min.js'))
+      .pipe(uglify())
+      .pipe(hash())
+      .pipe(sourcemaps.write('./'))
+      .pipe(gulp.dest('static/js'))
+
+      // Create a hash map.
+      .pipe(hash.manifest('hash.json'), {
+        deleteOld: true,
+        sourceDir: 'static/js'
+      })
+      // Put the map in the data directory.
+      .pipe(gulp.dest('data/js'));
+
+  }
 });
 
 
