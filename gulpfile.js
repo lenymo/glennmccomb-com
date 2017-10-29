@@ -11,6 +11,7 @@ var sourcemaps      = require('gulp-sourcemaps');
 var hash            = require('gulp-hash');
 var del             = require('del');
 var argv            = require('yargs').argv;
+var gulpif          = require('gulp-if');
 
 
 //
@@ -21,40 +22,44 @@ var argv            = require('yargs').argv;
 gulp.task('scss', function () {
   del(['static/css/**/*']);
 
-  // Production.
   if ( argv.dev === undefined ) {
+    argv.dev = false;
+  }
+
+  // Production.
+  // if ( argv.dev === undefined ) {
+
+  //   gulp.src('src/scss/**/*.scss')
+  //     .pipe(sass().on('error', sass.logError))
+  //     .pipe(sass({outputStyle : 'compressed'}))
+  //     .pipe(autoprefixer({
+  //       browsers : ['last 20 versions']
+  //     }))
+  //     .pipe(hash())
+  //     .pipe(gulp.dest('static/css'))
+
+  //     // Create a hash map.
+  //     .pipe(hash.manifest('hash.json'), {
+  //       deleteOld: true,
+  //       sourceDir: 'static/css'
+  //     })
+  //     // Put the map in the data directory.
+  //     .pipe(gulp.dest('data/css'));
+  
+  // // Dev.
+  // } else {
 
     gulp.src('src/scss/**/*.scss')
+      .pipe( gulpif( argv.dev, sourcemaps.init() ) )
       .pipe(sass().on('error', sass.logError))
       .pipe(sass({outputStyle : 'compressed'}))
+      .pipe( gulpif( argv.dev, sourcemaps.write({includeContent: false}) ) )
+      .pipe( gulpif( argv.dev, sourcemaps.init({loadMaps: true}) ) )
       .pipe(autoprefixer({
         browsers : ['last 20 versions']
       }))
       .pipe(hash())
-      .pipe(gulp.dest('static/css'))
-
-      // Create a hash map.
-      .pipe(hash.manifest('hash.json'), {
-        deleteOld: true,
-        sourceDir: 'static/css'
-      })
-      // Put the map in the data directory.
-      .pipe(gulp.dest('data/css'));
-  
-  // Dev.
-  } else {
-
-    gulp.src('src/scss/**/*.scss')
-      .pipe(sourcemaps.init())
-      .pipe(sass().on('error', sass.logError))
-      .pipe(sass({outputStyle : 'contracted'}))
-      .pipe(sourcemaps.write({includeContent: false}))
-      .pipe(sourcemaps.init({loadMaps: true}))
-      .pipe(autoprefixer({
-        browsers : ['last 20 versions']
-      }))
-      .pipe(hash())
-      .pipe(sourcemaps.write())
+      .pipe( gulpif( argv.dev, sourcemaps.write() ) )
       .pipe(gulp.dest('static/css'))
 
       // Create a hash map.
@@ -65,7 +70,7 @@ gulp.task('scss', function () {
       // Put the map in the data directory.
       .pipe(gulp.dest('data/css'));
 
-  }
+  // }
 });
 
 
