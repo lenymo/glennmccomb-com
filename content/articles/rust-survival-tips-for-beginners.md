@@ -30,7 +30,6 @@ When you're learning the ropes other players are usually more hindrance than hel
 
 Once you've banged on a few trees and [nodes](http://rust.wikia.com/wiki/Rocks) with your rock and collected some hemp (cloth) there are a few items you'll want to craft:
 
-- [Paper Map](http://rust.wikia.com/wiki/Paper_Map) <small>First craft paper (5 wood)</small>
 - [Stone Hatchet](http://rust.wikia.com/wiki/Stone_Hatchet) <small>200 wood, 100 stone</small>
 - [Stone Pick Axe](http://rust.wikia.com/wiki/Stone_Pick_Axe) <small>200 wood, 100 stone</small>
 - [Bow](http://rust.wikia.com/wiki/Hunting_Bow) <small>200 wood, 50 cloth</small>
@@ -38,13 +37,13 @@ Once you've banged on a few trees and [nodes](http://rust.wikia.com/wiki/Rocks) 
 - [Wooden spear](http://rust.wikia.com/wiki/Wooden_Spear) <small>300 wood</small>
 - [Bandages](http://rust.wikia.com/wiki/Bandage) <small>4 cloth</small>
 
-These items help you farm resources, kill things and heal yourself. My preferred weapon is the bow but the spear is handy for close quarters combat and for popping barrels.
+These items help you farm resources, kill things and heal yourself. My preferred weapon is the bow but the spear is handy for close quarters combat and for popping barrels. Press "G" to see the world map and figure out where you are.
 
 You'll notice I've left clothes off the list. At this early stage unless you're in the snow there's not much point using your cloth to craft clothes. You're better off saving it for a bow and sleeping bag (50 and 30 cloth respectively).
 
 ---
 
-##Eating
+## Eating
 
 If you don't eat you will starve and die so finding food is important. There are a number of ways to satisfy your hunger:
 - Pick corn, pumpkins and mushrooms.
@@ -58,17 +57,17 @@ If you don't eat you will starve and die so finding food is important. There are
 
 The easiest of these is picking vegetables. Corn and pumpkins grow alongside rivers, and mushrooms grow in the dirt in forests.
 
-###Food containers
+### Food containers
 
 Food containers are a great kick start but the monuments and mines that they grow around tend to be more populated.
 
-###Animals
+### Animals
 
 Killing animals is tricky because the majority of them will either run away faster than you can chase them or attack you back with often fatal consequences. Even boars can kill you if all you have is your rock. If you manage to kill an animal, for maximum yield, butcher it with a [bone knife](rust bone knife) for 30 bone fragments.
 
-#Fishing
+### Fishing
 
-TL;DR: Don't bother.
+TL;DR: Don't bother fishing.
 
 [fish traps](http://rust.wikia.com/wiki/Survival_Fish_Trap) are rarely used in Rust. I've tried them myself once to get a handle on the mechanics but a lot can go wrong and the cost/benefit makes them barely worthwhile. They cost 200 wood and 5 cloth to craft and you will need bait (mushrooms, corn, etc). Place your trap on a beach, load it with bait and wait 5-10 minutes. 
 
