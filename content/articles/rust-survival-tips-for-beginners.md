@@ -1,6 +1,6 @@
 ---
 title: Rust survival tips for beginners
-date: 11/14/2017 10:00 AM
+date: '11/14/2017 10:00 AM'
 featured: /img/uploads/article-rust-survival-tips.jpg
 custom_class: rust-survival-tips
 transparent_header: true
@@ -16,9 +16,19 @@ The first thing to know about Rust is that you will die. A lot. And that's ok. I
 
 ---
 
+## Choosing a server
+
+In order to figure out the mechanics of the game a quiet server with less than 50 players is a good place to start. Intuition would suggest Facepunch's official servers are the safest place to start but they're riddled with cheaters and attract a less friendly crowd. 
+
+A well maintained community server will keep tabs on cheaters and police players who are abusive or disrespectful. If you're playing on your own, look for solo/duo/trio servers as they restrict players to small groups and mean you'll avoid large clans and zergs.
+
+When you're learning the ropes other players are usually more hindrance than help so don't be scared to jump on an empty community server.
+
+---
+
 ## The Basics
 
-Once you've banged on a few trees and [nodes](http://rust.wikia.com/wiki/Rocks) with your rock and collected some hemp there are a few items you'll want to craft:
+Once you've banged on a few trees and [nodes](http://rust.wikia.com/wiki/Rocks) with your rock and collected some hemp (cloth) there are a few items you'll want to craft:
 
 - [Paper Map](http://rust.wikia.com/wiki/Paper_Map) <small>First craft paper (5 wood)</small>
 - [Stone Hatchet](http://rust.wikia.com/wiki/Stone_Hatchet) <small>200 wood, 100 stone</small>
@@ -34,13 +44,40 @@ You'll notice I've left clothes off the list. At this early stage unless you're 
 
 ---
 
-## Choosing a server
+##Eating
 
-In order to figure out the mechanics of the game a quiet server with less than 50 players is a good place to start. Intuition would suggest Facepunch's official servers are the safest place to start but they're riddled with cheaters and attract a less friendly crowd. 
+If you don't eat you will starve and die so finding food is important. There are a number of ways to satisfy your hunger:
+- Pick corn, pumpkins and mushrooms.
+- Harvest desert cactus for cactus flesh.
+- Find small food containers near monuments and mines.
+- Kill animals with a weapon (bow / spear) and roast their flesh on a campfire. <small>Try to avoid eating raw meat.</small>
+- Killing other humans and roasting their flesh. <small>Note that this will heavily dehydrate you.</small>
+- Catching fish with a [fishing trap](http://rust.wikia.com/wiki/Survival_Fish_Trap).
 
-A well maintained community server will keep tabs on cheaters and police players who are abusive or disrespectful. If you're playing on your own, look for solo/duo/trio servers as they restrict players to small groups and mean you'll avoid large clans and zergs.
+###Naturally growing food
 
-When you're learning the ropes other players are usually more hindrance than help. Don't be scared to jump on an empty community server.
+The easiest of these is picking vegetables. Corn and pumpkins grow alongside rivers, and mushrooms grow in the dirt in forests.
+
+###Food containers
+
+Food containers are a great kick start but the monuments and mines that they grow around tend to be more populated.
+
+###Animals
+
+Killing animals is tricky because the majority of them will either run away faster than you can chase them or attack you back with often fatal consequences. Even boars can kill you if all you have is your rock. If you manage to kill an animal, for maximum yield, butcher it with a [bone knife](rust bone knife) for 30 bone fragments.
+
+#Fishing
+
+TL;DR: Don't bother.
+
+[fish traps](http://rust.wikia.com/wiki/Survival_Fish_Trap) are rarely used in Rust. I've tried them myself once to get a handle on the mechanics but a lot can go wrong and the cost/benefit makes them barely worthwhile. They cost 200 wood and 5 cloth to craft and you will need bait (mushrooms, corn, etc). Place your trap on a beach, load it with bait and wait 5-10 minutes. 
+
+If you're lucky you'll catch a trout, if not you'll catch minnows. Cooked trout is very nutritious and you'll get some bonus animal fat. Minnows are not good.
+
+The problem with fishing is that while you're waiting to catch a fish, any other place can either take your bait, destroy your trap or steal your fish once it's caught. They're also obvious as fuck sitting in the beach so there's no hiding them.
+
+
+---
 
 
 {{< article-body-full-bleed >}}
