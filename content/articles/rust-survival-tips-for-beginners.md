@@ -14,7 +14,7 @@ The first thing to know about Rust is that you will die. A lot. And that's ok. I
 
 <small>**NOTE:** This article is written at the time of [devblog 185](https://rust.facepunch.com/blog/devblog-185/) and may be out of date and inaccurate after future updates.</small>
 
----
+- - -
 
 ## Choosing a server
 
@@ -24,40 +24,45 @@ A well maintained community server will keep tabs on cheaters and police players
 
 When you're learning the ropes other players are usually more hindrance than help so don't be scared to jump on an empty community server.
 
----
+- - -
 
 ## The Basics
 
 Once you've banged on a few trees and [nodes](http://rust.wikia.com/wiki/Rocks) with your rock and collected some hemp (cloth) there are a few items you'll want to craft:
 
-- [Stone Hatchet](http://rust.wikia.com/wiki/Stone_Hatchet) <small>200 wood, 100 stone</small>
-- [Stone Pick Axe](http://rust.wikia.com/wiki/Stone_Pick_Axe) <small>200 wood, 100 stone</small>
-- [Bow](http://rust.wikia.com/wiki/Hunting_Bow) <small>200 wood, 50 cloth</small>
-- [Arrows](http://rust.wikia.com/wiki/Wooden_Arrow) <small>25 wood, 10 stone</small>
-- [Wooden spear](http://rust.wikia.com/wiki/Wooden_Spear) <small>300 wood</small>
-- [Bandages](http://rust.wikia.com/wiki/Bandage) <small>4 cloth</small>
+* [Stone Hatchet](http://rust.wikia.com/wiki/Stone_Hatchet) <small>200 wood, 100 stone</small>
+* [Stone Pick Axe](http://rust.wikia.com/wiki/Stone_Pick_Axe) <small>200 wood, 100 stone</small>
+* [Bow](http://rust.wikia.com/wiki/Hunting_Bow) <small>200 wood, 50 cloth</small>
+* [Arrows](http://rust.wikia.com/wiki/Wooden_Arrow) <small>25 wood, 10 stone</small>
+* [Wooden spear](http://rust.wikia.com/wiki/Wooden_Spear) <small>300 wood</small>
+* [Bandages](http://rust.wikia.com/wiki/Bandage) <small>4 cloth</small>
 
 These items help you farm resources, kill things and heal yourself. My preferred weapon is the bow but the spear is handy for close quarters combat and for popping barrels. Press "G" to see the world map and figure out where you are.
 
 You'll notice I've left clothes off the list. At this early stage unless you're in the snow there's not much point using your cloth to craft clothes. You're better off saving it for a bow and sleeping bag (50 and 30 cloth respectively).
 
----
+- - -
 
 ## Eating
 
 If you don't eat you will starve and die so finding food is important. There are a number of ways to satisfy your hunger:
-- Pick corn, pumpkins and mushrooms.
-- Harvest desert cactus for cactus flesh.
-- Find small food containers near monuments and mines.
-- Kill animals with a weapon (bow / spear) and roast their flesh on a campfire. <small>Try to avoid eating raw meat.</small>
-- Killing other humans and roasting their flesh. <small>Note that this will heavily dehydrate you.</small>
-- Catching fish with a [fishing trap](http://rust.wikia.com/wiki/Survival_Fish_Trap).
 
-###Naturally growing food
+* Pick corn, pumpkins and mushrooms.
+* Harvest desert cactus for cactus flesh.
+* Find small food containers near monuments and mines.
+* Kill animals with a weapon (bow / spear) and roast their flesh on a campfire. <small>Try to avoid eating raw meat.</small>
+* Killing other humans and roasting their flesh. <small>Note that this will heavily dehydrate you.</small>
+* Catching fish with a [fishing trap](http://rust.wikia.com/wiki/Survival_Fish_Trap).
+
+\###Naturally growing food
 
 The easiest of these is picking vegetables. Corn and pumpkins grow alongside rivers (usually near the river mouth), and mushrooms grow in the dirt in grassy areas. 
 
 In the desert you will get a small amount of cloth, and cactus flesh when you bang on the right type of cactus with a rock / hatchet.
+
+![Mushrooms growing in a grassy forest area.](/img/uploads/article-rust-survival-tips-mushrooms.jpg)
+
+![Corn and pumpkins growing along both sides of a river.](/img/uploads/article-rust-survival-tips-corn-pumpkins.jpg)
 
 {{< figure src="/img/uploads/" caption="" >}}
 
@@ -69,7 +74,7 @@ Food containers are a great kick start but the monuments and mines that they gro
 
 ### Animals
 
-Killing animals is tricky because the majority of them will either run away faster than you can chase them or attack you back with often fatal consequences. Even boars can kill you if all you have is your rock. If you manage to kill an animal, for maximum yield, butcher it with a [bone knife](rust bone knife) for 30 bone fragments.
+Killing animals is tricky because the majority of them will either run away faster than you can chase them or attack you back with often fatal consequences. Even boars can kill you if all you have is your rock. If you manage to kill an animal, for maximum yield, butcher it with a [bone knife](http://rust.wikia.com/wiki/Bone_Knife) which you can craft for 30 bone fragments.
 
 ### Fishing
 
@@ -79,13 +84,13 @@ TL;DR: Don't bother fishing.
 
 If you're lucky you'll catch a trout, if not you'll catch minnows. Cooked trout is very nutritious and you'll get some bonus animal fat. Minnows are not good.
 
-The problem with fishing is that while you're waiting to catch a fish, any other place can either take your bait, destroy your trap or steal your fish once it's caught. They're also obvious as fuck sitting in the beach so there's no hiding them.
+![A fish trap standing out like dogs balls in the shallows.](/img/uploads/article-rust-survival-tips-fish-trap.jpg)
 
+The problem with fishing is that while you're waiting to catch a fish, any other place can either take your bait, destroy your trap or steal your fish once it's caught. They're also obvious as fuck sitting in the beach so there's no hiding them.
 
 {{< article-body-full-bleed >}}
 ![Rust Sunset](/img/uploads/article-rust-survival-tips-sunset.jpg)
 {{< /article-body-full-bleed >}}
-
 
 ## Early game objectives
 
@@ -98,7 +103,6 @@ A few key objectives in the early game:
 
 There's a lot more to it than this and I'll go into detail below.
 
-
 ### Finding an area to build
 
 You can build just about anywhere on the map (besides around [monuments](http://rust.wikia.com/wiki/Category:Monuments) and [caves](http://rust.wikia.com/wiki/Cave)) but some areas are generally quieter than others. Most monuments draw a crowd and you'll get picked off while trying to make your start.
@@ -108,7 +112,6 @@ A good strategy is to quickly bang a tree after you've spawned and craft some pa
 Part of the fun of Rust is learning the different characteristics of each area so don't be too fussed where you end up. However, initially the snow is challenging because you will die of cold overnight unless you have clothes and a fire.
 
 I've found the northern parts of the map just south of the snow to be a good starter location.
-
 
 ### Getting a sleeping bag and stash down
 
@@ -122,13 +125,12 @@ Because of the difficulties of locating a stash some people prefer a [wooden sto
 
 Periodically dump your main resources in your stash (wood, stone, metal ore, sulfur ore and high quality metal ore) and continue foraging. You'll want to accumulate a decent amount of loot along the lines of:
 
-- 2-4k wood
-- 1-4k stone
-- 300-500 metal ore
-- At least 30 cloth for a sleeping bag
+* 2-4k wood
+* 1-4k stone
+* 300-500 metal ore
+* At least 30 cloth for a sleeping bag
 
 The more the better, but this is enough for your starter base.
-
 
 ### Metal frags
 
@@ -152,7 +154,7 @@ The cheapest and most common starter base is a single square foundation with an 
 
 To get your head around base building YouTube is your friend. There are a ton of great base builders out there but for your basic "shit shack" I found [Tiny Pirate's](https://www.youtube.com/channel/UCYS98Ht54rwgF47D4K3AvCw) starter base showdown to be the most useful. Check it out.
 
-{{< youtube id="dKfFY0BBXNQ" >}}
+{{< youtube id="id="dKfFY0BBXNQ"" >}}
 
 For some additional 1x1 layout ideas I also recommend checking out [Tiny Pirate's vid comparing 1x1 layouts](https://www.youtube.com/watch?v=I8eA0uVMO1s).
 
@@ -162,7 +164,7 @@ To start building you will need [building plan](http://rust.wikia.com/wiki/Build
 
 When placing twig walls, notice that on one side there are criss-crossed logs forming an X. This is the wall's soft side and you don't want it external facing. When placing twig structures, press R to rotate them. If you place something incorrectly you can rotate it using the hammer, but only for a limited time.
 
-Twig is *very* easy to destroy so at the very least you should upgrade your twig to wood. But wood is vulnerable too. It can be burnt using a [flame thrower](http://rust.wikia.com/wiki/Flame_Thrower) and hatchets will eventually break it. Stone is what you should be aiming for. Just make sure you place your walls strong-side out or they can be pick-axed.
+Twig is _very_ easy to destroy so at the very least you should upgrade your twig to wood. But wood is vulnerable too. It can be burnt using a [flame thrower](http://rust.wikia.com/wiki/Flame_Thrower) and hatchets will eventually break it. Stone is what you should be aiming for. Just make sure you place your walls strong-side out or they can be pick-axed.
 
 #### Tool cupboard
 
@@ -181,7 +183,6 @@ To avoid disaster when using a key lock:
 * Always have a spare key and sleeping bag in your base.
 * When you go outside hide your key in a stash.
 * Get a code lock as soon as you can even if it's on a wooden door.
-
 
 ### Crafting a furnace
 
@@ -208,75 +209,6 @@ The biggest obstacle to crafting a furnace is the 50 low grade fuel. This can be
 
 ## Further reading
 
-- [Rustafied getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
-- Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
-- Pepper The Red's [Top 10 best ways to survive Rust](https://www.youtube.com/watch?v=pULXsgBP-YY&t=1s). 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+* [Rustafied getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
+* Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
+* Pepper The Red's [Top 10 best ways to survive Rust](https://www.youtube.com/watch?v=pULXsgBP-YY&t=1s).
