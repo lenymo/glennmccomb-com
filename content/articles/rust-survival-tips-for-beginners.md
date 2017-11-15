@@ -150,7 +150,7 @@ The cheapest and most common starter base is a single square foundation with an 
 
 To get your head around base building YouTube is your friend. There are a ton of great base builders out there but for your basic "shit shack" I found [Tiny Pirate's](https://www.youtube.com/channel/UCYS98Ht54rwgF47D4K3AvCw) starter base showdown to be the most useful. Check it out.
 
-{{< youtube id="id="dKfFY0BBXNQ"" >}}
+{{< youtube id="dKfFY0BBXNQ" >}}
 
 For some additional 1x1 layout ideas I also recommend checking out [Tiny Pirate's vid comparing 1x1 layouts](https://www.youtube.com/watch?v=I8eA0uVMO1s).
 
