@@ -1,8 +1,6 @@
 ---
-categories:
-  - Gaming
 title: Rust survival tips for beginners
-date: 2017-06-13T01:44:10.521Z
+date: '15/11/2017 11:44 AM'
 featured: /img/uploads/article-rust-survival-tips.jpg
 custom_class: rust-survival-tips
 transparent_header: true
@@ -14,7 +12,7 @@ page_header_bg_color: '#232323'
 
 The first thing to know about Rust is that you will die. A lot. And that's ok. It's a grind and the more loot you've gathered when you die the more frustrating it is. It's a part of the game though so don't sweat it, and don't expect sympathy from other players.
 
-<small>**NOTE:** This article is written at the time of [devblog 170](https://rust.facepunch.com/blog/devblog-177/) and may be out of date and inaccurate after future updates.</small>
+<small>**NOTE:** This article is written at the time of [devblog 185](https://rust.facepunch.com/blog/devblog-185/) and may be out of date and inaccurate after future updates.</small>
 
 ---
 
