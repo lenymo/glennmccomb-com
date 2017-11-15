@@ -60,9 +60,14 @@ The easiest of these is picking vegetables. Corn and pumpkins grow alongside riv
 
 In the desert you will get a small amount of cloth, and cactus flesh when you bang on the right type of cactus with a rock / hatchet.
 
+{{< row >}}
+{{< col >}}
 {{< figure src="/img/uploads/article-rust-survival-tips-mushrooms.jpg" caption="Mushrooms growing in a grassy forest area." >}}
-
+{{< /col >}}
+{{< col >}}
 {{< figure src="/img/uploads/article-rust-survival-tips-corn-pumpkins.jpg" caption="Corn and pumpkins growing along both sides of a river." >}}
+{{< /col >}}
+{{< /row >}}
 
 ### Food containers
 
@@ -80,9 +85,9 @@ TL;DR: Don't bother fishing.
 
 If you're lucky you'll catch a trout, if not you'll catch minnows. Cooked trout is very nutritious and you'll get some bonus animal fat. Minnows are not good.
 
-{{< figure src="/img/uploads/article-rust-survival-tips-fish-trap.jpg" caption="A fish trap standing out like dogs balls in the shallows." >}}
+{{< figure src="/img/uploads/article-rust-survival-tips-fish-trap.jpg" caption="A pair of fish traps standing out like dogs balls." >}}
 
-The problem with fishing is that while you're waiting to catch a fish, any other place can either take your bait, destroy your trap or steal your fish once it's caught. They're also obvious as fuck sitting in the beach so there's no hiding them.
+The problem with fishing is that while you're waiting to catch a fish, any other player can either take your bait, destroy your trap or steal your fish once it's trapped. They're also obvious as fuck sitting in the beach so there's no hiding them.
 
 {{< article-body-full-bleed >}}
 ![Rust Sunset](/img/uploads/article-rust-survival-tips-sunset.jpg)
