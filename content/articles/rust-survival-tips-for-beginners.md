@@ -85,7 +85,7 @@ TL;DR: Don't bother fishing.
 
 If you're lucky you'll catch a trout, if not you'll catch minnows. Cooked trout is very nutritious and you'll get some bonus animal fat. Minnows are not good.
 
-{{< figure src="/img/uploads/article-rust-survival-tips-fish-trap.jpg" caption="A pair of fish traps standing out like dogs balls." >}}
+{{< figure src="/img/uploads/article-rust-survival-tips-fish-trap.jpg" caption="A pair of fish traps standing out like dog's balls." >}}
 
 The problem with fishing is that while you're waiting to catch a fish, any other player can either take your bait, destroy your trap or steal your fish once it's trapped. They're also obvious as fuck sitting in the beach so there's no hiding them.
 
