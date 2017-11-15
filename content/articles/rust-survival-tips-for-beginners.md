@@ -14,7 +14,7 @@ The first thing to know about Rust is that you will die. A lot. And that's ok. I
 
 <small>**NOTE:** This article is written at the time of [devblog 185](https://rust.facepunch.com/blog/devblog-185/) and may be out of date and inaccurate after future updates.</small>
 
-- - -
+---
 
 ## Choosing a server
 
@@ -24,7 +24,7 @@ A well maintained community server will keep tabs on cheaters and police players
 
 When you're learning the ropes other players are usually more hindrance than help so don't be scared to jump on an empty community server.
 
-- - -
+---
 
 ## The Basics
 
@@ -41,7 +41,7 @@ These items help you farm resources, kill things and heal yourself. My preferred
 
 You'll notice I've left clothes off the list. At this early stage unless you're in the snow there's not much point using your cloth to craft clothes. You're better off saving it for a bow and sleeping bag (50 and 30 cloth respectively).
 
-- - -
+---
 
 ## Eating
 
@@ -79,8 +79,6 @@ TL;DR: Don't bother fishing.
 [fish traps](http://rust.wikia.com/wiki/Survival_Fish_Trap) are rarely used in Rust. I've tried them myself once to get a handle on the mechanics but a lot can go wrong and the cost/benefit makes them barely worthwhile. They cost 200 wood and 5 cloth to craft and you will need bait (mushrooms, corn, etc). Place your trap on a beach, load it with bait and wait 5-10 minutes. 
 
 If you're lucky you'll catch a trout, if not you'll catch minnows. Cooked trout is very nutritious and you'll get some bonus animal fat. Minnows are not good.
-
-![](/img/uploads/article-rust-survival-tips-fish-trap.jpg)
 
 {{< figure src="/img/uploads/article-rust-survival-tips-fish-trap.jpg" caption="A fish trap standing out like dogs balls in the shallows." >}}
 
