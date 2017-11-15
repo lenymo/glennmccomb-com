@@ -1,6 +1,6 @@
 ---
 title: Rust survival tips for beginners
-date: '15/11/2017 11:44 AM'
+date: 11/14/2017 10:00 AM
 featured: /img/uploads/article-rust-survival-tips.jpg
 custom_class: rust-survival-tips
 transparent_header: true
