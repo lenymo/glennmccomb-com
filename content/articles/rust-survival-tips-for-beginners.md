@@ -54,19 +54,15 @@ If you don't eat you will starve and die so finding food is important. There are
 * Killing other humans and roasting their flesh. <small>Note that this will heavily dehydrate you.</small>
 * Catching fish with a [fishing trap](http://rust.wikia.com/wiki/Survival_Fish_Trap).
 
-\###Naturally growing food
+### Naturally growing food
 
 The easiest of these is picking vegetables. Corn and pumpkins grow alongside rivers (usually near the river mouth), and mushrooms grow in the dirt in grassy areas. 
 
 In the desert you will get a small amount of cloth, and cactus flesh when you bang on the right type of cactus with a rock / hatchet.
 
-![Mushrooms growing in a grassy forest area.](/img/uploads/article-rust-survival-tips-mushrooms.jpg)
+{{< figure src="/img/uploads/article-rust-survival-tips-mushrooms.jpg" caption="Mushrooms growing in a grassy forest area." >}}
 
-![Corn and pumpkins growing along both sides of a river.](/img/uploads/article-rust-survival-tips-corn-pumpkins.jpg)
-
-{{< figure src="/img/uploads/" caption="" >}}
-
-{{< figure src="/img/uploads/" caption="" >}}
+{{< figure src="/img/uploads/article-rust-survival-tips-corn-pumpkins.jpg" caption="Corn and pumpkins growing along both sides of a river." >}}
 
 ### Food containers
 
@@ -84,7 +80,9 @@ TL;DR: Don't bother fishing.
 
 If you're lucky you'll catch a trout, if not you'll catch minnows. Cooked trout is very nutritious and you'll get some bonus animal fat. Minnows are not good.
 
-![A fish trap standing out like dogs balls in the shallows.](/img/uploads/article-rust-survival-tips-fish-trap.jpg)
+![](/img/uploads/article-rust-survival-tips-fish-trap.jpg)
+
+{{< figure src="/img/uploads/article-rust-survival-tips-fish-trap.jpg" caption="A fish trap standing out like dogs balls in the shallows." >}}
 
 The problem with fishing is that while you're waiting to catch a fish, any other place can either take your bait, destroy your trap or steal your fish once it's caught. They're also obvious as fuck sitting in the beach so there's no hiding them.
 
