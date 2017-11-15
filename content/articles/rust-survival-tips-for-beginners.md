@@ -55,7 +55,13 @@ If you don't eat you will starve and die so finding food is important. There are
 
 ###Naturally growing food
 
-The easiest of these is picking vegetables. Corn and pumpkins grow alongside rivers, and mushrooms grow in the dirt in forests.
+The easiest of these is picking vegetables. Corn and pumpkins grow alongside rivers (usually near the river mouth), and mushrooms grow in the dirt in grassy areas. 
+
+In the desert you will get a small amount of cloth, and cactus flesh when you bang on the right type of cactus with a rock / hatchet.
+
+{{< figure src="/img/uploads/" caption="" >}}
+
+{{< figure src="/img/uploads/" caption="" >}}
 
 ### Food containers
 
@@ -74,9 +80,6 @@ TL;DR: Don't bother fishing.
 If you're lucky you'll catch a trout, if not you'll catch minnows. Cooked trout is very nutritious and you'll get some bonus animal fat. Minnows are not good.
 
 The problem with fishing is that while you're waiting to catch a fish, any other place can either take your bait, destroy your trap or steal your fish once it's caught. They're also obvious as fuck sitting in the beach so there's no hiding them.
-
-
----
 
 
 {{< article-body-full-bleed >}}
