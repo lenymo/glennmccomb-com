@@ -1,3 +1,5 @@
+
+
 //
 //  SINGLE ARTICLE
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -235,16 +237,12 @@ $article-header-padding-bottom-xl: $gutter * 6;
   }
 
   figure {
-    margin-bottom: $base-margin-bottom-xs;
-
     img {
       margin-bottom: $gutter / 4;
     }
 
     p {
-      color: $small-font-color;
       font-size: $small-font-size;
-      line-height: 1.4;
     }
   }
 
@@ -295,8 +293,6 @@ $article-header-padding-bottom-xl: $gutter * 6;
     }
 
     figure {
-      margin-bottom: $base-margin-bottom;
-
       img {
         margin-bottom: $gutter / 4;
       }

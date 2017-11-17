@@ -1,0 +1,30 @@
+
+
+//
+//  FIGURE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+figure {
+  margin-bottom: $base-margin-bottom-xs;
+
+  img {
+    margin-bottom: $gutter / 4;
+  }
+
+  p {
+    color: $small-font-color;
+    font-size: $small-font-size;
+    line-height: 1.4;
+    margin-bottom: 0;
+  }
+}
+
+@include respond-above(xs) {
+  figure {
+    margin-bottom: $base-margin-bottom;
+
+    img {
+      margin-bottom: $gutter / 4;
+    }
+  }
+}

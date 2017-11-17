@@ -48,8 +48,13 @@
 //  COMPONENTS
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
+// HTML.
 @import 'components/button';
 @import 'components/nav';
+@import 'components/figure';
+@import 'components/iframe';
+
+// Custom.
 @import 'components/page-header';
 @import 'components/pagination';
 @import 'components/social-links';
@@ -57,7 +62,6 @@
 @import 'components/article-summary';
 @import 'components/article-summary-featured';
 @import 'components/tweet-widget';
-@import 'components/iframe';
 
 
 //
