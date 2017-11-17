@@ -1,0 +1,24 @@
+
+
+//
+//  ARTICLE BODY FULL BLEED
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.article-body__full-bleed {
+  margin-bottom: $base-margin-bottom-xs;
+
+  img {
+    max-width: none;
+    width: 100%;
+  }
+
+  figure {
+    margin-bottom: 0;
+  }
+}
+
+@include respond-above(xs) {
+  .article-body__full-bleed {
+    margin-bottom: $base-margin-bottom;
+  }
+}

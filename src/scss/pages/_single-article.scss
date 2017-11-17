@@ -329,24 +329,3 @@ $article-header-padding-bottom-xl: $gutter * 6;
     }
   }
 }
-
-
-
-//
-//  ARTICLE FULL BLEED
-//––––––––––––––––––––––––––––––––––––––––––––––––––
-
-.article-body__full-bleed {
-  margin-bottom: $base-margin-bottom-xs;
-
-  img {
-    max-width: none;
-    width: 100%;
-  }
-}
-
-@include respond-above(xs) {
-  .article-body__full-bleed {
-    margin-bottom: $base-margin-bottom;
-  }
-}
