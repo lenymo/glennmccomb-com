@@ -22,55 +22,36 @@ var gulpif          = require('gulp-if');
 gulp.task('scss', function () {
   del(['static/css/**/*']);
 
+  // If dev flag doesn't exist.
   if ( argv.dev === undefined ) {
+
+    // Set dev flag to false.
     argv.dev = false;
   }
 
-  // Production.
-  // if ( argv.dev === undefined ) {
+  gulp.src('src/scss/**/*.scss')
 
-  //   gulp.src('src/scss/**/*.scss')
-  //     .pipe(sass().on('error', sass.logError))
-  //     .pipe(sass({outputStyle : 'compressed'}))
-  //     .pipe(autoprefixer({
-  //       browsers : ['last 20 versions']
-  //     }))
-  //     .pipe(hash())
-  //     .pipe(gulp.dest('static/css'))
+    // Initialise source maps for dev.
+    .pipe( gulpif( argv.dev, sourcemaps.init() ) )
+    .pipe( sass().on('error', sass.logError) )
+    .pipe( sass({outputStyle : 'compressed'}) )
+    .pipe( gulpif( argv.dev, sourcemaps.write({includeContent: false}) ) )
+    .pipe( gulpif( argv.dev, sourcemaps.init({loadMaps: true}) ) )
+    .pipe( autoprefixer({
+      browsers : ['last 20 versions']
+    }))
+    .pipe( hash() )
+    .pipe( gulpif( argv.dev, sourcemaps.write() ) )
+    .pipe( gulp.dest('static/css') )
 
-  //     // Create a hash map.
-  //     .pipe(hash.manifest('hash.json'), {
-  //       deleteOld: true,
-  //       sourceDir: 'static/css'
-  //     })
-  //     // Put the map in the data directory.
-  //     .pipe(gulp.dest('data/css'));
-  
-  // // Dev.
-  // } else {
+    // Create a hash map.
+    .pipe( hash.manifest('hash.json'), {
+      deleteOld: true,
+      sourceDir: 'static/css'
+    })
+    // Put the map in the data directory.
+    .pipe( gulp.dest('data/css') );
 
-    gulp.src('src/scss/**/*.scss')
-      .pipe( gulpif( argv.dev, sourcemaps.init() ) )
-      .pipe(sass().on('error', sass.logError))
-      .pipe(sass({outputStyle : 'compressed'}))
-      .pipe( gulpif( argv.dev, sourcemaps.write({includeContent: false}) ) )
-      .pipe( gulpif( argv.dev, sourcemaps.init({loadMaps: true}) ) )
-      .pipe(autoprefixer({
-        browsers : ['last 20 versions']
-      }))
-      .pipe(hash())
-      .pipe( gulpif( argv.dev, sourcemaps.write() ) )
-      .pipe(gulp.dest('static/css'))
-
-      // Create a hash map.
-      .pipe(hash.manifest('hash.json'), {
-        deleteOld: true,
-        sourceDir: 'static/css'
-      })
-      // Put the map in the data directory.
-      .pipe(gulp.dest('data/css'));
-
-  // }
 });
 
 
@@ -81,43 +62,33 @@ gulp.task('scss', function () {
 gulp.task('js', function() {
   del(['static/js/**/*']);
 
-  // Production.
+
+  // If dev flag doesn't exist.
   if ( argv.dev === undefined ) {
 
-    gulp.src('src/js/*.js')
-      .pipe(concat('main.min.js'))
-      .pipe(uglify())
-      .pipe(hash())
-      .pipe(gulp.dest('static/js'))
-
-      // Create a hash map.
-      .pipe(hash.manifest('hash.json'), {
-        deleteOld: true,
-        sourceDir: 'static/js'
-      })
-      // Put the map in the data directory.
-      .pipe(gulp.dest('data/js'));
-
-  // Dev.
-  } else {
-
-    gulp.src('src/js/*.js')
-      .pipe(sourcemaps.init())
-      .pipe(concat('main.min.js'))
-      .pipe(uglify())
-      .pipe(hash())
-      .pipe(sourcemaps.write('./'))
-      .pipe(gulp.dest('static/js'))
-
-      // Create a hash map.
-      .pipe(hash.manifest('hash.json'), {
-        deleteOld: true,
-        sourceDir: 'static/js'
-      })
-      // Put the map in the data directory.
-      .pipe(gulp.dest('data/js'));
-
+    // Set dev flag to false.
+    argv.dev = false;
   }
+
+
+  gulp.src('src/js/*.js')
+
+    // Initialise source maps for dev.
+    .pipe( gulpif( argv.dev, sourcemaps.init() ) )
+    .pipe( concat('main.min.js') )
+    .pipe( uglify() )
+    .pipe( hash() )
+    .pipe( gulpif( argv.dev, sourcemaps.write('./') ) )
+    .pipe( gulp.dest('static/js') )
+
+    // Create a hash map.
+    .pipe( hash.manifest('hash.json'), {
+      deleteOld: true,
+      sourceDir: 'static/js'
+    })
+    // Put the map in the data directory.
+    .pipe( gulp.dest('data/js') );
+
 });
 
 
@@ -128,16 +99,16 @@ gulp.task('js', function() {
 gulp.task('images', function() {
   // del(['static/img/**/*']);
   gulp.src('src/img/**/*')
-    .pipe(hash())
-    .pipe(gulp.dest('static/img'))
+    .pipe( hash() )
+    .pipe( gulp.dest('static/img') )
 
     // Create a hash map.
-    .pipe(hash.manifest('hash.json'), {
+    .pipe( hash.manifest('hash.json'), {
       deleteOld: true,
       sourceDir: 'static/images'
     })
     // Put the map in the data directory.
-    .pipe(gulp.dest('data/images'));
+    .pipe( gulp.dest('data/images') );
 });
 
 
