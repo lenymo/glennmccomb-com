@@ -58,12 +58,18 @@ If you don't eat you will starve and die so finding food is important. There are
 
 The easiest of these is picking vegetables. Corn and pumpkins grow alongside rivers (usually near the river mouth), and mushrooms grow in the dirt in grassy areas. 
 
-{{< article-body-full-bleed container="yes" >}}
-{{< figure src="/img/uploads/article-rust-survival-tips-mushrooms.jpg" caption="Mushrooms growing in a grassy forest area." >}}
-{{< /article-body-full-bleed >}}
-{{< figure src="/img/uploads/article-rust-survival-tips-corn-pumpkins.jpg" caption="Corn and pumpkins growing along both sides of a river." >}}
-
 In the desert you will get a small amount of cloth, and cactus flesh when you bang on the right type of cactus with a rock / hatchet.
+
+{{< article-body-full-bleed container="yes" >}}
+{{< row >}}
+{{< col >}}
+{{< figure src="/img/uploads/article-rust-survival-tips-mushrooms.jpg" caption="Mushrooms growing in a grassy forest area." >}}
+{{< /col >}}
+{{< col >}}
+{{< figure src="/img/uploads/article-rust-survival-tips-corn-pumpkins.jpg" caption="Corn and pumpkins growing along both sides of a river." >}}
+{{< /col >}}
+{{< /row >}}
+{{< /article-body-full-bleed >}}
 
 ### Food containers
 
@@ -77,9 +83,9 @@ Killing animals is tricky because the majority of them will either run away fast
 
 TL;DR: Don't bother fishing.
 
-[fish traps](http://rust.wikia.com/wiki/Survival_Fish_Trap) are rarely used in Rust. I've tried them myself once to get a handle on the mechanics but a lot can go wrong and the cost/benefit makes them barely worthwhile. They cost 200 wood and 5 cloth to craft and you will need bait (mushrooms, corn, etc). Place your trap on a beach, load it with bait and wait 5-10 minutes. 
+[Fish traps](http://rust.wikia.com/wiki/Survival_Fish_Trap) are rarely used in Rust. I've tried them myself once to get a handle on the mechanics but a lot can go wrong and the cost/benefit makes them barely worthwhile. They cost 200 wood and 5 cloth to craft and you will need bait (mushrooms, corn, etc). Place your trap on a beach, load it with bait and wait ~10 minutes. 
 
-If you're lucky you'll catch a trout, if not you'll catch minnows. Cooked trout is very nutritious and you'll get some bonus animal fat. Minnows are not good.
+If you're lucky you'll catch a trout. If you're not, you'll catch minnows. Cooked trout is very nutritious and you'll get some bonus animal fat but minnows are not good.
 
 {{< figure src="/img/uploads/article-rust-survival-tips-fish-trap.jpg" caption="A pair of fish traps standing out like dog's balls." >}}
 
@@ -193,8 +199,9 @@ The biggest obstacle to crafting a furnace is the 50 low grade fuel. This can be
 * Catching [trout](http://rust.wikia.com/wiki/Small_Trout) in a [fishing trap](http://rust.wikia.com/wiki/Survival_Fish_Trap) will get you 8 animal fat. This seems like a lot of effort when anyone else can loot your trap before you get to it.
 * Refining [crude oil](http://rust.wikia.com/wiki/Crude_Oil) via an [small oil refinery](http://rust.wikia.com/wiki/Small_Oil_Refinery). You can craft an oil refinery yourself or they can be found at certain monuments.
 
-<small>TIP: Craft a [bone knife](http://rust.wikia.com/wiki/Bone_Knife)as soon as you can for max efficiency.</small>
+<small>TIP: Craft a [bone knife](http://rust.wikia.com/wiki/Bone_Knife) as soon as you can for max efficiency when harvesting animals.</small>
 
+{{< article-body-full-bleed container="yes" >}}
 {{< row >}}
 {{< col >}}
 {{< figure src="/img/uploads/article-rust-survival-tips-red-barrel.jpg" caption="An oil barrel." >}}
@@ -203,6 +210,7 @@ The biggest obstacle to crafting a furnace is the 50 low grade fuel. This can be
 {{< figure src="/img/uploads/article-rust-survival-tips-mining-cart.jpg" caption="Mining cart." >}}
 {{< /col >}}
 {{< /row >}}
+{{< /article-body-full-bleed >}}
 
 ## Further reading
 
