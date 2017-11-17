@@ -5,12 +5,20 @@
 var ToggleMobileMenu = (function() {
 
 
+  //
+  //  TOGGLE MOBILE MENU
+  //––––––––––––––––––––––––––––––––––––––––––––––––––
+
   function toggleMobileMenu() {
 
     var siteNavToggle = document.querySelector('.site-nav__nav-toggle');
 
-    // Listen for clicks on the menu toggle.
-    siteNavToggle.addEventListener('click', toggleSiteNav, false);
+    // If the site nav toggle exists.
+    if ( siteNavToggle ) {
+
+      // Listen for clicks on the menu toggle.
+      siteNavToggle.addEventListener('click', toggleSiteNav, false);
+    }
 
     function toggleSiteNav() {
 
@@ -35,17 +43,18 @@ var ToggleMobileMenu = (function() {
 
         // Close the menu.
         bodyElem.classList.remove(siteNavOpenClass);
-        console.log('Mobile menu was closed.');
+        // console.log('Mobile menu was closed.');
 
       // If the menu is closed.
       } else {
 
         // Open the menu.
         bodyElem.className += ' ' + siteNavOpenClass;
-        console.log('Mobile menu was opened.');
+        // console.log('Mobile menu was opened.');
       }
     }
   }
+
 
   //
   //  INIT
