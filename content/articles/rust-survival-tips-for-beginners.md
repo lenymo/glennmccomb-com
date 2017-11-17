@@ -58,7 +58,7 @@ If you don't eat you will starve and die so finding food is important. There are
 
 The easiest of these is picking vegetables. Corn and pumpkins grow alongside rivers (usually near the river mouth), and mushrooms grow in the dirt in grassy areas. 
 
-{{< article-body-full-bleed >}}
+{{< article-body-full-bleed container="yes" >}}
 {{< figure src="/img/uploads/article-rust-survival-tips-mushrooms.jpg" caption="Mushrooms growing in a grassy forest area." >}}
 {{< /article-body-full-bleed >}}
 {{< figure src="/img/uploads/article-rust-survival-tips-corn-pumpkins.jpg" caption="Corn and pumpkins growing along both sides of a river." >}}
