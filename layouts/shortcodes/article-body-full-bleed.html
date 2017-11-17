@@ -4,7 +4,7 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 Params:
-N/A
+container="yes" // Leave blank for no container.
 
 -->
 
@@ -14,7 +14,9 @@ N/A
 </div><!-- .container -->
 
 <div class="article-body__full-bleed">
-  {{ .Inner | markdownify }}
+  {{ if .Get "container" }}<div class="container">{{ end }}
+    {{ .Inner | markdownify }}
+  {{ if .Get "container" }}</div>{{ end }}
 </div><!-- .article-full-bleed -->
 
 <div class="container">
