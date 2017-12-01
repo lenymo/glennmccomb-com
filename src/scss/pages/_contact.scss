@@ -11,10 +11,15 @@
 
 .page-contact {
   .section__page-header {
-    background-color: $white;
+    background-color: #1a1a1a;
+    // background-color: #fff;
   }
 
   .page-header__title {
     margin-bottom: $base-margin-bottom;
+  }
+
+  .page-header__featured-image {
+    background-position: 65% 50%;
   }
 }

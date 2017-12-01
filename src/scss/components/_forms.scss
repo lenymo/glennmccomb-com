@@ -13,8 +13,8 @@
 $form-field-background-color: transparent;
 $form-field-font-color: $base-font-color;
 
-$form-field-height: 50px;
-$form-field-padding: 12px;
+$form-field-height: 60px;
+$form-field-padding: 17px;
 
 // Border.
 $form-field-border-radius: 3px;
@@ -26,12 +26,24 @@ $form-field-border-color-focus: $color-gray-8;
 $form-field-border-color-error: $color-secondary;
 $form-field-border-color-error-focus: darken($form-field-border-color-error, 15%);
 
-// Placeholder.
-$form-field-placeholder-background-color: $white;
-$form-field-placeholder-color: $form-field-border-color;
-$form-field-placeholder-color-focus: $form-field-border-color-focus;
-$form-field-placeholder-color-error: $form-field-border-color-error;
-$form-field-placeholder-color-error-focus: $form-field-border-color-error-focus;
+
+//
+//  LABEL / SMART PLACEHOLDER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$form-field-placeholder-font-color: $color-gray-7;
+
+$form-field-placeholder-border-radius: 2px;
+
+$form-field-placeholder-background-color: darken($form-field-border-color, 10%);
+$form-field-placeholder-background-color-focus: darken($form-field-border-color-focus, 10%);
+$form-field-placeholder-background-color-error: $form-field-border-color-error;
+$form-field-placeholder-background-color-error-focus: $form-field-border-color-error-focus;
+
+$form-field-placeholder-color: $white;
+$form-field-placeholder-color-focus: $white;
+$form-field-placeholder-color-error: $white;
+$form-field-placeholder-color-error-focus: $white;
 
 // Box shadow.
 $form-field-box-shadow: none;
@@ -54,7 +66,21 @@ $form-check-checked-color: $color-gray-8;
 //  DARK BG VARIABLES
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-$dark-bg-form-field-background-color: rgba($black, .25);
+// Field color.
+$dark-bg-form-field-background-color: rgba($black, .5);
+$dark-bg-form-field-font-color: $color-gray-f;
+
+// Border colors.
+$dark-bg-form-field-border-color: $color-gray-8;
+$dark-bg-form-field-border-color-focus: $color-gray-a;
+
+// Placeholder.
+$dark-bg-form-field-placeholder-font-color: $color-gray-7;
+$dark-bg-form-field-placeholder-background-color: darken($dark-bg-form-field-border-color, 15%);
+$dark-bg-form-field-placeholder-background-color-focus: darken($dark-bg-form-field-border-color-focus, 15%);
+
+$dark-bg-form-field-placeholder-color: $white;
+$dark-bg-form-field-placeholder-color-focus: $dark-bg-form-field-placeholder-color;
 
 
 //
@@ -119,6 +145,10 @@ $dark-bg-form-field-background-color: rgba($black, .25);
   transition: all .2s ease;
   width: 100%;
 
+  @include placeholder {
+    color: $form-field-placeholder-font-color;
+  }
+
   // Field is focused.
   &:focus {
     border-color: $form-field-border-color-focus;
@@ -131,7 +161,7 @@ $dark-bg-form-field-background-color: rgba($black, .25);
     border-color: $form-field-border-color-error;
     box-shadow: $form-field-box-shadow-error;
 
-    // Field has errors and focused.
+    // Field has errors and is focused.
     &:focus {
       border-color: $form-field-border-color-error-focus;
       box-shadow: $form-field-box-shadow-error-focus;
@@ -143,7 +173,7 @@ $dark-bg-form-field-background-color: rgba($black, .25);
     border-color: $form-field-border-color;
     box-shadow: $form-field-box-shadow;
 
-    // Field is valid and focused.
+    // Field is valid and is focused.
     &:focus {
       border-color: $form-field-border-color-focus;
       box-shadow: $form-field-box-shadow-focus;
@@ -157,6 +187,14 @@ select.form__field {
   transition: all .2s ease;
 }
 
+select.form__field {
+  color: $form-field-placeholder-font-color;
+
+  &:valid {
+    color: $form-field-font-color;
+  }
+}
+
 textarea.form__field {
   min-height: $form-field-height;
   resize: vertical;
@@ -165,21 +203,22 @@ textarea.form__field {
 
 
 //
-//  LABEL
+//  LABEL / SMART PLACEHOLDER
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 // Default hidden state.
 .form__field-label {
   background: $form-field-placeholder-background-color;
+  border-radius: $form-field-placeholder-border-radius;
   color: $form-field-placeholder-color;
   display: block;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: bold;
   left: $form-field-padding;
-  letter-spacing: .075em;
+  letter-spacing: .1em;
   line-height: 1;
   opacity: 0;
-  padding: 4px;
+  padding: 5px 6px 4px;
   position: absolute;
   text-transform: uppercase;
   top: -6px;
@@ -191,27 +230,37 @@ textarea.form__field {
 .form__field:valid + .form__field-label,
 .form__field.-has-text + .form__field-label {
   opacity: 1;
-  top: -8px;
+  top: -12px;
   z-index: 1;
 }
 
 // When a form field has focus, change the label to match the form border.
 .form__field:focus + .form__field-label {
+  background: $form-field-placeholder-background-color-focus;
   color: $form-field-placeholder-color-focus;
 }
 
 // When a form field has an error.
 .form__field.-has-error + .form__field-label {
+  background: $form-field-placeholder-background-color-error;
   color: $form-field-placeholder-color-error;
+}
+
+// When a form field has an error.
+.form__field.-has-error:focus + .form__field-label {
+  background: $form-field-placeholder-background-color-error-focus;
+  color: $form-field-placeholder-color-error-focus;
 }
 
 // When a form field is valid.
 .form__field:valid + .form__field-label {
+  background: $form-field-placeholder-background-color;
   color: $form-field-placeholder-color;
 }
 
-// When a form field is valid AND focused.
+// When a form field is valid and is focused.
 .form__field:valid:focus + .form__field-label {
+  background: $form-field-placeholder-background-color-focus;
   color: $form-field-placeholder-color-focus;
 }
 
@@ -300,7 +349,79 @@ textarea.form__field {
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .-has-dark-bg {
+
+  // Field.
   .form__field {
     background-color: $dark-bg-form-field-background-color;
+    border-color: $dark-bg-form-field-border-color;
+    color: $dark-bg-form-field-font-color;
+
+    // Field is focused.
+    &:focus {
+      border-color: $dark-bg-form-field-border-color-focus;
+    }
+  
+    // Field has errors.
+    &.-has-error {
+      border-color: $form-field-border-color-error;
+
+      // Field has errors and is focused.
+      &:focus {
+        border-color: $form-field-border-color-error-focus;
+      }
+    }
+
+    // Field is valid.
+    &:valid {
+      border-color: $dark-bg-form-field-border-color;
+
+      // Field is valid and is focused.
+      &:focus {
+        border-color: $dark-bg-form-field-border-color-focus;
+      }
+    }
+  }
+
+  select.form__field {
+    color: $dark-bg-form-field-placeholder-font-color;
+
+    &:valid {
+      color: $dark-bg-form-field-font-color;
+    }
+  }
+  
+  // Label.
+  .form__field-label {
+    background: $dark-bg-form-field-placeholder-background-color;
+    color: $dark-bg-form-field-placeholder-color;
+  }
+
+  // When a form field has focus, change the label to match the form border.
+  .form__field:focus + .form__field-label {
+    background: $dark-bg-form-field-placeholder-background-color-focus;
+    color: $dark-bg-form-field-placeholder-color-focus;
+  }
+
+  // When a form field has an error.
+  .form__field.-has-error + .form__field-label {
+    background: $form-field-placeholder-background-color-error;
+    color: $dark-bg-form-field-placeholder-color;
+  }
+
+  // When a form field has an error and is focused.
+  .form__field.-has-error:focus + .form__field-label {
+    background: $form-field-placeholder-background-color-error-focus;
+  }
+
+  // When a form field is valid.
+  .form__field:valid + .form__field-label {
+    background: $dark-bg-form-field-placeholder-background-color;
+    color: $dark-bg-form-field-placeholder-color;
+  }
+
+  // When a form field is valid and is focused.
+  .form__field:valid:focus + .form__field-label {
+    background: $dark-bg-form-field-placeholder-background-color-focus;
+    color: $dark-bg-form-field-placeholder-color-focus;
   }
 }

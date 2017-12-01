@@ -12,8 +12,9 @@ $color-blue: #284c71;
 
 
 // Grays
-$gray-mixer: $color-blue;
-$color-gray-f: mix(#f6f6f6, $gray-mixer, 97%);
+// $gray-mixer: #284c71;
+$gray-mixer: #2868a9;
+$color-gray-f: mix(#f8f8f8, $gray-mixer, 97%);
 $color-gray-e: mix(#eee, $gray-mixer, 90%);
 $color-gray-d: mix(#ddd, $gray-mixer, 90%);
 $color-gray-c: mix(#ccc, $gray-mixer, 90%);
