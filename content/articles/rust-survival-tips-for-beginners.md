@@ -26,7 +26,7 @@ When you're learning the ropes other players are usually more hindrance than hel
 
 ---
 
-## The Basics
+## The basics
 
 Once you've banged on a few trees and [nodes](http://rust.wikia.com/wiki/Rocks) with your rock and collected some hemp (cloth) there are a few items you'll want to craft:
 
@@ -149,7 +149,7 @@ Gears, pipes, springs and semi-automatic bodies will be useful very soon but you
 
 Another sneaky great source of metal frags are empty bean and tuna cans which will give you 15 and 10 frags respectively when you roast them in a camp fire.
 
-### Building a starter base
+## Building a starter base
 
 Don't get too carried away building your first base. Your main priority here is safely securing your loot so you can build up your gear and start causing mayhem for other players. 
 
@@ -161,7 +161,7 @@ To get your head around base building YouTube is your friend. There are a ton of
 
 For some additional 1x1 layout ideas I also recommend checking out [Tiny Pirate's vid comparing 1x1 layouts](https://www.youtube.com/watch?v=I8eA0uVMO1s).
 
-#### Building materials
+### Building materials
 
 To start building you will need [building plan](http://rust.wikia.com/wiki/Building_Plan) and a [hammer](http://rust.wikia.com/wiki/Hammer). The building plan allows you to place twig foundations, walls, floors and more. The hammer allows you to upgrade your twig to wood, stone, metal and armoured. 
 
@@ -169,11 +169,11 @@ When placing twig walls, notice that on one side there are criss-crossed logs fo
 
 Twig is _very_ easy to destroy so at the very least you should upgrade your twig to wood. But wood is vulnerable too. It can be burnt using a [flame thrower](http://rust.wikia.com/wiki/Flame_Thrower) and hatchets will eventually break it. Stone is what you should be aiming for. Just make sure you place your walls strong-side out or they can be pick-axed.
 
-#### Tool cupboard
+### Tool cupboard
 
 Placing a [tool cupboard (TC)](http://rust.wikia.com/wiki/Tool_Cupboard) in your base means only you - or anyone else who has access to your TC - can build within a certain radius of where your TC is placed. Other players can build twig near your base but they can't upgrade it. This prevents players from griefing your base by building walls around your door. Place your TC in one of the back corners of your 1x1 and authorise yourself. Having TC auth allows you to destroy structures, but only for 10 minutes after they are placed. 
 
-#### Key locks
+### Key locks
 
 If you don't yet have the metal frags for a [code lock](http://rust.wikia.com/wiki/Code_Lock) that's fine, a [key lock](http://rust.wikia.com/wiki/Lock) will do the trick temporarily. Just be aware that key locks are very insecure for the following reasons:
 
@@ -187,7 +187,7 @@ To avoid disaster when using a key lock:
 * When you go outside hide your key in a stash.
 * Get a code lock as soon as you can even if it's on a wooden door.
 
-### Crafting a furnace
+## Crafting a furnace
 
 Crafting a furnace is one of the most important early game milestones. Once you have a furnace you can begin to smelt metal and sulphur. This is particularly vital if you don't yet have a code lock on your base.
 

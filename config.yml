@@ -3,10 +3,14 @@ languageCode: en-us
 paginate: 3
 menu:
   main:
-    - Identifier: articles
-      Name: Articles
-      URL: /articles/
-      Weight: '20'
+    - Identifier: contact
+      Name: Contact
+      URL: /contact/
+      Weight: '30'
+    # - Identifier: articles
+    #   Name: Articles
+    #   URL: /articles/
+    #   Weight: '20'
     - Identifier: home
       Name: Home
       URL: /
