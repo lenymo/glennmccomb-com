@@ -7,7 +7,7 @@
   <section class="section section__page-header">
     <div class="container">
       <div class="row">
-        <div class="col-9 col-sm-6 col-md-4 col-lg-4">
+        <div class="col-9 col-sm-6 col-md-6 col-lg-6">
           <h1 class="page-header__title">
             {{ .Title }}
           </h1>
@@ -39,16 +39,30 @@
             </fieldset>
 
             <fieldset class="form__fieldset">
-              <textarea name="message" id="message" rows="5" class="form__field" placeholder="Message" required></textarea>
+              <textarea name="message" id="message" rows="6" class="form__field" placeholder="Message" required></textarea>
               <label for="message" class="form__field-label">
                 Message
               </label>
             </fieldset>
 
             <fieldset class="form__fieldset form__fieldset-check">
-              <input type="checkbox" id="newsletter" class="form__check">
-              <label for="newsletter">
+              <input type="checkbox" id="newsletter" class="form__check form__check-checkbox">
+              <label for="newsletter" class="form__check-label">
                 Subscribe to Newsletter
+              </label>
+            </fieldset>
+
+            <fieldset class="form__fieldset form__fieldset-inline form__fieldset-check">
+              <input type="radio" name="gender" id="male" class="form__check form__check-radio">
+              <label for="male" class="form__check-label">
+                Male
+              </label>
+            </fieldset>
+
+            <fieldset class="form__fieldset form__fieldset-inline form__fieldset-check">
+              <input type="radio" name="gender" id="female" class="form__check form__check-radio">
+              <label for="female" class="form__check-label">
+                Female
               </label>
             </fieldset>
 

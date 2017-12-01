@@ -17,6 +17,7 @@ var HandleForms = (function() {
     var inputs = document.querySelectorAll('input, select, textarea');
 
     var toggleClass = '-has-error';
+    var parentToggleClass = '-field-has-error';
 
     // Loop through all inputs.
     for ( var i = 0; i < inputs.length; i++ ) {
@@ -25,6 +26,7 @@ var HandleForms = (function() {
       inputs[i].addEventListener('invalid', function(e) {
 
         this.classList.add( toggleClass );
+        this.parentElement.classList.add( parentToggleClass );
 
       });
 

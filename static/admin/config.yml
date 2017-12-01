@@ -25,7 +25,18 @@ collections:
       - {label: "Page header dark background", name: "dark_bg", widget: "boolean", required: false}
       - {label: "Page header background color", name: "page_header_bg_color", widget: "string", required: false}
       # - {label: Pricing, name: pricing, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Plans, name: plans, widget: list, fields: [{label: Plan, name: plan, widget: string}, {label: Price, name: price, widget: string}, {label: Description, name: description, widget: string}, {label: Items, name: items, widget: list}]}]}
-
+  - name: 'contact'
+    label: 'Contact'
+    folder: 'content/contact'
+    create: false
+    fields:
+      - {label: "Featured image", name: "featured", widget: "image", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Custom CSS class", name: "custom_class", widget: "string", required: false}
+      - {label: "Transparent site header", name: "transparent_header", widget: "boolean", required: false}
+      - {label: "Featured image opacity", name: "featured_opacity", widget: "number", required: false}
+      - {label: "Page header dark background", name: "dark_bg", widget: "boolean", required: false}
+      - {label: "Page header background color", name: "page_header_bg_color", widget: "string", required: false}
   - name: "settings"
     label: "Settings"
     files:

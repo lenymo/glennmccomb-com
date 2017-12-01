@@ -24,18 +24,35 @@ $form-field-border-width: 2px;
 $form-field-border-color: $color-gray-d;
 $form-field-border-color-focus: $color-gray-8;
 $form-field-border-color-error: $color-secondary;
+$form-field-border-color-error-focus: darken($form-field-border-color-error, 15%);
 
 // Placeholder.
 $form-field-placeholder-background-color: $white;
-$form-field-placeholder-color: $color-gray-d;
-$form-field-placeholder-color-focus: $color-gray-8;
-$form-field-placeholder-color-error: $color-secondary;
+$form-field-placeholder-color: $form-field-border-color;
+$form-field-placeholder-color-focus: $form-field-border-color-focus;
+$form-field-placeholder-color-error: $form-field-border-color-error;
+$form-field-placeholder-color-error-focus: $form-field-border-color-error-focus;
+
+// Box shadow.
+$form-field-box-shadow: none;
+$form-field-box-shadow-focus: 0 5px 20px rgba($form-field-border-color, .2);
+$form-field-box-shadow-error: none;
+$form-field-box-shadow-error-focus: 0 5px 20px rgba($form-field-border-color-error, .2);
+
+
+//
+//  CHECK VARIABLES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$form-check-border-radius: 3px;
+$form-check-border-color: $form-field-border-color;
+$form-check-border-color-focus: $form-field-border-color-focus;
+$form-check-checked-color: $color-gray-8;
 
 
 //
 //  DARK BG FIELD VARIABLES
 //––––––––––––––––––––––––––––––––––––––––––––––––––
-
 
 
 //
@@ -50,6 +67,11 @@ $form-field-placeholder-color-error: $color-secondary;
   padding: 0;
   position: relative;
   width: 100%;
+}
+
+.form__fieldset-inline {
+  margin-right: $gutter / 2;
+  width: auto;
 }
 
 
@@ -88,26 +110,42 @@ $form-field-placeholder-color-error: $color-secondary;
   background-color: $form-field-background-color;
   border: $form-field-border-width solid $form-field-border-color;
   border-radius: $form-field-border-radius;
+  box-shadow: $form-field-box-shadow;
   color: $form-field-font-color;
   display: block;
   padding: $form-field-padding;
+  transition: all .2s ease;
   width: 100%;
 
+  // Field is focused.
   &:focus {
     border-color: $form-field-border-color-focus;
+    box-shadow: $form-field-box-shadow-focus;
     outline: 0;
   }
-
+  
+  // Field has errors.
   &.-has-error {
     border-color: $form-field-border-color-error;
-  }
+    box-shadow: $form-field-box-shadow-error;
 
+    // Field has errors and focused.
+    &:focus {
+      border-color: $form-field-border-color-error-focus;
+      box-shadow: $form-field-box-shadow-error-focus;
+    }
+  }
+  
+  // Field is valid.
   &:valid {
     border-color: $form-field-border-color;
-  }
+    box-shadow: $form-field-box-shadow;
 
-  &:valid:focus {
-    border-color: $form-field-border-color-focus;
+    // Field is valid and focused.
+    &:focus {
+      border-color: $form-field-border-color-focus;
+      box-shadow: $form-field-box-shadow-focus;
+    }
   }
 }
 
@@ -174,6 +212,85 @@ textarea.form__field {
 .form__field:valid:focus + .form__field-label {
   color: $form-field-placeholder-color-focus;
 }
+
+
+//
+//  CHECKBOX / RADIO
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.form__check {
+  opacity: 0;
+  float: left;
+  width: 20px;
+
+  + label {
+    clear: none;
+    cursor: pointer;
+    display: block;
+    line-height: 20px;
+    margin: 0;
+    padding-left: 30px;
+    position: relative;
+
+    // Input border.
+    &:before {
+      border: 2px solid $form-check-border-color;
+      border-radius: $form-check-border-radius;
+      content: '';
+      height: 20px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      transition: all .2s ease;
+      width: 20px;
+    }
+    
+    // Input selected.
+    &:after {
+      background: transparent;
+      border-radius: 2px;
+      content: '';
+      height: 10px;
+      left: 5px;
+      position: absolute;
+      top: 5px;
+      transform: scale(.01);
+      transition: all .1s ease;
+      width: 10px;
+    }
+  }
+
+  // Check is focused.
+  &:focus {
+    + label {
+      &:before {
+        border-color: $form-check-border-color-focus;
+      }
+    }
+  }
+  
+  // Check is checked.
+  &:checked {
+    + label {
+      &:after {
+        background: $form-check-checked-color;
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+// Radio.
+.form__check-radio {
+  + label {
+    // Make both the border and fill circles.
+    &:before,
+    &:after {
+      border-radius: 50%;
+    }
+  }
+}
+
 
 
 //
