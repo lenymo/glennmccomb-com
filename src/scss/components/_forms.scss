@@ -6,15 +6,20 @@
 
 
 //
-//  FIELD VARIABLES
+//  FIELD
 //––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// Typography.
+$form-font-size-sm: rem(18px);
+$form-font-size-md: rem(21px);
+
+// Layout.
+$form-field-height: 60px;
+$form-field-padding: 17px;
 
 // Field.
 $form-field-background-color: transparent;
 $form-field-font-color: $base-font-color;
-
-$form-field-height: 60px;
-$form-field-padding: 17px;
 
 // Border.
 $form-field-border-radius: 3px;
@@ -81,6 +86,21 @@ $dark-bg-form-field-placeholder-background-color-focus: darken($dark-bg-form-fie
 
 $dark-bg-form-field-placeholder-color: $white;
 $dark-bg-form-field-placeholder-color-focus: $dark-bg-form-field-placeholder-color;
+
+
+//
+//  FORM
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.form {
+  font-size: $form-font-size-sm;
+}
+
+@include respond-above(sm) {
+  .form {
+    font-size: $form-font-size-md;
+  }
+}
 
 
 //
