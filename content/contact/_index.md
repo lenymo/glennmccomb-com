@@ -1,9 +1,6 @@
 ---
-title: Contact
-date: 2017-10-01T11:23:52+10:00
-featured: null
-description: null
-dark_bg: null
-transparent_header: null
+featured: /img/uploads/contact-hero-bg.jpg
 custom_class: contact
+transparent_header: true
 ---
+Nothing here.
