@@ -100,7 +100,7 @@ $page-header-padding-bottom-xl: $gutter * 8;
 //  BACKGROUND IMAGE
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-.article-header__featured-image {
+.page-header__featured-image {
   background-size: cover;
   background-position: 50% 50%;
   height: 100%;
@@ -108,6 +108,16 @@ $page-header-padding-bottom-xl: $gutter * 8;
   position: absolute;
   top: 0;
   width: 100%;
+}
+
+.section__page-header {
+  &.-has-featured {
+    position: relative;
+    
+    .container__page-header {
+      z-index: 1;
+    }
+  }
 }
 
 
@@ -145,7 +155,10 @@ $page-header-padding-bottom-xl: $gutter * 8;
 }
 
 
-// Dark background.
+//
+//  DARK BACKGROUND
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
 .section__page-header {
   &.-has-dark-bg {
     .background-device {

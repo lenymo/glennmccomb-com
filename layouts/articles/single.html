@@ -5,7 +5,7 @@
   {{ partial "header" . }}
 
   <section class="section section__page-header section__article-header {{ with .Params.featured }}-has-featured{{ end }} {{ with .Params.dark_bg }}-has-dark-bg{{ end }}">
-    <div class="container">
+    <div class="container container__page-header">
 
       <date class="article-date article-header__date">
         <span class="article-date__month article-header__date-month">{{ .Date.Format "Jan" }}</span>
@@ -34,7 +34,7 @@
       </div><!-- .row -->
     {{ partial "background-device" . }}
     </div><!-- .container -->
-    <div class="article-header__featured-image" {{ with .Params.featured }}style="background-image:url({{ . }})"{{ end }}></div>
+    <div class="page-header__featured-image" {{ with .Params.featured }}style="background-image:url({{ . }})"{{ end }}></div>
   </section><!-- .section__article-header -->
 
 

@@ -5,9 +5,10 @@
   {{ partial "header" . }}
 
   <section class="section section__page-header{{ with .Params.featured }} -has-featured{{ end }}{{ with .Params.dark_bg }} -has-dark-bg{{ end }}">
-    <div class="container">
+    <div class="container container__page-header">
       <div class="row">
         <div class="col-9 col-sm-6 col-md-6 col-lg-6">
+
           <h1 class="page-header__title">
             {{ .Title }}
           </h1>
@@ -67,11 +68,13 @@
             </fieldset>
 
             <input class="btn btn-secondary" type="submit" value="Send">
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
+          </form><!-- .form -->
+
+        </div><!-- .col -->
+      </div><!-- .row -->
+    </div><!-- .container -->
+    <div class="page-header__featured-image" {{ with .Params.featured }}style="background-image:url({{ . }})"{{ end }}></div>
+  </section><!-- .section__page-header -->
 
   
 
