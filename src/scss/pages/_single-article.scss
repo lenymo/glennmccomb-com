@@ -87,7 +87,7 @@ $article-header-padding-bottom-xl: $gutter * 6;
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .article-header__date {
-  left: 0;
+  left: $gutter / 2;
   top: 50%;
   position: absolute;
   transform: translateX(20px);
@@ -109,16 +109,17 @@ $article-header-padding-bottom-xl: $gutter * 6;
   }
 
   .article-header__date-month {
-    font-size: rem(10px);
+    font-size: rem(9px);
   }
 
   .article-header__date-day {
-    font-size: rem(24px);
+    font-size: rem(22px);
   }
 }
 
 @include respond-above(xs) {
   .article-header__date {
+    left: $gutter / 4;
     top: $gutter*8 + $site-header-height-sm;
     transform: translateX(16px);
   }

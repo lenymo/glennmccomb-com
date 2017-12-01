@@ -25,8 +25,8 @@ html {
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  padding-right: $gutter / 2;
-  padding-left: $gutter / 2;
+  padding-right: $gutter;
+  padding-left: $gutter;
 }
 
 @media (min-width: 576px) {
@@ -61,8 +61,8 @@ html {
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  padding-right: $gutter / 2;
-  padding-left: $gutter / 2;
+  padding-right: $gutter;
+  padding-left: $gutter;
 }
 
 .row {
@@ -73,8 +73,8 @@ html {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-right: -$gutter / 2;
-  margin-left: -$gutter / 2;
+  margin-right: -$gutter;
+  margin-left: -$gutter;
 }
 
 .no-gutters {
@@ -111,8 +111,8 @@ html {
   position: relative;
   width: 100%;
   min-height: 1px;
-  padding-right: $gutter / 2;
-  padding-left: $gutter / 2;
+  padding-right: $gutter;
+  padding-left: $gutter;
 }
 
 @include respond-above(xs) {

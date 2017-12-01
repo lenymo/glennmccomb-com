@@ -10,6 +10,8 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 $button-background-color: $color-primary;
+$button-background-color-hover: lighten($color-primary, 5%);
+
 $button-font-color: $white;
 $button-border-radius: 3px;
 $button-padding: 14px 20px;
@@ -30,4 +32,19 @@ $button-padding: 14px 20px;
   line-height: 1;
   margin-bottom: $base-margin-bottom;
   padding: $button-padding;
+  transition: all .2s ease;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+@include respond-above(sm) {
+  .btn {
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $button-background-color-hover;
+    }
+  }
 }

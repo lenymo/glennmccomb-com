@@ -16,10 +16,38 @@
   }
 
   .page-header__title {
-    margin-bottom: $base-margin-bottom;
+    margin-bottom: $base-margin-bottom-xs;
   }
+}
 
+@include respond-above(sm) {
+  .page-contact {
+    .page-header__title {
+      margin-bottom: $base-margin-bottom;
+    }
+  }
+}
+
+
+//
+//  FEATURED IMAGE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.page-contact {
   .page-header__featured-image {
     background-position: 65% 50%;
+  }
+}
+
+
+//
+//  FORM
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.page-contact {
+  .form {
+    .btn {
+      margin-bottom: 0;
+    }
   }
 }

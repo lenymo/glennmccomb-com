@@ -117,6 +117,12 @@ $dark-bg-form-field-placeholder-color-focus: $dark-bg-form-field-placeholder-col
   width: 100%;
 }
 
+@include respond-above(sm) {
+  .form__fieldset {
+    margin-bottom: $gutter * 1.5;
+  }
+}
+
 .form__fieldset-inline {
   margin-right: $gutter / 2;
   width: auto;
