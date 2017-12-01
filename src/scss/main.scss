@@ -49,8 +49,9 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 // HTML.
-@import 'components/button';
 @import 'components/nav';
+@import 'components/forms';
+@import 'components/buttons';
 @import 'components/figure';
 @import 'components/iframe';
 
@@ -79,6 +80,7 @@
 
 @import 'pages/home';
 @import 'pages/single-article';
+@import 'pages/contact';
 @import 'pages/404';
 
 

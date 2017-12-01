@@ -7,6 +7,3 @@ dark_bg: null
 transparent_header: null
 custom_class: contact
 ---
-## Here is the content
-
-There is more down here. And some more.

@@ -7,26 +7,59 @@
   <section class="section section__page-header">
     <div class="container">
       <div class="row">
-        <div class="col-sm-12">
+        <div class="col-9 col-sm-6 col-md-4 col-lg-4">
           <h1 class="page-header__title">
             {{ .Title }}
           </h1>
+
+          <form action="" class="form">
+            <fieldset class="form__fieldset">
+              <input type="text" class="form__field" id="name" name="name" placeholder="Name" required>
+              <label for="name" class="form__field-label">
+                Name
+              </label>
+            </fieldset>
+
+            <fieldset class="form__fieldset">
+              <input type="email" class="form__field" id="email" name="email" placeholder="Email" required>
+              <label for="email" class="form__field-label">
+                Email
+              </label>
+            </fieldset>
+
+            <fieldset class="form__fieldset form__fieldset-select">
+              <select class="form__field" name="enquiry-type" id="enquiry-type" required>
+                <option value="">Enquiry Type</option>
+                <option value="general">General Enquiry</option>
+                <option value="specific">Specific Enquiry</option>
+              </select>
+              <label for="enquiry-type" class="form__field-label">
+                Name
+              </label>
+            </fieldset>
+
+            <fieldset class="form__fieldset">
+              <textarea name="message" id="message" rows="5" class="form__field" placeholder="Message" required></textarea>
+              <label for="message" class="form__field-label">
+                Message
+              </label>
+            </fieldset>
+
+            <fieldset class="form__fieldset form__fieldset-check">
+              <input type="checkbox" id="newsletter" class="form__check">
+              <label for="newsletter">
+                Subscribe to Newsletter
+              </label>
+            </fieldset>
+
+            <input class="btn btn-secondary" type="submit" value="Send">
+          </form>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section list">
-    <div class="container">
-      <div class="row">
-
-        <div class="col-sm-12">
-          {{ .Content }}
-        </div><!-- .col -->
-
-      </div><!-- .row -->
-    </div><!-- .container -->
-  </section><!-- .section__articles-summary -->
+  
 
   {{ partial "footer" . }}
   

@@ -1,0 +1,33 @@
+
+
+//
+//  BUTTONS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+
+//
+//  VARIABLES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$button-background-color: $color-primary;
+$button-font-color: $white;
+$button-border-radius: 3px;
+$button-padding: 14px 20px;
+
+
+//
+//  STYLES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.btn {
+  background-color: $button-background-color;
+  border: 0;
+  border-radius: $button-border-radius;
+  color: $button-font-color;
+  cursor: pointer;
+  display: block;
+  // font-weight: bold;
+  line-height: 1;
+  margin-bottom: $base-margin-bottom;
+  padding: $button-padding;
+}

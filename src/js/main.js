@@ -8,5 +8,6 @@
 
   ToggleMobileMenu.init();
   ExternalLinks.init();
+  HandleForms.init();
   
 })();

@@ -1,0 +1,182 @@
+
+
+//
+//  FORMS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+
+//
+//  FIELD VARIABLES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// Field.
+$form-field-background-color: transparent;
+$form-field-font-color: $base-font-color;
+
+$form-field-height: 50px;
+$form-field-padding: 12px;
+
+// Border.
+$form-field-border-radius: 3px;
+$form-field-border-width: 2px;
+
+// Border colors.
+$form-field-border-color: $color-gray-d;
+$form-field-border-color-focus: $color-gray-8;
+$form-field-border-color-error: $color-secondary;
+
+// Placeholder.
+$form-field-placeholder-background-color: $white;
+$form-field-placeholder-color: $color-gray-d;
+$form-field-placeholder-color-focus: $color-gray-8;
+$form-field-placeholder-color-error: $color-secondary;
+
+
+//
+//  DARK BG FIELD VARIABLES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+
+
+//
+//  FIELDSET
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.form__fieldset {
+  border: 0;
+  display: inline-block;
+  margin: 0;
+  margin-bottom: $gutter;
+  padding: 0;
+  position: relative;
+  width: 100%;
+}
+
+
+//
+//  SELECT FIELDSET
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.form__fieldset-select {
+  &:after {
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 10px solid $form-field-border-color;
+    content: '';
+    height: 0; 
+    position: absolute;
+    right: 14px;
+    top: 20px;
+    transition: all .2s ease;
+    width: 0;
+  }
+
+  &.-has-focus {
+    &:after {
+      border-top-color: $form-field-border-color-focus;
+    }
+  }
+}
+
+
+//
+//  FIELD
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.form__field {
+  appearance: none;
+  background-color: $form-field-background-color;
+  border: $form-field-border-width solid $form-field-border-color;
+  border-radius: $form-field-border-radius;
+  color: $form-field-font-color;
+  display: block;
+  padding: $form-field-padding;
+  width: 100%;
+
+  &:focus {
+    border-color: $form-field-border-color-focus;
+    outline: 0;
+  }
+
+  &.-has-error {
+    border-color: $form-field-border-color-error;
+  }
+
+  &:valid {
+    border-color: $form-field-border-color;
+  }
+
+  &:valid:focus {
+    border-color: $form-field-border-color-focus;
+  }
+}
+
+input.form__field,
+select.form__field {
+  height: $form-field-height;
+  transition: all .2s ease;
+}
+
+textarea.form__field {
+  min-height: $form-field-height;
+  resize: vertical;
+  transition: border .2s ease;
+}
+
+
+//
+//  LABEL
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// Default hidden state.
+.form__field-label {
+  background: $form-field-placeholder-background-color;
+  color: $form-field-placeholder-color;
+  display: block;
+  font-size: 11px;
+  font-weight: bold;
+  left: $form-field-padding;
+  letter-spacing: .075em;
+  line-height: 1;
+  opacity: 0;
+  padding: 4px;
+  position: absolute;
+  text-transform: uppercase;
+  top: -6px;
+  transition: all .2s ease;
+  z-index: -1;
+}
+
+// Once form field has text in it or a selection has been made.
+.form__field:valid + .form__field-label,
+.form__field.-has-text + .form__field-label {
+  opacity: 1;
+  top: -8px;
+  z-index: 1;
+}
+
+// When a form field has focus, change the label to match the form border.
+.form__field:focus + .form__field-label {
+  color: $form-field-placeholder-color-focus;
+}
+
+// When a form field has an error.
+.form__field.-has-error + .form__field-label {
+  color: $form-field-placeholder-color-error;
+}
+
+// When a form field is valid.
+.form__field:valid + .form__field-label {
+  color: $form-field-placeholder-color;
+}
+
+// When a form field is valid AND focused.
+.form__field:valid:focus + .form__field-label {
+  color: $form-field-placeholder-color-focus;
+}
+
+
+//
+//  DARK BG
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
