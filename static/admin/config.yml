@@ -30,7 +30,9 @@ collections:
     folder: 'content/contact'
     create: false
     fields:
+      - {label: "Title", name: "title", widget: "string"}
       - {label: "Featured image", name: "featured", widget: "image", required: false}
+      - {label: "SEO description", name: "description", widget: "text", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Custom CSS class", name: "custom_class", widget: "string", required: false}
       - {label: "Transparent site header", name: "transparent_header", widget: "boolean", required: false}
