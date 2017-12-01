@@ -51,8 +51,10 @@ $form-check-checked-color: $color-gray-8;
 
 
 //
-//  DARK BG FIELD VARIABLES
+//  DARK BG VARIABLES
 //––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$dark-bg-form-field-background-color: rgba($black, .25);
 
 
 //
@@ -297,3 +299,8 @@ textarea.form__field {
 //  DARK BG
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
+.-has-dark-bg {
+  .form__field {
+    background-color: $dark-bg-form-field-background-color;
+  }
+}
