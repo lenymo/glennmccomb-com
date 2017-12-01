@@ -4,7 +4,7 @@
 
   {{ partial "header" . }}
 
-  <section class="section section__page-header">
+  <section class="section section__page-header{{ with .Params.featured }} -has-featured{{ end }}{{ with .Params.dark_bg }} -has-dark-bg{{ end }}">
     <div class="container">
       <div class="row">
         <div class="col-9 col-sm-6 col-md-6 col-lg-6">
