@@ -11,10 +11,10 @@ menu:
     #   Name: Articles
     #   URL: /articles/
     #   Weight: '20'
-    - Identifier: home
-      Name: Home
-      URL: /
-      Weight: '10'
+    # - Identifier: home
+    #   Name: Home
+    #   URL: /
+    #   Weight: '10'
 taxonomies:
   category: categories
   tag: tags
