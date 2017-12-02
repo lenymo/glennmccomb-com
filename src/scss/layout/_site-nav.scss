@@ -73,6 +73,7 @@ $site-nav-item-current-border-color: $color-secondary;
 @include respond-above(sm) {
   .site-nav {
     vertical-align: top;
+    float: right;
   }
 
   .site-nav__item {
