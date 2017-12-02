@@ -190,6 +190,7 @@ h6 {
 a {
   color: $link-font-color;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
   text-decoration: none;
   
 
