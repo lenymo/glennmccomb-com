@@ -237,8 +237,8 @@ textarea.form__field {
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus,
   &:-webkit-autofill:active {
-    transition: background-color 5000s ease-in-out 0s;
-    -webkit-text-fill-color: #fff !important;
+    transition: background-color 50000s ease-in-out 0s;
+    -webkit-text-fill-color: $form-field-font-color !important;
     // animation: autofill 0s forwards;
   }
 }
@@ -247,6 +247,18 @@ textarea.form__field {
   100% {
     background: transparent;
     color: inherit;
+  }
+}
+
+.-has-dark-bg {
+  .form__field {
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-text-fill-color: $dark-bg-form-field-font-color !important;
+      // animation: autofill 0s forwards;
+    }
   }
 }
 
