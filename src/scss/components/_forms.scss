@@ -229,7 +229,7 @@ textarea.form__field {
 
 
 //
-//  AUTOFILL
+//  FIELD AUTOFILL
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .form__field {
@@ -237,7 +237,9 @@ textarea.form__field {
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus,
   &:-webkit-autofill:active {
-    animation: autofill 0s forwards;
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #fff !important;
+    // animation: autofill 0s forwards;
   }
 }
 
