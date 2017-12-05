@@ -14,7 +14,8 @@ $form-font-size-sm: rem(18px);
 $form-font-size-md: rem(21px);
 
 // Layout.
-$form-field-height: 60px;
+$form-field-height-sm: 60px;
+$form-field-height-md: 70px;
 $form-field-padding: 17px;
 
 // Field.
@@ -209,7 +210,7 @@ $dark-bg-form-field-placeholder-color-focus: $dark-bg-form-field-placeholder-col
 
 input.form__field,
 select.form__field {
-  height: $form-field-height;
+  height: $form-field-height-sm;
   transition: all .2s ease;
 }
 
@@ -222,9 +223,21 @@ select.form__field {
 }
 
 textarea.form__field {
-  min-height: $form-field-height;
+  min-height: $form-field-height-sm;
   resize: vertical;
   transition: border .2s ease;
+}
+
+@include respond-above(sm) {
+  input.form__field,
+  select.form__field {
+    height: $form-field-height-md;
+    transition: all .2s ease;
+  }
+
+  textarea.form__field {
+    min-height: $form-field-height-md;
+  }
 }
 
 

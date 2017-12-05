@@ -115,6 +115,58 @@ var HandleForms = (function() {
       });
     }
   }
+
+
+  //
+  //  HANDLE CONTACT FORM SUBMISSION
+  //––––––––––––––––––––––––––––––––––––––––––––––––––
+
+  function handleContactFormSubmission() {
+    
+    // Get contact form.
+    var contactForm = document.querySelector('.form__contact');
+
+    contactForm.addEventListener('submit', function(e) {
+
+      // Stop the form from submitting.
+      e.preventDefault();
+
+      // Get the form action.
+      var action = this.action;
+
+      // Get the form field values (name, email, message).
+      var name = document.querySelector('.form__field-name');
+      var email = document.querySelector('.form__field-email');
+      var message = document.querySelector('.form__field-message');
+
+      // Build a new request.
+      var request = new XMLHttpRequest();
+
+      // Open the request.
+      request.open('POST', action, true);
+
+      request.onload = function() {
+        if (request.status >= 200 && request.status < 400) {
+          console.log('Success');
+        } else {
+          console.log('Server was reached but it returned an error');
+        }
+      };
+
+      // Handle errors.
+      request.onerror = function() {
+        console.log('There was a connection error of some sort.');
+      };
+
+      // Send the request.
+      request.send();
+
+
+    });
+  }
+
+
+  
   
   
 
@@ -127,6 +179,7 @@ var HandleForms = (function() {
     monitorInputs();
     monitorEmailInputs();
     monitorSelectInputs();
+    handleContactFormSubmission();
   }
 
 
