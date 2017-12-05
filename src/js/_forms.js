@@ -134,17 +134,27 @@ var HandleForms = (function() {
       // Get the form action.
       var action = this.action;
 
+      var requestUrl = action;
+
       // Get the form field values (name, email, message).
       var name = document.querySelector('.form__field-name');
       var email = document.querySelector('.form__field-email');
       var message = document.querySelector('.form__field-message');
 
+      var requestString = '?form-name=contact';
+      requestString += '&name=' + name;
+      requestString += '&email=' + email;
+      requestString += '&message=' + message;
+
+      requestUrl += requestString;
+
       // Build a new request.
       var request = new XMLHttpRequest();
 
       // Open the request.
-      request.open('POST', action, true);
+      request.open('POST', requestUrl, true);
 
+      // When the request is loaded.
       request.onload = function() {
         if (request.status >= 200 && request.status < 400) {
           console.log('Success');
