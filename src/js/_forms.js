@@ -134,19 +134,23 @@ var HandleForms = (function() {
       // Get the form action.
       var action = this.action;
 
-      var requestUrl = action;
-
       // Get the form field values (name, email, message).
-      var name = document.querySelector('.form__field-name');
-      var email = document.querySelector('.form__field-email');
-      var message = document.querySelector('.form__field-message');
+      var name = document.querySelector('.form__field-name').value;
+      var email = document.querySelector('.form__field-email').value;
+      var message = document.querySelector('.form__field-message').value;
 
       var requestString = '?form-name=contact';
       requestString += '&name=' + name;
       requestString += '&email=' + email;
       requestString += '&message=' + message;
 
-      requestUrl += requestString;
+      // Build the request URL.
+      var requestUrl = action + requestString;
+
+      // Encode the URL.
+      requestUrl = encodeURI(requestUrl);
+
+      console.log( requestUrl );
 
       // Build a new request.
       var request = new XMLHttpRequest();
