@@ -417,6 +417,28 @@ textarea.form__field {
 }
 
 
+//
+//  FORM FOOTER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.form__footer {
+  border-radius: 3px;
+  display: inline-block;
+  position: relative;
+
+  &:after {
+    background: rgba($black, .5);
+    content: '';
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 0;
+  }
+}
+
+
 
 //
 //  DARK BG

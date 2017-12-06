@@ -122,6 +122,9 @@ var HandleForms = (function() {
   //––––––––––––––––––––––––––––––––––––––––––––––––––
 
   function handleContactFormSubmission() {
+
+    var sendingClass = '-is-sending';
+    var sentClass = '-is-sent';
     
     // Get contact form.
     var contactForm = document.querySelector('.form__contact');
@@ -138,7 +141,12 @@ var HandleForms = (function() {
       var name = document.querySelector('.form__field-name').value;
       var email = document.querySelector('.form__field-email').value;
       var message = document.querySelector('.form__field-message').value;
+      var button = document.querySelector('.form__field-message').value;
 
+      // Add the sending class.
+      this.classList.add( sendingClass );
+
+      // Put together the request string.
       var requestString = '?form-name=contact';
       requestString += '&name=' + name;
       requestString += '&email=' + email;
@@ -150,9 +158,7 @@ var HandleForms = (function() {
       // Encode the URL.
       requestUrl = encodeURI(requestUrl);
 
-      console.log( requestUrl );
-
-      // Build a new request.
+      // Create a new request.
       var request = new XMLHttpRequest();
 
       // Open the request.
