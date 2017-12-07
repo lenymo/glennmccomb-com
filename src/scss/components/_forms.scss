@@ -444,7 +444,7 @@ textarea.form__field {
     left: 0;
     position: absolute;
     top: 0;
-    transition: all 1s linear;
+    transition: all 3s linear;
     width: 0%;
   }
 }
@@ -472,11 +472,12 @@ textarea.form__field {
   }
 }
 
-// Done.
+// Thanks.
 .form {
-  &.-is-done {
+  &.-is-thankful {
     .form__footer-btn {
       &:after {
+        // background-color: $color-primary-lightest;
         // left: auto;
         opacity: 0;
         // right: 0;
@@ -543,7 +544,7 @@ textarea.form__field {
     }
   }
   
-  // Done
+  // Done.
   &.-is-done {
     .form__progress-status-sent {
       opacity: 0;
@@ -551,8 +552,21 @@ textarea.form__field {
 
     .form__progress-status-done {
       opacity: 1;
-      transform: scale(1.2);
-      transition: all .4s cubic-bezier(.25, .25, .25, 1.5);
+    }
+  }
+
+  // Thanks.
+  &.-is-thankful {
+    .form__progress-status-done {
+      opacity: 0;
+    }
+
+    .form__progress-status-thanks {
+      color: $white;
+      opacity: 1;
+      transform: scale(1.1);
+      transition: all .6s cubic-bezier(.25, .25, .25, 2);
+      // transition: all .4s ease;
     }
   }
 }

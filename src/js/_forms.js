@@ -126,6 +126,7 @@ var HandleForms = (function() {
     var sendingClass = '-is-sending';
     var sentClass = '-is-sent';
     var doneClass = '-is-done';
+    var thanksClass = '-is-thankful';
 
     var sendingDelay = 1000;
     
@@ -183,6 +184,10 @@ var HandleForms = (function() {
           setTimeout( function() {
             form.classList.add( doneClass );
           }, sendingDelay * 2 );
+
+          setTimeout( function() {
+            form.classList.add( thanksClass );
+          }, sendingDelay * 3 );
 
         // If the server was contacted but submissions was unsuccessful.
         } else {
