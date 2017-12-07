@@ -68,8 +68,22 @@
             </fieldset> -->
             
             <footer class="form__footer">
-              <input class="btn btn-secondary" type="submit" value="Send">
-            </footer>
+              <!-- <input class="btn btn-secondary form__footer-btn" type="submit" value="Send"> -->
+              <button class="btn btn-secondary form__footer-btn">
+                <span class="form__footer-btn-inner">Send</span>
+              </button>
+              <div class="form__progress">
+                <div class="form__progress-status form__progress-status-sending">
+                  Sending...
+                </div>
+                <div class="form__progress-status form__progress-status-sent">
+                  Sent
+                </div>
+                <div class="form__progress-status form__progress-status-done">
+                  Thanks!
+                </div>
+              </div>
+            </footer><!-- .form__footer -->
           </form><!-- .form -->
 
         </div><!-- .col -->

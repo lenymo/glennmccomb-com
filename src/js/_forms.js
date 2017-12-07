@@ -125,6 +125,9 @@ var HandleForms = (function() {
 
     var sendingClass = '-is-sending';
     var sentClass = '-is-sent';
+    var doneClass = '-is-done';
+
+    var sendingDelay = 1000;
     
     // Get contact form.
     var contactForm = document.querySelector('.form__contact');
@@ -135,7 +138,8 @@ var HandleForms = (function() {
       e.preventDefault();
 
       // Get the form action.
-      var action = this.action;
+      var form = this;
+      var action = form.action;
 
       // Get the form field values (name, email, message).
       var name = document.querySelector('.form__field-name').value;
@@ -144,7 +148,7 @@ var HandleForms = (function() {
       var button = document.querySelector('.form__field-message').value;
 
       // Add the sending class.
-      this.classList.add( sendingClass );
+      form.classList.add( sendingClass );
 
       // Put together the request string.
       var requestString = '?form-name=contact';
@@ -166,8 +170,21 @@ var HandleForms = (function() {
 
       // When the request is loaded.
       request.onload = function() {
+
+        // If it was successful.
         if (request.status >= 200 && request.status < 400) {
+
           console.log('Success');
+
+          setTimeout( function() {
+            form.classList.add( sentClass );
+          }, sendingDelay );
+
+          setTimeout( function() {
+            form.classList.add( doneClass );
+          }, sendingDelay * 2 );
+
+        // If the server was contacted but submissions was unsuccessful.
         } else {
           console.log('Server was reached but it returned an error');
         }
@@ -180,7 +197,6 @@ var HandleForms = (function() {
 
       // Send the request.
       request.send();
-
 
     });
   }
