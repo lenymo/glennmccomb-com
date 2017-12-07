@@ -10,6 +10,7 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 $header-logo-size: 80px;
+$header-logo-shadow-size: 10px;
 
 
 //
@@ -37,7 +38,9 @@ $header-logo-size: 80px;
   margin-bottom: -13px;
   margin-top: -10px;
   vertical-align: top;
+  position: relative;
   width: $header-logo-size;
+  z-index: $z-index-site-header-logo-svg;
 
   .circle {
     fill: $color-primary-darker;
@@ -48,6 +51,7 @@ $header-logo-size: 80px;
 
   .circle-outer {
     fill: $color-primary-lighter;
+    transition: all .2s ease;
   }
 
   #g,
@@ -91,6 +95,38 @@ $header-logo-size: 80px;
             fill: $white;
           }
         }
+      }
+    }
+  }
+}
+
+
+//
+//  LOGO SHADOW
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.site-header__logo-shadow {
+  border-radius: 50%;
+  background-color: rgba($black, .05);
+  display: block;
+  // display: none;
+  height: $header-logo-size + $header-logo-shadow-size;
+  left: -($header-logo-shadow-size / 2);
+  margin-top: -10px;
+  position: absolute;
+  top: -($header-logo-shadow-size / 2);
+  transition: all .2s ease;
+  width: $header-logo-size + $header-logo-shadow-size;
+  z-index: $z-index-site-header-logo-shadow;
+}
+
+// Hover.
+@include respond-above(sm) {
+  .site-header__logo {
+    &:hover {
+      .site-header__logo-shadow {
+        background-color: rgba($black, .1);
+        transform: scale(1.05);
       }
     }
   }
