@@ -222,7 +222,7 @@ $article-header-padding-bottom-xl: $gutter * 6;
     font-size: $article-font-size-xs;
 
     &.lead {
-      font-size: rem(24px);
+      font-size: $lead-font-size-sm;
     }
 
     small {
@@ -283,10 +283,6 @@ $article-header-padding-bottom-xl: $gutter * 6;
   .article-body {
     p {
       font-size: $article-font-size-sm;
-
-      &.lead {
-        font-size: $lead-font-size;
-      }
     }
 
     img {
@@ -311,6 +307,16 @@ $article-header-padding-bottom-xl: $gutter * 6;
 
     blockquote {
       font-size: $article-font-size-sm;
+    }
+  }
+}
+
+@include respond-above(sm) {
+  .article-body {
+    p {
+      &.lead {
+        font-size: $lead-font-size;
+      }
     }
   }
 }

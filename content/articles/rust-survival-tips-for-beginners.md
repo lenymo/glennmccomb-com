@@ -9,10 +9,10 @@ transparent_header: true
 featured_opacity: 0.2
 dark_bg: true
 page_header_bg_color: '#232323'
+toc: true
 ---
-{{< lead >}}[Rust](http://rust.facepunch.com/) is one of the most popular titles in a new breed of first-person survival games pioneered by [DayZ](https://www.bistudio.com/games/dayz). The learning curve is savage and there is very little on-boarding (at the moment).{{< /lead >}}
 
-{{< table-of-contents >}}
+{{< lead >}}[Rust](http://rust.facepunch.com/) is one of the most popular titles in a new breed of first-person survival games pioneered by [DayZ](https://www.bistudio.com/games/dayz). The learning curve is savage and there is very little on-boarding (at the moment).{{< /lead >}}
 
 Rust is in [early access](https://en.wikipedia.org/wiki/Early_access) and [Facepunch](http://www.facepunchstudios.com/) are planning to improve the experience for first-timers before officially launching. But for now you're on your own.
 
@@ -166,6 +166,10 @@ To get your head around base building YouTube is your friend. There are a ton of
 {{< youtube id="dKfFY0BBXNQ" >}}
 
 For some additional 1x1 layout ideas I also recommend checking out [Tiny Pirate's vid comparing 1x1 layouts](https://www.youtube.com/watch?v=I8eA0uVMO1s).
+
+### Another sleeping bag
+
+You should already have a bag outside your base, but it's essential that you also have one on the inside. You'll want to be able to safely respawn in your base if you die. This is particularly important if you only have a key lock because you can very easily get locked out of your own base. And even a wooden door is a royal pain in the arse to destroy with stone tools (don't even bother).
 
 ### Building materials
 

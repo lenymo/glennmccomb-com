@@ -68,10 +68,11 @@ $h5-font-family: $base-font-family;
 $h6-font-size: rem($base-font-size);
 $h6-font-family: $base-font-family;
 
-$lead-font-size: $h3-font-size;
+$lead-font-size-sm: rem(21px);
+$lead-font-size: rem(28px);
 $lead-line-height: 1.5;
 
-$small-font-size: rem( $base-font-size * .85 );
+$small-font-size: rem($base-font-size * .85);
 
 $blockquote-font-size: $base-font-size;
 
@@ -220,11 +221,6 @@ p {
   margin: 0;
   margin-bottom: $base-margin-bottom-xs;
 
-  &.lead {
-    font-size: $lead-font-size;
-    line-height: $lead-line-height;
-  }
-
   img {
     height: auto;
     max-width: 100%;
@@ -234,6 +230,26 @@ p {
 @include respond-above(xs) {
   p {
     margin-bottom: $base-margin-bottom;
+  }
+}
+
+
+//
+//  LEAD
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+p {
+  &.lead {
+    font-size: $lead-font-size-sm;
+    line-height: $lead-line-height;
+  }
+}
+
+@include respond-above(sm) {
+  p {
+    &.lead {
+      font-size: $lead-font-size;
+    }
   }
 }
 
