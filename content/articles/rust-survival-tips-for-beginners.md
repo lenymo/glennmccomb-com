@@ -83,7 +83,7 @@ Food containers are a great kick start but the monuments and mines that they gro
 
 ### Animals
 
-Killing animals is tricky because the majority of them will either run away faster than you can chase them or attack you back with often fatal consequences. Even boars can kill you if all you have is your rock. If you manage to kill an animal, for maximum yield, butcher it with a [bone knife](http://rust.wikia.com/wiki/Bone_Knife) which you can craft for 30 bone fragments.
+Killing animals is tricky because the majority of them will either run away faster than you can chase them or fight back with often fatal consequences. Even boars can kill you if all you have is your rock. If you manage to kill an animal, for maximum yield, butcher it with a [bone knife](http://rust.wikia.com/wiki/Bone_Knife) which you can craft for 30 bone fragments.
 
 ### Fishing
 
@@ -157,7 +157,7 @@ Another sneaky great source of metal frags are empty bean and tuna cans which wi
 
 ## Building a starter base
 
-Don't get too carried away building your first base. Your main priority here is safely securing your loot so you can build up your gear and start causing mayhem for other players. 
+Don't get too carried away building your first base. Your main priority here is safely securing your loot so you can build up your gear and start causing mayhem for other players.
 
 The cheapest and most common starter base is a single square foundation with an adjoining triangle foundation (commonly referred to as a 1x1). The square foundation has one door leading to the triangle foundation, which in turn has one door leading to the outside world. The triangle creates an airlock allowing you to "safely" leave your base without other players jumping in and grabbing your main loot.
 
@@ -181,7 +181,7 @@ Twig is _very_ easy to destroy so at the very least you should upgrade your twig
 
 ### Tool cupboard
 
-Placing a [tool cupboard (TC)](http://rust.wikia.com/wiki/Tool_Cupboard) in your base means only you - or anyone else who has access to your TC - can build within a certain radius of where your TC is placed. Other players can build twig near your base but they can't upgrade it. This prevents players from griefing your base by building walls around your door. Place your TC in one of the back corners of your 1x1 and authorise yourself. Having TC auth allows you to destroy structures, but only for 10 minutes after they are placed. 
+Placing a [tool cupboard (TC)](http://rust.wikia.com/wiki/Tool_Cupboard) in your base means only you - or anyone else who has access to your TC - can build within a certain radius of where your TC is placed. Other players can build some types of twig near your base but they can't upgrade it. This prevents players from griefing your base by building walls around your door. Place your TC in one of the back corners of your 1x1 and authorise yourself. Having TC auth allows you to destroy structures, but only for 10 minutes after they are placed. 
 
 ### Key locks
 
