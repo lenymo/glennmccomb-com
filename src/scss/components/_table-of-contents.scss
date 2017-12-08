@@ -20,7 +20,7 @@
     a {
       border: 0;
       color: $color-gray-8;
-      font-size: rem(14px);
+      font-size: $article-font-size-xs;
 
       &:hover {
         border: 0;
@@ -38,9 +38,29 @@
   }
 }
 
+@include respond-above(xs) {
+  .table-of-contents {
+    ul {
+      a {
+        font-size: $article-font-size-sm
+      }
+    }
+  }
+}
+
 @include respond-above(sm) {
   .table-of-contents {
     margin-bottom: $base-margin-bottom;
+
+    ul {
+      li {
+        margin-bottom: $gutter * .5;
+      }
+
+      ul {
+        margin-top: $gutter * .5;
+      }
+    }
   }
 }
 
@@ -172,4 +192,10 @@
   letter-spacing: .05em;
   margin-bottom: $gutter * .25;
   text-transform: uppercase;
+}
+
+@include respond-above(xs) {
+  .table-of-contents__title {
+    font-size: rem(14px);
+  }
 }
