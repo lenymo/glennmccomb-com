@@ -9,5 +9,6 @@
   ToggleMobileMenu.init();
   ExternalLinks.init();
   HandleForms.init();
+  TableOfContents.init();
   
 })();

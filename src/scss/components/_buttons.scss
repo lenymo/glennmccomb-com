@@ -13,6 +13,8 @@ $button-background-color: $color-primary;
 $button-background-color-hover: lighten($color-primary, 5%);
 
 $button-font-color: $white;
+$button-font-color-hover: $white;
+
 $button-border-radius: 3px;
 $button-padding: 14px 20px;
 
@@ -27,8 +29,7 @@ $button-padding: 14px 20px;
   border-radius: $button-border-radius;
   color: $button-font-color;
   cursor: pointer;
-  display: block;
-  // font-weight: bold;
+  display: inline-block;
   line-height: 1;
   margin-bottom: $base-margin-bottom;
   padding: $button-padding;
@@ -36,6 +37,12 @@ $button-padding: 14px 20px;
 
   &:focus {
     outline: none;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none;
   }
 }
 
@@ -45,6 +52,7 @@ $button-padding: 14px 20px;
     &:focus,
     &:active {
       background-color: $button-background-color-hover;
+      color: $button-font-color-hover;
     }
   }
 }

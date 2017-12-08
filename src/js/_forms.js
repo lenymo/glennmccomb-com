@@ -14,29 +14,36 @@ var HandleForms = (function() {
   function monitorInputs() {
 
     // Get all inputs.
-    var inputs = document.querySelectorAll('input, select, textarea');
+    var inputs = document.querySelectorAll( 'input, select, textarea' );
+    var forms = document.querySelectorAll( '.form' );
 
     var toggleClass = '-has-error';
     var parentToggleClass = '-field-has-error';
 
-    // Loop through all inputs.
-    for ( var i = 0; i < inputs.length; i++ ) {
+    // If there are inputs.
+    if ( inputs.length > 0 && forms.length > 0 ) {
 
-      // Listen for the invalid event.
-      inputs[i].addEventListener('invalid', function(e) {
+      // Loop through all inputs.
+      for ( var i = 0; i < inputs.length; i++ ) {
 
-        this.classList.add( toggleClass );
-        this.parentElement.classList.add( parentToggleClass );
+        // Listen for the invalid event.
+        inputs[i].addEventListener('invalid', function(e) {
 
-      });
+          this.classList.add( toggleClass );
+          this.parentElement.classList.add( parentToggleClass );
 
-      // Listen for the blur event.
-      inputs[i].addEventListener('blur', function(e) {
+        });
 
-        this.checkValidity();
+        // Listen for the blur event.
+        inputs[i].addEventListener('blur', function(e) {
 
-      });
-    }
+          this.checkValidity();
+
+        });
+      } // for ( var i = 0; i < inputs.length; i++ )
+
+    } // if ( inputs.length > 0 )
+
   } // monitorInputs()
 
 
@@ -52,30 +59,35 @@ var HandleForms = (function() {
 
     var toggleClass = '-has-text';
 
-    // Loop through form fields.
-    for ( var i = 0; i < emailInputs.length; i++ ) {
+    // If there are email inputs on the page.
+    if ( emailInputs.length > 0 ) {
 
-      // Listen for the input event.
-      emailInputs[i].addEventListener('input', function(e) {
+      // Loop through email fields.
+      for ( var i = 0; i < emailInputs.length; i++ ) {
 
-        // Get the input value.
-        var inputValue = this.value;
+        // Listen for the input event.
+        emailInputs[i].addEventListener('input', function(e) {
 
-        // If there's 1 or more characters.
-        if ( inputValue.length > 0 ) {
+          // Get the input value.
+          var inputValue = this.value;
 
-          // Add the .has-text class.
-          this.classList.add( toggleClass );
+          // If there's 1 or more characters.
+          if ( inputValue.length > 0 ) {
 
-        // If there are no characters in the field.
-        } else {
+            // Add the .has-text class.
+            this.classList.add( toggleClass );
 
-          // Remove the .has-text class.
-          this.classList.remove( toggleClass );
-        }
-      });
-    }
-  }
+          // If there are no characters in the field.
+          } else {
+
+            // Remove the .has-text class.
+            this.classList.remove( toggleClass );
+          }
+        });
+      } // for ( var i = 0; i < emailInputs.length; i++ )
+    } // if ( emailInputs.length > 0 )
+
+  } // monitorEmailInputs()
 
 
   //
@@ -91,30 +103,34 @@ var HandleForms = (function() {
 
     var fieldWrapper;
 
-    // Loop through form fields.
-    for ( var i = 0; i < selectInputs.length; i++ ) {
-      
-      // Focus event.
-      selectInputs[i].addEventListener('focus', function(e) {
+    // If there are select inputs.
+    if ( selectInputs.length > 0 ) {
 
-        fieldWrapper = this.parentElement;
+      // Loop through form fields.
+      for ( var i = 0; i < selectInputs.length; i++ ) {
         
-        // Add the toggle class.
-        fieldWrapper.classList.add( toggleClass );
+        // Focus event.
+        selectInputs[i].addEventListener('focus', function(e) {
 
-      });
+          fieldWrapper = this.parentElement;
+          
+          // Add the toggle class.
+          fieldWrapper.classList.add( toggleClass );
 
-      // Blur event.
-      selectInputs[i].addEventListener('blur', function(e) {
+        });
 
-        fieldWrapper = this.parentElement;
-        
-        // Remove the toggle class.
-        fieldWrapper.classList.remove( toggleClass );
+        // Blur event.
+        selectInputs[i].addEventListener('blur', function(e) {
 
-      });
-    }
-  }
+          fieldWrapper = this.parentElement;
+          
+          // Remove the toggle class.
+          fieldWrapper.classList.remove( toggleClass );
+
+        });
+      } // for ( var i = 0; i < selectInputs.length; i++ )
+    } // if ( selectInputs.length > 0 )
+  } // monitorSelectInputs()
 
 
   //
@@ -123,6 +139,7 @@ var HandleForms = (function() {
 
   function handleContactFormSubmission() {
 
+    // Toggle classes.
     var sendingClass = '-is-sending';
     var sentClass = '-is-sent';
     var doneClass = '-is-done';
@@ -133,83 +150,83 @@ var HandleForms = (function() {
     // Get contact form.
     var contactForm = document.querySelector('.form__contact');
 
-    contactForm.addEventListener('submit', function(e) {
+    // If the contact form exists.
+    if ( contactForm !== null && contactForm.length > 0 ) {
 
-      // Stop the form from submitting.
-      e.preventDefault();
+      // Listen for form submission event.
+      contactForm.addEventListener('submit', function(e) {
 
-      // Get the form action.
-      var form = this;
-      var action = form.action;
+        // Stop the form from submitting.
+        e.preventDefault();
 
-      // Get the form field values (name, email, message).
-      var name = document.querySelector('.form__field-name').value;
-      var email = document.querySelector('.form__field-email').value;
-      var message = document.querySelector('.form__field-message').value;
-      var button = document.querySelector('.form__field-message').value;
+        // Get the form action.
+        var form = this;
+        var action = form.action;
 
-      // Add the sending class.
-      form.classList.add( sendingClass );
+        // Get the form field values (name, email, message).
+        var name = document.querySelector('.form__field-name').value;
+        var email = document.querySelector('.form__field-email').value;
+        var message = document.querySelector('.form__field-message').value;
+        var button = document.querySelector('.form__field-message').value;
 
-      // Put together the request string.
-      var requestString = '?form-name=contact';
-      requestString += '&name=' + name;
-      requestString += '&email=' + email;
-      requestString += '&message=' + message;
+        // Add the sending class.
+        form.classList.add( sendingClass );
 
-      // Build the request URL.
-      var requestUrl = action + requestString;
+        // Put together the request string.
+        var requestString = '?form-name=contact';
+        requestString += '&name=' + name;
+        requestString += '&email=' + email;
+        requestString += '&message=' + message;
 
-      // Encode the URL.
-      requestUrl = encodeURI(requestUrl);
+        // Build the request URL.
+        var requestUrl = action + requestString;
 
-      // Create a new request.
-      var request = new XMLHttpRequest();
+        // Encode the URL.
+        requestUrl = encodeURI(requestUrl);
 
-      // Open the request.
-      request.open('POST', requestUrl, true);
+        // Create a new request.
+        var request = new XMLHttpRequest();
 
-      // When the request is loaded.
-      request.onload = function() {
+        // Open the request.
+        request.open('POST', requestUrl, true);
 
-        // If it was successful.
-        if (request.status >= 200 && request.status < 400) {
+        // When the request is loaded.
+        request.onload = function() {
 
-          console.log('Success');
+          // If it was successful.
+          if (request.status >= 200 && request.status < 400) {
 
-          setTimeout( function() {
-            form.classList.add( sentClass );
-          }, sendingDelay );
+            // console.log('Success');
 
-          setTimeout( function() {
-            form.classList.add( doneClass );
-          }, sendingDelay * 2 );
+            setTimeout( function() {
+              form.classList.add( sentClass );
+            }, sendingDelay );
 
-          setTimeout( function() {
-            form.classList.add( thanksClass );
-          }, sendingDelay * 3 );
+            setTimeout( function() {
+              form.classList.add( doneClass );
+            }, sendingDelay * 2 );
 
-        // If the server was contacted but submissions was unsuccessful.
-        } else {
-          console.log('Server was reached but it returned an error');
-        }
-      };
+            setTimeout( function() {
+              form.classList.add( thanksClass );
+            }, sendingDelay * 3 );
 
-      // Handle errors.
-      request.onerror = function() {
-        console.log('There was a connection error of some sort.');
-      };
+          // If the server was contacted but submissions was unsuccessful.
+          } else {
+            // console.log('Server was reached but it returned an error');
+          }
+        };
 
-      // Send the request.
-      request.send();
+        // Handle errors.
+        request.onerror = function() {
+          // console.log('There was a connection error of some sort.');
+        };
 
-    });
-  }
+        // Send the request.
+        request.send();
 
-
-  
-  
-  
+      }); // contactForm.addEventListener('submit', function(e)
+    } // if ( contactForm.length > 0 )
+  } // handleContactFormSubmission()
 
 
   //
