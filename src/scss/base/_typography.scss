@@ -328,5 +328,21 @@ hr {
 pre {
   background: $color-gray-e;
   border-radius: 4px;
+  margin: 0;
+  margin-bottom: $base-margin-bottom-xs;
   padding: $gutter;
+}
+
+@include respond-above(xs) {
+  pre {
+    margin-bottom: $base-margin-bottom;
+  }
+}
+
+.highlight {
+  pre {
+    // background-color: #193040 !important;
+    background-color: $color-primary-darker !important;
+    overflow-x: scroll;
+  }
 }
