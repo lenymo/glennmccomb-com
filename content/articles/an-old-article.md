@@ -7,6 +7,18 @@ dark_bg: null
 transparent_header: null
 custom_class: null
 ---
+
+{{< highlight html >}}
+<section id="main">
+  <div>
+   <h1 id="title">{{ .Title }}</h1>
+    {{ range .Data.Pages }}
+        {{ .Render "summary"}}
+    {{ end }}
+  </div>
+</section>
+{{< /highlight >}}
+
 Lo-fi retro pour-over hot chicken, XOXO poutine try-hard small batch four dollar toast synth hoodie cardigan franzen ramps. Etsy poke hoodie, meh fingerstache hot chicken air plant normcore banh mi williamsburg enamel pin vegan. 
 
 Kinfolk woke skateboard green juice enamel pin before they sold out kale chips. Polaroid neutra bitters af, put a bird on it blue bottle edison bulb. Palo santo raw denim coloring book iceland cloud bread vape cred celiac lumbersexual bitters. 
