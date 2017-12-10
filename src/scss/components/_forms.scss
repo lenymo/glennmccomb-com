@@ -502,13 +502,12 @@ textarea.form__field {
 
 .form__progress {
   display: none;
-  // left: 100px;
   position: relative;
-  // top: 12px;
   vertical-align: top;
 }
 
 .form__progress-status {
+  color: $color-gray-a;
   font-size: rem(14px);
   font-weight: bold;
   left: 20px;
