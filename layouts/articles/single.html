@@ -1,6 +1,6 @@
 {{ partial "head" . }}
 
-<body class="single-article {{ with .Params.custom_class }} {{ . }}{{ end }}{{ with .Params.transparent_header }} -has-transparent-site-header{{ end }}{{ range .Params.categories }} category-{{ . | urlize }}{{ end }}">
+<body class="single-article {{ with .Params.custom_class }} {{ . }}{{ end }}{{ with .Params.transparent_header }} -has-transparent-site-header{{ end }}{{ range .Params.categories }} article-category-{{ . | urlize }}{{ end }}">
 
   {{ partial "header" . }}
 
