@@ -1,8 +1,28 @@
+
+
 //
-//  CATEGORY NBA
+//  CATEGORY - NBA
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .category-nba {
+  .section__page-header {
+    background-color: darken(#c61633, 20%);
+  }
+  
+  .section__page-header {
+    .page-header__background-device {
+      background-color: darken(#204488, 20%);
+
+      .line {
+        background-color: rgba($white, .25);
+      }
+    }
+  }
+
+  .page-header__icon {
+    background-color: $white;
+  }
+
   .page-header__title {
     text-transform: uppercase;
   }
