@@ -163,11 +163,17 @@ var HandleForms = (function() {
         var form = this;
         var action = form.action;
 
+        // Get form fields.
+        var nameField = document.querySelector('.form__field-name');
+        var emailField = document.querySelector('.form__field-email');
+        var messageField = document.querySelector('.form__field-message');
+        var buttonElem = document.querySelector('.form__field-message');
+
         // Get the form field values (name, email, message).
-        var name = document.querySelector('.form__field-name').value;
-        var email = document.querySelector('.form__field-email').value;
-        var message = document.querySelector('.form__field-message').value;
-        var button = document.querySelector('.form__field-message').value;
+        var name = nameField.value;
+        var email = emailField.value;
+        var message = messageField.value;
+        var button = buttonElem.value;
 
         // Add the sending class.
         form.classList.add( sendingClass );
@@ -208,6 +214,15 @@ var HandleForms = (function() {
 
             setTimeout( function() {
               form.classList.add( thanksClass );
+
+              // Empty fields.
+              nameField.value = '';
+              emailField.value = '';
+              messageField.value = '';
+
+              // Remove the -has-text class from email field.
+              emailField.classList.remove('-has-text');
+
             }, sendingDelay * 3 );
 
           // If the server was contacted but submissions was unsuccessful.
