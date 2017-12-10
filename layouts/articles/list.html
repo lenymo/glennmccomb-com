@@ -1,0 +1,42 @@
+{{ partial "head" . }}
+
+<body class="{{ .Title | urlize }} articles-{{ .Title | urlize }}">
+
+  {{ partial "header" . }}
+
+  <section class="section section__page-header -has-background-device -has-dark-bg">
+    <div class="container container__page-header">
+      <div class="row row__page-header">
+        <div class="col-8 offset-3 col-sm-6 offset-sm-3 col-md-8 offset-md-2 col-lg-8 offset-lg-2">
+          <div class="page-header__hgroup">
+            <h1 class="page-header__title">
+              {{ .Title }}
+            </h1>
+          </div><!-- .page-header__hgroup -->
+        </div>
+      </div><!-- .row -->
+      {{ partial "background-device" . }}
+    </div><!-- .container -->
+  </section><!-- .section__page-header -->
+
+  <section class="section section__articles-summary">
+    <div class="container">
+      <div class="row">
+      
+        {{ range first 10 .Data.Pages }}
+          {{ if eq .Type "articles" }}
+
+            {{ partial "article-summary" . }}
+
+          {{ end }}
+        {{ end }}
+
+      </div><!-- .row -->
+    </div><!-- .container -->
+  </section><!-- .section__articles-summary -->
+
+  {{ partial "footer" . }}
+  
+</body>
+
+{{ partial "foot" . }}
