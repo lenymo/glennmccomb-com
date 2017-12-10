@@ -44,6 +44,12 @@
   margin-bottom: $gutter;
 }
 
+@include respond-above(xs) {
+  .article-summary {
+    margin-bottom: $gutter * 2;
+  }
+}
+
 
 //
 //  LINK
