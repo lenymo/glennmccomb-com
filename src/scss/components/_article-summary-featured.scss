@@ -116,3 +116,14 @@
     }
   }
 }
+
+@include respond-above(lg) {
+  .col__article-summary {
+    &:nth-child(2),
+    &:nth-child(3) {
+      .article-summary__featured-image {
+        height: 250px;
+      }
+    }
+  }
+}

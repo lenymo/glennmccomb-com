@@ -44,7 +44,7 @@
   margin-bottom: $gutter;
 }
 
-@include respond-above(xs) {
+@include respond-above(sm) {
   .article-summary {
     margin-bottom: $gutter * 2;
   }
