@@ -4,7 +4,7 @@
 
   {{ partial "header" . }}
 
-  <section class="section section__page-header section__article-header {{ with .Params.featured }}-has-featured{{ end }} {{ with .Params.dark_bg }}-has-dark-bg{{ end }}">
+  <section class="section section__page-header section__article-header -has-background-device{{ with .Params.featured }} -has-featured{{ end }}{{ with .Params.dark_bg }} -has-dark-bg{{ end }}">
     <div class="container container__page-header">
 
       <date class="article-date article-header__date">
