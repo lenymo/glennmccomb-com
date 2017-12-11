@@ -15,7 +15,7 @@ collections:
     fields: # The fields for each document, usually in front matter
       # - {label: "Layout", name: "layout", widget: "hidden", default: "articles"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish date", name: "date", widget: "datetime"}
+      - {label: "Publish date", name: "date", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ssZ"}
       - {label: "Featured image", name: "featured", widget: "image", required: false}
       - {label: "Categories", name: "categories", widget: "list"}
       - {label: "SEO description", name: "description", widget: "text", required: false}
