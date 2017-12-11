@@ -11,10 +11,7 @@ Lo-fi retro pour-over hot chicken, XOXO poutine try-hard small batch four dollar
 {{< highlight html >}}
 <section id="main">
   <div>
-   <h1 id="title">{{ .Title }}</h1>
-    {{ range .Data.Pages }}
-        {{ .Render "summary"}}
-    {{ end }}
+   <h1 id="title">Title</h1>
   </div>
 </section>
 {{< /highlight >}}
