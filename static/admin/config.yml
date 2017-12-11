@@ -17,18 +17,18 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish date", name: "date", widget: "datetime"}
       - {label: "Featured image", name: "featured", widget: "image", required: false}
-      - {
-        label: "Categories",
-        name: "categories",
-        widget: "list",
-        fields: [
-          {
-            label: Category, 
-            name: category, 
-            widget: string
-          }
-        ]
-      }
+      # - {
+      #   label: "Categories",
+      #   name: "categories",
+      #   widget: "list",
+      #   fields: [
+      #     {
+      #       label: Category, 
+      #       name: category, 
+      #       widget: string
+      #     }
+      #   ]
+      # }
       - {label: "SEO description", name: "description", widget: "text", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Custom CSS class", name: "custom_class", widget: "string", required: false}
