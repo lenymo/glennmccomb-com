@@ -1,4 +1,6 @@
 ---
+categories:
+  - Development
 title: An old article
 date: 2016-09-29T19:32:52+10:00
 featured: null

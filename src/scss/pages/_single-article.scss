@@ -160,35 +160,67 @@ $article-header-padding-bottom-xl: $gutter * 6;
   padding: 0;
 }
 
-// Add a comma after every category besides the last one.
 .article-header__category-link {
-  font-size: rem(14px);
+  background: rgba($white, .33);
+  border-radius: 1000px;
+  color: rgba($black, .333);
+  display: inline-block;
+  font-size: rem(11px);
   font-weight: bold;
   letter-spacing: .05em;
+  line-height: 1.1;
+  padding: $gutter*.33 $gutter*.66;
   text-transform: uppercase;
+  transition: all .4s ease;
+  vertical-align: top;
 
-  &:after {
-    content: ',';
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none;
+  }
+
+  &:hover {
+    background: $color-primary;
+    color: $white;
   }
 }
 
 .article-header__category {
   display: inline-block;
-
-  // Hide comma for last category.
-  &:last-of-type {
-    .article-header__category-link {
-      &:after {
-        content: '';
-      }
-    }
-  }
 }
 
 .section__article-header {
   &.-has-dark-bg {
     .article-header__category-link {
-      color: rgba($white, .3);
+      background: rgba($black, .25);
+      color: rgba($white, .5);
+    }
+  }
+}
+
+@include respond-above(xs) {
+  .article-header__category-link {
+    font-size: rem(12px);
+  }
+}
+
+@include respond-above(sm) {
+  .article-header__category-link {
+    &:hover {
+      background: rgba($white, .66);
+      color: rgba($black, .66);
+    }
+  }
+
+  .section__article-header {
+    &.-has-dark-bg {
+      .article-header__category-link {
+        &:hover {
+          background: rgba($black, .5);
+          color: rgba($white, .75);
+        }
+      }
     }
   }
 }
