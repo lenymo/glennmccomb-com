@@ -142,6 +142,12 @@ $article-summary-padding-top-bottom-xl: $gutter * 2;
   height: 150px;
 }
 
+@include respond-above(xs) {
+  .article-summary__featured-image {
+    height: 180px;
+  }
+}
+
 @include respond-above(sm) {
   .article-summary__featured-image {
     height: 175px;
