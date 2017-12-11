@@ -21,7 +21,10 @@ $page-header-icon-top-md: $gutter * 9.75;
 $page-header-icon-top-lg: $gutter * 11.5;
 $page-header-icon-top-xl: $gutter * 15.75;
 
-$page-header-icon-background-color: $color-gray-8;
+$page-header-icon-background-color: $color-gray-2;
+
+$page-header-icon-border-width: 5px;
+$page-header-icon-border-color: rgba($white, .075);
 
 
 
@@ -32,6 +35,7 @@ $page-header-icon-background-color: $color-gray-8;
 .page-header__icon {
   background: $page-header-icon-background-color;
   border-radius: 50%;
+  border: $page-header-icon-border-width solid $page-header-icon-border-color;
   height: $page-header-icon-size-xs;
   left: $gutter / 2;
   position: absolute;

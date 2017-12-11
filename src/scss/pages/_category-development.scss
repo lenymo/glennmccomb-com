@@ -4,4 +4,61 @@
 //  CATEGORY - DEVELOPMENT
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
+$page-header-bg-development: #233624;
 
+
+//
+//  PAGE HEADER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.category-development {
+  .section__page-header {
+    background-color: $page-header-bg-development;
+  }
+
+  .page-header__icon {
+    background-color: $page-header-bg-development;
+    // background-color: transparent;
+    // border-color: transparent;
+  }
+
+  .page-header__icon-wrapper {
+    color: $white;
+    color: #5dc562;
+    font-size: rem(40px);
+    font-family: $heading-font-family;
+    font-weight: bold;
+    line-height: 1;
+    letter-spacing: -.075em;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    // width: 100%;
+  }
+}
+
+@include respond-above(xs) {
+  .category-development {
+    .page-header__icon-wrapper {
+      font-size: rem(56px);
+    }
+  }
+}
+
+@include respond-above(sm) {
+  .category-development {
+    .page-header__icon-wrapper {
+      // font-size: rem(60px);
+    }
+  }
+}
+
+@include respond-above(lg) {
+  .category-development {
+    .page-header__icon-wrapper {
+      font-size: rem(64px);
+    }
+  }
+}

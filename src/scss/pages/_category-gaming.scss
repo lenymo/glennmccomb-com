@@ -1,0 +1,23 @@
+
+
+//
+//  CATEGORY - GAMING
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// $page-header-bg-gaming: #362323;
+$page-header-bg-gaming: #5b1b27;
+
+
+//
+//  PAGE HEADER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.category-gaming {
+  .section__page-header {
+    background-color: $page-header-bg-gaming;
+  }
+
+  .page-header__icon {
+    background-color: $page-header-bg-gaming;
+  }
+}
