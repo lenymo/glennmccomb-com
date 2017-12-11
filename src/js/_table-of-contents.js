@@ -20,10 +20,9 @@ var TableOfContents = (function() {
     var tocToggle = document.querySelector('.table-of-contents__toggle');
     var tocToggleClass = '-is-expanded';
 
-    // console.log( tocToggle );
-
     // If the ToC toggle exists on the page.
-    if ( tocToggle !== null && tocToggle.length > 0 ) {
+    if ( tocToggle ) {
+
       // Listen for clicks on the ToC toggle.
       tocToggle.addEventListener('click', function(e){
         
