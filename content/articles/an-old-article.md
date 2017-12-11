@@ -1,13 +1,9 @@
 ---
+title: An old article
+date: 2016-09-29T09:32:52.000Z
 categories:
   - Development
-title: An old article
-date: 2016-09-29T19:32:52+10:00
-featured: null
-description: null
-dark_bg: null
-transparent_header: null
-custom_class: null
+  - Photography
 ---
 
 Lo-fi retro pour-over hot chicken, XOXO poutine try-hard small batch four dollar toast synth hoodie cardigan franzen ramps. Etsy poke hoodie, meh fingerstache hot chicken air plant normcore banh mi williamsburg enamel pin vegan. 
