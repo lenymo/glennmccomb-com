@@ -160,6 +160,10 @@ $article-header-padding-bottom-xl: $gutter * 6;
   padding: 0;
 }
 
+.article-header__category {
+  margin-bottom: $gutter * .2;
+}
+
 .article-header__category-link {
   background: rgba($white, .33);
   border-radius: 1000px;

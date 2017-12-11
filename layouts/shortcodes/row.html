@@ -7,6 +7,6 @@ Params:
 class="example-class"
 
 -->
-<div class="row{{ if .Get "class" }} {{ .Get "class" }}{{ end }} row-shortcode">
+<div class="row{{ if .Get "class" }} {{ .Get "class" }}{{ end }} row__shortcode">
   {{ .Inner | markdownify }}
 </div>

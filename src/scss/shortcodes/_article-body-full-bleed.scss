@@ -22,3 +22,21 @@
     margin-bottom: $base-margin-bottom;
   }
 }
+
+
+//
+//  MULTIPLE COLUMNS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// Add padding to the bottom of columns at xs size.
+@include respond-below(xs) {
+  .article-body__full-bleed {
+    .col__shortcode {
+      margin-bottom: $gutter;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
