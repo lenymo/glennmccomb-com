@@ -1,15 +1,13 @@
 ---
-categories:
-  - NBA
-  - Development
 title: A better NBA box score
 date: 2017-01-21T09:57:11.000Z
 featured: /img/uploads/espn-nba-boxscore-extension.jpg
-description: null
-dark_bg: true
+categories:
+  - NBA
+  - Development
 custom_class: better-nba-boxscore
+dark_bg: true
 ---
-
 {{< lead >}}After seeing a ton of respected NBA Twitter people — including [LeBron James](https://twitter.com/KingJames/status/784207016877256704) — complaining about poorly designed box scores, I endeavoured to improve the existing ESPN box score with a [free Chrome extension](https://goo.gl/3DmHU1).{{< /lead >}}
 
 It's now my favourite way to follow an NBA game. Between this, Twitter and league pass I'm all set.
@@ -22,7 +20,7 @@ At some stage ESPN updated their box scores and left some tasty team stats hidde
 
 Play-by-play data is added to the page below the box score in an iframe and formatting is added to highlight key stats.
 
-{{< article-body-full-bleed >}}
+{{< article-body-full-bleed container="yes" >}}
 ![null](/img/uploads/box-score-layout.jpg)
 {{< /article-body-full-bleed >}}
 
@@ -48,9 +46,9 @@ These possession-based numbers will also differ from NBA.com’s metrics because
 
 ## Highlighting changes
 
-When a game is live, stats are constantly updating but it’s difficult to follow exactly *what* has changed. In the extension, updated stats are highlighted with a yellow background as shown below.
+When a game is live, stats are constantly updating but it’s difficult to follow exactly _what_ has changed. In the extension, updated stats are highlighted with a yellow background as shown below.
 
-{{< article-body-full-bleed >}}
+{{< article-body-full-bleed container="yes" >}}
 ![null](/img/uploads/box-score-stats-play-sequence.jpg)
 {{< /article-body-full-bleed >}}
 
@@ -64,17 +62,17 @@ This uninspiring example demonstrates that you no longer need to continually swi
 
 Immediately following a game’s completion, advanced stats can be viewed for individual players by clicking the advanced stats checkbox in the bottom right-hand corner of the page (next to the ESPN logo). As with team stats, these are all calculated using formulas from [Basketball Reference’s glossary](http://www.basketball-reference.com/about/glossary.html).
 
-{{< article-body-full-bleed >}}
+{{< article-body-full-bleed container="yes" >}}
 ![null](/img/uploads/box-score-advanced-stats.png)
 {{< /article-body-full-bleed >}}
 
-These stats *do* actually work while a game is live but they’re buggy and I’m still working on performance tweaks. Hopefully soon these will be available during live games.
+These stats _do_ actually work while a game is live but they’re buggy and I’m still working on performance tweaks. Hopefully soon these will be available during live games.
 
 ## Sound interesting?
 
 You can [download the extension here](https://goo.gl/3DmHU1) and feel free to reach out [on Twitter](https://twitter.com/lenymo) if you have any feedback. If you like it please rate it in the Chrome store and share it with your friends.
 
----
+- - -
 
 ## Additional notes
 
@@ -89,15 +87,6 @@ You can [download the extension here](https://goo.gl/3DmHU1) and feel free to 
 
 For reference below is the original ESPN box score
 
-{{< article-body-full-bleed >}}
+{{< article-body-full-bleed container="yes" >}}
 ![null](/img/uploads/espn-boxscores-before.png)
 {{< /article-body-full-bleed >}}
-
-
-
-
-
-
-
-
-
