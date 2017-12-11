@@ -19,3 +19,4 @@ taxonomies:
   category: categories
   tag: tags
 title: Glenn McComb - Designer and Front End Developer
+disableFastRender: true
