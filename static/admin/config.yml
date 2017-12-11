@@ -55,7 +55,30 @@ collections:
         file: "data/social_links.yml"
         description: "Links to my social media profiles"
         fields:
-          - {label: "Social Links", name: "social_links", widget: "list", fields: [{label: Name, name: name, widget: string}, {label: Identifier, name: identifier, widget: string}, {label: URL, name: url, widget: string}, {label: Icon, name: icon, widget: string}]}
+          - {
+            label: "Social Links", 
+            name: "social_links", 
+            widget: "list", 
+            fields: [
+              {
+                label: Name, 
+                name: name, 
+                widget: string
+              }, {
+                label: Identifier, 
+                name: identifier, 
+                widget: string
+              }, {
+                label: URL, 
+                name: url, 
+                widget: string
+              }, {
+                label: Icon, 
+                name: icon, 
+                widget: string
+              }
+            ]
+          }
       
       - name: "menu" # Add menu items here.
         label: "Menu"
