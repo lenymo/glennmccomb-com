@@ -4,23 +4,7 @@
 
   {{ partial "header" . }}
 
-  <section class="section section__articles-summary -is-first-section">
-    <div class="container container__articles-summary">
-      <div class="row row__articles-summary">
-
-        {{ $paginator := .Paginate (where .Data.Pages "Type" "articles") }}
-
-        {{ range $paginator.Pages }}
-          {{ partial "article-summary" . }}
-        {{ end }}
-
-      </div><!-- .row -->
-
-      <div class="row row__pagination">
-        {{ partial "pagination.html" . }}
-      </div><!-- .row -->
-    </div><!-- .container -->
-  </section><!-- .section__articles-summary -->
+  {{ partial "section-articles-summary" . }}
 
 
   <!-- This pulls in the value of "settings_test" from data/site-settings.yml -->
