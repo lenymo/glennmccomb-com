@@ -74,7 +74,10 @@ $lead-line-height: 1.5;
 
 $small-font-size: rem($base-font-size * .85);
 
-$blockquote-font-size: $base-font-size;
+$blockquote-font-size-xs: rem(18px);
+$blockquote-font-size-sm: rem(21px);
+$blockquote-font-size-md: rem(24px);
+$blockquote-font-size-lg: rem(26px);
 
 
 //
@@ -267,7 +270,102 @@ p {
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 blockquote {
+  font-family: $heading-font-family;
+  font-size: $blockquote-font-size-xs;
+  line-height: 1.5;
   margin: 0;
+  padding-left: $gutter * 2.5;
+  position: relative;
+
+  &:before,
+  &:after {
+    content: '“';
+    color: $color-gray-c;
+    display: block;
+    font-family: $base-font-family;
+    font-size: rem(80px);
+    left: 0;
+    position: absolute;
+    top: 0;
+  }
+
+  &:before {
+    line-height: .85;
+  }
+
+  &:after {
+    bottom: 0;
+    content: '”';
+    display: none;
+    left: auto;
+    line-height: 1px;
+    right: 0;
+    top: auto;
+  }
+}
+
+@include respond-above(xs) {
+  blockquote {
+    font-size: $blockquote-font-size-sm;
+    padding-left: $gutter * 2.5;
+    padding-right: $gutter * 2.5;
+
+    &:before,
+    &:after {
+      font-size: rem(100px);
+    }
+
+    &:before {
+      left: -$gutter;
+    }
+
+    &:after {
+      display: block;
+      right: -$gutter;
+    }
+  }
+}
+
+@include respond-above(sm) {
+  blockquote {
+    font-size: $blockquote-font-size-md;
+    padding-left: $gutter * 2;
+    padding-right: $gutter * 2;
+
+    &:before,
+    &:after {
+      font-size: rem(120px);
+    }
+
+    &:before {
+      left: -$gutter * 2;
+    }
+
+    &:after {
+      right: -$gutter * 2;
+    }
+  }
+}
+
+@include respond-above(md) {
+  blockquote {
+    font-size: $blockquote-font-size-lg;
+    padding-left: $gutter * 3;
+    padding-right: $gutter * 3;
+
+    &:before,
+    &:after {
+      font-size: rem(140px);
+    }
+
+    &:before {
+      left: -$gutter * 2;
+    }
+
+    &:after {
+      right: -$gutter * 2;
+    }
+  }
 }
 
 
