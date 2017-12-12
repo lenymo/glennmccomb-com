@@ -258,13 +258,13 @@ $article-summary-padding-top-bottom-xl: $gutter * 2;
 
 .article-summary__excerpt {
   color: $color-gray-6;
-  // display: none;
+  font-size: rem(16px);
   line-height: 1.4;
   margin-bottom: 0;
 }
 
-// @include respond-above(xs) {
-//   .article-summary__excerpt {
-//     display: block;
-//   }
-// }
+@include respond-above(xs) {
+  .article-summary__excerpt {
+    font-size: rem(18px);
+  }
+}

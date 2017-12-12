@@ -78,7 +78,7 @@ $blockquote-font-size: $base-font-size;
 
 
 //
-//  ARTICLE FONT SIZES
+//  SITE CONTENT FONT SIZES
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 $article-font-size-xs: rem(18px);
@@ -339,10 +339,17 @@ pre {
   }
 }
 
-.highlight {
-  pre {
-    // background-color: #193040 !important;
-    background-color: $color-primary-darker !important;
-    overflow-x: scroll;
+
+//
+//  SITE CONTENT
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.site {
+  font-size: $article-font-size-xs;
+}
+
+@include respond-above(xs) {
+  .site {
+    font-size: $article-font-size-sm;
   }
 }

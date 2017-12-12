@@ -234,24 +234,24 @@ $article-header-padding-bottom-xl: $gutter * 6;
 //  ARTICLE BODY
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-@include respond-below(sm) {
-  .section__article-body {
-    > .container {
-      > .row {
-        // padding-left: $gutter * 2;
-        // padding-right: $gutter * 2;
-      }
-    }
-  }
-}
+// @include respond-below(sm) {
+//   .section__article-body {
+//     > .container {
+//       > .row {
+//         // padding-left: $gutter * 2;
+//         // padding-right: $gutter * 2;
+//       }
+//     }
+//   }
+// }
 
 .article-body {
   p {
-    font-size: $article-font-size-xs;
+    // font-size: $article-font-size-xs;
 
-    &.lead {
-      font-size: $lead-font-size-sm;
-    }
+    // &.lead {
+    //   font-size: $lead-font-size-sm;
+    // }
 
     small {
       a {
@@ -270,14 +270,14 @@ $article-header-padding-bottom-xl: $gutter * 6;
       margin-bottom: $gutter / 4;
     }
 
-    p {
-      font-size: $small-font-size;
-    }
+    // p {
+      // font-size: $small-font-size;
+    // }
   }
 
   ul,
   ol {
-    font-size: $article-font-size-xs;
+    // font-size: $article-font-size-xs;
     margin-bottom: $base-margin-bottom-xs;
     margin-left: $gutter * 2;
 
@@ -302,16 +302,16 @@ $article-header-padding-bottom-xl: $gutter * 6;
     }
   }
 
-  blockquote {
-    font-size: $article-font-size-xs;
-  }
+  // blockquote {
+  //   font-size: $article-font-size-xs;
+  // }
 }
 
 @include respond-above(xs) {
   .article-body {
-    p {
-      font-size: $article-font-size-sm;
-    }
+    // p {
+    //   font-size: $article-font-size-sm;
+    // }
 
     img {
       margin-bottom: $base-margin-bottom;
@@ -325,7 +325,7 @@ $article-header-padding-bottom-xl: $gutter * 6;
 
     ul,
     ol {
-      font-size: $article-font-size-sm;
+      // font-size: $article-font-size-sm;
       margin-bottom: $base-margin-bottom;
 
       li {
@@ -333,21 +333,21 @@ $article-header-padding-bottom-xl: $gutter * 6;
       }
     }
 
-    blockquote {
-      font-size: $article-font-size-sm;
-    }
+    // blockquote {
+    //   font-size: $article-font-size-sm;
+    // }
   }
 }
 
-@include respond-above(sm) {
-  .article-body {
-    p {
-      &.lead {
-        font-size: $lead-font-size;
-      }
-    }
-  }
-}
+// @include respond-above(sm) {
+//   .article-body {
+//     p {
+//       &.lead {
+//         font-size: $lead-font-size;
+//       }
+//     }
+//   }
+// }
 
 
 //
