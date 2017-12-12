@@ -81,8 +81,8 @@ $blockquote-font-size: $base-font-size;
 //  SITE CONTENT FONT SIZES
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-$article-font-size-xs: rem(18px);
-$article-font-size-sm: rem(21px);
+$site-content-font-size-xs: rem(18px);
+$site-content-font-size-sm: rem(21px);
 
 
 //
@@ -345,11 +345,11 @@ pre {
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .site {
-  font-size: $article-font-size-xs;
+  font-size: $site-content-font-size-xs;
 }
 
 @include respond-above(xs) {
   .site {
-    font-size: $article-font-size-sm;
+    font-size: $site-content-font-size-sm;
   }
 }

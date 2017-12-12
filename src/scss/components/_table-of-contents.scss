@@ -20,7 +20,7 @@
     a {
       border: 0;
       color: $color-gray-8;
-      font-size: $article-font-size-xs;
+      // font-size: $article-font-size-xs;
 
       &:hover {
         border: 0;
@@ -42,7 +42,7 @@
   .table-of-contents {
     ul {
       a {
-        font-size: $article-font-size-sm
+        // font-size: $article-font-size-sm;
       }
     }
   }
@@ -127,12 +127,6 @@
 .table-of-contents__toggle-icon-bar-5 {
   width: 85%;
   margin-left: 15%;
-}
-
-.table-of-contents__toggle-icon-bar-6,
-.table-of-contents__toggle-icon-bar-7,
-.table-of-contents__toggle-icon-bar-8 {
-  display: none;
 }
 
 
