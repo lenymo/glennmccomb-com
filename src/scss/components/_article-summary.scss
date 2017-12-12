@@ -274,3 +274,24 @@ $article-summary-padding-top-bottom-xl: $gutter * 2;
     font-size: rem(18px);
   }
 }
+
+
+//
+//  CUSTOM PADDING BETWEEN SM AND MD
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@include respond-between(sm, md) {
+  .row__articles-summary {
+    margin-left: - ($gutter * 1.5) / 2;
+    margin-right: - ($gutter * 1.5) / 2;
+  }
+
+  .col__article-summary {
+    padding-left: ($gutter * 1.5) / 2;
+    padding-right: ($gutter * 1.5) / 2;
+  }
+
+  .article-summary {
+    margin-bottom: $gutter * 1.5;
+  }
+}

@@ -1,0 +1,15 @@
+<section class="section section__articles-summary">
+  <div class="container container__articles-summary">
+    <div class="row row__articles-summary">
+    
+      {{ range first 10 .Data.Pages }}
+        {{ if eq .Type "articles" }}
+
+          {{ partial "article-summary" . }}
+
+        {{ end }}
+      {{ end }}
+
+    </div><!-- .row -->
+  </div><!-- .container -->
+</section><!-- .section__articles-summary -->
