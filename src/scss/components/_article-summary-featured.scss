@@ -4,30 +4,38 @@
 //  ARTICLE SUMMARY - FEATURED
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-@include respond-above(xs) {
+// @include respond-above(xs) {
+//   .col__article-summary {
+//     &:nth-child(1) {
+//       flex: 0 0 100%;
+//       max-width: 100%;
+
+//       .article-summary__featured-image {
+//         height: 180px;
+//       }
+
+//       .article-summary__title {
+//         font-size: $h2-font-size-sm;
+//       }
+
+//       .article-summary__excerpt {
+//         font-size: $h5-font-size-sm;
+//       }
+//     }
+//   }
+// }
+
+@include respond-above(sm) {
+  // First article
   .col__article-summary {
     &:nth-child(1) {
       flex: 0 0 100%;
       max-width: 100%;
 
-      // .article-summary__featured-image {
-      //   height: 180px;
-      // }
+      .article-summary__link {
+        border-bottom-width: 4px;
+      }
 
-      // .article-summary__title {
-      //   font-size: $h2-font-size-sm;
-      // }
-
-      // .article-summary__excerpt {
-      //   font-size: $h5-font-size-sm;
-      // }
-    }
-  }
-}
-
-@include respond-above(sm) {
-  .col__article-summary {
-    &:first-of-type {
       .article-summary__featured-image {
         height: 250px;
       }
@@ -50,6 +58,10 @@
 @include respond-above(md) {
   .col__article-summary {
     &:first-of-type {
+      .article-summary__link {
+        border-bottom-width: 5px;
+      }
+
       .article-summary__featured-image {
         height: 300px;
       }
@@ -86,6 +98,10 @@
 @include respond-above(lg) {
   .col__article-summary {
     &:first-of-type {
+      .article-summary__link {
+        border-bottom-width: 6px;
+      }
+
       .article-summary__featured-image {
         height: 400px;
       }
@@ -106,6 +122,10 @@
       flex: 0 0 50%;
       max-width: 50%;
 
+      .article-summary__link {
+        border-bottom-width: 4px;
+      }
+
       .article-summary__featured-image {
         height: 200px;
       }
@@ -121,6 +141,10 @@
   .col__article-summary {
     &:nth-child(2),
     &:nth-child(3) {
+      .article-summary__link {
+        border-bottom-width: 5px;
+      }
+
       .article-summary__featured-image {
         height: 250px;
       }

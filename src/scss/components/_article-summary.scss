@@ -129,6 +129,12 @@ $article-summary-padding-top-bottom-xl: $gutter * 2;
   }
 }
 
+@include respond-above(lg) {
+  .article-summary__link {
+    border-bottom-width: 4px;
+  }
+}
+
 
 //
 //  FEATURED IMAGE
