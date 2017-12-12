@@ -8,6 +8,12 @@
   margin: $gutter auto 0;
 }
 
+@include respond-above(sm) {
+  .pagination {
+    margin-top: $gutter * 2;
+  }
+}
+
 .pagination__item {
   display: inline-block;
   margin-left: $gutter * .125;
@@ -27,10 +33,14 @@
   font-weight: bold;
   padding: $gutter*.25 $gutter*.75;
   transition: all .2s ease;
+}
 
-  &:hover {
-    background: $white;
-    border-bottom-color: $color-gray-c;
+@include respond-above(sm) {
+  .pagination__link {
+    &:hover {
+      background: $white;
+      border-bottom-color: $color-gray-c;
+    }
   }
 }
 
@@ -39,10 +49,15 @@
   background: transparent;
   border-bottom-color: transparent;
   color: $color-gray-a;
+}
 
-  &:hover {
-    background: $color-gray-f;
-    border-bottom-color: $color-gray-d;
+@include respond-above(sm) {
+  .pagination__link--previous,
+  .pagination__link--next {
+    &:hover {
+      background: $color-gray-f;
+      border-bottom-color: $color-gray-d;
+    }
   }
 }
 
@@ -51,10 +66,14 @@
   border-bottom-color: $color-secondary;
   color: $color-secondary;
   cursor: default;
+}
 
-  &:hover {
-    border-bottom-color: $color-secondary;
-    color: $color-secondary;
+@include respond-above(sm) {
+  .pagination__link--current {
+    &:hover {
+      border-bottom-color: $color-secondary;
+      color: $color-secondary;
+    }
   }
 }
 
@@ -66,11 +85,5 @@
 
   .pagination__link {
     padding: $gutter*.5 $gutter;
-  }
-}
-
-@include respond-above(sm) {
-  .pagination {
-    margin-top: $gutter * 2;
   }
 }
