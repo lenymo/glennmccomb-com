@@ -35,6 +35,17 @@
   }
 }
 
+@include respond-above(sm) {
+  .article-summary {
+    transition: all .1s ease;
+
+    &:hover {
+      // perspective: 600px;
+      // transform: perspective(600px) rotateY(0deg) rotateX(-1deg) scale(1.05);
+    }
+  }
+}
+
 @include respond-above(lg) {
   .article-summary__link {
     border-bottom-width: 4px;

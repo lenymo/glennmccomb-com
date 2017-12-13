@@ -10,5 +10,6 @@
   ExternalLinks.init();
   HandleForms.init();
   TableOfContents.init();
+  ArticleSummaryHover.init();
   
 })();
