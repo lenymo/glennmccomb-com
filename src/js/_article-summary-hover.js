@@ -12,7 +12,7 @@ var ArticleSummaryHover = (function() {
   //––––––––––––––––––––––––––––––––––––––––––––––––––
 
   var config = {
-    onlyRunAbove: 1024,
+    onlyRunAbove: 992,
     transformModX: 1.25,
     transformModY: 2,
     transformPerspective: '600px',
@@ -247,6 +247,9 @@ var ArticleSummaryHover = (function() {
 
     // Remove transform effect.
     this.style.transform = '';
+
+    // Remove transform effect from featured image.
+    this.querySelector('.article-summary__featured-image').style.transform = '';
 
     this.classList.remove( config.mouseOverToggleClass );
 

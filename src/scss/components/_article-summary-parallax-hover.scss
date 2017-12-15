@@ -2,38 +2,32 @@
 //  ARTICLE SUMMARY PARALLAX HOVER
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-@include respond-above(sm) {
+@include respond-above(md) {
+  .article-summary__content-wrapper {
+    background-color: $white;
+    position: relative;
+    z-index: 1;
+  }
+
+  .article-summary__link {
+    background: transparent;
+  }
+
+  .article-summary__featured-image {
+    transition: all .1s ease;
+    -moz-transition: none;
+    // transform-origin: 50% 80%;
+  }
+
   .article-summary {
     box-shadow: 0 0 50px rgba($black, 0);
     transition: all .1s ease;
     -moz-transition: none;
     overflow: hidden;
 
-    .article-summary__featured-image {
-      transition: all .1s ease;
-      -moz-transition: none;
-      // transform-origin: 50% 80%;
-    }
 
     &.-is-being-hovered {
       box-shadow: 0 10px 50px rgba($black, .05);
-      // transform: none;
-      // transition: all .05s ease;
-
-      .article-summary__featured-image {
-        // transform: scale(1.02);
-      }
     }
-
-    // &:hover {
-    //   perspective: 600px;
-    //   transform: perspective(600px) rotateY(0deg) rotateX(-1deg) scale(1.05);
-    // }
-  }
-
-  .article-summary__content-wrapper {
-    background-color: $white;
-    position: relative;
-    z-index: 1;
   }
 }
