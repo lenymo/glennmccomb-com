@@ -17,7 +17,7 @@ var ArticleSummaryHover = (function() {
     transformModY: 2,
     transformPerspective: '600px',
     // transformScale: 1.015,
-    transformScale: 1.015,
+    transformScale: 1.01,
 
     mouseOverToggleClass: '-is-being-hovered'
   };
@@ -93,14 +93,22 @@ var ArticleSummaryHover = (function() {
     rectMouseYPercent = getMouseYPercent( rect, mouseY );
     console.log( 'rectMouseYPercent: ' + rectMouseYPercent );
 
-    // Build the transform CSS.
-    transformCSS = 'perspective(' + config.transformPerspective + ') ';
-    transformCSS += 'scale(' + config.transformScale + ') ';
-    transformCSS += 'rotateY(' + rectMouseXPercent + 'deg) ';
-    transformCSS += 'rotateX(' + rectMouseYPercent + 'deg)';
+    // if (
+    //   rectMouseXPercent > -(0.5 * config.transformModX) &&
+    //   rectMouseXPercent < (0.5 * config.transformModX) &&
+    //   rectMouseYPercent > -(0.5 * config.transformModY) &&
+    //   rectMouseYPercent < (0.5 * config.transformModY)
+    // ) {
 
-    // Apply the transform CSS.
-    this.style.transform = transformCSS;
+      // Build the transform CSS.
+      transformCSS = 'perspective(' + config.transformPerspective + ') ';
+      transformCSS += 'scale(' + config.transformScale + ') ';
+      transformCSS += 'rotateY(' + rectMouseXPercent + 'deg) ';
+      transformCSS += 'rotateX(' + rectMouseYPercent + 'deg)';
+
+      // Apply the transform CSS.
+      this.style.transform = transformCSS;
+    // }
   } // processMouseMoveEvent()
 
 
