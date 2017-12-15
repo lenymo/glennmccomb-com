@@ -13,11 +13,11 @@ var ArticleSummaryHover = (function() {
 
   var config = {
     onlyRunAbove: 1024,
-    transformModX: 1,
+    transformModX: 1.25,
     transformModY: 2,
     transformPerspective: '600px',
     // transformScale: 1.015,
-    transformScale: 1.01,
+    transformScale: 1.02,
 
     mouseOverToggleClass: '-is-being-hovered'
   };
@@ -74,6 +74,7 @@ var ArticleSummaryHover = (function() {
   function processMouseMoveEvent(e) {
     
     // Get mouse pos on document.
+    var article;
     var mouseX = e.pageX;
     var mouseY = e.pageY;
     var rect;
@@ -82,33 +83,21 @@ var ArticleSummaryHover = (function() {
     var rectMouseYPercent;
     var transformCSS;
 
+    article = this;
+
     // Get the dimensions of the article summary.
     rect = this.getBoundingClientRect();
 
     // Get the user's mouse position from left-to-right as a percentage.
     rectMouseXPercent = getMouseXPercent( rect, mouseX );
-    console.log( 'rectMouseXPercent: ' + rectMouseXPercent );
+    // console.log( 'rectMouseXPercent: ' + rectMouseXPercent );
 
     // Get the user's mouse position from top-to-bottom as a percentage.
     rectMouseYPercent = getMouseYPercent( rect, mouseY );
-    console.log( 'rectMouseYPercent: ' + rectMouseYPercent );
+    // console.log( 'rectMouseYPercent: ' + rectMouseYPercent );
 
-    // if (
-    //   rectMouseXPercent > -(0.5 * config.transformModX) &&
-    //   rectMouseXPercent < (0.5 * config.transformModX) &&
-    //   rectMouseYPercent > -(0.5 * config.transformModY) &&
-    //   rectMouseYPercent < (0.5 * config.transformModY)
-    // ) {
+    applyCSSTransforms( article, rect, rectMouseXPercent, rectMouseYPercent );
 
-      // Build the transform CSS.
-      transformCSS = 'perspective(' + config.transformPerspective + ') ';
-      transformCSS += 'scale(' + config.transformScale + ') ';
-      transformCSS += 'rotateY(' + rectMouseXPercent + 'deg) ';
-      transformCSS += 'rotateX(' + rectMouseYPercent + 'deg)';
-
-      // Apply the transform CSS.
-      this.style.transform = transformCSS;
-    // }
   } // processMouseMoveEvent()
 
 
@@ -141,6 +130,9 @@ var ArticleSummaryHover = (function() {
 
     // Apply the transform modifier.
     rectMouseXPercent = rectMouseXPercent * config.transformModX;
+
+    // Invert the effect.
+    // rectMouseXPercent = rectMouseXPercent * -1;
 
     return rectMouseXPercent;
   } // getMouseXPercent()
@@ -185,6 +177,55 @@ var ArticleSummaryHover = (function() {
 
     return rectMouseYPercent;
   } // getMouseYPercent()
+
+
+  //
+  //  APPLY CSS TRANSFORMS
+  //––––––––––––––––––––––––––––––––––––––––––––––––––
+
+  function applyCSSTransforms( article, rect, rectMouseXPercent, rectMouseYPercent ) {
+
+    var transformCSS;
+    var articleImage;
+    var imageTransformCSS;
+
+    // If the transforms aren't too extreme.
+    if (
+      rectMouseXPercent > -(0.5 * config.transformModX) - 1 &&
+      rectMouseXPercent < (0.5 * config.transformModX) + 1 &&
+      rectMouseYPercent > -(0.5 * config.transformModY) - 1 &&
+      rectMouseYPercent < (0.5 * config.transformModY) + 1
+    ) {
+
+      // Build the transform CSS.
+      // transformCSS = 'perspective(' + config.transformPerspective + ') ';
+      transformCSS = 'perspective(' + (rect.width / 2) + 'px) ';
+      transformCSS += 'scale(' + config.transformScale + ') ';
+      transformCSS += 'rotateY(' + rectMouseXPercent + 'deg) ';
+      transformCSS += 'rotateX(' + rectMouseYPercent + 'deg)';
+
+      // Apply the transform CSS.
+      article.style.transform = transformCSS;
+    }
+
+
+    // Find the featured image.
+    articleImage = article.querySelector('.article-summary__featured-image');
+
+    // If there's an article image.
+    if ( articleImage ) {
+
+      // Build the image transform CSS.
+      imageTransformCSS = 'scale(1.025) ';
+
+      imageTransformCSS += 'translateX(' + (rectMouseXPercent * 8) * -1 + 'px) ';
+
+      imageTransformCSS += 'translateY(' + (rectMouseYPercent * 6) + 'px) ';
+
+      // Apply the image transform CSS.
+      articleImage.style.transform = imageTransformCSS;
+    }
+  } // applyCSSTransforms()
 
 
   //

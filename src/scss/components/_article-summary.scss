@@ -35,23 +35,6 @@
   }
 }
 
-@include respond-above(sm) {
-  .article-summary {
-    box-shadow: 0 0 50px rgba($black, 0);
-    transition: all .1s ease;
-
-    &.-is-being-hovered {
-      box-shadow: 0 10px 50px rgba($black, .05);
-      // transition: all .1s ease;
-    }
-
-    &:hover {
-      // perspective: 600px;
-      // transform: perspective(600px) rotateY(0deg) rotateX(-1deg) scale(1.05);
-    }
-  }
-}
-
 @include respond-above(lg) {
   .article-summary__link {
     border-bottom-width: 4px;
@@ -218,3 +201,4 @@
     margin-bottom: $gutter * 1.5;
   }
 }
+
