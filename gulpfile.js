@@ -76,7 +76,7 @@ gulp.task('js', function() {
     // Initialise source maps for dev.
     .pipe( gulpif( argv.dev, sourcemaps.init() ) )
     .pipe( concat('main.min.js') )
-    .pipe( uglify() )
+    .pipe( uglify().on('error', console.log) )
     .pipe( hash() )
     .pipe( gulpif( argv.dev, sourcemaps.write('./') ) )
     .pipe( gulp.dest('static/js') )
