@@ -223,6 +223,9 @@ var HandleForms = (function() {
               // Remove the -has-text class from email field.
               emailField.classList.remove('-has-text');
 
+              // Reset the form.
+              form.reset();
+
             }, sendingDelay * 3 );
 
           // If the server was contacted but submissions was unsuccessful.
