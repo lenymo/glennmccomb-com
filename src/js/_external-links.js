@@ -15,15 +15,22 @@ var ExternalLinks = (function() {
 
     // Variables.
     var links = document.links;
+    var link;
 
     // Loop through all links.
     for (var i = 0, linksLength = links.length; i < linksLength; i++) {
 
-      // If the link is to an external site.
-      if (links[i].hostname != window.location.hostname) {
+      link = links[i];
+
+      // If the link is to an external site or a javascript:void(0);.
+      if (
+        link.hostname != window.location.hostname &&
+        link.href !== 'javascript:void(0)' &&
+        link.href !== 'javascript:void(0);'
+      ) {
 
         // Set the target of the link to _blank.
-        links[i].target = '_blank';
+        link.target = '_blank';
       } 
     }
   }
