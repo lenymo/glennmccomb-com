@@ -7,7 +7,7 @@
 (function() {
 
   ToggleMobileMenu.init();
-  ExternalLinks.init();
+  HandleLinks.init();
   HandleForms.init();
   TableOfContents.init();
   ArticleSummaryHover.init();
