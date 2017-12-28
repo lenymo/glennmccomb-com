@@ -1,0 +1,68 @@
+<!--
+//
+//  PAGE HEADER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<!-- Page-specific section classes. -->
+<!-- Article index. -->
+{{ if and (eq .Type "articles") (eq .Kind "section") }}
+  {{ $.Scratch.Add "page-header-classes" " -has-background-device -has-dark-bg" }}
+{{ end }}
+
+<!-- Single article. -->
+{{ if and (eq .Type "articles") (eq .Kind "page") }}
+  {{ $.Scratch.Add "page-header-classes" " section__article-header -has-background-device" }}
+{{ end }}
+
+<!-- Category listing. -->
+{{ if eq .Type "categories" }}
+  {{ $.Scratch.Add "page-header-classes" " -has-background-device -has-dark-bg" }}
+{{ end }}
+
+<section class="section section__page-header{{ with .Params.featured }} -has-featured{{ end }}{{ with .Params.dark_bg }} -has-dark-bg{{ end }}{{ $.Scratch.Get "page-header-classes" }}">
+  <div class="container container__page-header">
+
+    <!-- Show date for articles -->
+    {{ if and (eq .Type "articles") (eq .Kind "page") }}
+    <date class="article-date article-header__date">
+      <span class="article-date__month article-header__date-month">{{ .Date.Format "Jan" }}</span>
+      <span class="article-date__day article-header__date-day">{{ .Date.Format "2" }}<sup class="article-date__day-suffix article-header__date-day-suffix">{{ if in (slice 1 21 31) .Date.Day}}st{{ else if in (slice 2 22) .Date.Day}}nd{{ else if in (slice 3 23) .Date.Day}}rd{{ else }}th{{ end }}</sup></span>
+      <span class="article-date__year article-header__date-year">{{ .Date.Format "2006" }}</span>
+    </date>
+    {{ end }}
+
+    <!-- Show icon for "categories". -->
+    {{ if eq .Type "categories" }}
+    <div class="page-header__icon">
+      <div class="page-header__icon-wrapper">
+        {{ if eq .Title "Development" }}
+        </>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+
+    <div class="row row__page-header">
+      <div class="col-8 offset-3 col-sm-6 offset-sm-3 col-md-8 offset-md-2 col-lg-8 offset-lg-2">
+        <div class="page-header__hgroup{{ if eq .Type "articles" }} article-header__hgroup{{ end }}">
+          <h1 class="page-header__title{{ if eq .Type "articles" }} article-header__title{{ end }}">
+            {{ .Title }}
+          </h1>
+
+          <!-- Show categories in single article -->
+          {{ if and (eq .Type "articles") (eq .Kind "page") }}
+          <ul class="article-header__categories">
+            {{ range .Params.categories }}
+              <li class="article-header__category article-header__category-{{ . | urlize }}">
+                <a class="article-header__category-link" href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+              </li>
+            {{ end }}
+          </ul>
+          {{ end }}
+        </div><!-- .page-header__hgroup -->
+      </div><!-- .col -->
+    </div><!-- .row -->
+    {{ partial "background-device" . }}
+  </div><!-- .container -->
+  <div class="page-header__featured-image" {{ with .Params.featured }}style="background-image:url({{ . }})"{{ end }}></div>
+</section><!-- .section__article-header -->
