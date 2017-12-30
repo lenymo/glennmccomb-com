@@ -7,6 +7,8 @@ media_folder: "static/img/uploads" # Media files will be stored in the repo unde
 public_folder: "/img/uploads" # The src attribute for uploaded media will begin with /images/uploads
 
 collections:
+
+  # Articles.
   - name: "articles" # Used in routes, e.g. /admin/collections/articles
     label: "Articles" # Used in the UI
     folder: "content/articles" # The path to the folder where the documents are stored
@@ -26,6 +28,9 @@ collections:
       - {label: "Page header dark background", name: "dark_bg", widget: "boolean", required: false}
       - {label: "Page header background color", name: "page_header_bg_color", widget: "string", required: false}
       - {label: "Table of Contents", name: "toc", widget: "boolean", required: false}
+
+
+  # Contact.      
   - name: 'contact'
     label: 'Contact'
     folder: 'content/contact'

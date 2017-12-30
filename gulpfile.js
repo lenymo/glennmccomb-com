@@ -12,6 +12,7 @@ var hash            = require('gulp-hash');
 var del             = require('del');
 var argv            = require('yargs').argv;
 var gulpif          = require('gulp-if');
+var responsive      = require('gulp-responsive');
 
 
 //
@@ -125,6 +126,26 @@ gulp.task('admin-scss', function () {
       browsers : ['last 20 versions']
     }))
     .pipe(gulp.dest('static/admin/css'));
+});
+
+
+//
+//  IMAGES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+gulp.task('images', function() {
+  gulp.src('static/img/uploads/article-rust-survival-tips.jpg')
+    .pipe(responsive({
+      '*': [{
+        width: 700,
+        rename: {suffix: "-sm"},
+      }, {
+        width: 1400,
+      }],
+    }, {
+      silent: true      // Don't spam the console
+    }))
+    .pipe(gulp.dest('static/img/gulped'));
 });
 
 

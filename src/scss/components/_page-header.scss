@@ -122,6 +122,7 @@ $page-header-padding-bottom-xl: $gutter * 6;
   background-position: 50% 50%;
   height: 100%;
   left: 0;
+  overflow: hidden;
   position: absolute;
   top: 0;
   width: 100%;
@@ -135,4 +136,21 @@ $page-header-padding-bottom-xl: $gutter * 6;
       z-index: 1;
     }
   }
+}
+
+
+//
+//  BACKGROUND IMAGE - PICTURE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.page-header__featured-image-picture {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.page-header__featured-image-picture-img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
 }
