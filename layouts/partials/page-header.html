@@ -78,7 +78,7 @@
     <picture class="page-header__featured-image-picture">
       <!-- Small screens -->
       <source
-        srcset="{{ $uploadsResponsive }}{{ $.Scratch.Get "featured" }}-sm{{ $.Scratch.Get "featured-extension" }}"
+        srcset="{{ $uploadsResponsive }}{{ $.Scratch.Get "featured" }}-sm{{ $.Scratch.Get "featured-extension" }} 1x, {{ $uploadsResponsive }}{{ $.Scratch.Get "featured" }}{{ $.Scratch.Get "featured-extension" }} 2x"
         media="(max-width: 767px)">
       <!-- Large screens -->
       <source
