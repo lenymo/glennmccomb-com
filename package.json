@@ -16,10 +16,12 @@
     "gulp-concat": "^2.6.1",
     "gulp-hash": "^4.1.1",
     "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^4.1.0",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^2.1.2",
     "gulp-util": "^3.0.8",
+    "imagemin-mozjpeg": "^7.0.0",
     "yargs": "^10.0.3"
   },
   "dependencies": {
