@@ -16,7 +16,8 @@ var argv            = require('yargs').argv;
 var gulpif          = require('gulp-if');
 
 // Images.
-var responsive      = require('gulp-responsive');
+// var responsive      = require('gulp-responsive');
+var responsive      = require('gulp-responsive-images');
 var imagemin        = require('gulp-imagemin');
 var mozjpeg         = require('imagemin-mozjpeg');
 
@@ -144,11 +145,9 @@ gulp.task('responsive-images', function() {
   // Featured images.
   gulp.src('src/img/uploads/featured-image-*.*')
     .pipe(responsive({
-      '*': [{
+      '**.*': [{
         width: 700,
-        rename: {
-          suffix: '-sm'
-        },
+        suffix: '-sm',
       }, {
         width: 1400,
       }],
