@@ -177,7 +177,7 @@ gulp.task('compress-images', function() {
 //  BUILD
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-gulp.task('build', ['responsive-images', 'compress-images']);
+gulp.task('build', ['responsive-images']);
 
 
 
