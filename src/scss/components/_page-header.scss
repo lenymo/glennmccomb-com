@@ -53,6 +53,7 @@ $page-header-padding-bottom-xl: $gutter * 6;
 
 .section__page-header {
   background-color: $page-header-bg;
+  overflow: hidden;
   padding: $page-header-padding-top-xs 0 $page-header-padding-bottom-xs;
 }
 
@@ -144,13 +145,22 @@ $page-header-padding-bottom-xl: $gutter * 6;
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .page-header__featured-image-picture {
-  height: 100%;
-  position: absolute;
-  width: 100%;
+  display: none;
 }
 
-.page-header__featured-image-picture-img {
-    height: 100%;
-    object-fit: cover;
-    width: 100%;
+.section__page-header {
+  &.-has-featured {
+    .page-header__featured-image-picture {
+      display: block;
+      height: 100%;
+      position: absolute;
+      width: 100%;
+    }
+
+    .page-header__featured-image-picture-img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
 }
