@@ -139,10 +139,10 @@ gulp.task('admin-scss', function () {
 //  RESPONSIVE IMAGES
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-gulp.task('responsiveImages', function() {
+gulp.task('responsive-images', function() {
 
   // Featured images.
-  gulp.src('static/img/uploads/featured-image*.*')
+  gulp.src('src/img/uploads/featured-image*.*')
     .pipe(responsive({
       '*': [{
         width: 700,
@@ -153,7 +153,7 @@ gulp.task('responsiveImages', function() {
     }, {
       silent: true      // Don't spam the console
     }))
-    .pipe(gulp.dest('static/img/uploads/featured'));
+    .pipe(gulp.dest('src/img/uploads/featured'));
 });
 
 
@@ -161,7 +161,7 @@ gulp.task('responsiveImages', function() {
 //  IMAGE COMPRESSION
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-gulp.task('compressImages', function() {
+gulp.task('compress-images', function() {
   gulp.src(['src/img/uploads/**/*.{jpg, png, gif, svg}'])
     .pipe(imagemin([
       imagemin.gifsicle(),
@@ -171,6 +171,13 @@ gulp.task('compressImages', function() {
     ]))
     .pipe(gulp.dest('static/img/uploads/'));
 });
+
+
+//
+//  BUILD
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+gulp.task('build', ['responsive-images', 'compress-images']);
 
 
 
