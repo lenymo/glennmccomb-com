@@ -144,7 +144,7 @@ gulp.task('responsive-images', function() {
   // Featured images.
   gulp.src('src/img/uploads/featured-image-*.*')
     .pipe(responsive({
-      '**.*': [{
+      '*': [{
         width: 700,
         rename: {
           suffix: '-sm'
@@ -153,8 +153,7 @@ gulp.task('responsive-images', function() {
         width: 1400,
       }],
     }, {
-      silent: true,      // Don't spam the console
-      withoutEnlargement: false, // Allow image enlargement
+      silent: true // Don't spam the console
     }))
     .pipe(gulp.dest('src/img/uploads/featured'));
 });
