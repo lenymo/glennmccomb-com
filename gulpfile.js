@@ -7,12 +7,18 @@ var sass            = require('gulp-sass');
 var autoprefixer    = require('gulp-autoprefixer');
 var concat          = require('gulp-concat');
 var uglify          = require('gulp-uglify');
-var sourcemaps      = require('gulp-sourcemaps');
 var hash            = require('gulp-hash');
 var del             = require('del');
+
+// Dev only source maps.
+var sourcemaps      = require('gulp-sourcemaps');
 var argv            = require('yargs').argv;
 var gulpif          = require('gulp-if');
+
+// Images.
 var responsive      = require('gulp-responsive');
+var imagemin        = require('gulp-imagemin');
+var mozjpeg         = require('imagemin-mozjpeg');
 
 
 //
@@ -94,7 +100,7 @@ gulp.task('js', function() {
 
 
 //
-//  IMAGES
+//  IMAGES HASHMAP
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 gulp.task('images', function() {
@@ -133,8 +139,8 @@ gulp.task('admin-scss', function () {
 //  RESPONSIVE IMAGES
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-gulp.task('responsive', function() {
-  
+gulp.task('responsiveImages', function() {
+
   // Featured images.
   gulp.src('static/img/uploads/featured-image*.*')
     .pipe(responsive({
@@ -149,6 +155,23 @@ gulp.task('responsive', function() {
     }))
     .pipe(gulp.dest('static/img/uploads/featured'));
 });
+
+
+//
+//  IMAGE COMPRESSION
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+gulp.task('compressImages', function() {
+  gulp.src(['src/img/uploads/**/*.{jpg, png, gif, svg}'])
+    .pipe(imagemin([
+      imagemin.gifsicle(),
+      imagemin.optipng(),
+      imagemin.svgo(),
+      mozjpeg(),
+    ]))
+    .pipe(gulp.dest('static/img/uploads/'));
+});
+
 
 
 //
