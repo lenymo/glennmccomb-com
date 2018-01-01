@@ -142,11 +142,13 @@ gulp.task('admin-scss', function () {
 gulp.task('responsive-images', function() {
 
   // Featured images.
-  gulp.src('src/img/uploads/featured-image*.*')
+  gulp.src('src/img/uploads/featured-image-*.*')
     .pipe(responsive({
       '*': [{
         width: 700,
-        rename: {suffix: "-sm"},
+        rename: {
+          suffix: '-sm'
+        },
       }, {
         width: 1400,
       }],
@@ -169,7 +171,7 @@ gulp.task('compress-images', function() {
       imagemin.svgo(),
       mozjpeg(),
     ]))
-    .pipe(gulp.dest('static/img/uploads/'));
+    .pipe(gulp.dest('static/img/uploads'));
 });
 
 
@@ -177,7 +179,7 @@ gulp.task('compress-images', function() {
 //  BUILD
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-gulp.task('build', ['responsive-images']);
+gulp.task('build', ['responsive-images', 'compress-images']);
 
 
 
