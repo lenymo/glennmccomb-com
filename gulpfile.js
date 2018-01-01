@@ -16,8 +16,8 @@ var argv            = require('yargs').argv;
 var gulpif          = require('gulp-if');
 
 // Images.
-// var responsive      = require('gulp-responsive');
-var responsive      = require('gulp-responsive-images');
+var responsive      = require('gulp-responsive');
+// var responsive      = require('gulp-responsive-images');
 var imagemin        = require('gulp-imagemin');
 var mozjpeg         = require('imagemin-mozjpeg');
 
