@@ -130,11 +130,13 @@ gulp.task('admin-scss', function () {
 
 
 //
-//  IMAGES
+//  RESPONSIVE IMAGES
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-gulp.task('images', function() {
-  gulp.src('static/img/uploads/article-rust-survival-tips.jpg')
+gulp.task('responsive', function() {
+  
+  // Featured images.
+  gulp.src('static/img/uploads/featured-image*.*')
     .pipe(responsive({
       '*': [{
         width: 700,
@@ -145,7 +147,7 @@ gulp.task('images', function() {
     }, {
       silent: true      // Don't spam the console
     }))
-    .pipe(gulp.dest('static/img/gulped'));
+    .pipe(gulp.dest('static/img/uploads/featured'));
 });
 
 

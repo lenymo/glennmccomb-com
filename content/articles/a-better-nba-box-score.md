@@ -1,7 +1,7 @@
 ---
 title: A better NBA box score
 date: 2017-01-21T09:57:11.000Z
-featured: /img/uploads/espn-nba-boxscore-extension.jpg
+featured: /img/uploads/featured-image-espn-nba-boxscore-extension.jpg
 categories:
   - NBA
   - Development

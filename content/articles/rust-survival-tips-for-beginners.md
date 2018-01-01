@@ -1,7 +1,7 @@
 ---
 title: Rust survival tips for beginners
 date: 2017-12-10T20:32:52+11:00
-featured: /img/uploads/article-rust-survival-tips.jpg
+featured: /img/uploads/featured-image-article-rust-survival-tips.jpg
 categories:
   - Gaming
 custom_class: rust-survival-tips
