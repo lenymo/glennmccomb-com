@@ -163,7 +163,7 @@ gulp.task('responsive-images', function() {
 //  IMAGE COMPRESSION
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-gulp.task('compress-images', function() {
+gulp.task('compress-images', ['responsive-images'], function() {
   gulp.src(['src/img/uploads/**/*.{jpg, png, gif, svg}'])
     .pipe(imagemin([
       imagemin.gifsicle(),
