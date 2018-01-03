@@ -78,8 +78,12 @@
     <picture class="page-header__featured-image-picture -uses-object-fit" data-source="{{ $uploadsResponsive }}{{ $.Scratch.Get "featured" }}{{ $.Scratch.Get "featured-extension" }}">
       <!-- Small screens -->
       <source
+        srcset="{{ $uploadsResponsive }}{{ $.Scratch.Get "featured" }}-sm{{ $.Scratch.Get "featured-extension" }}"
+        media="(max-width: 575px)">
+      <!-- Medium screens -->
+      <source
         srcset="{{ $uploadsResponsive }}{{ $.Scratch.Get "featured" }}-sm{{ $.Scratch.Get "featured-extension" }} 1x, {{ $uploadsResponsive }}{{ $.Scratch.Get "featured" }}{{ $.Scratch.Get "featured-extension" }} 2x"
-        media="(max-width: 767px)">
+        media="(min-width: 576px)">
       <!-- Large screens -->
       <source
         srcset="{{ $uploadsResponsive }}{{ $.Scratch.Get "featured" }}{{ $.Scratch.Get "featured-extension" }}"
