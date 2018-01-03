@@ -11,5 +11,6 @@
   HandleForms.init();
   TableOfContents.init();
   ArticleSummaryHover.init();
+  ObjectFitPolyfill.init();
   
 })();

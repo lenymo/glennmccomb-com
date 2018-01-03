@@ -74,8 +74,8 @@
     {{ $.Scratch.Add "featured" $featured }}
     {{ $.Scratch.Add "featured-extension" ".jpg" }}
   {{ end }}
-  <div class="page-header__featured-image">
-    <picture class="page-header__featured-image-picture">
+  <div class="page-header__featured-image -is-object-fit-parent">
+    <picture class="page-header__featured-image-picture -uses-object-fit">
       <!-- Small screens -->
       <source
         srcset="{{ $uploadsResponsive }}{{ $.Scratch.Get "featured" }}-sm{{ $.Scratch.Get "featured-extension" }} 1x, {{ $uploadsResponsive }}{{ $.Scratch.Get "featured" }}{{ $.Scratch.Get "featured-extension" }} 2x"
