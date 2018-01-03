@@ -34,7 +34,7 @@ var ObjectFitPolyfill = (function() {
 
     var needsPolyfill;
 
-    if ('objectFit' in document.documentElement.style === false) {
+    if ( 'objectFit' in document.documentElement.style === false ) {
       needsPolyfill = true;
 
     } else {
@@ -68,22 +68,22 @@ var ObjectFitPolyfill = (function() {
         // Instantiate container as variable for convenience.
         container = objectFitContainers[i];
 
-        console.log( 'container' );
-        console.log( container );
+        // console.log( 'container' );
+        // console.log( container );
 
         // Get picture element.
         picture = container.querySelector('.-uses-object-fit');
 
-        console.log( 'picture' );
-        console.log( picture );
+        // console.log( 'picture' );
+        // console.log( picture );
 
-        console.log( picture.dataset );
-
+        // If dataset is available.
         if ( picture.dataset !== undefined ) {
 
           // Get image source.
           imageSource = picture.dataset.source;
 
+        // For IE.
         } else {
 
           imageSource = picture.getAttribute('data-source');
@@ -94,8 +94,8 @@ var ObjectFitPolyfill = (function() {
         // if ( ! imageSource ) {
         // }
 
-        console.log( 'imageSource' );
-        console.log( imageSource );
+        // console.log( 'imageSource' );
+        // console.log( imageSource );
 
 
         // Hide picture element.

@@ -40,7 +40,7 @@ var ArticleSummaryHover = (function() {
     // If viewport is wide enough.
     if ( w >= config.onlyRunAbove ) {
 
-      console.log( Helpers.isIE() );
+      // console.log( Helpers.isIE() );
 
       // If this is NOT an old version of IE
       if ( Helpers.isIE() !== false ) {
