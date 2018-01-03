@@ -37,32 +37,39 @@ var ArticleSummaryHover = (function() {
     // Get viewport width.
     w = Helpers.getViewportWidth();
 
+    // If viewport is wide enough.
     if ( w >= config.onlyRunAbove ) {
 
-      // Get all article summaries.
-      articles = document.querySelectorAll('.article-summary');
+      console.log( Helpers.isIE() );
 
-      // If there are article summaries.
-      if ( articles ) {
+      // If this is NOT an old version of IE
+      if ( Helpers.isIE() !== false ) {
 
-        // Loop through all article summary tiles.
-        for ( var i = 0; i < articles.length; i++ ) {
+        // Get all article summaries.
+        articles = document.querySelectorAll('.article-summary');
 
-          // Make article variable more obvious.
-          article = articles[i];
+        // If there are article summaries.
+        if ( articles ) {
 
-          // Listen for the mouse events.
-          // Move.
-          article.addEventListener('mousemove', processMouseMoveEvent);
+          // Loop through all article summary tiles.
+          for ( var i = 0; i < articles.length; i++ ) {
 
-          // Enter.
-          article.addEventListener('mouseenter', processMouseEnterEvent);
+            // Make article variable more obvious.
+            article = articles[i];
 
-          // Leave.
-          article.addEventListener('mouseleave', processMouseLeaveEvent);
+            // Listen for the mouse events.
+            // Move.
+            article.addEventListener('mousemove', processMouseMoveEvent);
 
-        } // for ( var i = 0; i < articles.length; i++ )
-      } // if ( articles )
+            // Enter.
+            article.addEventListener('mouseenter', processMouseEnterEvent);
+
+            // Leave.
+            article.addEventListener('mouseleave', processMouseLeaveEvent);
+
+          } // for ( var i = 0; i < articles.length; i++ )
+        } // if ( articles )
+      } // if ( Helpers.isIE() !== false )
     } // if ( w >= config.onlyRunAbove )
   } // handleArticleSummaryHover()
 

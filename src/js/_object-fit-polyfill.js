@@ -14,7 +14,7 @@ var ObjectFitPolyfill = (function() {
   function objectFitPolyfill() {
 
     // Check if object-fit is supported.
-    var needsPolyfill = testObjectFit();
+    var needsPolyfill = testObjectFitSupport();
 
     // If the object-fit polyfill is required.
     if ( needsPolyfill ) {
@@ -30,7 +30,7 @@ var ObjectFitPolyfill = (function() {
   //  TEST OBJECT FIT SUPPORT
   //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-  function testObjectFit() {
+  function testObjectFitSupport() {
 
     var needsPolyfill;
 
@@ -40,8 +40,6 @@ var ObjectFitPolyfill = (function() {
     } else {
       needsPolyfill = false;
     }
-
-    console.log( needsPolyfill );
 
     return needsPolyfill;
   }
@@ -70,11 +68,35 @@ var ObjectFitPolyfill = (function() {
         // Instantiate container as variable for convenience.
         container = objectFitContainers[i];
 
-        // Get image source.
-        imageSource = container.querySelector('img').srcset;
+        console.log( 'container' );
+        console.log( container );
 
         // Get picture element.
         picture = container.querySelector('.-uses-object-fit');
+
+        console.log( 'picture' );
+        console.log( picture );
+
+        console.log( picture.dataset );
+
+        if ( picture.dataset !== undefined ) {
+
+          // Get image source.
+          imageSource = picture.dataset.source;
+
+        } else {
+
+          imageSource = picture.getAttribute('data-source');
+        }
+
+
+        // If there's no image source.
+        // if ( ! imageSource ) {
+        // }
+
+        console.log( 'imageSource' );
+        console.log( imageSource );
+
 
         // Hide picture element.
         picture.style.display = 'none';
