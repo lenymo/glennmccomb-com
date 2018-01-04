@@ -40,10 +40,8 @@ var ArticleSummaryHover = (function() {
     // If viewport is wide enough.
     if ( w >= config.onlyRunAbove ) {
 
-      // console.log( Helpers.isIE() );
-
       // If this is NOT an old version of IE
-      if ( Helpers.isIE() !== false ) {
+      if ( Helpers.isIE() == false ) {
 
         // Get all article summaries.
         articles = document.querySelectorAll('.article-summary');
