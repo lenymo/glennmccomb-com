@@ -5,7 +5,8 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 // $page-header-bg-gaming: #362323;
-$page-header-bg-gaming: #5b1b27;
+$page-header-bg-gaming: #5b1b27; // Red.
+// $page-header-bg-gaming: #571b5b; // Purple.
 
 $page-header-icon-gaming-border-bottom-sm: 2px;
 $page-header-icon-gaming-border-radius-sm: 2px;
@@ -33,6 +34,9 @@ $page-header-icon-gaming-margin-lg: 6px;
 .category-gaming {
   .section__page-header {
     background-color: $page-header-bg-gaming;
+    background-image: url('/img/uploads/featured/featured-image-category-gaming.png');
+    background-position: 50% 50%;
+    background-size: cover;
   }
 
   .page-header__icon {
@@ -131,7 +135,7 @@ $page-header-icon-gaming-margin-lg: 6px;
 
 @include respond-above(md) {
   .page-header__icon-gaming-keys {
-    left: -16px;
+    left: -18px;
     top: -10px;
   }
 
