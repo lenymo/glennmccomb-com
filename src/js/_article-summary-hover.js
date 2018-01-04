@@ -13,11 +13,11 @@ var ArticleSummaryHover = (function() {
 
   var config = {
     onlyRunAbove: 992,
-    transformModX: 1.25,
-    transformModY: 2,
+    transformModX: 1,
+    transformModY: 1.5,
     transformPerspective: '600px',
     // transformScale: 1.015,
-    transformScale: 1.02,
+    transformScale: 1.01,
 
     mouseOverToggleClass: '-is-being-hovered'
   };
