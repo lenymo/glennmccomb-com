@@ -16,13 +16,13 @@ $page-header-icon-gaming-margin-sm: 2px;
 $page-header-icon-gaming-border-bottom-md: 4px;
 $page-header-icon-gaming-border-radius-md: 4px;
 $page-header-icon-gaming-font-size-md: rem(11px);
-$page-header-icon-gaming-size-md: 24px;
+$page-header-icon-gaming-size-md: 28px;
 $page-header-icon-gaming-margin-md: 4px;
 
 $page-header-icon-gaming-border-bottom-lg: 4px;
 $page-header-icon-gaming-border-radius-lg: 4px;
-$page-header-icon-gaming-font-size-lg: rem(13px);
-$page-header-icon-gaming-size-lg: 28px;
+$page-header-icon-gaming-font-size-lg: rem(14px);
+$page-header-icon-gaming-size-lg: 32px;
 $page-header-icon-gaming-margin-lg: 6px;
 
 
@@ -55,7 +55,7 @@ $page-header-icon-gaming-margin-lg: 6px;
 }
 
 .page-header__icon-gaming-key {
-  background: lighten($page-header-bg-gaming, 20%);
+  background: lighten($page-header-bg-gaming, 25%);
   border-radius: $page-header-icon-gaming-border-radius-sm;
   // border-bottom: $page-header-icon-gaming-border-radius-sm solid lighten($page-header-bg-gaming, 10%);
   box-shadow: 0 $page-header-icon-gaming-border-bottom-sm 0 lighten($page-header-bg-gaming, 10%);
@@ -95,8 +95,8 @@ $page-header-icon-gaming-margin-lg: 6px;
 
 @include respond-above(xs) {
   .page-header__icon-gaming-keys {
-    left: -10px;
-    top: -4px;
+    left: -12px;
+    top: -6px;
   }
 
   .page-header__icon-gaming-key {
@@ -131,8 +131,8 @@ $page-header-icon-gaming-margin-lg: 6px;
 
 @include respond-above(md) {
   .page-header__icon-gaming-keys {
-    left: -12px;
-    top: -6px;
+    left: -16px;
+    top: -10px;
   }
 
   .page-header__icon-gaming-key {

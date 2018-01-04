@@ -73,15 +73,16 @@
     {{ partial "background-device" . }}
   </div><!-- .container -->
 
-  {{ $uploads := "/img/uploads/" }}
-  {{ $uploadsResponsive := "/img/uploads/featured/" }}
-  {{ if in .Params.featured ".jpg" }}
-    {{ $featured := .Params.featured }}
-    {{ $featured := strings.TrimSuffix ".jpg" $featured }}
-    {{ $featured := strings.TrimPrefix $uploads $featured }}
-    {{ $.Scratch.Add "featured" $featured }}
-    {{ $.Scratch.Add "featured-extension" ".jpg" }}
-  {{ end }}
+  {{ if isset .Params "featured" }}
+    {{ $uploads := "/img/uploads/" }}
+    {{ $uploadsResponsive := "/img/uploads/featured/" }}
+    {{ if in .Params.featured ".jpg" }}
+      {{ $featured := .Params.featured }}
+      {{ $featured := strings.TrimSuffix ".jpg" $featured }}
+      {{ $featured := strings.TrimPrefix $uploads $featured }}
+      {{ $.Scratch.Add "featured" $featured }}
+      {{ $.Scratch.Add "featured-extension" ".jpg" }}
+    {{ end }}
   <div class="page-header__featured-image -is-object-fit-parent">
     <picture class="page-header__featured-image-picture -uses-object-fit" data-source="{{ $uploadsResponsive }}{{ $.Scratch.Get "featured" }}{{ $.Scratch.Get "featured-extension" }}">
       <!-- Small screens -->
@@ -100,5 +101,8 @@
       <img class="page-header__featured-image-picture-img" srcset="{{ $uploadsResponsive }}{{ $.Scratch.Get "featured" }}{{ $.Scratch.Get "featured-extension" }}">
     </picture>
   </div>
+  {{ else }}
+  <div class="page-header__featured-image"></div>
+  {{ end }}
   <!-- <div class="page-header__featured-image" {{ with .Params.featured }}style="background-image:url({{ . }})"{{ end }}></div> -->
 </section><!-- .section__article-header -->
