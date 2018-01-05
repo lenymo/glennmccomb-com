@@ -53,8 +53,11 @@ $page-header-padding-bottom-xl: $gutter * 6;
 
 .section__page-header {
   background-color: $page-header-bg;
+  background-position: 50% 50%;
+  background-size: cover;
   overflow: hidden;
   padding: $page-header-padding-top-xs 0 $page-header-padding-bottom-xs;
+  position: relative;
 }
 
 @include respond-above(xs) {
@@ -79,6 +82,11 @@ $page-header-padding-bottom-xl: $gutter * 6;
   .section__page-header {
     padding: $page-header-padding-top-xl 0 $page-header-padding-bottom-xl;
   }
+}
+
+.container__page-header {
+  position: relative;
+  z-index: $z-index-page-header-container;
 }
 
 

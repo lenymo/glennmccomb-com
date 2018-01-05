@@ -21,6 +21,7 @@ $page-header-background-device-nba: desaturate($page-header-background-device-nb
 .category-nba {
   .section__page-header {
     background-color: $page-header-bg-nba;
+    background-image: url('/img/uploads/featured/featured-image-category-nba.png');
   }
 
   .page-header__icon {

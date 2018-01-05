@@ -8,6 +8,9 @@
 $page-header-bg-gaming: #5b1b27; // Red.
 // $page-header-bg-gaming: #571b5b; // Purple.
 
+$page-header-develpopment-icon-key-bg: lighten($page-header-bg-gaming, 25%);
+$page-header-develpopment-icon-key-shadow: lighten($page-header-bg-gaming, 10%);
+
 $page-header-icon-gaming-border-bottom-sm: 2px;
 $page-header-icon-gaming-border-radius-sm: 2px;
 $page-header-icon-gaming-font-size-sm: rem(8px);
@@ -35,7 +38,7 @@ $page-header-icon-gaming-margin-lg: 6px;
   .section__page-header {
     background-color: $page-header-bg-gaming;
     background-image: url('/img/uploads/featured/featured-image-category-gaming.png');
-    background-position: 50% 50%;
+    // background-position: 50% 50%;
     background-size: cover;
   }
 
@@ -59,10 +62,10 @@ $page-header-icon-gaming-margin-lg: 6px;
 }
 
 .page-header__icon-gaming-key {
-  background: lighten($page-header-bg-gaming, 25%);
+  background: $page-header-develpopment-icon-key-bg;
   border-radius: $page-header-icon-gaming-border-radius-sm;
   // border-bottom: $page-header-icon-gaming-border-radius-sm solid lighten($page-header-bg-gaming, 10%);
-  box-shadow: 0 $page-header-icon-gaming-border-bottom-sm 0 lighten($page-header-bg-gaming, 10%);
+  box-shadow: 0 $page-header-icon-gaming-border-bottom-sm 0 $page-header-develpopment-icon-key-shadow;
   color: lighten($page-header-bg-gaming, 50%);
   font-size: $page-header-icon-gaming-font-size-sm;
   font-weight: bold;
