@@ -10,6 +10,9 @@ $color-nba-blue: #204488;
 $page-header-bg-nba: darken($color-nba-red, 15%); // Darken.
 $page-header-bg-nba: desaturate($page-header-bg-nba, 20%); // Desaturate.
 
+$page-header-bg-nba: #a93f25; // Spalding orange.
+$page-header-bg-nba: #9c3820; // Spalding orange.
+
 $page-header-background-device-nba: darken($color-nba-blue, 15%);
 $page-header-background-device-nba: desaturate($page-header-background-device-nba, 20%);
 
@@ -25,22 +28,22 @@ $page-header-background-device-nba: desaturate($page-header-background-device-nb
   }
 
   .page-header__icon {
-    // background-color: $page-header-bg-nba;
+    background-color: $page-header-bg-nba;
     // background-color: $white;
-    background-color: #545e70;
+    // background-color: #545e70;
     // background: transparent;
-    border-color: transparent;
+    // border-color: transparent;
   }
   
-  .section__page-header {
-    .page-header__background-device {
-      background-color: $page-header-background-device-nba;
+  // .section__page-header {
+  //   .page-header__background-device {
+  //     background-color: $page-header-background-device-nba;
 
-      .line {
-        background-color: rgba($white, .25);
-      }
-    }
-  }
+  //     .line {
+  //       background-color: rgba($white, .25);
+  //     }
+  //   }
+  // }
   
   // Make sure NBA is all uppercase.
   .page-header__title {
