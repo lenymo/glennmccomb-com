@@ -8,7 +8,7 @@
 $page-header-bg-nba: #802e1a; // Spalding orange (darker).
 
 $page-header-nba-icon-color: lighten($page-header-bg-nba, 25%);
-$page-header-nba-icon-shadow: darken($page-header-nba-icon-color, 30%);
+$page-header-nba-icon-shadow: darken($page-header-nba-icon-color, 35%);
 
 
 //
@@ -69,7 +69,7 @@ $page-header-nba-icon-shadow: darken($page-header-nba-icon-color, 30%);
       }
 
       &.basketball-shadow {
-        top: 4px;
+        top: 3px;
 
         .outlines {
           path {
