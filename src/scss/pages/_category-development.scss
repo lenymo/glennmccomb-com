@@ -31,12 +31,12 @@ $page-header-development-icon-shadow: darken($page-header-development-icon-color
   .page-header__icon-wrapper {
     // color: $white;
     color: $page-header-development-icon-color;
-    font-size: rem(40px);
     font-family: $heading-font-family;
+    font-size: rem(40px);
     font-weight: bold;
-    line-height: 1;
-    letter-spacing: -.075em;
     left: 50%;
+    letter-spacing: -.075em;
+    line-height: 1;
     position: absolute;
     text-align: center;
     text-shadow: 0 4px 0 $page-header-development-icon-shadow;

@@ -4,17 +4,11 @@
 //  CATEGORY - NBA
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-$color-nba-red: #c61633;
-$color-nba-blue: #204488;
-
-$page-header-bg-nba: darken($color-nba-red, 15%); // Darken.
-$page-header-bg-nba: desaturate($page-header-bg-nba, 20%); // Desaturate.
-
-$page-header-bg-nba: #a93f25; // Spalding orange.
+// $page-header-bg-nba: #a93f25; // Spalding orange.
 $page-header-bg-nba: #802e1a; // Spalding orange (darker).
 
-$page-header-background-device-nba: darken($color-nba-blue, 15%);
-$page-header-background-device-nba: desaturate($page-header-background-device-nba, 20%);
+$page-header-nba-icon-color: lighten($page-header-bg-nba, 25%);
+$page-header-nba-icon-shadow: darken($page-header-nba-icon-color, 30%);
 
 
 //
@@ -30,19 +24,11 @@ $page-header-background-device-nba: desaturate($page-header-background-device-nb
   .page-header__icon {
     background-color: $page-header-bg-nba;
     border-color: $page-header-bg-nba;
-    // border: 0;
-    // background-color: $white;
-    // background-color: #545e70;
-    // background: transparent;
-    // border-color: transparent;
   }
   
   .section__page-header {
     .page-header__background-device {
-      // background-color: $page-header-background-device-nba;
-
       .line {
-        // background-color: rgba($white, .25);
         background-color: $page-header-bg-nba;
       }
     }
@@ -73,15 +59,27 @@ $page-header-background-device-nba: desaturate($page-header-background-device-nb
 
       .outlines {
         path {
-          fill: lighten($page-header-bg-nba, 25%);
+          fill: $page-header-nba-icon-color;
         }
       }
 
       .lines {
-        fill: $page-header-bg-nba;
-        // fill: darken($page-header-bg-nba, 12.5%);
-        // fill: lighten($page-header-bg-nba, 25%);
-        // fill: transparent;
+        // fill: $page-header-bg-nba;
+        fill: transparent;
+      }
+
+      &.basketball-shadow {
+        top: 4px;
+
+        .outlines {
+          path {
+            fill: $page-header-nba-icon-shadow;
+          }
+        }
+
+        .lines {
+          fill: transparent;
+        }
       }
     }
   }
