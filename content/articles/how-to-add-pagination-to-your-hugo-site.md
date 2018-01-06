@@ -22,8 +22,9 @@ In order to demonstrate pagination you will need several articles on your site. 
 
 ### Set number of items per page
 
-Hugo defaults to 10 items per page but for testing purposes I found it more practical to reduce this number to 2-3. You can do this in your hugo config file in the following way.
+Hugo defaults to 10 items per page but for testing purposes I found it more practical to reduce this number to 2-3. You can do this in your [hugo config file](https://gohugo.io/getting-started/configuration/) in the following way (in YAML).
 
 {{< highlight yaml >}}
 paginate: 2
 {{< /highlight >}}
+
