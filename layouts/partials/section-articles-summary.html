@@ -7,7 +7,7 @@
   <div class="container container__articles-summary">
     <div class="row row__articles-summary">
     
-    {{ $paginator := .Paginate (where .Data.Pages "Type" "articles") }}
+      {{ $paginator := .Paginate (where .Data.Pages "Type" "articles") }}
 
       {{ range $paginator.Pages }}
         {{ partial "article-summary" . }}
