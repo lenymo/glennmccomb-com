@@ -423,6 +423,20 @@ hr {
 //  CODE
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
+// Inline.
+p {
+  > code {
+    background-color: $color-gray-e;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 80%;
+    padding-left: $gutter * .25;
+    padding-right: $gutter * .25;
+  }
+}
+
+
+// Code block.
 pre {
   background: $color-gray-e;
   border-radius: 4px;
