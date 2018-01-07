@@ -13,6 +13,16 @@
 {{ $lowerLimit := (add $adjacentLinks 1) }}
 {{ $upperLimit := (sub $paginator.TotalPages $adjacentLinks) }}
 
+<p>
+  Upper limit {{ $upperLimit }} minus Lower limit {{ $lowerLimit }} = {{ sub $upperLimit $lowerLimit }}. 
+</p>
+
+{{ if ge (sub $upperLimit $lowerLimit) 1 }}
+<p>
+  Draw complex page numbers.
+</p>
+{{ end }}
+
 {{ if gt $paginator.TotalPages 1 }}
 <nav class="pagination">
   <ul class="pagination__list">
