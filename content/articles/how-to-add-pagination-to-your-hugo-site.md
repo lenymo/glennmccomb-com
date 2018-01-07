@@ -88,7 +88,9 @@ Next we will use a Hugo conditional statement to check if page numbers are neede
 {{ end }}
 {{< /highlight >}}
 
-Hugo if statements took some getting used to because they're structured differently to every other programming language I've encountered to date. In most other languages the above code is written as:
+Hugo if statements took some getting used to because they're structured differently to every other programming language I've encountered to date. As with most loops and conditionals in Hugo, the if statement is closed with <code>{{ end }}</code>.
+
+In most other languages the above code is written as:
 
 {{< highlight js >}}
 if ($paginator.TotalPages > 1) {
@@ -116,6 +118,12 @@ Here I've added an active class to the list item.
 
 {{< highlight html >}}
 <li class="pagination__item{{ if eq . $paginator }} pagination__item--current{{ end }}">
+{{< /highlight >}}
+
+Let's zero in on that if statement.
+
+{{< highlight html >}}
+{{ if eq . $paginator }} pagination__item--current{{ end }}
 {{< /highlight >}}
 
 ---
