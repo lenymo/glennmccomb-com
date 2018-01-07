@@ -22,7 +22,7 @@
 
 .pagination__item--previous,
 .pagination__item--next {
-  display: none;
+  // display: none;
 }
 
 .pagination__link {
@@ -44,8 +44,10 @@
   }
 }
 
+.pagination__link--first,
 .pagination__link--previous,
-.pagination__link--next {
+.pagination__link--next,
+.pagination__link--last {
   background: transparent;
   border-bottom-color: transparent;
   color: $color-gray-a;
