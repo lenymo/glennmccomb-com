@@ -3,8 +3,16 @@
 //  PAGINATION
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 -->
-{{ template "_internal/pagination.html" . }}
+<!-- {{ template "_internal/pagination.html" . }} -->
+
+
 {{ $paginator := .Paginator }}
+
+{{ $adjacentLinks := 3 }}
+{{ $maxPageNumbers := (add (mul $adjacentLinks 2) 1) }}
+{{ $lowerLimit := (add $adjacentLinks 1) }}
+{{ $upperLimit := (sub $paginator.TotalPages $adjacentLinks) }}
+
 {{ if gt $paginator.TotalPages 1 }}
 <nav class="pagination">
   <ul class="pagination__list">
@@ -21,6 +29,13 @@
     </li>
   {{ end }}
     
+  {{ if le $paginator.PageNumber $lowerLimit }}
+    Lower limit
+  {{ end }}
+
+  {{ if ge $paginator.PageNumber $upperLimit }}
+    Upper limit
+  {{ end }}
   {{ range $paginator.Pagers }}
     <li class="pagination__item pagination__item--{{ .PageNumber }}{{ if eq . $paginator }} pagination__item--current{{ end }}">
       <a href="{{ .URL }}" class="pagination__link pagination__link--{{ .PageNumber }}{{ if eq . $paginator }} pagination__link--current{{ end }}">
