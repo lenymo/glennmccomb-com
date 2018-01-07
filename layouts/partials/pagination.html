@@ -3,10 +3,17 @@
 //  PAGINATION
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 -->
+{{ template "_internal/pagination.html" . }}
 {{ $paginator := .Paginator }}
 {{ if gt $paginator.TotalPages 1 }}
 <nav class="pagination">
   <ul class="pagination__list">
+
+  {{ if ne $paginator.PageNumber 1 }}
+    <li class="pagination__item pagination__item--first">
+      <a class="pagination__link pagination__link--first" href="{{ $paginator.First.URL }}"><<</a>
+    </li>
+  {{ end }}
 
   {{ if $paginator.HasPrev }}
     <li class="pagination__item pagination__item--previous">
@@ -25,6 +32,12 @@
   {{ if $paginator.HasNext }}
     <li class="pagination__item pagination__item--next">
       <a class="pagination__link pagination__link--next" href="{{ $paginator.Next.URL }}">></a>
+    </li>
+  {{ end }}
+
+  {{ if ne $paginator.PageNumber $paginator.TotalPages }}
+    <li class="pagination__item pagination__item--last">
+      <a class="pagination__link pagination__link--last" href="{{ $paginator.Last.URL }}">>></a>
     </li>
   {{ end }}
 
