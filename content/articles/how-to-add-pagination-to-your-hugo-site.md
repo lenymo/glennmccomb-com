@@ -1,14 +1,14 @@
 ---
-title: How to add pagination to your Hugo site
+title: Building custom pagination for your Hugo site
 date: '2018-01-06T14:28:42+11:00'
 categories:
   - development
 ---
-{{< lead >}}[Hugo](https://gohugo.io/) is an awesome feature-packed static site generator on which this site is built. Here I demonstrate how to add pagination to a Hugo site or theme including page numbers, next and previous buttons and more.{{< /lead >}}
+{{< lead >}}[Hugo](https://gohugo.io/) is an awesome feature-packed static site generator on which this site is built. It ships with a powerful default pagination template but if you're looking for full control, here I will demonstrate how to build custom pagination.{{< /lead >}}
 
-If you don't yet have a Hugo site ready to go, [they're very easy to set up](https://gohugo.io/getting-started/quick-start/) and I highly recommend it for sites large and small. If you have experience with a CMS such as WordPress you'll be pleased to find that Hugo uses a lot of very similar terminology.
+If you don't yet have a Hugo site ready to go, [they're very easy to set up](https://gohugo.io/getting-started/quick-start/) and I highly recommend it for sites large and small. If you've previously used a CMS such as WordPress you'll be pleased to find that Hugo uses a lot of similar terminology.
 
-I'm not going to be writing any CSS here and I'll use as little HTML as required. My goal is to help you understand how Hugo pagination works.
+I'm not going to be writing any CSS here and I'll use as little HTML as required. My goal is to help you understand how Hugo pagination works. I'll be using some simple JavaScript examples to help explain how Hugo's templating language works but JavaScript experience is not necessary.
 
 I'll go through the code in isolation and in depth but if you'd prefer to see the whole thing you can skip ahead to <a href="#the-final-code">see the final code</a>.
 
@@ -125,6 +125,16 @@ Let's zero in on that if statement.
 {{< highlight html >}}
 {{ if eq . $paginator }} pagination__item--current{{ end }}
 {{< /highlight >}}
+
+Firstly, it's important to understand that in Hugo, when you're within a range function, the <code>.</code> is roughly equivalent to <code>this</code> in JavaScript. It is the value of the current item in the loop.
+
+In this case <code>$paginator</code> will be equal to whatever page we're currently viewing. When output, it's actual value is "Pager 1" or "Pager 2" depending on what page we're viewing.
+
+So in other words what the above if statement is asking: "if the current loop item is the same as the current page we're on... add a class."
+
+This class can then be used to uniquely style the current page number.
+
+### Next and Previous pages.
 
 ---
 
