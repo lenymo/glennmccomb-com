@@ -8,7 +8,7 @@
 
 {{ $paginator := .Paginator }}
 
-{{ $adjacentLinks := 3 }}
+{{ $adjacentLinks := 4 }}
 {{ $maxPageNumbers := (add (mul $adjacentLinks 2) 1) }}
 {{ $lowerLimit := (add $adjacentLinks 1) }}
 {{ $upperLimit := (sub $paginator.TotalPages $adjacentLinks) }}
@@ -19,7 +19,13 @@
 
 {{ if ge (sub $upperLimit $lowerLimit) 1 }}
 <p>
-  Draw complex page numbers.
+  Complex page numbers.
+</p>
+{{ end }}
+
+{{ if gt $paginator.TotalPages $maxPageNumbers }}
+<p>
+  Too many pages.
 </p>
 {{ end }}
 
