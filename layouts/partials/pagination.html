@@ -8,64 +8,88 @@
 
 {{ $paginator := .Paginator }}
 
-{{ $adjacentLinks := 4 }}
-{{ $maxPageNumbers := (add (mul $adjacentLinks 2) 1) }}
-{{ $lowerLimit := (add $adjacentLinks 1) }}
-{{ $upperLimit := (sub $paginator.TotalPages $adjacentLinks) }}
-
-<p>
-  Upper limit {{ $upperLimit }} minus Lower limit {{ $lowerLimit }} = {{ sub $upperLimit $lowerLimit }}. 
-</p>
-
-{{ if ge (sub $upperLimit $lowerLimit) 1 }}
-<p>
-  Complex page numbers.
-</p>
-{{ end }}
-
-{{ if gt $paginator.TotalPages $maxPageNumbers }}
-<p>
-  Too many pages.
-</p>
-{{ end }}
+{{ $adjacent_links := 2 }}
+{{ $max_links := (add (mul $adjacent_links 2) 1) }}
+{{ $lower_limit := (add $adjacent_links 1) }}
+{{ $upper_limit := (sub $paginator.TotalPages $adjacent_links) }}
 
 {{ if gt $paginator.TotalPages 1 }}
 <nav class="pagination">
   <ul class="pagination__list">
 
+  <!-- First page. -->
   {{ if ne $paginator.PageNumber 1 }}
     <li class="pagination__item pagination__item--first">
       <a class="pagination__link pagination__link--first" href="{{ $paginator.First.URL }}"><<</a>
     </li>
   {{ end }}
-
+  
+  <!-- Previous page. -->
   {{ if $paginator.HasPrev }}
     <li class="pagination__item pagination__item--previous">
       <a class="pagination__link pagination__link--previous" href="{{ $paginator.Prev.URL }}"><</a>
     </li>
   {{ end }}
+
     
-  {{ if le $paginator.PageNumber $lowerLimit }}
-    Lower limit
-  {{ end }}
-
-  {{ if ge $paginator.PageNumber $upperLimit }}
-    Upper limit
-  {{ end }}
+  <!-- Page numbers. -->
   {{ range $paginator.Pagers }}
-    <li class="pagination__item pagination__item--{{ .PageNumber }}{{ if eq . $paginator }} pagination__item--current{{ end }}">
-      <a href="{{ .URL }}" class="pagination__link pagination__link--{{ .PageNumber }}{{ if eq . $paginator }} pagination__link--current{{ end }}">
-        {{ .PageNumber }}
-      </a>
-    </li>
-  {{ end }}
 
+    <!-- Page number flag. -->
+    {{ $.Scratch.Set "page-number-flag" "false" }}
+
+    <!-- Complex pagination. -->
+    <!-- If there are more pages than the max page numbers allowed. -->
+    {{ if gt $paginator.TotalPages $max_links }}
+      
+      <!-- Lower limit pages. -->
+      <!-- If the user is on a page which is in the lower limit.  -->
+      {{ if le $paginator.PageNumber $lower_limit }}
+
+        <!-- If the current loop page is less than max_links. -->
+        {{ if le .PageNumber $max_links }}
+          {{ $.Scratch.Set "page-number-flag" "true" }}
+        {{ end }}
+
+      <!-- Upper limit pages. -->
+      <!-- If the user is on a page which is in the upper limit. -->
+      {{ else if ge $paginator.PageNumber $upper_limit }}
+
+        <!-- If the current loop page is greater than total pages minus $max_links -->
+        {{ if gt .PageNumber (sub $paginator.TotalPages $max_links) }}
+          {{ $.Scratch.Set "page-number-flag" "true" }}
+        {{ end }}
+
+      <!-- Middle pages. -->
+      {{ else }}
+        {{ if and ( ge .PageNumber (sub $paginator.PageNumber $adjacent_links) ) ( le .PageNumber (add $paginator.PageNumber $adjacent_links) ) }}
+          {{ $.Scratch.Set "page-number-flag" "true" }}
+        {{ end }}
+      {{ end }}
+
+    <!-- Simple pagination. -->
+    {{ else }}
+      {{ $.Scratch.Set "page-number-flag" "true" }}
+    {{ end }}
+
+    {{ if eq ($.Scratch.Get "page-number-flag") "true" }}
+      <li class="pagination__item pagination__item--{{ .PageNumber }}{{ if eq . $paginator }} pagination__item--current{{ end }}">
+        <a href="{{ .URL }}" class="pagination__link pagination__link--{{ .PageNumber }}{{ if eq . $paginator }} pagination__link--current{{ end }}">
+          {{ .PageNumber }}
+        </a>
+      </li>
+    {{ end }}
+  {{ end }} <!-- end of range -->
+
+
+  <!-- Next page. -->
   {{ if $paginator.HasNext }}
     <li class="pagination__item pagination__item--next">
       <a class="pagination__link pagination__link--next" href="{{ $paginator.Next.URL }}">></a>
     </li>
   {{ end }}
-
+  
+  <!-- Last page. -->
   {{ if ne $paginator.PageNumber $paginator.TotalPages }}
     <li class="pagination__item pagination__item--last">
       <a class="pagination__link pagination__link--last" href="{{ $paginator.Last.URL }}">>></a>
