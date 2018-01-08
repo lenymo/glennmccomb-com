@@ -9,7 +9,7 @@
 {{ $paginator := .Paginator }}
 
 {{ $adjacent_links := 2 }}
-{{ $max_links := (add (mul $adjacent_links 2) 1) }}
+{{ $max_links := (add (mul $adjacent_links 2) 1) }} <!-- ($adjacent_links * 2) + 1 -->
 {{ $lower_limit := (add $adjacent_links 1) }}
 {{ $upper_limit := (sub $paginator.TotalPages $adjacent_links) }}
 
@@ -30,7 +30,6 @@
       <a class="pagination__link pagination__link--previous" href="{{ $paginator.Prev.URL }}"><</a>
     </li>
   {{ end }}
-
     
   <!-- Page numbers. -->
   {{ range $paginator.Pagers }}
@@ -72,6 +71,7 @@
       {{ $.Scratch.Set "page-number-flag" "true" }}
     {{ end }}
 
+    <!-- If a page number link should be drawn. -->
     {{ if eq ($.Scratch.Get "page-number-flag") "true" }}
       <li class="pagination__item pagination__item--{{ .PageNumber }}{{ if eq . $paginator }} pagination__item--current{{ end }}">
         <a href="{{ .URL }}" class="pagination__link pagination__link--{{ .PageNumber }}{{ if eq . $paginator }} pagination__link--current{{ end }}">
@@ -80,7 +80,6 @@
       </li>
     {{ end }}
   {{ end }} <!-- end of range -->
-
 
   <!-- Next page. -->
   {{ if $paginator.HasNext }}
