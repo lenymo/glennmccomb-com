@@ -1,6 +1,6 @@
 baseURL: /
 languageCode: en-us
-paginate: 1
+paginate: 4
 menu:
   main:
     - Identifier: contact
