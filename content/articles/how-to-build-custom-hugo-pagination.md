@@ -233,14 +233,12 @@ Before I go any further I'll outline what I wanted to achieve:
 * The same number of overall pages showing at all times.
 * No dots between page numbers.
 
-To help illustrate that visually here are some examples of how this might look with 10 pages with 2 links either side.
+Below are some examples of how pagination might look if there are 10 pages with 2 adjacent links.
 
-<h6 style="margin-bottom: 10px">Page one</h6>
-
-<nav class="pagination" style="margin-top: 0;">
+<nav class="pagination">
   <ul class="pagination__list" style="margin: 0">
     <li class="pagination__item pagination__item--current">
-      <a class="pagination__link pagination__link--1 pagination__link--current">
+      <a class="pagination__link pagination__link--current">
         1
       </a>
     </li>
@@ -267,11 +265,37 @@ To help illustrate that visually here are some examples of how this might look w
   </ul>
 </nav>
 
-<hr>
+<nav class="pagination">
+  <ul class="pagination__list" style="margin: 0">
+    <li class="pagination__item">
+      <a class="pagination__link">
+        1
+      </a>
+    </li>
+    <li class="pagination__item">
+      <a class="pagination__link">
+        2
+      </a>
+    </li>
+    <li class="pagination__item pagination__item--current">
+      <a class="pagination__link pagination__link--current">
+        3
+      </a>
+    </li>
+    <li class="pagination__item">
+      <a class="pagination__link">
+        4
+      </a>
+    </li>
+    <li class="pagination__item">
+      <a class="pagination__link">
+        5
+      </a>
+    </li>
+  </ul>
+</nav>
 
-<h6 style="margin-bottom: 10px">Page five</h6>
-
-<nav class="pagination" style="margin-top: 0;">
+<nav class="pagination">
   <ul class="pagination__list" style="margin: 0">
     <li class="pagination__item">
       <a class="pagination__link">
@@ -301,14 +325,40 @@ To help illustrate that visually here are some examples of how this might look w
   </ul>
 </nav>
 
-<hr>
-
-<h6 style="margin-bottom: 10px">Page ten</h6>
-
-<nav class="pagination" style="margin-top: 0;">
+<nav class="pagination">
   <ul class="pagination__list" style="margin: 0">
     <li class="pagination__item">
-      <a class="pagination__link pagination__link--1">
+      <a class="pagination__link">
+        6
+      </a>
+    </li>
+    <li class="pagination__item">
+      <a class="pagination__link">
+        7
+      </a>
+    </li>
+    <li class="pagination__item pagination__item--current">
+      <a class="pagination__link pagination__link--current">
+        8
+      </a>
+    </li>
+    <li class="pagination__item">
+      <a class="pagination__link">
+        9
+      </a>
+    </li>
+    <li class="pagination__item">
+      <a class="pagination__link">
+        10
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<nav class="pagination" style="margin-bottom: 40px;">
+  <ul class="pagination__list" style="margin: 0">
+    <li class="pagination__item">
+      <a class="pagination__link">
         6
       </a>
     </li>
@@ -334,6 +384,14 @@ To help illustrate that visually here are some examples of how this might look w
     </li>
   </ul>
 </nav>
+
+A couple of things to note from above:
+
+* Pages 1-3 and 8-10 show the same page numbers but different active item. These pages are rendered differently to middle pages.
+* Total number of pages being displayed is determined by <code>($adjacent_links * 2) + 1</code> which in this case is 5.
+
+### Coding smarter page numbers.
+
 
 ---
 
