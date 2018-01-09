@@ -223,17 +223,19 @@ We can run a similar check to make sure the last page button isn't shown on the 
 
 This is all coming together nicely. For a short while, when I reached this point, I thought I had pagination all sorted. But there are issues with what we've written because there's nothing to stop page numbers being output indefinitely. This is fine if there are 10 pages but what if there are 20? 50?
 
-At this point I strongly considered abandoning my quest for custom pagination. Hugo's built-in pagination is really good and I could probably just use CSS to remove anything I didn't want. But no, I persisted.
+At this point I strongly considered abandoning my quest for custom pagination. Hugo's built-in pagination is really good and I could probably just use CSS to hide anything I didn't want. But no, I persisted.
 
 ### Smarter page numbers
 
 Before I go any further I'll outline what I wanted to achieve:
 
-* A set number of page links either side of the current page.
-* The same number of overall pages showing at all times.
+* A set number of page links either side of the current page (adjacent links).
+* The same number of overall page numbers showing at all times.
 * No dots between page numbers.
 
-Below are some examples of how pagination might look if there are 10 pages with 2 adjacent links.
+I also want to note that at this point in the article things get a little more intense in terms of Hugo coding. I'll try to break things down as much as possible but without some development experience it may be difficult to follow.
+
+Below are some examples of how pagination would look if there are 10 pages with 2 adjacent links.
 
 <nav class="pagination">
   <ul class="pagination__list" style="margin: 0">
@@ -385,13 +387,61 @@ Below are some examples of how pagination might look if there are 10 pages with 
   </ul>
 </nav>
 
-A couple of things to note from above:
+Some notes about the logic of the above pagination:
 
-* Pages 1-3 and 8-10 show the same page numbers but different active item. These pages are rendered differently to middle pages.
-* Total number of pages being displayed is determined by <code>($adjacent_links * 2) + 1</code> which in this case is 5.
+* Maximum number of pages to display can be found with <code>($adjacent_links * 2) + 1</code> which in this example is 5.
+* If the total number of pages doesn't exceed the maximum number of pages to display, there's no need for complicated pagination logic; all page numbers will be shown.
+* Pages 1-3 and 8-10 show the same group of page numbers but with a different active item. These pages are rendered differently to the middle pages.
+* The above "lower limit" pages can be identified as being less than or equal to <code>$adjacent_links + 1</code>.
+* The "upper limit" pages can be identified as being greater than or equal to <code>.TotalPages - $adjacent_links</code>.
 
-### Coding smarter page numbers.
+### Coding smarter page numbers
 
+To kick things off we will set up some config variables.
+
+{{< highlight html >}}
+<!-- Number of links either side of the current page. -->
+{{ $adjacent_links := 2 }}
+
+<!-- $max_links = ($adjacent_links * 2) + 1 -->
+{{ $max_links := (add (mul $adjacent_links 2) 1) }}
+
+<!-- $lower_limit = $adjacent_links + 1 -->
+{{ $lower_limit := (add $adjacent_links 1) }}
+
+<!-- $upper_limit = $paginator.TotalPages - $adjacent_links -->
+{{ $upper_limit := (sub $paginator.TotalPages $adjacent_links) }}
+{{< /highlight >}}
+
+Much like <code>if</code> statements, arithmetic in Hugo is unituitive and takes some getting used to. I usually write an HTML comment above each line in more traditional terms as a gift to my future self.
+
+Next, within our <code>{{ range $paginator.Pagers }}</code> loop, we'll use Hugo's [scratchpad](https://gohugo.io/functions/scratch/) to store a boolean page number flag. This will be used to show / hide page numbers. It will be set to false by default.
+
+{{< highlight html >}}
+{{ range $paginator.Pagers }}
+  {{ $.Scratch.Set "page-number-flag" "false" }}
+{{ end }}
+{{< /highlight >}}
+
+We need to use <code>.Scratch</code> here because Hugo variables which are declared within an <code>if</code> statement can't be accessed outside said statement. Variables on the scratchpad can be set and retrieved just like regular variables.
+
+We then need to determine whether advanced logic is required to hide page numbers. If the total number of pages is greater than the maximum number of links to show (<code>$max_links</code>) we will use advanced logic.
+
+{{< highlight html >}}
+{{ range $paginator.Pagers }}
+  {{ $.Scratch.Set "page-number-flag" "false" }}
+
+  {{ if gt $paginator.TotalPages $max_links }}
+
+    <!-- Complex page number links. -->
+
+  {{ else }}
+
+    <!-- Simple page number links. -->
+    
+  {{ end }}
+{{ end }}
+{{< /highlight >}}
 
 ---
 
