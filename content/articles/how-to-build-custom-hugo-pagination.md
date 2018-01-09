@@ -219,13 +219,15 @@ We can run a similar check to make sure the last page button isn't shown on the 
   {{ end }}
 {{< /highlight >}}
 
-### Good but not great
+### The limitations of our code so far
 
 This is all coming together nicely. For a short while, when I reached this point, I thought I had pagination all sorted. But there are issues with what we've written because there's nothing to stop page numbers being output indefinitely. This is fine if there are 10 pages but what if there are 20? 50?
 
 At this point I strongly considered abandoning my quest for custom pagination. Hugo's built-in pagination is really good and I could probably just use CSS to hide anything I didn't want. But no, I persisted.
 
-### Smarter page numbers
+---
+
+## Smarter page numbers
 
 Before I go any further I'll outline what I wanted to achieve:
 
@@ -395,7 +397,7 @@ Some notes about the logic of the above pagination:
 * The above "lower limit" pages can be identified as being less than or equal to <code>$adjacent_links + 1</code>.
 * The "upper limit" pages can be identified as being greater than or equal to <code>.TotalPages - $adjacent_links</code>.
 
-### Coding smarter page numbers
+### Coding smarter page number links
 
 To kick things off we will set up some config variables.
 
@@ -425,6 +427,8 @@ Next, within our <code>{{ range $paginator.Pagers }}</code> loop, we'll use Hugo
 
 We need to use <code>.Scratch</code> here because Hugo variables which are declared within an <code>if</code> statement can't be accessed outside said statement. Variables on the scratchpad can be set and retrieved just like regular variables.
 
+### Simple page number links
+
 We then need to determine whether advanced logic is required to hide page numbers. If the total number of pages is greater than the maximum number of links to show (<code>$max_links</code>) we will use advanced logic.
 
 {{< highlight html >}}
@@ -437,11 +441,17 @@ We then need to determine whether advanced logic is required to hide page number
 
   {{ else }}
 
-    <!-- Simple page number links. -->
-    
+    {{ $.Scratch.Set "page-number-flag" "true" }}
+
   {{ end }}
 {{ end }}
 {{< /highlight >}}
+
+For the simple page numbers we will set the <code>page-number-flag</code> to true for all items in the <code>{{ range }}</code> loop since we want them all to show.
+
+### Advanced page number links
+
+As for the advanced page number links, we will use an <code>if</code> statement to check for lower limit links, upper limit links and lastly middle page links.
 
 ---
 
