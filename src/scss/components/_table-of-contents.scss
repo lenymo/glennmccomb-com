@@ -20,7 +20,7 @@
 
     a {
       border: 0;
-      color: $color-gray-8;
+      color: $color-gray-3;
       // font-size: $article-font-size-xs;
 
       &:hover {
@@ -35,6 +35,20 @@
       ul {
         margin-left: $gutter;
       }
+    }
+  }
+
+  nav > ul > li > ul > li {
+    margin-bottom: $gutter;
+
+    > a {
+      // font-weight: 400;
+    }
+    
+    li > a {
+      color: $color-gray-8;
+      // font-weight: bold;
+      // text-transform: uppercase;
     }
   }
 }
@@ -61,6 +75,10 @@
       ul {
         margin-top: $gutter * .5;
       }
+    }
+
+    nav > ul > li > ul > li {
+      margin-bottom: $gutter * 1.5;
     }
 
     &.-is-expanded {
@@ -209,7 +227,7 @@
 
 .table-of-contents__title {
   color: $color-gray-8;
-  // display: none;
+  display: none;
   font-size: rem(12px);
   letter-spacing: .05em;
   margin-bottom: $gutter * .25;
