@@ -424,7 +424,8 @@ hr {
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 // Inline.
-p {
+p,
+li {
   > code {
     background-color: $color-gray-e;
     border-radius: 3px;
