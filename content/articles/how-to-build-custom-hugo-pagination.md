@@ -183,7 +183,7 @@ The next page link is output in much the same way:
 {{ if $paginator.HasNext }}
   <li class="pagination__item pagination__item--next">
     <a href="{{ $paginator.Next.URL }}" class="pagination__link pagination__link--next">
-      «
+      »
     </a>
   </li>
 {{ end }}
@@ -213,7 +213,7 @@ We can run a similar check to make sure the last page button isn't shown on the 
   {{ if ne $paginator.PageNumber $paginator.TotalPages }}
     <li class="pagination__item pagination__item--last">
       <a class="pagination__link pagination__link--last" href="{{ $paginator.Last.URL }}">
-        ««
+        »»
       </a>
     </li>
   {{ end }}
@@ -528,11 +528,11 @@ if (
 
 In plain English the <code>if</code> statement is asking:
 
-* If the current loop page number is greater than or equal to the page number the user is currently viewing - <code>$adjacent_links</code>
+* IF the current loop page number is greater than or equal to the page number the user is currently viewing minus <code>$adjacent_links</code>
 * AND
-* If the current loop page number is less than or equal to the page number the user is currently viewing + <code>$adjacent_links</code>.
+* IF the current loop page number is less than or equal to the page number the user is currently viewing plus <code>$adjacent_links</code>.
 
-This is a long-winded way of showing the two page numbers either side of the current page.
+This is a long-winded way of showing two page numbers either side of the current page.
 
 Here's the actual Hugo code:
 
@@ -542,7 +542,154 @@ Here's the actual Hugo code:
 {{ end }}
 {{< /highlight >}}
 
+Ok we are finally here.
+
+{{< article-body-full-bleed container="yes" >}}
+
 ---
 
 ## The final code
 
+{{< highlight html >}}
+
+<!--
+//
+//  OUTPUT POSTS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+{{ $paginator := .Paginate (where .Data.Pages "Type" "posts") }}
+
+{{ range $paginator.Pages }}
+  <div class="post">
+    <h2 class="post__title">
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </h2>
+    <div class="post__summary">
+      {{ .Summary }}
+    </div>
+  </div>
+{{ end }}
+
+<!--
+//
+//  PAGE NUMBERS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+{{ $paginator := .Paginator }}
+
+<!-- Number of links either side of the current page. -->
+{{ $adjacent_links := 2 }}
+
+<!-- $max_links = ($adjacent_links * 2) + 1 -->
+{{ $max_links := (add (mul $adjacent_links 2) 1) }}
+
+<!-- $lower_limit = $adjacent_links + 1 -->
+{{ $lower_limit := (add $adjacent_links 1) }}
+
+<!-- $upper_limit = $paginator.TotalPages - $adjacent_links -->
+{{ $upper_limit := (sub $paginator.TotalPages $adjacent_links) }}
+
+<!-- If there's more than one page. -->
+{{ if gt $paginator.TotalPages 1 }}
+
+  <ul class="pagination">
+    
+    <!-- First page. -->
+    {{ if ne $paginator.PageNumber 1 }}
+    <li class="pagination__item pagination__item--first">
+      <a class="pagination__link pagination__link--first" href="{{ $paginator.First.URL }}">
+        ««
+      </a>
+    </li>
+    {{ end }}
+
+    <!-- Previous page. -->
+    {{ if $paginator.HasPrev }}
+    <li class="pagination__item pagination__item--previous">
+      <a href="{{ $paginator.Prev.URL }}" class="pagination__link pagination__link--previous">
+        «
+      </a>
+    </li>
+    {{ end }}
+  
+    <!-- Page numbers. -->
+    {{ range $paginator.Pagers }}
+    
+      {{ $.Scratch.Set "page-number-flag" "false" }}
+
+      
+      <!-- Advanced page numbers. -->
+      {{ if gt $paginator.TotalPages $max_links }}
+
+
+        <!-- Lower limit pages. -->
+        <!-- If the user is on a page which is in the lower limit.  -->
+        {{ if le $paginator.PageNumber $lower_limit }}
+
+          <!-- If the current loop page is less than max_links. -->
+          {{ if le .PageNumber $max_links }}
+            {{ $.Scratch.Set "page-number-flag" "true" }}
+          {{ end }}
+
+
+        <!-- Upper limit pages. -->
+        <!-- If the user is on a page which is in the upper limit. -->
+        {{ else if ge $paginator.PageNumber $upper_limit }}
+
+          <!-- If the current loop page is greater than total pages minus $max_links -->
+          {{ if gt .PageNumber (sub $paginator.TotalPages $max_links) }}
+            {{ $.Scratch.Set "page-number-flag" "true" }}
+          {{ end }}
+
+
+        <!-- Middle pages. -->
+        {{ else }}
+          
+          {{ if and ( ge .PageNumber (sub $paginator.PageNumber $adjacent_links) ) ( le .PageNumber (add $paginator.PageNumber $adjacent_links) ) }}
+            {{ $.Scratch.Set "page-number-flag" "true" }}
+          {{ end }}
+
+        {{ end }}
+
+      
+      <!-- Simple page numbers. -->
+      {{ else }}
+
+        {{ $.Scratch.Set "page-number-flag" "true" }}
+
+      {{ end }}
+
+      <!-- Output page numbers. -->
+      {{ if eq ($.Scratch.Get "page-number-flag") "true" }}
+        <li class="pagination__item{{ if eq . $paginator }} pagination__item--current{{ end }}">
+          <a href="{{ .URL }}" class="pagination__link">
+            {{ .PageNumber }}
+          </a>
+        </li>
+      {{ end }}
+
+    {{ end }}
+
+    <!-- Next page. -->
+    {{ if $paginator.HasNext }}
+    <li class="pagination__item pagination__item--next">
+      <a href="{{ $paginator.Next.URL }}" class="pagination__link pagination__link--next">
+        »
+      </a>
+    </li>
+    {{ end }}
+
+    <!-- Last page. -->
+    {{ if ne $paginator.PageNumber $paginator.TotalPages }}
+    <li class="pagination__item pagination__item--last">
+      <a class="pagination__link pagination__link--last" href="{{ $paginator.Last.URL }}">
+        »»
+      </a>
+    </li>
+    {{ end }}
+
+  </ul><!-- .pagination -->
+{{ end }}
+
+{{< /highlight >}}
+{{< /article-body-full-bleed >}}
