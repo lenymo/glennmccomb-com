@@ -30,6 +30,7 @@
       <a class="pagination__link pagination__link--previous" href="{{ $paginator.Prev.URL }}"><</a>
     </li>
   {{ end }}
+
     
   <!-- Page numbers. -->
   {{ range $paginator.Pagers }}
@@ -80,6 +81,7 @@
       </li>
     {{ end }}
   {{ end }} <!-- end of range -->
+  
 
   <!-- Next page. -->
   {{ if $paginator.HasNext }}
