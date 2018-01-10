@@ -534,8 +534,6 @@ Here's the actual Hugo code:
 
 Ok we are finally here.
 
-{{< article-body-full-bleed container="yes" >}}
-
 ## The final code
 
 {{< highlight html >}}
@@ -680,4 +678,3 @@ Ok we are finally here.
 {{ end }}
 
 {{< /highlight >}}
-{{< /article-body-full-bleed >}}
