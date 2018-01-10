@@ -4,6 +4,8 @@ date: '2018-01-06T14:28:42+11:00'
 featured: /img/uploads/featured-image-article-hugo-pagination.jpg
 categories:
   - development
+featured_opacity: '25'
+dark_bg: true
 toc: true
 ---
 {{< lead >}}[Hugo](https://gohugo.io/) is an awesome feature-packed static site generator with which this site is built. It ships with a powerful default pagination template but if you're looking for full control, I'm going to demonstrate how to build custom pagination.{{< /lead >}}
