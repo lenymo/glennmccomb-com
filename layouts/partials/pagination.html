@@ -18,7 +18,7 @@
   <ul class="pagination__list">
 
   <!-- First page. -->
-  {{ if ne $paginator.PageNumber 1 }}
+  {{ if and (ne $paginator.PageNumber 1) (gt $paginator.TotalPages $max_links) }}
     <li class="pagination__item pagination__item--first">
       <a class="pagination__link pagination__link--first" href="{{ $paginator.First.URL }}"><<</a>
     </li>
@@ -62,7 +62,7 @@
 
       <!-- Middle pages. -->
       {{ else }}
-        {{ if and ( ge .PageNumber (sub $paginator.PageNumber $adjacent_links) ) ( le .PageNumber (add $paginator.PageNumber $adjacent_links) ) }}
+        {{ if and (ge .PageNumber (sub $paginator.PageNumber $adjacent_links)) (le .PageNumber (add $paginator.PageNumber $adjacent_links)) }}
           {{ $.Scratch.Set "page-number-flag" "true" }}
         {{ end }}
       {{ end }}
@@ -91,7 +91,7 @@
   {{ end }}
   
   <!-- Last page. -->
-  {{ if ne $paginator.PageNumber $paginator.TotalPages }}
+  {{ if and (ne $paginator.PageNumber $paginator.TotalPages) (gt $paginator.TotalPages $max_links) }}
     <li class="pagination__item pagination__item--last">
       <a class="pagination__link pagination__link--last" href="{{ $paginator.Last.URL }}">>></a>
     </li>
