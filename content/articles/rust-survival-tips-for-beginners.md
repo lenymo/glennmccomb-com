@@ -20,8 +20,6 @@ The first thing to know about Rust is that you will die. A lot. And that's ok. I
 
 <small>**NOTE:** This article is written at the time of [devblog 192](https://rust.facepunch.com/blog/devblog-192/) and may be out of date and inaccurate after future updates.</small>
 
----
-
 ## Choosing a server
 
 In order to figure out the mechanics of the game a quiet server with less than 50 players is a good place to start. Intuition would suggest Facepunch's official servers are the safest place to start but they're riddled with cheaters and attract a less friendly crowd. 
@@ -29,8 +27,6 @@ In order to figure out the mechanics of the game a quiet server with less than 5
 A well maintained community server will keep tabs on cheaters and police players who are abusive or disrespectful. If you're playing on your own, look for solo/duo/trio servers as they restrict players to small groups and mean you'll avoid large clans and zergs.
 
 When you're learning the ropes other players are usually more hindrance than help so don't be scared to jump on an empty community server.
-
----
 
 ## The basics
 
@@ -47,8 +43,6 @@ These items help you farm resources, kill things and heal yourself. My preferred
 
 You'll notice I've left clothes off the list. At this early stage unless you're in the snow there's not much point using your cloth to craft clothes. You're better off saving it for a bow and sleeping bag (50 and 30 cloth respectively).
 
----
-
 ## Eating
 
 If you don't eat you will starve and die so finding food is important. There are a number of ways to satisfy your hunger:
@@ -62,9 +56,9 @@ If you don't eat you will starve and die so finding food is important. There are
 
 ### Naturally growing food
 
-The easiest of these is picking vegetables. Corn and pumpkins grow alongside rivers (usually near the river mouth), and mushrooms grow in the dirt in grassy areas. 
+The easiest of these is picking vegetables. Corn and pumpkins grow alongside rivers (usually near the river mouth), and mushrooms grow in the dirt in forested areas. 
 
-In the desert you will get a small amount of cloth, and cactus flesh when you bang on the right type of cactus with a rock / hatchet.
+In the desert you'll get a small amount of cloth and cactus flesh when you bang on cacti with a rock / hatchet.
 
 {{< article-body-full-bleed container="yes" >}}
 {{< row >}}

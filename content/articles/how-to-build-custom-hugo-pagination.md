@@ -16,8 +16,6 @@ I'll go through the code in depth but if you'd prefer to see the whole thing you
 
 Hugo's documentation is very good and I recommend you dive into the [pagination docs](https://gohugo.io/templates/pagination/) if you still have questions when you're finished here.
 
----
-
 ## Pagination the easy way
 
 If you're looking for basic pagination you can very easily use Hugo's default pagination template as follows:
@@ -35,8 +33,6 @@ If you're looking for basic pagination you can very easily use Hugo's default pa
 
 This uses Hugo's default pagination template and for most cases it's fine, but I wanted to control my markup and I'm not a fan of how it handles excess pages. If you'd like to learn how to build a custom solution, read on.
 
----
-
 ## Getting started with Hugo
 
 If you don't have a Hugo site yet, [it's very easy to set up](https://gohugo.io/getting-started/quick-start/) and I highly recommend it for projects large and small. If you've previously used a CMS such as WordPress, you'll be pleased to find that Hugo uses a lot of similar terminology.
@@ -52,8 +48,6 @@ Hugo defaults to 10 posts per page but for testing purposes I found it more prac
 {{< highlight yaml >}}
 paginate: 1
 {{< /highlight >}}
-
----
 
 ## Outputting posts
 
@@ -88,8 +82,6 @@ This will output the post title with a permalink and a [summary](https://gohugo.
 
 I'm using [bem](http://getbem.com/introduction/) for my CSS class names but you can use whatever you like. However, I recommend taking advantage of Hugo's [partial templates](https://gohugo.io/templates/partials/) for any repetitive blocks of HTML such as this because it allows the same markup to be shared across different Hugo listings (eg. the category and tag taxonomies).
 
----
-
 ## Custom pagination
 
 Up to this point the Hugo code we've written is very similar to [a standard list template](https://gohugo.io/templates/lists/#example-list-templates) but here's where things get interesting.
@@ -111,7 +103,7 @@ Next we'll use a Hugo <code>if</code> statement to make sure there's more than o
 
 Hugo if statements take some getting used to because they're structured differently to most web programming languages and they use shorthand for operators rather than the symbols you might be familiar with (for example gt instead of >).
 
-In languages suc has JavaScript or PHP the above code is written as:
+In languages such has JavaScript or PHP the above code is written as:
 
 {{< highlight js >}}
 if ($paginator.TotalPages > 1) {
@@ -119,7 +111,7 @@ if ($paginator.TotalPages > 1) {
 }
 {{< /highlight >}}
 
-As with most loops and conditionals in Hugo, the <code>if</code> statement is closed with <code>{{ end }}</code> rather than a closing curly brace.
+Note that in Hugo loops and conditionals are commonly closed with <code>{{ end }}</code> rather than a closing curly brace.
 
 ### Page numbers
 
@@ -226,8 +218,6 @@ This is all coming together nicely. For a short while, when I reached this point
 At this point I strongly considered abandoning my quest for custom pagination. Hugo's built-in pagination is really good and I could probably just use CSS to hide anything I didn't want. But no, I persisted.
 
 There's most likely a more concise way of coding this type of navigation so if you've got any suggestions hit me up in the comments.
-
----
 
 ## Smarter page numbers
 
@@ -429,7 +419,7 @@ Next, within our <code>{{ range $paginator.Pagers }}</code> loop, we'll use Hugo
 
 We need to use <code>.Scratch</code> here because Hugo variables which are declared within an <code>if</code> statement can't be accessed outside said statement. Variables on the scratchpad can be set and retrieved just like regular variables.
 
-<small>NOTE: I've used a string value for <code>"false"</code> because I couldn't get <code>false</code> to work. Not sure why.</small>
+<small><strong>NOTE:</strong> I've used a string value for <code>"false"</code> because I couldn't get <code>false</code> to work. Not sure why.</small>
 
 ### Simple page numbers
 
@@ -545,8 +535,6 @@ Here's the actual Hugo code:
 Ok we are finally here.
 
 {{< article-body-full-bleed container="yes" >}}
-
----
 
 ## The final code
 
