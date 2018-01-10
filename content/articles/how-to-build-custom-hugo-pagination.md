@@ -4,7 +4,7 @@ date: '2018-01-06T14:28:42+11:00'
 featured: /img/uploads/featured-image-article-hugo-pagination.jpg
 categories:
   - development
-featured_opacity: '25'
+featured_opacity: '0.2'
 dark_bg: true
 toc: true
 ---
