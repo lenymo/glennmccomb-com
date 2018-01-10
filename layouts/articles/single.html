@@ -21,6 +21,17 @@
           <article class="article-body">
             {{ .Content }}
           </article>
+
+          <div class="article-author">
+            <img src="/img/photo-glenn-mccomb.jpg" class="article-author__photo" alt="Glenn McComb">
+            <h3 class="article-author__name">
+              <a href="https://twitter.com/lenymo" class="article-author__name-link">Glenn McComb</a>
+            </h3>
+            <p class="article-author__date">
+              <span class="article-author__date-day">{{ .Date.Format "2" }}<sup class="article-author__date-day-suffix">{{ if in (slice 1 21 31) .Date.Day}}st{{ else if in (slice 2 22) .Date.Day}}nd{{ else if in (slice 3 23) .Date.Day}}rd{{ else }}th{{ end }}</sup></span> <span class="article-author__date-month">{{ .Date.Format "January" }}</span> <span class="article-author__date-year">{{ .Date.Format "2006" }}</span>
+            </p>
+          </div><!-- .article-author -->
+
         </div><!-- .col -->
       </div><!-- .row -->
     </div><!-- .container -->
@@ -30,18 +41,6 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-          
-          <div class="article-author">
-            <img src="/img/photo-glenn-mccomb.jpg" class="article-author__photo" alt="Glenn McComb">
-            <h3 class="article-author__name">
-              <a href="https://twitter.com/lenymo" class="article-author__name-link">Glenn McComb</a>
-            </h3>
-            <p class="article-author__date">
-              <span class="article-author__date-day">{{ .Date.Format "2" }}<sup class="article-author__date-day-suffix">{{ if in (slice 1 21 31) .Date.Day}}st{{ else if in (slice 2 22) .Date.Day}}nd{{ else if in (slice 3 23) .Date.Day}}rd{{ else }}th{{ end }}</sup></span> <span class="article-author__date-month">{{ .Date.Format "January" }}</span> <span class="article-author__date-year">{{ .Date.Format "2006" }}</span>
-            </p>
-          </div>
-
-          <hr>
 
           <div class="article-comments">
             <h2 class="article-comments__title">
