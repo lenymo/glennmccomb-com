@@ -46,8 +46,28 @@ pre {
       transition: all .1s ease;
 
       &:hover {
-        margin-right: -22.5vw;
+        margin-right: -16vw;
         max-width: 100vw;
+      }
+    }
+  }
+}
+
+@include respond-above(md) {
+  .-is-expandable {
+    pre {
+      &:hover {
+        margin-right: -20vw;
+      }
+    }
+  }
+}
+
+@include respond-above(lg) {
+  .-is-expandable {
+    pre {
+      &:hover {
+        margin-right: -22vw;
       }
     }
   }
