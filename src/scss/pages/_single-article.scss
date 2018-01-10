@@ -359,7 +359,18 @@ $article-header-padding-bottom-xl: $gutter * 6;
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .article-author {
+  border-top: 1px solid $hr-color;
   margin-bottom: $gutter * 2;
+  margin-top: $gutter * 2;
+  padding-top: $gutter * 2;
+}
+
+@include respond-above(sm) {
+  .article-author {
+    margin-bottom: $gutter * 3;
+    margin-top: $gutter * 3;
+    padding-top: $gutter * 3;
+  }
 }
 
 .article-author__photo {
