@@ -27,6 +27,42 @@ $article-header-padding-bottom-xl: $gutter * 6;
 
 
 //
+//  ARTICLE HEADINGS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.article-body {
+  h2 {
+    padding-top: $base-margin-bottom-xs;
+  }
+
+  h3 {
+    padding-top: $base-margin-bottom-xs * .75;
+  }
+
+  h4 {
+    padding-top: $base-margin-bottom-xs * .5;
+  }
+}
+
+@include respond-above(sm) {
+  .article-body {
+    h2 {
+      padding-top: $base-margin-bottom;
+    }
+
+    h3 {
+      padding-top: $base-margin-bottom * .75;
+    }
+
+    h4 {
+      padding-top: $base-margin-bottom * .5;
+    }
+  }
+}
+
+
+
+//
 //  ARTICLE HEADER
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
@@ -242,11 +278,6 @@ $article-header-padding-bottom-xl: $gutter * 6;
 
 .article-body {
   p {
-    // font-size: $article-font-size-xs;
-
-    // &.lead {
-    //   font-size: $lead-font-size-sm;
-    // }
 
     small {
       a {
@@ -264,15 +295,10 @@ $article-header-padding-bottom-xl: $gutter * 6;
     img {
       margin-bottom: $gutter / 4;
     }
-
-    // p {
-      // font-size: $small-font-size;
-    // }
   }
 
   ul,
   ol {
-    // font-size: $article-font-size-xs;
     margin-bottom: $base-margin-bottom-xs;
     margin-left: $gutter * 2;
 
@@ -296,18 +322,10 @@ $article-header-padding-bottom-xl: $gutter * 6;
       }
     }
   }
-
-  // blockquote {
-  //   font-size: $article-font-size-xs;
-  // }
 }
 
 @include respond-above(xs) {
   .article-body {
-    // p {
-    //   font-size: $article-font-size-sm;
-    // }
-
     img {
       margin-bottom: $base-margin-bottom;
     }
@@ -320,29 +338,14 @@ $article-header-padding-bottom-xl: $gutter * 6;
 
     ul,
     ol {
-      // font-size: $article-font-size-sm;
       margin-bottom: $base-margin-bottom;
 
       li {
         margin-bottom: $base-margin-bottom / 8;
       }
     }
-
-    // blockquote {
-    //   font-size: $article-font-size-sm;
-    // }
   }
 }
-
-// @include respond-above(sm) {
-//   .article-body {
-//     p {
-//       &.lead {
-//         font-size: $lead-font-size;
-//       }
-//     }
-//   }
-// }
 
 
 //
@@ -411,9 +414,3 @@ $article-header-padding-bottom-xl: $gutter * 6;
 .article-comments {
   clear: both;
 }
-
-// .site {
-//   .article-comments__title {
-//     padding-top: 0;
-//   }
-// }

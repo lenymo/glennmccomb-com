@@ -427,34 +427,10 @@ hr {
 
 .site {
   font-size: $site-content-font-size-xs;
-
-  h2 {
-    padding-top: $base-margin-bottom-xs;
-  }
-
-  h3 {
-    padding-top: $base-margin-bottom-xs * .75;
-  }
-
-  h4 {
-    padding-top: $base-margin-bottom-xs * .5;
-  }
 }
 
 @include respond-above(xs) {
   .site {
     font-size: $site-content-font-size-sm;
-
-    h2 {
-      padding-top: $base-margin-bottom;
-    }
-
-    h3 {
-      padding-top: $base-margin-bottom * .75;
-    }
-
-    h4 {
-      padding-top: $base-margin-bottom * .5;
-    }
   }
 }
