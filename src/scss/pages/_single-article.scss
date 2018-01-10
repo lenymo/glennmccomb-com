@@ -352,3 +352,53 @@ $article-header-padding-bottom-xl: $gutter * 6;
 .section__article-footer {
   background-color: $color-gray-f;
 }
+
+
+//
+//  AUTHOR
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.article-author {
+  margin-bottom: $gutter * 2;
+}
+
+.article-author__photo {
+  border-radius: 50%;
+  float: left;
+  max-width: 60px;
+  margin-right: $gutter;
+}
+
+.article-author__name {
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.article-author__date {
+  font-size: rem(16px);
+  margin-bottom: 0;
+  position: relative;
+}
+
+.article-author__date-day-suffix {
+  font-size: 50%;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+}
+
+
+
+//
+//  COMMENTS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.article-comments {
+  clear: both;
+}
+
+// .site {
+//   .article-comments__title {
+//     padding-top: 0;
+//   }
+// }
