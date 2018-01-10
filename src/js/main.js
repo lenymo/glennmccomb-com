@@ -12,5 +12,6 @@
   TableOfContents.init();
   ArticleSummaryHover.init();
   ObjectFitPolyfill.init();
+  ExpandableCodeBlocks.init();
   
 })();
