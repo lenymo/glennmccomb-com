@@ -1,6 +1,7 @@
 ---
 title: How to build custom Hugo pagination
 date: '2018-01-06T14:28:42+11:00'
+featured: /img/uploads/featured-image-article-hugo-pagination.jpg
 categories:
   - development
 toc: true
