@@ -8,7 +8,7 @@ featured_opacity: '0.2'
 dark_bg: true
 toc: true
 ---
-{{< lead >}}[Hugo](https://gohugo.io/) is an awesome feature-packed static site generator. It ships with a powerful default pagination template but if you're looking for full control, I'm going to demonstrate how to build custom pagination.{{< /lead >}}
+{{< lead >}}[Hugo](https://gohugo.io/) is an awesome feature-packed static site generator which is also free and open source. It ships with a powerful default pagination template but if you're looking for full control, I'm going to demonstrate how to build custom pagination.{{< /lead >}}
 
 
 ## Introduction
