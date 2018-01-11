@@ -289,9 +289,9 @@ Before I go any further I'll outline what I wanted to achieve:
 
 * A set number of page links either side of the current page (adjacent links).
 * The same number of overall page numbers showing at all times.
-* No dots between page numbers.
+* No dots between page numbers when there are a lot of page numbers.
 
-I also want to note that at this point in the article things get a little more intense in terms of Hugo coding. I'll try to break things down as much as possible but without some development experience it may be difficult to follow.
+I also want to note that at this point in the article the Hugo coding gets a little more intense. I'll try to break things down as much as possible but without some development experience it may be difficult to follow.
 
 ### What do smarter page numbers look like?
 
@@ -449,11 +449,11 @@ Below are some examples of how pagination would look if there are 10 pages with 
 
 Some notes about the logic of the above pagination:
 
-* Maximum number of pages to display can be found with <code>($adjacent_links * 2) + 1</code> which in this example is 5.
+* Maximum number of pages to display can be found with <code>($adjacent_links * 2) + 1</code> which in this example is 5. I will call this <code>$max_links</code>.
 * If the total number of pages doesn't exceed the maximum number of pages to display, there's no need for complicated pagination logic; all page numbers will be shown.
 * Pages 1-3 and 8-10 show the same group of page numbers but with a different active item. These pages are rendered differently to the middle pages.
-* The above "lower limit" pages can be identified as being less than or equal to <code>$adjacent_links + 1</code>.
-* The "upper limit" pages can be identified as being greater than or equal to <code>.TotalPages - $adjacent_links</code>.
+* The above "lower limit" pages (1-3) can be identified as being less than or equal to <code>$adjacent_links + 1</code>. I will call this threshold <code>$lower_limit</code>.
+* The "upper limit" pages (8-10) can be identified as being greater than or equal to <code>.TotalPages - $adjacent_links</code>. I will call this threshold <code>$upper_limit</code>.
 
 ### Coding smarter page numbers
 
@@ -473,9 +473,9 @@ To kick things off we will set up some config variables.
 {{ $upper_limit := (sub $paginator.TotalPages $adjacent_links) }}
 {{< /highlight >}}
 
-Much like <code>if</code> statements, arithmetic in Hugo is unituitive and takes some getting used to. I usually write an HTML comment above each line in more traditional terms as a gift to my future self.
+Much like <code>if</code> statements, Hugo arithmetic is unituitive and takes some getting used to. I usually write an HTML comment above each line in more traditional terms as a gift to my future self.
 
-Next, within our <code>{{ range $paginator.Pagers }}</code> loop, we'll use Hugo's [scratchpad](https://gohugo.io/functions/scratch/) to store a boolean page number flag. This will be used to show / hide page numbers. It will be set to false by default.
+Next, within our <code>{{ range $paginator.Pagers }}</code> loop, we'll use Hugo's [scratchpad](https://gohugo.io/functions/scratch/) to store a boolean page number flag. This will be used to show / hide page numbers and it will be set to false by default (i.e. hidden). 
 
 {{< highlight html >}}
 {{ range $paginator.Pagers }}
@@ -483,13 +483,13 @@ Next, within our <code>{{ range $paginator.Pagers }}</code> loop, we'll use Hugo
 {{ end }}
 {{< /highlight >}}
 
-We need to use <code>.Scratch</code> here because Hugo variables which are declared within an <code>if</code> statement can't be accessed outside said statement. Variables on the scratchpad can be set and retrieved just like regular variables.
+Why are we using <code>.Scratch</code> here? Because Hugo variables which are declared within an <code>if</code> statement can't be accessed outside the scope of said statement. Variables on the scratchpad can be set and retrieved just like regular variables.
 
 <small><strong>NOTE:</strong> I've used a string value for <code>"false"</code> because I couldn't get <code>false</code> to work. Not sure why.</small>
 
 ### Simple page numbers
 
-We then need to determine whether advanced logic is required to hide page numbers. If the total number of pages is greater than the maximum number of links to show (<code>$max_links</code>) we will use advanced logic.
+We then need to determine whether complex logic is required to hide page numbers. If the total number of pages is greater than the maximum number of links to show (<code>$max_links</code>) we will use complex logic.
 
 {{< highlight html >}}
 {{ range $paginator.Pagers }}
@@ -497,7 +497,7 @@ We then need to determine whether advanced logic is required to hide page number
 
   {{ if gt $paginator.TotalPages $max_links }}
 
-    <!-- Logic for advanced page numbers (see below). -->
+    <!-- Logic for complex page numbers (see below). -->
 
   {{ else }}
 
@@ -517,7 +517,7 @@ We then need to determine whether advanced logic is required to hide page number
 
 For the simple page numbers we will set the <code>page-number-flag</code> to true for all items in the <code>{{ range }}</code> loop since we want them all to show.
 
-When the scratch flag is true, we will output the page numbers using the same code from our more basic code above.
+When the scratch flag variable is true, we will output the page number HTML using the same markup as before.
 
 ### Advanced page numbers
 
@@ -548,7 +548,7 @@ From here we need to ensure that only necessary pages are shown for each of the 
 
 #### Lower limit page numbers
 
-The lower limit page numbers are very straight forward. We want to show pages from 1 to <code>$max_links</code>.
+The lower limit page numbers are very straight forward. We want to show pages from 1 to <code>$max_links</code> which in our working example is 5.
 
 {{< highlight html >}}
 <!-- If the current loop page is less than max_links. -->
@@ -559,7 +559,7 @@ The lower limit page numbers are very straight forward. We want to show pages fr
 
 #### Upper limit page numbers
 
-These are only slightly more complicated. We want to grab everything above <code>.TotalPages - $max_links</code>.
+These are only slightly more complicated. We want to identify all page numbers above <code>.TotalPages - $max_links</code>.
 
 {{< highlight html >}}
 <!-- If the current loop page is greater than total pages minus $max_links -->
@@ -601,8 +601,6 @@ Here's the actual Hugo code:
 Ok we are finally here.
 
 ## The final code
-
-There's most likely a more concise way of coding this type of navigation so if you've got any suggestions hit me up in the comments.
 
 {{< highlight html >}}
 
@@ -746,6 +744,8 @@ There's most likely a more concise way of coding this type of navigation so if y
 {{ end }}
 
 {{< /highlight >}}
+
+There's most likely a more concise way of coding this type of navigation so if you have any suggestions hit me up in the comments.
 
 ## Further reading
 
