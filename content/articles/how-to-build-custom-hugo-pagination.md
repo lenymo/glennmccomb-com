@@ -479,13 +479,11 @@ Next, within our <code>{{ range $paginator.Pagers }}</code> loop, we'll use Hugo
 
 {{< highlight html >}}
 {{ range $paginator.Pagers }}
-  {{ $.Scratch.Set "page-number-flag" "false" }}
+  {{ $.Scratch.Set "page_number_flag" false }}
 {{ end }}
 {{< /highlight >}}
 
 Why are we using <code>.Scratch</code> here? Because Hugo variables which are declared within an <code>if</code> statement can't be accessed outside the scope of said statement. Variables on the scratchpad can be set and retrieved just like regular variables.
-
-<small><strong>NOTE:</strong> I've used a string value for <code>"false"</code> because I couldn't get <code>false</code> to work. Not sure why.</small>
 
 ### Simple page numbers
 
@@ -493,7 +491,7 @@ We then need to determine whether complex logic is required to hide page numbers
 
 {{< highlight html >}}
 {{ range $paginator.Pagers }}
-  {{ $.Scratch.Set "page-number-flag" "false" }}
+  {{ $.Scratch.Set "page_number_flag" false }}
 
   {{ if gt $paginator.TotalPages $max_links }}
 
@@ -501,11 +499,11 @@ We then need to determine whether complex logic is required to hide page numbers
 
   {{ else }}
 
-    {{ $.Scratch.Set "page-number-flag" "true" }}
+    {{ $.Scratch.Set "page_number_flag" true }}
 
   {{ end }}
 
-  {{ if eq ($.Scratch.Get "page-number-flag") "true" }}
+  {{ if eq ($.Scratch.Get "page_number_flag") true }}
     <li class="pagination__item{{ if eq . $paginator }} pagination__item--current{{ end }}">
       <a href="{{ .URL }}" class="pagination__link">
         {{ .PageNumber }}
@@ -515,7 +513,7 @@ We then need to determine whether complex logic is required to hide page numbers
 {{ end }}
 {{< /highlight >}}
 
-For the simple page numbers we will set the <code>page-number-flag</code> to true for all items in the <code>{{ range }}</code> loop since we want them all to show.
+For the simple page numbers we will set the <code>page_number_flag</code> to true for all items in the <code>{{ range }}</code> loop since we want them all to show.
 
 When the scratch flag variable is true, we will output the page number HTML using the same markup as before.
 
@@ -544,7 +542,7 @@ As for the advanced page number links, we can use an <code>if</code> statement t
 {{ end }}
 {{< /highlight >}}
 
-From here we need to ensure that only necessary pages are shown for each of the three scenarios by setting the <code>page-number-flag</code> to true.
+From here we need to ensure that only necessary pages are shown for each of the three scenarios by setting the <code>page_number_flag</code> to true.
 
 #### Lower limit page numbers
 
@@ -553,7 +551,7 @@ The lower limit page numbers are very straight forward. We want to show pages fr
 {{< highlight html >}}
 <!-- If the current loop page is less than max_links. -->
 {{ if le .PageNumber $max_links }}
-  {{ $.Scratch.Set "page-number-flag" "true" }}
+  {{ $.Scratch.Set "page_number_flag" true }}
 {{ end }}
 {{< /highlight >}}
 
@@ -564,7 +562,7 @@ These are only slightly more complicated. We want to identify all page numbers a
 {{< highlight html >}}
 <!-- If the current loop page is greater than total pages minus $max_links -->
 {{ if gt .PageNumber (sub $paginator.TotalPages $max_links) }}
-  {{ $.Scratch.Set "page-number-flag" "true" }}
+  {{ $.Scratch.Set "page_number_flag" true }}
 {{ end }}
 {{< /highlight >}}
 
@@ -594,7 +592,7 @@ Here's the actual Hugo code:
 
 {{< highlight html >}}
 {{ if and ( ge .PageNumber (sub $paginator.PageNumber $adjacent_links) ) ( le .PageNumber (add $paginator.PageNumber $adjacent_links) ) }}
-  {{ $.Scratch.Set "page-number-flag" "true" }}
+  {{ $.Scratch.Set "page_number_flag" true }}
 {{ end }}
 {{< /highlight >}}
 
@@ -667,7 +665,7 @@ Ok we are finally here.
     <!-- Page numbers. -->
     {{ range $paginator.Pagers }}
     
-      {{ $.Scratch.Set "page-number-flag" "false" }}
+      {{ $.Scratch.Set "page_number_flag" false }}
 
       
       <!-- Advanced page numbers. -->
@@ -680,7 +678,7 @@ Ok we are finally here.
 
           <!-- If the current loop page is less than max_links. -->
           {{ if le .PageNumber $max_links }}
-            {{ $.Scratch.Set "page-number-flag" "true" }}
+            {{ $.Scratch.Set "page_number_flag" true }}
           {{ end }}
 
 
@@ -690,7 +688,7 @@ Ok we are finally here.
 
           <!-- If the current loop page is greater than total pages minus $max_links -->
           {{ if gt .PageNumber (sub $paginator.TotalPages $max_links) }}
-            {{ $.Scratch.Set "page-number-flag" "true" }}
+            {{ $.Scratch.Set "page_number_flag" true }}
           {{ end }}
 
 
@@ -698,7 +696,7 @@ Ok we are finally here.
         {{ else }}
           
           {{ if and ( ge .PageNumber (sub $paginator.PageNumber $adjacent_links) ) ( le .PageNumber (add $paginator.PageNumber $adjacent_links) ) }}
-            {{ $.Scratch.Set "page-number-flag" "true" }}
+            {{ $.Scratch.Set "page_number_flag" true }}
           {{ end }}
 
         {{ end }}
@@ -707,12 +705,12 @@ Ok we are finally here.
       <!-- Simple page numbers. -->
       {{ else }}
 
-        {{ $.Scratch.Set "page-number-flag" "true" }}
+        {{ $.Scratch.Set "page_number_flag" true }}
 
       {{ end }}
 
       <!-- Output page numbers. -->
-      {{ if eq ($.Scratch.Get "page-number-flag") "true" }}
+      {{ if eq ($.Scratch.Get "page_number_flag") true }}
         <li class="pagination__item{{ if eq . $paginator }} pagination__item--current{{ end }}">
           <a href="{{ .URL }}" class="pagination__link">
             {{ .PageNumber }}

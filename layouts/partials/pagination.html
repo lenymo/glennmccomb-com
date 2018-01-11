@@ -36,7 +36,7 @@
   {{ range $paginator.Pagers }}
 
     <!-- Page number flag. -->
-    {{ $.Scratch.Set "page-number-flag" "false" }}
+    {{ $.Scratch.Set "page_number_flag" false }}
 
     <!-- Complex pagination. -->
     <!-- If there are more pages than the max page numbers allowed. -->
@@ -48,7 +48,7 @@
 
         <!-- If the current loop page is less than max_links. -->
         {{ if le .PageNumber $max_links }}
-          {{ $.Scratch.Set "page-number-flag" "true" }}
+          {{ $.Scratch.Set "page_number_flag" true }}
         {{ end }}
 
       <!-- Upper limit pages. -->
@@ -57,23 +57,23 @@
 
         <!-- If the current loop page is greater than total pages minus $max_links -->
         {{ if gt .PageNumber (sub $paginator.TotalPages $max_links) }}
-          {{ $.Scratch.Set "page-number-flag" "true" }}
+          {{ $.Scratch.Set "page_number_flag" true }}
         {{ end }}
 
       <!-- Middle pages. -->
       {{ else }}
         {{ if and (ge .PageNumber (sub $paginator.PageNumber $adjacent_links)) (le .PageNumber (add $paginator.PageNumber $adjacent_links)) }}
-          {{ $.Scratch.Set "page-number-flag" "true" }}
+          {{ $.Scratch.Set "page_number_flag" true }}
         {{ end }}
       {{ end }}
 
     <!-- Simple pagination. -->
     {{ else }}
-      {{ $.Scratch.Set "page-number-flag" "true" }}
+      {{ $.Scratch.Set "page_number_flag" true }}
     {{ end }}
 
     <!-- If a page number link should be drawn. -->
-    {{ if eq ($.Scratch.Get "page-number-flag") "true" }}
+    {{ if eq ($.Scratch.Get "page_number_flag") true }}
       <li class="pagination__item pagination__item--{{ .PageNumber }}{{ if eq . $paginator }} pagination__item--current{{ end }}">
         <a href="{{ .URL }}" class="pagination__link pagination__link--{{ .PageNumber }}{{ if eq . $paginator }} pagination__link--current{{ end }}">
           {{ .PageNumber }}
