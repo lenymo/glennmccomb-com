@@ -8,12 +8,12 @@ featured_opacity: '0.2'
 dark_bg: true
 toc: true
 ---
-{{< lead >}}[Hugo](https://gohugo.io/) is an awesome feature-packed static site generator which is also free and open source. It ships with a powerful default pagination template but if you're looking for full control, I'm going to demonstrate how to build custom pagination.{{< /lead >}}
+{{< lead >}}[Hugo](https://gohugo.io/) is an awesome feature-packed static site generator which is also open source and free. It ships with a default pagination template but if you're looking for full control, I'm going to demonstrate how to build custom pagination.{{< /lead >}}
 
 
 ## Introduction
 
-If you'd like to understand more about Hugo pagination you've come to the right place. My focus here is Hugo so I won't be writing CSS and I'll use as little HTML as possible. I'll be using some basic JavaScript examples to help explain Hugo's syntax but JavaScript experience is unnecessary.
+My focus here is Hugo so I won't be writing CSS and I'll use as little HTML as possible. I'll be using some basic JavaScript examples to help explain Hugo's syntax but JavaScript experience is unnecessary.
 
 Things do get a little heavy towards the end but I'll go through the code in detail so it should all make sense. If you'd like to see the whole thing, skip ahead to <a href="#the-final-code">the final code</a>.
 
@@ -38,11 +38,11 @@ If you're also keen to build a custom solution &mdash; and learn more about Hugo
 
 ## Getting started with Hugo
 
-If you don't have a Hugo site yet, [it's very easy to set up](https://gohugo.io/getting-started/quick-start/) and I highly recommend it for projects large and small. If you've previously used a CMS such as WordPress you'll be pleased to find that Hugo uses a lot of similar terminology.
+If you don't have a Hugo site yet, [it's very easy to set up](https://gohugo.io/getting-started/quick-start/) and I highly recommend it for projects large and small. If you have experience using a CMS such as WordPress you'll be pleased to find that Hugo uses a lot of similar terminology.
 
 ### Adding posts
 
-In order to test pagination you'll need some content on your site. If you're in the early stages of development, add some dummy posts to help generate multiple pages.
+In order to test pagination you'll need some content on your site. If you're in the early stages of development, add some dummy posts to your <code>/content/</code> directory to help generate multiple pages.
 
 ### Setting the number of posts per page
 
@@ -52,7 +52,7 @@ Hugo defaults to 10 posts per page but for testing purposes I found it more prac
 paginate: 1
 {{< /highlight >}}
 
-Remember to change it back when you're done.
+Remember to change it back when you're done testing.
 
 ## Outputting posts
 
@@ -66,7 +66,7 @@ Next within <code>index.html</code> we'll create a custom variable to handle pag
 
 This is similar to a WordPress query and it sets up a <code>.Paginate</code> object containing all posts matching the <code>where</code> statement. This will be used to output posts using Hugo's [range function](https://gohugo.io/functions/range/), which is roughly equivalent to a <code>for</code> or <code>while</code> loop.
 
-Note that I've used "posts" as the content name, but that this could be anything (for my site I used "articles"). It should be the same as the directory name in your Hugo <code>/content/</code> directory for example <code>/content/<strong>posts</strong>/</code>.
+Note that in this example I've used "posts" as the content name but it can be anything (for my site I used "articles"). It should be the same as the directory name in your Hugo <code>/content/</code> folder, for example <code>/content/<strong>posts</strong>/</code>.
 
 Here's how we iterate over the <code>.Paginate</code> object:
 
@@ -102,13 +102,13 @@ First we assign the <code>.Paginator</code> object to a <code>$paginator</code> 
 Notice that this is different to the <code>.Paginate</code> object which is used to output posts.
 
 Next we'll use a Hugo <code>if</code> statement to make sure there's more than one page before we start outputting page numbers.
-{{< highlight hugo >}}
+{{< highlight html >}}
 {{ if gt $paginator.TotalPages 1 }}
-  {{ # Page number code goes here. }}
+  <!-- Page number code goes here. -->
 {{ end }}
 {{< /highlight >}}
 
-Hugo if statements take some getting used to because they're structured differently to most web programming languages and they use shorthand for operators rather than the symbols you might be familiar with (for example gt instead of >).
+Hugo <code>if</code> statements take some getting used to because they're structured differently to most web programming languages and they use shorthand for operators rather than the symbols you might be familiar with (for example gt instead of >).
 
 In languages such has JavaScript or PHP the above code is written as:
 
@@ -120,7 +120,7 @@ if ($paginator.TotalPages > 1) {
 
 ### Page numbers
 
-Next, from within our <code>if</code> statement, we loop through the page numbers using the range function.
+Next, from within our <code>if</code> statement, we loop through the page numbers using the <code>range</code> function.
 
 {{< highlight html >}}
 <ul class="pagination">
@@ -134,27 +134,23 @@ Next, from within our <code>if</code> statement, we loop through the page number
 </ul>
 {{< /highlight >}}
 
-This will output page numbers and it's a good start, but we should let our users know which page they're on.
+This outputs page numbers and it's a good start, but we should let our users know which page they're on.
 
-Here I've added an active class to the list item.
+Here I've added an active class to the list item which will appear only on the current page.
 
 {{< highlight html >}}
 <li class="pagination__item{{ if eq . $paginator }} pagination__item--current{{ end }}">
 {{< /highlight >}}
 
-Let's zero in on that <code>if</code> statement.
+Let's zero in on that Hugo <code>if</code> statement.
 
 {{< highlight html >}}
 {{ if eq . $paginator }} pagination__item--current{{ end }}
 {{< /highlight >}}
 
-Firstly, it's important to understand that in Hugo, when you're within a range function, the <code>.</code> is roughly equivalent to <code>this</code> in JavaScript. It is the value of the current item in the loop. You can learn more about [context in Hugo here](https://gohugo.io/templates/introduction/#context-aka-the-dot).
+Firstly, it's important to understand that in Hugo, when you're within a range function, the <code>.</code> is roughly equivalent to <code>this</code> in JavaScript. It refers to the current item in the loop. You can learn more about [context in Hugo here](https://gohugo.io/templates/introduction/#context-aka-the-dot).
 
-In this case <code>$paginator</code> will be equal to whatever page the user is currently viewing. When output, it's actual value is "Pager 1" if you're on page one. Similarly, the page item within the loop &mdash; represented by <code>.</code> &mdash; has the value of "Pager X" while <code>range</code> iterates through "X" number of pages.
-
-So in other words: "if the current loop item is the same as the current page we're on... add a class."
-
-Great, that's looking better.
+In this case <code>$paginator</code> will be equal to whatever page the user is currently viewing. When output, its actual value is "Pager 1" if you're on page one. Similarly, the page item within the loop &mdash; represented by <code>.</code> &mdash; has the value of "Pager 1" or "Pager 2".
 
 ### Next and previous page links
 
@@ -188,7 +184,7 @@ The next page link is output in much the same way:
 
 ### First and last page links
 
-I'm not 100% convinced that first and last page links are essential to usable pagination, but adding them is relatively easy. Hugo doesn't have an equivalent to <code>.HasPrev</code> or <code>.HasNext</code> but the logic is the same: they probably shouldn't show up on the first and last pages respectively.
+I'm not 100% convinced that first and last page links are essential to usable pagination, but adding them is relatively easy. Hugo doesn't have a first and last equivalent to <code>.HasPrev</code> and <code>.HasNext</code> but the logic is the same: they probably shouldn't appear on the first and last pages respectively.
 
 We can write a simple <code>if</code> statement to ensure the first page link is only shown if the user is <em>not</em> on the first page:
 
@@ -204,7 +200,7 @@ We can write a simple <code>if</code> statement to ensure the first page link is
 
 The first page link can be accessed via <code>$paginator.First.URL</code>.
 
-We can run a similar check to make sure the last page button isn't shown on the last page:
+We can run a similar check to make sure the last page link isn't shown on the last page:
 
 {{< highlight html >}}
   {{ if ne $paginator.PageNumber $paginator.TotalPages }}
@@ -279,9 +275,9 @@ This is coming together nicely. Here's what we have so far:
 
 ### The limitations of this code
 
-For a short while, when I reached this point, I thought I had my custom pagination all sorted. But there are issues with what we've written. There's nothing to stop page numbers being output indefinitely. That's fine if there are 10 pages, but what if there are 20 or 50?
+For a short while when I reached this point I thought I had my custom pagination all sorted. But there are issues with what we've written. There's nothing to stop page numbers being output indefinitely which is fine if there are 10 pages. But what if there are 20... or 50?
 
-At this point I strongly considered abandoning my quest for custom pagination. Hugo's built-in pagination is really good and I could probably just hide anything I didn't want using CSS. But no, I pressed on.
+At this point I strongly considered abandoning my quest for custom pagination. Hugo's built-in pagination is really good and I could probably hide anything I didn't want using CSS. But no, I pressed on.
 
 ## Smarter page numbers
 
@@ -291,7 +287,7 @@ Before I go any further I'll outline what I wanted to achieve:
 * The same number of overall page numbers showing at all times.
 * No dots between page numbers when there are a lot of page numbers.
 
-I also want to note that at this point in the article the Hugo coding gets a little more intense. I'll try to break things down as much as possible but without some development experience it may be difficult to follow.
+I also want to note that at this point in the article the Hugo coding gets a little more intense. I'll try to break things down as much as possible but depending on your development experience it may be difficult to follow.
 
 ### What do smarter page numbers look like?
 
@@ -447,10 +443,12 @@ Below are some examples of how pagination would look if there are 10 pages with 
   </ul>
 </nav>
 
+<small><strong>NOTE:</strong> Orange = current page</small>
+
 Some notes about the logic of the above pagination:
 
 * Maximum number of pages to display can be found with <code>($adjacent_links * 2) + 1</code> which in this example is 5. I will call this <code>$max_links</code>.
-* If the total number of pages doesn't exceed the maximum number of pages to display, there's no need for complicated pagination logic; all page numbers will be shown.
+* If the total number of pages doesn't exceed the maximum number of pages to display (<code>$max_links</code>), there's no need for complicated pagination logic; all page numbers will be shown.
 * Pages 1-3 and 8-10 show the same group of page numbers but with a different active item. These pages are rendered differently to the middle pages.
 * The above "lower limit" pages (1-3) can be identified as being less than or equal to <code>$adjacent_links + 1</code>. I will call this threshold <code>$lower_limit</code>.
 * The "upper limit" pages (8-10) can be identified as being greater than or equal to <code>.TotalPages - $adjacent_links</code>. I will call this threshold <code>$upper_limit</code>.
@@ -483,7 +481,7 @@ Next, within our <code>{{ range $paginator.Pagers }}</code> loop, we'll use Hugo
 {{ end }}
 {{< /highlight >}}
 
-Why are we using <code>.Scratch</code> here? Because Hugo variables which are declared within an <code>if</code> statement can't be accessed outside the scope of said statement. Variables on the scratchpad can be set and retrieved just like regular variables.
+Why are we using <code>.Scratch</code> here? Because Hugo variables which are declared within an <code>if</code> statement can't be accessed outside of said <code>if</code> statement. Variables on the scratchpad aren't bound be these limitations and can be set and retrieved just like regular variables.
 
 ### Simple page numbers
 
@@ -493,10 +491,12 @@ We then need to determine whether complex logic is required to hide page numbers
 {{ range $paginator.Pagers }}
   {{ $.Scratch.Set "page_number_flag" false }}
 
+  <!-- Complex page numbers. -->
   {{ if gt $paginator.TotalPages $max_links }}
 
     <!-- Logic for complex page numbers (see below). -->
 
+  <!-- Simple page numbers. -->
   {{ else }}
 
     {{ $.Scratch.Set "page_number_flag" true }}
@@ -517,9 +517,9 @@ For the simple page numbers we will set the <code>page_number_flag</code> to tru
 
 When the scratch flag variable is true, we will output the page number HTML using the same markup as before.
 
-### Advanced page numbers
+### Complex page numbers
 
-As for the advanced page number links, we can use an <code>if</code> statement to check for lower limit links, upper limit links and lastly middle page links.
+As for the complex page number links, we can use an <code>if</code> statement to check for lower limit links, upper limit links and middle page links.
 
 {{< highlight html >}}
 <!-- Lower limit pages. -->
@@ -542,7 +542,7 @@ As for the advanced page number links, we can use an <code>if</code> statement t
 {{ end }}
 {{< /highlight >}}
 
-From here we need to ensure that only necessary pages are shown for each of the three scenarios by setting the <code>page_number_flag</code> to true.
+From here we need to ensure that only the necessary pages are shown for each of the three scenarios by setting the <code>page_number_flag</code> to true.
 
 #### Lower limit page numbers
 
@@ -596,7 +596,7 @@ Here's the actual Hugo code:
 {{ end }}
 {{< /highlight >}}
 
-Ok we are finally here.
+Great, let's check out the whole thing.
 
 ## The final code
 
@@ -744,6 +744,16 @@ Ok we are finally here.
 {{< /highlight >}}
 
 There's most likely a more concise way of coding this type of navigation so if you have any suggestions hit me up in the comments.
+
+## What next?
+
+### A pagination partial
+
+To take this to the next level I highly recommend moving the page numbers section of your code in to a [Hugo partial](https://gohugo.io/templates/partials/) in <code>/layouts/partials/</code> and calling it something imaginative like <code>pagination.html</code>.
+
+This means your pagination code can be re-used in other places around your site such as a <code>/posts/</code> page, category page or taxonomy page. Hugo is smart enough to know which kind of posts to show on these pages.
+
+Your partial can be called via <code>{{ partial "pagination.html" . }}</code> but it will only work if you output your posts using <code>.Paginate</code> in the template where you call it.
 
 ## Further reading
 
