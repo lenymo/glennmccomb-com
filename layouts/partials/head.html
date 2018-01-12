@@ -23,6 +23,29 @@
   <link rel="icon" type="image/png" href="/img/favicon/favicon-32x32.png" sizes="32x32">
   <meta name="msapplication-TileImage" content="/img/favicon/mstile-144x144.png">
 
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@lenymo">
+  <meta property="og:type" content="website" />
+  <meta content="{{ .Permalink }}" property="og:url" />
+  <meta content="{{ .Permalink }}" property="twitter:url" />
+  <meta name="twitter:title" property="og:title" content="{{ .Title }}" />
+  {{ with .Params.featured }}
+  <meta property="og:image" content="{{ . }}" />
+  <meta name="twitter:image" content="{{ . }}" />
+  {{ end }}
+  <!-- Articles. -->
+  {{ if and (eq .Type "articles") (eq .Kind "page") }}
+    {{ $truncated := .Summary | truncate 190 "" }}
+    {{ $summary := .Summary | markdownify }}
+    <meta name="description" content="{{ if gt (len .Summary | markdownify ) (len $truncated | markdownify) }}{{ $truncated }}...{{ else }}{{ $summary }}{{ end }}" />
+    <meta name="twitter:description" property="og:description" content="{{ if gt (len .Summary | markdownify ) (len $truncated | markdownify) }}{{ $truncated }}...{{ else }}{{ $summary }}{{ end }}" />
+  <!-- Everything else. -->
+  {{ else }}
+    <meta name="description" content="{{ .Site.Title }}" />
+    <meta name="twitter:description" property="og:description" content="{{ .Site.Title }}" />
+  {{ end }}
+
+
   {{ with .Params.featured_opacity }}
   <style type="text/css">
     .page-header__featured-image {
