@@ -13,7 +13,7 @@ toc: true
 
 ## Introduction
 
-My focus here is Hugo so I won't be writing CSS and I'll use as little HTML as possible. I'll be using some basic JavaScript examples to help explain Hugo's syntax but JavaScript experience is unnecessary.
+My focus in this tutorial is Hugo, so I won't be writing CSS and I'll use as little HTML as possible. I'll be using some basic JavaScript examples to help explain Hugo's syntax but JavaScript experience is unnecessary.
 
 Things do get a little heavy towards the end but I'll go through the code in detail so it should all make sense. If you'd like to see the whole thing, skip ahead to <a href="#the-final-code">the final code</a>.
 
