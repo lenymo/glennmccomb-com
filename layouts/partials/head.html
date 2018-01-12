@@ -22,17 +22,26 @@
   <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/img/favicon/apple-touch-icon-152x152.png">
   <link rel="icon" type="image/png" href="/img/favicon/favicon-32x32.png" sizes="32x32">
   <meta name="msapplication-TileImage" content="/img/favicon/mstile-144x144.png">
-
+  
+  {{ if and (eq .Type "articles") (eq .Kind "page") }}
+  <meta name="twitter:card" content="summary_large_image">
+  {{ else }}
   <meta name="twitter:card" content="summary">
+  {{ end }}
   <meta name="twitter:site" content="@lenymo">
+  <meta name="twitter:creator" content="@lenymo">
   <meta property="og:type" content="website" />
   <meta content="{{ .Permalink }}" property="og:url" />
   <meta content="{{ .Permalink }}" property="twitter:url" />
   <meta name="twitter:title" property="og:title" content="{{ .Title }}" />
+  
+  <!-- Featured image. -->
   {{ with .Params.featured }}
   <meta property="og:image" content="{{ . }}" />
   <meta name="twitter:image" content="{{ . }}" />
   {{ end }}
+  
+  <!-- Description. -->
   <!-- Articles. -->
   {{ if and (eq .Type "articles") (eq .Kind "page") }}
     {{ $truncated := .Summary | truncate 190 "" }}
