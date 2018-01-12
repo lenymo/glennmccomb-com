@@ -747,9 +747,7 @@ There's most likely a more concise way of coding this type of navigation so if y
 
 ## What next?
 
-### A pagination partial
-
-To take this to the next level I highly recommend moving the page numbers section of your code in to a [Hugo partial](https://gohugo.io/templates/partials/) in <code>/layouts/partials/</code> and calling it something imaginative like <code>pagination.html</code>.
+To take this to the next level I recommend moving the page numbers section of your code in to a [Hugo partial](https://gohugo.io/templates/partials/) in <code>/layouts/partials/</code> and calling it something imaginative like <code>pagination.html</code>.
 
 This means your pagination code can be re-used in other places around your site such as a <code>/posts/</code> page, category page or taxonomy page. Hugo is smart enough to know which kind of posts to show on these pages.
 
