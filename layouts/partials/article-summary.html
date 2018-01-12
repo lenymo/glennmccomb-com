@@ -34,7 +34,7 @@
         
 
         <p class="article-summary__excerpt">
-          {{ $truncated := .Summary | truncate 200 "" }}
+          {{ $truncated := .Summary | truncate 160 "" }}
           {{ $summary := .Summary | markdownify }}
 
           {{ if gt (len .Summary | markdownify ) (len $truncated | markdownify) }}
