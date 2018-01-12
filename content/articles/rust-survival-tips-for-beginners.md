@@ -32,11 +32,11 @@ When you're learning the ropes other players are usually more hindrance than hel
 
 Once you've banged on a few trees and [nodes](http://rust.wikia.com/wiki/Rocks) with your rock and collected some hemp (cloth) there are a few items you'll want to craft:
 
-* [Stone Hatchet](http://rust.wikia.com/wiki/Stone_Hatchet) <small>200 wood, 100 stone</small>
-* [Stone Pick Axe](http://rust.wikia.com/wiki/Stone_Pick_Axe) <small>200 wood, 100 stone</small>
-* [Bow](http://rust.wikia.com/wiki/Hunting_Bow) <small>200 wood, 50 cloth</small>
+* [Stone Hatchet](https://rustlabs.com/item/stone-hatchet) <small>200 wood, 100 stone</small>
+* [Stone Pick Axe](https://rustlabs.com/item/stone-pickaxe) <small>200 wood, 100 stone</small>
+* [Bow](https://rustlabs.com/item/hunting-bow) <small>200 wood, 50 cloth</small>
 * [Arrows](http://rust.wikia.com/wiki/Wooden_Arrow) <small>25 wood, 10 stone</small>
-* [Wooden spear](http://rust.wikia.com/wiki/Wooden_Spear) <small>300 wood</small>
+* [Wooden spear](https://rustlabs.com/item/wooden-arrow) <small>300 wood</small>
 * [Bandages](http://rust.wikia.com/wiki/Bandage) <small>4 cloth</small>
 
 These items help you farm resources, kill things and heal yourself. My preferred weapon is the bow but the spear is handy for close quarters combat and for popping barrels. Press "G" to see the world map and figure out where you are.
@@ -77,7 +77,21 @@ Food containers are a great kick start but the monuments and mines that they gro
 
 ### Animals
 
-Killing animals is tricky because the majority of them will either run away faster than you can chase them or fight back with often fatal consequences. Even boars can kill you if all you have is your rock. If you manage to kill an animal, for maximum yield, butcher it with a [bone knife](http://rust.wikia.com/wiki/Bone_Knife) which you can craft for 30 bone fragments.
+Killing animals is tricky because the majority of them will either run away faster than you can chase them or fight back with often fatal consequences. Even boars can kill you if all you have is your rock. If you manage to kill an animal, for maximum yield, butcher it with a [bone knife](http://rust.wikia.com/wiki/Bone_Knife) which you can craft for 30 bone fragments. 
+
+Depending on their size you'll get a varying amount of animal fat which you can combine with cloth to craft low grade fuel which is a vital early game resource.
+
+#### Killing animals
+
+The easiest way to kill an animal is with a [hunting bow](https://rustlabs.com/item/hunting-bow) and the easiest animal to kill is a [boar](http://rust.wikia.com/wiki/Boar). They give you lots of meat and animal fat and they run at roughly the same speed as you so if you hit one with an arrow, you can chase it and with practice land a few more arrows in it.
+
+#### Wolves and Bears
+
+Until you get a bow you don't want to mess with these guys. A short range melee weapon like a sword or cleaver can dispose of a [wolf](http://rust.wikia.com/wiki/Wolf) but it's far from a sure thing. What you need to do is launch an arrow at them while standing on a relatively high rock. Then even if they come right up to you they (hopefully) won't be able to reach you. Then you can easily bow them down. It does take some practice to find the right sized rock.
+
+Alternatively, if you have a [building plan](http://rust.wikia.com/wiki/Building_Plan) you can build a foundation above the ground and bow one down from up there. Again it's tricky to get your foundation high enough that you can jump on it but not high enough for a bear or wolf to reach you. 
+
+[Bears](http://rust.wikia.com/wiki/Bear) are what you want and eventually your eyes will light up if you see one in the early game because they will fast-track you to the <a href="#crafting-a-furnace">crafting a furnace</a> stage.
 
 ### Fishing
 
@@ -99,30 +113,40 @@ The problem with fishing is that while you're waiting to catch a fish, any other
 
 A few key objectives in the early game:
 
-1. Find an area to build
-2. Get a sleeping bag and stash down
-3. Build a starter base
-4. Craft a furnace
+1. [Find an area to build](#finding-an-area-to-build).
+2. [Get a sleeping bag and stash down](#getting-a-sleeping-bag-and-stash-down).
+3. [Build a starter base](#building-a-starter-base).
+4. [Craft a furnace](#crafting-a-furnace).
 
 There's a lot more to it than this and I'll go into detail below.
 
 ### Finding an area to build
 
-You can build just about anywhere on the map (besides around [monuments](http://rust.wikia.com/wiki/Category:Monuments) and [caves](http://rust.wikia.com/wiki/Cave)) but some areas are generally quieter than others. Most monuments draw a crowd and you'll get picked off while trying to make your start.
+You can build just about anywhere on the map (besides around [monuments](http://rust.wikia.com/wiki/Category:Monuments) and [caves](http://rust.wikia.com/wiki/Cave)) but some areas are generally quieter than others. Most large monuments draw a crowd and you'll get picked off while trying to make your start.
 
-A good strategy is to quickly bang a tree after you've spawned and craft some paper and then a map. Run away from the beach so you don't get harassed by other nakeds and head inland away from monuments. 
+A good strategy is to check the map immediately after spawning (press <code>G</code>) and run away from the beach so you don't get harassed by other nakeds. Head inland away from monuments.
 
 Part of the fun of Rust is learning the different characteristics of each area so don't be too fussed where you end up. However, initially the snow is challenging because you will die of cold overnight unless you have clothes and a fire.
 
-I've found the northern parts of the map just south of the snow to be a good starter location.
+Some things to note:
+
+* Resource nodes spawn around mountains and rocks. Look for white snow peaks on the map.
+* If you're not near a forest wood can be difficult to farm.
+* Barrels spawn around roads and they're important once you're up and running for harvesting scarp.
+* Hemp spawns in grassy areas.
+* Thirst can become a pain in the arse if you're not near a river.
+
+There's a lot more to finding a good place to build but that's a start.
 
 ### Getting a sleeping bag and stash down
 
-Once you've found an area to build you'll want to get a [sleeping bag](http://rust.wikia.com/wiki/Sleeping_Bag) down. Find some tall grass or bushes and plonk it down. This allows you to respawn at your bag rather than on a random beach. 
+Once you've found an area you'll want to get a [sleeping bag](http://rust.wikia.com/wiki/Sleeping_Bag) down. Find some tall grass or bushes and plonk it down. This allows you to respawn at your bag rather than on a random beach after you inevitably die. 
 
-Next up craft a [small stash](http://rust.wikia.com/wiki/Small_Stash) and pop it down somewhere distinct that you will be able to remember. You'll need to be able to find it to dump resources or if you respawn. The reason this is important is that you're going to bury your stash underground where no one can see it (including yourself). To access your stash again you need to look down at the ground where it's buried for several seconds.
+Next up craft a [small stash](http://rust.wikia.com/wiki/Small_Stash) and pop it down somewhere distinct that you will be able to remember. It's worth taking a screenshot of where you've dumped it for future reference. You'll need to be able to find it to add and remove loot. 
 
-Because of the difficulties of locating a stash some people prefer a [wooden storage box](http://rust.wikia.com/wiki/Wood_Storage_Box). While this is easier for you to find, it's also much easier for other players to find. Note that it's possible to find a box-sized rock to hide your box which works a treat if you can pull it off.
+The reason this is important is that you're going to bury your stash underground where no one can see it (including yourself). To access your stash again you need to look down at the ground where it's buried for a couple of seconds.
+
+Because of the difficulties of locating a stash some people prefer a [wooden storage box](http://rust.wikia.com/wiki/Wood_Storage_Box). While this is easier for you to find, it's also much easier for other players to find. Note that it's possible to find a box-sized rock to hide your box in, which works a treat if you can pull it off.
 
 {{< figure src="/img/uploads/article-rust-survival-tips-hidden-chest.gif" caption="My very poor attempt at hiding a wooden chest." >}}
 
@@ -134,20 +158,6 @@ Periodically dump your main resources in your stash (wood, stone, metal ore, sul
 * At least 30 cloth for a sleeping bag
 
 The more the better, but this is enough for your starter base.
-
-### Metal frags
-
-Early on metal fragments are difficult to come by. Occasionally a barrel will drop 10-15 of them but that's unusual. You can get metal frags by smelting metal ore in a small furnace but you need 50 [low grade fuel](http://rust.wikia.com/wiki/Low_Grade_Fuel) for a [furnace](http://rust.wikia.com/wiki/Furnace) and that's a challenge in itself. 
-
-However, metal frags are very important to help [code lock](http://rust.wikia.com/wiki/Code_Lock) the door of your starter base (100 metal frags). Code locks are way more secure than [key locks](http://rust.wikia.com/wiki/Lock). A good way to get metal early on is using a recycler. These can be found at most monuments, so if you're anywhere near a lighthouse, harbour, supermarket or gas station it's worth cashing in any components you've managed to find. 
-
-{{< figure src="/img/uploads/article-rust-survival-tips-lighthouse-recycler.jpg" caption="The recycler at the lighthouse." >}}
-
-Gears, pipes, springs and semi-automatic bodies will be useful very soon but you won't miss propane tanks and sheet metal and they'll give you 50 and 100 metal frags respectively.
-
-<small>NOTE: I mention these monuments because they have lower tier loot crates and are less attractive to potentially experienced (and probably armed) players.</small>
-
-Another sneaky great source of metal frags are empty bean and tuna cans which will give you 15 and 10 frags respectively when you roast them in a camp fire.
 
 ## Building a starter base
 
@@ -169,9 +179,9 @@ You should already have a bag outside your base, but it's essential that you als
 
 To start building you will need [building plan](http://rust.wikia.com/wiki/Building_Plan) and a [hammer](http://rust.wikia.com/wiki/Hammer). The building plan allows you to place twig foundations, walls, floors and more. The hammer allows you to upgrade your twig to wood, stone, metal and armoured. 
 
-When placing twig walls, notice that on one side there are criss-crossed logs forming an X. This is the wall's soft side and you don't want it external facing. When placing twig structures, press R to rotate them. If you place something incorrectly you can rotate it using the hammer, but only for a limited time.
+When placing twig walls, notice that on one side there are criss-crossed logs forming an X. This is the wall's soft side and you don't want it external facing. When placing twig structures, press R to rotate them. If you place something incorrectly you can rotate it using the hammer, but only for a limited time after placing it.
 
-Twig is _very_ easy to destroy so at the very least you should upgrade your twig to wood. But wood is vulnerable too. It can be burnt using a [flame thrower](http://rust.wikia.com/wiki/Flame_Thrower) and hatchets will eventually break it. Stone is what you should be aiming for. Just make sure you place your walls strong-side out or they can be pick-axed.
+Twig is _very_ easy to destroy so at the very least you should upgrade your twig to wood. But wood is vulnerable too. It can be burnt using a [flame thrower](http://rust.wikia.com/wiki/Flame_Thrower) and hatchets will eventually break through it. Stone is what you should be aiming for. Just make sure you place your walls strong-side out or they can be pick-axed.
 
 ### Tool cupboard
 
@@ -179,7 +189,13 @@ Placing a [tool cupboard (TC)](http://rust.wikia.com/wiki/Tool_Cupboard) in your
 
 ### Key locks
 
-If you don't yet have the metal frags for a [code lock](http://rust.wikia.com/wiki/Code_Lock) that's fine, a [key lock](http://rust.wikia.com/wiki/Lock) will do the trick temporarily. Just be aware that key locks are very insecure for the following reasons:
+Until [Devblog 193](https://rust.facepunch.com/blog/devblog-193/), key locks were a terrible option for securing your base. But that has all changed. You no longer need to carry your key on your person, and there's no longer a 1/100 chance that someone else's key will open your base.
+
+The catch is that if you want to share your base with other players you'll need to give them a lock and at that point they become a lot less secure. This is because if anyone is killed while carrying a key to your base, anyone else can use it to get into base. It also means that if you're not around to craft a key other players can get stuck inside or outside your base.
+
+For these reasons, if you plan on playing with a group you should aim to get a codelock as soon as possible. To do this you'll need at least 100 [metal frags](#metal-frags-and-high-quality-metal).
+
+<!-- If you don't yet have the metal frags for a [code lock](http://rust.wikia.com/wiki/Code_Lock) that's fine, a [key lock](http://rust.wikia.com/wiki/Lock) will do the trick temporarily. Just be aware that key locks are very insecure for the following reasons:
 
 * If you're killed while carrying your key near your base your key lets anyone into base.
 * If you lose your key outside your base you won't be able to get back in unless you have a spare hidden outside. And if you don't have a spare key inside your base you can respawn to a bag but you won't be able to open your door.
@@ -189,7 +205,7 @@ To avoid disaster when using a key lock:
 
 * Always have a spare key and sleeping bag in your base.
 * When you go outside hide your key in a stash.
-* Get a code lock as soon as you can even if it's on a wooden door.
+* Get a code lock as soon as you can even if it's on a wooden door. -->
 
 ## Crafting a furnace
 
@@ -215,6 +231,22 @@ The biggest obstacle to crafting a furnace is the 50 low grade fuel. This can be
 {{< /col >}}
 {{< /row >}}
 {{< /article-body-full-bleed >}}
+
+### Metal frags and high quality metal
+
+Prior to getting a furnace up and running metal fragments are difficult to come by. You can get them by smelting metal ore in a small furnace but getting one of those is a challenge in itself. 
+
+However, metal frags are  important to help [code lock](http://rust.wikia.com/wiki/Code_Lock) the door of your starter base (100 metal frags), especially if you plan to play with friends. 
+
+A good way to get metal early on is using a recycler. These can be found at most monuments, so if you're anywhere near a lighthouse, harbour, supermarket or gas station it's worth cashing in any components you've managed to find. 
+
+<small>**NOTE:** I mention these monuments because they have lower tier loot crates and are less attractive to potentially experienced (and probably armed) players.</small>
+
+{{< figure src="/img/uploads/article-rust-survival-tips-lighthouse-recycler.jpg" caption="The recycler at the lighthouse." >}}
+
+Gears, pipes, springs and semi-automatic bodies will be useful very soon but you won't miss propane tanks and sheet metal and they'll give you 50 and 100 metal frags respectively.
+
+Another sneaky great source of metal frags are empty bean and tuna cans which will give you 15 and 10 frags respectively when roasted in a camp fire.
 
 ## Further reading
 
