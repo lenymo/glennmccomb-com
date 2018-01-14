@@ -250,7 +250,7 @@ Another sneaky great source of metal frags are empty bean and tuna cans which wi
 
 ## Further reading
 
-* [Rustafied getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
+* [Rustafied's getting started guide](https://www.rustafied.com/getting-started-in-rust-experimental/).
 * Tiny Pirate's beginner tutorial [part 1](https://www.youtube.com/watch?v=MeiYPVB4BEY) and [part 2](https://www.youtube.com/watch?v=FfC1gm9kya4).
 * Pepper The Red's [Top 10 best ways to survive Rust](https://www.youtube.com/watch?v=pULXsgBP-YY&t=1s).
 * If you have any queries about items, etc check out [Rust Labs](https://rustlabs.com/).
