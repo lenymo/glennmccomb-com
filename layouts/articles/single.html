@@ -7,9 +7,10 @@
   {{ partial "page-header" . }}  
 
   <section class="section section__article-body">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+    <article class="article-body">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
             
           <!-- 
           //
@@ -18,9 +19,9 @@
           -->
           {{ if eq .Params.toc true }}{{ partial "table-of-contents" . }}{{ end }}
           
-          <article class="article-body">
+          <div class="article-body__content">
             {{ .Content }}
-          </article>
+          </div>
 
           <div class="article-author">
             <img src="/img/photo-glenn-mccomb.jpg" class="article-author__photo" alt="Glenn McComb">
@@ -32,9 +33,10 @@
             </p>
           </div><!-- .article-author -->
 
-        </div><!-- .col -->
-      </div><!-- .row -->
-    </div><!-- .container -->
+          </div><!-- .col -->
+        </div><!-- .row -->
+      </div><!-- .container -->
+    </article><!-- .article-body -->
   </section><!-- .section__article-body -->
 
   <section class="section section__article-footer">
