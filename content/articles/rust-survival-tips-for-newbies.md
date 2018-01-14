@@ -1,6 +1,6 @@
 ---
 title: Rust survival tips for newbies
-date: 2017-12-10T09:32:52.000Z
+date: 2018-01-14T01:32:52.000Z
 featured: /img/uploads/featured-image-article-rust-survival-tips.jpg
 categories:
   - Gaming
