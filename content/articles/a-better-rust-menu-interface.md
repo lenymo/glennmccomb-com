@@ -10,3 +10,14 @@ dark_bg: true
 page_header_bg_color: '#2b2925'
 ---
 {{< lead >}}Rust's menu interface is in need of an overhaul. The most heavily used screen &mdash; the server browser &mdash; functions the most poorly so I've had a crack at improving it.{{< /lead >}}
+
+## Here it is
+
+{{< article-body-full-bleed >}}
+![Rust Sunset](/img/uploads/article-rust-menu-ui-servers.jpg)
+{{< /article-body-full-bleed >}}
+
+## What's different?
+
+Here's a summary of the changes I've made:
+
