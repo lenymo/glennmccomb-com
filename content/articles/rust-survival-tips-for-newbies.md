@@ -8,7 +8,6 @@ custom_class: rust-survival-tips
 transparent_header: true
 featured_opacity: 0.2
 dark_bg: true
-page_header_bg_color: '#232323'
 toc: true
 ---
 
