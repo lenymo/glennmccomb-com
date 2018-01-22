@@ -9,4 +9,4 @@ featured_opacity: '0.2'
 dark_bg: true
 page_header_bg_color: '#2b2925'
 ---
-{{< lead >}}Rust's menu interface is in need of an overhaul. The most heavily used page &mdash; the server browser &mdash; functions the most poorly so I've had a crack at improving it.{{< /lead >}}
+{{< lead >}}Rust's menu interface is in need of an overhaul. The most heavily used screen &mdash; the server browser &mdash; functions the most poorly so I've had a crack at improving it.{{< /lead >}}
