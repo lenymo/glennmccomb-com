@@ -14,7 +14,7 @@ page_header_bg_color: '#2b2925'
 ## Here it is
 
 {{< article-body-full-bleed >}}
-![Rust Sunset](/img/uploads/article-rust-menu-ui-servers.jpg)
+![Rust menu UI](/img/uploads/article-rust-menu-ui-servers.jpg)
 {{< /article-body-full-bleed >}}
 
 ## What's different?
