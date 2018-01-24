@@ -56,7 +56,6 @@ Hopefully these are all self-explanatory but here's what I'd added:
 
 The rest are existing features but they're all in one place now.
 
-
 ## Individual server screen
 
 I also had a quick go at the individual server screen. The current popup is probably a little too small and it's annoying AF not being able to see the full title. 
