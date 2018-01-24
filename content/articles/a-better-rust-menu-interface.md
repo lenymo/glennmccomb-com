@@ -6,14 +6,15 @@ categories:
   - design
   - gaming
 featured_opacity: '0.2'
+custom_class: rust-menu-ui
 dark_bg: true
 page_header_bg_color: '#2b2925'
 ---
 {{< lead >}}Rust's menu interface is in need of an overhaul. The most heavily used screen &mdash; the server browser &mdash; functions the most poorly of all, so I've had a crack at improving it.{{< /lead >}}
 
-It's difficult to find a server in Rust. When you find yourself using a 3rd party website (shout out to [battlemetrics](https://www.battlemetrics.com/servers/rust)) to find a decent server something is clearly up. 
+It's difficult to find a server in Rust. When you find yourself using a 3rd party website (shouts to [battlemetrics](https://www.battlemetrics.com/servers/rust)) to find a decent server something is clearly up. 
 
-## Find a server redesign
+## Server browser redesign
 
 Here's my attempt at improve the server browser:
 
@@ -72,6 +73,7 @@ Here's what I've done:
 
 * Added "favourite" functionality.
 * Added time since last wipe.
+* Added list of Steam friend's on this server.
 * Added map size.
 * Added server geo location.
 
@@ -83,4 +85,6 @@ Again, for reference here's the current server popup:
 ![Rust menu UI](/img/uploads/article-rust-menu-ui-servers-server-old.jpg)
 {{< /article-body-full-bleed >}}
 
-Hope you dig it. Leave a comment if you've got suggestions.
+Hope you dig it. 
+
+Comment if you've got any other ideas or feedback.
