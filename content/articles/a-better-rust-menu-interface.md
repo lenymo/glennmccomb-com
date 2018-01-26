@@ -16,7 +16,7 @@ It's difficult to find a server in Rust. When you find yourself using a 3rd part
 
 ## Server browser redesign
 
-Here's my attempt at improve the server browser:
+Here's my attempt at improving the server browser:
 
 {{< article-body-full-bleed >}}
 ![Rust menu UI](/img/uploads/article-rust-menu-ui-servers.jpg)
