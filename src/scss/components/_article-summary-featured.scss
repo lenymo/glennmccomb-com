@@ -4,29 +4,9 @@
 //  ARTICLE SUMMARY - FEATURED
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-// @include respond-above(xs) {
-//   .col__article-summary {
-//     &:nth-child(1) {
-//       flex: 0 0 100%;
-//       max-width: 100%;
-
-//       .article-summary__featured-image {
-//         height: 180px;
-//       }
-
-//       .article-summary__title {
-//         font-size: $h2-font-size-sm;
-//       }
-
-//       .article-summary__excerpt {
-//         font-size: $h5-font-size-sm;
-//       }
-//     }
-//   }
-// }
-
 @include respond-above(sm) {
-  // First article
+  
+  // First article.
   .col__article-summary {
     &:nth-child(1) {
       flex: 0 0 100%;
@@ -147,6 +127,24 @@
 
       .article-summary__featured-image {
         height: 250px;
+      }
+    }
+  }
+}
+
+//
+//  3RD ARTICLE ROW
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@include respond-above(md) {
+  .col__article-summary {
+    &:nth-child(1n+4) {
+      .article-summary__title {
+        font-size: $h4-font-size;
+      }
+
+      .article-summary__excerpt {
+        font-size: rem(16px);
       }
     }
   }
