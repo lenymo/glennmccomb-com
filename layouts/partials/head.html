@@ -33,14 +33,14 @@
   <meta name="twitter:site" content="@lenymo">
   <meta name="twitter:creator" content="@lenymo">
   <meta property="og:type" content="website" />
-  <meta content="https://glennmccomb.com{{ .Permalink }}" property="og:url" />
-  <meta content="https://glennmccomb.com{{ .Permalink }}" property="twitter:url" />
+  <meta content="{{ index .Site.Data.site_settings "production_url" }}{{ .Permalink }}" property="og:url" />
+  <meta content="{{ index .Site.Data.site_settings "production_url" }}{{ .Permalink }}" property="twitter:url" />
   <meta name="twitter:title" property="og:title" content="{{ .Title }}" />
   
   <!-- Featured image. -->
   {{ with .Params.featured }}
-  <meta property="og:image" content="https://glennmccomb.com{{ . }}" />
-  <meta name="twitter:image" content="https://glennmccomb.com{{ . }}" />
+  <meta property="og:image" content="{{ index .Site.Data.site_settings "production_url" }}{{ . }}" />
+  <meta name="twitter:image" content="{{ index .Site.Data.site_settings "production_url" }}{{ . }}" />
   {{ end }}
   
   <!-- Description. -->
