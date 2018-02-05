@@ -13,7 +13,7 @@ toc: true
 
 {{< lead >}}[Rust](http://rust.facepunch.com/) is one of the most popular titles in a new breed of first-person survival games pioneered by [DayZ](https://www.bistudio.com/games/dayz). The learning curve is savage and it's not always easy to figure out the best way to stay alive.{{< /lead >}}
 
-If you've just started playing or you're struggling to get a base down you've landed in the right place. Rust is in [early access](https://en.wikipedia.org/wiki/Early_access) and [Facepunch](http://www.facepunchstudios.com/) are working to improve the experience for first-timers before officially launching but unless you have friends who're already playing, you're on your own. 
+If you've just started playing or you're struggling to get a base down you've landed in the right place. Rust is in [early access](https://en.wikipedia.org/wiki/Early_access) and [Facepunch](http://www.facepunchstudios.com/) are working to improve the experience for beginners before officially launching but unless you have friends who're already playing, you're on your own. 
 
 The first thing to know about Rust is that you will die. A lot. And that's ok. It's a grind and the more loot you've gathered when you die the more frustrating it is. It's a part of the game though so don't sweat it, and don't expect sympathy from other players.
 
