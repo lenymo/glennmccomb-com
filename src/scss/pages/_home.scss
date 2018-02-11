@@ -9,24 +9,24 @@
 //  ARTICLE SUMMARY
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-.page-home {
-  .section__articles-summary {
-    // padding-top: $site-header-height-sm;
-  }
-}
+// .page-home {
+//   .section__articles-summary {
+//     padding-top: $site-header-height-sm;
+//   }
+// }
 
-@include respond-above(sm) {
-  .page-home {
-    .section__articles-summary {
-      // padding-top: $site-header-height-md;
-    }
-  }  
-}
+// @include respond-above(sm) {
+//   .page-home {
+//     .section__articles-summary {
+//       padding-top: $site-header-height-md;
+//     }
+//   }  
+// }
 
-@include respond-above(md) {
-  .page-home {
-    .section__articles-summary {
-      // padding-top: $site-header-height-lg;
-    }
-  }  
-}
+// @include respond-above(md) {
+//   .page-home {
+//     .section__articles-summary {
+//       padding-top: $site-header-height-lg;
+//     }
+//   }  
+// }
