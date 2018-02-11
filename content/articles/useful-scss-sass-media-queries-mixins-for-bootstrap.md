@@ -20,11 +20,11 @@ While developing bootstrap sites there are a couple of things I find myself writ
 
 {{< highlight css >}}
 @media (min-width: 768px) {
-  // Do something when devices are wider than 768px.
+  // Target devices wider than 768px.
 }
 
 @media (max-width: 767px) {
-  // Do something when devices are narrower than 768px.
+  // Target devices narrower than 768px.
 }
 {{< /highlight >}}
 
@@ -32,10 +32,22 @@ In Bootstrap terms, the breakpoint above 768 pixels is <code>md</code>.
 
 In additional to these two, I occasionally need to apply CSS between two breakpoints.
 
-It's best practice to use Bootstrap's breakpoints throughout your code since it makes things much easier to manage.
-
 {{< highlight css >}}
 @media (min-width: 768px) and (max-width: 991px) {
-  // Do something when devices are narrower than 768px.
+  // Target devices between 768px and 992px.
 }
 {{< /highlight >}}
+
+## Breakpoint variables
+
+It's best practice to use Bootstrap's breakpoints but it's painful to write these out all the time. To get around that I create variables for each breakpoint:
+
+{{< highlight scss >}}
+// Breakpoint variables.
+$breakpoint-xs: 576px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 992px;
+$breakpoint-lg: 1200px;
+$breakpoint-xl: 1500px;
+{{< /highlight >}}
+
