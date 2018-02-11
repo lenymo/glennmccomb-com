@@ -4,11 +4,20 @@
 //  MEDIA QUERIES
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-$breakpoint-xs: 576px;
-$breakpoint-sm: 768px;
-$breakpoint-md: 992px;
-$breakpoint-lg: 1200px;
-$breakpoint-xl: 1500px;
+// $breakpoint-xs: 576px;
+// $breakpoint-sm: 768px;
+// $breakpoint-md: 992px;
+// $breakpoint-lg: 1200px;
+// $breakpoint-xl: 1500px;
+
+// A map of breakpoints.
+$breakpoints: (
+  xs: 576px,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px,
+  xl: 1500px
+);
 
 
 //
@@ -17,24 +26,15 @@ $breakpoint-xl: 1500px;
 
 // @include respond-above(md) {}
 @mixin respond-above($breakpoint) {
-  @if $breakpoint == 'xs' {
-    @media (min-width: $breakpoint-xs) {
-      @content;
-    }
-  } @else if $breakpoint == 'sm' {
-    @media (min-width: $breakpoint-sm) {
-      @content;
-    }
-  } @else if $breakpoint == 'md' {
-    @media (min-width: $breakpoint-md) {
-      @content;
-    }
-  } @else if $breakpoint == 'lg' {
-    @media (min-width: $breakpoint-lg) {
-      @content;
-    }
-  } @else if $breakpoint == 'xl' {
-    @media (min-width: $breakpoint-xl) {
+
+  // If the breakpoint exists in the map.
+  @if map-has-key($breakpoints, $breakpoint) {
+
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (min-width: $breakpoint-value) {
       @content;
     }
   }
@@ -47,20 +47,15 @@ $breakpoint-xl: 1500px;
 
 // @include respond-below(md) {}
 @mixin respond-below($breakpoint) {
-  @if $breakpoint == 'xs' {
-    @media (max-width: ($breakpoint-xs - 1)) {
-      @content;
-    }
-  } @else if $breakpoint == 'sm' {
-    @media (max-width: ($breakpoint-sm - 1)) {
-      @content;
-    }
-  } @else if $breakpoint == 'md' {
-    @media (max-width: ($breakpoint-md - 1)) {
-      @content;
-    }
-  } @else if $breakpoint == 'lg' {
-    @media (max-width: ($breakpoint-lg - 1)) {
+
+  // If the breakpoint exists in the map.
+  @if map-has-key($breakpoints, $breakpoint) {
+
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (max-width: ($breakpoint-value - 1)) {
       @content;
     }
   }
@@ -73,39 +68,16 @@ $breakpoint-xl: 1500px;
 
 @mixin respond-between($lower, $upper) {
 
-  // Lower.
-  $lower-actual: 0;
+  // If both the lower and upper breakpoints exist in the map.
+  @if map-has-key($breakpoints, $lower) and map-has-key($breakpoints, $upper) {
 
-  @if $lower == 'xs' {
-    $lower-actual: $breakpoint-xs;
+    // Get the lower and upper breakpoints.
+    $lower-breakpoint: map-get($breakpoints, $lower);
+    $upper-breakpoint: map-get($breakpoints, $upper);
 
-  } @else if $lower == 'sm' {
-    $lower-actual: $breakpoint-sm;
-
-  } @else if $lower == 'md' {
-    $lower-actual: $breakpoint-md;
-
-  } @else if $lower == 'lg' {
-    $lower-actual: $breakpoint-lg;
-  }
-
-  // Upper.
-  $upper-actual: 0;
-
-  @if $upper == 'sm' {
-    $upper-actual: $breakpoint-sm - 1;
-
-  } @else if $upper == 'md' {
-    $upper-actual: $breakpoint-md - 1;
-
-  } @else if $upper == 'lg' {
-    $upper-actual: $breakpoint-lg - 1;
-
-  } @else if $upper == 'xl' {
-    $upper-actual: $breakpoint-xl - 1;
-  }
-
-  @media (min-width: $lower-actual) and (max-width: $upper-actual) {
-    @content;
+    // Write the media query.
+    @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1)) {
+      @content;
+    }
   }
 }
