@@ -320,6 +320,16 @@ $article-header-padding-bottom-xl: $gutter * 6;
         border-bottom: 2px solid $link-font-color-hover;
         text-decoration: none;
       }
+
+      &.btn {
+        border-bottom: 0;
+
+        &:hover,
+        &:active,
+        &:focus {
+          border-bottom: 0;
+        }
+      }
     }
   }
 }
