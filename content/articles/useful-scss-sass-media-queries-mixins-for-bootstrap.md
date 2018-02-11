@@ -14,7 +14,7 @@ Whether you're using full-blown bootstrap or just leveraging the familiar grid t
 * Respond below XX.
 * Respond between XX and XX.
 
-## What problem do the mixins solve?
+## What problems do the mixins solve?
 
 While developing bootstrap sites there are a couple of things I find myself writing over and over again:
 
@@ -48,6 +48,57 @@ $breakpoint-xs: 576px;
 $breakpoint-sm: 768px;
 $breakpoint-md: 992px;
 $breakpoint-lg: 1200px;
-$breakpoint-xl: 1500px;
 {{< /highlight >}}
 
+In my own fork of the bootstrap v4 grid I've added an additional xl breakpoint at 1500px.
+
+## Media query mixins
+
+### Respond above
+
+{{< highlight scss >}}
+// Respond above.
+@mixin respond-above($breakpoint) {
+  @if $breakpoint == 'xs' {
+    @media (min-width: $breakpoint-xs) {
+      @content;
+    }
+  } @else if $breakpoint == 'sm' {
+    @media (min-width: $breakpoint-sm) {
+      @content;
+    }
+  } @else if $breakpoint == 'md' {
+    @media (min-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $breakpoint == 'lg' {
+    @media (min-width: $breakpoint-lg) {
+      @content;
+    }
+  }
+}
+{{< /highlight >}}
+
+### Respond below
+
+{{< highlight scss >}}
+@mixin respond-below($breakpoint) {
+  @if $breakpoint == 'xs' {
+    @media (max-width: ($breakpoint-xs - 1)) {
+      @content;
+    }
+  } @else if $breakpoint == 'sm' {
+    @media (max-width: ($breakpoint-sm - 1)) {
+      @content;
+    }
+  } @else if $breakpoint == 'md' {
+    @media (max-width: ($breakpoint-md - 1)) {
+      @content;
+    }
+  } @else if $breakpoint == 'lg' {
+    @media (max-width: ($breakpoint-lg - 1)) {
+      @content;
+    }
+  }
+}
+{{< /highlight >}}
