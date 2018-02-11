@@ -102,3 +102,49 @@ In my own fork of the bootstrap v4 grid I've added an additional xl breakpoint a
   }
 }
 {{< /highlight >}}
+
+### Respond between
+
+{{< highlight scss >}}
+@mixin respond-between($lower, $upper) {
+
+  // Lower.
+  $lower-breakpoint: 0;
+
+  @if $lower == 'xs' {
+    $lower-breakpoint: $breakpoint-xs;
+
+  } @else if $lower == 'sm' {
+    $lower-breakpoint: $breakpoint-sm;
+
+  } @else if $lower == 'md' {
+    $lower-breakpoint: $breakpoint-md;
+
+  } @else if $lower == 'lg' {
+    $lower-breakpoint: $breakpoint-lg;
+  }
+
+  // Upper.
+  $upper-breakpoint: 0;
+
+  @if $upper == 'sm' {
+    $upper-breakpoint: $breakpoint-sm - 1;
+
+  } @else if $upper == 'md' {
+    $upper-breakpoint: $breakpoint-md - 1;
+
+  } @else if $upper == 'lg' {
+    $upper-breakpoint: $breakpoint-lg - 1;
+
+  } @else if $upper == 'xl' {
+    $upper-breakpoint: $breakpoint-xl - 1;
+  }
+
+  @media (min-width: $lower-breakpoint) and (max-width: $upper-breakpoint) {
+    @content;
+  }
+}
+{{< /highlight >}}
+
+There are programatically smarter and more concise ways of writing these but they are easy to understand and don't add any weight to your output code.
+
