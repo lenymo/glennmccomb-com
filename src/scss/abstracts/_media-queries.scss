@@ -60,6 +60,7 @@ $breakpoints: (
 //  RESPOND BETWEEN
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
+// @include respond-between(md, lg) {}
 @mixin respond-between($lower, $upper) {
 
   // If both the lower and upper breakpoints exist in the map.
