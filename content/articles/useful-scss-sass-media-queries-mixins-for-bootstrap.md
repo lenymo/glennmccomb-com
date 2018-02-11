@@ -3,6 +3,7 @@ title: Useful SCSS / Sass media queries mixins for Bootstrap
 date: '2018-02-11T15:31:24+11:00'
 categories:
   - development
+toc: true
 ---
 {{< lead >}}Today I'm going to share some Sass (SCSS) mixins which I've found helpful when developing Bootstrap websites.{{< /lead >}}
 
@@ -28,7 +29,7 @@ While developing bootstrap sites there are a couple of things I find myself writ
 }
 {{< /highlight >}}
 
-In Bootstrap terms, the breakpoint above 768 pixels is <code>md</code>.
+In Bootstrap terms, the breakpoint above 768 pixels is <code>sm</code>.
 
 In additional to these two, I occasionally need to apply CSS between two breakpoints.
 
@@ -40,39 +41,52 @@ In additional to these two, I occasionally need to apply CSS between two breakpo
 
 ## Breakpoint variables
 
-It's best practice to use Bootstrap's breakpoints but it's painful to write these out all the time. To get around that I create variables for each breakpoint:
+It's best practice to use Bootstrap's breakpoints but it's painful to write them all the time. To get around that I create a map of variables:
 
 {{< highlight scss >}}
-// Breakpoint variables.
-$breakpoint-xs: 576px;
-$breakpoint-sm: 768px;
-$breakpoint-md: 992px;
-$breakpoint-lg: 1200px;
+// A map of breakpoints.
+$breakpoints: (
+  xs: 576px,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px
+);
 {{< /highlight >}}
 
-In my own fork of the bootstrap v4 grid I've added an additional xl breakpoint at 1500px.
+In my own fork of the bootstrap v4 grid I've added an additional xl breakpoint at 1500px which I find useful for large monitors.
 
 ## Media query mixins
+
+The media queries are show in detail below but first, here's how to use each one:
+
+{{< highlight scss >}}
+@include respond-above(sm) {
+  // CSS declarations.
+}
+
+@include respond-below(sm) {
+  // CSS declarations.
+}
+
+@include respond-between(sm, md) {
+  // CSS declarations.
+}
+{{< /highlight >}}
 
 ### Respond above
 
 {{< highlight scss >}}
 // Respond above.
 @mixin respond-above($breakpoint) {
-  @if $breakpoint == 'xs' {
-    @media (min-width: $breakpoint-xs) {
-      @content;
-    }
-  } @else if $breakpoint == 'sm' {
-    @media (min-width: $breakpoint-sm) {
-      @content;
-    }
-  } @else if $breakpoint == 'md' {
-    @media (min-width: $breakpoint-md) {
-      @content;
-    }
-  } @else if $breakpoint == 'lg' {
-    @media (min-width: $breakpoint-lg) {
+
+  // If the breakpoint exists in the map.
+  @if map-has-key($breakpoints, $breakpoint) {
+
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (min-width: $breakpoint-value) {
       @content;
     }
   }
@@ -83,20 +97,15 @@ In my own fork of the bootstrap v4 grid I've added an additional xl breakpoint a
 
 {{< highlight scss >}}
 @mixin respond-below($breakpoint) {
-  @if $breakpoint == 'xs' {
-    @media (max-width: ($breakpoint-xs - 1)) {
-      @content;
-    }
-  } @else if $breakpoint == 'sm' {
-    @media (max-width: ($breakpoint-sm - 1)) {
-      @content;
-    }
-  } @else if $breakpoint == 'md' {
-    @media (max-width: ($breakpoint-md - 1)) {
-      @content;
-    }
-  } @else if $breakpoint == 'lg' {
-    @media (max-width: ($breakpoint-lg - 1)) {
+
+  // If the breakpoint exists in the map.
+  @if map-has-key($breakpoints, $breakpoint) {
+
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (max-width: ($breakpoint-value - 1)) {
       @content;
     }
   }
@@ -108,43 +117,54 @@ In my own fork of the bootstrap v4 grid I've added an additional xl breakpoint a
 {{< highlight scss >}}
 @mixin respond-between($lower, $upper) {
 
-  // Lower.
-  $lower-breakpoint: 0;
+  // If both the lower and upper breakpoints exist in the map.
+  @if map-has-key($breakpoints, $lower) and map-has-key($breakpoints, $upper) {
 
-  @if $lower == 'xs' {
-    $lower-breakpoint: $breakpoint-xs;
+    // Get the lower and upper breakpoints.
+    $lower-breakpoint: map-get($breakpoints, $lower);
+    $upper-breakpoint: map-get($breakpoints, $upper);
 
-  } @else if $lower == 'sm' {
-    $lower-breakpoint: $breakpoint-sm;
-
-  } @else if $lower == 'md' {
-    $lower-breakpoint: $breakpoint-md;
-
-  } @else if $lower == 'lg' {
-    $lower-breakpoint: $breakpoint-lg;
-  }
-
-  // Upper.
-  $upper-breakpoint: 0;
-
-  @if $upper == 'sm' {
-    $upper-breakpoint: $breakpoint-sm - 1;
-
-  } @else if $upper == 'md' {
-    $upper-breakpoint: $breakpoint-md - 1;
-
-  } @else if $upper == 'lg' {
-    $upper-breakpoint: $breakpoint-lg - 1;
-
-  } @else if $upper == 'xl' {
-    $upper-breakpoint: $breakpoint-xl - 1;
-  }
-
-  @media (min-width: $lower-breakpoint) and (max-width: $upper-breakpoint) {
-    @content;
+    // Write the media query.
+    @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1)) {
+      @content;
+    }
   }
 }
 {{< /highlight >}}
 
-There are programatically smarter and more concise ways of writing these but they are easy to understand and don't add any weight to your output code.
+I don't bother coding in smarts to ensure that the first parameter is lower than the second one but I've never had any troubles with this.
 
+## What next?
+
+I found these mixins super handy in my day-to-day work but they were still somewhat laborious to write. So I recently wrote some custom Sublime Text snippets which autocomplete based on a keyword combination.
+
+### Bonus for Sublime Text users.
+
+Snippets are very easy to add although [the syntax](http://sublimetext.info/docs/en/extensibility/snippets.html) can be a little daunting at first. They can be added via <code>Tools » Developer » New Snippet</code>. I've written a series of Snippets which [you can find on GitHub](https://github.com/lenymo/sublime-text-snippets) and you are more than welcome to copy them.
+
+I wrote individual snippets for each breakpoint and they are listed below.
+
+Respond above:
+* <code>raxs</code>
+* <code>rasm</code>
+* <code>ramd</code>
+* <code>ralg</code>
+
+Respond below:
+* <code>rbxs</code>
+* <code>rbsm</code>
+* <code>rbmd</code>
+* <code>rblg</code>
+
+Respond between:
+* <code>rbtw</code>
+
+There's only one "respond between" snippet which takes in a lower and upper parameter once you type <code>rbtw</code> press tab. Press tab again to cycle between values and again to start writing SCSS.
+
+### Adding the snippets
+
+I'm not sure exactly where snippets live on a Windows machine but on Mac they're here:
+
+<code>/Users/yourusername/Library/Application Support/Sublime Text 3/Packages</code>.
+
+Note that the Library directory is a hidden file so you'll need to show hidden files. If you're macOS Sierra or newer you can show hidden files via <code>CMD + SHIFT + .</code> otherwise you will need to load up terminal [follow the instructions here](https://ianlunn.co.uk/articles/quickly-showhide-hidden-files-mac-os-x-mavericks/).
