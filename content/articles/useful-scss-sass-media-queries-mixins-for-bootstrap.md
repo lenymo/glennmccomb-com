@@ -1,5 +1,5 @@
 ---
-title: Useful SCSS / Sass media queries mixins for Bootstrap
+title: Useful Sass (SCSS) media query mixins for Bootstrap
 date: '2018-02-11T15:31:24+11:00'
 categories:
   - development
