@@ -42,9 +42,18 @@ $site-footer-bottom-bg-color: $color-primary-darker;
 
 .site-footer__bottom {
   background: $site-footer-bottom-bg-color;
-  padding: $gutter*4 0;
+  padding: $gutter*2 0;
+}
+
+.site-footer_developer-credits {
+  margin-bottom: $gutter * .5;
+  color: $small-font-color;
+
+  a {
+    color: lighten($small-font-color, 20%);
+  }
 }
 
 .site-footer__copyright {
-  color: rgba($white, .35);
+  color: rgba($white, .25);
 }
