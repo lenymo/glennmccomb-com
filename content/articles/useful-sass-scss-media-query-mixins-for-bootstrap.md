@@ -60,7 +60,14 @@ $breakpoints: (
 );
 {{< /highlight >}}
 
-In my own fork of the bootstrap v4 grid I've added an additional <code>xl</code> breakpoint at 1500px which is useful for large desktop monitors.
+These can be accessed using the Sass' map-get function:
+
+{{< highlight scss >}}
+// Get the small breakpoint.
+$breakpoint: map-get($breakpoints, sm);
+{{< /highlight >}}
+
+In my own fork of the bootstrap v4 grid I've added an additional <code>xl</code> breakpoint at 1500px which is useful for large desktop monitors. This type of thing is very easy to add.
 
 ## Media query mixins
 
@@ -81,6 +88,10 @@ The media queries are shown in detail below but first, here's how to use each on
 {{< /highlight >}}
 
 ### Respond above
+
+Before going ahead and writing the media query it's a good idea to ensure that key exists in the map in case you make a typo (i.e. <code>@include respond-above(small)</code>).
+
+To check that the key exists we use Sass' map-has-key function. Check out how it works below:
 
 {{< highlight scss >}}
 // Respond above.
@@ -121,6 +132,8 @@ The media queries are shown in detail below but first, here's how to use each on
 
 ### Respond between
 
+Here we want to check that both the lower and upper keys exist in the breakpoints map before writing the media query.
+
 {{< highlight scss >}}
 @mixin respond-between($lower, $upper) {
 
@@ -143,7 +156,7 @@ I don't bother coding in smarts to ensure that the first parameter is lower than
 
 ## The entire code
 
-I recommend putting this in a _breakpoints.scss partial near the top of your SCSS index file.
+I recommend putting this in a <code>_media-queries.scss</code> partial near the top of your SCSS index file.
 
 {{< highlight scss >}}
 //
@@ -227,7 +240,7 @@ $breakpoints: (
 
 I found these mixins super handy in my day-to-day work but they were still somewhat laborious to write. So I recently wrote some custom Sublime Text snippets which autocomplete based on a keyword.
 
-### A bonus for Sublime Text users.
+### Bonus for Sublime Text users
 
 Snippets are easy to add to Sublime Text, although [the syntax](http://sublimetext.info/docs/en/extensibility/snippets.html) can be a little daunting at first. They can be added via <code>Tools » Developer » New Snippet</code>. All of [my snippets are on GitHub](https://github.com/lenymo/sublime-text-snippets) and you're welcome to use them.
 
@@ -241,13 +254,15 @@ Between: <code>rbtw</code>
 
 There's only one "respond between" snippet which takes in lower and upper parameters. Press tab to cycle between values and again to start writing SCSS declarations.
 
-<a href="https://github.com/lenymo/sublime-text-snippets/tree/master/scss" class="btn">Check out the snippets</a>
+<a href="https://github.com/lenymo/sublime-text-snippets/tree/master/scss" class="btn">Get the snippets</a>
 
 ### Adding the snippets
 
 I'm not sure exactly where snippets live on a Windows machine but on macOS they're here:
 
 <code>/Users/username/Library/Application Support/Sublime Text 3/Packages</code>
+
+I recommend creating a <code>/snippets</code> sub-directory so you can easily find them in future.
 
 Note that the Library directory is a hidden file so you'll need to show hidden files. If you're macOS Sierra or newer you can show hidden files via <code>CMD + SHIFT + .</code> otherwise you will need to load up terminal [follow the instructions here](https://ianlunn.co.uk/articles/quickly-showhide-hidden-files-mac-os-x-mavericks/).
 
