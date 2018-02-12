@@ -4,7 +4,7 @@ date: '2018-02-11T15:31:24+11:00'
 featured: /img/uploads/featured-image-sass-media-query-mixins.jpg
 categories:
   - development
-featured_opacity: '.5'
+featured_opacity: '.25'
 dark_bg: true
 toc: true
 ---
@@ -12,21 +12,21 @@ toc: true
 
 Whether you're using full-blown bootstrap or just leveraging the familiar grid these will save you time when writing repetitive media queries. Due to the similarities in naming conventions these mixins work with both Bootstrap v3 and the newly released v4 but in these examples I'll be using v4 breakpoints.
 
-They're also versatile and work nicely even with your own custom naming conventions and breakpoints.
+They're also versatile and work nicely even with your own custom naming conventions and breakpoints. If you want to see the full code snippet, [jump straight to it](#the-entire-code).
 
 ## What do the mixins do?
 
-These mixins provide a semantic media query mixin for the following:
+They provide a semantic media query mixin for the following:
 
 * Respond above XX.
 * Respond below XX.
 * Respond between XX and XX.
 
-Where XX is the two letter bootstrap breakpoint (i.e. sm, md).
+Where XX is the two letter Bootstrap breakpoint (i.e. sm, md).
 
 ## What problems do the mixins solve?
 
-While developing bootstrap sites there are a couple of things I find myself writing over and over again:
+While developing Bootstrap sites there are a couple of things I find myself writing over and over again:
 
 {{< highlight css >}}
 @media (min-width: 768px) {
@@ -52,7 +52,7 @@ In additional to these two, I *occasionally* need to apply CSS between two speci
 
 ## Breakpoint variables
 
-It's best practice to use Bootstrap's breakpoints but it's painful to write them all the time. To get around that I use a map of variables:
+It's best practice to use Bootstrap's breakpoints but it's painful to write them all the time. To get around that I use a Sass map of values:
 
 {{< highlight scss >}}
 // A map of breakpoints.
@@ -64,38 +64,20 @@ $breakpoints: (
 );
 {{< /highlight >}}
 
-Which can be accessed using the Sass' map-get function:
+This means the breakpoint values are only ever written once. Map values can be accessed using the Sass' <code>map-get</code> function:
 
 {{< highlight scss >}}
 // Get the small breakpoint.
 $breakpoint: map-get($breakpoints, sm);
 {{< /highlight >}}
 
-In my own fork of the bootstrap v4 grid I've added an additional <code>xl</code> breakpoint at 1500px which is useful for large desktop monitors.
-
 ## Media query mixins
-
-The media queries are shown in detail below but first, here's how to use each one:
-
-{{< highlight scss >}}
-@include respond-above(sm) {
-  // CSS declarations.
-}
-
-@include respond-below(sm) {
-  // CSS declarations.
-}
-
-@include respond-between(sm, md) {
-  // CSS declarations.
-}
-{{< /highlight >}}
 
 ### Respond above
 
 Before going ahead and writing the media query it's a good idea to ensure that the key exists in the <code>$breakpoints</code> map in case you make a typo (i.e. <code>@include respond-above(small)</code>).
 
-To do this we use Sass' map-has-key function. Check it out below:
+To do this we use Sass' <code>map-has-key</code> function. Check it out below:
 
 {{< highlight scss >}}
 // Respond above.
@@ -115,7 +97,29 @@ To do this we use Sass' map-has-key function. Check it out below:
 }
 {{< /highlight >}}
 
+So we pass a value to the respond-above mixin in the form of a Bootstrap breakpoint.
+
+{{< highlight scss >}}
+@include respond-above(sm) {
+  .element {
+    font-weight: bold;
+  }
+}
+{{< /highlight >}}
+
+And here's the CSS output:
+
+{{< highlight css >}}
+@media (min-width: 768px) {
+  .element {
+    font-weight: bold;
+  }
+}
+{{< /highlight >}}
+
 ### Respond below
+
+This mixin works in much the same way.
 
 {{< highlight scss >}}
 @mixin respond-below($breakpoint) {
@@ -130,6 +134,26 @@ To do this we use Sass' map-has-key function. Check it out below:
     @media (max-width: ($breakpoint-value - 1)) {
       @content;
     }
+  }
+}
+{{< /highlight >}}
+
+Here's how to use it:
+
+{{< highlight scss >}}
+@include respond-below(sm) {
+  .element {
+    font-weight: bold;
+  }
+}
+{{< /highlight >}}
+
+And here's the CSS output:
+
+{{< highlight css >}}
+@media (max-width: 767px) {
+  .element {
+    font-weight: bold;
   }
 }
 {{< /highlight >}}
@@ -158,9 +182,27 @@ Here we want to check that *both* the <code>$lower</code> and <code>$upper</code
 
 I don't bother coding in smarts to ensure that the first parameter is lower than the second one. I've never had any troubles with it the way it is.
 
+{{< highlight scss >}}
+@include respond-between(sm, md) {
+  .element {
+    font-weight: bold;
+  }
+}
+{{< /highlight >}}
+
+And the CSS output:
+
+{{< highlight css >}}
+@media (min-width: 768px) and (max-width: 991px) {
+  .element {
+    font-weight: bold;
+  }
+}
+{{< /highlight >}}
+
 ## The entire code
 
-I recommend putting this in a <code>_media-queries.scss</code> partial near the top of your SCSS index file.
+I find it handy to have an example usage directly above each mixin for ease of use in the future.
 
 {{< highlight scss >}}
 //
@@ -180,7 +222,7 @@ $breakpoints: (
 //  RESPOND ABOVE
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-// @include respond-above(md) {}
+// @include respond-above(sm) {}
 @mixin respond-above($breakpoint) {
 
   // If the breakpoint exists in the map.
@@ -201,7 +243,7 @@ $breakpoints: (
 //  RESPOND BELOW
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-// @include respond-below(md) {}
+// @include respond-below(sm) {}
 @mixin respond-below($breakpoint) {
 
   // If the breakpoint exists in the map.
@@ -222,7 +264,7 @@ $breakpoints: (
 //  RESPOND BETWEEN
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-// @include respond-between(md, lg) {}
+// @include respond-between(sm, md) {}
 @mixin respond-between($lower, $upper) {
 
   // If both the lower and upper breakpoints exist in the map.
@@ -240,11 +282,13 @@ $breakpoints: (
 }
 {{< /highlight >}}
 
+I recommend putting this in a <code>_media-queries.scss</code> partial near the top of your SCSS index file.
+
 ## What next?
 
 I found these mixins super handy in my day-to-day work but they were still somewhat laborious to write. So I recently wrote some custom Sublime Text snippets which autocomplete based on a keyword such as <code>rasm</code> for <code>@include respond-above(sm) {}</code>.
 
-### Bonus for Sublime Text users
+### Sublime Text snippets
 
 Snippets are easy to add to Sublime Text, although [the syntax](http://sublimetext.info/docs/en/extensibility/snippets.html) can be a little tricky at first. They can be added via <code>Tools » Developer » New Snippet</code>. 
 
@@ -262,8 +306,9 @@ Here's how my <code>rasm</code> snippet looks:
   <!-- Optional: Set a scope to limit where the snippet will trigger -->
   <scope>source.scss</scope>
 </snippet>
-
 {{< /highlight >}}
+
+The <code>$1</code> tells the snippet where the cursor / caret should appear.
 
 All of [my snippets are on GitHub](https://github.com/lenymo/sublime-text-snippets) and you're welcome to use them.
 
@@ -277,11 +322,28 @@ Between: <code>rbtw</code>
 
 There's only one "respond between" snippet which takes in lower and upper parameters. Press tab to cycle between values and tab again to start writing SCSS declarations.
 
+Here's how the respond between snippet looks: 
+
+{{< highlight xml >}}
+<snippet>
+  <content><![CDATA[
+@include respond-between($1, $2) {
+  $3
+}
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>rbtw</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>source.scss</scope>
+</snippet>
+{{< /highlight >}}
+Note that <code>$1</code>, <code>$2</code> and <code>$3</code> tell Sublime where the caret should appear with each successive tap of the tab key.
+
 <a href="https://github.com/lenymo/sublime-text-snippets/tree/master/scss" class="btn">Get the snippets</a>
 
-### Adding / removing the snippets
+### Adding / removing snippets
 
-I'm not sure exactly where snippets live on a Windows machine but on macOS they're here:
+I'm not sure where snippets live on a Windows machine but on macOS they're here:
 
 <code>/Users/username/Library/Application Support/Sublime Text 3/Packages</code>
 
@@ -299,4 +361,8 @@ defaults write com.apple.finder AppleShowAllFiles NO
 
 You will need to relaunch finder before these changes will take effect. For more info on showing / hiding hidden files I recommend [Ian Lunn's article](https://ianlunn.co.uk/articles/quickly-showhide-hidden-files-mac-os-x-mavericks/).
 
-Hope these are useful, let me know in the comments if you have any suggestions
+## Wrapping up
+
+In my own personal fork of Bootstrap 4's grid I've added an additional <code>xl</code> breakpoint which kicks in at 1500px but using these mixins it's *very* easy to add this functionality. I did need to add some additional CSS to my <code>_grid.scss</code> partial but that was relatively simple.
+
+I hope these are useful. Let me know in the comments if you have any feedback or suggestions.
