@@ -10,9 +10,9 @@ toc: true
 ---
 {{< lead >}}Today I'm going to share some Sass (SCSS) mixins which I've found helpful when developing Bootstrap websites.{{< /lead >}}
 
-Whether you're using full-blown bootstrap or just leveraging the familiar grid these will save you time when writing repetitive media queries. Due to the similarities in naming conventions these mixins work with both Bootstrap v3 and the newly released v4 but in these examples I'll be using v4 breakpoints.
+Whether you're using full-blown Bootstrap or just leveraging the familiar grid they will save you time when writing repetitive media queries. Due to the similarities in naming conventions between Bootstrap 3 and 4, these mixins can be easily adapted for both versions.
 
-They're also versatile and work nicely even with your own custom naming conventions and breakpoints. If you want to see the full code snippet, [jump straight to it](#the-entire-code).
+They're also versatile and work well even with your own custom naming conventions and breakpoints. If you want to see the full code snippet, [jump straight to it](#the-entire-code).
 
 ## What do the mixins do?
 
@@ -26,7 +26,7 @@ Where XX is the two letter Bootstrap breakpoint (i.e. sm, md).
 
 ## What problems do the mixins solve?
 
-While developing Bootstrap sites there are a couple of things I find myself writing over and over again:
+While developing with Bootstrap there are a couple of things I find myself writing over and over again:
 
 {{< highlight css >}}
 @media (min-width: 768px) {
@@ -38,7 +38,7 @@ While developing Bootstrap sites there are a couple of things I find myself writ
 }
 {{< /highlight >}}
 
-<small>In Bootstrap terms, the breakpoint above 768 pixels is <code>md</code>.</small>
+<small>In Bootstrap terms, I refer to the breakpoint above (768px) as <code>sm</code>.</small>
 
 I write my CSS mobile-first and try my best to limit <code>max-width</code> media queries but they often save time and space.
 
@@ -52,7 +52,7 @@ In additional to these two, I *occasionally* need to apply CSS between two speci
 
 ## Breakpoint variables
 
-It's best practice to use Bootstrap's breakpoints but it's painful to write them all the time. To get around that I use a Sass map of values:
+It's best practice to use Bootstrap's breakpoints in your own code but it's painful to write them all the time. To get around that I use a Sass map of values:
 
 {{< highlight scss >}}
 // A map of breakpoints.
@@ -64,7 +64,7 @@ $breakpoints: (
 );
 {{< /highlight >}}
 
-This means the breakpoint values are only ever written once. Map values can be accessed using the Sass' <code>map-get</code> function:
+This means the breakpoint values are only ever written once. Map values like these can be accessed using the Sass' <code>map-get</code> function:
 
 {{< highlight scss >}}
 // Get the small breakpoint.
@@ -75,7 +75,7 @@ $breakpoint: map-get($breakpoints, sm);
 
 ### Respond above
 
-Before going ahead and writing the media query it's a good idea to ensure that the key exists in the <code>$breakpoints</code> map in case you make a typo (i.e. <code>@include respond-above(small)</code>).
+Before going ahead and writing the media query it's a good idea to ensure the key exists in the <code>$breakpoints</code> map in case you make a typo (i.e. <code>@include respond-above(small)</code>).
 
 To do this we use Sass' <code>map-has-key</code> function. Check it out below:
 
@@ -97,7 +97,7 @@ To do this we use Sass' <code>map-has-key</code> function. Check it out below:
 }
 {{< /highlight >}}
 
-So we pass a value to the respond-above mixin in the form of a Bootstrap breakpoint.
+So we can pass a value to the respond-above mixin in the form of a Bootstrap breakpoint.
 
 {{< highlight scss >}}
 @include respond-above(sm) {
@@ -107,7 +107,7 @@ So we pass a value to the respond-above mixin in the form of a Bootstrap breakpo
 }
 {{< /highlight >}}
 
-And here's the CSS output:
+Here's the CSS output:
 
 {{< highlight css >}}
 @media (min-width: 768px) {
@@ -190,7 +190,7 @@ I don't bother coding in smarts to ensure that the first parameter is lower than
 }
 {{< /highlight >}}
 
-And the CSS output:
+Here's the CSS output:
 
 {{< highlight css >}}
 @media (min-width: 768px) and (max-width: 991px) {
@@ -282,11 +282,11 @@ $breakpoints: (
 }
 {{< /highlight >}}
 
-I recommend putting this in a <code>_media-queries.scss</code> partial near the top of your SCSS index file.
+I recommend putting this in a <code>_media-queries.scss</code> partial (or similar) near the top of your SCSS index file.
 
 ## What next?
 
-I found these mixins super handy in my day-to-day work but they were still somewhat laborious to write. So I recently wrote some custom Sublime Text snippets which autocomplete based on a keyword such as <code>rasm</code> for <code>@include respond-above(sm) {}</code>.
+I found these mixins super handy in my day-to-day work but they were still somewhat laborious to write. So I recently wrote some custom Sublime Text snippets which autocomplete based on a keyword such as <code>rasm</code> for <code>@include respond-above(sm) {}</code> when you press tab.
 
 ### Sublime Text snippets
 
@@ -337,15 +337,18 @@ Here's how the respond between snippet looks:
   <scope>source.scss</scope>
 </snippet>
 {{< /highlight >}}
+
 Note that <code>$1</code>, <code>$2</code> and <code>$3</code> tell Sublime where the caret should appear with each successive tap of the tab key.
 
 <a href="https://github.com/lenymo/sublime-text-snippets/tree/master/scss" class="btn">Get the snippets</a>
 
 ### Adding / removing snippets
 
-I'm not sure where snippets live on a Windows machine but on macOS they're here:
+On macOS you can find Sublime snippets here:
 
 <code>/Users/username/Library/Application Support/Sublime Text 3/Packages</code>
+
+I'm not sure where they live on a Windows machine but Google is your friend.
 
 I recommend creating a <code>/snippets</code> sub-directory so you can easily find them in future.
 
@@ -359,7 +362,7 @@ $ Hide hidden files
 defaults write com.apple.finder AppleShowAllFiles NO
 {{< /highlight >}}
 
-You will need to relaunch finder before these changes will take effect. For more info on showing / hiding hidden files I recommend [Ian Lunn's article](https://ianlunn.co.uk/articles/quickly-showhide-hidden-files-mac-os-x-mavericks/).
+You will need to re-launch Finder before these changes take effect. For more info on showing / hiding hidden files I recommend [Ian Lunn's article](https://ianlunn.co.uk/articles/quickly-showhide-hidden-files-mac-os-x-mavericks/).
 
 ## Wrapping up
 
