@@ -288,6 +288,8 @@ I recommend putting this in a <code>_media-queries.scss</code> partial (or simil
 
 I found these mixins super handy in my day-to-day work but they were still somewhat laborious to write. So I recently wrote some custom Sublime Text snippets which autocomplete based on a keyword such as <code>rasm</code> for <code>@include respond-above(sm) {}</code> when you press tab.
 
+{{< figure src="/img/uploads/article-sass-media-query-mixins-sublime-snippets.gif" caption="Sublime Text snippets in action." >}}
+
 ### Sublime Text snippets
 
 Snippets are easy to add to Sublime Text, although [the syntax](http://sublimetext.info/docs/en/extensibility/snippets.html) can be a little tricky at first. They can be added via <code>Tools » Developer » New Snippet</code>. 
