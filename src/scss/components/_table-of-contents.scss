@@ -20,11 +20,11 @@
 
     a {
       border: 0;
-      color: $color-gray-3;
+      color: $link-font-color;
       // font-size: $article-font-size-xs;
 
       &:hover {
-        border: 0;
+        // border: 0;
         color: $link-font-color-hover;
       }
     }
@@ -53,15 +53,15 @@
   }
 }
 
-@include respond-above(xs) {
-  .table-of-contents {
-    ul {
-      a {
-        // font-size: $article-font-size-sm;
-      }
-    }
-  }
-}
+// @include respond-above(xs) {
+//   .table-of-contents {
+//     ul {
+//       a {
+//         font-size: $article-font-size-sm;
+//       }
+//     }
+//   }
+// }
 
 @include respond-above(sm) {
   .table-of-contents {
@@ -199,16 +199,24 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .table-of-contents__wrapper {
+  border-bottom: 1px solid $hr-color;
   display: none;
-  margin-bottom: 0;
+  margin-bottom: $gutter * 2;
   margin-top: $gutter;
+  padding-bottom: $gutter;
   text-align: left;
+}
+
+@include respond-above(xs) {
+  .table-of-contents__wrapper {
+    padding-bottom: 0;
+  }
 }
 
 @include respond-above(sm) {
   .table-of-contents__wrapper {
     margin-bottom: 0;
-    margin-left: 50px;
+    // margin-left: 50px;
   }
 }
 
@@ -226,16 +234,23 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .table-of-contents__title {
-  color: $color-gray-8;
-  display: none;
-  font-size: rem(12px);
+  color: $color-gray-c;
+  // display: none;
+  font-size: rem(16px);
   letter-spacing: .05em;
-  margin-bottom: $gutter * .25;
+  margin-bottom: $gutter * .5;
   text-transform: uppercase;
 }
 
 @include respond-above(xs) {
   .table-of-contents__title {
-    font-size: rem(14px);
+    margin-bottom: $gutter;
+  }
+}
+
+@include respond-above(sm) {
+  .table-of-contents__title {
+    font-size: rem(18px);
+    margin-bottom: $gutter * 1.5;
   }
 }
