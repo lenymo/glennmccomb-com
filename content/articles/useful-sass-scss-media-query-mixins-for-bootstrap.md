@@ -10,7 +10,9 @@ toc: true
 ---
 {{< lead >}}Today I'm going to share some Sass (SCSS) mixins which I've found helpful when developing Bootstrap websites.{{< /lead >}}
 
-Whether you're using full-blown bootstrap or just leveraging the familiar grid these will save you time when writing repetitive media queries. Due to the similarities in naming conventions these mixins will work in both Bootstrap v3 and the newly released v4 but I'll be using v4 breakpoints.
+Whether you're using full-blown bootstrap or just leveraging the familiar grid these will save you time when writing repetitive media queries. Due to the similarities in naming conventions these mixins work with both Bootstrap v3 and the newly released v4 but in these examples I'll be using v4 breakpoints.
+
+They're also versatile and work nicely even with your own custom naming conventions and breakpoints.
 
 ## What do the mixins do?
 
@@ -36,9 +38,11 @@ While developing bootstrap sites there are a couple of things I find myself writ
 }
 {{< /highlight >}}
 
-In Bootstrap terms, the breakpoint above 768 pixels is <code>sm</code>.
+<small>In Bootstrap terms, the breakpoint above 768 pixels is <code>md</code>.</small>
 
-In additional to these two, I occasionally need to apply CSS between two breakpoints.
+I write my CSS mobile-first and try my best to limit <code>max-width</code> media queries but they often save time and space.
+
+In additional to these two, I *occasionally* need to apply CSS between two specific breakpoints.
 
 {{< highlight css >}}
 @media (min-width: 768px) and (max-width: 991px) {
@@ -60,14 +64,14 @@ $breakpoints: (
 );
 {{< /highlight >}}
 
-These can be accessed using the Sass' map-get function:
+Which can be accessed using the Sass' map-get function:
 
 {{< highlight scss >}}
 // Get the small breakpoint.
 $breakpoint: map-get($breakpoints, sm);
 {{< /highlight >}}
 
-In my own fork of the bootstrap v4 grid I've added an additional <code>xl</code> breakpoint at 1500px which is useful for large desktop monitors. This type of thing is very easy to add.
+In my own fork of the bootstrap v4 grid I've added an additional <code>xl</code> breakpoint at 1500px which is useful for large desktop monitors.
 
 ## Media query mixins
 
@@ -89,9 +93,9 @@ The media queries are shown in detail below but first, here's how to use each on
 
 ### Respond above
 
-Before going ahead and writing the media query it's a good idea to ensure that key exists in the map in case you make a typo (i.e. <code>@include respond-above(small)</code>).
+Before going ahead and writing the media query it's a good idea to ensure that the key exists in the <code>$breakpoints</code> map in case you make a typo (i.e. <code>@include respond-above(small)</code>).
 
-To check that the key exists we use Sass' map-has-key function. Check out how it works below:
+To do this we use Sass' map-has-key function. Check it out below:
 
 {{< highlight scss >}}
 // Respond above.
@@ -132,7 +136,7 @@ To check that the key exists we use Sass' map-has-key function. Check out how it
 
 ### Respond between
 
-Here we want to check that both the lower and upper keys exist in the breakpoints map before writing the media query.
+Here we want to check that *both* the <code>$lower</code> and <code>$upper</code> keys exist in the <code>$breakpoints</code> map before writing the media query.
 
 {{< highlight scss >}}
 @mixin respond-between($lower, $upper) {
@@ -152,7 +156,7 @@ Here we want to check that both the lower and upper keys exist in the breakpoint
 }
 {{< /highlight >}}
 
-I don't bother coding in smarts to ensure that the first parameter is lower than the second one but I've never had any troubles with this.
+I don't bother coding in smarts to ensure that the first parameter is lower than the second one. I've never had any troubles with it the way it is.
 
 ## The entire code
 
@@ -238,11 +242,30 @@ $breakpoints: (
 
 ## What next?
 
-I found these mixins super handy in my day-to-day work but they were still somewhat laborious to write. So I recently wrote some custom Sublime Text snippets which autocomplete based on a keyword.
+I found these mixins super handy in my day-to-day work but they were still somewhat laborious to write. So I recently wrote some custom Sublime Text snippets which autocomplete based on a keyword such as <code>rasm</code> for <code>@include respond-above(sm) {}</code>.
 
 ### Bonus for Sublime Text users
 
-Snippets are easy to add to Sublime Text, although [the syntax](http://sublimetext.info/docs/en/extensibility/snippets.html) can be a little daunting at first. They can be added via <code>Tools » Developer » New Snippet</code>. All of [my snippets are on GitHub](https://github.com/lenymo/sublime-text-snippets) and you're welcome to use them.
+Snippets are easy to add to Sublime Text, although [the syntax](http://sublimetext.info/docs/en/extensibility/snippets.html) can be a little tricky at first. They can be added via <code>Tools » Developer » New Snippet</code>. 
+
+Here's how my <code>rasm</code> snippet looks:
+
+{{< highlight xml >}}
+<snippet>
+  <content><![CDATA[
+@include respond-above(sm) {
+  $1
+}
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>rasm</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>source.scss</scope>
+</snippet>
+
+{{< /highlight >}}
+
+All of [my snippets are on GitHub](https://github.com/lenymo/sublime-text-snippets) and you're welcome to use them.
 
 I wrote individual snippets for each breakpoint:
 
@@ -252,11 +275,11 @@ Below: <code>rbxs</code>, <code>rbsm</code>, <code>rbmd</code>, <code>rblg</code
 
 Between: <code>rbtw</code>
 
-There's only one "respond between" snippet which takes in lower and upper parameters. Press tab to cycle between values and again to start writing SCSS declarations.
+There's only one "respond between" snippet which takes in lower and upper parameters. Press tab to cycle between values and tab again to start writing SCSS declarations.
 
 <a href="https://github.com/lenymo/sublime-text-snippets/tree/master/scss" class="btn">Get the snippets</a>
 
-### Adding the snippets
+### Adding / removing the snippets
 
 I'm not sure exactly where snippets live on a Windows machine but on macOS they're here:
 
@@ -264,6 +287,16 @@ I'm not sure exactly where snippets live on a Windows machine but on macOS they'
 
 I recommend creating a <code>/snippets</code> sub-directory so you can easily find them in future.
 
-Note that the Library directory is a hidden file so you'll need to show hidden files. If you're macOS Sierra or newer you can show hidden files via <code>CMD + SHIFT + .</code> otherwise you will need to load up terminal [follow the instructions here](https://ianlunn.co.uk/articles/quickly-showhide-hidden-files-mac-os-x-mavericks/).
+Note that the Library directory is a hidden file so you'll need to show hidden files. If you're on macOS Sierra or newer you can show hidden files via <code>CMD + SHIFT + .</code> otherwise you'll need to load up terminal and type the following to add.
+
+{{< highlight xml >}}
+# Show hidden files
+defaults write com.apple.finder AppleShowAllFiles YES
+
+$ Hide hidden files
+defaults write com.apple.finder AppleShowAllFiles NO
+{{< /highlight >}}
+
+You will need to relaunch finder before these changes will take effect. For more info on showing / hiding hidden files I recommend [Ian Lunn's article](https://ianlunn.co.uk/articles/quickly-showhide-hidden-files-mac-os-x-mavericks/).
 
 Hope these are useful, let me know in the comments if you have any suggestions
