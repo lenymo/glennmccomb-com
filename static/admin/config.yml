@@ -3,7 +3,7 @@ backend:
   repo: lenymo/glennmccomb-com # Path to your Github repository
   branch: master # Branch to update
   
-media_folder: "src/img/uploads" # Media files will be stored in the repo under src/images/uploads
+media_folder: "src/img/uploads" # Media files will be stored in the repo under src/img/uploads
 public_folder: "/img/uploads" # The src attribute for uploaded media will begin with /img/uploads
 publish_mode: editorial_workflow
 
@@ -46,6 +46,8 @@ collections:
       - {label: "Featured image opacity", name: "featured_opacity", widget: "number", required: false}
       - {label: "Page header dark background", name: "dark_bg", widget: "boolean", required: false}
       - {label: "Page header background color", name: "page_header_bg_color", widget: "string", required: false}
+  
+  # Settings.
   - name: "settings"
     label: "Settings"
     files:
@@ -116,6 +118,10 @@ collections:
                   }, {
                     label: "URL", 
                     name: "URL", 
+                    widget: "string"
+                  }, {
+                    label: "Parent (use identifier)", 
+                    name: "parent",
                     widget: "string"
                   }
                 ]
