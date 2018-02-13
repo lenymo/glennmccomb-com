@@ -13,34 +13,34 @@ menu:
       URL: /contact/
       Weight: '30'
 
-    - Identifier: articles
-      Name: Articles
-      URL: /articles/
-      Weight: '20'
+    # - Identifier: articles
+    #   Name: Articles
+    #   URL: /articles/
+    #   Weight: '20'
 
-    - Identifier: design
-      Name: Design
-      URL: /categories/design/
-      Weight: '200'
-      parent: "articles"
+    # - Identifier: design
+    #   Name: Design
+    #   URL: /categories/design/
+    #   Weight: '200'
+    #   parent: "articles"
 
-    - Identifier: development
-      Name: Development
-      URL: /categories/development/
-      Weight: '210'
-      parent: "articles"
+    # - Identifier: development
+    #   Name: Development
+    #   URL: /categories/development/
+    #   Weight: '210'
+    #   parent: "articles"
 
-    - Identifier: gaming
-      Name: Gaming
-      URL: /categories/gaming/
-      Weight: '220'
-      parent: "articles"
+    # - Identifier: gaming
+    #   Name: Gaming
+    #   URL: /categories/gaming/
+    #   Weight: '220'
+    #   parent: "articles"
 
-    - Identifier: nba
-      Name: NBA
-      URL: /categories/nba/
-      Weight: '230'
-      parent: "articles"
+    # - Identifier: nba
+    #   Name: NBA
+    #   URL: /categories/nba/
+    #   Weight: '230'
+    #   parent: "articles"
     
 taxonomies:
   category: categories
