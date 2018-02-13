@@ -8,10 +8,10 @@ menu:
       URL: /contact/
       Weight: '30'
 
-    - Identifier: articles
-      Name: Articles
-      URL: /articles/
-      Weight: '20'
+    # - Identifier: articles
+    #   Name: Articles
+    #   URL: /articles/
+    #   Weight: '20'
 
     # - Identifier: design
     #   Name: Design
