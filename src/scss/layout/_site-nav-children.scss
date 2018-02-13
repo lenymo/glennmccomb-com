@@ -1,0 +1,101 @@
+
+
+//
+//  SITE NAV CHILDREN
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+
+//
+//  LAYOUT
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$site-nav-dropdown-width-sm: 100%;
+$site-nav-dropdown-width-md: 200px;
+$site-nav-dropdown-item-padding-sm: ($gutter * .25) $gutter;
+$site-nav-dropdown-item-padding-md: ($gutter * .5) $gutter;
+
+
+//
+//  COLORS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// Dropdown.
+$site-nav-dropdown-bg-color: $color-primary-darker;
+
+// Standard nav item.
+$site-nav-dropdown-item-bg-color: transparent;
+$site-nav-dropdown-item-font-color: rgba($white, .75);
+
+// Hover.
+$site-nav-dropdown-bg-color-hover: lighten($site-nav-dropdown-bg-color, 2.5%);
+$site-nav-dropdown-item-font-color-hover: $white;
+
+
+
+//
+//  DROPDOWN
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.site-nav__child-list {
+  background-color: $site-nav-dropdown-bg-color;
+  margin-bottom: $gutter * .5;
+  text-align: center;
+  width: $site-nav-dropdown-width-sm;
+}
+
+@include respond-above(sm) {
+  .site-nav__child-list {
+    border-top: 5px solid $color-primary;
+    box-shadow: 0 10px 15px rgba($black, .1);
+    display: none;
+    left: 0;
+    margin-bottom: 0;
+    position: absolute;
+    text-align: left;
+    width: $site-nav-dropdown-width-md;
+  }
+  
+  // Hover state.
+  .site-nav__item {
+    &.-has-children {
+      &:hover {
+        .site-nav__child-list {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+
+//
+//  ITEM
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.site-nav__child-item {
+  font-weight: normal;
+}
+
+
+
+//
+//  LINK
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.site-nav__child-link {
+  color: $site-nav-dropdown-item-font-color;
+  display: block;
+  padding: $site-nav-dropdown-item-padding-sm;
+}
+
+@include respond-above(sm) {
+  .site-nav__child-link {
+    padding: $site-nav-dropdown-item-padding-md;
+    transition: all .2s ease;
+
+    &:hover {
+      background-color: $site-nav-dropdown-bg-color-hover;
+      color: $site-nav-dropdown-item-font-color-hover;
+    }
+  }
+}

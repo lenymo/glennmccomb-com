@@ -34,7 +34,7 @@ $site-nav-item-current-border-color: $color-secondary;
 
 
 //
-//  STYLES
+//  NAV
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .site-nav {
@@ -46,11 +46,38 @@ $site-nav-item-current-border-color: $color-secondary;
   }
 }
 
+@include respond-above(sm) {
+  .site-nav {
+    vertical-align: top;
+    float: right;
+  }
+}
+
+
+//
+//  ITEM
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
 .site-nav__item {
   display: inline-block;
   font-weight: bold;
   width: 100%;
 }
+
+@include respond-above(sm) {
+  .site-nav__item {
+    width: auto;
+
+    &.-has-children {
+      position: relative;
+    }
+  }
+}
+
+
+//
+//  LINK
+//––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .site-nav__link {
   background: $site-nav-item-bg-color;
@@ -60,7 +87,7 @@ $site-nav-item-current-border-color: $color-secondary;
   transition: all .15s ease;
 }
 
-// Current item
+// Current item.
 .site-nav__item {
   &.-is-current {
     .site-nav__link {
@@ -71,15 +98,6 @@ $site-nav-item-current-border-color: $color-secondary;
 }
 
 @include respond-above(sm) {
-  .site-nav {
-    vertical-align: top;
-    float: right;
-  }
-
-  .site-nav__item {
-    width: auto;
-  }
-
   .site-nav__link {
     padding: $site-nav-item-padding-md;
     position: relative;
@@ -108,16 +126,37 @@ $site-nav-item-current-border-color: $color-secondary;
     &.-is-current {
     }
   }
-
+  
+  // Current item.
   .site-nav__item {
     &.-is-current {
       .site-nav__link {
         &:before {
-          // background: rgba($white, .25);
           background: $site-nav-item-current-border-color;
           box-shadow: 0 0 5px lighten($site-nav-item-current-border-color, 5%);
         }
       }
     }
+  }
+}
+
+
+//
+//  LINK CARET
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.site-nav__link-caret {
+  display: none;
+}
+
+@include respond-above(sm) {
+  .site-nav__link-caret {
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid $site-nav-item-font-color;
+    display: inline-block;
+    height: 0;
+    vertical-align: middle;
+    width: 0;
   }
 }
