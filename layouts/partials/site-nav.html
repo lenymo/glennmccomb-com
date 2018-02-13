@@ -7,12 +7,23 @@
   <ul class="site-nav__list">
     {{ $currentPage := . }}
     {{ range .Site.Menus.main }}
-    <li class="site-nav__item site-nav_item--{{ .Identifier }}{{if $currentPage.IsMenuCurrent "main" . }} -is-current{{end}}{{if $currentPage.HasMenuCurrent "main" . }} -is-current{{end}}">
-      <a href="{{.URL}}" class="site-nav__link">
-        {{ .Name }}
+    <li class="site-nav__item site-nav_item--{{ .Identifier }}{{if $currentPage.IsMenuCurrent "main" . }} -is-current{{end}}{{if $currentPage.HasMenuCurrent "main" . }} -is-current{{end}}{{ if .HasChildren }} -has-children{{ end }}">
+      <a href="{{.URL}}" class="site-nav__link{{ if .HasChildren }} -has-children{{ end }}">
+        {{ .Name }}{{ if .HasChildren }} <span class="site-nav__link-caret"></span>{{ end }}
       </a>
+      {{ if .HasChildren }}
+        <ul class="site-nav__child-list">
+        {{ range .Children }}
+          <li class="site-nav__child-item{{if $currentPage.IsMenuCurrent "main" . }} -is-current{{end}}">
+            <a href="{{.URL}}" class="site-nav__child-link">
+              {{ .Name }}
+            </a>
+          </li>
+        {{ end }}
+        </ul><!-- .site-nav__child-list -->
+      {{ end }}
     </li>
-    {{end}}
+    {{ end }}
   </ul>
 </nav><!-- .site-nav -->
 <a href="javascript:void(0);" class="site-nav__nav-toggle u-hidden-md-up">Menu</a>
