@@ -8,7 +8,7 @@
 
 <!-- Single article. -->
 {{ if and (eq .Type "articles") (eq .Kind "page") }}
-<script type="text/javascript" src="{{ .Site.BaseURL }}js/vendor/disqus-loader.min.js"></script>
+<script type="text/javascript" src="{{ .Site.BaseURL }}js/vendor/disqus-loader.js"></script>
 <script>
   disqusLoader( '.disqus', { scriptUrl: '//glennmccomb-com.disqus.com/embed.js' });
 </script>
