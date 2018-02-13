@@ -105,7 +105,7 @@ To do this we use Sass' <code>map-has-key</code> function. Check it out below:
 
 So we can pass a value to the respond-above mixin in the form of a Bootstrap breakpoint. 
 
-Note that we are also logging a <code>@warning</code> to the console if the breakpoint doesn't exist in the map. Without this the media query won't show up and you'll have no idea.
+Note that we are also logging a <code>@warning</code> to the console if the breakpoint doesn't exist in the map. Without this the media query won't show up in your compiled CSS and you'll have no idea.
 
 {{< highlight scss >}}
 @include respond-above(sm) {
