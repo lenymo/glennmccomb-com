@@ -96,6 +96,11 @@ gulp.task('js', function() {
     // Put the map in the data directory.
     .pipe( gulp.dest('data/js') );
 
+  // Copy and minify vendor JS files.
+  gulp.src('src/js/vendor/*.js')
+    .pipe( uglify().on('error', console.log) )
+    .pipe( gulp.dest('static/js/vendor') );
+
 });
 
 

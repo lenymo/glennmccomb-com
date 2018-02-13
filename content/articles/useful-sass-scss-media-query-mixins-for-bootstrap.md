@@ -93,11 +93,19 @@ To do this we use Sass' <code>map-has-key</code> function. Check it out below:
     @media (min-width: $breakpoint-value) {
       @content;
     }
+
+  // If the breakpoint doesn't exist in the map.
+  } @else {
+
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
   }
 }
 {{< /highlight >}}
 
-So we can pass a value to the respond-above mixin in the form of a Bootstrap breakpoint.
+So we can pass a value to the respond-above mixin in the form of a Bootstrap breakpoint. 
+
+Note that we are also logging a <code>@warning</code> to the console if the breakpoint doesn't exist in the map. Without this the media query won't show up and you'll have no idea.
 
 {{< highlight scss >}}
 @include respond-above(sm) {
@@ -134,6 +142,12 @@ This mixin works in much the same way.
     @media (max-width: ($breakpoint-value - 1)) {
       @content;
     }
+
+  // If the breakpoint doesn't exist in the map.
+  } @else {
+
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
   }
 }
 {{< /highlight >}}
@@ -176,9 +190,28 @@ Here we want to check that *both* the <code>$lower</code> and <code>$upper</code
     @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1)) {
       @content;
     }
+  
+  // If one or both of the breakpoints don't exist.
+  } @else {
+
+    // If lower breakpoint is invalid.
+    @if (map-has-key($breakpoints, $lower) == false) {
+
+      // Log a warning.
+      @warn 'Your lower breakpoint was invalid: #{$lower}.';
+    }
+
+    // If upper breakpoint is invalid.
+    @if (map-has-key($breakpoints, $upper) == false) {
+
+      // Log a warning.
+      @warn 'Your upper breakpoint was invalid: #{$upper}.';
+    }
   }
 }
 {{< /highlight >}}
+
+Note that for this mixin the <code>@warning</code> will tell you specifically which breakpoint is causing issues (or if it's both).
 
 I don't bother coding in smarts to ensure that the first parameter is lower than the second one. I've never had any troubles with it the way it is.
 
@@ -235,6 +268,12 @@ $breakpoints: (
     @media (min-width: $breakpoint-value) {
       @content;
     }
+  
+  // If the breakpoint doesn't exist in the map.
+  } @else {
+
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
   }
 }
 
@@ -256,6 +295,12 @@ $breakpoints: (
     @media (max-width: ($breakpoint-value - 1)) {
       @content;
     }
+  
+  // If the breakpoint doesn't exist in the map.
+  } @else {
+
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
   }
 }
 
@@ -277,6 +322,23 @@ $breakpoints: (
     // Write the media query.
     @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1)) {
       @content;
+    }
+  
+  // If one or both of the breakpoints don't exist.
+  } @else {
+
+    // If lower breakpoint is invalid.
+    @if (map-has-key($breakpoints, $lower) == false) {
+
+      // Log a warning.
+      @warn 'Your lower breakpoint was invalid: #{$lower}.';
+    }
+
+    // If upper breakpoint is invalid.
+    @if (map-has-key($breakpoints, $upper) == false) {
+
+      // Log a warning.
+      @warn 'Your upper breakpoint was invalid: #{$upper}.';
     }
   }
 }
