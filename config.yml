@@ -3,6 +3,11 @@ languageCode: en-us
 paginate: 12
 menu:
   main:
+    # - Identifier: home
+    #   Name: Home
+    #   URL: /
+    #   Weight: '10'
+      
     - Identifier: contact
       Name: Contact
       URL: /contact/
@@ -36,11 +41,6 @@ menu:
       URL: /categories/nba/
       Weight: '230'
       parent: "articles"
-
-    - Identifier: home
-      Name: Home
-      URL: /
-      Weight: '10'
     
 taxonomies:
   category: categories
