@@ -114,16 +114,20 @@ $site-nav-item-current-border-color: $color-secondary;
       width: 100%;
     }
 
-    &:hover {
-      background: $site-nav-item-bg-color-hover;
-      color: $site-nav-item-font-color-hover;
-
-      &:before {
-        background: $white;
-      }
-    }
-
     &.-is-current {
+    }
+  }
+
+  .site-nav__item {
+    &:hover {
+      .site-nav__link {
+        background: $site-nav-item-bg-color-hover;
+        color: $site-nav-item-font-color-hover;
+
+        &:before {
+          background: $white;
+        }
+      }
     }
   }
   
