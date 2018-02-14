@@ -27,19 +27,19 @@ menu:
     - Identifier: development
       Name: Development
       URL: /categories/development/
-      Weight: '210'
+      Weight: '110'
       parent: "articles"
 
     - Identifier: gaming
       Name: Gaming
       URL: /categories/gaming/
-      Weight: '220'
+      Weight: '120'
       parent: "articles"
 
     - Identifier: nba
       Name: NBA
       URL: /categories/nba/
-      Weight: '230'
+      Weight: '130'
       parent: "articles"
 
     # - Identifier: projects
