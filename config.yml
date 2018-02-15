@@ -8,11 +8,6 @@ menu:
     #   URL: /
     #   Weight: '10'
 
-    - Identifier: contact
-      Name: Contact
-      URL: /contact/
-      Weight: '30'
-
     - Identifier: articles
       Name: Articles
       URL: /articles/
@@ -41,6 +36,16 @@ menu:
       URL: /categories/nba/
       Weight: '130'
       parent: "articles"
+
+    # - Identifier: about
+    #   Name: About
+    #   URL: /about/
+    #   Weight: '20'
+
+    - Identifier: contact
+      Name: Contact
+      URL: /contact/
+      Weight: '30'
 
     # - Identifier: projects
     #   Name: Projects
