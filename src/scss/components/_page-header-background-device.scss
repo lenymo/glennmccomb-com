@@ -4,9 +4,10 @@
 //  BACKGROUND DEVICE
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
+
 .page-header__background-device {
   background: rgba($black, .05);
-  height: 50%;
+  // height: 50%;
   height: 100%;
   left: 0;
   margin-left: 63px;
@@ -91,7 +92,7 @@
 .section__page-header {
   &.-has-dark-bg {
     .page-header__background-device {
-      background: rgba($black, .3);
+      background: rgba($black, .5);
 
       .line {
         background: rgba($white, .125);
