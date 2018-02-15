@@ -1,0 +1,26 @@
+{{ partial "head" . }}
+
+<body class="{{ .Title | urlize }}{{ with .Params.custom_class }} page-{{ . }}{{ end }}{{ with .Params.transparent_header }} -has-transparent-site-header{{ end }}">
+
+  {{ partial "header" . }}
+
+  {{ partial "page-header" . }}
+
+  <section class="section section__about-music">
+    <div class="container container__about-music">
+      <div class="row row__about-music">
+        <div class="col-xs-12 col-sm-6 offset-sm-3">
+          <h2>Music</h2>
+          <div class="last-fm" id="last-fm">
+            
+          </div><!-- #last-fm -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{ partial "footer" . }}
+  
+{{ partial "foot" . }}
+
+</body>
