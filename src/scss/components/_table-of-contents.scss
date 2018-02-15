@@ -41,23 +41,43 @@
   // Neat implemention of custom list item numbers found here:
   // https://scotch.io/tutorials/setup-a-react-environment-using-webpack-and-babel
 
-  // #TableOfContents > ul > li > ul > li {
-  //   counter-increment: a;
+  // #TableOfContents {
+  //   position: relative;
 
   //   &:before {
-  //     background-color: $color-gray-e;
-  //     border-radius: 5px;
-  //     color: $color-gray-8;
-  //     content: counter(a);
-  //     display: inline-block;
-  //     font-size: rem(14px);
-  //     font-weight: bold;
-  //     height: 25px;
-  //     line-height: 25px;
-  //     margin-right: 10px;
-  //     text-align: center;
-  //     vertical-align: top;
-  //     width: 25px;
+  //     background: $color-gray-f;
+  //     content: '';
+  //     display: block;
+  //     height: 100%;
+  //     left: 12px;
+  //     position: absolute;
+  //     top: 0;
+  //     transform: translateX(-50%);
+  //     width: 5px;
+  //     z-index: 1;
+  //   }
+
+  //   > ul > li > ul > li {
+  //     counter-increment: a;
+
+  //     &:before {
+  //       background-color: $color-gray-e;
+  //       border-radius: 50%;
+  //       box-shadow: 0 0 4px 4px $white;
+  //       color: $color-gray-a;
+  //       content: counter(a);
+  //       display: inline-block;
+  //       font-size: rem(12px);
+  //       font-weight: bold;
+  //       height: 24px;
+  //       line-height: 24px;
+  //       margin-right: 10px;
+  //       position: relative;
+  //       text-align: center;
+  //       vertical-align: top;
+  //       width: 24px;
+  //       z-index: 2;
+  //     }
   //   }
   // }
 
