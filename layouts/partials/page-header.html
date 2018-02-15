@@ -3,20 +3,23 @@
 //  PAGE HEADER
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 -->
+<!-- Generic classes. -->
+{{ $.Scratch.Add "page-header-classes" " -has-background-device" }}
+
 <!-- Page-specific section classes. -->
 <!-- Article index. -->
 {{ if and (eq .Type "articles") (eq .Kind "section") }}
-  {{ $.Scratch.Add "page-header-classes" " -has-background-device -has-dark-bg" }}
+  {{ $.Scratch.Add "page-header-classes" " -has-dark-bg" }}
 {{ end }}
 
 <!-- Single article. -->
 {{ if and (eq .Type "articles") (eq .Kind "page") }}
-  {{ $.Scratch.Add "page-header-classes" " section__article-header -has-background-device" }}
+  {{ $.Scratch.Add "page-header-classes" " section__article-header" }}
 {{ end }}
 
 <!-- Category listing. -->
 {{ if eq .Type "categories" }}
-  {{ $.Scratch.Add "page-header-classes" " -has-background-device -has-dark-bg" }}
+  {{ $.Scratch.Add "page-header-classes" " -has-dark-bg" }}
 {{ end }}
 
 <section class="section section__page-header{{ with .Params.featured }} -has-featured{{ end }}{{ with .Params.dark_bg }} -has-dark-bg{{ end }}{{ $.Scratch.Get "page-header-classes" }}">
