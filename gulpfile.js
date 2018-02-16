@@ -1,7 +1,10 @@
+
+
 //
 //  GULP
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
+// General
 var gulp            = require('gulp');
 var sass            = require('gulp-sass');
 var autoprefixer    = require('gulp-autoprefixer');
@@ -9,6 +12,11 @@ var concat          = require('gulp-concat');
 var uglify          = require('gulp-uglify');
 var hash            = require('gulp-hash');
 var del             = require('del');
+
+// Webpack.
+var webpack         = require('webpack');
+var webpackStream   = require('webpack-stream');
+var webpackConfig   = require('./webpack.config.js');
 
 // Dev only source maps.
 var sourcemaps      = require('gulp-sourcemaps');
@@ -22,11 +30,52 @@ var mozjpeg         = require('imagemin-mozjpeg');
 
 
 //
+//  REACT
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+gulp.task('react', function() {
+
+  // If dev flag doesn't exist.
+  if ( argv.dev === undefined ) {
+
+    // Set dev flag to false.
+    argv.dev = false;
+  }
+
+  // If this is not dev (i.e. production).
+  if ( argv.dev ) {
+
+    webpackConfig.plugins = [
+      new webpack.DefinePlugin({
+        'process.env.NODE_ENV': '"development"'
+      })
+    ];
+  
+  } else {
+
+    webpackConfig.plugins = [
+      new webpack.DefinePlugin({
+        'process.env.NODE_ENV': '"production"'
+      })
+    ];
+  }
+
+  return webpackStream( webpackConfig )
+    .on('error', function handleError() {
+      this.emit('end'); // Recover from errors
+    })
+    .pipe( gulp.dest('static/js') );
+});
+
+
+//
 //  SCSS
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 // Compile admin SCSS files to CSS
 gulp.task('scss', function () {
+
+  // Clear the static/css directory.
   del(['static/css/**/*']);
 
   // If dev flag doesn't exist.
@@ -67,8 +116,9 @@ gulp.task('scss', function () {
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 gulp.task('js', function() {
-  del(['static/js/**/*']);
 
+  // Clear the static/js directory.
+  del(['static/js/**/*']);
 
   // If dev flag doesn't exist.
   if ( argv.dev === undefined ) {
@@ -76,7 +126,6 @@ gulp.task('js', function() {
     // Set dev flag to false.
     argv.dev = false;
   }
-
 
   gulp.src('src/js/*.js')
 
@@ -193,10 +242,11 @@ gulp.task('build', ['responsive-images', 'compress-images']);
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 // Watch asset folder for changes
-gulp.task('watch', ['scss', 'js'], function () {
+gulp.task('watch', ['scss', 'js', 'react'], function () {
   gulp.watch('src/scss/**/*', ['scss']);
   gulp.watch('src/admin/scss/**/*', ['admin-scss']);
   gulp.watch('src/js/**/*.js', ['js']);
+  gulp.watch('src/react/**/*.js', ['react']);
 });
 
 
