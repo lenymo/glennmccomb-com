@@ -8,18 +8,20 @@
 
   <section class="section section__about-music">
     <div class="container container__about-music">
-      <div class="row row__about-music">
-        <div class="col-xs-12 col-sm-6 offset-sm-3">
+      <div class="row">
+        <div class="col-sm-12">
           <h2>Music</h2>
-          <div class="last-fm" id="last-fm">
-            
-          </div><!-- #last-fm -->
         </div>
       </div>
-    </div>
-  </section>
+
+      <div id="last-fm"></div><!-- #last-fm -->
+      
+    </div><!-- .container__about-music -->
+  </section><!-- .section__about-music -->
 
   {{ partial "footer" . }}
+
+<script src="/js/bundle.js"></script>
   
 {{ partial "foot" . }}
 
