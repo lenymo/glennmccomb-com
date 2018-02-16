@@ -1,15 +1,21 @@
 {
-  "name": "test",
+  "name": "glennmccomb-com",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "repository": "https://github.com/lenymo/glennmccomb-com",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "NODE_ENV=development webpack",
+    "build": "NODE_ENV=production webpack"
   },
   "keywords": [],
-  "author": "",
+  "author": "Glenn McComb",
   "license": "ISC",
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
@@ -17,15 +23,17 @@
     "gulp-hash": "^4.1.1",
     "gulp-if": "^2.0.2",
     "gulp-imagemin": "^4.1.0",
+    "gulp-responsive": "^2.8.0",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^2.1.2",
     "gulp-util": "^3.0.8",
     "imagemin-mozjpeg": "^7.0.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "sharp": "^0.18.4",
+    "webpack": "^3.11.0",
+    "webpack-stream": "^4.0.1",
     "yargs": "^10.0.3"
-  },
-  "dependencies": {
-    "gulp-responsive": "^2.8.0"
   }
 }
