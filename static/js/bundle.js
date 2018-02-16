@@ -987,7 +987,7 @@ var LastFM = function (_React$Component) {
       var username = 'elgyn2'; // My username.
       var apikey = '8a01aea061e32344de520401cc2e2028'; // My API key.
       var limit = 12;
-      var lastFmUrl = 'http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=' + username + '&api_key=' + apikey + '&format=json&period=' + timePeriod + '&limit=' + limit;
+      var lastFmUrl = 'https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=' + username + '&api_key=' + apikey + '&format=json&period=' + timePeriod + '&limit=' + limit;
 
       fetch(lastFmUrl).then(function (response) {
         return response.json();
