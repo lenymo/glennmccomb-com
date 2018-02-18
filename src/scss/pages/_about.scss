@@ -29,6 +29,10 @@ $last-fm-artist-rank-size: 35px;
     color: $white;
     text-decoration: none;
   }
+
+  &.-is-placeholder {
+    background-color: $color-gray-e;
+  }
 }
 
 @include respond-above(xs) {
@@ -41,11 +45,6 @@ $last-fm-artist-rank-size: 35px;
 @include respond-above(sm) {
   .last-fm-artist {
     height: 320px;
-    // transition: all .2s ease;
-
-    // &:hover {
-    //   transform: scale(1.05);
-    // }
   }
 }
 
@@ -78,9 +77,23 @@ $last-fm-artist-rank-size: 35px;
   line-height: $last-fm-artist-rank-size;
   position: absolute;
   text-align: center;
-  transform: translateX(-50%);
+  transform: translateX(-25%);
   width: $last-fm-artist-rank-size;
   z-index: 1;
+}
+
+.last-fm-artist {
+  &.-is-placeholder {
+    .last-fm-artist__rank {
+      background-color: $color-gray-c;
+    }
+  }
+}
+
+@include respond-above(xs) {
+  .last-fm-artist__rank {
+    transform: translateX(-50%);
+  }
 }
 
 
@@ -91,10 +104,17 @@ $last-fm-artist-rank-size: 35px;
 .last-fm-artist__meta {
   bottom: $gutter;
   left: 0;
-  padding-left: $gutter * 2;
+  padding-left: $gutter * 2.5;
   padding-right: $gutter;
   position: absolute;
   z-index: 1;
+  width: 100%;
+}
+
+@include respond-above(sm) {
+  .last-fm-artist__meta {
+    padding-left: $gutter * 2;
+  }
 }
 
 
@@ -108,6 +128,17 @@ $last-fm-artist-rank-size: 35px;
   margin-bottom: 0;
 }
 
+.last-fm-artist {
+  &.-is-placeholder {
+    .last-fm-artist__name {
+      background-color: $color-gray-d;
+      height: 1em;
+      margin-bottom: $gutter;
+      width: 90%;
+    }
+  }
+}
+
 
 //
 //  PLAY COUNT
@@ -119,6 +150,16 @@ $last-fm-artist-rank-size: 35px;
   font-weight: bold;
   margin-bottom: 0;
   letter-spacing: .05em;
+}
+
+.last-fm-artist {
+  &.-is-placeholder {
+    .last-fm-artist__play-count {
+      background-color: $color-gray-d;
+      height: 1em;
+      width: 25%;
+    }
+  }
 }
 
 

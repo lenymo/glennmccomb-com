@@ -949,9 +949,13 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _LastFMArtist = __webpack_require__(17);
+var _Artist = __webpack_require__(17);
 
-var _LastFMArtist2 = _interopRequireDefault(_LastFMArtist);
+var _Artist2 = _interopRequireDefault(_Artist);
+
+var _ArtistsPlaceholder = __webpack_require__(18);
+
+var _ArtistsPlaceholder2 = _interopRequireDefault(_ArtistsPlaceholder);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -977,6 +981,10 @@ var LastFM = function (_React$Component) {
     return _this;
   }
 
+  //
+  //  COMPONENT WILL MOUNT
+  //––––––––––––––––––––––––––––––––––––––––––––––––––
+
   _createClass(LastFM, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
@@ -999,22 +1007,32 @@ var LastFM = function (_React$Component) {
         });
       });
     }
+
+    //
+    //  RENDER
+    //––––––––––––––––––––––––––––––––––––––––––––––––––
+
   }, {
     key: 'render',
     value: function render() {
       var items = this.state.artists;
 
-      return _react2.default.createElement(
+      var colClasses = 'col-sm-6 col-lg-4 col-xl-3 col__last-fm-artist';
+
+      // If there are items, render them, 
+      // else render the placeholder.
+      return items.length ? _react2.default.createElement(
         'div',
         { className: 'row row__last-fm' },
         items.map(function (item, index) {
-          return _react2.default.createElement(_LastFMArtist2.default, {
+          return _react2.default.createElement(_Artist2.default, {
             key: item.name,
             artist: item,
             image: item.image[3],
-            rank: index + 1 });
+            rank: index + 1,
+            colClasses: colClasses });
         })
-      );
+      ) : _react2.default.createElement(_ArtistsPlaceholder2.default, { colClasses: colClasses });
     }
   }]);
 
@@ -1053,16 +1071,16 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 //  LAST FM ARTIST
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-var LastFMArtist = function (_React$Component) {
-  _inherits(LastFMArtist, _React$Component);
+var Artist = function (_React$Component) {
+  _inherits(Artist, _React$Component);
 
-  function LastFMArtist() {
-    _classCallCheck(this, LastFMArtist);
+  function Artist() {
+    _classCallCheck(this, Artist);
 
-    return _possibleConstructorReturn(this, (LastFMArtist.__proto__ || Object.getPrototypeOf(LastFMArtist)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (Artist.__proto__ || Object.getPrototypeOf(Artist)).apply(this, arguments));
   }
 
-  _createClass(LastFMArtist, [{
+  _createClass(Artist, [{
     key: 'formatPlayCount',
     value: function formatPlayCount(playCount) {
       var formattedPlayCount = parseInt(playCount);
@@ -1084,7 +1102,7 @@ var LastFMArtist = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: 'col-sm-6 col-lg-4 col-xl-3 col__last-fm-artist -has-dark-bg', key: this.props.artist.name },
+        { className: this.props.colClasses, key: this.props.artist.name },
         _react2.default.createElement(
           'a',
           { href: this.props.artist.url, className: 'last-fm-artist', target: '_blank' },
@@ -1116,10 +1134,57 @@ var LastFMArtist = function (_React$Component) {
     }
   }]);
 
-  return LastFMArtist;
+  return Artist;
 }(_react2.default.Component);
 
-exports.default = LastFMArtist;
+exports.default = Artist;
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ArtistsPlaceholder = function ArtistsPlaceholder(props) {
+
+  var cols = [];
+  for (var i = 0; i < 12; i++) {
+    cols.push(_react2.default.createElement(
+      "div",
+      { key: i, className: props.colClasses },
+      _react2.default.createElement(
+        "div",
+        { className: "last-fm-artist -is-placeholder" },
+        _react2.default.createElement("div", { className: "last-fm-artist__rank" }),
+        _react2.default.createElement(
+          "div",
+          { className: "last-fm-artist__meta" },
+          _react2.default.createElement("div", { className: "last-fm-artist__name" }),
+          _react2.default.createElement("div", { className: "last-fm-artist__play-count" })
+        )
+      )
+    ));
+  }
+
+  return _react2.default.createElement(
+    "div",
+    { className: "row row__last-fm" },
+    cols
+  );
+};
+
+exports.default = ArtistsPlaceholder;
 
 /***/ })
 /******/ ]);

@@ -6,7 +6,8 @@
 
 import React from 'react';
 
-import LastFMArtist from './LastFMArtist';
+import Artist from './Artist';
+import ArtistsPlaceholder from './ArtistsPlaceholder';
 
 class LastFM extends React.Component {
   constructor() {
@@ -14,6 +15,11 @@ class LastFM extends React.Component {
     this.state = {artists: []};
   }
 
+
+  //
+  //  COMPONENT WILL MOUNT
+  //––––––––––––––––––––––––––––––––––––––––––––––––––
+  
   componentWillMount() {
 
     // Build last.fm API url.
@@ -33,20 +39,30 @@ class LastFM extends React.Component {
       });
   }
 
+  
+  //
+  //  RENDER
+  //––––––––––––––––––––––––––––––––––––––––––––––––––
+
   render() {
     let items = this.state.artists;
 
-    return(
+    const colClasses = 'col-sm-6 col-lg-4 col-xl-3 col__last-fm-artist';
+
+    // If there are items, render them, 
+    // else render the placeholder.
+    return items.length ? (
       <div className="row row__last-fm">
         {items.map((item, index) => 
-          <LastFMArtist 
+          <Artist 
             key={item.name} 
             artist={item} 
             image={item.image[3]}
-            rank={index + 1} />
+            rank={index + 1}
+            colClasses={colClasses} />
         )}
       </div>
-    )
+    ) : <ArtistsPlaceholder colClasses={colClasses} />
   }
 }
 

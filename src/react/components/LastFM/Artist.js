@@ -5,7 +5,7 @@
 
 import React from 'react';
 
-class LastFMArtist extends React.Component {
+class Artist extends React.Component {
 
   formatPlayCount( playCount ) {
     var formattedPlayCount = parseInt(playCount);
@@ -15,17 +15,17 @@ class LastFMArtist extends React.Component {
 
   render() {
 
-    var artistImage = this.props.image['#text'];
+    const artistImage = this.props.image['#text'];
 
-    var artistStyles = {
+    const artistStyles = {
       backgroundImage: 'url(' + artistImage + ')'
     };
 
     // Get playcount.
-    var playCount = this.formatPlayCount(this.props.artist.playcount);
+    const playCount = this.formatPlayCount(this.props.artist.playcount);
 
     return (
-      <div className="col-sm-6 col-lg-4 col-xl-3 col__last-fm-artist -has-dark-bg" key={this.props.artist.name}>
+      <div className={this.props.colClasses} key={this.props.artist.name}>
         <a href={this.props.artist.url} className="last-fm-artist" target="_blank">
           <div className="last-fm-artist__rank">
             {this.props.rank}
@@ -45,4 +45,4 @@ class LastFMArtist extends React.Component {
   }
 }
 
-export default LastFMArtist;
+export default Artist;
