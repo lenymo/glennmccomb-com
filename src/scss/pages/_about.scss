@@ -6,6 +6,55 @@
 
 
 //
+//  LAST FM PERIOD NAV
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.last-fm-period {
+  margin-bottom: $gutter * 2;
+}
+
+.last-fm-period__list-item {
+  display: inline-block;
+}
+
+.last-fm-period__link {
+  border-bottom: 3px solid $color-gray-e;
+  color: $color-gray-a;
+  display: block;
+  font-size: rem(12px);
+  padding: ($gutter * .25) ($gutter * .5);
+  transition: all .2s ease;
+}
+
+.last-fm-period__list-item {
+  &.-is-current {
+    .last-fm-period__link {
+      border-bottom-color: $color-primary;
+      color: $color-primary;
+    }
+  }
+}
+
+@include respond-above(xs) {
+  .last-fm-period__link {
+    font-size: rem(14px);
+  }
+}
+
+@include respond-above(sm) {
+  .last-fm-period__link {
+    font-size: rem(16px);
+    padding: ($gutter * .5) $gutter;
+
+    &:hover {
+      border-bottom-color: $color-primary;
+      color: $color-primary;
+    }
+  }
+}
+
+
+//
 //  LAST FM ARTIST
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
