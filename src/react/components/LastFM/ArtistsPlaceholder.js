@@ -2,8 +2,10 @@ import React from 'react';
 
 const ArtistsPlaceholder = (props) => {
   
-  var cols = [];
-  for (var i = 0; i < 12; i++) {
+  const cols = [];
+  const limit = props.limit
+
+  for (var i = 0; i < limit; i++) {
     cols.push(
       <div key={i} className={props.colClasses}>
         <div className="last-fm-artist -is-placeholder">
