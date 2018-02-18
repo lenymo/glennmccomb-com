@@ -1,9 +1,10 @@
 
 //
-//  LAST FM ARTIST
+//  ARTIST
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Artist extends React.Component {
 
@@ -43,6 +44,13 @@ class Artist extends React.Component {
       </div>
     )
   }
+}
+
+Artist.propTypes = {
+  artist: PropTypes.object.isRequired,
+  image: PropTypes.object.isRequired,
+  rank: PropTypes.number.isRequired,
+  colClasses: PropTypes.string.isRequired
 }
 
 export default Artist;
