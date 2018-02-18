@@ -6,13 +6,21 @@
 
 import React from 'react';
 
+import PeriodNav from './PeriodNav';
 import Artist from './Artist';
 import ArtistsPlaceholder from './ArtistsPlaceholder';
 
 class LastFM extends React.Component {
   constructor() {
     super();
-    this.state = {artists: []};
+
+    this.requestData = this.requestData.bind(this);
+
+    // Set initial state.
+    this.state = {
+      artists: [],
+      period: 'overall'
+    };
 
     // Determine how many last.fm artists are
     // requested from the API.
@@ -26,19 +34,36 @@ class LastFM extends React.Component {
   
   componentWillMount() {
 
-    // Build last.fm API url.
-    var timePeriod = "overall";
-    var username = 'elgyn2'; // My username.
-    var apikey = '8a01aea061e32344de520401cc2e2028'; // My API key.
+    // Request last.fm data.
+    this.requestData( this.state.period );
+
+  }
+
+
+  requestData( period ) {
+
+    // My username.
+    var username = 'elgyn2';
+
+    // My API key.
+    var apikey = '8a01aea061e32344de520401cc2e2028';
+
+    // How many records to return.
     var limit = this.limit;
-    var lastFmUrl = 'https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=' + username + '&api_key=' + apikey + '&format=json&period=' + timePeriod + '&limit=' + limit;
+
+    // Build last.fm API url.
+    var lastFmUrl = 'https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=' + username + '&api_key=' + apikey + '&format=json&period=' + period + '&limit=' + limit;
 
     fetch( lastFmUrl )
     .then(response => response.json())
       .then(response => {
+          
           const {topartists:{artist: responseArtist}} = response;
+
+          // Update state.
           this.setState({
-            artists: responseArtist
+            artists: responseArtist,
+            period: period
           });
       });
   }
@@ -59,6 +84,10 @@ class LastFM extends React.Component {
     // else render the placeholder.
     return items.length ? (
       <div className="row row__last-fm">
+        <PeriodNav 
+          requestData={this.requestData} 
+          period={this.state.period} 
+        />
         {items.map((item, index) => 
           <Artist 
             key={item.name} 

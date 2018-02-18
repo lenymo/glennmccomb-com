@@ -123,6 +123,40 @@ module.exports = emptyFunction;
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+if (false) {
+  var REACT_ELEMENT_TYPE = (typeof Symbol === 'function' &&
+    Symbol.for &&
+    Symbol.for('react.element')) ||
+    0xeac7;
+
+  var isValidElement = function(object) {
+    return typeof object === 'object' &&
+      object !== null &&
+      object.$$typeof === REACT_ELEMENT_TYPE;
+  };
+
+  // By explicitly using `prop-types` you are opting into new development behavior.
+  // http://fb.me/prop-types-in-prod
+  var throwOnDirectAccess = true;
+  module.exports = require('./factoryWithTypeCheckers')(isValidElement, throwOnDirectAccess);
+} else {
+  // By explicitly using `prop-types` you are opting into new production behavior.
+  // http://fb.me/prop-types-in-prod
+  module.exports = __webpack_require__(19)();
+}
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 /*
 object-assign
@@ -217,7 +251,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -238,40 +272,6 @@ if (false) {
 }
 
 module.exports = emptyObject;
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-if (false) {
-  var REACT_ELEMENT_TYPE = (typeof Symbol === 'function' &&
-    Symbol.for &&
-    Symbol.for('react.element')) ||
-    0xeac7;
-
-  var isValidElement = function(object) {
-    return typeof object === 'object' &&
-      object !== null &&
-      object.$$typeof === REACT_ELEMENT_TYPE;
-  };
-
-  // By explicitly using `prop-types` you are opting into new development behavior.
-  // http://fb.me/prop-types-in-prod
-  var throwOnDirectAccess = true;
-  module.exports = require('./factoryWithTypeCheckers')(isValidElement, throwOnDirectAccess);
-} else {
-  // By explicitly using `prop-types` you are opting into new production behavior.
-  // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(19)();
-}
-
 
 /***/ }),
 /* 5 */
@@ -310,7 +310,7 @@ _reactDom2.default.render(_react2.default.createElement(_LastFM2.default, null),
  * LICENSE file in the root directory of this source tree.
  */
 
-var m=__webpack_require__(2),n=__webpack_require__(3),p=__webpack_require__(1),q="function"===typeof Symbol&&Symbol["for"],r=q?Symbol["for"]("react.element"):60103,t=q?Symbol["for"]("react.call"):60104,u=q?Symbol["for"]("react.return"):60105,v=q?Symbol["for"]("react.portal"):60106,w=q?Symbol["for"]("react.fragment"):60107,x="function"===typeof Symbol&&Symbol.iterator;
+var m=__webpack_require__(3),n=__webpack_require__(4),p=__webpack_require__(1),q="function"===typeof Symbol&&Symbol["for"],r=q?Symbol["for"]("react.element"):60103,t=q?Symbol["for"]("react.call"):60104,u=q?Symbol["for"]("react.return"):60105,v=q?Symbol["for"]("react.portal"):60106,w=q?Symbol["for"]("react.fragment"):60107,x="function"===typeof Symbol&&Symbol.iterator;
 function y(a){for(var b=arguments.length-1,e="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,c=0;c<b;c++)e+="\x26args[]\x3d"+encodeURIComponent(arguments[c+1]);b=Error(e+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}
 var z={isMounted:function(){return!1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}};function A(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}A.prototype.isReactComponent={};A.prototype.setState=function(a,b){"object"!==typeof a&&"function"!==typeof a&&null!=a?y("85"):void 0;this.updater.enqueueSetState(this,a,b,"setState")};A.prototype.forceUpdate=function(a){this.updater.enqueueForceUpdate(this,a,"forceUpdate")};
 function B(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}function C(){}C.prototype=A.prototype;var D=B.prototype=new C;D.constructor=B;m(D,A.prototype);D.isPureReactComponent=!0;function E(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}var F=E.prototype=new C;F.constructor=E;m(F,A.prototype);F.unstable_isAsyncReactComponent=!0;F.render=function(){return this.props.children};var G={current:null},H=Object.prototype.hasOwnProperty,I={key:!0,ref:!0,__self:!0,__source:!0};
@@ -386,7 +386,7 @@ if (true) {
 /*
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(0),l=__webpack_require__(9),B=__webpack_require__(2),C=__webpack_require__(1),ba=__webpack_require__(10),da=__webpack_require__(11),ea=__webpack_require__(12),fa=__webpack_require__(13),ia=__webpack_require__(16),D=__webpack_require__(3);
+var aa=__webpack_require__(0),l=__webpack_require__(9),B=__webpack_require__(3),C=__webpack_require__(1),ba=__webpack_require__(10),da=__webpack_require__(11),ea=__webpack_require__(12),fa=__webpack_require__(13),ia=__webpack_require__(16),D=__webpack_require__(4);
 function E(a){for(var b=arguments.length-1,c="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,d=0;d<b;d++)c+="\x26args[]\x3d"+encodeURIComponent(arguments[d+1]);b=Error(c+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}aa?void 0:E("227");
 var oa={children:!0,dangerouslySetInnerHTML:!0,defaultValue:!0,defaultChecked:!0,innerHTML:!0,suppressContentEditableWarning:!0,suppressHydrationWarning:!0,style:!0};function pa(a,b){return(a&b)===b}
 var ta={MUST_USE_PROPERTY:1,HAS_BOOLEAN_VALUE:4,HAS_NUMERIC_VALUE:8,HAS_POSITIVE_NUMERIC_VALUE:24,HAS_OVERLOADED_BOOLEAN_VALUE:32,HAS_STRING_BOOLEAN_VALUE:64,injectDOMPropertyConfig:function(a){var b=ta,c=a.Properties||{},d=a.DOMAttributeNamespaces||{},e=a.DOMAttributeNames||{};a=a.DOMMutationMethods||{};for(var f in c){ua.hasOwnProperty(f)?E("48",f):void 0;var g=f.toLowerCase(),h=c[f];g={attributeName:g,attributeNamespace:null,propertyName:f,mutationMethod:null,mustUseProperty:pa(h,b.MUST_USE_PROPERTY),
@@ -983,11 +983,15 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Artist = __webpack_require__(18);
+var _PeriodNav = __webpack_require__(18);
+
+var _PeriodNav2 = _interopRequireDefault(_PeriodNav);
+
+var _Artist = __webpack_require__(22);
 
 var _Artist2 = _interopRequireDefault(_Artist);
 
-var _ArtistsPlaceholder = __webpack_require__(22);
+var _ArtistsPlaceholder = __webpack_require__(23);
 
 var _ArtistsPlaceholder2 = _interopRequireDefault(_ArtistsPlaceholder);
 
@@ -1011,7 +1015,13 @@ var LastFM = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (LastFM.__proto__ || Object.getPrototypeOf(LastFM)).call(this));
 
-    _this.state = { artists: [] };
+    _this.requestData = _this.requestData.bind(_this);
+
+    // Set initial state.
+    _this.state = {
+      artists: [],
+      period: 'overall'
+    };
 
     // Determine how many last.fm artists are
     // requested from the API.
@@ -1026,22 +1036,37 @@ var LastFM = function (_React$Component) {
   _createClass(LastFM, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
+
+      // Request last.fm data.
+      this.requestData(this.state.period);
+    }
+  }, {
+    key: 'requestData',
+    value: function requestData(period) {
       var _this2 = this;
 
-      // Build last.fm API url.
-      var timePeriod = "overall";
-      var username = 'elgyn2'; // My username.
-      var apikey = '8a01aea061e32344de520401cc2e2028'; // My API key.
+      // My username.
+      var username = 'elgyn2';
+
+      // My API key.
+      var apikey = '8a01aea061e32344de520401cc2e2028';
+
+      // How many records to return.
       var limit = this.limit;
-      var lastFmUrl = 'https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=' + username + '&api_key=' + apikey + '&format=json&period=' + timePeriod + '&limit=' + limit;
+
+      // Build last.fm API url.
+      var lastFmUrl = 'https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=' + username + '&api_key=' + apikey + '&format=json&period=' + period + '&limit=' + limit;
 
       fetch(lastFmUrl).then(function (response) {
         return response.json();
       }).then(function (response) {
         var responseArtist = response.topartists.artist;
 
+        // Update state.
+
         _this2.setState({
-          artists: responseArtist
+          artists: responseArtist,
+          period: period
         });
       });
     }
@@ -1064,6 +1089,10 @@ var LastFM = function (_React$Component) {
       return items.length ? _react2.default.createElement(
         'div',
         { className: 'row row__last-fm' },
+        _react2.default.createElement(_PeriodNav2.default, {
+          requestData: this.requestData,
+          period: this.state.period
+        }),
         items.map(function (item, index) {
           return _react2.default.createElement(_Artist2.default, {
             key: item.name,
@@ -1104,7 +1133,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(4);
+var _propTypes = __webpack_require__(2);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -1115,84 +1144,110 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 //
-//  ARTIST
+//  PERIOD NAV
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-var Artist = function (_React$Component) {
-  _inherits(Artist, _React$Component);
+var PeriodNav = function (_React$Component) {
+  _inherits(PeriodNav, _React$Component);
 
-  function Artist() {
-    _classCallCheck(this, Artist);
+  function PeriodNav() {
+    _classCallCheck(this, PeriodNav);
 
-    return _possibleConstructorReturn(this, (Artist.__proto__ || Object.getPrototypeOf(Artist)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (PeriodNav.__proto__ || Object.getPrototypeOf(PeriodNav)).call(this));
+
+    _this.renderPeriodNav = _this.renderPeriodNav.bind(_this);
+    return _this;
   }
 
-  _createClass(Artist, [{
-    key: 'formatPlayCount',
-    value: function formatPlayCount(playCount) {
-      var formattedPlayCount = parseInt(playCount);
-      formattedPlayCount = formattedPlayCount.toLocaleString();
-      return formattedPlayCount;
+  _createClass(PeriodNav, [{
+    key: 'renderPeriodNav',
+    value: function renderPeriodNav() {
+      var _this2 = this;
+
+      var periodNavItems = [{
+        name: 'All-time',
+        period: 'overall'
+      }, {
+        name: 'Last year',
+        period: '12month'
+      }, {
+        name: 'Last 3 months',
+        period: '3month'
+      }, {
+        name: 'Last week',
+        period: '7day'
+      }];
+
+      var periodNav = periodNavItems.map(function (periodNavItem) {
+        return _react2.default.createElement(
+          'li',
+          { key: periodNavItem.period, className: 'last-fm-period__list-item' + (periodNavItem.period === _this2.props.period ? ' -is-current' : '') },
+          _react2.default.createElement(
+            'a',
+            { href: 'javascript:void(0);', className: 'last-fm-period__link', onClick: function onClick() {
+                return _this2.props.requestData(periodNavItem.period);
+              } },
+            periodNavItem.name
+          )
+        );
+      });
+
+      return periodNav;
+
+      // const periodNav = [];
+
+      // for (var i = 0; i < periodNavItems.length; i++) {
+
+      //   const name = periodNavItems[i].name;
+      //   const period = periodNavItems[i].period;
+
+      //   let activeClass = '';
+
+      //   if ( period == this.props.period ) {
+      //     activeClass = '-is-current';
+      //   }
+
+      //   periodNav.push(
+      //     <li key={period} className={'last-fm-period__list-item ' + activeClass}>
+      //       <a href="javascript:void(0);" className="last-fm-period__link" onClick={() => this.props.requestData( period )}>
+      //         {name}
+      //       </a>
+      //     </li>
+      //   );
+      // }
+
+      // return periodNav;
     }
   }, {
     key: 'render',
     value: function render() {
-
-      var artistImage = this.props.image['#text'];
-
-      var artistStyles = {
-        backgroundImage: 'url(' + artistImage + ')'
-      };
-
-      // Get playcount.
-      var playCount = this.formatPlayCount(this.props.artist.playcount);
-
       return _react2.default.createElement(
         'div',
-        { className: this.props.colClasses, key: this.props.artist.name },
+        { className: 'col-sm-12 col__last-fm-period' },
         _react2.default.createElement(
-          'a',
-          { href: this.props.artist.url, className: 'last-fm-artist', target: '_blank' },
+          'nav',
+          { className: 'last-fm-period' },
           _react2.default.createElement(
-            'div',
-            { className: 'last-fm-artist__rank' },
-            this.props.rank
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'last-fm-artist__meta' },
-            _react2.default.createElement(
-              'h3',
-              { className: 'last-fm-artist__name' },
-              this.props.artist.name
-            ),
-            _react2.default.createElement(
-              'p',
-              { className: 'last-fm-artist__play-count' },
-              playCount,
-              ' plays'
-            ),
-            _react2.default.createElement('img', { className: 'last-fm-artist__image', src: artistImage, alt: this.props.artist.name })
-          ),
-          _react2.default.createElement('div', { className: 'last-fm-artist__background-image', style: artistStyles }),
-          _react2.default.createElement('div', { className: 'last-fm-artist__overlay' })
+            'ul',
+            { className: 'last-fm-period__list' },
+            this.renderPeriodNav()
+          )
         )
       );
     }
   }]);
 
-  return Artist;
+  return PeriodNav;
 }(_react2.default.Component);
 
-Artist.propTypes = {
-  artist: _propTypes2.default.object.isRequired,
-  image: _propTypes2.default.object.isRequired,
-  rank: _propTypes2.default.number.isRequired,
-  colClasses: _propTypes2.default.string.isRequired
+PeriodNav.propTypes = {
+  requestData: _propTypes2.default.func.isRequired,
+  period: _propTypes2.default.string.isRequired
 };
 
-exports.default = Artist;
+exports.default = PeriodNav;
 
 /***/ }),
 /* 19 */
@@ -1354,7 +1409,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(4);
+var _propTypes = __webpack_require__(2);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -1365,6 +1420,115 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+//
+//  ARTIST
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+var Artist = function (_React$Component) {
+  _inherits(Artist, _React$Component);
+
+  function Artist() {
+    _classCallCheck(this, Artist);
+
+    return _possibleConstructorReturn(this, (Artist.__proto__ || Object.getPrototypeOf(Artist)).apply(this, arguments));
+  }
+
+  _createClass(Artist, [{
+    key: 'formatPlayCount',
+    value: function formatPlayCount(playCount) {
+      var formattedPlayCount = parseInt(playCount);
+      formattedPlayCount = formattedPlayCount.toLocaleString();
+      return formattedPlayCount;
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+
+      var artistImage = this.props.image['#text'];
+
+      var artistStyles = {
+        backgroundImage: 'url(' + artistImage + ')'
+      };
+
+      // Get playcount.
+      var playCount = this.formatPlayCount(this.props.artist.playcount);
+
+      return _react2.default.createElement(
+        'div',
+        { className: this.props.colClasses, key: this.props.artist.name },
+        _react2.default.createElement(
+          'a',
+          { href: this.props.artist.url, className: 'last-fm-artist', target: '_blank' },
+          _react2.default.createElement(
+            'div',
+            { className: 'last-fm-artist__rank' },
+            this.props.rank
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'last-fm-artist__meta' },
+            _react2.default.createElement(
+              'h3',
+              { className: 'last-fm-artist__name' },
+              this.props.artist.name
+            ),
+            _react2.default.createElement(
+              'p',
+              { className: 'last-fm-artist__play-count' },
+              playCount,
+              ' plays'
+            ),
+            _react2.default.createElement('img', { className: 'last-fm-artist__image', src: artistImage, alt: this.props.artist.name })
+          ),
+          _react2.default.createElement('div', { className: 'last-fm-artist__background-image', style: artistStyles }),
+          _react2.default.createElement('div', { className: 'last-fm-artist__overlay' })
+        )
+      );
+    }
+  }]);
+
+  return Artist;
+}(_react2.default.Component);
+
+Artist.propTypes = {
+  artist: _propTypes2.default.object.isRequired,
+  image: _propTypes2.default.object.isRequired,
+  rank: _propTypes2.default.number.isRequired,
+  colClasses: _propTypes2.default.string.isRequired
+};
+
+exports.default = Artist;
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 //
 //  ARTISTS PLACEHOLDER
 //––––––––––––––––––––––––––––––––––––––––––––––––––
