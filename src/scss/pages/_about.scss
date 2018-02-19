@@ -55,6 +55,20 @@
 
 
 //
+//  LAST FM PERIOD NAV PLACEHOLDER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.last-fm-period {
+  &.-is-placeholder {
+    .last-fm-period__link {
+      color: $color-gray-f;
+      border-bottom-color: $color-gray-f;
+    }
+  }
+}
+
+
+//
 //  LAST FM ARTIST
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
@@ -77,10 +91,6 @@ $last-fm-artist-rank-size: 35px;
   &:focus {
     color: $white;
     text-decoration: none;
-  }
-
-  &.-is-placeholder {
-    background-color: $color-gray-e;
   }
 }
 
@@ -131,14 +141,6 @@ $last-fm-artist-rank-size: 35px;
   z-index: 1;
 }
 
-.last-fm-artist {
-  &.-is-placeholder {
-    .last-fm-artist__rank {
-      background-color: $color-gray-c;
-    }
-  }
-}
-
 @include respond-above(xs) {
   .last-fm-artist__rank {
     transform: translateX(-50%);
@@ -177,17 +179,6 @@ $last-fm-artist-rank-size: 35px;
   margin-bottom: 0;
 }
 
-.last-fm-artist {
-  &.-is-placeholder {
-    .last-fm-artist__name {
-      background-color: $color-gray-d;
-      height: 1em;
-      margin-bottom: $gutter;
-      width: 90%;
-    }
-  }
-}
-
 
 //
 //  PLAY COUNT
@@ -199,16 +190,6 @@ $last-fm-artist-rank-size: 35px;
   font-weight: bold;
   margin-bottom: 0;
   letter-spacing: .05em;
-}
-
-.last-fm-artist {
-  &.-is-placeholder {
-    .last-fm-artist__play-count {
-      background-color: $color-gray-d;
-      height: 1em;
-      width: 25%;
-    }
-  }
 }
 
 
@@ -248,4 +229,32 @@ $last-fm-artist-rank-size: 35px;
   position: absolute;
   bottom: 0;
   width: 100%;
+}
+
+
+//
+//  LAST FM ARTIST PLACEHOLDER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.last-fm-artist {
+  &.-is-placeholder {
+    background-color: $color-gray-e;
+
+    .last-fm-artist__rank {
+      background-color: $color-gray-c;
+    }
+
+    .last-fm-artist__name {
+      background-color: $color-gray-d;
+      height: 1em;
+      margin-bottom: $gutter;
+      width: 90%;
+    }
+
+    .last-fm-artist__play-count {
+      background-color: $color-gray-d;
+      height: 1em;
+      width: 25%;
+    }
+  }
 }
