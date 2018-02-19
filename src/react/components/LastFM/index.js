@@ -36,11 +36,15 @@ class LastFM extends React.Component {
 
     // Request last.fm data.
     this.requestData( this.state.period );
-
   }
 
 
   requestData( period ) {
+
+    // clear state so old items disappear.
+    this.setState({
+      artists: {}
+    });
 
     // My username.
     var username = 'elgyn2';
@@ -98,10 +102,18 @@ class LastFM extends React.Component {
           />
         )}
       </div>
-    ) : <ArtistsPlaceholder 
-          colClasses={colClasses} 
-          limit={limit}
+    ) : (
+      <div className="row row__last-fm">
+        <PeriodNav 
+          requestData={this.requestData} 
+          period={this.state.period} 
         />
+        <ArtistsPlaceholder 
+            colClasses={colClasses} 
+            limit={limit}
+          />
+      </div>
+    )
   }
 }
 

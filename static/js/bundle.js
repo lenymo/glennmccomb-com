@@ -1045,6 +1045,11 @@ var LastFM = function (_React$Component) {
     value: function requestData(period) {
       var _this2 = this;
 
+      // clear state so old items disappear.
+      this.setState({
+        artists: {}
+      });
+
       // My username.
       var username = 'elgyn2';
 
@@ -1102,10 +1107,18 @@ var LastFM = function (_React$Component) {
             colClasses: colClasses
           });
         })
-      ) : _react2.default.createElement(_ArtistsPlaceholder2.default, {
-        colClasses: colClasses,
-        limit: limit
-      });
+      ) : _react2.default.createElement(
+        'div',
+        { className: 'row row__last-fm' },
+        _react2.default.createElement(_PeriodNav2.default, {
+          requestData: this.requestData,
+          period: this.state.period
+        }),
+        _react2.default.createElement(_ArtistsPlaceholder2.default, {
+          colClasses: colClasses,
+          limit: limit
+        })
+      );
     }
   }]);
 
@@ -1568,8 +1581,12 @@ var ArtistsPlaceholder = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: 'row row__last-fm' },
-        cols
+        { 'class': 'col-sm-12' },
+        _react2.default.createElement(
+          'div',
+          { className: 'row' },
+          cols
+        )
       );
     }
   }]);
