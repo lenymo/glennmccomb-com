@@ -71,12 +71,23 @@ $last-fm-artist-rank-size: 35px;
   margin-bottom: $gutter;
   padding: $gutter;
   position: relative;
+  transition: all .2s ease;
 
   &:hover,
   &:active,
   &:focus {
     color: $white;
     text-decoration: none;
+  }
+
+  &.last-fm-artist--appear {
+    opacity: 0;
+    transform: scale(.975);
+  }
+
+  &.last-fm-artist--appear-active {
+    transform: scale(1);
+    opacity: 1;
   }
 }
 
