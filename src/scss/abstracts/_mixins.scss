@@ -48,13 +48,6 @@
 }
 
 
-// Pixels to REM
-// Usage: font-size: rem(37px);
-@function rem($px, $base: $base-font-size) {
-  @return ($px / $base) * 1rem;
-}
-
-
 /// Make a context based selector a little more friendly
 /// @author Hugo Giraudel
 /// @param {String} $context
