@@ -7,6 +7,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+
 class Artist extends React.Component {
 
   formatPlayCount( playCount ) {
@@ -17,6 +19,8 @@ class Artist extends React.Component {
 
   render() {
 
+    const artist = this.props.artist;
+
     const artistImage = this.props.image['#text'];
 
     const artistStyles = {
@@ -24,24 +28,32 @@ class Artist extends React.Component {
     };
 
     // Get playcount.
-    const playCount = this.formatPlayCount(this.props.artist.playcount);
+    const playCount = this.formatPlayCount(artist.playcount);
 
     return (
-      <div className={this.props.colClasses} key={this.props.artist.name}>
-        <a href={this.props.artist.url} className="last-fm-artist" target="_blank">
+      <div className={this.props.colClasses} key={artist.name}>
+        <ReactCSSTransitionGroup
+          transitionName="last-fm-artist-"
+          transitionAppear={true}
+          transitionAppearTimeout={200}
+          transitionEnter={false}
+          transitionLeave={false}
+        >
+        <a key={this.props.rank} href={artist.url} className="last-fm-artist" target="_blank">
           <div className="last-fm-artist__rank">
             {this.props.rank}
           </div>
           <div className="last-fm-artist__meta">
             <h3 className="last-fm-artist__name">
-              {this.props.artist.name}
+              {artist.name}
             </h3>
             <p className="last-fm-artist__play-count">{playCount} plays</p>
-            <img className="last-fm-artist__image" src={artistImage} alt={this.props.artist.name} />
+            <img className="last-fm-artist__image" src={artistImage} alt={artist.name} />
           </div>
           <div className="last-fm-artist__background-image" style={artistStyles}></div>
           <div className="last-fm-artist__overlay"></div>
         </a>
+        </ReactCSSTransitionGroup>
       </div>
     )
   }
