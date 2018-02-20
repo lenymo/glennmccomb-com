@@ -29,7 +29,7 @@ class ArtistsPlaceholder extends React.Component {
     }
 
     return (
-      <div class="col-sm-12">
+      <div className="col-sm-12">
         <div className="row">
           {cols}
         </div>
