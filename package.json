@@ -11,7 +11,7 @@
   "keywords": [],
   "author": "Glenn McComb",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
@@ -32,6 +32,7 @@
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-transition-group": "^2.2.1",
     "sharp": "^0.18.4",
     "webpack": "^3.11.0",
     "webpack-stream": "^4.0.1",
