@@ -1,0 +1,34 @@
+<!--
+//
+//  IMAGE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+Params:
+src="URL"
+alt="description of image"
+caption="caption"
+url="http://"
+-->
+<figure class="figure">
+  <picture class="page-header__featured-image-picture -uses-object-fit" data-source="">
+    <!-- Small screens -->
+    <source
+      srcset=""
+      media="(max-width: 575px)">
+    <!-- Medium screens -->
+    <source
+      srcset=""
+      media="(min-width: 576px) and (max-width: 767px)">
+    <!-- Large screens -->
+    <source
+      srcset=""
+      media="(min-width: 768px)">
+    <!-- Fallback -->
+    <img class="page-header__featured-image-picture-img" srcset="">
+  </picture>
+  {{ if .Get "caption" }}
+  <figcaption class="figure__caption">
+    <p>{{ .Get "caption" }}</p>
+  </figcaption>
+  {{ end }}
+</figure>
