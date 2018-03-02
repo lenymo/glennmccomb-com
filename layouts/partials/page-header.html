@@ -94,20 +94,25 @@
     {{ end }}
   <div class="page-header__featured-image -is-object-fit-parent">
     <picture class="page-header__featured-image-picture -uses-object-fit" data-source="{{ $uploadsResponsive }}{{ $.Scratch.Get "featured" }}{{ $.Scratch.Get "featured-extension" }}">
+      
       <!-- Small screens -->
       <source
         srcset="{{ $uploadsResponsive }}{{ $.Scratch.Get "featured" }}-sm{{ $.Scratch.Get "featured-extension" }}"
         media="(max-width: 575px)">
+      
       <!-- Medium screens -->
       <source
         srcset="{{ $uploadsResponsive }}{{ $.Scratch.Get "featured" }}-sm{{ $.Scratch.Get "featured-extension" }} 1x, {{ $uploadsResponsive }}{{ $.Scratch.Get "featured" }}{{ $.Scratch.Get "featured-extension" }} 2x"
         media="(min-width: 576px) and (max-width: 767px)">
+      
       <!-- Large screens -->
       <source
         srcset="{{ $uploadsResponsive }}{{ $.Scratch.Get "featured" }}{{ $.Scratch.Get "featured-extension" }}"
         media="(min-width: 768px)">
+      
       <!-- Fallback -->
       <img class="page-header__featured-image-picture-img" srcset="{{ $uploadsResponsive }}{{ $.Scratch.Get "featured" }}{{ $.Scratch.Get "featured-extension" }}">
+
     </picture>
   </div>
   {{ else }}
