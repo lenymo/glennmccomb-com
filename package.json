@@ -37,5 +37,8 @@
     "webpack": "^3.11.0",
     "webpack-stream": "^4.0.1",
     "yargs": "^10.0.3"
+  },
+  "devDependencies": {
+    "run-sequence": "^2.2.1"
   }
 }
