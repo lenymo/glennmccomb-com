@@ -53,8 +53,13 @@
     <meta name="twitter:description" property="og:description" content="{{ if gt (len .Summary | markdownify ) (len $truncated | markdownify) }}{{ $truncated }}...{{ else }}{{ $summary }}{{ end }}" />
   <!-- Everything else. -->
   {{ else }}
+    {{ if isset .Params "description" }}
+    <meta name="description" content="{{ .Params.description }}" />
+    <meta name="twitter:description" property="og:description" content="{{ .Params.description }}" />
+    {{ else }}
     <meta name="description" content="{{ .Site.Title }}" />
     <meta name="twitter:description" property="og:description" content="{{ .Site.Title }}" />
+    {{ end }}
   {{ end }}
 
 
