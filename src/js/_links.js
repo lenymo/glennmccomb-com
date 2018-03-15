@@ -13,38 +13,37 @@ var HandleLinks = (function() {
 
   function handleExternalLinks() {
 
-    // document.addEventListener('DOMContentLoaded', function() {
+    // Variables.
+    var links = document.links;
+    var link;
+    var linkHref;
 
-      // Variables.
-      var links = document.links;
-      var link;
-      var linkHref;
+    // Loop through all links.
+    for (var i = 0, linksLength = links.length; i < linksLength; i++) {
 
-      // Loop through all links.
-      for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+      // Instantite the indivdual link.
+      link = links[i];
 
-        link = links[i];
+      // Get the 
+      linkHref = link.href;
 
-        linkHref = link.href;
+      // If the link is to an external site or a javascript:void(0);.
+      if (
+        link.hostname != window.location.hostname &&
+        linkHref !== 'javascript:void(0)' &&
+        linkHref !== 'javascript:void(0);'
+      ) {
 
-        // If the link is to an external site or a javascript:void(0);.
-        if (
-          link.hostname != window.location.hostname &&
-          linkHref !== 'javascript:void(0)' &&
-          linkHref !== 'javascript:void(0);'
-        ) {
+        // Set the target of the link to _blank.
+        link.target = '_blank';
 
-          // Set the target of the link to _blank.
-          link.target = '_blank';
+      // If the link contains a #.
+      } else if ( linkHref.indexOf('#') >= 0 ) {
 
-        // If the link contains a #.
-        } else if ( linkHref.indexOf('#') >= 0 ) {
-
-          // Listen for clicks.
-          // link.addEventListener('click', handleLinkClicks);
-        }
+        // Listen for clicks.
+        // link.addEventListener('click', handleLinkClicks);
       }
-    // }, false);
+    }
   } // handleExternalLinks()
 
 
