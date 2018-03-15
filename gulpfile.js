@@ -207,6 +207,14 @@ gulp.task('responsive-images', function() {
         }, {
           width: '100%',
         }
+        // LQIP
+        // }, {
+        //   width: '100%',
+        //   quality: 1,
+        //   rename: {
+        //     suffix: '-lqip'
+        //   }
+        // }
       ],
     }, {
       silent: true // Don't spam the console
