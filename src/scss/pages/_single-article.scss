@@ -421,6 +421,8 @@ $article-header-padding-bottom-xl: $gutter * 6;
 //  COMMENTS
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
+$disqus-placeholder-height: 150px;
+
 .article-comments {
   clear: both;
 }
@@ -433,7 +435,7 @@ $article-header-padding-bottom-xl: $gutter * 6;
 
 .disqus {
   left: 0;
-  height: 200px;
+  height: $disqus-placeholder-height;
   position: absolute;
   top: 0;
   width: 100%;
@@ -448,9 +450,14 @@ $article-header-padding-bottom-xl: $gutter * 6;
   background-color: $color-gray-e;
   border-radius: 10px;
   color: $color-gray-c;
-  min-height: 200px;
+  font-size: rem(14px);
+  font-weight: bold;
+  min-height: $disqus-placeholder-height;
+  padding-left: $gutter * 2;
+  padding-right: $gutter * 2;
+  padding-top: $gutter * 5;
   text-align: center;
-  padding: ($gutter * 4) ($gutter * 2);
+  text-transform: uppercase;
   width: 100%;
 
   &.-is-hidden {
