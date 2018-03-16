@@ -15,33 +15,29 @@ var HandleLinks = (function() {
 
     // Variables.
     var links = document.links;
+    var linksLength = links.length;
     var link;
     var linkHref;
+    var hostname = window.location.hostname;
 
     // Loop through all links.
-    for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+    for (var i = 0; i < linksLength; i++) {
 
       // Instantite the indivdual link.
       link = links[i];
 
-      // Get the 
+      // Get the link's href attribute.
       linkHref = link.href;
 
       // If the link is to an external site or a javascript:void(0);.
       if (
-        link.hostname != window.location.hostname &&
+        link.hostname != hostname &&
         linkHref !== 'javascript:void(0)' &&
         linkHref !== 'javascript:void(0);'
       ) {
 
         // Set the target of the link to _blank.
         link.target = '_blank';
-
-      // If the link contains a #.
-      } else if ( linkHref.indexOf('#') >= 0 ) {
-
-        // Listen for clicks.
-        // link.addEventListener('click', handleLinkClicks);
       }
     }
   } // handleExternalLinks()
