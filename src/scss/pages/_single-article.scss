@@ -424,3 +424,36 @@ $article-header-padding-bottom-xl: $gutter * 6;
 .article-comments {
   clear: both;
 }
+
+.article-comments__disqus-wrapper {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+
+.disqus {
+  left: 0;
+  height: 200px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  &.-has-loaded {
+    height: auto;
+    position: relative;
+  }
+}
+
+.article-comments__placeholder {
+  background-color: $color-gray-e;
+  border-radius: 10px;
+  color: $color-gray-c;
+  min-height: 200px;
+  text-align: center;
+  padding: ($gutter * 4) ($gutter * 2);
+  width: 100%;
+
+  &.-is-hidden {
+    display: none;
+  }
+}
