@@ -84,7 +84,7 @@
 
   {{ if isset .Params "featured" }}
     {{ $uploads := "/img/uploads/" }}
-    {{ $uploadsResponsive := "/img/uploads/featured/" }}
+    {{ $uploadsResponsive := "/img/uploads/" }}
     {{ if in .Params.featured ".jpg" }}
       {{ $featured := .Params.featured }}
       {{ $featured := strings.TrimSuffix ".jpg" $featured }}
