@@ -241,6 +241,8 @@ gulp.task('images', function() {
 
 // gulp.task('compress-images', ['images'], function() {
 gulp.task('compress-images', function() {
+
+  // All images.
   gulp.src('static/img/uploads/**/*.{jpg,png,gif}')
     // .pipe(newer('src/img/uploads/'))
     .pipe(imagemin([
