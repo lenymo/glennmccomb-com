@@ -21,7 +21,7 @@ At some stage ESPN updated their box scores and left some tasty team stats hidde
 Play-by-play data is added to the page below the box score in an iframe and formatting is added to highlight key stats.
 
 {{< article-body-full-bleed container="yes" >}}
-![null](/img/uploads/box-score-layout.jpg)
+![null](/img/uploads/article-espn-chrome-extension-box-score-layout.jpg)
 {{< /article-body-full-bleed >}}
 
 ## More stats please
@@ -32,7 +32,7 @@ In the early stages of development [Kevin Arnovitz](https://twitter.com/kevinar
 
 As an NBA fan who appreciates a well baked cookie, I got to work. As you can see below the extension adds quite a few additional team stats.
 
-![null](/img/uploads/box-score-stats-team-stats.png)
+![null](/img/uploads/article-espn-chrome-extension-box-score-stats-team-stats.png)
 
 <small>These calculations are based on formulas in [Basketball Reference’s glossary](http://www.basketball-reference.com/about/glossary.html).</small>
 
@@ -49,12 +49,12 @@ These possession-based numbers will also differ from NBA.com’s metrics because
 When a game is live, stats are constantly updating but it’s difficult to follow exactly _what_ has changed. In the extension, updated stats are highlighted with a yellow background as shown below.
 
 {{< article-body-full-bleed container="yes" >}}
-![null](/img/uploads/box-score-stats-play-sequence.jpg)
+![null](/img/uploads/article-espn-chrome-extension-box-score-stats-play-sequence.jpg)
 {{< /article-body-full-bleed >}}
 
 This provides context for each stat and allows the action to be pieced together. For example, in the above sequence Jonas Valanciunas has his shot blocked by Amir Johnson. Al Horford grabs the defensive rebound from Amir’s block and subsequently misses a 2-pointer. This can be cross referenced with the play-by-play, which the extension adds below the box score.
 
-![null](/img/uploads/play-by-play-stats-play-sequence.png)
+![null](/img/uploads/article-espn-chrome-extension-play-by-play-stats-play-sequence.png)
 
 This uninspiring example demonstrates that you no longer need to continually switch between the box score and play-by-play to follow the action.
 
@@ -63,7 +63,7 @@ This uninspiring example demonstrates that you no longer need to continually swi
 Immediately following a game’s completion, advanced stats can be viewed for individual players by clicking the advanced stats checkbox in the bottom right-hand corner of the page (next to the ESPN logo). As with team stats, these are all calculated using formulas from [Basketball Reference’s glossary](http://www.basketball-reference.com/about/glossary.html).
 
 {{< article-body-full-bleed container="yes" >}}
-![null](/img/uploads/box-score-advanced-stats.png)
+![null](/img/uploads/article-espn-chrome-extension-box-score-advanced-stats.png)
 {{< /article-body-full-bleed >}}
 
 These stats _do_ actually work while a game is live but they’re buggy and I’m still working on performance tweaks. Hopefully soon these will be available during live games.
@@ -88,5 +88,5 @@ You can [download the extension here](https://goo.gl/3DmHU1) and feel free to 
 For reference below is the original ESPN box score
 
 {{< article-body-full-bleed container="yes" >}}
-![null](/img/uploads/espn-boxscores-before.png)
+![null](/img/uploads/article-espn-chrome-extension-espn-boxscores-before.png)
 {{< /article-body-full-bleed >}}
