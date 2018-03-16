@@ -13,6 +13,10 @@ var uglify          = require('gulp-uglify');
 var hash            = require('gulp-hash');
 var del             = require('del');
 
+var run             = require('run-sequence')
+var newer           = require('gulp-newer');
+var changed         = require('gulp-changed');
+
 // Webpack.
 var webpack         = require('webpack');
 var webpackStream   = require('webpack-stream');
@@ -157,20 +161,20 @@ gulp.task('js', function() {
 //  IMAGES HASHMAP
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-gulp.task('images', function() {
-  // del(['static/img/**/*']);
-  gulp.src('src/img/**/*')
-    .pipe( hash() )
-    .pipe( gulp.dest('static/img') )
+// gulp.task('images', function() {
+//   // del(['static/img/**/*']);
+//   gulp.src('src/img/**/*')
+//     .pipe( hash() )
+//     .pipe( gulp.dest('static/img') )
 
-    // Create a hash map.
-    .pipe( hash.manifest('hash.json'), {
-      deleteOld: true,
-      sourceDir: 'static/images'
-    })
-    // Put the map in the data directory.
-    .pipe( gulp.dest('data/images') );
-});
+//     // Create a hash map.
+//     .pipe( hash.manifest('hash.json'), {
+//       deleteOld: true,
+//       sourceDir: 'static/images'
+//     })
+//     // Put the map in the data directory.
+//     .pipe( gulp.dest('data/images') );
+// });
 
 
 //
@@ -178,25 +182,30 @@ gulp.task('images', function() {
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 // Compile admin SCSS files to CSS
-gulp.task('admin-scss', function () {
-  gulp.src('src/admin/scss/**/*.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(sass({outputStyle : 'expanded'}))
-    .pipe(autoprefixer({
-      browsers : ['last 20 versions']
-    }))
-    .pipe(gulp.dest('static/admin/css'));
-});
+// gulp.task('admin-scss', function () {
+//   gulp.src('src/admin/scss/**/*.scss')
+//     .pipe(sass().on('error', sass.logError))
+//     .pipe(sass({outputStyle : 'expanded'}))
+//     .pipe(autoprefixer({
+//       browsers : ['last 20 versions']
+//     }))
+//     .pipe(gulp.dest('static/admin/css'));
+// });
 
 
 //
-//  RESPONSIVE IMAGES
+//  IMAGES
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-gulp.task('responsive-images', function() {
+gulp.task('images', function() {
+
+  // Copy all images from /src to /static.
+  gulp.src('src/img/uploads/**/*.{jpg,png,gif}')
+    .pipe(gulp.dest('static/img/uploads'));
 
   // Featured images.
-  gulp.src('./src/img/uploads/featured-image-*.*')
+  gulp.src('src/img/uploads/featured-image-*.{jpg,png}')
+    // .pipe(newer("./static/uploads/"))
     .pipe(responsive({
       '*': [
         {
@@ -204,8 +213,8 @@ gulp.task('responsive-images', function() {
           rename: {
             suffix: '-sm'
           },
-        }, {
-          width: '100%',
+        // }, {
+          // width: '100%'
         }
         // LQIP
         // }, {
@@ -217,25 +226,31 @@ gulp.task('responsive-images', function() {
         // }
       ],
     }, {
+      // quality: 100,
+      // compressionLevel: 9,
+      progressive: true,
       silent: true // Don't spam the console
     }))
-    .pipe(gulp.dest('./src/img/uploads/featured'));
+    .pipe(gulp.dest('static/img/uploads'));
 });
 
 
 //
-//  COMPRESS IMAGE
+//  COMPRESS IMAGES
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-gulp.task('compress-images', ['responsive-images'], function() {
-  gulp.src(['./src/img/uploads/**/*.*'])
+// gulp.task('compress-images', ['images'], function() {
+gulp.task('compress-images', function() {
+  gulp.src('static/img/uploads/**/*.{jpg,png,gif}')
+    // .pipe(newer('src/img/uploads/'))
     .pipe(imagemin([
       imagemin.gifsicle(),
-      imagemin.optipng({optimizationLevel: 5}),
+      // imagemin.optipng({optimizationLevel: 9}),
+      imagemin.optipng(),
       imagemin.svgo(),
       mozjpeg(),
     ]))
-    .pipe(gulp.dest('./static/img/uploads'));
+    .pipe(gulp.dest('static/img/uploads'));
 });
 
 
@@ -243,7 +258,17 @@ gulp.task('compress-images', ['responsive-images'], function() {
 //  BUILD
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-gulp.task('build', ['responsive-images', 'compress-images']);
+// gulp.task('build', ['responsive-images', 'compress-images']);
+// gulp.task('build', ['compress-images']);
+// gulp.task('build', ['responsive-images']);
+
+
+// gulp.task('build', ['responsive-images'], function(callback) {
+//   run(['compress-images'], function() {
+//     callback();
+//   });
+// });
+
 
 
 //
@@ -253,7 +278,7 @@ gulp.task('build', ['responsive-images', 'compress-images']);
 // Watch asset folder for changes
 gulp.task('watch', ['scss', 'js', 'react'], function () {
   gulp.watch('src/scss/**/*', ['scss']);
-  gulp.watch('src/admin/scss/**/*', ['admin-scss']);
+  // gulp.watch('src/admin/scss/**/*', ['admin-scss']);
   gulp.watch('src/js/**/*.js', ['js']);
   gulp.watch('src/react/**/*.js', ['react']);
 });
