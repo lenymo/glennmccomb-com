@@ -266,7 +266,7 @@ gulp.task('compress-images', function() {
   // All JPGs and PNGs except those with -lqip suffix.
   gulp.src([
     'static/img/uploads/**/*.{jpg,png}',
-    '!static/img/uploads/**/*-lqip.{jpg}'
+    '!static/img/uploads/**/*-lqip.jpg'
     ])
     // .pipe(newer('src/img/uploads/'))
     .pipe(imagemin([
