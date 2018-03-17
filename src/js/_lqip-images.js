@@ -32,26 +32,38 @@ var LqipImages = (function() {
       // Loop through all LQIP images.
       for (var i = 0; i < lqipImages.length; i++) {
 
+        // Instantiate this individual image.
         lqipImage = lqipImages[i];
 
         // Get the images parent (.img-shortcode).
-        imgShortcode = lqipImages[i].parentElement;
+        imgShortcode = lqipImage.parentElement;
 
+        // Add the loading class to the image shortcode.
         imgShortcode.classList.add( imageLoadingClass );
 
-
+        // Get the full image src.
         fullImageSrc = lqipImage.dataset.full;
+
+        // Create a new image.
+        fullImage = null;
         fullImage = new Image();
-        fullImage.src = fullImageSrc;
-        fullImage.classList.add( fullImageClass );
 
-        imgShortcode.insertBefore( fullImage, lqipImage );
-
+        // When the full image has loaded.
         fullImage.onload = function() {
 
-          console.log( 'Image has loaded' );
-          imgShortcode.classList.add( imageLoadedClass );
+          // Add the loaded class to the full image.
+          this.parentElement.classList.add( imageLoadedClass );
         }
+
+        // Add the src to the full image.
+        fullImage.src = fullImageSrc;
+
+        // Add the appropriate BEM clas to the full image.
+        fullImage.classList.add( fullImageClass );
+
+        // Insert the full image before the LQIP image.
+        imgShortcode.insertBefore( fullImage, lqipImage );
+
       }
     }
   } // handleLqipImages()
