@@ -203,6 +203,27 @@ gulp.task('images', function() {
   gulp.src('src/img/uploads/**/*.{jpg,png,gif}')
     .pipe(gulp.dest('static/img/uploads'));
 
+  
+  // Low quality image placeholders (LQIP)
+  gulp.src('src/img/uploads/**/*.{jpg,png}')    
+    .pipe(responsive({
+        '*': [
+          {
+            width: '100%',
+            quality: 1,
+            format: 'jpeg',
+            rename: {
+              suffix: '-lqip',
+              extname: '.jpg',
+            }
+          }
+        ],
+      }, {
+        silent: true // Don't spam the console
+    }))
+    .pipe(gulp.dest('static/img/uploads'));
+
+
   // Featured images.
   gulp.src('src/img/uploads/featured-image-*.{jpg,png}')
     // .pipe(newer("./static/uploads/"))
@@ -213,9 +234,9 @@ gulp.task('images', function() {
           rename: {
             suffix: '-sm'
           },
+        }
         // }, {
           // width: '100%'
-        }
         // LQIP
         // }, {
         //   width: '100%',
@@ -242,8 +263,11 @@ gulp.task('images', function() {
 // gulp.task('compress-images', ['images'], function() {
 gulp.task('compress-images', function() {
 
-  // All images.
-  gulp.src('static/img/uploads/**/*.{jpg,png,gif}')
+  // All JPGs and PNGs except those with -lqip suffix.
+  gulp.src([
+    'static/img/uploads/**/*.{jpg,png}',
+    '!static/img/uploads/**/*-lqip.{jpg}'
+    ])
     // .pipe(newer('src/img/uploads/'))
     .pipe(imagemin([
       imagemin.gifsicle(),
