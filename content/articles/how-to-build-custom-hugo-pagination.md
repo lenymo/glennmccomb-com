@@ -30,7 +30,7 @@ If you're looking for basic pagination you can very easily use Hugo's default pa
 {{ template "_internal/pagination.html" . }}
 {{< /highlight >}}
 
-{{< figure src="/img/uploads/article-hugo-pagination-default.jpg" caption="Hugo's awesome default pagination template (poorly styled by me)." >}}
+{{< img src="/img/uploads/article-hugo-pagination-default.jpg" caption="Hugo's awesome default pagination template (poorly styled by me)." >}}
 
 This will pump out Hugo's default pagination template and for a lot of people this will be fine, but I want full control of my markup and I don't like how it handles excess pages. 
 

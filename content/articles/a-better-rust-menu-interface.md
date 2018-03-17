@@ -19,7 +19,7 @@ It's difficult to find a server in Rust. When you find yourself using a 3rd part
 Here's my attempt at improving the server browser:
 
 {{< article-body-full-bleed >}}
-![Rust menu UI](/img/uploads/article-rust-menu-ui-servers.jpg)
+{{< img src="/img/uploads/article-rust-menu-ui-servers.jpg" alt="Rust menu UI" >}} 
 {{< /article-body-full-bleed >}}
 
 ## What's the difference?
@@ -36,7 +36,7 @@ Here's a summary of what I've done:
 For reference here's the server browser at the time of publishing:
 
 {{< article-body-full-bleed >}}
-![Rust menu UI](/img/uploads/article-rust-menu-ui-servers-old.jpg)
+{{< img src="/img/uploads/article-rust-menu-ui-servers-old.jpg" alt="Current Rust menu UI" >}}
 {{< /article-body-full-bleed >}}
 
 ### Time since last wipe
@@ -64,7 +64,7 @@ I had a quick go at the individual server screen. The current popup is too small
 Check it out:
 
 {{< article-body-full-bleed >}}
-![Rust menu UI](/img/uploads/article-rust-menu-ui-servers-server.jpg)
+{{< img src="/img/uploads/article-rust-menu-ui-servers-server.jpg" alt="Rust server UI" >}}
 {{< /article-body-full-bleed >}}
 
 ## What's the difference?
@@ -82,7 +82,7 @@ The rest are existing features re-organised.
 Again, for reference here's the current server popup:
 
 {{< article-body-full-bleed >}}
-![Rust menu UI](/img/uploads/article-rust-menu-ui-servers-server-old.jpg)
+{{< img src="/img/uploads/article-rust-menu-ui-servers-server-old.jpg" alt="Old Rust server UI" >}}
 {{< /article-body-full-bleed >}}
 
 Hope you dig it. 
