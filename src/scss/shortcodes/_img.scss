@@ -19,7 +19,7 @@
 }
 
 .img-shortcode {
-  &.-image-is-loading {
+  &.-image-has-loaded {
     .img-shortcode__img-lqip {
       opacity: 0;
     }

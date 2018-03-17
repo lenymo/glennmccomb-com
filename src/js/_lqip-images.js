@@ -20,6 +20,7 @@ var LqipImages = (function() {
     var fullImage;
     var fullImageClass = 'img-shortcode__img-full'
     var imageLoadingClass = '-image-is-loading';
+    var imageLoadedClass = '-image-has-loaded';
 
 
     // On page load.
@@ -43,6 +44,10 @@ var LqipImages = (function() {
         fullImage = new Image();
         fullImage.src = fullImageSrc;
         fullImage.classList.add( fullImageClass );
+
+        fullImage.onload = function() {
+          imgShortcode.classList.add( imageLoadedClass );
+        }
 
         imgShortcode.insertBefore( fullImage, lqipImage );
 
