@@ -21,7 +21,7 @@ url="http://"
   {{ $.Scratch.Set "lqip" $lqip }}
 {{ end }}
 <figure class="img-shortcode">
-  <img class="img-shortcode__img-lqip" src="{{ $.Scratch.Get "lqip" }}" alt="Mushrooms growing in a grassy forest area."  data-full="{{ .Get "src" }}">
+  <img class="img-shortcode__img-lqip" src="{{ $.Scratch.Get "lqip" }}" {{ if .Get "alt" }}alt="{{ .Get "alt" }}"{{ end }}  data-full="{{ .Get "src" }}">
   {{ if .Get "caption" }}
   <figcaption class="img-shortcode__caption">
     <p class="img-shortcode__caption-text">
