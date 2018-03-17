@@ -45,12 +45,13 @@ var LqipImages = (function() {
         fullImage.src = fullImageSrc;
         fullImage.classList.add( fullImageClass );
 
-        fullImage.onload = function() {
-          imgShortcode.classList.add( imageLoadedClass );
-        }
-
         imgShortcode.insertBefore( fullImage, lqipImage );
 
+        fullImage.onload = function() {
+
+          console.log( 'Image has loaded' );
+          imgShortcode.classList.add( imageLoadedClass );
+        }
       }
     }
   } // handleLqipImages()
