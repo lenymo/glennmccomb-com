@@ -100,12 +100,12 @@ TL;DR: Don't bother fishing.
 
 If you're lucky you'll catch a trout. If you're not, you'll catch minnows. Cooked trout is very nutritious and you'll get some bonus animal fat but minnows are not good.
 
-{{< figure src="/img/uploads/article-rust-survival-tips-fish-trap.jpg" caption="A pair of fish traps standing out like dog's balls." >}}
+{{< img src="/img/uploads/article-rust-survival-tips-fish-trap.jpg" caption="A pair of fish traps standing out like dog's balls." alt="Fish trap" >}}
 
 The problem with fishing is that while you're waiting to catch a fish, any other player can either take your bait, destroy your trap or steal your fish once it's trapped. They're also obvious as fuck sitting in the beach so there's no hiding them.
 
 {{< article-body-full-bleed >}}
-![Rust Sunset](/img/uploads/article-rust-survival-tips-sunset.jpg)
+{{< img src="/img/uploads/article-rust-survival-tips-sunset.jpg" alt="Rust sunset" >}}
 {{< /article-body-full-bleed >}}
 
 ## Early game objectives
@@ -194,18 +194,6 @@ The catch is that if you want to share your base with other players you'll need 
 
 For these reasons, if you plan on playing with a group you should aim to get a codelock as soon as possible. To do this you'll need at least 100 [metal frags](https://rustlabs.com/item/metal-fragments).
 
-<!-- If you don't yet have the metal frags for a [code lock](http://rust.wikia.com/wiki/Code_Lock) that's fine, a [key lock](http://rust.wikia.com/wiki/Lock) will do the trick temporarily. Just be aware that key locks are very insecure for the following reasons:
-
-* If you're killed while carrying your key near your base your key lets anyone into base.
-* If you lose your key outside your base you won't be able to get back in unless you have a spare hidden outside. And if you don't have a spare key inside your base you can respawn to a bag but you won't be able to open your door.
-* Other players can craft a key and there's a slim chance it will open your lock. This is called [lock picking](https://www.youtube.com/watch?v=iP3cYn4RonM). If someone creates enough keys their chances of picking your lock increases (chances of a match are estimated at 1/100).
-
-To avoid disaster when using a key lock:
-
-* Always have a spare key and sleeping bag in your base.
-* When you go outside hide your key in a stash.
-* Get a code lock as soon as you can even if it's on a wooden door. -->
-
 ## Crafting a furnace
 
 Crafting a furnace is one of the most important early game milestones. Once you have a furnace you can begin to smelt metal and sulphur. This is particularly vital if you don't yet have a code lock on your base.
@@ -223,10 +211,10 @@ The biggest obstacle to crafting a furnace is the 50 low grade fuel. This can be
 {{< article-body-full-bleed container="yes" >}}
 {{< row >}}
 {{< col >}}
-{{< figure src="/img/uploads/article-rust-survival-tips-red-barrel.jpg" caption="An oil barrel." >}}
+{{< img src="/img/uploads/article-rust-survival-tips-red-barrel.jpg" caption="An oil barrel." alt="Oil barrel" >}}
 {{< /col >}}
 {{< col >}}
-{{< figure src="/img/uploads/article-rust-survival-tips-mining-cart.jpg" caption="Mining cart." >}}
+{{< img src="/img/uploads/article-rust-survival-tips-mining-cart.jpg" caption="Mining cart." alt="Mining cart" >}}
 {{< /col >}}
 {{< /row >}}
 {{< /article-body-full-bleed >}}
@@ -241,7 +229,7 @@ A good way to get metal early on is using a recycler. These can be found at most
 
 <small>**NOTE:** I mention these monuments because they have lower tier loot crates and are less attractive to potentially experienced (and probably armed) players.</small>
 
-{{< figure src="/img/uploads/article-rust-survival-tips-lighthouse-recycler.jpg" caption="The recycler at the lighthouse." >}}
+{{< img src="/img/uploads/article-rust-survival-tips-lighthouse-recycler.jpg" caption="The recycler at the lighthouse." alt="Lighthouse recycler" >}}
 
 Gears, pipes, springs and semi-automatic bodies will be useful very soon but you won't miss propane tanks and sheet metal and they'll give you 50 and 100 metal frags respectively.
 
