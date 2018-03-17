@@ -47,12 +47,12 @@ These possession-based numbers will also differ from NBA.com’s metrics because
 When a game is live, stats are constantly updating but it’s difficult to follow exactly _what_ has changed. In the extension, updated stats are highlighted with a yellow background as shown below.
 
 {{< article-body-full-bleed container="yes" >}}
-![null](/img/uploads/article-espn-chrome-extension-box-score-stats-play-sequence.jpg)
+{{< img src="/img/uploads/article-espn-chrome-extension-box-score-stats-play-sequence.jpg" >}}
 {{< /article-body-full-bleed >}}
 
 This provides context for each stat and allows the action to be pieced together. For example, in the above sequence Jonas Valanciunas has his shot blocked by Amir Johnson. Al Horford grabs the defensive rebound from Amir’s block and subsequently misses a 2-pointer. This can be cross referenced with the play-by-play, which the extension adds below the box score.
 
-![null](/img/uploads/article-espn-chrome-extension-play-by-play-stats-play-sequence.png)
+{{< img src="/img/uploads/article-espn-chrome-extension-play-by-play-stats-play-sequence.png" >}}
 
 This uninspiring example demonstrates that you no longer need to continually switch between the box score and play-by-play to follow the action.
 
@@ -61,7 +61,7 @@ This uninspiring example demonstrates that you no longer need to continually swi
 Immediately following a game’s completion, advanced stats can be viewed for individual players by clicking the advanced stats checkbox in the bottom right-hand corner of the page (next to the ESPN logo). As with team stats, these are all calculated using formulas from [Basketball Reference’s glossary](http://www.basketball-reference.com/about/glossary.html).
 
 {{< article-body-full-bleed container="yes" >}}
-![null](/img/uploads/article-espn-chrome-extension-box-score-advanced-stats.png)
+{{< img src="/img/uploads/article-espn-chrome-extension-box-score-advanced-stats.png" >}}
 {{< /article-body-full-bleed >}}
 
 These stats _do_ actually work while a game is live but they’re buggy and I’m still working on performance tweaks. Hopefully soon these will be available during live games.
@@ -86,5 +86,5 @@ You can [download the extension here](https://goo.gl/3DmHU1) and feel free to 
 For reference below is the original ESPN box score
 
 {{< article-body-full-bleed container="yes" >}}
-![null](/img/uploads/article-espn-chrome-extension-espn-boxscores-before.png)
+{{< img src="/img/uploads/article-espn-chrome-extension-espn-boxscores-before.png" >}}
 {{< /article-body-full-bleed >}}
