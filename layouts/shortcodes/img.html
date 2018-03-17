@@ -1,0 +1,32 @@
+<!--
+//
+//  IMG
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+Params:
+src="URL"
+alt="description of image"
+caption="caption"
+url="http://"
+-->
+{{ if in (.Get "src") ".jpg" }}
+  {{ $src := .Get "src" }}
+  {{ $lqip := replace $src ".jpg" "-lqip.jpg" }}
+  {{ $.Scratch.Set "lqip" $lqip }}
+{{ end }}
+
+{{ if in (.Get "src") ".png" }}
+  {{ $src := .Get "src" }}
+  {{ $lqip := replace $src ".png" "-lqip.jpg" }}
+  {{ $.Scratch.Set "lqip" $lqip }}
+{{ end }}
+<figure class="img-shortcode">
+  <img class="img-shortcode__img-lqip" src="{{ $.Scratch.Get "lqip" }}" alt="Mushrooms growing in a grassy forest area."  data-full="{{ .Get "src" }}">
+  {{ if .Get "caption" }}
+  <figcaption class="img-shortcode__caption">
+    <p class="img-shortcode__caption-text">
+      {{ .Get "caption" | markdownify }}
+    </p>
+  </figcaption>
+  {{ end }}
+</figure>
