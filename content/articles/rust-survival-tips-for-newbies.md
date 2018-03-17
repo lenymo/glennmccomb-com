@@ -62,7 +62,7 @@ In the desert you'll get a small amount of cloth and cactus flesh when you bang 
 {{< article-body-full-bleed container="yes" >}}
 {{< row >}}
 {{< col >}}
-{{< figure src="/img/uploads/article-rust-survival-tips-mushrooms.jpg" caption="Mushrooms growing in a grassy forest area." >}}
+{{< img src="/img/uploads/article-rust-survival-tips-mushrooms.jpg" caption="Mushrooms growing in a grassy forest area." >}}
 {{< /col >}}
 {{< col >}}
 {{< figure src="/img/uploads/article-rust-survival-tips-corn-pumpkins.jpg" caption="Corn and pumpkins growing along both sides of a river." >}}

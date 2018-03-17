@@ -21,7 +21,7 @@ At some stage ESPN updated their box scores and left some tasty team stats hidde
 Play-by-play data is added to the page below the box score in an iframe and formatting is added to highlight key stats.
 
 {{< article-body-full-bleed container="yes" >}}
-![null](/img/uploads/article-espn-chrome-extension-box-score-layout.jpg)
+{{< img src="/img/uploads/article-espn-chrome-extension-box-score-layout.jpg" >}}
 {{< /article-body-full-bleed >}}
 
 ## More stats please
@@ -32,9 +32,7 @@ In the early stages of development [Kevin Arnovitz](https://twitter.com/kevinar
 
 As an NBA fan who appreciates a well baked cookie, I got to work. As you can see below the extension adds quite a few additional team stats.
 
-![null](/img/uploads/article-espn-chrome-extension-box-score-stats-team-stats.png)
-
-<small>These calculations are based on formulas in [Basketball Reference’s glossary](http://www.basketball-reference.com/about/glossary.html).</small>
+{{< img src="/img/uploads/article-espn-chrome-extension-box-score-stats-team-stats.png" caption="These calculations are based on formulas in [Basketball Reference’s glossary](http://www.basketball-reference.com/about/glossary.html)." >}}
 
 True to his word, Arnovitz sent me [delicious baked goods](https://twitter.com/lenymo/status/799756952335060992).
 
