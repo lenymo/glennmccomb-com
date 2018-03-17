@@ -199,34 +199,34 @@ gulp.task('js', function() {
 
 gulp.task('images', function() {
 
+  // Clear the /static/img/uploads/ directory.
+  del(['static/img/uploads/**/*']);
+
   // Copy all images from /src to /static.
   gulp.src('src/img/uploads/**/*.{jpg,png,gif}')
     .pipe(gulp.dest('static/img/uploads'));
-
   
-  // Low quality image placeholders (LQIP)
+  // Low quality image placeholders (LQIP) for all JPG and PNGs
   gulp.src('src/img/uploads/**/*.{jpg,png}')    
     .pipe(responsive({
-        '*': [
-          {
-            width: '100%',
-            quality: 1,
-            format: 'jpeg',
-            rename: {
-              suffix: '-lqip',
-              extname: '.jpg',
-            }
+      '*': [
+        {
+          width: '100%',
+          quality: 1,
+          format: 'jpeg',
+          rename: {
+            suffix: '-lqip',
+            extname: '.jpg',
           }
-        ],
-      }, {
-        silent: true // Don't spam the console
+        }
+      ],
+    }, {
+      silent: true // Don't spam the console
     }))
     .pipe(gulp.dest('static/img/uploads'));
 
-
   // Featured images.
   gulp.src('src/img/uploads/featured-image-*.{jpg,png}')
-    // .pipe(newer("./static/uploads/"))
     .pipe(responsive({
       '*': [
         {
@@ -235,16 +235,6 @@ gulp.task('images', function() {
             suffix: '-sm'
           },
         }
-        // }, {
-          // width: '100%'
-        // LQIP
-        // }, {
-        //   width: '100%',
-        //   quality: 1,
-        //   rename: {
-        //     suffix: '-lqip'
-        //   }
-        // }
       ],
     }, {
       // quality: 100,
@@ -275,6 +265,17 @@ gulp.task('compress-images', function() {
       imagemin.optipng(),
       imagemin.svgo(),
       mozjpeg(),
+    ]))
+    .pipe(gulp.dest('static/img/uploads'));
+
+  // Further LQIP images.
+  gulp.src('!static/img/uploads/**/*-lqip.jpg')
+    .pipe(imagemin([
+      imagemin.gifsicle(),
+      // imagemin.optipng({optimizationLevel: 9}),
+      imagemin.optipng(),
+      imagemin.svgo(),
+      mozjpeg({quality:2})
     ]))
     .pipe(gulp.dest('static/img/uploads'));
 });
