@@ -1,0 +1,39 @@
+
+
+//
+//  IMG SHORTCODE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.img-shortcode {
+  position: relative;
+}
+
+
+//
+//  LQIP
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.img-shortcode__img-lqip {
+  filter: blur(10px);
+  transition: all .4s ease;
+}
+
+.img-shortcode {
+  &.-image-is-loading {
+    .img-shortcode__img-lqip {
+      opacity: 0;
+    }
+  }
+}
+
+
+//
+//  FULL
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.img-shortcode__img-full {
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
