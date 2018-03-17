@@ -13,5 +13,6 @@
   ArticleSummaryHover.init();
   ObjectFitPolyfill.init();
   ExpandableCodeBlocks.init();
+  LqipImages.init();
   
 })();
