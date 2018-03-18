@@ -11,17 +11,35 @@ url="http://"
 -->
 {{ if in (.Get "src") ".jpg" }}
   {{ $src := .Get "src" }}
+
   {{ $lqip := replace $src ".jpg" "-lqip.jpg" }}
   {{ $.Scratch.Set "lqip" $lqip }}
+
+  {{ $sqip := replace $src ".jpg" ".svg" }}
+  {{ $.Scratch.Set "sqip" "/static" }}
+  {{ $.Scratch.Add "sqip" $sqip }}
+
 {{ end }}
 
 {{ if in (.Get "src") ".png" }}
   {{ $src := .Get "src" }}
+
   {{ $lqip := replace $src ".png" "-lqip.jpg" }}
   {{ $.Scratch.Set "lqip" $lqip }}
+
+  {{ $sqip := replace $src ".png" ".svg" }}
+  {{ $.Scratch.Set "sqip" "/static" }}
+  {{ $.Scratch.Add "sqip" $sqip }}
+
 {{ end }}
-<figure class="img-shortcode">
-  <img class="img-shortcode__img-lqip" src="{{ $.Scratch.Get "lqip" }}" {{ if .Get "alt" }}alt="{{ .Get "alt" }}"{{ end }}  data-full="{{ .Get "src" }}">
+<figure class="img-shortcode" data-full="{{ .Get "src" }}">
+  <!-- <img class="img-shortcode__img-lqip" src="{{ $.Scratch.Get "lqip" }}" {{ if .Get "alt" }}alt="{{ .Get "alt" }}"{{ end }}  data-full="{{ .Get "src" }}"> -->
+  
+  {{ $sqip := $.Scratch.Get "sqip" }}
+  <div class="img-shortcode__img-sqip">
+    {{ readFile $sqip | safeHTML }}
+  </div>
+
   {{ if .Get "caption" }}
   <figcaption class="img-shortcode__caption">
     <p class="img-shortcode__caption-text">
