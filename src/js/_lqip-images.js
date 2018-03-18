@@ -27,22 +27,22 @@ var LqipImages = (function() {
     window.onload = function() {
 
       // Find all LQIP images on the page.
-      lqipImages = document.querySelectorAll('.img-shortcode__img-lqip');
+      sqipImages = document.querySelectorAll('.img-shortcode__img-sqip');
 
       // Loop through all LQIP images.
-      for (var i = 0; i < lqipImages.length; i++) {
+      for (var i = 0; i < sqipImages.length; i++) {
 
         // Instantiate this individual image.
-        lqipImage = lqipImages[i];
+        sqipImage = sqipImages[i];
 
         // Get the images parent (.img-shortcode).
-        imgShortcode = lqipImage.parentElement;
+        imgShortcode = sqipImage.parentElement;
 
         // Add the loading class to the image shortcode.
         imgShortcode.classList.add( imageLoadingClass );
 
         // Get the full image src.
-        fullImageSrc = lqipImage.dataset.full;
+        fullImageSrc = imgShortcode.dataset.full;
 
         // Create a new image.
         fullImage = null;
@@ -62,7 +62,7 @@ var LqipImages = (function() {
         fullImage.classList.add( fullImageClass );
 
         // Insert the full image before the LQIP image.
-        imgShortcode.insertBefore( fullImage, lqipImage );
+        imgShortcode.insertBefore( fullImage, sqipImage );
 
       }
     }
