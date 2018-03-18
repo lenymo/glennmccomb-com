@@ -13,10 +13,6 @@ var uglify          = require('gulp-uglify');
 var hash            = require('gulp-hash');
 var del             = require('del');
 
-var run             = require('run-sequence')
-var newer           = require('gulp-newer');
-var changed         = require('gulp-changed');
-
 // Webpack.
 var webpack         = require('webpack');
 var webpackStream   = require('webpack-stream');
@@ -31,6 +27,15 @@ var gulpif          = require('gulp-if');
 var responsive      = require('gulp-responsive');
 var imagemin        = require('gulp-imagemin');
 var mozjpeg         = require('imagemin-mozjpeg');
+var sqip            = require('gulp-sqip');
+
+// Unused plugins.
+// Used to run tasks in sequence. I couldn't get it working.
+var run             = require('run-sequence');
+
+// Both of these are used to determine if files are newer / have changed.
+var newer           = require('gulp-newer');
+var changed         = require('gulp-changed');
 
 
 //
@@ -206,8 +211,8 @@ gulp.task('images', function() {
   gulp.src('src/img/uploads/**/*.{jpg,png,gif}')
     .pipe(gulp.dest('static/img/uploads'));
   
-  // Low quality image placeholders (LQIP) for all JPG and PNGs
-  gulp.src('src/img/uploads/**/*.{jpg,png}')    
+  // LQIP (low quality image placeholders) for all JPG and PNGs.
+  gulp.src('src/img/uploads/**/*.{jpg,png}')  
     .pipe(responsive({
       '*': [
         {
@@ -223,6 +228,11 @@ gulp.task('images', function() {
     }, {
       silent: true // Don't spam the console
     }))
+    .pipe(gulp.dest('static/img/uploads'));
+
+  // SQIP.
+  gulp.src('src/img/uploads/**/*.{jpg,png}')
+    .pipe(sqip())
     .pipe(gulp.dest('static/img/uploads'));
 
   // Featured images.
