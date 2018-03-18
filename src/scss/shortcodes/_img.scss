@@ -28,6 +28,29 @@
 
 
 //
+//  SQIP
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.img-shortcode__img-sqip {
+  margin-bottom: 5px;
+  overflow: hidden;
+  transition: all 1s ease;
+
+  svg {
+    vertical-align: top;
+  }
+}
+
+.img-shortcode {
+  &.-image-has-loaded {
+    .img-shortcode__img-sqip {
+      opacity: 0;
+    }
+  }
+}
+
+
+//
 //  FULL
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 

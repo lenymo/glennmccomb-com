@@ -11,6 +11,11 @@ figure {
     margin-bottom: $gutter / 4;
   }
 
+  figcaption {
+    display: inline-block;
+    width: 100%;
+  }
+
   p {
     color: $small-font-color;
     font-size: $small-font-size;
