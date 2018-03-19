@@ -88,7 +88,7 @@ $page-header-design-icon-rotation: -30deg;
   left: 0;
   position: absolute;
   top: 50%;
-  transform: translateX(-98%) translateY(-50%);
+  transform: translateX(-96%) translateY(-50%);
   width: $page-header-design-icon-height-sm * 2;
 }
 
@@ -99,13 +99,15 @@ $page-header-design-icon-rotation: -30deg;
 
   .page-header__icon-bezier-curve__curve {
     height: $page-header-design-icon-height * 2;
+    transform: translateX(-97.5%) translateY(-50%);
     width: $page-header-design-icon-height * 2;
   }
 }
 
-@include respond-above(sm) {
+@include respond-above(md) {
   .page-header__icon-bezier-curve__curve {
     height: $page-header-design-icon-height * 3;
+    transform: translateX(-98.5%) translateY(-50%);
     width: $page-header-design-icon-height * 3;
   }
 }
@@ -120,6 +122,7 @@ $page-header-design-icon-rotation: -30deg;
 @include respond-above(xl) {
   .page-header__icon-bezier-curve__curve {
     height: $page-header-design-icon-height * 4;
+    transform: translateX(-98.9%) translateY(-50%);
     width: $page-header-design-icon-height * 4;
   }
 }
