@@ -15,6 +15,7 @@ var LqipImages = (function() {
 
     var lqipImages;
     var lqipImage;
+    var lqipImageWrapper;
     var imgShortcode;
     var fullImageSrc;
     var fullImage;
@@ -35,8 +36,10 @@ var LqipImages = (function() {
         // Instantiate this individual image.
         lqipImage = lqipImages[i];
 
+        lqipImageWrapper = lqipImage.parentElement;
+
         // Get the images parent (.img-shortcode).
-        imgShortcode = lqipImage.parentElement;
+        imgShortcode = lqipImageWrapper.parentElement;
 
         // Add the loading class to the image shortcode.
         imgShortcode.classList.add( imageLoadingClass );
@@ -51,8 +54,11 @@ var LqipImages = (function() {
         // When the full image has loaded.
         fullImage.onload = function() {
 
+          lqipImageWrapper = this.parentElement;
+          imgShortcode = lqipImageWrapper.parentElement;
+
           // Add the loaded class to the full image.
-          this.parentElement.classList.add( imageLoadedClass );
+          imgShortcode.classList.add( imageLoadedClass );
         }
 
         // Add the src to the full image.
@@ -62,7 +68,7 @@ var LqipImages = (function() {
         fullImage.classList.add( fullImageClass );
 
         // Insert the full image before the LQIP image.
-        imgShortcode.insertBefore( fullImage, lqipImage );
+        lqipImageWrapper.insertBefore( fullImage, lqipImage );
 
       }
     }

@@ -33,18 +33,16 @@ url="http://"
 
 {{ end }}
 <figure class="img-shortcode" data-full="{{ .Get "src" }}">
-  <img class="img-shortcode__img-lqip" src="{{ $.Scratch.Get "lqip" }}" {{ if .Get "alt" }}alt="{{ .Get "alt" }}"{{ end }}  data-full="{{ .Get "src" }}">
-  
-  {{ $sqip := $.Scratch.Get "sqip" }}
-  <!--<div class="img-shortcode__img-sqip">
-    {{ readFile $sqip | safeHTML }}
-  </div>-->
-
-  {{ if .Get "caption" }}
-  <figcaption class="img-shortcode__caption">
+  <div class="img-shortcode__img-wrapper">
+    <img class="img-shortcode__img-lqip" src="{{ $.Scratch.Get "lqip" }}" {{ if .Get "alt" }}alt="{{ .Get "alt" }}"{{ end }} />
+    <!--{{ $sqip := $.Scratch.Get "sqip" }} -->
+    <!--<div class="img-shortcode__img-sqip">
+      {{ readFile $sqip | safeHTML }}
+    </div>-->
+  </div>
+  {{ if .Get "caption" }}<figcaption class="img-shortcode__caption">
     <p class="img-shortcode__caption-text">
       {{ .Get "caption" | markdownify }}
     </p>
-  </figcaption>
-  {{ end }}
+  </figcaption>{{ end }}
 </figure>

@@ -10,12 +10,26 @@
 
 
 //
+//  IMAGE WRAPPER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.img-shortcode__img-wrapper {
+  overflow: hidden;
+  margin-bottom: $gutter * .25;
+
+  img {
+    margin-bottom: 0 !important;
+  }
+} 
+
+//
 //  LQIP
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .img-shortcode__img-lqip {
-  filter: blur(40px) saturate(75%);
+  filter: blur(50px) saturate(75%);
   transition: all 1s ease;
+  transform: scale(1.2);
 }
 
 .img-shortcode {
