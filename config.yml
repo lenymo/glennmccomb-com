@@ -13,28 +13,28 @@ menu:
       URL: /articles/
       Weight: '10'
 
-    # - Identifier: design
-    #   Name: Design
-    #   URL: /categories/design/
-    #   Weight: '200'
-    #   parent: "articles"
+    - Identifier: design
+      Name: Design
+      URL: /categories/design/
+      Weight: '110'
+      parent: "articles"
 
     - Identifier: development
       Name: Development
       URL: /categories/development/
-      Weight: '110'
+      Weight: '120'
       parent: "articles"
 
     - Identifier: gaming
       Name: Gaming
       URL: /categories/gaming/
-      Weight: '120'
+      Weight: '130'
       parent: "articles"
 
     - Identifier: nba
       Name: NBA
       URL: /categories/nba/
-      Weight: '130'
+      Weight: '140'
       parent: "articles"
 
     # - Identifier: about
