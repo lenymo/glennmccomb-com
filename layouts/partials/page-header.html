@@ -41,6 +41,17 @@
         {{ if eq .Title "Development" }}
         </>
         {{ end }}
+
+        {{ if eq .Title "Design" }}
+        <div class="page-header__icon-bezier-curve">
+          <div class="page-header__icon-bezier-curve__curve"></div>
+          <div class="page-header__icon-bezier-curve__handle"></div>
+          <div class="page-header__icon-bezier-curve__point"></div>
+          <div class="page-header__icon-bezier-curve__control top"></div>
+          <div class="page-header__icon-bezier-curve__control bottom"></div>
+        </div>
+        {{ end }}
+
         {{ if eq .Title "Gaming" }}
         <div class="page-header__icon-gaming-keys">
           <div class="page-header__icon-gaming-key w">W</div>

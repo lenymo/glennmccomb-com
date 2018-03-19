@@ -10,6 +10,7 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 $page-header-bg: $color-gray-e;
+$page-header-bg-dark: $color-gray-2;
 
 
 //
@@ -113,7 +114,7 @@ $page-header-padding-bottom-xl: $gutter * 6;
 
 .section__page-header {
   &.-has-dark-bg {
-    background-color: $color-gray-2;
+    background-color: $page-header-bg-dark;
 
     .page-header__title {
       color: $white;
