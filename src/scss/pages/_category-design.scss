@@ -8,6 +8,7 @@ $page-header-bg-design: #1f6364;
 
 $page-header-design-icon-height-sm: 100px;
 $page-header-design-icon-height: 160px;
+$page-header-design-icon-height-lg: 200px;
 $page-header-design-icon-rotation: -30deg;
 
 
@@ -97,6 +98,25 @@ $page-header-design-icon-rotation: -30deg;
     height: $page-header-design-icon-height;
   }
 
+  .page-header__icon-bezier-curve__control {
+    transition: all .2s ease;
+
+    &:hover {
+      // background: lighten($page-header-bg-design, 20%);
+      cursor: pointer;
+      transform: rotateZ($page-header-design-icon-rotation * -1) scale(2);
+    }
+  }
+
+  .page-header__icon-bezier-curve__point {
+    transition: all .2s ease;
+
+    &:hover {
+      cursor: pointer;
+      transform: translateX(-50%) translateY(-50%) scale(1.5);
+    }
+  }
+
   .page-header__icon-bezier-curve__curve {
     height: $page-header-design-icon-height * 2;
     transform: translateX(-97.5%) translateY(-50%);
@@ -105,10 +125,23 @@ $page-header-design-icon-rotation: -30deg;
 }
 
 @include respond-above(md) {
+  .page-header__icon-bezier-curve {
+    height: $page-header-design-icon-height-lg;
+  }
+
+  .page-header__icon-bezier-curve__control {
+    height: 12px;
+    width: 12px;
+  }
+
+  .page-header__icon-bezier-curve__handle {
+    width: 3px;
+  }
+
   .page-header__icon-bezier-curve__curve {
-    height: $page-header-design-icon-height * 3;
+    height: $page-header-design-icon-height-lg * 3;
     transform: translateX(-98.5%) translateY(-50%);
-    width: $page-header-design-icon-height * 3;
+    width: $page-header-design-icon-height-lg * 3;
   }
 }
 
@@ -120,9 +153,13 @@ $page-header-design-icon-rotation: -30deg;
 // }
 
 @include respond-above(xl) {
+  .page-header__icon-bezier-curve__handle {
+    width: 4px;
+  }
+
   .page-header__icon-bezier-curve__curve {
-    height: $page-header-design-icon-height * 4;
-    transform: translateX(-98.9%) translateY(-50%);
-    width: $page-header-design-icon-height * 4;
+    height: $page-header-design-icon-height-lg * 4;
+    transform: translateX(-99%) translateY(-50%);
+    width: $page-header-design-icon-height-lg * 4;
   }
 }
