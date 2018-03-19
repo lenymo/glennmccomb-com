@@ -231,9 +231,9 @@ gulp.task('images', function() {
     .pipe(gulp.dest('static/img/uploads'));
 
   // SQIP.
-  gulp.src('src/img/uploads/**/*.{jpg,png}')
-    .pipe(sqip())
-    .pipe(gulp.dest('static/img/uploads'));
+  // gulp.src('src/img/uploads/**/*.{jpg,png}')
+  //   .pipe(sqip())
+  //   .pipe(gulp.dest('static/img/uploads'));
 
   // Featured images.
   gulp.src('src/img/uploads/featured-image-*.{jpg,png}')
