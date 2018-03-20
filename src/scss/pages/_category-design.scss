@@ -20,13 +20,26 @@ $page-header-design-icon-rotation: -30deg;
   .section__page-header {
     background-color: $page-header-bg-design;
     background-image: url('/img/uploads/featured-image-category-design.png');
-    background-size: cover;
+    background-size: auto;
   }
 
   .page-header__icon {
     background-color: $page-header-bg-design;
   }
 }
+
+@include respond-above(lg) {
+  .category-design {
+    .section__page-header {
+      background-size: cover;
+    }
+  }
+}
+
+
+//
+//  ICON
+//––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .page-header__icon-bezier-curve {
   // background: lighten($page-header-bg-design, 20%);
@@ -93,13 +106,19 @@ $page-header-design-icon-rotation: -30deg;
   width: $page-header-design-icon-height-sm * 2;
 }
 
+// @include respond-above(xs) {
+//   .page-header__icon-bezier-curve__curve {
+//     transform: translateX(-96%) translateY(-50%);
+//   }
+// }
+
 @include respond-above(sm) {
   .page-header__icon-bezier-curve {
     height: $page-header-design-icon-height;
   }
 
   .page-header__icon-bezier-curve__control {
-    transition: all .2s ease;
+    transition: all .1s ease;
 
     &:hover {
       // background: lighten($page-header-bg-design, 20%);
@@ -109,7 +128,7 @@ $page-header-design-icon-rotation: -30deg;
   }
 
   .page-header__icon-bezier-curve__point {
-    transition: all .2s ease;
+    transition: all .1s ease;
 
     &:hover {
       cursor: pointer;
@@ -119,7 +138,7 @@ $page-header-design-icon-rotation: -30deg;
 
   .page-header__icon-bezier-curve__curve {
     height: $page-header-design-icon-height * 2;
-    transform: translateX(-97.5%) translateY(-50%);
+    transform: translateX(-97.6%) translateY(-50%);
     width: $page-header-design-icon-height * 2;
   }
 }
@@ -140,7 +159,7 @@ $page-header-design-icon-rotation: -30deg;
 
   .page-header__icon-bezier-curve__curve {
     height: $page-header-design-icon-height-lg * 3;
-    transform: translateX(-98.5%) translateY(-50%);
+    transform: translateX(-98.75%) translateY(-50%);
     width: $page-header-design-icon-height-lg * 3;
   }
 }
