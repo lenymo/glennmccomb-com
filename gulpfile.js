@@ -51,7 +51,7 @@ gulp.task('react', function() {
     argv.dev = false;
   }
 
-  // If this is not dev (i.e. production).
+  // If this is DEV.
   if ( argv.dev ) {
 
     webpackConfig.plugins = [
@@ -60,20 +60,22 @@ gulp.task('react', function() {
       })
     ];
   
+    return webpackStream( webpackConfig )
+      .on('error', function handleError() {
+        this.emit('end'); // Recover from errors
+      })
+      .pipe( gulp.dest('static/js') );
+      
+  // If this is NOT dev (i.e. production).
   } else {
 
-    webpackConfig.plugins = [
-      new webpack.DefinePlugin({
-        'process.env.NODE_ENV': '"production"'
-      })
-    ];
+    // webpackConfig.plugins = [
+    //   new webpack.DefinePlugin({
+    //     'process.env.NODE_ENV': '"production"'
+    //   })
+    // ];
   }
 
-  return webpackStream( webpackConfig )
-    .on('error', function handleError() {
-      this.emit('end'); // Recover from errors
-    })
-    .pipe( gulp.dest('static/js') );
 });
 
 
