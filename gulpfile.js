@@ -65,7 +65,7 @@ gulp.task('react', function() {
         this.emit('end'); // Recover from errors
       })
       .pipe( gulp.dest('static/js') );
-      
+
   // If this is NOT dev (i.e. production).
   } else {
 
@@ -129,7 +129,10 @@ gulp.task('scss', function () {
 gulp.task('js', function() {
 
   // Clear the static/js directory.
-  del(['static/js/**/*']);
+  del([
+    'static/js/**/*',
+    '!static/js/bundle.js'
+  ]);
 
   // If dev flag doesn't exist.
   if ( argv.dev === undefined ) {
@@ -319,6 +322,7 @@ gulp.task('watch', ['scss', 'js', 'react'], function () {
   gulp.watch('src/scss/**/*', ['scss']);
   // gulp.watch('src/admin/scss/**/*', ['admin-scss']);
   gulp.watch('src/js/**/*.js', ['js']);
+  gulp.watch('src/img/uploads/**/*', ['images']);
   gulp.watch('src/react/**/*.js', ['react']);
 });
 
