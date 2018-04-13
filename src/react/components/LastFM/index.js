@@ -78,6 +78,7 @@ class LastFM extends React.Component {
   //––––––––––––––––––––––––––––––––––––––––––––––––––
 
   render() {
+    
     let items = this.state.artists;
 
     const limit = this.limit;
