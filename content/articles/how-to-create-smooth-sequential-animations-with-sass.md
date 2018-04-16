@@ -1,5 +1,5 @@
 ---
-title: How to create sequential animations with Sass
+title: How to create smooth sequential animations with Sass
 date: '2018-04-16T17:20:46+10:00'
 featured: /img/uploads/featured-image-article-sass-animations.jpg
 categories:
@@ -40,10 +40,10 @@ The animation CSS property is shorthand for a number of animation properties (su
 
 A typical animation rule might look like this:
 
-{{< highlight css >}}
+{{< highlight scss >}}
 .tile {
+  // duration | timing-function | delay | iteration-count | name
   animation: 1s ease 0 infinite fade-in;
-  /* duration | timing-function | delay | iteration-count | name */
 }
 {{< /highlight >}}
 
@@ -55,7 +55,7 @@ The @keyframes rule works in a similar way to the more familiar @media rule, in 
 
 Let’s extend the animation example about and write the @keyframe rule.
 
-{{< highlight css >}}
+{{< highlight scss >}}
 @keyframes fade-in {
   0% {
     opacity: 0;
@@ -69,10 +69,10 @@ Let’s extend the animation example about and write the @keyframe rule.
 
 In our example, .tile will animate from a starting point of opacity: 0 to a final state of opacity: 1 over a period of 1s (which is defined in the animation property). Any number of percentages can be added between 0% and 100% and the usual array of CSS properties can be applied (including transform).
 
-For our purposes, our initial animation is going to look like so:
+For our purposes, our initial animation is going to look like this:
 
-{{< highlight css >}}
-@keyframes fade-in {
+{{< highlight scss >}}
+@keyframes pulse {
   0% {
     background: $tile-bg;
     transform: scale(1);
@@ -90,23 +90,23 @@ For our purposes, our initial animation is going to look like so:
 }
 {{< /highlight >}}
 
-In production it’s still necessary to include moz and webkit vendor prefixes in the following manner:
+Unfortunately in production it’s still necessary to include -moz and -webkit vendor prefixes in the following manner:
 
-{{< highlight css >}}
+{{< highlight scss >}}
 @-webkit-keyframes {
-  /* Animations. */
+  // Animations.
 }
 
 @-moz-keyframes{
-  /* Animations. */
+  // Animations.
 }
 {{< /highlight >}}
 
-This becomes very tedious to manage but hopefully you’re using something like autoprefixer so you can focus purely on writing CSS.
+This becomes tedious to manage *very* quickly. However thankfully [autoprefixer](https://github.com/postcss/autoprefixer) can automatically add these in so you can focus purely on writing CSS. It's a life changer.
 
 ### Animation delay and nth-child
 
-I’m going to be making heavy use of the animation-delay property in combination with the nth-child selector to animate a group of elements in a timed sequence. Delaying animations allows the same animation to be applied to different elements at different starting points. In this way the animation will appear to flow through the elements like a ripple in water.
+I’m going to be making heavy use of the <code>animation-delay</code> property in combination with the <code>nth-child</code> selector to animate a group of elements in a timed sequence. Delaying animations allows the same animation to be applied to different elements at different starting points. In this way the animation will appear to flow through the elements like a ripple in water.
 
 Ideally the output code will look something like this:
 
@@ -128,7 +128,7 @@ Ideally the output code will look something like this:
 
 ## Using Sass
 
-This will produce the desired effect but it is very tedious to hand-code and any changes to the timing will be difficult to implement. Thankfully we can use Sass [@for](http://thesassway.com/intermediate/if-for-each-while#for) loops to make this much more manageable.
+The above code will produce the effect we desire but it's painful to write, and any changes will be time consuming to implement. Thankfully we can use Sass' [@for](http://thesassway.com/intermediate/if-for-each-while#for) loop to make this much more manageable.
 
 ### Sass for loops
 
@@ -161,6 +161,37 @@ Which will compile out to:
 
 ... and so on.
 
-### Putting it all together
+We will use a for loop to access the nth-child of an element and add a delay to each animation; increasing the delay as we move through each child.
 
-Now that we’ve got the hang of CSS animations and Sass for loops, it’s time to combine them to create sequenced animations.
+{{< highlight scss >}}
+// Loop from 1-9.
+@for $i from 1 through 9 {
+  .tile {
+    
+    // :nth-child(1-9) 
+    &:nth-child(#{$i}) {
+      
+      // Delay the animation. Delay increases as items loop.
+      animation-delay: $i * (1s / 18);
+    }
+  }
+}
+{{< /highlight >}}
+
+The CSS output of this loop is:
+
+{{< highlight scss >}}
+.tile:nth-child(1) {
+  animation-delay: .05555s;
+}
+
+.tile:nth-child(2) {
+  animation-delay: .1111s;
+}
+
+.tile:nth-child(3) {
+  animation-delay: .01666s;
+}
+{{< /highlight >}}
+
+And so on...
