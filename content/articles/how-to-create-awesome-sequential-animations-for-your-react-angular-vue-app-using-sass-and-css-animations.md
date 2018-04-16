@@ -1,7 +1,7 @@
 ---
 title: >-
-  How to create awesome sequential animations for your React / Angular / Vue app
-  using Sass and CSS animations
+  Create awesome sequential animations for your React / Angular / Vue app using
+  Sass and CSS animations
 date: '2018-04-16T17:20:46+10:00'
 categories:
   - development
