@@ -1,12 +1,12 @@
 ---
-title: >-
-  Create awesome sequential animations for your React / Angular / Vue app using
-  Sass and CSS animations
+title: Create sequential animations for your React / Angular / Vue app using Sass and CSS animations
 date: '2018-04-16T17:20:46+10:00'
 categories:
   - development
+toc: true
 ---
-{{< lead >}}In this article I’m going to demonstrate a very simple technique to write CSS animations using the power of Sass’ for loop.{{< /lead >}}
+
+{{< lead >}}In this article I'm going to demonstrate a very simple technique to write CSS animations using the power of Sass' for loop.{{< /lead >}}
 
 ## Why even animate things?
 
@@ -41,7 +41,7 @@ A typical animation rule might look like this:
   animation: 1s ease 0 infinite fade-in;
   // duration | timing-function | delay | iteration-count | name
 }
-{{< /highlight css >}}
+{{< /highlight >}}
 
 The above animation property applies the fade-in animation to the .tile element over a duration of 1s, with no delay, infinitely repeating and with an ease timing-function. It’s a lot to take in but it’s makes more sense when you see it in practice (more on that below).
 
