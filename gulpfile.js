@@ -105,7 +105,14 @@ gulp.task('scss', function () {
     .pipe( gulpif( argv.dev, sourcemaps.write({includeContent: false}) ) )
     .pipe( gulpif( argv.dev, sourcemaps.init({loadMaps: true}) ) )
     .pipe( autoprefixer({
-      browsers : ['last 20 versions']
+      browsers: [
+        'last 5 version',
+        '> 50%',
+        'Firefox < 20',
+        'safari 5',
+        'ie 8-11',
+        'android >=2.1'
+      ],
     }))
     .pipe( hash() )
     .pipe( gulpif( argv.dev, sourcemaps.write() ) )
