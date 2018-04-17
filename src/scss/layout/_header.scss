@@ -51,6 +51,24 @@ $site-header-bg-color: $color-primary;
     background-color: transparent;
     border-bottom-color: transparent;
     border-top-color: $color-gray-1;
+
+    .site-header__logo-svg {
+      .circle,
+      .circle-outer {
+        fill: transparent;
+      }
+
+      #g,
+      #m {
+        use {
+          fill: $white;
+        }
+      }
+    }
+
+    .site-header__logo-shadow {
+      background-color: rgba($black, 0);
+    }
   }
 }
 
