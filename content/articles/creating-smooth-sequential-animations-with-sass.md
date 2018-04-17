@@ -1,5 +1,5 @@
 ---
-title: How to create smooth sequential animations with Sass
+title: Creating smooth sequential animations with Sass
 date: '2018-04-16T17:20:46+10:00'
 featured: /img/uploads/featured-image-article-sass-animations.jpg
 categories:
@@ -45,7 +45,7 @@ A typical animation rule might look like this:
 }
 {{< /highlight >}}
 
-The above animation property applies the <code>pulse</code> animation to the <code>.tile</code> element over a duration of 1s, infinitely repeating and with an <code>ease</code> timing-function. There's a fair bit going on here but it makes more sense when you see it in practice (more on that below).
+The above <code>animation</code> property applies the <code>pulse</code> animation to the <code>.tile</code> element over a duration of 1s, infinitely repeating and with an <code>ease</code> timing-function. There's a fair bit going on here but it makes more sense when you see it in practice (more on that below).
 
 ### The @keyframes rule
 
