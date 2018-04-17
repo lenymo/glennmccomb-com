@@ -12,25 +12,25 @@ dark_bg: true
 
 ## Why even animate things?
 
-Animations are a crucial ingredient in adding life and character to a website or application. They can make things feel faster even if they take the same or less time without animations. They are particular useful when pulling in dynamic data from APIs and that’s what I’m going to be focusing on here.
+Animations are a crucial ingredient in adding life and character to a website or application. They can make transitions feel faster even if they take more time than when not animated. They're particular useful when pulling in dynamic data from APIs, and that’s what I’m going to be focusing on today.
 
-Here’s an example of the types of animation I’m going to be writing about:
+Here’s an example of the types of animation I’ll be writing about:
 
 {{< figure src="/img/uploads/article-sass-animations-espn-chrome-extension.gif" >}}
 
 Note that there are two separate animations here:
 
-1. The pre-loading state; when content has been requested but hasn’t yet arrived.
+1. The pre-loading state; when content has been requested but has yet to arrive.
 2. The loaded state; content has arrived and is sequentially animated in to place.
 
 ## CSS animations
 
-In my dev experience to date I’ve primarily used the CSS <code>transition</code> property. Transitions are very straightforward and you should probably be using them, but they’re also limited. The CSS <code>animation</code> property on the other hand, is much more powerful but also considerably more complicated.
+In my development experience to date I’ve primarily used the CSS <code>transition</code> property to handle animation. Transitions are very straightforward, but they’re also limited. The CSS <code>animation</code> property on the other hand is much more powerful, but is also considerably more complicated.
 
 There are two essential parts to a CSS animation:
 
-1. The animation CSS property.
-2. The @keyframes CSS rule.
+1. The [animation](https://developer.mozilla.org/en-US/docs/Web/CSS/animation) CSS property.
+2. The [@keyframes](https://developer.mozilla.org/en-US/docs/Web/CSS/%40keyframes) CSS rule.
 
 ### Animation
 
@@ -45,13 +45,13 @@ A typical animation rule might look like this:
 }
 {{< /highlight >}}
 
-The above animation property applies the fade-in animation to the .tile element over a duration of 1s, with no delay, infinitely repeating and with an ease timing-function. It’s a lot to take in but it’s makes more sense when you see it in practice (more on that below).
+The above animation property applies the <code>pulse</code> animation to the <code>.tile</code> element over a duration of 1s, infinitely repeating and with an <code>ease</code> timing-function. There's a fair bit going on here but it’s makes more sense when you see it in practice (more on that below).
 
 ### Keyframes
 
-The <code>@keyframes</code> rule works in a similar way to the more familiar @media rule, in that additional CSS is nested within it. The @keyframes rule contains style rules which will be applied to an element as the animation progresses from start (0%) to finish (100%).
+The <code>@keyframes</code> rule works in a similar way to the more familiar <code>@media</code> rule, in that additional CSS is nested within it. The keyframes rule contains style rules which are applied to an element as the animation progresses from start (0%) to finish (100%).
 
-Let’s extend the animation example about and write the <code>@keyframes</code> rule.
+Let’s build on our animation example with a <code>@keyframes</code> rule:
 
 {{< highlight scss >}}
 @keyframes pulse {
@@ -72,16 +72,18 @@ Let’s extend the animation example about and write the <code>@keyframes</code>
 }
 {{< /highlight >}}
 
-In our example .tile will darken and very slightly scale up across the first half of the animation over a period of 1s (as defined in the animation property on .tile). Any number of percentages can be added between 0% and 100%.
+In our example <code>.tile</code> will darken and very slightly scale up across the first half of the animation over a period of 1s, as defined in the animation property on <code>.tile</code>. Notice that any number of percentages can be added between 0% and 100%.
+
+### Browser prefixes
 
 Unfortunately in production it’s still necessary to include -moz and -webkit vendor prefixes in the following manner:
 
 {{< highlight scss >}}
-@-webkit-keyframes {
+@-webkit-keyframes pulse {
   // Animations.
 }
 
-@-moz-keyframes{
+@-moz-keyframes pulse {
   // Animations.
 }
 {{< /highlight >}}
@@ -90,9 +92,9 @@ This becomes tedious to manage *very* quickly. However thankfully [autoprefixer]
 
 ### Animation delay and nth-child
 
-I’m going to be making heavy use of the <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation-delay">animation-delay</a></code> property in combination with the <code>nth-child</code> selector to animate a group of elements in a timed sequence. Delaying animations allows the same animation to be applied to different elements at different starting points. In this way the animation will appear to flow through the elements like a ripple in water.
+I’m going to be making heavy use of the <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation-delay">animation-delay</a></code> property in combination with the <code>nth-child</code> selector to animate a group of elements in a timed sequence. Delaying animations allows the same animation to be applied to different elements at different starting points. In this way the animation will appear to flow through the group of elements like a ripple in water.
 
-Ideally the output code will look something like this:
+Ideally the output CSS will look something like this:
 
 {{< highlight css >}}
 .tile:nth-child(1) {
@@ -110,16 +112,16 @@ Ideally the output code will look something like this:
 
 And so on...
 
-## Using Sass loops
+## Using Sass loops to create a preloader animation
 
-The above code will produce the desired effect but it's painful to write, and any changes will be time consuming to implement. Thankfully we can use Sass' [@for loop](http://thesassway.com/intermediate/if-for-each-while#for) to make this much more manageable.
+The above code will produce the desired effect but it's painful to write, and any changes will be time consuming to implement. Instead, we can use Sass' [@for loop](http://thesassway.com/intermediate/if-for-each-while#for) to make this much more manageable.
 
 ### Sass @for loops
 
 Here's an example of a simple Sass for loop:
 
 {{< highlight scss >}}
-@for $i from 1 through 10 {
+@for $i from 1 through 3 {
   .tile-#{$i} {
     margin-left: 100px * #{$i}
   }
@@ -127,7 +129,7 @@ Here's an example of a simple Sass for loop:
 
 {{< /highlight >}}
 
-Which will compile out to:
+Which will compile to the following CSS:
 
 {{< highlight css >}}
 .tile-1 {
@@ -142,8 +144,6 @@ Which will compile out to:
   margin-left: 300px;
 }
 {{< /highlight >}}
-
-And so on...
 
 We will use a for loop to access the nth-child of an element and add a delay to each animation; increasing the delay as we move through each child.
 
@@ -289,7 +289,17 @@ Now lets check it out:
 
 The CSS properties we've used here (animation, nth-child, etc) are well supported in modern browsers and they degrade gracefully. If animations aren't supported, the items will appear immediately.
 
-Here are the browser support statistics according to [Can I use](https://caniuse.com/): 
+Here's the browser support according to [Can I use](https://caniuse.com/): 
 
 * [nth-child](https://caniuse.com/#feat=css-sel3).
 * [animation (including @keyframes)](https://caniuse.com/#feat=css-animation).
+
+The animations work fine until you get to IE 9 in which case the animations don't work and items will appear instantly (which is fine).
+
+The other major culprits are old versions of mobile browsers. 
+
+Movile Safari requires vendor prefixing even in relatively recent versions (i.e. v8 released in 2014) and has only partial support in older versions (most recently in v5.1 released in 2012). 
+
+It's a similar story with Android devices, which have only partial support in anything prior to Android v4 (released in 2011). After Android v4 animations are supported using vendor prefixing (-webkit).
+
+It's important to keep all of this in perspective though. In the event that animations aren't supported, the page is still functional. All that is missing is the animation. These degrade nice and gracefully.
