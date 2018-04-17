@@ -4,6 +4,16 @@
 //  IFRAME
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
+iframe.codepen {
+  margin-bottom: $base-margin-bottom-xs;
+}
+
+@include respond-above(sm) {
+  iframe.codepen {
+    margin-bottom: $base-margin-bottom;
+  }
+}
+
 .iframe-wrapper {
   height: 0; 
   margin-bottom: $base-margin-bottom-xs;
