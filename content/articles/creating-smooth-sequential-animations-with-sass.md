@@ -196,15 +196,15 @@ Once our items are loaded it would be great if they appeared one-after-the-other
 
 ### Playing an animation only one time
 
-This animation will be different to our preloader because we only want our animation to run one time (eg. when the element first appears in the DOM). We'll be fading the <code>.tile</code> element in so we need to ensure that it uses the styles from the first keyframe of our animation as soon as it appears (eg. it should start with <code>opacity: 0</code>). 
+This animation will be different to our preloader because we only want our animation to run one time (eg. when the element first appears in the DOM). We'll be fading in the <code>.tile</code> element so we need to ensure that it uses the styles from the first keyframe of our animation as soon as it appears (eg. it should start with <code>opacity: 0</code>). 
 
 We also want <code>.tile</code> to maintain the styles we declared in our animation's last keyframe once the animation has completed (eg. <code>opacity: 1</code>).
 
 The obvious thing to do here is set the <code>animation-iteration-count</code> to 1 but unfortunately it's more complicated than that. 
 
-With an iteration count of 1, the element starts with the element's default state, then abruptly assumes the styles as declared at the start of the animation (0%). The animation then runs, but after it reaches 100% the element abruptly reverts to its initial state.
+With an iteration count of 1, the element starts with the element's default styles, then abruptly assumes the styles as declared at the start of the animation (0%). The animation then runs, but after it reaches 100% the element abruptly reverts to its initial styles.
 
-This results in the element flashing on screen, suddenly disappearing, then fading back to 100% opacity and the issue become even more obvious when <code>animation-delay</code> is used.
+This results in the element flashing on screen, suddenly disappearing, then fading back to 100% opacity. The issue becomes even more obvious when <code>animation-delay</code> is used.
 
 ### Animation fill mode
 
@@ -214,7 +214,7 @@ When set, <code>animation-fill-mode: both</code> will cause an element to use th
 
 The element will then use the styles from the animation's *last* keyframe once the animation has finished.
 
-If that doesn't entirely make sense, don't stress. It works, and that's what matters. For more on animation-fill-mode, Codrops has [a handy breakdown in their CSS reference](https://tympanus.net/codrops/css_reference/animation-fill-mode/).
+If that doesn't entirely make sense, don't stress. If you'd like to learn more about <code>animation-fill-mode</code>, Codrops has [a handy breakdown](https://tympanus.net/codrops/css_reference/animation-fill-mode/).
 
 Anyway, here's the new CSS for our <code>.tile</code> element:
 
@@ -229,7 +229,7 @@ Anyway, here's the new CSS for our <code>.tile</code> element:
 
 ### Keyframes
 
-Here are our fade-in <code>@keyframes</code>:
+And here are our fade-in <code>@keyframes</code>:
 
 {{< highlight scss >}}
 @keyframes fade-in {
@@ -269,9 +269,9 @@ And here's the final codepen:
 
 Unlike the preloader animation, the timing of these animations isn't particularly mathematical. What's more important is achieving a smooth "buttery" effect.
 
-### Adding rotation and a spring-back effect
+### Adding rotation and a "spring-back" effect
 
-Our animation is looking fine but some additional CSS trickery will enhance our animation further.
+Our animation is looking fine but some additional CSS trickery will enhance it even further.
 
 Let's add some additional transform effects to our <code>@keyframes</code> rules.
 
@@ -289,6 +289,8 @@ Let's add some additional transform effects to our <code>@keyframes</code> rules
 }
 {{< /highlight >}}
 
+This will cause our <code>.tile</code> element to animate in from the left with some subtle rotation.
+
 Next we'll add a custom <code>animation-timing-function</code> using a cubic-bezier. This will cause our animation to move past its final 100% state and then "spring back" in to place.
 
 {{< highlight scss >}}
@@ -297,7 +299,7 @@ Next we'll add a custom <code>animation-timing-function</code> using a cubic-bez
 }
 {{< /highlight >}}
 
-Personally, I got this particular cubic-bezier formula (<code>.25, .25, .25, 1.25</code>) memorised and frequently use it for both animations and transitions. You can play with the final number to increase or decrease how far past 100% the animation goes.
+Personally, I have this particular cubic-bezier formula (<code>.25, .25, .25, 1.25</code>) memorised and I frequently use it for both animations and transitions. You can play with the final number to increase or decrease how far past 100% the animation goes.
 
 Here's the updated Codepen:
 
