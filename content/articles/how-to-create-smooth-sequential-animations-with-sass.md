@@ -8,11 +8,11 @@ toc: true
 dark_bg: true
 ---
 
-{{< lead >}}In this article I'm going to demonstrate a technique for creating CSS animations using the power of Sass' for loop. Whether you're using React, Vue or Angular, these animations can be implemented in your app.{{< /lead >}}
+{{< lead >}}In this article I'm going to demonstrate a technique for creating CSS animations using the power of Sass' for loop. Whether you're using React, Vue or Angular, these animations can be used in your app.{{< /lead >}}
 
 ## Why even animate things?
 
-Animations are a crucial ingredient in adding life and character to a website or application. They can make transitions feel faster even if they take more time than when not animated. They're particular useful when pulling in dynamic data from APIs, and that’s what I’m going to be focusing on today.
+Animations are a crucial ingredient in adding life and character to a website or application. They can make transitions feel faster even if they take more time than when they're not animated. Animation is particularly useful when requesting dynamic data from APIs and that’s what I'm focusing on today.
 
 Here’s an example of the types of animation I’ll be writing about:
 
@@ -20,19 +20,19 @@ Here’s an example of the types of animation I’ll be writing about:
 
 Note that there are two separate animations here:
 
-1. The pre-loading state; when content has been requested but has yet to arrive.
-2. The loaded state; content has arrived and is sequentially animated in to place.
+1. Preloading; when content has been requested but has yet to arrive.
+2. Loaded; content has arrived and appears in sequence.
 
 ## CSS animations
 
-In my development experience to date I’ve primarily used the CSS <code>transition</code> property to handle animation. Transitions are very straightforward, but they’re also limited. The CSS <code>animation</code> property on the other hand is much more powerful, but is also considerably more complicated.
+In my development experience to date I’ve primarily used the CSS <code>transition</code> property to handle animation. Transitions are nice and simple, but they’re also limited. The CSS <code>animation</code> property on the other hand is much more powerful, but is also considerably more complicated.
 
 There are two essential parts to a CSS animation:
 
 1. The [animation](https://developer.mozilla.org/en-US/docs/Web/CSS/animation) CSS property.
 2. The [@keyframes](https://developer.mozilla.org/en-US/docs/Web/CSS/%40keyframes) CSS rule.
 
-### Animation
+### The animation property
 
 The animation CSS property is shorthand for a number of animation properties (such as animation-name, animation-duration, etc).
 
@@ -45,9 +45,9 @@ A typical animation rule might look like this:
 }
 {{< /highlight >}}
 
-The above animation property applies the <code>pulse</code> animation to the <code>.tile</code> element over a duration of 1s, infinitely repeating and with an <code>ease</code> timing-function. There's a fair bit going on here but it’s makes more sense when you see it in practice (more on that below).
+The above animation property applies the <code>pulse</code> animation to the <code>.tile</code> element over a duration of 1s, infinitely repeating and with an <code>ease</code> timing-function. There's a fair bit going on here but it makes more sense when you see it in practice (more on that below).
 
-### Keyframes
+### The @keyframes rule
 
 The <code>@keyframes</code> rule works in a similar way to the more familiar <code>@media</code> rule, in that additional CSS is nested within it. The keyframes rule contains style rules which are applied to an element as the animation progresses from start (0%) to finish (100%).
 
@@ -72,11 +72,11 @@ Let’s build on our animation example with a <code>@keyframes</code> rule:
 }
 {{< /highlight >}}
 
-In our example <code>.tile</code> will darken and very slightly scale up across the first half of the animation over a period of 1s, as defined in the animation property on <code>.tile</code>. Notice that any number of percentages can be added between 0% and 100%.
+In our example <code>.tile</code> will darken and very slightly scale up across the first half of the animation, then return to its original state. The animation will take place over a period of 1s, as defined in the animation property on <code>.tile</code>. Notice that any number of percentages can be added between 0% and 100%.
 
 ### Browser prefixes
 
-Unfortunately in production it’s still necessary to include -moz and -webkit vendor prefixes in the following manner:
+Unfortunately in production it’s still necessary to include <code>-moz</code> and <code>-webkit</code> vendor prefixes in the following manner:
 
 {{< highlight scss >}}
 @-webkit-keyframes pulse {
@@ -88,13 +88,13 @@ Unfortunately in production it’s still necessary to include -moz and -webkit v
 }
 {{< /highlight >}}
 
-This becomes tedious to manage *very* quickly. However thankfully [autoprefixer](https://github.com/postcss/autoprefixer) automatically adds these in so you can focus on writing CSS. It's a life changer and is well worth integrating into your workflow.
+This becomes tedious to manage *very* quickly. However thankfully [autoprefixer](https://github.com/postcss/autoprefixer) automatically adds vendor prefixes in so you can focus on writing CSS. It's a life changer and is well worth integrating into your workflow.
 
 ### Animation delay and nth-child
 
-I’m going to be making heavy use of the <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation-delay">animation-delay</a></code> property in combination with the <code>nth-child</code> selector to animate a group of elements in a timed sequence. Delaying animations allows the same animation to be applied to different elements at different starting points. In this way the animation will appear to flow through the group of elements like a ripple in water.
+I’m going make heavy use of the <code>[animation-delay](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-delay)</code> property in combination with the <code>nth-child</code> selector to animate a group of elements in a timed sequence. Delaying animations allows the same animation to be applied to different elements at different starting points. In this way the animation will appear to flow through the group of elements like a ripple in water.
 
-Ideally the output CSS will look something like this:
+Our final output CSS will look vaguely like this:
 
 {{< highlight css >}}
 .tile:nth-child(1) {
@@ -114,7 +114,7 @@ And so on...
 
 ## Using Sass loops to create a preloader animation
 
-The above code will produce the desired effect but it's painful to write, and any changes will be time consuming to implement. Instead, we can use Sass' [@for loop](http://thesassway.com/intermediate/if-for-each-while#for) to make this much more manageable.
+The above code will produce the desired effect but it's painful to write, and any changes will be time consuming to implement. Instead, we can use a Sass [@for loop](http://thesassway.com/intermediate/if-for-each-while#for) to make this much more manageable.
 
 ### Sass @for loops
 
@@ -129,7 +129,7 @@ Here's an example of a simple Sass for loop:
 
 {{< /highlight >}}
 
-Which will compile to the following CSS:
+This compiles to the following CSS:
 
 {{< highlight css >}}
 .tile-1 {
@@ -145,7 +145,9 @@ Which will compile to the following CSS:
 }
 {{< /highlight >}}
 
-We will use a for loop to access the nth-child of an element and add a delay to each animation; increasing the delay as we move through each child.
+### Sass loops, nth-child and animation-delay
+
+We will use a for loop to access the nth-child of an element and add a delay to each animation; increasing the delay as we move through each iteration of the loop.
 
 {{< highlight scss >}}
 // Loop from 1-9.
@@ -162,7 +164,7 @@ We will use a for loop to access the nth-child of an element and add a delay to 
 }
 {{< /highlight >}}
 
-In my example I'm using 9 placeholder elements so I set the loop to stop at 9 and I've chosen an <code>animation-delay</code> which is relative to 9. This means that the animation will have a consistent rhythm in that by the 9th nth-child the delay will be 0.5s; which is half the 1s duration of our pulse animation.
+In my example I'm using 9 placeholder elements so I set the loop to stop at 9 and I've chosen an <code>animation-delay</code> which is based on 9. Because of this the animation will have a consistent rhythm and by the 9th nth-child the delay will be 0.5s (half the duration of our pulse animation).
 
 The CSS output of this loop is:
 
@@ -180,27 +182,41 @@ The CSS output of this loop is:
 }
 {{< /highlight >}}
 
-And so on...
+<small>And so on...</small>
 
-Check out how it looks in this codepen:
+Check out how it looks on codepen:
 
-<iframe height='350' scrolling='no' title='Basic preloader animation' src='//codepen.io/lenymo/embed/qozOWa/?height=350&theme-id=light&default-tab=css,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'></iframe>
+<iframe class="codepen" height='350' scrolling='no' title='Basic preloader animation' src='//codepen.io/lenymo/embed/qozOWa/?height=350&theme-id=light&default-tab=css,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'></iframe>
 
-This is looking nice and sharp and is good to have on screen while content is loading from an external API. But what about once content has loaded? We'll get to that next.
+This is looking nice and sharp. It's helpful to have this on screen while a user waits for an API request to return. What about once content has loaded though? We'll get to that next.
 
 ## Animating items once they're loaded
 
-Once our items are loaded, it would be nice if they appeared one-after-the-other as if in sequence. We'll use what we've learned so far and throw in a few extra tricks as well.
+Once our items are loaded it would be great if they appeared one-after-the-other, as if in sequence. We'll use what we've learned so far and throw in a few extra tricks to make that happen.
+
+### Playing an animation only one time
+
+This animation will be different to our preloader because we only want our animation to run one time (eg. when the element first appears in the DOM). We'll be fading the <code>.tile</code> element in so we need to ensure that it uses the styles from the first keyframe of our animation as soon as it appears (eg. it should start with <code>opacity: 0</code>). 
+
+We also want <code>.tile</code> to maintain the styles we declared in our animation's last keyframe once the animation has completed (eg. <code>opacity: 1</code>).
+
+The obvious thing to do here is set the <code>animation-iteration-count</code> to 1 but unfortunately it's more complicated than that. 
+
+With an iteration count of 1, the element starts with the element's default state, then abruptly assumes the styles as declared at the start of the animation (0%). The animation then runs, but after it reaches 100% the element abruptly reverts to its initial state.
+
+This results in the element flashing on screen, suddenly disappearing, then fading back to 100% opacity and the issue become even more obvious when <code>animation-delay</code> is used.
 
 ### Animation fill mode
 
-Unlike our preloader animation, in this case we only want our animation to run one time (i.e. when the item is first loaded). We will be fading the loaded items in so we want them to maintain the value we set at 100% of the <code>@keyframes</code> rule. We also want to ensure that the tile's initial appearance is used as soon as the item appears.
+Thankfully <code>[animation-fill-mode](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-fill-mode)</code> is designed to solve this exact problem.
 
-You might think that setting an iteration count of 1 would achieve this effect, but unfortunately what this does is starts at the elements default state, then abruptly jumps to the 0% state, before reverting back to the initial state once the animation is complete.
+When set, <code>animation-fill-mode: both</code> will cause an element to use the styles from an animation's *first* keyframe (0%) as soon as the animation is applied (even if there's an <code>animation-delay</code>).
 
-Thankfully the <code>[animation-fill-mode](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-fill-mode)</code> can be used to maintain use both an element's initial and final state using the <code>both</code> value.
+The element will then use the styles from the animation's *last* keyframe once the animation has finished.
 
-We will start with new code for the <code>.tile</code> element:
+If that doesn't entirely make sense, don't stress. It works, and that's what matters. For more on animation-fill-mode, Codrops has [a handy breakdown in their CSS reference](https://tympanus.net/codrops/css_reference/animation-fill-mode/).
+
+Anyway, here's the new CSS for our <code>.tile</code> element:
 
 {{< highlight scss >}}
 .tile {
@@ -213,7 +229,7 @@ We will start with new code for the <code>.tile</code> element:
 
 ### Keyframes
 
-Here are our fade-in keyframes: 
+Here are our fade-in <code>@keyframes</code>:
 
 {{< highlight scss >}}
 @keyframes fade-in {
@@ -231,7 +247,7 @@ Here are our fade-in keyframes:
 
 ### The Sass loop
 
-Last of all here's our updated Sass loop:
+Finally, here's our updated Sass loop:
 
 {{< highlight scss >}}
 @for $i from 1 through 12 {
@@ -247,17 +263,17 @@ Last of all here's our updated Sass loop:
 }
 {{< /highlight >}}
 
-And here's the final effect:
+And here's the final codepen:
 
-<iframe height='420' scrolling='no' title="Animating items once they're loaded (scale)" src='//codepen.io/lenymo/embed/debyMM/?height=420&theme-id=light&default-tab=css,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'></iframe>
+<iframe class="codepen" height='420' scrolling='no' title="Animating items once they're loaded (scale)" src='//codepen.io/lenymo/embed/debyMM/?height=420&theme-id=light&default-tab=css,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'></iframe>
 
-Unlike the preloader animation, the timing of these animations isn't particularly mathematical. It's more focused on achieving a smooth "buttery" effect.
+Unlike the preloader animation, the timing of these animations isn't particularly mathematical. What's more important is achieving a smooth "buttery" effect.
 
 ### Adding rotation and a spring-back effect
 
-Next I'll demonstrate how a few additional CSS tweaks can further enhance our animation.
+Our animation is looking fine but some additional CSS trickery will enhance our animation further.
 
-Firstly we'll add some additional transform effects to our <code>@keyframes</code> rules.
+Let's add some additional transform effects to our <code>@keyframes</code> rules.
 
 {{< highlight scss >}}
 @keyframes fade-in {
@@ -273,7 +289,7 @@ Firstly we'll add some additional transform effects to our <code>@keyframes</cod
 }
 {{< /highlight >}}
 
-Next we'll add a custom timing function using a cubic-bezier. This will cause our animation to move past its final 100% state and then "spring back" in to place. I have memorised this particular cubic-bezier formula  and frequently use it for both animations and transitions.
+Next we'll add a custom <code>animation-timing-function</code> using a cubic-bezier. This will cause our animation to move past its final 100% state and then "spring back" in to place.
 
 {{< highlight scss >}}
 .tile {
@@ -281,25 +297,27 @@ Next we'll add a custom timing function using a cubic-bezier. This will cause ou
 }
 {{< /highlight >}}
 
-Now lets check it out:
+Personally, I got this particular cubic-bezier formula (<code>.25, .25, .25, 1.25</code>) memorised and frequently use it for both animations and transitions. You can play with the final number to increase or decrease how far past 100% the animation goes.
 
-<iframe height='420' scrolling='no' title='Animating items once they're loaded (scale, rotation)' src='//codepen.io/lenymo/embed/aGobRN/?height=420&theme-id=light&default-tab=css,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'></iframe>
+Here's the updated Codepen:
+
+<iframe class="codepen" height='420' scrolling='no' title='Animating items once they're loaded (scale, rotation)' src='//codepen.io/lenymo/embed/aGobRN/?height=420&theme-id=light&default-tab=css,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'></iframe>
 
 ## Browser support and progressive enhancement
 
 The CSS properties we've used here (animation, nth-child, etc) are well supported in modern browsers and they degrade gracefully. If animations aren't supported, the items will appear immediately.
 
-Here's the browser support according to [Can I use](https://caniuse.com/): 
+Here's the browser support according to [can I use](https://caniuse.com/): 
 
 * [nth-child](https://caniuse.com/#feat=css-sel3).
 * [animation (including @keyframes)](https://caniuse.com/#feat=css-animation).
 
-The animations work fine until you get to IE 9 in which case the animations don't work and items will appear instantly (which is fine).
+The animations work fine until you get to IE 9, when the animations don't work and items will appear instantly (which is fine).
 
-The other major culprits are old versions of mobile browsers. 
+The other major culprits are older mobile browsers. 
 
-Movile Safari requires vendor prefixing even in relatively recent versions (i.e. v8 released in 2014) and has only partial support in older versions (most recently in v5.1 released in 2012). 
+Mobile Safari requires the <code>-webkit</code> vendor prefix in relatively recent versions (eg. v8, released in 2014) and has only partial support in older versions (most recently in v5.1, released in 2012). 
 
-It's a similar story with Android devices, which have only partial support in anything prior to Android v4 (released in 2011). After Android v4 animations are supported using vendor prefixing (-webkit).
+It's a similar story with Android devices, which have only partial support in anything prior to Android v4 (released in 2011). After Android v4 animations are supported using the <code>-webkit</code> vendor prefix.
 
-It's important to keep all of this in perspective though. In the event that animations aren't supported, the page is still functional. All that is missing is the animation. These degrade nice and gracefully.
+It's important to keep all of this in perspective though. In the event that animations aren't supported, the page is still functional. All that's missing is the animation. These degrade nice and gracefully.
