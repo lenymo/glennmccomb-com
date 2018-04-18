@@ -305,6 +305,14 @@ Here's the updated Codepen:
 
 <iframe class="codepen" height='420' scrolling='no' title='Animating items once they're loaded (scale, rotation)' src='//codepen.io/lenymo/embed/aGobRN/?height=420&theme-id=light&default-tab=css,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'></iframe>
 
+## Using 3D transforms to flip items into place
+
+This is where things start to get a bit ridiculous. Just because you can, doesn't mean you should. But anyhow, check out this tile flip variant:
+
+<iframe class="codepen" height='420' scrolling='no' title="Animating items once they're loaded (tile flip)" src='//codepen.io/lenymo/embed/bMbJQX/?height=420&theme-id=light&default-tab=css,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'></iframe>
+
+This effect requires some additional markup and CSS and probably requires tweaking depending on the type of content you're loading. It also asks a lot of a user's CPU and tends to look broken if the animation isn't smooth. I don't recommend actually using this type of animation but the effect is still cool.
+
 ## Browser support and progressive enhancement
 
 The CSS properties we've used here (animation, nth-child, etc) are well supported in modern browsers and they degrade gracefully. If animations aren't supported, the items will appear immediately.
