@@ -311,7 +311,7 @@ This is where things start to get a bit ridiculous. Just because you can, doesn'
 
 <iframe class="codepen" height='420' scrolling='no' title="Animating items once they're loaded (tile flip)" src='//codepen.io/lenymo/embed/bMbJQX/?height=420&theme-id=light&default-tab=css,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'></iframe>
 
-This effect requires some additional markup and CSS and probably requires tweaking depending on the type of content you're loading. It also asks a lot of a user's CPU and tends to look broken if the animation isn't smooth. I don't recommend actually using this type of animation but the effect is still cool.
+This effect requires some additional markup and CSS and will take some tweaking depending on the type of content you're loading. It also asks a lot of a user's CPU and tends to look broken if the animation isn't smooth. I don't recommend actually using this type of animation but the effect is still cool.
 
 ## Browser support and progressive enhancement
 
