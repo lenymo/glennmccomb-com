@@ -289,7 +289,7 @@ Let's add some additional transform effects to our <code>@keyframes</code> rules
 }
 {{< /highlight >}}
 
-This will cause our <code>.tile</code> element to animate in from the left with some subtle rotation.
+This will cause our <code>.tile</code> element to animate in from the right with some subtle rotation.
 
 Next we'll add a custom <code>animation-timing-function</code> using a cubic-bezier. This will cause our animation to move past its final 100% state and then "spring back" in to place.
 
