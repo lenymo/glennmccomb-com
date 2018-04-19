@@ -24,6 +24,9 @@
     throttle: 200,
     disqusConfig: function() {
 
+      // Page URL.
+      this.page.url = '{{ .Permalink }}';
+
       // Once disqus has loaded.
       this.callbacks.onReady = [function() {
 
