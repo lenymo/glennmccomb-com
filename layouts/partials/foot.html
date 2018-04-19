@@ -25,7 +25,7 @@
     disqusConfig: function() {
 
       // Page URL.
-      this.page.url = '{{ .Site.BaseURL }}{{ .Permalink }}';
+      this.page.url = '{{ .Site.Data.site_settings.production_url }}{{ .Permalink }}';
 
       // Once disqus has loaded.
       this.callbacks.onReady = [function() {
