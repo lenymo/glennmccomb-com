@@ -605,19 +605,19 @@ function handler(event, context, callback) {
     fetch(lastFmUrl, {
       method: 'POST'
 
-    }).then(function () {
-      callback(null, { statusCode: 204 });
-    }).catch(function (e) {
-      callback(null, { statusCode: 500, body: "Internal Server Error: " + e });
+    }).then(function (response) {
+      return response.json();
+    }).then(function (response) {
+      body: response;
     });
   } catch (e) {
     callback(null, { statusCode: 500, body: "Internal Server Error: " + e });
   }
 
-  callback(null, {
-    statusCode: 200,
-    body: JSON.stringify({ msg: "Hello, World!" })
-  });
+  // callback(null, {
+  //   statusCode: 200,
+  //   body: JSON.stringify({msg: "Hello, World!"})
+  // });
 }
 
 /***/ }),

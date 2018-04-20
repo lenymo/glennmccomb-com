@@ -34,19 +34,17 @@ export function handler(event, context, callback) {
     fetch(lastFmUrl, {
       method: 'POST'
 
-    }).then(() => {
-      callback(null, {statusCode: 204});
-
-    }).catch((e) => {
-      callback(null, { statusCode: 500, body: "Internal Server Error: " + e });
-    });
+    }).then(response => response.json())
+      .then(response => {
+        body: response
+      });
 
   } catch(e) {
     callback(null, { statusCode: 500, body: "Internal Server Error: " + e });
   }
 
-  callback(null, {
-    statusCode: 200,
-    body: JSON.stringify({msg: "Hello, World!"})
-  });
+  // callback(null, {
+  //   statusCode: 200,
+  //   body: JSON.stringify({msg: "Hello, World!"})
+  // });
 }
