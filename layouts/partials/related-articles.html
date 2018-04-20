@@ -1,0 +1,27 @@
+<!--
+//
+//  RELATED ARTICLES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+{{ $related := .Site.RegularPages.Related . | first 3 }}
+{{ with $related }}
+  <section class="section section__related-articles">
+    <div class="container container__related-articles">
+      <div class="row row__related-articles__title">
+        <div class="col-sm-12 col__related-articles__title">
+          <h2 class="section__related-articles__title">
+            More reading
+          </h2>
+          <p class="section__related-articles__sub-title">
+            You may be interested in these vaguely similar articles.
+          </p>
+        </div>
+      </div>
+      <div class="row row__related-articles">
+        {{ range . }}
+          {{ partial "article-summary" . }}
+        {{ end }}
+      </div>
+    </div>
+  </section>
+{{ end }}

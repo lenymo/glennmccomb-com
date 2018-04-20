@@ -58,3 +58,13 @@ taxonomies:
 title: Glenn McComb - Freelance designer and front end developer based in Melbourne, Australia
 disableFastRender: true
 disqusShortname: "glennmccomb-com"
+
+# Related.
+related:
+  threshold: 80
+  includeNewer: true
+  toLower: true
+  indices:
+    - name: categories
+      weight: 130
+      includeNewer: true
