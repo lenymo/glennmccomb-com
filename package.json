@@ -6,7 +6,9 @@
   "repository": "https://github.com/lenymo/glennmccomb-com",
   "scripts": {
     "start": "NODE_ENV=development webpack",
-    "build": "NODE_ENV=production webpack"
+    "start:lambda": "netlify-lambda serve src/lambda",
+    "build": "NODE_ENV=production webpack",
+    "build:lambda": "netlify-lambda build src/lambda"
   },
   "keywords": [],
   "author": "Glenn McComb",
@@ -30,6 +32,7 @@
     "gulp-uglify": "^2.1.2",
     "gulp-util": "^3.0.8",
     "imagemin-mozjpeg": "^7.0.0",
+    "netlify-lambda": "^0.4.0",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-addons-css-transition-group": "^15.6.2",
