@@ -1,3 +1,4 @@
-#[build]
+[build]
+functions = "lambda"
 #  command = "gulp build"
 #  publish = "static"
