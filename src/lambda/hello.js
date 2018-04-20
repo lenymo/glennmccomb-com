@@ -41,7 +41,9 @@ export function handler(event, context, callback) {
     }).then(response => response.json())
       .then(response => {
         body: response
-      });
+      }).then(() => {
+        callback(null, {statusCode: 200});
+      })
 
   } catch(e) {
     callback(null, { statusCode: 500, body: "Internal Server Error: " + e });

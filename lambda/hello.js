@@ -613,6 +613,8 @@ function handler(event, context, callback) {
       return response.json();
     }).then(function (response) {
       body: response;
+    }).then(function () {
+      callback(null, { statusCode: 200 });
     });
   } catch (e) {
     callback(null, { statusCode: 500, body: "Internal Server Error: " + e });
