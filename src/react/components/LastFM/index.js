@@ -70,6 +70,12 @@ class LastFM extends React.Component {
             period: period
           });
       });
+
+
+    fetch('/.netlify/functions/hello')
+    .then(response => {
+      console.log( response );   
+    });
   }
 
   
