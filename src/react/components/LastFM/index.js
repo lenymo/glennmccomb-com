@@ -73,6 +73,10 @@ class LastFM extends React.Component {
 
 
     fetch('/.netlify/functions/hello')
+    // fetch('http://localhost:9000/hello', {
+    //   mode: 'no-cors',
+    //   method: 'POST'
+    // })
     .then(response => response.json())
       .then(response => {
         console.log( response );
