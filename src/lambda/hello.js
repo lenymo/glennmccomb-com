@@ -32,7 +32,11 @@ export function handler(event, context, callback) {
     const lastFmUrl = 'https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=' + username + '&api_key=' + apiKey + '&format=json&period=' + period + '&limit=' + limit;
 
     fetch(lastFmUrl, {
-      method: 'POST'
+      method: 'POST',
+      headers: { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
 
     }).then(response => response.json())
       .then(response => {
