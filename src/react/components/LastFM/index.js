@@ -72,10 +72,22 @@ class LastFM extends React.Component {
       });
 
 
-    fetch('/.netlify/functions/hello')
+    fetch('/.netlify/functions/hello', {
+      method: 'POST',
+      body: JSON.stringify({
+        limit: limit
+      })
+    })
     // fetch('http://localhost:9000/hello', {
     //   mode: 'no-cors',
-    //   method: 'POST'
+    //   method: 'POST',
+    //   body: JSON.stringify({
+    //     limit: limit
+    //   }),
+    //   headers: { 
+    //     'Content-Type': 'application/json',
+    //     'Accept': 'application/json'
+    //   }
     // })
     .then(response => response.json())
       .then(response => {
