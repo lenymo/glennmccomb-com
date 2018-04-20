@@ -73,9 +73,10 @@ class LastFM extends React.Component {
 
 
     fetch('/.netlify/functions/hello')
-    .then(response => {
-      console.log( response );   
-    });
+    .then(response => response.json())
+      .then(response => {
+        console.log( response );
+      });
   }
 
   
