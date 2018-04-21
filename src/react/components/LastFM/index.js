@@ -83,7 +83,7 @@ class LastFM extends React.Component {
 
   lambdaFunction( period ) {
 
-    console.log( 'period: ' + period );
+    // console.log( 'period: ' + period );
 
     // How many records to return.
     var limit = this.limit;
@@ -98,10 +98,11 @@ class LastFM extends React.Component {
     // fetch('http://localhost:9000/hello', {
     //   mode: 'no-cors',
     //   method: 'POST',
-    //   // body: JSON.stringify({
-    //   //   limit: limit
-    //   // }),
-    //   headers: { 
+    //   body: JSON.stringify({
+    //     limit: limit,
+    //     period: period
+    //   }),
+    //   headers: {
     //     'Content-Type': 'application/json',
     //     'Accept': 'application/json'
     //   }
