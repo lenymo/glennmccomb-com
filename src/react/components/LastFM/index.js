@@ -83,6 +83,8 @@ class LastFM extends React.Component {
 
   lambdaFunction( period ) {
 
+    console.log( 'period: ' + period );
+
     // How many records to return.
     var limit = this.limit;
 
