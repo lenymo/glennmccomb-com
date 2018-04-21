@@ -39,7 +39,7 @@ class LastFM extends React.Component {
     this.requestData( this.state.period );
 
     // Call lambda function.
-    this.lambdaFunction();
+    this.lambdaFunction( this.state.period );
   }
 
 
