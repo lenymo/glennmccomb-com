@@ -47,10 +47,11 @@ export function handler(event, context, callback) {
 
     // console.log( 'test' );
 
+    // Last.fm API request.
     fetch(lastFmUrl, {
       method: 'GET'
     })
-    // .then(response => response.json())
+    .then(response => response.json())
       .then(response => {
         callback(null, {
           headers: {
@@ -58,9 +59,26 @@ export function handler(event, context, callback) {
             'Accept': 'application/json'
           },
           statusCode: 200,
-          body: response
+          body: JSON.stringify(response)
         });
+      }).catch((e) => {
+        callback(null, { statusCode: 500, body: "Internal Server Error: " + e });
       });
+
+    // // IP API
+    // fetch('http://ip-api.com/json')
+    //   .then(response => {
+    //     callback(null, {
+    //       headers: {
+    //         'Content-Type': 'application/json',
+    //         'Accept': 'application/json'
+    //       },
+    //       statusCode: 200,
+    //       body: response
+    //     })
+    //   }).catch((e) => {
+    //     callback(null, { statusCode: 500, body: "Internal Server Error: " + e });
+    //   });
 
   } catch(e) {
     callback(null, { 

@@ -163,20 +163,38 @@ function handler(event, context, callback) {
 
     // console.log( 'test' );
 
+    // Last.fm API request.
     (0, _nodeFetch2.default)(lastFmUrl, {
       method: 'GET'
-    })
-    // .then(response => response.json())
-    .then(function (response) {
+    }).then(function (response) {
+      return response.json();
+    }).then(function (response) {
       callback(null, {
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
         statusCode: 200,
-        body: response
+        body: JSON.stringify(response)
       });
+    }).catch(function (e) {
+      callback(null, { statusCode: 500, body: "Internal Server Error: " + e });
     });
+
+    // // IP API
+    // fetch('http://ip-api.com/json')
+    //   .then(response => {
+    //     callback(null, {
+    //       headers: {
+    //         'Content-Type': 'application/json',
+    //         'Accept': 'application/json'
+    //       },
+    //       statusCode: 200,
+    //       body: response
+    //     })
+    //   }).catch((e) => {
+    //     callback(null, { statusCode: 500, body: "Internal Server Error: " + e });
+    //   });
   } catch (e) {
     callback(null, {
       statusCode: 500,
