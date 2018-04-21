@@ -32,12 +32,12 @@ export function handler(event, context, callback) {
     const lastFmUrl = 'https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=' + username + '&api_key=' + apiKey + '&format=json&period=' + period + '&limit=' + limit;
 
     callback(null, {
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        "Access-Control-Allow-Origin" : "*",
-        "Access-Control-Allow-Credentials" : true
-      },
+      // headers: {
+      //   'Content-Type': 'application/json',
+      //   'Accept': 'application/json',
+      //   "Access-Control-Allow-Origin" : "*",
+      //   "Access-Control-Allow-Credentials" : true
+      // },
       statusCode: 200,
       body: JSON.stringify({lastFmUrl: lastFmUrl})
     });
