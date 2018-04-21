@@ -28,8 +28,23 @@ const baseConfig = {
   ]
 };
 
+
+// If the environment is development.
+if (ENV === 'development') {
+
+  // Source maps.
+  // https://webpack.js.org/configuration/devtool/
+  baseConfig.devtool = 'eval';
+
+  // Watch.
+  baseConfig.watch = true;
+}
+
 // If the environment is production.
 if (ENV === 'production') {
+
+  // Watch.
+  baseConfig.watch = true;
 
   // Push a new item to the plugins array.
   baseConfig.plugins.push(new webpack.optimize.UglifyJsPlugin());
