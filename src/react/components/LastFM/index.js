@@ -15,7 +15,7 @@ class LastFM extends React.Component {
     super();
 
     this.requestData = this.requestData.bind(this);
-    this.lambdaFunction = this.lambdaFunction.bind(this);
+    // this.lambdaFunction = this.lambdaFunction.bind(this);
 
     // Set initial state.
     this.state = {
@@ -39,49 +39,49 @@ class LastFM extends React.Component {
     this.requestData( this.state.period );
 
     // Call lambda function.
-    this.lambdaFunction( this.state.period );
+    // this.lambdaFunction( this.state.period );
   }
 
 
-  requestData( period ) {
+  // requestData( period ) {
 
-    // clear state so old items disappear.
-    this.setState({
-      artists: {}
-    });
+  //   // clear state so old items disappear.
+  //   this.setState({
+  //     artists: {}
+  //   });
 
-    // My username.
-    var username = 'elgyn2';
+  //   // My username.
+  //   var username = 'elgyn2';
 
-    // My API key.
-    var apikey = '8a01aea061e32344de520401cc2e2028';
+  //   // My API key.
+  //   var apikey = '8a01aea061e32344de520401cc2e2028';
 
-    // How many records to return.
-    var limit = this.limit;
+  //   // How many records to return.
+  //   var limit = this.limit;
 
-    // Build last.fm API url.
-    var lastFmUrl = 'https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=' + username + '&api_key=' + apikey + '&format=json&period=' + period + '&limit=' + limit;
+  //   // Build last.fm API url.
+  //   var lastFmUrl = 'https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=' + username + '&api_key=' + apikey + '&format=json&period=' + period + '&limit=' + limit;
 
-    fetch( lastFmUrl )
-    .then(response => response.json())
-      .then(response => {
+  //   fetch( lastFmUrl )
+  //   .then(response => response.json())
+  //     .then(response => {
           
-          const {topartists:{artist: responseArtist}} = response;
+  //         const {topartists:{artist: responseArtist}} = response;
 
-          // Update state.
-          this.setState({
-            artists: responseArtist,
-            period: period
-          });
-      });
-  }
+  //         // Update state.
+  //         this.setState({
+  //           artists: responseArtist,
+  //           period: period
+  //         });
+  //     });
+  // }
 
 
   //
-  //  LAMBDA FUNCTION
+  //  REQUEST DATA (LAMBDA)
   //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-  lambdaFunction( period ) {
+  requestData( period ) {
 
     // clear state so old items disappear.
     this.setState({
@@ -112,7 +112,7 @@ class LastFM extends React.Component {
     // })
     .then(response => response.json())
       .then(response => {
-        
+
         // console.log( response );
 
         const {topartists:{artist: responseArtist}} = response;
@@ -145,7 +145,6 @@ class LastFM extends React.Component {
         <PeriodNav 
           requestData={this.requestData} 
           period={this.state.period}
-          lambdaFunction={this.lambdaFunction}
         />
         {items.map((item, index) => 
           <Artist 
