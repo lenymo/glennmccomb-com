@@ -127,7 +127,6 @@ function handler(event, context, callback) {
 
   // Environment variable.
   var apiKey = process.env.LASTFM_API_KEY;
-  // const apiKey = '8a01aea061e32344de520401cc2e2028';
 
   // My username.
   var username = 'elgyn2';
