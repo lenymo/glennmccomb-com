@@ -11,7 +11,7 @@ export function handler(event, context, callback) {
   // console.log(event);
 
   // Replace this with environment variable.
-  const apiKey = process.env.SLACK_WEBHOOK_URL;
+  const apiKey = process.env.LASTFM_API_KEY;
 
   // My username.
   const username = 'elgyn2';
