@@ -150,39 +150,24 @@ function handler(event, context, callback) {
     var lastFmUrl = 'https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=' + username + '&api_key=' + apiKey + '&format=json&period=' + period + '&limit=' + limit;
 
     // I used this to test that the last.fm URL was working.
-    // callback(null, {
-    //   // headers: {
-    //   //   'Content-Type': 'application/json',
-    //   //   'Accept': 'application/json',
-    //   //   "Access-Control-Allow-Origin" : "*",
-    //   //   "Access-Control-Allow-Credentials" : true
-    //   // },
-    //   statusCode: 200,
-    //   body: JSON.stringify({lastFmUrl: lastFmUrl})
-    // });
+    callback(null, {
+      // headers: {
+      //   'Content-Type': 'application/json',
+      //   'Accept': 'application/json',
+      //   "Access-Control-Allow-Origin" : "*",
+      //   "Access-Control-Allow-Credentials" : true
+      // },
+      statusCode: 200,
+      body: JSON.stringify({ lastFmUrl: lastFmUrl })
+    });
 
     // console.log( 'test' );
 
     // Last.fm API request.
-    (0, _nodeFetch2.default)(lastFmUrl, {
-      method: 'GET'
-    }).then(function (response) {
-      return response.json();
-    }).then(function (response) {
-      callback(null, {
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        statusCode: 200,
-        body: JSON.stringify(response)
-      });
-    }).catch(function (e) {
-      callback(null, { statusCode: 500, body: "Internal Server Error: " + e });
-    });
-
-    // // IP API
-    // fetch('http://ip-api.com/json')
+    // fetch(lastFmUrl, {
+    //   method: 'GET'
+    // })
+    // .then(response => response.json())
     //   .then(response => {
     //     callback(null, {
     //       headers: {
@@ -190,8 +175,8 @@ function handler(event, context, callback) {
     //         'Accept': 'application/json'
     //       },
     //       statusCode: 200,
-    //       body: response
-    //     })
+    //       body: JSON.stringify(response)
+    //     });
     //   }).catch((e) => {
     //     callback(null, { statusCode: 500, body: "Internal Server Error: " + e });
     //   });
