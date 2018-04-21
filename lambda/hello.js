@@ -582,7 +582,7 @@ function handler(event, context, callback) {
   // console.log(event);
 
   // Replace this with environment variable.
-  var apiKey = '8a01aea061e32344de520401cc2e2028';
+  var apiKey = process.env.SLACK_WEBHOOK_URL;
 
   // My username.
   var username = 'elgyn2';
