@@ -32,13 +32,6 @@ class Artist extends React.Component {
 
     return (
       <div className={this.props.colClasses} key={artist.name}>
-        <ReactCSSTransitionGroup
-          transitionName="last-fm-artist-"
-          transitionAppear={true}
-          transitionAppearTimeout={200}
-          transitionEnter={false}
-          transitionLeave={false}
-        >
         <a key={this.props.rank} href={artist.url} className="last-fm-artist" target="_blank">
           <div className="last-fm-artist__rank">
             {this.props.rank}
@@ -53,7 +46,6 @@ class Artist extends React.Component {
           <div className="last-fm-artist__background-image" style={artistStyles}></div>
           <div className="last-fm-artist__overlay"></div>
         </a>
-        </ReactCSSTransitionGroup>
       </div>
     )
   }
