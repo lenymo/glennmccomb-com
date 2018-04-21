@@ -19,14 +19,14 @@ export function handler(event, context, callback) {
   const period = 'overall';
 
   // How many records to return.
-  const limit = 12;
+  // const limit = 12;
 
-  // try {
+  try {
 
     // Get request data.
     const payload = JSON.parse(event.body);
 
-    // const limit = payload.limit;
+    const limit = payload.limit;
 
     // Build last.fm API url.
     const lastFmUrl = 'https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=' + username + '&api_key=' + apiKey + '&format=json&period=' + period + '&limit=' + limit;
@@ -56,9 +56,9 @@ export function handler(event, context, callback) {
     //     callback(null, {statusCode: 200});
     //   })
 
-  // } catch(e) {
-  //   callback(null, { statusCode: 500, body: "Internal Server Error: " + e });
-  // }
+  } catch(e) {
+    callback(null, { statusCode: 500, body: "Internal Server Error: " + e });
+  }
 
   // callback(null, {
   //   statusCode: 200,
