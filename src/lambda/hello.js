@@ -32,30 +32,30 @@ export function handler(event, context, callback) {
     // Build last.fm API url.
     const lastFmUrl = 'https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=' + username + '&api_key=' + apiKey + '&format=json&period=' + period + '&limit=' + limit;
 
-    callback(null, {
-      // headers: {
-      //   'Content-Type': 'application/json',
-      //   'Accept': 'application/json',
-      //   "Access-Control-Allow-Origin" : "*",
-      //   "Access-Control-Allow-Credentials" : true
-      // },
-      statusCode: 200,
-      body: JSON.stringify({lastFmUrl: lastFmUrl})
-    });
+    // I used this to test that the last.fm URL was working.
+    // callback(null, {
+    //   // headers: {
+    //   //   'Content-Type': 'application/json',
+    //   //   'Accept': 'application/json',
+    //   //   "Access-Control-Allow-Origin" : "*",
+    //   //   "Access-Control-Allow-Credentials" : true
+    //   // },
+    //   statusCode: 200,
+    //   body: JSON.stringify({lastFmUrl: lastFmUrl})
+    // });
 
-    // fetch(lastFmUrl, {
-    //   method: 'POST',
-    //   headers: { 
-    //     'Content-Type': 'application/json',
-    //     'Accept': 'application/json'
-    //   }
-
-    // }).then(response => response.json())
-    //   .then(response => {
-    //     body: response
-    //   }).then(() => {
-    //     callback(null, {statusCode: 200});
-    //   })
+    fetch(lastFmUrl)
+    .then(response => response.json())
+      .then(response => {
+        callback(null, {
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          statusCode: 200,
+          body: response
+        });
+      });
 
   } catch(e) {
     callback(null, { 
