@@ -43,6 +43,10 @@ class LastFM extends React.Component {
   }
 
 
+  //
+  //  REQUEST DATA (DIRECT)
+  //––––––––––––––––––––––––––––––––––––––––––––––––––
+  
   // requestData( period ) {
 
   //   // clear state so old items disappear.
@@ -155,6 +159,7 @@ class LastFM extends React.Component {
             image={item.image[3]}
             rank={index + 1}
             colClasses={colClasses}
+            index={index}
           />
         )}
       </div>

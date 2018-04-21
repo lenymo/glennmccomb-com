@@ -23,8 +23,32 @@ class Artist extends React.Component {
 
     const artistImage = this.props.image['#text'];
 
-    const artistStyles = {
-      backgroundImage: 'url(' + artistImage + ')'
+    const delay = (this.props.index * 0.05);
+
+
+    //
+    //  STYLES
+    //––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    const rankStyles = {
+      animationDelay: delay + 's'
+    };
+
+    const nameStyles = {
+      animationDelay: delay + 's'
+    };
+
+    const playcountStyles = {
+      animationDelay: delay + 's'
+    };
+
+    const backgroundImageStyles = {
+      backgroundImage: 'url(' + artistImage + ')',
+      animationDelay: delay + 's'
+    };
+
+    const overlayStyles = {
+      animationDelay: delay + 's'
     };
 
     // Get playcount.
@@ -32,19 +56,21 @@ class Artist extends React.Component {
 
     return (
       <div className={this.props.colClasses} key={artist.name}>
-        <a key={this.props.rank} href={artist.url} className="last-fm-artist" target="_blank">
-          <div className="last-fm-artist__rank">
+        <a key={this.props.rank} href={artist.url} className="last-fm-artist -is-artist" target="_blank">
+          <div className="last-fm-artist__rank" style={rankStyles}>
             {this.props.rank}
           </div>
           <div className="last-fm-artist__meta">
-            <h3 className="last-fm-artist__name">
+            <h3 className="last-fm-artist__name" style={nameStyles}>
               {artist.name}
             </h3>
-            <p className="last-fm-artist__play-count">{playCount} plays</p>
+            <p className="last-fm-artist__play-count" style={playcountStyles}>
+              {playCount} plays
+            </p>
             <img className="last-fm-artist__image" src={artistImage} alt={artist.name} />
           </div>
-          <div className="last-fm-artist__background-image" style={artistStyles}></div>
-          <div className="last-fm-artist__overlay"></div>
+          <div className="last-fm-artist__background-image" style={backgroundImageStyles}></div>
+          <div className="last-fm-artist__overlay" style={overlayStyles}></div>
         </a>
       </div>
     )

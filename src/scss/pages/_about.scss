@@ -61,7 +61,7 @@
 $last-fm-artist-rank-size: 35px;
 
 .last-fm-artist {
-  animation: 1s ease-in-out both last-fm-artist--in;
+  background-color: $color-gray-e;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
@@ -92,18 +92,6 @@ $last-fm-artist-rank-size: 35px;
   // }
 }
 
-@for $i from 1 through 12 {
-  .last-fm-artist {
-    
-    // :nth-child(1-12) 
-    &:nth-child(#{$i}) {
-      
-      // Delay the animation. Delay increases as items loop.
-      animation-delay: $i * (.04s);
-    }
-  }
-}
-
 @include respond-above(xs) {
   .last-fm-artist {
     height: 230px;
@@ -126,16 +114,6 @@ $last-fm-artist-rank-size: 35px;
 @include respond-above(lg) {
   .last-fm-artist {
     height: 245px;
-  }
-}
-
-@keyframes last-fm-artist--in {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
   }
 }
 
@@ -164,6 +142,26 @@ $last-fm-artist-rank-size: 35px;
 @include respond-above(xs) {
   .last-fm-artist__rank {
     transform: translateX(-50%);
+  }
+}
+
+.last-fm-artist {
+  &.-is-artist {
+    .last-fm-artist__rank {
+      animation: .4s ease-in-out both last-fm-artist__rank;
+    }
+  }
+}
+
+@keyframes last-fm-artist__rank {
+  0% {
+    background-color: $color-gray-c;
+    color: $color-gray-c;
+  }
+
+  100% {
+    background: $color-primary;
+    color: $white;
   }
 }
 
@@ -199,6 +197,28 @@ $last-fm-artist-rank-size: 35px;
   margin-bottom: 0;
 }
 
+.last-fm-artist {
+  &.-is-artist {
+    .last-fm-artist__name {
+      animation: .1s ease-in-out both last-fm-artist__name;
+    }
+  }
+}
+
+@keyframes last-fm-artist__name {
+  0% {
+    // background-color: $color-gray-d;
+    // color: $color-gray-d;
+    opacity: 0;
+  }
+
+  100% {
+    // background-color: transparent;
+    // color: $white;
+    opacity: 1;
+  }
+}
+
 
 //
 //  PLAY COUNT
@@ -210,6 +230,28 @@ $last-fm-artist-rank-size: 35px;
   font-weight: bold;
   margin-bottom: 0;
   letter-spacing: .05em;
+}
+
+.last-fm-artist {
+  &.-is-artist {
+    .last-fm-artist__play-count {
+      animation: .1s ease-in-out both last-fm-artist__play-count;
+    }
+  }
+}
+
+@keyframes last-fm-artist__play-count {
+  0% {
+    // background-color: $color-gray-d;
+    // color: $color-gray-d;
+    opacity: 0;
+  }
+
+  100% {
+    // background-color: transparent;
+    // color: rgba($white, .5);
+    opacity: 1;
+  }
 }
 
 
@@ -228,8 +270,10 @@ $last-fm-artist-rank-size: 35px;
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .last-fm-artist__background-image {
+  animation: .4s ease-in-out both last-fm-artist--fade-in;
   background-size: cover;
   background-position: 50% 50%;
+  border-radius: 2px;
   height: 100%;
   left: 0;
   position: absolute;
@@ -243,7 +287,9 @@ $last-fm-artist-rank-size: 35px;
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .last-fm-artist__overlay {
+  animation: .4s ease-in-out both last-fm-artist--fade-in;
   background-image: linear-gradient(180deg, rgba($black, 0), rgba($black, .9));
+  border-radius: 2px;
   height: 100%;
   left: 0;
   position: absolute;
@@ -266,6 +312,7 @@ $last-fm-artist-rank-size: 35px;
 
     .last-fm-artist__name {
       background-color: $color-gray-d;
+      display: none;
       height: 1em;
       margin-bottom: $gutter;
       width: 90%;
@@ -273,8 +320,25 @@ $last-fm-artist-rank-size: 35px;
 
     .last-fm-artist__play-count {
       background-color: $color-gray-d;
+      display: none;
       height: 1em;
       width: 25%;
     }
+  }
+}
+
+
+
+//
+//  FADE IN ANIMATION
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@keyframes last-fm-artist--fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
