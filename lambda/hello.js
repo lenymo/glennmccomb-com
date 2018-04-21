@@ -592,33 +592,44 @@ function handler(event, context, callback) {
   // How many records to return.
   var limit = 12;
 
-  try {
+  // try {
 
-    // Get request data.
-    var payload = JSON.parse(event.body);
+  // Get request data.
+  var payload = JSON.parse(event.body);
 
-    // const limit = payload.limit;
+  // const limit = payload.limit;
 
-    // Build last.fm API url.
-    var lastFmUrl = 'https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=' + username + '&api_key=' + apiKey + '&format=json&period=' + period + '&limit=' + limit;
+  // Build last.fm API url.
+  var lastFmUrl = 'https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=' + username + '&api_key=' + apiKey + '&format=json&period=' + period + '&limit=' + limit;
 
-    fetch(lastFmUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      }
+  callback(null, {
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Credentials": true
+    },
+    statusCode: 200,
+    body: JSON.stringify({ lastFmUrl: lastFmUrl })
+  });
 
-    }).then(function (response) {
-      return response.json();
-    }).then(function (response) {
-      body: response;
-    }).then(function () {
-      callback(null, { statusCode: 200 });
-    });
-  } catch (e) {
-    callback(null, { statusCode: 500, body: "Internal Server Error: " + e });
-  }
+  // fetch(lastFmUrl, {
+  //   method: 'POST',
+  //   headers: { 
+  //     'Content-Type': 'application/json',
+  //     'Accept': 'application/json'
+  //   }
+
+  // }).then(response => response.json())
+  //   .then(response => {
+  //     body: response
+  //   }).then(() => {
+  //     callback(null, {statusCode: 200});
+  //   })
+
+  // } catch(e) {
+  //   callback(null, { statusCode: 500, body: "Internal Server Error: " + e });
+  // }
 
   // callback(null, {
   //   statusCode: 200,

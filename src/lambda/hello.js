@@ -21,7 +21,7 @@ export function handler(event, context, callback) {
   // How many records to return.
   const limit = 12;
 
-  try {
+  // try {
 
     // Get request data.
     const payload = JSON.parse(event.body);
@@ -31,23 +31,34 @@ export function handler(event, context, callback) {
     // Build last.fm API url.
     const lastFmUrl = 'https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=' + username + '&api_key=' + apiKey + '&format=json&period=' + period + '&limit=' + limit;
 
-    fetch(lastFmUrl, {
-      method: 'POST',
-      headers: { 
+    callback(null, {
+      headers: {
         'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      }
+        'Accept': 'application/json',
+        "Access-Control-Allow-Origin" : "*",
+        "Access-Control-Allow-Credentials" : true
+      },
+      statusCode: 200,
+      body: JSON.stringify({lastFmUrl: lastFmUrl})
+    });
 
-    }).then(response => response.json())
-      .then(response => {
-        body: response
-      }).then(() => {
-        callback(null, {statusCode: 200});
-      })
+    // fetch(lastFmUrl, {
+    //   method: 'POST',
+    //   headers: { 
+    //     'Content-Type': 'application/json',
+    //     'Accept': 'application/json'
+    //   }
 
-  } catch(e) {
-    callback(null, { statusCode: 500, body: "Internal Server Error: " + e });
-  }
+    // }).then(response => response.json())
+    //   .then(response => {
+    //     body: response
+    //   }).then(() => {
+    //     callback(null, {statusCode: 200});
+    //   })
+
+  // } catch(e) {
+  //   callback(null, { statusCode: 500, body: "Internal Server Error: " + e });
+  // }
 
   // callback(null, {
   //   statusCode: 200,

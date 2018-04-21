@@ -15,6 +15,7 @@ class LastFM extends React.Component {
     super();
 
     this.requestData = this.requestData.bind(this);
+    this.lambdaFunction = this.lambdaFunction.bind(this);
 
     // Set initial state.
     this.state = {
@@ -36,6 +37,9 @@ class LastFM extends React.Component {
 
     // Request last.fm data.
     this.requestData( this.state.period );
+
+    // Call lambda function.
+    this.lambdaFunction();
   }
 
 
@@ -70,29 +74,39 @@ class LastFM extends React.Component {
             period: period
           });
       });
+  }
 
 
-    // fetch('/.netlify/functions/hello', {
+  //
+  //  LAMBDA FUNCTION
+  //––––––––––––––––––––––––––––––––––––––––––––––––––
+
+  lambdaFunction() {
+
+    // How many records to return.
+    var limit = this.limit;
+
+    fetch('/.netlify/functions/hello', {
+      method: 'POST',
+      body: JSON.stringify({
+        limit: limit
+      })
+    })
+    // fetch('http://localhost:9000/hello', {
+    //   mode: 'no-cors',
     //   method: 'POST',
-    //   body: JSON.stringify({
-    //     limit: limit
-    //   })
+    //   // body: JSON.stringify({
+    //   //   limit: limit
+    //   // }),
+    //   headers: { 
+    //     'Content-Type': 'application/json',
+    //     'Accept': 'application/json'
+    //   }
     // })
-    // // fetch('http://localhost:9000/hello', {
-    // //   mode: 'no-cors',
-    // //   method: 'POST',
-    // //   body: JSON.stringify({
-    // //     limit: limit
-    // //   }),
-    // //   headers: { 
-    // //     'Content-Type': 'application/json',
-    // //     'Accept': 'application/json'
-    // //   }
-    // // })
-    // .then(response => response.json())
-    //   .then(response => {
-    //     console.log( response );
-    //   });
+    .then(response => response.json())
+      .then(response => {
+        console.log( response );
+      });
   }
 
   
