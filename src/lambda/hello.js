@@ -4,7 +4,7 @@
 //  HELLO
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-const fetch = require("node-fetch");
+const fetch = require('node-fetch');
 
 export function handler(event, context, callback) {
   
@@ -58,7 +58,10 @@ export function handler(event, context, callback) {
     //   })
 
   } catch(e) {
-    callback(null, { statusCode: 500, body: "Internal Server Error: " + e });
+    callback(null, { 
+      statusCode: 500, 
+      body: "Internal Server Error: " + e 
+    });
   }
 
   // callback(null, {
