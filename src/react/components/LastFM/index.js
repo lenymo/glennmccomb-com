@@ -99,16 +99,18 @@ class LastFM extends React.Component {
       })
     })
     // fetch('http://localhost:9000/hello', {
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     'Accept': 'application/json',
+    //     'Access-Control-Allow-Origin' : '*', 
+    //     'Access-Control-Allow-Credentials' : true 
+    //   },
     //   mode: 'no-cors',
     //   method: 'POST',
     //   body: JSON.stringify({
     //     limit: limit,
     //     period: period
-    //   }),
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //     'Accept': 'application/json'
-    //   }
+    //   })
     // })
     .then(response => response.json())
       .then(response => {

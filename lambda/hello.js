@@ -125,21 +125,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function handler(event, context, callback) {
 
-  // console.log(event);
-
   // Environment variable.
   var apiKey = process.env.LASTFM_API_KEY;
+  // const apiKey = '8a01aea061e32344de520401cc2e2028';
 
   // My username.
   var username = 'elgyn2';
 
-  // const period = 'overall';
-
-  // How many records to return.
-  // const limit = 12;
-
   try {
-
     // Get request data.
     var payload = JSON.parse(event.body);
 
@@ -161,8 +154,6 @@ function handler(event, context, callback) {
     //   body: JSON.stringify({lastFmUrl: lastFmUrl})
     // });
 
-    // console.log( 'test' );
-
     // Last.fm API request.
     (0, _nodeFetch2.default)(lastFmUrl, {
       method: 'GET'
@@ -173,6 +164,8 @@ function handler(event, context, callback) {
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
+          // 'Access-Control-Allow-Origin' : '*', 
+          // 'Access-Control-Allow-Credentials' : true 
         },
         statusCode: 200,
         body: JSON.stringify(response)
@@ -186,11 +179,6 @@ function handler(event, context, callback) {
       body: "Internal Server Error: " + e
     });
   }
-
-  // callback(null, {
-  //   statusCode: 200,
-  //   body: JSON.stringify({msg: "Hello, World!"})
-  // });
 }
 
 //
