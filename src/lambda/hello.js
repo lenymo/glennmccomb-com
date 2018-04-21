@@ -16,7 +16,7 @@ export function handler(event, context, callback) {
   // My username.
   const username = 'elgyn2';
 
-  const period = 'overall';
+  // const period = 'overall';
 
   // How many records to return.
   // const limit = 12;
@@ -27,6 +27,7 @@ export function handler(event, context, callback) {
     const payload = JSON.parse(event.body);
 
     const limit = payload.limit;
+    const period = payload.period;
 
     // Build last.fm API url.
     const lastFmUrl = 'https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=' + username + '&api_key=' + apiKey + '&format=json&period=' + period + '&limit=' + limit;

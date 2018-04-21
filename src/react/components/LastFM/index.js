@@ -81,7 +81,7 @@ class LastFM extends React.Component {
   //  LAMBDA FUNCTION
   //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-  lambdaFunction() {
+  lambdaFunction( period ) {
 
     // How many records to return.
     var limit = this.limit;
@@ -89,7 +89,8 @@ class LastFM extends React.Component {
     fetch('/.netlify/functions/hello', {
       method: 'POST',
       body: JSON.stringify({
-        limit: limit
+        limit: limit,
+        period: period
       })
     })
     // fetch('http://localhost:9000/hello', {
