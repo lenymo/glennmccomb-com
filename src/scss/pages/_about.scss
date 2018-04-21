@@ -61,6 +61,7 @@
 $last-fm-artist-rank-size: 35px;
 
 .last-fm-artist {
+  animation: 1s ease-in-out both last-fm-artist--in;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
@@ -91,6 +92,18 @@ $last-fm-artist-rank-size: 35px;
   // }
 }
 
+@for $i from 1 through 12 {
+  .last-fm-artist {
+    
+    // :nth-child(1-12) 
+    &:nth-child(#{$i}) {
+      
+      // Delay the animation. Delay increases as items loop.
+      animation-delay: $i * (.04s);
+    }
+  }
+}
+
 @include respond-above(xs) {
   .last-fm-artist {
     height: 230px;
@@ -113,6 +126,16 @@ $last-fm-artist-rank-size: 35px;
 @include respond-above(lg) {
   .last-fm-artist {
     height: 245px;
+  }
+}
+
+@keyframes last-fm-artist--in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
 
