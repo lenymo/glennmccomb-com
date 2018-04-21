@@ -117,12 +117,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.handler = handler;
 
+var _nodeFetch = __webpack_require__(8);
 
-//
-//  HELLO
-//––––––––––––––––––––––––––––––––––––––––––––––––––
+var _nodeFetch2 = _interopRequireDefault(_nodeFetch);
 
-var fetch = __webpack_require__(8);
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function handler(event, context, callback) {
 
@@ -162,9 +161,13 @@ function handler(event, context, callback) {
     //   body: JSON.stringify({lastFmUrl: lastFmUrl})
     // });
 
-    fetch(lastFmUrl).then(function (response) {
-      return response.json();
-    }).then(function (response) {
+    // console.log( 'test' );
+
+    (0, _nodeFetch2.default)(lastFmUrl, {
+      method: 'GET'
+    })
+    // .then(response => response.json())
+    .then(function (response) {
       callback(null, {
         headers: {
           'Content-Type': 'application/json',
@@ -186,6 +189,12 @@ function handler(event, context, callback) {
   //   body: JSON.stringify({msg: "Hello, World!"})
   // });
 }
+
+//
+//  HELLO
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// const fetch = require('node-fetch');
 
 /***/ }),
 /* 8 */

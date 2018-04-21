@@ -4,7 +4,8 @@
 //  HELLO
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-const fetch = require('node-fetch');
+// const fetch = require('node-fetch');
+import fetch from 'node-fetch';
 
 export function handler(event, context, callback) {
   
@@ -44,8 +45,12 @@ export function handler(event, context, callback) {
     //   body: JSON.stringify({lastFmUrl: lastFmUrl})
     // });
 
-    fetch(lastFmUrl)
-    .then(response => response.json())
+    // console.log( 'test' );
+
+    fetch(lastFmUrl, {
+      method: 'GET'
+    })
+    // .then(response => response.json())
       .then(response => {
         callback(null, {
           headers: {

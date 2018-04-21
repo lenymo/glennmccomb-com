@@ -88,25 +88,25 @@ class LastFM extends React.Component {
     // How many records to return.
     var limit = this.limit;
 
-    fetch('/.netlify/functions/hello', {
-      method: 'POST',
-      body: JSON.stringify({
-        limit: limit,
-        period: period
-      })
-    })
-    // fetch('http://localhost:9000/hello', {
-    //   mode: 'no-cors',
+    // fetch('/.netlify/functions/hello', {
     //   method: 'POST',
     //   body: JSON.stringify({
     //     limit: limit,
     //     period: period
-    //   }),
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //     'Accept': 'application/json'
-    //   }
+    //   })
     // })
+    fetch('http://localhost:9000/hello', {
+      mode: 'no-cors',
+      method: 'POST',
+      body: JSON.stringify({
+        limit: limit,
+        period: period
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
+    })
     .then(response => response.json())
       .then(response => {
         console.log( response );
