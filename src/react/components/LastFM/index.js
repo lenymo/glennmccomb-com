@@ -129,7 +129,8 @@ class LastFM extends React.Component {
       <div className="row row__last-fm">
         <PeriodNav 
           requestData={this.requestData} 
-          period={this.state.period} 
+          period={this.state.period}
+          lambdaFunction={this.lambdaFunction}
         />
         {items.map((item, index) => 
           <Artist 

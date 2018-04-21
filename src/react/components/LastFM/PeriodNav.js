@@ -33,7 +33,7 @@ class PeriodNav extends React.Component {
 
     const periodNav = periodNavItems.map((periodNavItem) =>
       <li key={periodNavItem.period} className={'last-fm-period__list-item' + (periodNavItem.period === this.props.period ? ' -is-current' : '')}>
-        <a href="javascript:void(0);" className="last-fm-period__link" onClick={() => this.props.requestData( periodNavItem.period )}>
+        <a href="javascript:void(0);" className="last-fm-period__link" onClick={() => this.props.lambdaFunction( periodNavItem.period )}>
           {periodNavItem.name}
         </a>
       </li>
