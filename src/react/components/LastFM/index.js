@@ -110,6 +110,14 @@ class LastFM extends React.Component {
     .then(response => response.json())
       .then(response => {
         console.log( response );
+
+        const {topartists:{artist: responseArtist}} = response;
+
+        // Update state.
+        this.setState({
+          artists: responseArtist,
+          period: period
+        });
       });
   }
 
