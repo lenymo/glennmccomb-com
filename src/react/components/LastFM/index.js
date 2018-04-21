@@ -83,7 +83,10 @@ class LastFM extends React.Component {
 
   lambdaFunction( period ) {
 
-    // console.log( 'period: ' + period );
+    // clear state so old items disappear.
+    this.setState({
+      artists: {}
+    });
 
     // How many records to return.
     var limit = this.limit;
