@@ -270,7 +270,7 @@ $last-fm-artist-rank-size: 35px;
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .last-fm-artist__background-image {
-  animation: .4s ease-in-out both last-fm-artist--fade-in;
+  animation: .4s ease-in-out both last-fm-artist__background-image;
   background-size: cover;
   background-position: 50% 50%;
   border-radius: 2px;
@@ -287,7 +287,7 @@ $last-fm-artist-rank-size: 35px;
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .last-fm-artist__overlay {
-  animation: .4s ease-in-out both last-fm-artist--fade-in;
+  animation: .4s ease-in-out both last-fm-artist__background-image;
   background-image: linear-gradient(180deg, rgba($black, 0), rgba($black, .9));
   border-radius: 2px;
   height: 100%;
@@ -297,6 +297,20 @@ $last-fm-artist-rank-size: 35px;
   width: 100%;
 }
 
+//
+//  FADE IN ANIMATION
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@keyframes last-fm-artist__background-image {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 
 //
 //  LAST FM ARTIST PLACEHOLDER
@@ -304,6 +318,7 @@ $last-fm-artist-rank-size: 35px;
 
 .last-fm-artist {
   &.-is-placeholder {
+    animation: 1s ease infinite last-fm-artist__placeholder;
     background-color: $color-gray-e;
 
     .last-fm-artist__rank {
@@ -327,18 +342,31 @@ $last-fm-artist-rank-size: 35px;
   }
 }
 
-
-
-//
-//  FADE IN ANIMATION
-//––––––––––––––––––––––––––––––––––––––––––––––––––
-
-@keyframes last-fm-artist--fade-in {
-  0% {
-    opacity: 0;
+@for $i from 1 through 12 {
+  .col__last-fm-artist {
+    &:nth-child(#{$i}) {
+      .last-fm-artist {
+        &.-is-placeholder {
+          animation-delay: $i * (1s / 12);
+        }
+      }
+    }
   }
+}
 
-  100% {
-    opacity: 1;
+@keyframes last-fm-artist__placeholder {
+  0% {
+    background: $color-gray-e;
+    // transform: scale(1);
+  }
+  
+  25% {
+    background: darken($color-gray-e, 7.5%);
+    // transform: scale(1.015);
+  }
+  
+  50% {
+    background: $color-gray-e;
+    // transform: scale(1);
   }
 }
