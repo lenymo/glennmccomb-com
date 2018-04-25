@@ -25,6 +25,9 @@ $article-header-padding-bottom-lg: $gutter * 6;
 $article-header-padding-top-xl: $gutter*16 + $site-header-height-lg;
 $article-header-padding-bottom-xl: $gutter * 6;
 
+// Comments.
+$disqus-placeholder-height: 150px;
+
 
 //
 //  ARTICLE HEADINGS
@@ -67,8 +70,8 @@ $article-header-padding-bottom-xl: $gutter * 6;
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .section__article-header {
-  position: relative;
   padding: 0;
+  position: relative;
 
   &.-has-featured {
     background-size: cover;
@@ -116,8 +119,8 @@ $article-header-padding-bottom-xl: $gutter * 6;
 
 .article-header__date {
   left: $gutter / 2;
-  top: 50%;
   position: absolute;
+  top: 50%;
   transform: translateX(20px);
 }
 
@@ -130,9 +133,7 @@ $article-header-padding-bottom-xl: $gutter * 6;
 @include respond-below(xs) {
   .article-header__date {
     height: 50px;
-    // padding: 8px;
-    // transform: translateY(0) translateX(16px);
-    top: $gutter*6 + $site-header-height-xs;
+    top: ($gutter * 6) + $site-header-height-xs;
     width: 50px;
   }
 
@@ -148,36 +149,34 @@ $article-header-padding-bottom-xl: $gutter * 6;
 @include respond-above(xs) {
   .article-header__date {
     left: $gutter / 4;
-    top: $gutter*8 + $site-header-height-sm;
+    top: ($gutter * 8) + $site-header-height-sm;
     transform: translateX(16px);
   }
 }
 
 @include respond-above(sm) {
   .article-header__date {
-    top: $gutter*10 + $site-header-height-md;
-    // transform: translateY(0) translateX(12px);
+    top: ($gutter * 10) + $site-header-height-md;
   }
 }
 
 @include respond-above(md) {
   .article-header__date {
-    top: $gutter*12 + $site-header-height-lg;
+    top: ($gutter * 12) + $site-header-height-lg;
   }
 }
 
 @include respond-above(lg) {
   .article-header__date {
     height: 80px;
-    padding: $gutter*.75;
-    top: $gutter*16 + $site-header-height-lg;
+    padding: $gutter * .75;
+    top: ($gutter * 16) + $site-header-height-lg;
     transform: translateX(11px);
     width: 80px;
   }
 
   .article-header__date-month {
     font-size: rem(14px);
-    // letter-spacing: rem(2px);
   }
 
   .article-header__date-day {
@@ -209,7 +208,7 @@ $article-header-padding-bottom-xl: $gutter * 6;
   font-weight: bold;
   letter-spacing: .05em;
   line-height: 1.1;
-  padding: $gutter*.33 $gutter*.66;
+  padding: ($gutter * .33) ($gutter * .66);
   text-transform: uppercase;
   transition: all .4s ease;
   vertical-align: top;
@@ -389,8 +388,8 @@ $article-header-padding-bottom-xl: $gutter * 6;
 .article-author__photo {
   border-radius: 50%;
   float: left;
-  max-width: 60px;
   margin-right: $gutter;
+  max-width: 60px;
 }
 
 .site {
@@ -411,8 +410,8 @@ $article-header-padding-bottom-xl: $gutter * 6;
 .article-author__date-day-suffix {
   font-size: 50%;
   font-weight: bold;
-  text-transform: uppercase;
   position: relative;
+  text-transform: uppercase;
 }
 
 
@@ -420,8 +419,6 @@ $article-header-padding-bottom-xl: $gutter * 6;
 //
 //  COMMENTS
 //––––––––––––––––––––––––––––––––––––––––––––––––––
-
-$disqus-placeholder-height: 150px;
 
 .article-comments {
   clear: both;
@@ -434,8 +431,8 @@ $disqus-placeholder-height: 150px;
 }
 
 .disqus {
-  left: 0;
   height: $disqus-placeholder-height;
+  left: 0;
   position: absolute;
   top: 0;
   width: 100%;

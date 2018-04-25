@@ -140,7 +140,7 @@ $dark-bg-form-field-placeholder-color-focus: $dark-bg-form-field-placeholder-col
     border-right: 6px solid transparent;
     border-top: 10px solid $form-field-border-color;
     content: '';
-    height: 0; 
+    height: 0;
     position: absolute;
     right: 14px;
     top: 20px;
@@ -183,7 +183,7 @@ $dark-bg-form-field-placeholder-color-focus: $dark-bg-form-field-placeholder-col
     box-shadow: $form-field-box-shadow-focus;
     outline: 0;
   }
-  
+
   // Field has errors.
   &.-has-error {
     border-color: $form-field-border-color-error;
@@ -195,7 +195,7 @@ $dark-bg-form-field-placeholder-color-focus: $dark-bg-form-field-placeholder-col
       box-shadow: $form-field-box-shadow-error-focus;
     }
   }
-  
+
   // Field is valid.
   &:valid {
     border-color: $form-field-border-color;
@@ -253,14 +253,6 @@ textarea.form__field {
   &:-webkit-autofill:active {
     transition: background-color 50000s ease-in-out 0s;
     -webkit-text-fill-color: $form-field-font-color !important;
-    // animation: autofill 0s forwards;
-  }
-}
-
-@keyframes autofill {
-  100% {
-    background: transparent;
-    color: inherit;
   }
 }
 
@@ -271,7 +263,6 @@ textarea.form__field {
     &:-webkit-autofill:focus,
     &:-webkit-autofill:active {
       -webkit-text-fill-color: $dark-bg-form-field-font-color !important;
-      // animation: autofill 0s forwards;
     }
   }
 }
@@ -345,8 +336,8 @@ textarea.form__field {
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .form__check {
-  opacity: 0;
   float: left;
+  opacity: 0;
   width: 20px;
 
   + label {
@@ -370,7 +361,7 @@ textarea.form__field {
       transition: all .2s ease;
       width: 20px;
     }
-    
+
     // Input selected.
     &:after {
       background: transparent;
@@ -394,7 +385,7 @@ textarea.form__field {
       }
     }
   }
-  
+
   // Check is checked.
   &:checked {
     + label {
@@ -431,8 +422,8 @@ textarea.form__field {
 
 .form__footer-btn {
   display: inline-block;
-  vertical-align: top;
   position: relative;
+  vertical-align: top;
 
   &:after {
     background: rgba($black, .5);
@@ -477,13 +468,9 @@ textarea.form__field {
   &.-is-thankful {
     .form__footer-btn {
       &:after {
-        // background-color: $color-primary-lightest;
-        // left: auto;
         opacity: 0;
-        // right: 0;
         transform: scale(.001);
         transition: all .4s ease;
-        // width: 0;
       }
     }
   }
@@ -493,7 +480,6 @@ textarea.form__field {
   position: relative;
   z-index: 1;
 }
-
 
 
 //
@@ -542,7 +528,7 @@ textarea.form__field {
       opacity: 1;
     }
   }
-  
+
   // Done.
   &.-is-done {
     .form__progress-status-sent {
@@ -565,7 +551,6 @@ textarea.form__field {
       opacity: 1;
       transform: scale(1.1);
       transition: all .6s cubic-bezier(.25, .25, .25, 2);
-      // transition: all .4s ease;
     }
   }
 }
@@ -587,7 +572,7 @@ textarea.form__field {
     &:focus {
       border-color: $dark-bg-form-field-border-color-focus;
     }
-  
+
     // Field has errors.
     &.-has-error {
       border-color: $form-field-border-color-error;
@@ -616,7 +601,7 @@ textarea.form__field {
       color: $dark-bg-form-field-font-color;
     }
   }
-  
+
   // Label.
   .form__field-label {
     background: $dark-bg-form-field-placeholder-background-color;

@@ -27,15 +27,14 @@ $page-header-icon-border-width: 5px;
 $page-header-icon-border-color: rgba($white, .075);
 
 
-
 //
 //  ICON
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .page-header__icon {
   background: $page-header-icon-background-color;
-  border-radius: 50%;
   border: $page-header-icon-border-width solid $page-header-icon-border-color;
+  border-radius: 50%;
   height: $page-header-icon-size-xs;
   left: $gutter / 2;
   position: absolute;

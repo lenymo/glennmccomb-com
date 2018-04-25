@@ -26,12 +26,12 @@
   .site-nav-is-open {
     .site-nav {
       height: 100vh;
-      padding: $gutter*2 $gutter;
+      padding: ($gutter * 2) $gutter;
     }
   }
 
   .site-nav__link {
     font-size: rem(21px);
-    padding: $gutter/2 $gutter;
+    padding: ($gutter * .5) $gutter;
   }
 }

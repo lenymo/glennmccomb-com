@@ -9,8 +9,8 @@
 //  LAYOUT
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-$site-nav-item-padding: $gutter/2 $gutter;
-$site-nav-item-padding-md: $gutter*.75 $gutter;
+$site-nav-item-padding: ($gutter * .5) $gutter;
+$site-nav-item-padding-md: ($gutter * .75) $gutter;
 
 
 //
@@ -48,8 +48,8 @@ $site-nav-item-current-border-color: $color-secondary;
 
 @include respond-above(sm) {
   .site-nav {
-    vertical-align: top;
     float: right;
+    vertical-align: top;
   }
 }
 

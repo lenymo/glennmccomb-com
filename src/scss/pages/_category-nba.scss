@@ -25,7 +25,7 @@ $page-header-nba-icon-shadow: darken($page-header-nba-icon-color, 35%);
     background-color: $page-header-bg-nba;
     border-color: $page-header-bg-nba;
   }
-  
+
   .section__page-header {
     .page-header__background-device {
       .line {
@@ -33,7 +33,7 @@ $page-header-nba-icon-shadow: darken($page-header-nba-icon-color, 35%);
       }
     }
   }
-  
+
   // Make sure NBA is all uppercase.
   .page-header__title {
     text-transform: uppercase;
@@ -50,11 +50,10 @@ $page-header-nba-icon-shadow: darken($page-header-nba-icon-color, 35%);
     background: $page-header-bg-nba;
 
     .basketball {
-      left: 0;
       height: 100%;
+      left: 0;
       position: absolute;
       top: 0;
-      // transform: rotateZ(-45deg);
       width: 100%;
 
       .outlines {
@@ -64,7 +63,6 @@ $page-header-nba-icon-shadow: darken($page-header-nba-icon-color, 35%);
       }
 
       .lines {
-        // fill: $page-header-bg-nba;
         fill: transparent;
       }
 

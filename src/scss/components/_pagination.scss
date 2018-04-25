@@ -20,10 +20,10 @@
   margin-right: $gutter * .125;
 }
 
-.pagination__item--previous,
-.pagination__item--next {
-  // display: none;
-}
+// .pagination__item--previous,
+// .pagination__item--next {
+//   display: none;
+// }
 
 .pagination__link {
   background: $color-gray-f;
@@ -31,7 +31,7 @@
   color: $color-primary-lighter;
   display: block;
   font-weight: bold;
-  padding: $gutter*.25 $gutter*.75;
+  padding: ($gutter * .25) ($gutter * .75);
   transition: all .2s ease;
 }
 
@@ -86,6 +86,6 @@
   }
 
   .pagination__link {
-    padding: $gutter*.5 $gutter;
+    padding: ($gutter * .5) $gutter;
   }
 }

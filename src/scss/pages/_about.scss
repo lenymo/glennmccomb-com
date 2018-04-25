@@ -62,9 +62,9 @@ $last-fm-artist-rank-size: 35px;
 
 .last-fm-artist {
   background-color: $color-gray-e;
+  background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 50% 50%;
   border-radius: 2px;
   color: $white;
   display: block;
@@ -176,8 +176,8 @@ $last-fm-artist-rank-size: 35px;
   padding-left: $gutter * 2.5;
   padding-right: $gutter;
   position: absolute;
-  z-index: 1;
   width: 100%;
+  z-index: 1;
 }
 
 @include respond-above(sm) {
@@ -207,14 +207,10 @@ $last-fm-artist-rank-size: 35px;
 
 @keyframes last-fm-artist__name {
   0% {
-    // background-color: $color-gray-d;
-    // color: $color-gray-d;
     opacity: 0;
   }
 
   100% {
-    // background-color: transparent;
-    // color: $white;
     opacity: 1;
   }
 }
@@ -228,8 +224,8 @@ $last-fm-artist-rank-size: 35px;
   color: rgba($white, .5);
   font-size: rem(14px);
   font-weight: bold;
-  margin-bottom: 0;
   letter-spacing: .05em;
+  margin-bottom: 0;
 }
 
 .last-fm-artist {
@@ -242,14 +238,10 @@ $last-fm-artist-rank-size: 35px;
 
 @keyframes last-fm-artist__play-count {
   0% {
-    // background-color: $color-gray-d;
-    // color: $color-gray-d;
     opacity: 0;
   }
 
   100% {
-    // background-color: transparent;
-    // color: rgba($white, .5);
     opacity: 1;
   }
 }
@@ -271,8 +263,8 @@ $last-fm-artist-rank-size: 35px;
 
 .last-fm-artist__background-image {
   animation: .4s ease-in-out both last-fm-artist__background-image;
-  background-size: cover;
   background-position: 50% 50%;
+  background-size: cover;
   border-radius: 2px;
   height: 100%;
   left: 0;
@@ -290,10 +282,10 @@ $last-fm-artist-rank-size: 35px;
   animation: .4s ease-in-out both last-fm-artist__background-image;
   background-image: linear-gradient(180deg, rgba($black, 0), rgba($black, .9));
   border-radius: 2px;
+  bottom: 0;
   height: 100%;
   left: 0;
   position: absolute;
-  bottom: 0;
   width: 100%;
 }
 
@@ -359,12 +351,12 @@ $last-fm-artist-rank-size: 35px;
     background: $color-gray-e;
     // transform: scale(1);
   }
-  
+
   25% {
     background: darken($color-gray-e, 7.5%);
     // transform: scale(1.015);
   }
-  
+
   50% {
     background: $color-gray-e;
     // transform: scale(1);

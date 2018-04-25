@@ -25,7 +25,6 @@
   color: $base-font-color;
   display: block;
   position: relative;
-  // padding: $gutter;
 
   &:hover,
   &:active,
@@ -85,7 +84,6 @@
 
 .article-summary__date {
   background: $white;
-  // border-radius: 0;
   box-shadow: 0 0 0 5px rgba($black, .05);
   display: block;
   height: 55px;
@@ -139,7 +137,7 @@
   font-weight: bold;
   letter-spacing: .05em;
   line-height: 1.1;
-  padding: $gutter/3 $gutter/2;
+  padding: ($gutter / 3) ($gutter / 2);
   text-transform: uppercase;
   vertical-align: top;
 }
@@ -201,4 +199,3 @@
     margin-bottom: $gutter * 1.5;
   }
 }
-

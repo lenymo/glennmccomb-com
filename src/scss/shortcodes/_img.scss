@@ -14,8 +14,8 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .img-shortcode__img-wrapper {
-  overflow: hidden;
   margin-bottom: $gutter * .25;
+  overflow: hidden;
 
   img {
     margin-bottom: 0 !important;
@@ -28,8 +28,8 @@
 
 .img-shortcode__img-lqip {
   filter: blur(50px) saturate(75%);
-  transition: all 1s ease;
   transform: scale(1.2);
+  transition: all 1s ease;
 }
 
 .img-shortcode {

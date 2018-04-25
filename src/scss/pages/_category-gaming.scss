@@ -38,7 +38,6 @@ $page-header-icon-gaming-margin-lg: 6px;
   .section__page-header {
     background-color: $page-header-bg-gaming;
     background-image: url('/img/uploads/featured-image-category-gaming.png');
-    // background-position: 50% 50%;
     background-size: cover;
   }
 
@@ -64,7 +63,6 @@ $page-header-icon-gaming-margin-lg: 6px;
 .page-header__icon-gaming-key {
   background: $page-header-develpopment-icon-key-bg;
   border-radius: $page-header-icon-gaming-border-radius-sm;
-  // border-bottom: $page-header-icon-gaming-border-radius-sm solid lighten($page-header-bg-gaming, 10%);
   box-shadow: 0 $page-header-icon-gaming-border-bottom-sm 0 $page-header-develpopment-icon-key-shadow;
   color: lighten($page-header-bg-gaming, 50%);
   font-size: $page-header-icon-gaming-font-size-sm;
@@ -72,13 +70,13 @@ $page-header-icon-gaming-margin-lg: 6px;
   height: $page-header-icon-gaming-size-sm;
   line-height: $page-header-icon-gaming-size-sm;
   position: absolute;
-  text-transform: uppercase;
   text-align: center;
+  text-transform: uppercase;
   width: $page-header-icon-gaming-size-sm;
 
   &.w {
-    top: $page-header-icon-gaming-margin-sm;
     left: $page-header-icon-gaming-size-sm - ($page-header-icon-gaming-margin-sm / 4);
+    top: $page-header-icon-gaming-margin-sm;
   }
 
   &.a,
@@ -107,17 +105,17 @@ $page-header-icon-gaming-margin-lg: 6px;
   }
 
   .page-header__icon-gaming-key {
-    border-radius: $page-header-icon-gaming-border-radius-md;
     border-bottom-width: $page-header-icon-gaming-border-radius-md;
-    font-size: $page-header-icon-gaming-font-size-md;
+    border-radius: $page-header-icon-gaming-border-radius-md;
     box-shadow: 0 $page-header-icon-gaming-border-bottom-md 0 lighten($page-header-bg-gaming, 10%);
+    font-size: $page-header-icon-gaming-font-size-md;
     height: $page-header-icon-gaming-size-md;
     line-height: $page-header-icon-gaming-size-md;
     width: $page-header-icon-gaming-size-md;
 
     &.w {
-      top: $page-header-icon-gaming-margin-md;
       left: $page-header-icon-gaming-size-md - ($page-header-icon-gaming-margin-md / 4);
+      top: $page-header-icon-gaming-margin-md;
     }
 
     &.a,
@@ -143,8 +141,8 @@ $page-header-icon-gaming-margin-lg: 6px;
   }
 
   .page-header__icon-gaming-key {
-    border-radius: $page-header-icon-gaming-border-radius-lg;
     border-bottom-width: $page-header-icon-gaming-border-radius-lg;
+    border-radius: $page-header-icon-gaming-border-radius-lg;
     box-shadow: 0 $page-header-icon-gaming-border-bottom-lg 0 lighten($page-header-bg-gaming, 10%);
     font-size: $page-header-icon-gaming-font-size-lg;
     height: $page-header-icon-gaming-size-lg;
@@ -152,8 +150,8 @@ $page-header-icon-gaming-margin-lg: 6px;
     width: $page-header-icon-gaming-size-lg;
 
     &.w {
-      top: $page-header-icon-gaming-margin-lg;
       left: $page-header-icon-gaming-size-lg - ($page-header-icon-gaming-margin-lg / 4);
+      top: $page-header-icon-gaming-margin-lg;
     }
 
     &.a,

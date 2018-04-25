@@ -15,19 +15,19 @@ iframe.codepen {
 }
 
 .iframe-wrapper {
-  height: 0; 
+  height: 0;
   margin-bottom: $base-margin-bottom-xs;
   overflow: hidden;
-  padding-bottom: 56.25%; 
-  padding-top: 30px; 
+  padding-bottom: 56.25%;
+  padding-top: 30px;
   position: relative;
 
   iframe {
     height: 100%;
-    left: 0; 
-    position: absolute; 
-    top: 0; 
-    width: 100%; 
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
   }
 }
 

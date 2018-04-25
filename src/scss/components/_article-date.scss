@@ -18,12 +18,9 @@ $article-date-size: 70px;
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .article-date {
-  // background: lighten($color-gray-e, 3%);
   background: rgba($white, .75);
-  // border: 5px solid rgba($black, .1);
   border-radius: 50%;
   box-shadow: 0 0 0 7px rgba($black, .05);
-  // color: $color-gray-6;
   display: block;
   font-family: $article-date-font-family;
   height: $article-date-size;
@@ -34,17 +31,15 @@ $article-date-size: 70px;
 }
 
 .article-date__month {
-  // color: $color-secondary;
   display: block;
   font-size: rem(14px);
   font-weight: bold;
-  line-height: 1;
   letter-spacing: rem(.5px);
+  line-height: 1;
   text-transform: uppercase;
 }
 
 .article-date__day {
-  // color: $color-primary;
   display: block;
   font-size: rem(36px);
   font-weight: bold;
@@ -54,8 +49,8 @@ $article-date-size: 70px;
 }
 
 .article-date__day-suffix {
-  font-size: rem(14px);
   display: none;
+  font-size: rem(14px);
   text-transform: uppercase;
 }
 

@@ -96,9 +96,9 @@ $page-header-padding-bottom-xl: $gutter * 6;
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .page-header__title {
-  margin-bottom: 0;
-  line-height: 1.1;
   letter-spacing: -.025em;
+  line-height: 1.1;
+  margin-bottom: 0;
 }
 
 @include respond-above(xl) {
@@ -128,8 +128,8 @@ $page-header-padding-bottom-xl: $gutter * 6;
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .page-header__featured-image {
-  background-size: cover;
   background-position: 50% 50%;
+  background-size: cover;
   height: 100%;
   left: 0;
   overflow: hidden;
@@ -141,7 +141,7 @@ $page-header-padding-bottom-xl: $gutter * 6;
 .section__page-header {
   &.-has-featured {
     position: relative;
-    
+
     .container__page-header {
       z-index: 1;
     }

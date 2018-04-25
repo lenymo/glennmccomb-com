@@ -9,22 +9,20 @@
   text-align: right;
 
   ul {
-    margin-left: 0;
     margin-bottom: 0;
+    margin-left: 0;
 
     li {
-      line-height: 1.1;
       display: block;
+      line-height: 1.1;
       margin-bottom: $gutter * .25;
     }
 
     a {
       border: 0;
       color: $link-font-color;
-      // font-size: $article-font-size-xs;
 
       &:hover {
-        // border: 0;
         color: $link-font-color-hover;
       }
     }
@@ -37,7 +35,7 @@
       }
     }
   }
-    
+
   // Neat implemention of custom list item numbers found here:
   // https://scotch.io/tutorials/setup-a-react-environment-using-webpack-and-babel
 
@@ -87,7 +85,7 @@
     > a {
       // font-weight: 400;
     }
-    
+
     li > a {
       color: $color-gray-8;
       // font-weight: bold;
@@ -208,8 +206,8 @@
 
 .table-of-contents__toggle-icon-bar--3,
 .table-of-contents__toggle-icon-bar--4 {
-  width: 85%;
   margin-left: 15%;
+  width: 85%;
 }
 
 .table-of-contents__toggle-icon-bar--5 {
@@ -224,8 +222,8 @@
 .table-of-contents__toggle-label {
   color: $color-gray-c;
   display: inline-block;
-  font-weight: bold;
   font-size: rem(12px);
+  font-weight: bold;
   letter-spacing: .05em;
   line-height: 1.1;
   margin-left: $gutter * .5;
@@ -259,7 +257,6 @@
 @include respond-above(sm) {
   .table-of-contents__wrapper {
     margin-bottom: 0;
-    // margin-left: 50px;
   }
 }
 
@@ -278,7 +275,6 @@
 
 .table-of-contents__title {
   color: $color-gray-c;
-  // display: none;
   font-size: rem(16px);
   letter-spacing: .05em;
   margin-bottom: $gutter * .5;

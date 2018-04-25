@@ -18,18 +18,14 @@ $page-header-development-icon-shadow: darken($page-header-development-icon-color
   .section__page-header {
     background-color: $page-header-bg-development;
     background-image: url('/img/uploads/featured-image-category-development.png');
-    // background-position: 50% -40%;
     background-size: cover;
   }
 
   .page-header__icon {
     background-color: $page-header-bg-development;
-    // background-color: transparent;
-    // border-color: transparent;
   }
 
   .page-header__icon-wrapper {
-    // color: $white;
     color: $page-header-development-icon-color;
     font-family: $heading-font-family;
     font-size: rem(40px);
@@ -46,7 +42,6 @@ $page-header-development-icon-shadow: darken($page-header-development-icon-color
                  0 4px 0 $page-header-development-icon-shadow;
     top: 50%;
     transform: translateY(-50%) translateX(-50%);
-    // width: 100%;
   }
 }
 
@@ -58,13 +53,13 @@ $page-header-development-icon-shadow: darken($page-header-development-icon-color
   }
 }
 
-@include respond-above(sm) {
-  .category-development {
-    .page-header__icon-wrapper {
-      // font-size: rem(60px);
-    }
-  }
-}
+// @include respond-above(sm) {
+//   .category-development {
+//     .page-header__icon-wrapper {
+//       // font-size: rem(60px);
+//     }
+//   }
+// }
 
 @include respond-above(lg) {
   .category-development {

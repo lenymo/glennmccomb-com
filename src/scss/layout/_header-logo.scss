@@ -37,15 +37,13 @@ $header-logo-shadow-size: 10px;
   height: $header-logo-size;
   margin-bottom: -13px;
   margin-top: -10px;
-  vertical-align: top;
   position: relative;
+  vertical-align: top;
   width: $header-logo-size;
   z-index: $z-index-site-header-logo-svg;
 
   .circle {
     fill: $color-primary-darker;
-    // stroke: $color-primary-lighter;
-    // stroke-width: 0;
     transition: all .1s ease;
   }
 
@@ -57,7 +55,6 @@ $header-logo-shadow-size: 10px;
   #g,
   #m {
     use {
-      // fill: rgba($white, .5);
       fill: mix($color-primary, $white, 50%);
       transition: all .3s ease;
     }
@@ -106,15 +103,14 @@ $header-logo-shadow-size: 10px;
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .site-header__logo-shadow {
-  border-radius: 50%;
   background-color: rgba($black, .05);
+  border-radius: 50%;
   display: block;
-  // display: none;
   height: $header-logo-size + $header-logo-shadow-size;
-  left: -($header-logo-shadow-size / 2);
+  left: -($header-logo-shadow-size * .5);
   margin-top: -10px;
   position: absolute;
-  top: -($header-logo-shadow-size / 2);
+  top: -($header-logo-shadow-size * .5);
   transition: all .2s ease;
   width: $header-logo-size + $header-logo-shadow-size;
   z-index: $z-index-site-header-logo-shadow;
@@ -145,7 +141,6 @@ $header-logo-shadow-size: 10px;
 
     .circle-outer {
       fill: $color-gray-2;
-      // fill: rgba($white, .025);
     }
      
     #g,
