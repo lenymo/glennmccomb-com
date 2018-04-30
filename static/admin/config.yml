@@ -24,6 +24,7 @@ collections:
       - {label: "SEO description", name: "description", widget: "text", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Custom CSS class", name: "custom_class", widget: "string", required: false}
+      - {label: "Custom Stylesheet", name: "custom_stylesheet", widget: "string", required: false}
       - {label: "Transparent site header", name: "transparent_header", widget: "boolean", required: false}
       - {label: "Featured image opacity (0-1)", name: "featured_opacity", widget: "number", required: false}
       - {label: "Page header dark background", name: "dark_bg", widget: "boolean", required: false}
