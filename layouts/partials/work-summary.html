@@ -1,0 +1,32 @@
+<!--
+//
+//  WORK SUMMARY
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<div class="row row__work-summary">
+  <div class="col-sm-12 col__work-summary">
+    <article class="work-summary">
+
+      <a href="{{ .Permalink }}" class="work-summary__link">
+        <h3 class="article-summary__title">
+          {{ .Title }}
+        </h3>
+
+        <p class="article-summary__excerpt">
+          {{ $truncated := .Summary | truncate 160 "" }}
+          {{ $summary := .Summary | markdownify }}
+
+          {{ if gt (len .Summary | markdownify ) (len $truncated | markdownify) }}
+            
+            {{ $truncated }}...
+
+          {{ else }}
+              
+            {{ $summary }}
+
+          {{ end }}
+        </p>
+      </a><!-- .work-summary__link -->
+    </article><!-- .work-summary -->
+  </div><!-- .col -->
+</div><!-- .row -->

@@ -1,0 +1,27 @@
+{{ partial "head" . }}
+
+<body class="{{ .Title | urlize }} work-{{ .Title | urlize }}">
+
+  {{ partial "header" . }}
+
+  {{ partial "page-header" . }}
+
+  <section class="section section__work-summary">
+    <div class="container container__work-summary">
+      
+      {{ $paginator := .Paginate (where .Data.Pages "Type" "work") }}
+
+      {{ range $paginator.Pages }}
+        {{ partial "work-summary" . }}
+      {{ end }}
+
+      {{ partial "pagination.html" . }}
+
+    </div>
+  </section>
+
+  {{ partial "footer" . }}
+
+{{ partial "foot" . }}
+  
+</body>
