@@ -5,6 +5,7 @@ featured: /img/uploads/featured-image-article-rust-survival-tips.jpg
 categories:
   - Gaming
 custom_class: rust-survival-tips
+custom_stylesheet: rust-survival-tips
 transparent_header: true
 featured_opacity: 0.2
 dark_bg: true

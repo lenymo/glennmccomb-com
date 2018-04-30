@@ -7,6 +7,7 @@ categories:
   - gaming
 featured_opacity: '0.2'
 custom_class: rust-menu-ui
+custom_stylesheet: rust-menu-ui
 dark_bg: true
 page_header_bg_color: '#2b2925'
 ---

@@ -14,14 +14,27 @@
   
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "main.css" }}" />
 
+  <!-- Article specific CSS. -->
+  {{ if and (eq .Type "articles") (eq .Kind "page") }}
+    {{ if isset .Params "custom_stylesheet" }}
+      {{ $.Scratch.Add "stylesheet_filename" "article-" }}
+      {{ $.Scratch.Add "stylesheet_filename" .Params.custom_stylesheet }}
+      {{ $.Scratch.Add "stylesheet_filename" ".css" }}
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash ($.Scratch.Get "stylesheet_filename") }}" />
+    {{ end }}
+  {{ end }}
+  
+  <!-- Categories CSS. -->
   {{ if eq .Type "categories" }}
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "categories.css" }}" />
   {{ end }}
-
+  
+  <!-- About CSS. -->
   {{ if eq .Type "about" }}
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "about.css" }}" />
   {{ end }}
 
+  <!-- Contact CSS. -->
   {{ if eq .Type "contact" }}
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "contact.css" }}" />
   {{ end }}
