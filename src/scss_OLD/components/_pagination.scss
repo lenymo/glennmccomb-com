@@ -1,0 +1,91 @@
+
+
+//
+//  PAGINATION
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.pagination {
+  margin: $gutter auto 0;
+}
+
+@include respond-above(sm) {
+  .pagination {
+    margin-top: $gutter * 2;
+  }
+}
+
+.pagination__item {
+  display: inline-block;
+  margin-left: $gutter * .125;
+  margin-right: $gutter * .125;
+}
+
+// .pagination__item--previous,
+// .pagination__item--next {
+//   display: none;
+// }
+
+.pagination__link {
+  background: $color-gray-f;
+  border-bottom: 3px solid $color-gray-d;
+  color: $color-primary-lighter;
+  display: block;
+  font-weight: bold;
+  padding: ($gutter * .25) ($gutter * .75);
+  transition: all .2s ease;
+}
+
+@include respond-above(sm) {
+  .pagination__link {
+    &:hover {
+      background: $white;
+      border-bottom-color: $color-gray-c;
+    }
+  }
+}
+
+.pagination__link--first,
+.pagination__link--previous,
+.pagination__link--next,
+.pagination__link--last {
+  background: transparent;
+  border-bottom-color: transparent;
+  color: $color-gray-a;
+}
+
+@include respond-above(sm) {
+  .pagination__link--previous,
+  .pagination__link--next {
+    &:hover {
+      background: $color-gray-f;
+      border-bottom-color: $color-gray-d;
+    }
+  }
+}
+
+.pagination__link--current {
+  background: $white;
+  border-bottom-color: $color-secondary;
+  color: $color-secondary;
+  cursor: default;
+}
+
+@include respond-above(sm) {
+  .pagination__link--current {
+    &:hover {
+      border-bottom-color: $color-secondary;
+      color: $color-secondary;
+    }
+  }
+}
+
+@include respond-above(xs) {
+  .pagination__item {
+    margin-left: $gutter * .25;
+    margin-right: $gutter * .25;
+  }
+
+  .pagination__link {
+    padding: ($gutter * .5) $gutter;
+  }
+}

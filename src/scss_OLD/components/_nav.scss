@@ -1,0 +1,21 @@
+
+
+//
+//  NAV
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+nav {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    a {
+      &:hover,
+      &:active,
+      &:focus {
+        text-decoration: none;
+      }
+    }
+  }
+}

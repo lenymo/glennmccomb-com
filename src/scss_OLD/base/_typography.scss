@@ -1,0 +1,436 @@
+
+
+//
+//  TYPOGRAPHY
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+
+//
+//  COLOR
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$base-font-color: $color-gray-4;
+
+$link-font-color: lighten($color-blue, 7.5%);
+$link-font-color-hover: lighten($link-font-color, 5%);
+
+$heading-font-color: $base-font-color;
+$heading-link-font-color: $link-font-color;
+$heading-link-font-color-hover: darken($heading-link-font-color, 5%);
+
+$small-font-color: $color-gray-8;
+
+
+//
+//  FONT FAMILIES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$base-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$base-line-height: 1.7;
+$base-margin-bottom-xs: $base-font-size * $base-line-height;
+$base-margin-bottom: $base-font-size * ($base-line-height * 1.5);
+
+$heading-font-family: 'Volkhov', Georgia, Palatino, Garamond, Bookman, sans-serif;
+
+
+//
+//  SIZES, WEIGHTS, ETC
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$heading-line-height: 1.5;
+$heading-font-weight: bold;
+$heading-text-transform: none;    // Default = none
+$heading-letter-spacing: -.025em;  // Default = normal
+$heading-margin-bottom-xs: $base-margin-bottom-xs;
+$heading-margin-bottom: $base-margin-bottom;
+
+$h1-font-size-sm: rem(32px);
+$h1-font-size: rem(48px);
+$h1-font-size-lg: rem(60px);
+$h1-font-family: $heading-font-family;
+
+$h2-font-size-sm: rem(28px);
+$h2-font-size: rem(36px);
+$h2-font-family: $heading-font-family;
+
+$h3-font-size-sm: rem(24px);
+$h3-font-size: rem(28px);
+$h3-font-family: $heading-font-family;
+
+$h4-font-size-sm: rem(21px);
+$h4-font-size: rem(24px);
+$h4-font-family: $heading-font-family;
+
+$h5-font-size-sm: rem(18px);
+$h5-font-size: rem(20px);
+$h5-font-family: $base-font-family;
+
+$h6-font-size: rem($base-font-size);
+$h6-font-family: $base-font-family;
+
+$lead-font-size-sm: rem(21px);
+$lead-font-size: rem(28px);
+$lead-line-height: 1.5;
+
+$small-font-size: rem($base-font-size * .85);
+
+$blockquote-font-size-xs: rem(18px);
+$blockquote-font-size-sm: rem(21px);
+$blockquote-font-size-md: rem(24px);
+$blockquote-font-size-lg: rem(26px);
+
+$hr-color: $color-gray-e;
+
+
+//
+//  SITE CONTENT FONT SIZES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$site-content-font-size-xs: rem(18px);
+$site-content-font-size-sm: rem(21px);
+
+
+//
+//  STYLES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+html {
+  font-size: $base-font-size;
+}
+
+body {
+  color: $base-font-color;
+  font-family: $base-font-family;
+  line-height: $base-line-height;
+}
+
+
+//
+//  HEADINGS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+h1, h2, h3, h4, h5, h6 {
+  color: $heading-font-color;
+  font-family: $heading-font-family;
+  font-weight: $heading-font-weight;
+  line-height: $heading-line-height;
+  margin: 0;
+  margin-bottom: $heading-margin-bottom-xs;
+
+  // Text transform
+  @if $heading-text-transform != 'none' {
+    text-transform: $heading-text-transform;
+  }
+
+  // Letter spacing
+  @if $heading-letter-spacing != 'normal' {
+    letter-spacing: $heading-letter-spacing;
+  }
+
+  a {
+    color: $heading-link-font-color;
+
+    &:hover {
+      color: $heading-link-font-color-hover;
+    }
+  }
+}
+
+@include respond-above(xs) {
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: $base-margin-bottom;
+  }
+}
+
+h1 {
+  font-family: $h1-font-family;
+  font-size: $h1-font-size;
+
+  @include respond-below(sm) {
+    font-size: $h1-font-size-sm;
+  }
+
+  @include respond-above(lg) {
+    font-size: $h1-font-size-lg;
+  }
+}
+
+h2 {
+  font-family: $h2-font-family;
+  font-size: $h2-font-size;
+
+  @include respond-below(sm) {
+    font-size: $h2-font-size-sm;
+  }
+}
+
+h3 {
+  font-family: $h3-font-family;
+  font-size: $h3-font-size;
+
+  @include respond-below(sm) {
+    font-size: $h3-font-size-sm;
+  }
+}
+
+h4 {
+  font-family: $h4-font-family;
+  font-size: $h4-font-size;
+
+  @include respond-below(sm) {
+    font-size: $h4-font-size-sm;
+  }
+}
+
+h5 {
+  font-family: $h5-font-family;
+  font-size: $h5-font-size;
+
+  @include respond-below(sm) {
+    font-size: $h5-font-size-sm;
+  }
+}
+
+h6 {
+  font-family: $h6-font-family;
+  font-size: $h6-font-size;
+}
+
+
+//
+//  LINKS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+a {
+  color: $link-font-color;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+  
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+// Hover
+@include respond-above(sm) {
+  a {
+    &:hover,
+    &:active,
+    &:focus {
+      color: $link-font-color-hover;
+      text-decoration: underline;
+    }
+  }
+}
+
+
+//
+//  PARAGRAPH
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+p {
+  margin: 0;
+  margin-bottom: $base-margin-bottom-xs;
+
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+}
+
+@include respond-above(xs) {
+  p {
+    margin-bottom: $base-margin-bottom;
+  }
+}
+
+
+//
+//  LEAD
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+p {
+  &.lead {
+    font-size: $lead-font-size-sm;
+    line-height: $lead-line-height;
+  }
+}
+
+@include respond-above(sm) {
+  p {
+    &.lead {
+      font-size: $lead-font-size;
+    }
+  }
+}
+
+
+//
+//  BLOCKQUOTE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+blockquote {
+  font-family: $heading-font-family;
+  font-size: $blockquote-font-size-xs;
+  line-height: 1.5;
+  margin: 0;
+  padding-left: $gutter * 2.5;
+  position: relative;
+
+  &:before,
+  &:after {
+    content: '“';
+    color: $color-gray-c;
+    display: block;
+    font-family: $base-font-family;
+    font-size: rem(80px);
+    left: 0;
+    position: absolute;
+    top: 0;
+  }
+
+  &:before {
+    line-height: .85;
+  }
+
+  &:after {
+    bottom: 0;
+    content: '”';
+    display: none;
+    left: auto;
+    line-height: 1px;
+    right: 0;
+    top: auto;
+  }
+}
+
+@include respond-above(xs) {
+  blockquote {
+    font-size: $blockquote-font-size-sm;
+    padding-left: $gutter * 2.5;
+    padding-right: $gutter * 2.5;
+
+    &:before,
+    &:after {
+      font-size: rem(100px);
+    }
+
+    &:before {
+      left: -$gutter;
+    }
+
+    &:after {
+      display: block;
+      right: -$gutter;
+    }
+  }
+}
+
+@include respond-above(sm) {
+  blockquote {
+    font-size: $blockquote-font-size-md;
+    padding-left: $gutter * 2;
+    padding-right: $gutter * 2;
+
+    &:before,
+    &:after {
+      font-size: rem(120px);
+    }
+
+    &:before {
+      left: -$gutter * 2;
+    }
+
+    &:after {
+      right: -$gutter * 2;
+    }
+  }
+}
+
+@include respond-above(md) {
+  blockquote {
+    font-size: $blockquote-font-size-lg;
+    padding-left: $gutter * 3;
+    padding-right: $gutter * 3;
+
+    &:before,
+    &:after {
+      font-size: rem(140px);
+    }
+
+    &:before {
+      left: -$gutter * 2;
+    }
+
+    &:after {
+      right: -$gutter * 2;
+    }
+  }
+}
+
+
+//
+//  SMALL
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+small {
+  color: $small-font-color;
+  font-size: $small-font-size;
+
+  a {
+    color: $small-font-color;
+    text-decoration: underline;
+
+    &:hover {
+      color: $small-font-color;
+      text-decoration: none;
+    }
+  }
+}
+
+p {
+  small {
+    display: inline-block;
+    line-height: 1.5;
+  }
+}
+
+
+//
+//  LISTS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+
+//
+//  HR
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+hr {
+  border: 0;
+  border-top: 1px solid $color-gray-e;
+  margin-bottom: $gutter * 2;
+  margin-top: $gutter * 2;
+}
+
+
+//
+//  SITE CONTENT
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.site {
+  font-size: $site-content-font-size-xs;
+}
+
+@include respond-above(xs) {
+  .site {
+    font-size: $site-content-font-size-sm;
+  }
+}

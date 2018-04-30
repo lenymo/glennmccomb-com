@@ -1,0 +1,172 @@
+
+
+//
+//  HEADER LOGO
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+
+//
+//  VARIABLES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$header-logo-size: 80px;
+$header-logo-shadow-size: 10px;
+
+
+//
+//  STYLES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.site-header__logo {
+  display: inline-block;
+  margin-right: $gutter;
+  vertical-align: top;
+  position: relative;
+  z-index: $z-index-site-header-logo;
+}
+
+// .site-header__logo-img {
+//   margin-bottom: -11px;
+//   margin-top: -7px;
+//   margin-right: $gutter;
+//   vertical-align: top;
+//   width: $header-logo-size;
+// }
+
+.site-header__logo-svg {
+  height: $header-logo-size;
+  margin-bottom: -13px;
+  margin-top: -10px;
+  position: relative;
+  vertical-align: top;
+  width: $header-logo-size;
+  z-index: $z-index-site-header-logo-svg;
+
+  .circle {
+    fill: $color-primary-darker;
+    transition: all .1s ease;
+  }
+
+  .circle-outer {
+    fill: $color-primary-lighter;
+    transition: all .2s ease;
+  }
+
+  #g,
+  #m {
+    use {
+      fill: mix($color-primary, $white, 50%);
+      transition: all .3s ease;
+    }
+  }
+}
+
+
+//
+//  MOBILE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@include respond-below(sm) {
+  .site-header__logo {
+    position: relative;
+    z-index: $z-index-site-header-logo-mobile;
+  }
+}
+
+
+//
+//  HOVER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@include respond-above(sm) {
+  .site-header__logo {
+    &:hover {
+      .site-header__logo-svg {
+        .circle {
+          fill: $color-primary-lighter;
+        }
+
+        #g,
+        #m {
+          use {
+            fill: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+//
+//  LOGO SHADOW
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.site-header__logo-shadow {
+  background-color: rgba($black, .05);
+  border-radius: 50%;
+  display: block;
+  height: $header-logo-size + $header-logo-shadow-size;
+  left: -($header-logo-shadow-size * .5);
+  margin-top: -10px;
+  position: absolute;
+  top: -($header-logo-shadow-size * .5);
+  transition: all .2s ease;
+  width: $header-logo-size + $header-logo-shadow-size;
+  z-index: $z-index-site-header-logo-shadow;
+}
+
+// Hover.
+@include respond-above(sm) {
+  .site-header__logo {
+    &:hover {
+      .site-header__logo-shadow {
+        background-color: rgba($black, .1);
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+
+//
+//  TRANSPARENT SITE HEADER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.-has-transparent-site-header {
+  .site-header__logo-svg {
+    .circle {
+      fill: $color-gray-1;
+    }
+
+    .circle-outer {
+      fill: $color-gray-2;
+    }
+     
+    #g,
+    #m {
+      use {
+        fill: rgba($white, .4);
+      }
+    }
+  }
+}
+
+// Hover.
+@include respond-above(sm) {
+  .-has-transparent-site-header {
+    .site-header__logo {
+      &:hover {
+        .site-header__logo-svg {
+          .circle {
+            fill: $color-gray-1;
+          }
+
+          .circle-outer {
+            fill: $color-gray-1;
+          }
+        }
+      }
+    }
+  }
+}

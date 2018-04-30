@@ -1,0 +1,33 @@
+
+
+//
+//  ARTICLE SUMMARY PARALLAX HOVER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@include respond-above(md) {
+  .article-summary__content-wrapper {
+    background-color: $white;
+    position: relative;
+    z-index: 1;
+  }
+
+  .article-summary__link {
+    background: transparent;
+  }
+
+  // .article-summary__featured-image {
+  //   transition: all .1s ease;
+  //   -moz-transition: none;
+  //   transform-origin: 50% 80%;
+  // }
+
+  .article-summary {
+    box-shadow: 0 0 50px rgba($black, 0);
+    overflow: hidden;
+
+
+    &.-is-being-hovered {
+      box-shadow: 0 10px 50px rgba($black, .05);
+    }
+  }
+}

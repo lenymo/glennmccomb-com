@@ -1,0 +1,81 @@
+
+
+//
+//  ARTICLE DATE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+
+//
+//  VARIABLES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$article-date-font-family: $heading-font-family;
+$article-date-size: 70px;
+
+
+//
+//  STYLES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.article-date {
+  background: rgba($white, .75);
+  border-radius: 50%;
+  box-shadow: 0 0 0 7px rgba($black, .05);
+  display: block;
+  font-family: $article-date-font-family;
+  height: $article-date-size;
+  padding: 12px;
+  text-align: center;
+  width: $article-date-size;
+  z-index: $z-index-article-date;
+}
+
+.article-date__month {
+  display: block;
+  font-size: rem(14px);
+  font-weight: bold;
+  letter-spacing: rem(.5px);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.article-date__day {
+  display: block;
+  font-size: rem(36px);
+  font-weight: bold;
+  line-height: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.article-date__day-suffix {
+  display: none;
+  font-size: rem(14px);
+  text-transform: uppercase;
+}
+
+.article-date__year {
+  display: none;
+}
+
+// .article-date__year {
+//   bottom: 0;
+//   color: $color-gray-c;
+//   font-size: rem(12px);
+//   left: 50%;
+//   letter-spacing: 1px;
+//   line-height: 1;
+//   opacity: 0;
+//   position: absolute;
+//   transition: all .2s ease;
+//   transform: translateX(-50%);
+//   z-index: 0;
+// }
+
+// .article-date {
+//   &:hover {
+//     .article-date__year {
+//       opacity: 1;
+//     }
+//   }
+// }

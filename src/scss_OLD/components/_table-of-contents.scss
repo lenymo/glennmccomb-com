@@ -1,0 +1,295 @@
+
+
+//
+//  TABLE OF CONTENTS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.table-of-contents {
+  margin-bottom: $base-margin-bottom-xs;
+  text-align: right;
+
+  ul {
+    margin-bottom: 0;
+    margin-left: 0;
+
+    li {
+      display: block;
+      line-height: 1.1;
+      margin-bottom: $gutter * .25;
+    }
+
+    a {
+      border: 0;
+      color: $link-font-color;
+
+      &:hover {
+        color: $link-font-color-hover;
+      }
+    }
+
+    ul {
+      margin-top: $gutter * .25;
+
+      ul {
+        margin-left: $gutter;
+      }
+    }
+  }
+
+  // Neat implemention of custom list item numbers found here:
+  // https://scotch.io/tutorials/setup-a-react-environment-using-webpack-and-babel
+
+  // #TableOfContents {
+  //   position: relative;
+
+  //   &:before {
+  //     background: $color-gray-f;
+  //     content: '';
+  //     display: block;
+  //     height: 100%;
+  //     left: 12px;
+  //     position: absolute;
+  //     top: 0;
+  //     transform: translateX(-50%);
+  //     width: 5px;
+  //     z-index: 1;
+  //   }
+
+  //   > ul > li > ul > li {
+  //     counter-increment: a;
+
+  //     &:before {
+  //       background-color: $color-gray-e;
+  //       border-radius: 50%;
+  //       box-shadow: 0 0 4px 4px $white;
+  //       color: $color-gray-a;
+  //       content: counter(a);
+  //       display: inline-block;
+  //       font-size: rem(12px);
+  //       font-weight: bold;
+  //       height: 24px;
+  //       line-height: 24px;
+  //       margin-right: 10px;
+  //       position: relative;
+  //       text-align: center;
+  //       vertical-align: top;
+  //       width: 24px;
+  //       z-index: 2;
+  //     }
+  //   }
+  // }
+
+  nav > ul > li > ul > li {
+    margin-bottom: $gutter;
+
+    > a {
+      // font-weight: 400;
+    }
+
+    li > a {
+      color: $color-gray-8;
+      // font-weight: bold;
+      // text-transform: uppercase;
+    }
+  }
+}
+
+// @include respond-above(xs) {
+//   .table-of-contents {
+//     ul {
+//       a {
+//         font-size: $article-font-size-sm;
+//       }
+//     }
+//   }
+// }
+
+@include respond-above(sm) {
+  .table-of-contents {
+    margin-bottom: 0;
+
+    ul {
+      li {
+        margin-bottom: $gutter * .5;
+      }
+
+      ul {
+        margin-top: $gutter * .5;
+      }
+    }
+
+    nav > ul > li > ul > li {
+      margin-bottom: $gutter * 1.5;
+    }
+
+    &.-is-expanded {
+      margin-bottom: $base-margin-bottom;
+    }
+  }
+}
+
+
+//
+//  TOGGLE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.table-of-contents__toggle {
+  display: inline-block;
+
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+@include respond-above(sm) {
+  .table-of-contents__toggle {
+    position: absolute;
+    right: 0;
+    top: -$gutter * 2;
+  }
+}
+
+@include respond-above(md) {
+  .table-of-contents__toggle {
+    position: absolute;
+    right: 0;
+    top: -$gutter * 2.5;
+  }
+}
+
+
+//
+//  TOGGLE ICON
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.table-of-contents__toggle-icon {
+  display: inline-block;
+  margin-top: 2px;
+  vertical-align: top;
+  width: 40px;
+}
+
+.table-of-contents__toggle-icon-bar {
+  background: $color-gray-d;
+  display: block;
+  height: 3px;
+  margin-bottom: 3px;
+  position: relative;
+  width: 100%;
+
+  &:after {
+    content: '';
+    background: $white;
+    display: block;
+    height: 3px;
+    left: 3px;
+    position: absolute;
+    top: 0;
+    width: 2px;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+// .table-of-contents__toggle-icon-bar-1 {
+//   background: $color-gray-a;
+//   width: 66.66%;
+
+//   &:after {
+//     display: none;
+//   }
+// }
+
+.table-of-contents__toggle-icon-bar--3,
+.table-of-contents__toggle-icon-bar--4 {
+  margin-left: 15%;
+  width: 85%;
+}
+
+.table-of-contents__toggle-icon-bar--5 {
+  display: none;
+}
+
+
+//
+//  TOGGLE LABEL
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.table-of-contents__toggle-label {
+  color: $color-gray-c;
+  display: inline-block;
+  font-size: rem(12px);
+  font-weight: bold;
+  letter-spacing: .05em;
+  line-height: 1.1;
+  margin-left: $gutter * .5;
+  text-align: left;
+  text-transform: uppercase;
+  vertical-align: top;
+  width: 80px;
+}
+
+
+
+//
+//  WRAPPER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.table-of-contents__wrapper {
+  border-bottom: 1px solid $hr-color;
+  display: none;
+  margin-bottom: $gutter * 2;
+  margin-top: $gutter;
+  padding-bottom: $gutter;
+  text-align: left;
+}
+
+@include respond-above(xs) {
+  .table-of-contents__wrapper {
+    padding-bottom: 0;
+  }
+}
+
+@include respond-above(sm) {
+  .table-of-contents__wrapper {
+    margin-bottom: 0;
+  }
+}
+
+.table-of-contents {
+  &.-is-expanded {
+    .table-of-contents__wrapper {
+      display: block;
+    }
+  }
+}
+
+
+//
+//  TITLE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.table-of-contents__title {
+  color: $color-gray-c;
+  font-size: rem(16px);
+  letter-spacing: .05em;
+  margin-bottom: $gutter * .5;
+  text-transform: uppercase;
+}
+
+@include respond-above(xs) {
+  .table-of-contents__title {
+    margin-bottom: $gutter;
+  }
+}
+
+@include respond-above(sm) {
+  .table-of-contents__title {
+    font-size: rem(18px);
+    margin-bottom: $gutter * 1.5;
+  }
+}

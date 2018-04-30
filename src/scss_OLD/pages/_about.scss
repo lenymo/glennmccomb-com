@@ -1,0 +1,364 @@
+
+
+//
+//  ABOUT
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+
+//
+//  LAST FM PERIOD NAV
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.last-fm-period {
+  margin-bottom: $gutter * 2;
+}
+
+.last-fm-period__list-item {
+  display: inline-block;
+}
+
+.last-fm-period__link {
+  border-bottom: 3px solid $color-gray-e;
+  color: $color-gray-a;
+  display: block;
+  font-size: rem(12px);
+  padding: ($gutter * .25) ($gutter * .5);
+  transition: all .2s ease;
+}
+
+.last-fm-period__list-item {
+  &.-is-current {
+    .last-fm-period__link {
+      border-bottom-color: $color-primary;
+      color: $color-primary;
+    }
+  }
+}
+
+@include respond-above(xs) {
+  .last-fm-period__link {
+    font-size: rem(14px);
+  }
+}
+
+@include respond-above(sm) {
+  .last-fm-period__link {
+    font-size: rem(16px);
+    padding: ($gutter * .5) $gutter;
+
+    &:hover {
+      border-bottom-color: $color-primary;
+      color: $color-primary;
+    }
+  }
+}
+
+
+//
+//  LAST FM ARTIST
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$last-fm-artist-rank-size: 35px;
+
+.last-fm-artist {
+  background-color: $color-gray-e;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 2px;
+  color: $white;
+  display: block;
+  height: 200px;
+  margin-bottom: $gutter;
+  padding: $gutter;
+  position: relative;
+  transition: all .2s ease;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $white;
+    text-decoration: none;
+  }
+
+  // &.last-fm-artist--appear {
+  //   opacity: 0;
+  //   transform: scale(.975);
+  // }
+
+  // &.last-fm-artist--appear-active {
+  //   transform: scale(1);
+  //   opacity: 1;
+  // }
+}
+
+@include respond-above(xs) {
+  .last-fm-artist {
+    height: 230px;
+    margin-bottom: $gutter * 2;
+  }
+}
+
+@include respond-above(sm) {
+  .last-fm-artist {
+    height: 320px;
+  }
+}
+
+@include respond-above(md) {
+  .last-fm-artist {
+    height: 280px;
+  }
+}
+
+@include respond-above(lg) {
+  .last-fm-artist {
+    height: 245px;
+  }
+}
+
+
+//
+//  RANK
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.last-fm-artist__rank {
+  background: $color-primary;
+  border-radius: 2px;
+  bottom: $gutter * 2;
+  font-family: $heading-font-family;
+  font-size: rem(16px);
+  font-weight: bold;
+  height: $last-fm-artist-rank-size;
+  left: 0;
+  line-height: $last-fm-artist-rank-size;
+  position: absolute;
+  text-align: center;
+  transform: translateX(-25%);
+  width: $last-fm-artist-rank-size;
+  z-index: 1;
+}
+
+@include respond-above(xs) {
+  .last-fm-artist__rank {
+    transform: translateX(-50%);
+  }
+}
+
+.last-fm-artist {
+  &.-is-artist {
+    .last-fm-artist__rank {
+      animation: .4s ease-in-out both last-fm-artist__rank;
+    }
+  }
+}
+
+@keyframes last-fm-artist__rank {
+  0% {
+    background-color: $color-gray-c;
+    color: $color-gray-c;
+  }
+
+  100% {
+    background: $color-primary;
+    color: $white;
+  }
+}
+
+
+//
+//  META
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.last-fm-artist__meta {
+  bottom: $gutter;
+  left: 0;
+  padding-left: $gutter * 2.5;
+  padding-right: $gutter;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+@include respond-above(sm) {
+  .last-fm-artist__meta {
+    padding-left: $gutter * 2;
+  }
+}
+
+
+//
+//  NAME
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.last-fm-artist__name {
+  color: $white;
+  line-height: 1.1;
+  margin-bottom: 0;
+}
+
+.last-fm-artist {
+  &.-is-artist {
+    .last-fm-artist__name {
+      animation: .1s ease-in-out both last-fm-artist__name;
+    }
+  }
+}
+
+@keyframes last-fm-artist__name {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+//
+//  PLAY COUNT
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.last-fm-artist__play-count {
+  color: rgba($white, .5);
+  font-size: rem(14px);
+  font-weight: bold;
+  letter-spacing: .05em;
+  margin-bottom: 0;
+}
+
+.last-fm-artist {
+  &.-is-artist {
+    .last-fm-artist__play-count {
+      animation: .1s ease-in-out both last-fm-artist__play-count;
+    }
+  }
+}
+
+@keyframes last-fm-artist__play-count {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+//
+//  IMAGE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.last-fm-artist__image {
+  display: none;
+  max-width: 100%;
+}
+
+
+//
+//  BACKGROUND IMAGE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.last-fm-artist__background-image {
+  animation: .4s ease-in-out both last-fm-artist__background-image;
+  background-position: 50% 50%;
+  background-size: cover;
+  border-radius: 2px;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+
+//
+//  OVERLAY
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.last-fm-artist__overlay {
+  animation: .4s ease-in-out both last-fm-artist__background-image;
+  background-image: linear-gradient(180deg, rgba($black, 0), rgba($black, .9));
+  border-radius: 2px;
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+//
+//  FADE IN ANIMATION
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@keyframes last-fm-artist__background-image {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+//
+//  LAST FM ARTIST PLACEHOLDER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.last-fm-artist {
+  &.-is-placeholder {
+    animation: 1s ease infinite last-fm-artist__placeholder;
+    background-color: $color-gray-e;
+
+    .last-fm-artist__rank {
+      background-color: $color-gray-c;
+    }
+
+    .last-fm-artist__name {
+      background-color: $color-gray-d;
+      display: none;
+      height: 1em;
+      margin-bottom: $gutter;
+      width: 90%;
+    }
+
+    .last-fm-artist__play-count {
+      background-color: $color-gray-d;
+      display: none;
+      height: 1em;
+      width: 25%;
+    }
+  }
+}
+
+@for $i from 1 through 12 {
+  .col__last-fm-artist {
+    &:nth-child(#{$i}) {
+      .last-fm-artist {
+        &.-is-placeholder {
+          animation-delay: $i * (1s / 12);
+        }
+      }
+    }
+  }
+}
+
+@keyframes last-fm-artist__placeholder {
+  0% {
+    background: $color-gray-e;
+    // transform: scale(1);
+  }
+
+  25% {
+    background: darken($color-gray-e, 7.5%);
+    // transform: scale(1.015);
+  }
+
+  50% {
+    background: $color-gray-e;
+    // transform: scale(1);
+  }
+}
