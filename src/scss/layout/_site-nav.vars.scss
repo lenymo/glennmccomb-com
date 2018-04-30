@@ -1,0 +1,33 @@
+
+
+//
+//  SITE NAV VARS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+
+//
+//  LAYOUT
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$site-nav-item-padding: ($gutter * .5) $gutter;
+$site-nav-item-padding-md: ($gutter * .75) $gutter;
+
+
+//
+//  COLOR
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$site-nav-bg-color: transparent;
+
+// Standard nav item.
+$site-nav-item-font-color: rgba($white, .75);
+$site-nav-item-bg-color: transparent;
+
+// Hover.
+$site-nav-item-font-color-hover: $white;
+$site-nav-item-bg-color-hover: transparent;
+
+// Current nav item.
+$site-nav-item-current-font-color: $white;
+$site-nav-item-current-bg-color: transparent;
+$site-nav-item-current-border-color: $color-secondary;

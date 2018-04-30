@@ -1,0 +1,31 @@
+
+
+//
+//  SITE NAV CHILDREN VARS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+
+//
+//  LAYOUT
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$site-nav-dropdown-width-sm: 100%;
+$site-nav-dropdown-width-md: 200px;
+$site-nav-dropdown-item-padding-sm: ($gutter * .25) $gutter;
+$site-nav-dropdown-item-padding-md: ($gutter * .5) $gutter;
+
+
+//
+//  COLORS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// Dropdown.
+$site-nav-dropdown-bg-color: $color-primary-darker;
+
+// Standard nav item.
+$site-nav-dropdown-item-bg-color: transparent;
+$site-nav-dropdown-item-font-color: rgba($white, .75);
+
+// Hover.
+$site-nav-dropdown-bg-color-hover: lighten($site-nav-dropdown-bg-color, 2.5%);
+$site-nav-dropdown-item-font-color-hover: $white;

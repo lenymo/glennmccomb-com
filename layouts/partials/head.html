@@ -13,6 +13,19 @@
   <title>{{ if not .IsHome }}{{ if eq .Title "Nba" }} NBA{{ else }} {{ .Title }}{{ end }} | {{ end }}{{ .Site.Title }}</title>
   
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "main.css" }}" />
+
+  {{ if eq .Type "categories" }}
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "categories.css" }}" />
+  {{ end }}
+
+  {{ if eq .Type "about" }}
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "about.css" }}" />
+  {{ end }}
+
+  {{ if eq .Type "contact" }}
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "contact.css" }}" />
+  {{ end }}
+
   <link href="https://fonts.googleapis.com/css?family=Volkhov:400,700" rel="stylesheet">
   
   <!-- Favicons. -->

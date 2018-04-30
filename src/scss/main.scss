@@ -10,11 +10,11 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 @import 'abstracts/variables';
-@import 'abstracts/color';
-@import 'abstracts/functions';
-@import 'abstracts/mixins';
-@import 'abstracts/media-queries';
-@import 'abstracts/z-index';
+// @import 'abstracts/color';
+// @import 'abstracts/functions';
+// @import 'abstracts/mixins';
+// @import 'abstracts/media-queries';
+// @import 'abstracts/z-index';
 
 
 //
@@ -25,13 +25,13 @@
 
 
 //
-//  BASE STUFF
+//  BASE
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 @import 'base/base';
-@import 'base/fonts';
+// @import 'base/fonts';
 @import 'base/typography';
-@import 'base/helpers';
+// @import 'base/helpers';
 
 
 //
@@ -56,7 +56,7 @@
 // HTML.
 @import 'components/nav';
 @import 'components/buttons';
-@import 'components/forms';
+// @import 'components/forms';
 @import 'components/figure';
 @import 'components/iframe';
 @import 'components/code';
@@ -93,15 +93,15 @@
 
 @import 'pages/home';
 @import 'pages/single-article';
-@import 'pages/about';
-@import 'pages/contact';
+// @import 'pages/about';
+// @import 'pages/contact';
 
 @import 'pages/404';
 
-@import 'pages/category-design';
-@import 'pages/category-development';
-@import 'pages/category-gaming';
-@import 'pages/category-nba';
+// @import 'pages/category-design';
+// @import 'pages/category-development';
+// @import 'pages/category-gaming';
+// @import 'pages/category-nba';
 
 
 //

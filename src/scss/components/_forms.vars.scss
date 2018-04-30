@@ -1,0 +1,89 @@
+
+
+//
+//  FORMS VARS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+
+//
+//  FIELD
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// Typography.
+$form-font-size-sm: rem(18px);
+$form-font-size-md: rem(21px);
+
+// Layout.
+$form-field-height-sm: 60px;
+$form-field-height-md: 70px;
+$form-field-padding: 17px;
+
+// Field.
+$form-field-background-color: transparent;
+$form-field-font-color: $base-font-color;
+
+// Border.
+$form-field-border-radius: 3px;
+$form-field-border-width: 2px;
+
+// Border colors.
+$form-field-border-color: $color-gray-d;
+$form-field-border-color-focus: $color-gray-8;
+$form-field-border-color-error: $color-secondary;
+$form-field-border-color-error-focus: darken($form-field-border-color-error, 15%);
+
+
+//
+//  LABEL / SMART PLACEHOLDER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$form-field-placeholder-font-color: $color-gray-7;
+
+$form-field-placeholder-border-radius: 2px;
+
+$form-field-placeholder-background-color: darken($form-field-border-color, 10%);
+$form-field-placeholder-background-color-focus: darken($form-field-border-color-focus, 10%);
+$form-field-placeholder-background-color-error: $form-field-border-color-error;
+$form-field-placeholder-background-color-error-focus: $form-field-border-color-error-focus;
+
+$form-field-placeholder-color: $white;
+$form-field-placeholder-color-focus: $white;
+$form-field-placeholder-color-error: $white;
+$form-field-placeholder-color-error-focus: $white;
+
+// Box shadow.
+$form-field-box-shadow: none;
+$form-field-box-shadow-focus: 0 5px 20px rgba($form-field-border-color, .2);
+$form-field-box-shadow-error: none;
+$form-field-box-shadow-error-focus: 0 5px 20px rgba($form-field-border-color-error, .2);
+
+
+//
+//  CHECK VARIABLES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$form-check-border-radius: 3px;
+$form-check-border-color: $form-field-border-color;
+$form-check-border-color-focus: $form-field-border-color-focus;
+$form-check-checked-color: $color-gray-8;
+
+
+//
+//  DARK BG VARIABLES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// Field color.
+$dark-bg-form-field-background-color: rgba($black, .5);
+$dark-bg-form-field-font-color: $color-gray-f;
+
+// Border colors.
+$dark-bg-form-field-border-color: $color-gray-8;
+$dark-bg-form-field-border-color-focus: $color-gray-a;
+
+// Placeholder.
+$dark-bg-form-field-placeholder-font-color: $color-gray-7;
+$dark-bg-form-field-placeholder-background-color: darken($dark-bg-form-field-border-color, 15%);
+$dark-bg-form-field-placeholder-background-color-focus: darken($dark-bg-form-field-border-color-focus, 15%);
+
+$dark-bg-form-field-placeholder-color: $white;
+$dark-bg-form-field-placeholder-color-focus: $dark-bg-form-field-placeholder-color;

@@ -1,32 +1,19 @@
 
 
 //
-//  SECTION
+//  HEADER VARS
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 
 //
-//  STYLES
+//  LAYOUT
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-.section {
-  padding: $section-padding-xs;
-}
+$site-header-padding: 0;
 
-@include respond-above(xs) {
-  .section {
-    padding: $section-padding-sm;
-  }
-}
 
-@include respond-above(sm) {
-  .section {
-    padding: $section-padding-md;
-  }
-}
+//
+//  COLOR
+//––––––––––––––––––––––––––––––––––––––––––––––––––
 
-@include respond-above(md) {
-  .section {
-    padding: $section-padding-lg;
-  }
-}
+$site-header-bg-color: $color-primary;
