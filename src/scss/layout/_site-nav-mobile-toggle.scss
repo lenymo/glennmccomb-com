@@ -16,3 +16,9 @@
   text-transform: uppercase;
   top: 0;
 }
+
+@include respond-above(sm) {
+  .site-nav__nav-toggle {
+    display: none;
+  }
+}
