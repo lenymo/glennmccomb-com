@@ -10,7 +10,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="{{ .Description }}">
-  <title>{{ if not .IsHome }}{{ if eq .Title "Nba" }} NBA{{ else }} {{ .Title }}{{ end }} | {{ end }}{{ .Site.Title }}</title>
+  <title>{{ if not .IsHome }}{{ if eq .Title "Nba" }}NBA{{ else }}{{ if and (eq .Type "work") (eq .Kind "section") }}Work{{ else }}{{ .Title }}{{ end }}{{ end }} | {{ end }}{{ .Site.Title }}</title>
   
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "main.css" }}" />
 
