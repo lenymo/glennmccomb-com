@@ -1,0 +1,53 @@
+
+
+//
+//  FITBUGG
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+
+//
+//  VARIABLES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$color-fitbugg-blue: #085ab5;
+// $fitbugg-blue-lighter: #3f68db;
+$color-fitbugg-blue-lighter: #4776f7;
+$color-fitbugg-blue-darker: #3456b9;
+
+
+//
+//  PAGE HEADER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.single-work {
+  &.fitbugg {
+    .section__page-header {
+      background-color: $color-fitbugg-blue;
+      background: radial-gradient(500px circle at 75% 50%, rgba($color-fitbugg-blue-lighter, 1) 0%, rgba($color-fitbugg-blue-darker, 1) 100%);
+    }
+  }
+}
+
+
+//
+//  BODY
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.single-work {
+  &.fitbugg {
+    .section__work-body {
+      padding-top: 0;
+    }
+  }
+}
+
+
+//
+//  INTRO
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.work-body__full-bleed {
+  &.fitbugg-intro {
+    background-color: $color-fitbugg-blue;
+  }
+}
