@@ -5,8 +5,9 @@
 
 Params:
 container="yes" // Leave blank for no container.
-css_class="" // Leave blank for no class.
+class="" // Leave blank for no class.
 dark_bg="yes"
+padding="yes"
 
 -->
 
@@ -15,7 +16,7 @@ dark_bg="yes"
   </div><!-- .row -->
 </div><!-- .container -->
 
-<div class="work-body__full-bleed {{ if .Get "css_class" }}{{ .Get "css_class" }}{{ end }}{{ if .Get "dark_bg" }} -has-dark-bg{{ end }}">
+<div class="work-body__full-bleed {{ if .Get "class" }}{{ .Get "class" }}{{ end }}{{ if .Get "dark_bg" }} -has-dark-bg{{ end }}{{ if .Get "padding" }} -has-padding{{ end }}">
   {{ if .Get "container" }}<div class="container">{{ end }}
     {{ .Inner | markdownify }}
   {{ if .Get "container" }}</div>{{ end }}

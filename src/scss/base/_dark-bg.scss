@@ -1,0 +1,48 @@
+
+
+//
+//  DARK BG
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+
+//
+//  STYLES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.-has-dark-bg {
+  p {
+    color: $base-font-color-dark;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $heading-font-color-dark;
+  }
+
+  ul,
+  ol {
+    color: $base-font-color-dark;
+  }
+
+  a {
+    color: $link-font-color-dark;
+  }
+}
+
+// Hover.
+@include respond-above(sm) {
+  .-has-dark-bg {
+    a {
+      &:hover,
+      &:active,
+      &:focus {
+        color: $link-font-color-hover-dark;
+      }
+    }
+  }
+}
+

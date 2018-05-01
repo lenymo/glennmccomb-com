@@ -7,16 +7,17 @@ custom_class: fitbugg
 custom_stylesheet: fitbugg
 transparent_header: true
 ---
+...
 
-{{< work-body-full-bleed container="yes" css_class="fitbugg-intro"  dark_bg="yes" >}}
+{{< work-body-full-bleed container="yes" class="fitbugg-intro" dark_bg="yes" padding="yes" >}}
 {{< row >}}
 {{< col columns="8" offset="2" >}}
 {{< lead >}}FitBugg is a location-based fitness app which connects personal trainers with fitness-seeking individuals in their area. Fitness session organisers create events which fitness-seekers book in to and attend. All of this is managed within the framework of the app.{{< /lead >}}
 {{< /col >}}
 {{< /row >}}
-{{< /work-body-full-bleed >}}
+{{< / work-body-full-bleed >}}
 
-{{< work-body-full-bleed container="no" css_class="fitbugg-my-role" >}}
+{{< work-body-full-bleed container="no" class="fitbugg-my-role" dark_bg="yes" padding="yes" >}}
 {{< row >}}
 {{< col >}}
 {{< img src="/img/uploads/work-fitbugg-about-mockup.png" alt="FitBugg About" >}}
@@ -33,16 +34,20 @@ This would provide an iOS developer with a concise development roadmap and a tho
 {{< /row >}}
 {{< /work-body-full-bleed >}}
 
-
----
-
+{{< work-body-full-bleed container="yes" class="fitbugg-architecture" padding="yes" >}}
+{{< row >}}
+{{< col >}}
 ## App architecture
 
 Before opening Photoshop, I began creating a basic system overview (traditionally known as a site map).
 
 This gave me the basis to begin sketching pen and paper UI wireframes.
-
+{{< /col >}}
+{{< col >}}
 {{< figure src="/img/uploads/work-fitbugg-architecture-time-lapse.gif" caption="The app architecture planning process." >}}
+{{< /col >}}
+{{< /row >}}
+{{< /work-body-full-bleed >}}
 
 ## Sketching
 

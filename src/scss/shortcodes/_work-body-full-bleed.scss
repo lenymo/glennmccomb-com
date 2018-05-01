@@ -1,0 +1,37 @@
+
+
+//
+//  WORK BODY FULL BLEED
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+
+//
+//  PADDING
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.work-body__full-bleed {
+  &.-has-padding {
+    padding-bottom: $gutter * 2;
+    padding-top: $gutter * 2;
+  }
+}
+
+@include respond-above(sm) {
+  .work-body__full-bleed {
+    &.-has-padding {
+      padding-bottom: $gutter * 3;
+      padding-top: $gutter * 3;
+    }
+  }
+}
+
+
+//
+//  DARK BG
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.work-body__full-bleed {
+  &.-has-dark-bg {
+    background: $color-primary;
+  }
+}

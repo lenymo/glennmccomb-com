@@ -37,6 +37,10 @@ $color-fitbugg-blue-darker: #3456b9;
   &.fitbugg {
     .section__work-body {
       padding-top: 0;
+
+      .col-sm-12 {
+        min-height: 0;
+      }
     }
   }
 }
@@ -48,6 +52,23 @@ $color-fitbugg-blue-darker: #3456b9;
 
 .work-body__full-bleed {
   &.fitbugg-intro {
+    background-color: $color-fitbugg-blue;
+    border-top: 1px solid rgba($white, .15);
+    text-align: center;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+//
+//  MY ROLE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.work-body__full-bleed {
+  &.fitbugg-my-role {
     background-color: $color-fitbugg-blue;
   }
 }
