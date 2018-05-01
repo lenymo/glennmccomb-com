@@ -14,6 +14,7 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .img-shortcode__img-wrapper {
+  display: inline-block;
   margin-bottom: $gutter * .25;
   overflow: hidden;
 
@@ -28,6 +29,7 @@
 
 .img-shortcode__img-lqip {
   filter: blur(50px) saturate(75%);
+  max-width: 100%;
   transform: scale(1.2);
   transition: all 1s ease;
 }
@@ -45,23 +47,23 @@
 //  SQIP
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-.img-shortcode__img-sqip {
-  margin-bottom: 5px;
-  overflow: hidden;
-  transition: all 1s ease;
+// .img-shortcode__img-sqip {
+//   margin-bottom: 5px;
+//   overflow: hidden;
+//   transition: all 1s ease;
 
-  svg {
-    vertical-align: top;
-  }
-}
+//   svg {
+//     vertical-align: top;
+//   }
+// }
 
-.img-shortcode {
-  &.-image-has-loaded {
-    .img-shortcode__img-sqip {
-      opacity: 0;
-    }
-  }
-}
+// .img-shortcode {
+//   &.-image-has-loaded {
+//     .img-shortcode__img-sqip {
+//       opacity: 0;
+//     }
+//   }
+// }
 
 
 //
@@ -72,5 +74,5 @@
   left: 0;
   position: absolute;
   top: 0;
-  width: 100%;
+  max-width: 100%;
 }
