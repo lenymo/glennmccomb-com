@@ -37,8 +37,5 @@ url="http://"
     <img class="img-shortcode__img-lqip" src="{{ $.Scratch.Get "lqip" }}" {{ if .Get "alt" }}alt="{{ .Get "alt" }}"{{ end }} />
   </div>
   {{ if .Get "caption" }}<figcaption class="img-shortcode__caption">
-    <p class="img-shortcode__caption-text">
-      {{ .Get "caption" | markdownify }}
-    </p>
-  </figcaption>{{ end }}
-</figure>
+    <p class="img-shortcode__caption-text">{{ .Get "caption" | markdownify }}</p>
+  </figcaption>{{ end }}</figure>
