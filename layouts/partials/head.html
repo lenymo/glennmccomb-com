@@ -14,10 +14,20 @@
   
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "main.css" }}" />
 
-  <!-- Article specific CSS. -->
+  <!-- Article-specific CSS. -->
   {{ if and (eq .Type "articles") (eq .Kind "page") }}
     {{ if isset .Params "custom_stylesheet" }}
       {{ $.Scratch.Add "stylesheet_filename" "article-" }}
+      {{ $.Scratch.Add "stylesheet_filename" .Params.custom_stylesheet }}
+      {{ $.Scratch.Add "stylesheet_filename" ".css" }}
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash ($.Scratch.Get "stylesheet_filename") }}" />
+    {{ end }}
+  {{ end }}
+
+  <!-- Work-specific CSS. -->
+  {{ if and (eq .Type "work") (eq .Kind "page") }}
+    {{ if isset .Params "custom_stylesheet" }}
+      {{ $.Scratch.Add "stylesheet_filename" "work-" }}
       {{ $.Scratch.Add "stylesheet_filename" .Params.custom_stylesheet }}
       {{ $.Scratch.Add "stylesheet_filename" ".css" }}
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash ($.Scratch.Get "stylesheet_filename") }}" />
