@@ -10,5 +10,4 @@ class="example-class"
 
 -->
 <div class="{{ if .Get "columns" }}col-sm-{{ .Get "columns" }}{{ else }}col{{ end }}{{ if .Get "offset" }} offset-sm-{{ .Get "offset" }}{{ end }}{{ if .Get "class" }} {{ .Get "class" }}{{ end }} col__shortcode">
-  {{ .Inner | markdownify }}
-</div>
+  {{ .Inner | markdownify }}</div>
