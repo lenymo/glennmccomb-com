@@ -84,7 +84,9 @@ In the early going my working colour was a grassy-green which would map to the o
 
 I wanted the typography to match the fun style of the icon. I mocked up various options but ultimately decided on [Museo Sans Rounded](http://www.myfonts.com/fonts/exljbris/museo-sans-rounded/) because it felt both solid and strong while maintaining the rounded style of the stick-figure.
 
-[No Proxima Nova] [Yes Museo Rounded]
+{{< img src="/img/uploads/work-fitbugg-brand-proxima.jpg" alt="Proxima Nova" >}}
+
+{{< img src="/img/uploads/work-fitbugg-brand-museo.jpg" alt="Museo Rounded" >}}
 
 ### Colours
 
