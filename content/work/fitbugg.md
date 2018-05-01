@@ -7,7 +7,6 @@ custom_class: fitbugg
 custom_stylesheet: fitbugg
 transparent_header: true
 ---
-...
 
 {{< work-body-full-bleed container="yes" class="fitbugg-intro" dark_bg="yes" padding="yes" >}}
 {{< row >}}
