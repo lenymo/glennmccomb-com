@@ -44,3 +44,14 @@
     }
   }
 }
+
+
+//
+//  DARK BG
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.work-body__full-bleed {
+  &.-has-dark-bg {
+    background: $color-primary;
+  }
+}
