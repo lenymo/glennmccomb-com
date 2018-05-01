@@ -2,10 +2,26 @@
 title: FitBugg
 date: 2014-09-21T09:57:11.000Z
 summary: An iPhone app to help maintain your desired fitness level
+dark_bg: true
+custom_class: fitbugg
+custom_stylesheet: fitbugg
+transparent_header: true
 ---
 
+{{< work-body-full-bleed container="yes" css_class="fitbugg-intro"  dark_bg="yes" >}}
+{{< row >}}
+{{< col columns="8" offset="2" >}}
 {{< lead >}}FitBugg is a location-based fitness app which connects personal trainers with fitness-seeking individuals in their area. Fitness session organisers create events which fitness-seekers book in to and attend. All of this is managed within the framework of the app.{{< /lead >}}
+{{< /col >}}
+{{< /row >}}
+{{< /work-body-full-bleed >}}
 
+{{< work-body-full-bleed container="no" css_class="fitbugg-my-role" >}}
+{{< row >}}
+{{< col >}}
+{{< img src="/img/uploads/work-fitbugg-about-mockup.png" alt="FitBugg About" >}}
+{{< /col >}}
+{{< col >}}
 ## My role
 
 My role began in late February 2014 as UI designer. I was given a basic product specification document outlining desired functionality and tasked with bringing it to life.
@@ -13,8 +29,10 @@ My role began in late February 2014 as UI designer. I was given a basic product 
 The deliverables were logo design, wireframes, high-res mockups, all creative assets sliced up as PNGs and an interactive prototype.
 
 This would provide an iOS developer with a concise development roadmap and a thorough understanding of the app's business logic.
+{{< /col >}}
+{{< /row >}}
+{{< /work-body-full-bleed >}}
 
-{{< img src="/img/uploads/work-fitbugg-about-mockup.png" alt="FitBugg About" >}}
 
 ---
 
