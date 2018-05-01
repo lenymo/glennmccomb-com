@@ -1,0 +1,27 @@
+<!--
+//
+//  WORK BODY FULL BLEED
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+Params:
+container="yes" // Leave blank for no container.
+css_class="" // Leave blank for no class.
+dark_bg="yes"
+
+-->
+
+      </div><!-- .work-body__content -->
+    </div><!-- .col -->
+  </div><!-- .row -->
+</div><!-- .container -->
+
+<div class="work-body__full-bleed {{ if .Get "css_class" }}{{ .Get "css_class" }}{{ end }}{{ if .Get "dark_bg" }} -has-dark-bg{{ end }}">
+  {{ if .Get "container" }}<div class="container">{{ end }}
+    {{ .Inner | markdownify }}
+  {{ if .Get "container" }}</div>{{ end }}
+</div><!-- .work-full-bleed -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <div class="work-body__content">
