@@ -137,7 +137,7 @@ a {
   }
 }
 
-// Hover
+// Hover.
 @include respond-above(sm) {
   a {
     &:hover,
