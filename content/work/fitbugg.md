@@ -4,9 +4,7 @@ date: 2014-09-21T09:57:11.000Z
 summary: An iPhone app to help maintain your desired fitness level
 ---
 
-FitBugg is a location-based fitness app which connects personal trainers with fitness-seeking individuals in their area.
-
-Fitness session organisers create events which fitness-seekers book in to and attend. All of this is managed within the framework of the app.
+{{< lead >}}FitBugg is a location-based fitness app which connects personal trainers with fitness-seeking individuals in their area. Fitness session organisers create events which fitness-seekers book in to and attend. All of this is managed within the framework of the app.{{< /lead >}}
 
 ## My role
 
@@ -16,7 +14,7 @@ The deliverables were logo design, wireframes, high-res mockups, all creative as
 
 This would provide an iOS developer with a concise development roadmap and a thorough understanding of the app's business logic.
 
-[Screenshot of app]
+{{< img src="/img/uploads/work-fitbugg-about-mockup.png" alt="FitBugg About" >}}
 
 ---
 
@@ -26,7 +24,7 @@ Before opening Photoshop, I began creating a basic system overview (traditionall
 
 This gave me the basis to begin sketching pen and paper UI wireframes.
 
-[GIF showing app architecture process]
+{{< figure src="/img/uploads/work-fitbugg-architecture-time-lapse.gif" caption="The app architecture planning process." >}}
 
 ## Sketching
 
@@ -36,7 +34,7 @@ In most cases the final wireframes and high-res mockups only differed slightly f
 
 I was able to quickly prioritise important information and set the core visual hierarchy on all screens.
 
-[Screenshots of session sketch]
+{{< img src="/img/uploads/work-fitbugg-architecture-sketch.png" alt="FitBugg Session sketch" >}}
 
 ## Wireframes
 
@@ -44,15 +42,15 @@ To communicate the fundamental structure of the app and its screens, I created o
 
 I might never speak to the developer of this project so it was important that all features and interactions were explained in detail.
 
-[Screenshot of OmniGraffle wireframes]
+{{< img src="/img/uploads/work-fitbugg-wireframes-wireframes.jpg" alt="OmniGraffle wireframes" >}}
 
-[Screenshot of documentation booklet]
+{{< img src="/img/uploads/work-fitbugg-wireframes-booklet.jpg" alt="FitBugg documentation" >}}
 
 ---
 
 ## Logo Design
 
-[Screenshot of app icon]
+{{< img src="/img/uploads/work-fitbugg-logo-fitbugg.png" alt="FitBugg app icon" >}}
 
 ### First draft
 
@@ -60,19 +58,19 @@ My initial approach to the logo utilised a dumbbell in combination with a locati
 
 This was a cute way to communicate what the app was about, but it was ambiguous and the weight lifting motif was too masculine.
 
-[Screenshot of first draft]
+{{< img src="/img/uploads/work-fitbugg-logo-sketch-1.jpg" alt="FitBugg logo v1" >}}
 
 ### Second draft
 
 My next iteration maintained the location pin, but tackled it from a more human perspective. This was ultimately too feminine and the detail was difficult to make out at low resolutions.
 
-[Screenshot of second draft]
+{{< img src="/img/uploads/work-fitbugg-logo-sketch-2.jpg" alt="FitBugg logo v2" >}}
 
 ### Final concept
 
 Next I further developed the stretching concept, which visually describes exercise in a non-masculine way. We focused on the stretching pose but went with a bubbly, playful stick figure.
 
-[Screenshot of final concept]
+{{< img src="/img/uploads/work-fitbugg-logo-sketch-3.jpg" alt="FitBugg logo v3" >}}
 
 ---
 
@@ -80,19 +78,19 @@ Next I further developed the stretching concept, which visually describes exerci
 
 In the early going my working colour was a grassy-green which would map to the outdoor park location of many PT sessions. Over time this began to look dull, and in experimenting with the icon we settled on a vibrant blue.
 
-[FitBugg logo]
+{{< img src="/img/uploads/work-fitbugg-brand-logo.jpg" alt="FitBugg logo" >}}
 
 ### Typography
 
 I wanted the typography to match the fun style of the icon. I mocked up various options but ultimately decided on [Museo Sans Rounded](http://www.myfonts.com/fonts/exljbris/museo-sans-rounded/) because it felt both solid and strong while maintaining the rounded style of the stick-figure.
 
-[Yes / No screenshot]
+[No Proxima Nova] [Yes Museo Rounded]
 
 ### Colours
 
 A colour palette was developed and used throughout the app. This included the blues shown below, along with a suite of blue-tinted grays and success and fail colours.
 
-[Colour palette image]
+{{< img src="/img/uploads/work-fitbugg-brand-colours.png" alt="FitBugg colour palette" >}}
 
 ---
 
@@ -100,4 +98,8 @@ A colour palette was developed and used throughout the app. This included the bl
 
 High res mockups were designed using Photoshop, which I've used on a daily basis for over 10 years. With wireframes as a guide I was able to move very quickly through all screens.
 
-[3x hi-res mockups]
+{{< img src="/img/uploads/work-fitbugg-mockups-1.jpg" alt="FitBugg mockup" >}}
+
+{{< img src="/img/uploads/work-fitbugg-mockups-2.jpg" alt="FitBugg mockup" >}}
+
+{{< img src="/img/uploads/work-fitbugg-mockups-3.jpg" alt="FitBugg mockup" >}}
