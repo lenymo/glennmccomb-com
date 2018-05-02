@@ -7,7 +7,6 @@ custom_class: fitbugg
 custom_stylesheet: fitbugg
 transparent_header: true
 ---
-
 {{< work-body-full-bleed container="yes" class="fitbugg-intro" dark_bg="yes" padding="yes" >}}
 {{< row >}}
 {{< col columns="8" offset="2" >}}
@@ -15,7 +14,6 @@ transparent_header: true
 {{< /col >}}
 {{< /row >}}
 {{< / work-body-full-bleed >}}
-
 {{< work-body-full-bleed container="no" class="fitbugg-my-role" dark_bg="yes" padding="yes" >}}
 {{< row >}}
 {{< col class="col__content" >}}
@@ -82,7 +80,7 @@ I might never speak to the developer of this project so it was important that al
 {{< /work-body-full-bleed >}}
 {{< work-body-full-bleed container="yes" class="fitbugg-logo" padding="yes" >}}
 {{< row >}}
-{{< col >}}
+{{< col class="text-center" >}}
 ## Logo Design
 {{< img src="/img/uploads/work-fitbugg-logo-fitbugg.png" alt="FitBugg app icon" >}}
 {{< /col >}}

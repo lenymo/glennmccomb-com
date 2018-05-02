@@ -38,6 +38,14 @@ $color-fitbugg-blue-darker: darken($color-fitbugg-blue, 5%);
   &.fitbugg {
     .section__work-body {
       padding-top: 0;
+
+      .work-body__content {
+        > p {
+          &:nth-child(1) {
+            margin-bottom: 0;
+          }
+        }
+      }
     }
   }
 }
