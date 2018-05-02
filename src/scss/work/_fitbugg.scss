@@ -11,8 +11,8 @@
 
 $color-fitbugg-blue: #085ab5;
 // $fitbugg-blue-lighter: #3f68db;
-$color-fitbugg-blue-lighter: #4776f7;
-$color-fitbugg-blue-darker: #3456b9;
+$color-fitbugg-blue-lighter: lighten($color-fitbugg-blue, 10%);
+$color-fitbugg-blue-darker: darken($color-fitbugg-blue, 5%);
 
 
 //
@@ -24,6 +24,7 @@ $color-fitbugg-blue-darker: #3456b9;
     .section__page-header {
       background-color: $color-fitbugg-blue;
       background: radial-gradient(500px circle at 75% 50%, rgba($color-fitbugg-blue-lighter, 1) 0%, rgba($color-fitbugg-blue-darker, 1) 100%);
+      box-shadow: inset 0 -10px 50px rgba($black, .05);
     }
   }
 }
@@ -37,10 +38,6 @@ $color-fitbugg-blue-darker: #3456b9;
   &.fitbugg {
     .section__work-body {
       padding-top: 0;
-
-      .col-sm-12 {
-        min-height: 0;
-      }
     }
   }
 }
@@ -62,6 +59,14 @@ $color-fitbugg-blue-darker: #3456b9;
   }
 }
 
+@include respond-above(sm) {
+  .work-body__full-bleed {
+    &.fitbugg-intro {
+      padding-top: $gutter * 6;
+    }
+  }
+}
+
 
 //
 //  MY ROLE
@@ -70,5 +75,111 @@ $color-fitbugg-blue-darker: #3456b9;
 .work-body__full-bleed {
   &.fitbugg-my-role {
     background-color: $color-fitbugg-blue;
+
+    .img-shortcode {
+      margin-bottom: 0;
+
+      .img-shortcode__img-wrapper {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@include respond-below(md) {
+  .work-body__full-bleed {
+    &.fitbugg-my-role {
+      padding-bottom: 0;
+    }
+  }
+}
+
+@include respond-between(sm, md) {
+  .work-body__full-bleed {
+    &.fitbugg-my-role {
+      .col__content,
+      .col__image {
+        flex-basis: auto; // Makes columns full width.
+      }
+    }
+  }
+}
+
+@include respond-above(md) {
+  .work-body__full-bleed {
+    &.fitbugg-my-role {
+      position: relative;
+
+      .container {
+        position: static;
+      }
+
+      .col__image {
+        position: static;
+
+        .img-shortcode {
+          bottom: 0;
+          max-width: 500px;
+          position: absolute;
+        }
+      }
+    }
+  }
+}
+
+
+//
+//  ARCHITECTURE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@include respond-above(sm) {
+  .work-body__full-bleed {
+    &.fitbugg-architecture {
+      padding-top: $gutter * 6;
+    }
+  }
+}
+
+
+//
+//  BRAND
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.work-body__full-bleed {
+  &.fitbugg-brand {
+    background-color: #efeff4;
+    padding-top: $gutter * 4;
+  }
+}
+
+@include respond-above(sm) {
+  .work-body__full-bleed {
+    &.fitbugg-brand {
+      padding-top: $gutter * 6;
+    }
+  }
+}
+
+
+//
+//  TYPOGRAPHY
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.work-body__full-bleed {
+  &.fitbugg-typography {
+    background-color: #efeff4;
+    padding-top: 0;
+  }
+}
+
+
+//
+//  COLOUR
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.work-body__full-bleed {
+  &.fitbugg-colour {
+    background-color: #efeff4;
+    padding-top: 0;
   }
 }
