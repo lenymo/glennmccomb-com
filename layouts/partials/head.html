@@ -26,6 +26,7 @@
 
   <!-- Work-specific CSS. -->
   {{ if and (eq .Type "work") (eq .Kind "page") }}
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "work.css" }}" />
     {{ if isset .Params "custom_stylesheet" }}
       {{ $.Scratch.Add "stylesheet_filename" "work-" }}
       {{ $.Scratch.Add "stylesheet_filename" .Params.custom_stylesheet }}

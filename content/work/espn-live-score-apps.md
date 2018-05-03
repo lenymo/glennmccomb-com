@@ -2,14 +2,25 @@
 title: ESPN live score apps
 date: 2013-11-02T04:02:11.000Z
 summary: A ground-up native re-design of ESPN Australia's live score apps.
+custom_class: now-apps
+custom_stylesheet: now-apps
 ---
-
+{{< work-body-full-bleed container="yes" class="now-apps-intro" dark_bg="yes" padding="yes" >}}
+{{< row >}}
+{{< col offset="2" columns="3" class="col__image text-center" >}}
+{{< img src="/img/uploads/work-nowapp-backstory-webapp.png" alt="Old web app" >}}
+{{< /col >}}
+{{< col columns="4" offset="1" class="col__content" >}}
 ## Back story
 
 ESPN Australia have a suite of four live score apps on iPhone and Android. They were previously written in HTML, CSS & JavaScript and housed in a native app shell.
 
 The content in the apps was good but the interface and UX let it down. In 2013, we decided to build native apps and were able to explore UI functionality not possible using web technology.
-
+{{< /col >}}
+{{< /row >}}
+{{< /work-body-full-bleed >}}
+{{< work-body-full-bleed container="yes" class="now-apps-now-brand" padding="yes" >}}
+{{< row >}}
 ## The "Now" brand
 
 Each of the four apps are branded with a unique colour which flows through the app's UI and creative assets.
@@ -17,6 +28,8 @@ Each of the four apps are branded with a unique colour which flows through the a
 A player silhouette helps communicate the sport and distinguishes one app from the other while at the same time visually tying them together.
 
 [Photos of each brand]
+{{< /row >}}
+{{< /work-body-full-bleed >}}
 
 ---
 

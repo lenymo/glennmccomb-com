@@ -1,0 +1,47 @@
+
+
+//
+//  NOW APPS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+
+//
+//  BODY
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.single-work {
+  &.now-apps {
+    .section__work-body {
+      padding-top: 0;
+    }
+  }
+}
+
+
+//
+//  INTRO
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.work-body__full-bleed {
+  &.now-apps-intro {
+    .col__image {
+      .img-shortcode {
+        max-width: 300px;
+      }
+    }
+  }
+}
+
+@include respond-between(xs, md) {
+  .work-body__full-bleed {
+    &.now-apps-intro {
+      .col__content,
+      .col__image {
+        flex-basis: auto; // Makes columns full width.
+        margin: 0;
+        max-width: none;
+        width: 100%;
+      }
+    }
+  }
+}
