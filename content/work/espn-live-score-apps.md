@@ -151,17 +151,20 @@ I tried to improve the design by vertically aligning the worm and the quarter-by
 {{< /col >}}
 {{< /row >}}
 {{< /work-body-full-bleed >}}
-{{< work-body-full-bleed container="yes" class="now-apps-sketching-worm" padding="yes" >}}
+{{< work-body-full-bleed container="yes" class="now-apps-video-demo" padding="yes" >}}
 {{< row >}}
-{{< col >}}
+{{< col columns="6" >}}
 ## Video demo
 
 To help communicate the proposed functionality of the app, I produced a Flash-based walkthrough of the scores and menu screens.
 
 This was shared with our dev team, internal stake-holders and the app developers we worked with.
 {{< /col >}}
-{{< col >}}
-[Video showing UI]
+{{< col columns="6" >}}
+<video controls poster="/video/nowapp.png">
+  <source src="/video/nowapp.webm" type="video/webm">
+  <source src="/video/nowapp.mp4" type="video/mp4">
+</video>
 {{< /col >}}
 {{< /row >}}
 {{< /work-body-full-bleed >}}
@@ -185,50 +188,71 @@ The power of cards lies in their ability to visually associate related chunks of
 {{< col class="text-center" >}}
 {{< img src="/img/uploads/work-nowapp-cards-news.png" alt="News" caption="News" >}}
 {{< /col >}}
+{{< /row >}}
 {{< row >}}
 {{< col columns="8" offset="2" class="text-center" >}}
 Prominent companies which use cards to enhance their UI include Google, Twitter, Pinterest, Spotify and Facebook. Paul Adams further describes trend in [this influential article](http://insideintercom.io/why-cards-are-the-future-of-the-web/).
 {{< /col >}}
 {{< /row >}}
 {{< /work-body-full-bleed >}}
-
----
+{{< work-body-full-bleed container="yes" class="now-apps-gestures" padding="yes" >}}
+{{< row class="row__now-apps-gestures__intro" >}}
+{{< col columns="8" offset="2" class="text-center" >}}
+{{< img src="/img/uploads/work-nowapp-swiping-gesture.jpg" alt="Swiping gestures" class="swiping-gestures" >}}
 
 ## Swiping gestures
 
 One of the most common use-cases in the apps is moving between rounds. Previously this was achieved using two buttons in the app's toolbar. Moving from one round to the next was a painful user experience.
 
-[Screenshot of old round nav]
-
+{{< img src="/img/uploads/work-nowapp-swiping-old-app.jpg" alt="Old app"  class="old-app" >}}
+{{< /col >}}
+{{< /row >}}
+{{< row class="row__now-apps-gestures__first-draft" >}}
+{{< col class="col__content" >}}
 ### First draft
 
 With native gestures we could replace actual buttons with swiping gestures and save screen real estate. Great!
 
 Except that in early beta tests users didn't know how to move from one round to the next. This was a big problem.
-
-[First draft screenshot]
-
+{{< /col >}}
+{{< col class="col__image" >}}
+{{< img src="/img/uploads/work-nowapp-swiping-no-affordance.jpg" alt="No affordance" class="first-draft" >}}
+{{< /col >}}
+{{< /row >}}
+{{< row class="row__now-apps-gestures__second-draft" >}}
+{{< col class="col__content" >}}
 ### Second draft
 
 Keen to preserve screen space but also provide a visual aid for users, we added tappable round titles.
 
 Users could still swipe between rounds, and to hint at the swiping gesture, tapping a round title would trigger the sliding animation.
-
-[Second draft screenshot]
-
-### Final draft
+{{< /col >}}
+{{< col class="col__image" >}}
+{{< img src="/img/uploads/work-nowapp-swiping-slim-titles.jpg" alt="Slim titles" class="second-draft" >}}
+{{< /col >}}
+{{< /row >}}
+{{< row class="row__now-apps-gestures__final-result" >}}
+{{< col class="col__content" >}}
+### Final result
 
 However, the hit-state of the buttons was too small to comfortably tap and the repetition of the word "round" was unnecessary.
 
 The round titles were replaced with larger numbers and the edges of the neighbouring round's cards were shown to suggest more content.
-
-[Final draft scrrenshot]
-
----
-
+{{< /col >}}
+{{< col class="col__image" >}}
+{{< img src="/img/uploads/work-nowapp-swiping-final.jpg" alt="Final result" class="final-result" >}}
+{{< /col >}}
+{{< /row >}}
+{{< /work-body-full-bleed >}}
+{{< work-body-full-bleed container="yes" class="now-apps-notes" padding="yes" >}}
+{{< row class="row__now-apps-gestures__intro" >}}
+{{< col columns="8" offset="2" class="text-center" >}}
 ## Notes
 
 
 I would like to make special mention of the ESPN Australia team whose hard work and collaboration was invaluable to the success of this project.
 
 Also, a special thanks to the guys from [WeMakeApps](http://wemakeapps.net/) who were a pleasure to work with. I can personally recommend them if you need help with your iOS or Android development project.
+{{< /col >}}
+{{< /row >}}
+{{< /work-body-full-bleed >}}
