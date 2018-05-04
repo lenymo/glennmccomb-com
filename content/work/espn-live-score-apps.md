@@ -153,14 +153,14 @@ I tried to improve the design by vertically aligning the worm and the quarter-by
 {{< /work-body-full-bleed >}}
 {{< work-body-full-bleed container="yes" class="now-apps-video-demo" padding="yes" >}}
 {{< row >}}
-{{< col columns="6" >}}
+{{< col columns="5" offset="1" >}}
 ## Video demo
 
 To help communicate the proposed functionality of the app, I produced a Flash-based walkthrough of the scores and menu screens.
 
 This was shared with our dev team, internal stake-holders and the app developers we worked with.
 {{< /col >}}
-{{< col columns="6" >}}
+{{< col columns="4" offset="1" >}}
 <video controls poster="/video/nowapp.png">
   <source src="/video/nowapp.webm" type="video/webm">
   <source src="/video/nowapp.mp4" type="video/mp4">
