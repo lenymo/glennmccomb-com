@@ -40,6 +40,10 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 @import 'layout/grid';
+@import 'layout/grid-cols';
+// @import 'layout/grid-push';
+// @import 'layout/grid-pull';
+@import 'layout/grid-offsets';
 @import 'layout/header';
 @import 'layout/header-logo';
 @import 'layout/site-nav';
