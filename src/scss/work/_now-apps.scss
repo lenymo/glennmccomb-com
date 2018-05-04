@@ -6,6 +6,16 @@
 
 
 //
+//  VARIABLES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$color-now-apps-ale: #c7361c;
+$color-now-apps-nrl: #017d31;
+$color-now-apps-afl: #07529b;
+$color-now-apps-sru: #1e80ae;
+
+
+//
 //  BODY
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
@@ -26,7 +36,7 @@
   &.now-apps-intro {
     .col__image {
       .img-shortcode {
-        max-width: 300px;
+        max-width: 250px;
       }
     }
   }
@@ -43,5 +53,221 @@
         width: 100%;
       }
     }
+  }
+}
+
+
+//
+//  BRAND
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.work-body__full-bleed {
+  &.now-apps-brand {
+    .col__now-apps-brand {
+      text-align: center;
+    }
+
+    .img-shortcode {
+      &.app-player {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 250px;
+      }
+    }
+
+    .col__shortcode {
+      &.col__now-apps-brand {
+        padding: ($gutter * 2) $gutter 0;
+        text-align: center;
+
+        h6 {
+          color: rgba($white, .5);
+          margin-bottom: 0;
+          text-transform: uppercase;
+        }
+
+        h3 {
+          margin-bottom: $gutter;
+          line-height: 1.2;
+        }
+
+        p {
+          margin-bottom: 0;
+        }
+      }
+
+      &.col__now-apps-brand--ale {
+        background-color: $color-now-apps-ale;
+      }
+
+      &.col__now-apps-brand--nrl {
+        background-color: $color-now-apps-nrl;
+      }
+
+      &.col__now-apps-brand--afl {
+        background-color: $color-now-apps-afl;
+      }
+
+      &.col__now-apps-brand--sru {
+        background-color: $color-now-apps-sru;
+      }
+    }
+  }
+}
+
+@include respond-between(xs, sm) {
+  .work-body__full-bleed {
+    &.now-apps-brand {
+      .col__now-apps-brand {
+        flex-basis: auto;
+        max-width: 50%;
+      }
+    }
+  }
+}
+
+@include respond-above(sm) {
+  .work-body__full-bleed {
+    &.now-apps-brand {
+      .col__shortcode {
+        &.col__now-apps-brand {
+          padding-top: $gutter * 4;
+        }
+      }
+    }
+  }
+}
+
+@include respond-above(lg) {
+  .work-body__full-bleed {
+    &.now-apps-brand {
+      .col__shortcode {
+        &.col__now-apps-brand {
+          padding-bottom: $gutter * 2;
+        }
+      }
+    }
+  }
+}
+
+
+//
+//  BRAND OUTRO
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@include respond-below(sm) {
+  .work-body__full-bleed {
+    &.now-apps-brand-outro {
+      overflow: hidden;
+
+      .col__now-apps-brand-outro {
+        flex-basis: auto;
+        max-width: 50%;
+
+        &.col__now-apps-brand-outro--ale,
+        &.col__now-apps-brand-outro--nrl {
+          padding-top: $gutter;
+
+          .img-shortcode {
+            margin-bottom: 0;
+          }
+        }
+
+        &.col__now-apps-brand-outro--ale,
+        &.col__now-apps-brand-outro--afl {
+          padding-left: $gutter * 1.5;
+          padding-right: 0;
+        }
+
+        &.col__now-apps-brand-outro--nrl,
+        &.col__now-apps-brand-outro--sru {
+          padding-left: 0;
+          padding-right: $gutter * 1.5;
+        }
+      }
+    }
+  }
+}
+
+@include respond-above(sm) {
+  .work-body__full-bleed {
+    &.now-apps-brand-outro {
+      padding-top: 0;
+
+      .img-shortcode {
+        &.app-icon {
+          margin-top: -$gutter * 2;
+        }
+      }
+    }
+  }
+}
+
+@include respond-above(md) {
+  .work-body__full-bleed {
+    &.now-apps-brand-outro {
+      .img-shortcode {
+        &.app-icon {
+          margin-top: -$gutter * 3;
+        }
+      }
+    }
+  }
+}
+
+@include respond-above(lg) {
+  .work-body__full-bleed {
+    &.now-apps-brand-outro {
+      .img-shortcode {
+        &.app-icon {
+          margin-top: -$gutter * 5;
+        }
+      }
+    }
+  }
+}
+
+
+//
+//  SECTIONS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.work-body__full-bleed {
+  &.now-apps-sections {
+    .img-shortcode {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+
+      .img-shortcode__img-wrapper {
+        position: relative;
+      }
+    }
+  }
+}
+
+@include respond-below(sm) {
+  .work-body__full-bleed {
+    &.now-apps-sections {
+      .col__section {
+        flex-basis: auto;
+        max-width: 33.33%;
+      }
+    }
+  }
+}
+
+
+//
+//  CARDS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.work-body__full-bleed {
+  &.now-apps-cards {
+    border-top: 1px solid darken(#f5f5f5, 5%);
+    background-image: url('/img/uploads/work-now-app-cards-bg.png');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-color: #f5f5f5;
   }
 }

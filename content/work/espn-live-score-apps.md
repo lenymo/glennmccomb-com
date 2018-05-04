@@ -19,65 +19,178 @@ The content in the apps was good but the interface and UX let it down. In 2013, 
 {{< /col >}}
 {{< /row >}}
 {{< /work-body-full-bleed >}}
-{{< work-body-full-bleed container="yes" class="now-apps-now-brand" padding="yes" >}}
+{{< work-body-full-bleed container="yes" class="now-apps-brand-intro" padding="yes" >}}
 {{< row >}}
+{{< col columns="8" offset="2" >}}
 ## The "Now" brand
 
 Each of the four apps are branded with a unique colour which flows through the app's UI and creative assets.
 
 A player silhouette helps communicate the sport and distinguishes one app from the other while at the same time visually tying them together.
-
-[Photos of each brand]
+{{< /col >}}
 {{< /row >}}
 {{< /work-body-full-bleed >}}
-
----
-
+{{< work-body-full-bleed dark_bg="yes" class="now-apps-brand" >}}
+{{< row class="no-gutters" >}}
+{{< col class="col__now-apps-brand col__now-apps-brand--ale" >}}
+<h6>A-League</h6>
+### Football Now
+{{< img src="/img/uploads/work-nowapp-branding-player-ale.png" alt="A-League" class="app-player app-player--ale" >}}
+{{< /col >}}
+{{< col class="col__now-apps-brand col__now-apps-brand--nrl" >}}
+<h6>NRL</h6>
+### League Now
+{{< img src="/img/uploads/work-nowapp-branding-player-nrl.png" alt="NRL" class="app-player app-player--nrl" >}}
+{{< /col >}}
+{{< col class="col__now-apps-brand col__now-apps-brand--afl" >}}
+<h6>AFL</h6>
+### Footy Now
+{{< img src="/img/uploads/work-nowapp-branding-player-afl.png" alt="AFL" class="app-player app-player--afl" >}}
+{{< /col >}}
+{{< col class="col__now-apps-brand col__now-apps-brand--sru" >}}
+<h6>Super Rugby</h6>
+### Rugby Now
+{{< img src="/img/uploads/work-nowapp-branding-player-sru.png" alt="Super Rugby" class="app-player app-player--sru" >}}
+{{< /col >}}
+{{< /row >}}
+{{< /work-body-full-bleed >}}
+{{< work-body-full-bleed class="now-apps-brand-outro" >}}
+{{< row >}}
+{{< col class="col__now-apps-brand-outro col__now-apps-brand-outro--ale" >}}
+{{< img src="/img/uploads/work-nowapp-branding-icon-ale.png" alt="A-League" class="app-icon app-icon--ale" >}}
+{{< /col >}}
+{{< col class="col__now-apps-brand-outro col__now-apps-brand-outro--nrl" >}}
+{{< img src="/img/uploads/work-nowapp-branding-icon-nrl.png" alt="NRL" class="app-icon app-icon--nrl" >}}
+{{< /col >}}
+{{< col class="col__now-apps-brand-outro col__now-apps-brand-outro--afl" >}}
+{{< img src="/img/uploads/work-nowapp-branding-icon-afl.png" alt="AFL" class="app-icon app-icon--afl" >}}
+{{< /col >}}
+{{< col class="col__now-apps-brand-outro col__now-apps-brand-outro--sru" >}}
+{{< img src="/img/uploads/work-nowapp-branding-icon-sru.png" alt="Super Rugby" class="app-icon app-icon--sru" >}}
+{{< /col >}}
+{{< /row >}}
+{{< /work-body-full-bleed >}}
+{{< work-body-full-bleed container="yes" class="now-apps-sections text-center" padding="yes" >}}
+{{< row >}}
+{{< col >}}
 ## Sections
 
 In our initial launch there were six sections.
+{{< /col >}}
+{{< /row >}}
+{{< row >}}
+{{< col class="col__section" >}}
+{{< img src="/img/uploads/work-nowapp-sections-scores.png" alt="Scores" caption="Scores" >}}
+{{< /col >}}
+{{< col class="col__section" >}}
+{{< img src="/img/uploads/work-nowapp-sections-standings.png" alt="Standings" caption="Standings" >}}
+{{< /col >}}
+{{< col class="col__section" >}}
+{{< img src="/img/uploads/work-nowapp-sections-news.png" alt="News" caption="News" >}}
+{{< /col >}}
+{{< col class="col__section" >}}
+{{< img src="/img/uploads/work-nowapp-sections-twitter.png" alt="Twitter" caption="Twitter" >}}
+{{< /col >}}
+{{< col class="col__section" >}}
+{{< img src="/img/uploads/work-nowapp-sections-tipping.png" alt="Tipping" caption="Tipping" >}}
+{{< /col >}}
+{{< col class="col__section" >}}
+{{< img src="/img/uploads/work-nowapp-sections-settings.png" alt="Settings" caption="Settings" >}}
+{{< /col >}}
+{{< /row >}}
+{{< /work-body-full-bleed >}}
 
-[Photo of sections]
 
+{{< work-body-full-bleed container="yes" class="now-apps-sketching" padding="yes" >}}
+{{< row >}}
+{{< col columns="5" offset="1" >}}
 ## Sketching
 
 Sketching is a crucial part of my work flow. I use the [Behance Dot Grid Book](http://www.theghostlystore.com/collections/behance-action-method/products/behance-dot-grid-book). Sketching helps me quickly iterate UI / UX concepts without the distractions of Photoshop.
 
 In the Scores sketch, I stacked teams and scores above one another rather than centre-aligning them on the same row. This made scanning scores faster and easier.
-
+{{< /col >}}
+{{< col columns="5" >}}
+{{< img src="/img/uploads/work-nowapp-sketching-scores.png" alt="Scores" >}}
+{{< /col >}}
+{{< /row >}}
+{{< /work-body-full-bleed >}}
+{{< work-body-full-bleed container="yes" class="now-apps-sketching-cards" padding="yes" >}}
+{{< row >}}
+{{< col columns="8" offset="2" class="text-center" >}}
 ### Cards
 
 I began to explore a card metaphor. In the Stats sketch I try hinting at a swipe gesture by showing the edges of the left and right cards.
-
-[News sketch] [Stats sketch]
-
-## Score worm
+{{< /col >}}
+{{< /row >}}
+{{< row >}}
+{{< col class="text-center" >}}
+{{< img src="/img/uploads/work-nowapp-sketching-news.png" alt="News" >}}
+{{< /col >}}
+{{< col class="text-center" >}}
+{{< img src="/img/uploads/work-nowapp-sketching-stats.png" alt="Stats" >}}
+{{< /col >}}
+{{< /row >}}
+{{< /work-body-full-bleed >}}
+{{< work-body-full-bleed container="yes" class="now-apps-sketching-worm" padding="yes" >}}
+{{< row >}}
+{{< col columns="8" offset="2" class="text-center" >}}
+### Score worm
 
 The score worm is a key UI element which describes the flow of play in AFL, NRL and Super Rugby. It visually communicates which team is winning and by how much and is very common in live score apps.
 
 I tried to improve the design by vertically aligning the worm and the quarter-by-quarter scores below it.
-
-[Sketch of score worm] [Final mockup of score worm]
-
+{{< /col >}}
+{{< /row >}}
+{{< row >}}
+{{< col class="text-center" >}}
+{{< img src="/img/uploads/work-nowapp-sketching-worm.png" alt="Worm sketch" caption="Worm sketch" >}}
+{{< /col >}}
+{{< col class="text-center" >}}
+{{< img src="/img/uploads/work-nowapp-sketching-worm-mockup.png" alt="Worm mockup" caption="Worm mockup" >}}
+{{< /col >}}
+{{< /row >}}
+{{< /work-body-full-bleed >}}
+{{< work-body-full-bleed container="yes" class="now-apps-sketching-worm" padding="yes" >}}
+{{< row >}}
+{{< col >}}
 ## Video demo
 
 To help communicate the proposed functionality of the app, I produced a Flash-based walkthrough of the scores and menu screens.
 
 This was shared with our dev team, internal stake-holders and the app developers we worked with.
-
+{{< /col >}}
+{{< col >}}
 [Video showing UI]
-
----
-
+{{< /col >}}
+{{< /row >}}
+{{< /work-body-full-bleed >}}
+{{< work-body-full-bleed container="yes" class="now-apps-cards" padding="yes" >}}
+{{< row >}}
+{{< col columns="8" offset="2" class="text-center" >}}
 ## Designing with cards
 
 The online world is currently being re-imagined with 'cards' as a primary visual metaphor.
 
 The power of cards lies in their ability to visually associate related chunks of content, while at the same time differentiating them from other similar groupings of content.
-
-[Tweets screenshot] [Matches screenshot] [Articles screenshot]
-
+{{< /col >}}
+{{< /row >}}
+{{< row >}}
+{{< col class="text-center" >}}
+{{< img src="/img/uploads/work-nowapp-cards-twitter.png" alt="Tweets" caption="Tweets" >}}
+{{< /col >}}
+{{< col class="text-center" >}}
+{{< img src="/img/uploads/work-nowapp-cards-scores.png" alt="Scores" caption="Scores" >}}
+{{< /col >}}
+{{< col class="text-center" >}}
+{{< img src="/img/uploads/work-nowapp-cards-news.png" alt="News" caption="News" >}}
+{{< /col >}}
+{{< row >}}
+{{< col columns="8" offset="2" class="text-center" >}}
 Prominent companies which use cards to enhance their UI include Google, Twitter, Pinterest, Spotify and Facebook. Paul Adams further describes trend in [this influential article](http://insideintercom.io/why-cards-are-the-future-of-the-web/).
+{{< /col >}}
+{{< /row >}}
+{{< /work-body-full-bleed >}}
 
 ---
 

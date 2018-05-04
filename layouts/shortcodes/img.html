@@ -8,6 +8,7 @@ src="URL"
 alt="description of image"
 caption="caption"
 url="http://"
+class=""
 -->
 {{ if in (.Get "src") ".jpg" }}
   {{ $src := .Get "src" }}
@@ -32,7 +33,7 @@ url="http://"
   {{ $.Scratch.Add "sqip" $sqip }}
 
 {{ end }}
-<figure class="img-shortcode" data-full="{{ .Get "src" }}">
+<figure class="img-shortcode{{ if .Get "class" }} {{ .Get "class" }}{{ end }}" data-full="{{ .Get "src" }}">
   <div class="img-shortcode__img-wrapper">
     <img class="img-shortcode__img-lqip" src="{{ $.Scratch.Get "lqip" }}" {{ if .Get "alt" }}alt="{{ .Get "alt" }}"{{ end }} />
   </div>
