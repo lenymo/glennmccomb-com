@@ -1,9 +1,12 @@
 ---
 title: ESPN live score apps
 date: 2013-11-02T04:02:11.000Z
+featured: /img/uploads/featured-image-work-nowapps.jpg
 summary: A ground-up native re-design of ESPN Australia's live score apps.
 custom_class: now-apps
 custom_stylesheet: now-apps
+dark_bg: true
+page_header_bg_color: '#bc291f'
 ---
 {{< work-body-full-bleed container="yes" class="now-apps-intro" dark_bg="yes" padding="yes" >}}
 {{< row >}}

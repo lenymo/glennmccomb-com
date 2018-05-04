@@ -9,10 +9,24 @@
 //  VARIABLES
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
+$color-espn-red: #bc291f;
 $color-now-apps-ale: #c7361c;
 $color-now-apps-nrl: #017d31;
 $color-now-apps-afl: #07529b;
 $color-now-apps-sru: #1e80ae;
+
+
+//
+//  PAGE HEADER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.single-work {
+  &.now-apps {
+    .page-header {
+      
+    }
+  }
+}
 
 
 //
