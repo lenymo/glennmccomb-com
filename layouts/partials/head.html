@@ -34,6 +34,11 @@
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash ($.Scratch.Get "stylesheet_filename") }}" />
     {{ end }}
   {{ end }}
+
+  <!-- Work listing CSS. -->
+  {{ if and (eq .Type "work") (eq .Kind "section") }}
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "work.css" }}" />
+  {{ end }}
   
   <!-- Categories CSS. -->
   {{ if eq .Type "categories" }}
