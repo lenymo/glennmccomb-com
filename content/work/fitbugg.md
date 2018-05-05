@@ -1,8 +1,9 @@
 ---
 title: FitBugg
 date: 2014-09-21T09:57:11.000Z
-summary: An iPhone app to help maintain your desired fitness level
+summary: An iPhone app to help maintain your desired fitness level.
 dark_bg: true
+tile_image: /img/uploads/work-fitbugg-tile.jpg
 custom_class: fitbugg
 custom_stylesheet: fitbugg
 transparent_header: true

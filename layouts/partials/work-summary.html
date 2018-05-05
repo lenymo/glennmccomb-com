@@ -3,30 +3,33 @@
 //  WORK SUMMARY
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 -->
-<div class="row row__work-summary">
-  <div class="col-sm-12 col__work-summary">
+
+  <div class="container container__work-summary">
     <article class="work-summary">
-
-      <a href="{{ .Permalink }}" class="work-summary__link">
-        <h3 class="article-summary__title">
-          {{ .Title }}
-        </h3>
-
-        <p class="article-summary__excerpt">
-          {{ $truncated := .Summary | truncate 160 "" }}
-          {{ $summary := .Summary | markdownify }}
-
-          {{ if gt (len .Summary | markdownify ) (len $truncated | markdownify) }}
-            
-            {{ $truncated }}...
-
-          {{ else }}
-              
-            {{ $summary }}
-
+      <div class="row row__work-summary">
+        <div class="col-sm-6 col-md-4 offset-md-1 col-lg-3 offset-lg-2 col__work-summary col__work-summary--image">
+            <a href="{{ .Permalink }}" class="work-summary__image-link">
+          {{ if isset .Params "tile_image" }}
+              <img src="{{ .Params.tile_image  }}" class="work-summary__image" alt="">
           {{ end }}
-        </p>
-      </a><!-- .work-summary__link -->
+            </a>
+        </div>
+
+        <div class="col-sm-6 col-md-5 offset-md-1 col-lg-5 col__work-summary col__work-summary--content">
+          <a href="{{ .Permalink }}" class="work-summary__link">
+            <h2 class="work-summary__title">
+              {{ .Title }}
+            </h2>
+
+            <p class="work-summary__excerpt">
+              {{ with .Params.summary }}{{ . }}{{ end }}
+            </p>
+
+            <button class="btn">
+              Learn more
+            </button>
+          </a><!-- .work-summary__link -->
+        </div><!-- .col -->
+      </div><!-- .row -->
     </article><!-- .work-summary -->
-  </div><!-- .col -->
-</div><!-- .row -->
+  </div><!-- .container -->

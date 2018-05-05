@@ -6,19 +6,25 @@
 
   {{ partial "page-header" . }}
 
-  <section class="section section__work-summary">
-    <div class="container container__work-summary">
-      
-      {{ $paginator := .Paginate (where .Data.Pages "Type" "work") }}
+        
+    {{ $paginator := .Paginate (where .Data.Pages "Type" "work") }}
 
-      {{ range $paginator.Pages }}
+    {{ $.Scratch.Set "i" 1 }}
+
+    {{ range $paginator.Pages }}
+
+      <section class="section section__work-summary section__work-summary--{{ $.Scratch.Get "i" }}">
+
         {{ partial "work-summary" . }}
-      {{ end }}
+        
+      </section><!-- .section__work-summary -->
 
-      {{ partial "pagination.html" . }}
+      {{ $.Scratch.Add "i" 1 }}
 
-    </div>
-  </section>
+    {{ end }}
+
+    {{ partial "pagination.html" . }}
+
 
   {{ partial "footer" . }}
 

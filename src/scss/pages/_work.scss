@@ -4,12 +4,75 @@
 //  WORK
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-.single-work {
-  .work-body__content {
-    > p {
-      &:nth-child(1) {
-        margin-bottom: 0;
+
+//
+//  LAYOUT
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.col__work-summary--image {
+  text-align: center;
+
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+}
+
+@include respond-above(sm) {
+  .col__work-summary--content {
+    padding-top: $gutter;
+  }
+}
+
+@include respond-above(md) {
+  .col__work-summary--content {
+    padding-top: $gutter * 2;
+  }
+}
+
+@include respond-above(lg) {
+  .col__work-summary--content {
+    padding-top: $gutter * 2;
+  }
+}
+
+
+//
+//  REVERSE DIRECTIONS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@include respond-above(sm) {
+  .section__work-summary {
+    &:nth-child(2n+3) {
+      .col__work-summary--image {
+        order: 2;
       }
     }
+  }
+}
+
+
+
+//
+//  SUMMARY
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.work-summary__summary {
+  color: $base-font-color;
+}
+
+
+//
+//  LINK
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.work-summary__link {
+  color: $base-font-color;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $base-font-color;
+    text-decoration: none;
   }
 }

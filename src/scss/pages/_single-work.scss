@@ -1,11 +1,15 @@
 
 
 //
-//  WORK
+//  SINGLE WORK
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-// Variables.
-@import 'abstracts/variables';
-
-@import 'pages/work';
-@import 'pages/single-work';
+.single-work {
+  .work-body__content {
+    > p {
+      &:nth-child(1) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

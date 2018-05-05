@@ -2,6 +2,7 @@
 title: ESPN live score apps
 date: 2013-11-02T04:02:11.000Z
 featured: /img/uploads/featured-image-work-nowapps.jpg
+tile_image: /img/uploads/work-nowapp-branding-icon-afl.png
 summary: A ground-up native re-design of ESPN Australia's live score apps.
 custom_class: now-apps
 custom_stylesheet: now-apps
