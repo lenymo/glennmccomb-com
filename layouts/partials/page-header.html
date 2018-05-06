@@ -12,6 +12,11 @@
   {{ $.Scratch.Add "page-header-classes" " -has-dark-bg" }}
 {{ end }}
 
+<!-- Article index. -->
+{{ if and (eq .Type "work") (eq .Kind "section") }}
+  {{ $.Scratch.Add "page-header-classes" " -has-dark-bg" }}
+{{ end }}
+
 <!-- Single article. -->
 {{ if and (eq .Type "articles") (eq .Kind "page") }}
   {{ $.Scratch.Add "page-header-classes" " section__article-header" }}
