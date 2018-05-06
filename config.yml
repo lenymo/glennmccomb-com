@@ -42,10 +42,15 @@ menu:
     #   URL: /about/
     #   Weight: '20'
 
+    - Identifier: work
+      Name: Work
+      URL: /work/
+      Weight: '30'
+
     - Identifier: contact
       Name: Contact
       URL: /contact/
-      Weight: '30'
+      Weight: '40'
 
     # - Identifier: projects
     #   Name: Projects
