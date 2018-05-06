@@ -1,0 +1,154 @@
+
+
+//
+//  WORK SUMMARY
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+
+//
+//  LAYOUT
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@include respond-above(sm) {
+  .col__work-summary--content {
+    padding-top: $gutter;
+  }
+}
+
+@include respond-above(md) {
+  .col__work-summary--content {
+    padding-top: $gutter * 2;
+  }
+
+  .section__work-summary {
+    padding-bottom: $gutter * 6;
+    padding-top: $gutter * 6;
+  }
+}
+
+@include respond-above(lg) {
+  .col__work-summary--content {
+    padding-top: $gutter * 2;
+  }
+}
+
+
+//
+//  REVERSE DIRECTIONS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.section__work-summary {
+
+  // Remove padding bottom.
+  &:nth-child(1n+2) {
+    padding-bottom: 0;
+  }
+
+  &:last-of-type {
+    padding-bottom: $gutter * 2;
+  }
+}
+
+@include respond-above(xs) {
+  .section__work-summary {
+    .section__work-summary {
+      &:last-of-type {
+        padding-bottom: $gutter * 3;
+      }
+    }
+  }
+}
+
+@include respond-above(sm) {
+  .section__work-summary {
+    &:nth-child(2n+3) {
+      .col__work-summary--image {
+        order: 2;
+      }
+    }
+
+    &:last-of-type {
+      padding-bottom: $gutter * 4;
+    }
+  }
+}
+
+@include respond-above(md) {
+  .section__work-summary {
+    &:last-of-type {
+      padding-bottom: $gutter * 6;
+    }
+  }
+}
+
+
+//
+//  IMAGE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.col__work-summary--image {
+  text-align: center;
+
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+}
+
+
+//
+//  DATE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.work-summary__date {
+  color: $small-font-color;
+  font-size: $small-font-size;
+  font-weight: bold;
+  margin-bottom: $gutter * .25;
+  text-transform: uppercase;
+}
+
+
+
+//
+//  LINK
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.work-summary__link {
+  color: $base-font-color;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $base-font-color;
+    text-decoration: none;
+  }
+}
+
+
+//
+//  TITLE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.work-summary__title {
+  margin-bottom: $gutter * .5;
+}
+
+
+
+//
+//  SUMMARY
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.work-summary__excerpt {
+  color: $base-font-color;
+}
+
+
+//
+//  BUTTON
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.work-summary__button {
+  margin-bottom: 0;
+}
