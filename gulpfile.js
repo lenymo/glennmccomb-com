@@ -101,7 +101,7 @@ gulp.task('scss', function () {
     // Initialise source maps for dev.
     .pipe( gulpif( argv.dev, sourcemaps.init() ) )
     .pipe( sass().on('error', sass.logError) )
-    .pipe( sass({outputStyle : 'compressed'}) )
+    .pipe( sass({outputStyle: 'compressed'}) )
     .pipe( gulpif( argv.dev, sourcemaps.write({includeContent: false}) ) )
     .pipe( gulpif( argv.dev, sourcemaps.init({loadMaps: true}) ) )
     .pipe( autoprefixer({
