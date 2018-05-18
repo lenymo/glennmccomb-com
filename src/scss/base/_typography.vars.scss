@@ -34,7 +34,7 @@ $heading-font-family: 'Volkhov', Georgia, Palatino, Garamond, Bookman, sans-seri
 
 
 //
-//  SIZES, WEIGHTS, ETC
+//  HEADING SIZES, WEIGHTS, ETC
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 $heading-line-height: 1.5;
@@ -67,6 +67,11 @@ $h5-font-family: $base-font-family;
 
 $h6-font-size: rem($base-font-size);
 $h6-font-family: $base-font-family;
+
+
+//
+//  GENERAL SIZES, WEIGHTS, ETC
+//––––––––––––––––––––––––––––––––––––––––––––––––––
 
 $lead-font-size-sm: rem(21px);
 $lead-font-size: rem(28px);
