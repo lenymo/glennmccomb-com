@@ -16,7 +16,7 @@ var Helpers = (function() {
     var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     return w;
 
-  } // handleTableOfContents()
+  } // getViewportWidth()
 
 
   //
@@ -53,9 +53,9 @@ var Helpers = (function() {
   //  INIT
   //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-  function init() {
+  // function init() {
     // getViewportWidth();
-  }
+  // }
 
   return {
     // init: init,
