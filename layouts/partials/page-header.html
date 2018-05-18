@@ -78,7 +78,7 @@
     <div class="row row__page-header">
       <div class="col-8 offset-3 col-sm-6 offset-sm-3 col-md-8 offset-md-2 col-lg-8 offset-lg-2">
         <div class="page-header__hgroup{{ if eq .Type "articles" }} article-header__hgroup{{ end }}">
-          <h1 class="page-header__title{{ if eq .Type "articles" }} article-header__title{{ end }}">
+          <h1 class="page-header__title{{ if and (eq .Type "articles") (eq .Kind "page") }} article-header__title{{ end }}">
             {{ if and (eq .Type "work") (eq .Kind "section") }}
               Work
             {{ else }}
