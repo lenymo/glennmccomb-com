@@ -164,75 +164,80 @@ var HandleForms = (function() {
         var action = form.action;
 
         // Get form fields.
-        var nameField = document.querySelector('.form__field-name');
-        var emailField = document.querySelector('.form__field-email');
-        var messageField = document.querySelector('.form__field-message');
-        var buttonElem = document.querySelector('.form__field-message');
+        var nameField = document.querySelector('.form__field--name');
+        var emailField = document.querySelector('.form__field--email');
+        var messageField = document.querySelector('.form__field--message');
+        var honeypotField = document.querySelector('.form__field--ponyhot');
 
         // Get the form field values (name, email, message).
         var name = nameField.value;
         var email = emailField.value;
         var message = messageField.value;
-        var button = buttonElem.value;
+        var honeypot = honeypotField.value;
 
-        // Add the sending class.
-        form.classList.add( sendingClass );
+        // If there's no honeypot.
+        if ( ! honeypot ) {
 
-        // Put together the request string.
-        var requestString = '?form-name=contact';
-        requestString += '&name=' + name;
-        requestString += '&email=' + email;
-        requestString += '&message=' + message;
+          // Add the sending class.
+          form.classList.add( sendingClass );
 
-        // Build the request URL.
-        var requestUrl = action + requestString;
+          // Put together the request string.
+          var requestString = '?form-name=contact';
+          requestString += '&name=' + name;
+          requestString += '&email=' + email;
+          requestString += '&message=' + message;
 
-        // Encode the URL.
-        requestUrl = encodeURI(requestUrl);
+          // Build the request URL.
+          var requestUrl = action + requestString;
 
-        // Create a new request.
-        var request = new XMLHttpRequest();
+          // Encode the URL.
+          requestUrl = encodeURI(requestUrl);
 
-        // Open the request.
-        request.open('POST', requestUrl, true);
+          // Create a new request.
+          var request = new XMLHttpRequest();
 
-        // When the request is loaded.
-        request.onload = function() {
+          // Open the request.
+          request.open('POST', requestUrl, true);
 
-          // If it was successful.
-          if (request.status >= 200 && request.status < 400) {
+          // When the request is loaded.
+          request.onload = function() {
 
-            // console.log('Success');
+            // If it was successful.
+            if (request.status >= 200 && request.status < 400) {
 
-            setTimeout( function() {
-              form.classList.add( sentClass );
-            }, sendingDelay );
+              // console.log('Success');
 
-            setTimeout( function() {
-              form.classList.add( doneClass );
-            }, sendingDelay * 2 );
+              setTimeout( function() {
+                form.classList.add( sentClass );
+              }, sendingDelay );
 
-            setTimeout( function() {
-              form.classList.add( thanksClass );
+              setTimeout( function() {
+                form.classList.add( doneClass );
+              }, sendingDelay * 2 );
 
-              // Empty fields.
-              nameField.value = '';
-              emailField.value = '';
-              messageField.value = '';
+              setTimeout( function() {
+                form.classList.add( thanksClass );
 
-              // Remove the -has-text class from email field.
-              emailField.classList.remove('-has-text');
+                // Empty fields.
+                nameField.value = '';
+                emailField.value = '';
+                messageField.value = '';
 
-              // Reset the form.
-              form.reset();
+                // Remove the -has-text class from email field.
+                emailField.classList.remove('-has-text');
 
-            }, sendingDelay * 3 );
+                // Reset the form.
+                form.reset();
 
-          // If the server was contacted but submissions was unsuccessful.
-          } else {
-            // console.log('Server was reached but it returned an error');
-          }
-        };
+              }, sendingDelay * 3 );
+
+            // If the server was contacted but submissions was unsuccessful.
+            } else {
+              // console.log('Server was reached but it returned an error');
+            }
+          }; // request.onload = function() {
+        } // if ( ! honeypot ) {
+
 
         // Handle errors.
         request.onerror = function() {
