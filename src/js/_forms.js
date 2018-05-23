@@ -238,16 +238,16 @@ var HandleForms = (function() {
               // console.log('Server was reached but it returned an error');
             }
           }; // request.onload = function() {
+
+          // Handle errors.
+          request.onerror = function() {
+            // console.log('There was a connection error of some sort.');
+          };
+
+          // Send the request.
+          request.send();
+
         } // if ( ! honeypot ) {
-
-
-        // Handle errors.
-        request.onerror = function() {
-          // console.log('There was a connection error of some sort.');
-        };
-
-        // Send the request.
-        request.send();
 
       }); // contactForm.addEventListener('submit', function(e)
     } // if ( contactForm.length > 0 )
