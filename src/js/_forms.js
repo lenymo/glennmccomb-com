@@ -175,7 +175,7 @@ var HandleForms = (function() {
         var message = messageField.value;
         var honeypot = honeypotField.value;
 
-        console.log( 'honeypot: ' + ponyhot );
+        console.log( 'honeypot: ' + honeypot );
 
         // If there's no honeypot.
         if ( ! honeypot ) {
