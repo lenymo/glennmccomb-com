@@ -4,7 +4,7 @@ date: '2018-02-11T15:31:24+11:00'
 featured: /img/uploads/featured-image-sass-media-query-mixins.jpg
 categories:
   - development
-featured_opacity: '.25'
+featured_opacity: '.15'
 dark_bg: true
 toc: true
 ---

@@ -13,6 +13,8 @@
   <title>{{ if not .IsHome }}{{ if eq .Title "Nba" }}NBA{{ else }}{{ if and (eq .Type "work") (eq .Kind "section") }}Work{{ else }}{{ .Title }}{{ end }}{{ end }} | {{ end }}{{ .Site.Title }}</title>
 
   <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "critical.css" }}" /> -->
+
+  <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}css/critical/index.css" /> -->
   
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "main.css" }}" />
 

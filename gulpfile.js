@@ -8,6 +8,7 @@
 var gulp            = require('gulp');
 var sass            = require('gulp-sass');
 var critical        = require('critical').stream;
+var hashCSS         = require('./data/css/hash.json');
 var autoprefixer    = require('gulp-autoprefixer');
 var concat          = require('gulp-concat');
 var uglify          = require('gulp-uglify');
@@ -310,14 +311,21 @@ gulp.task('compress-images', function() {
 
 // Generate & Inline Critical-path CSS
 gulp.task('critical', function () {
-  gulp.src('public/*.html')
+  // console.log( hashCSS );
+  var path = 'static/css/';
+  var main = path + hashCSS['main.css'];
+  // console.log( main );
+  gulp.src([
+    'public/index.html',
+    // 'public/articles/a-better-nba-box-score/index.html'
+  ])
     .pipe(critical({
       base: '/',
       // inline: true,
       minify: true,
-      css: ['static/css/main-a9f0e59a.css'],
-      width: 1400,
-      height: 900,
+      css: [main],
+      width: 1000,
+      height: 600,
       // src: 'public/index.html';
     }))
     .on('error', function(err) { console.log(err.message); })
