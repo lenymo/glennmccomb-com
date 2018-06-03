@@ -14,7 +14,5 @@
   ObjectFitPolyfill.init();
   ExpandableCodeBlocks.init();
   LqipImages.init();
-
-  PageTransitions.init();
   
 })();
