@@ -79,7 +79,7 @@ $disqus-placeholder-height: 150px;
 }
 
 .article-header__hgroup {
-  padding: $article-header-padding-top-xs 0 $article-header-padding-bottom-xs;
+  // padding: $article-header-padding-top-xs 0 $article-header-padding-bottom-xs;
   position: relative;
   z-index: 2;
 }
@@ -88,29 +88,29 @@ $disqus-placeholder-height: 150px;
   margin-bottom: $gutter;
 }
 
-@include respond-above(xs) {
-  .article-header__hgroup {
-    padding: $article-header-padding-top-sm 0 $article-header-padding-bottom-sm;
-  }
-}
+// @include respond-above(xs) {
+//   .article-header__hgroup {
+//     padding: $article-header-padding-top-sm 0 $article-header-padding-bottom-sm;
+//   }
+// }
 
-@include respond-above(sm) {
-  .article-header__hgroup {
-    padding: $article-header-padding-top-md 0 $article-header-padding-bottom-md;
-  }
-}
+// @include respond-above(sm) {
+//   .article-header__hgroup {
+//     padding: $article-header-padding-top-md 0 $article-header-padding-bottom-md;
+//   }
+// }
 
-@include respond-above(md) {
-  .article-header__hgroup {
-    padding: $article-header-padding-top-lg 0 $article-header-padding-bottom-lg;
-  }
-}
+// @include respond-above(md) {
+//   .article-header__hgroup {
+//     padding: $article-header-padding-top-lg 0 $article-header-padding-bottom-lg;
+//   }
+// }
 
-@include respond-above(lg) {
-  .article-header__hgroup {
-    padding: $article-header-padding-top-xl 0 $article-header-padding-bottom-xl;
-  }
-}
+// @include respond-above(lg) {
+//   .article-header__hgroup {
+//     padding: $article-header-padding-top-xl 0 $article-header-padding-bottom-xl;
+//   }
+// }
 
 
 //
@@ -156,13 +156,13 @@ $disqus-placeholder-height: 150px;
 
 @include respond-above(sm) {
   .article-header__date {
-    top: ($gutter * 10) + $site-header-height-md;
+    top: ($gutter * 9) + $site-header-height-md;
   }
 }
 
 @include respond-above(md) {
   .article-header__date {
-    top: ($gutter * 12) + $site-header-height-lg;
+    top: ($gutter * 11) + $site-header-height-lg;
   }
 }
 
@@ -170,7 +170,7 @@ $disqus-placeholder-height: 150px;
   .article-header__date {
     height: 80px;
     padding: $gutter * .75;
-    top: ($gutter * 16) + $site-header-height-lg;
+    top: ($gutter * 13) + $site-header-height-lg;
     transform: translateX(11px);
     width: 80px;
   }

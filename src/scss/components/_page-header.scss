@@ -58,7 +58,7 @@
   margin-bottom: 0;
 }
 
-@include respond-above(xl) {
+@include respond-above(lg) {
   .page-header__title {
     font-size: 72px;
   }

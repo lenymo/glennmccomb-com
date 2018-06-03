@@ -75,7 +75,7 @@ h1 {
     font-size: $h1-font-size-sm;
   }
 
-  @include respond-above(lg) {
+  @include respond-above(md) {
     font-size: $h1-font-size-lg;
   }
 }
