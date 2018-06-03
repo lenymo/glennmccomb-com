@@ -7,6 +7,7 @@
 // General.
 var gulp            = require('gulp');
 var sass            = require('gulp-sass');
+var critical        = require('critical').stream;
 var autoprefixer    = require('gulp-autoprefixer');
 var concat          = require('gulp-concat');
 var uglify          = require('gulp-uglify');
@@ -301,6 +302,28 @@ gulp.task('compress-images', function() {
     ]))
     .pipe(gulp.dest('static/img/uploads'));
 });
+
+
+//
+//  CRITICAL CSS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// Generate & Inline Critical-path CSS
+gulp.task('critical', function () {
+  gulp.src('public/*.html')
+    .pipe(critical({
+      base: '/',
+      // inline: true,
+      minify: true,
+      css: ['static/css/main-a9f0e59a.css'],
+      width: 1400,
+      height: 900,
+      // src: 'public/index.html';
+    }))
+    .on('error', function(err) { console.log(err.message); })
+    .pipe(gulp.dest('static/css/critical'));
+});
+
 
 
 //
