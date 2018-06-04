@@ -7,6 +7,7 @@
 // General.
 var gulp            = require('gulp');
 var sass            = require('gulp-sass');
+var exec            = require('child_process').exec;
 var critical        = require('critical').stream;
 var hashCSS         = require('./data/css/hash.json');
 var autoprefixer    = require('gulp-autoprefixer');
@@ -313,7 +314,7 @@ gulp.task('compress-images', function() {
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 // Generate & Inline Critical-path CSS
-gulp.task('critical', function () {
+gulp.task('critical', function (cb) {
 
   var path = 'static/css/';
 
@@ -322,44 +323,54 @@ gulp.task('critical', function () {
   var article = path + hashCSS['single-article.css'];
   var contact = path + hashCSS['contact.css'];
 
-  // Home page.
-  gulp.src('public/articles/index.html')
-    .pipe(critical({
-      base: '/',
-      // inline: true,
-      minify: true,
-      css: [main],
-      width: 1000,
-      height: 600,
-      // src: 'public/index.html';
-    }))
-    .on('error', function(err) { console.log(err.message); })
-    .pipe(gulp.dest('static/css/critical'));
+  exec('hugo', function(err, stdout, stderr) {
+    console.log(stdout);
+    console.log(stderr);
+    cb(err);
+  });
+
+  setTimeout(function() {
+
+    // Home page.
+    gulp.src('public/articles/index.html')
+      .pipe(critical({
+        base: '/',
+        // inline: true,
+        minify: true,
+        css: [main],
+        width: 1000,
+        height: 600,
+        // src: 'public/index.html';
+      }))
+      .on('error', function(err) { console.log(err.message); })
+      .pipe(gulp.dest('static/css/critical'));
 
 
-  // Article page.
-  gulp.src('public/articles/a-better-nba-box-score/index.html')
-    .pipe(critical({
-      base: '/',
-      minify: true,
-      css: [main, article],
-      width: 1000,
-      height: 600,
-    }))
-    .on('error', function(err) { console.log(err.message); })
-    .pipe(gulp.dest('static/css/critical/articles/'));
+    // Article page.
+    gulp.src('public/articles/a-better-nba-box-score/index.html')
+      .pipe(critical({
+        base: '/',
+        minify: true,
+        css: [main, article],
+        width: 1000,
+        height: 600,
+      }))
+      .on('error', function(err) { console.log(err.message); })
+      .pipe(gulp.dest('static/css/critical/articles/'));
 
-  // Contact page.
-  gulp.src('public/contact/index.html')
-    .pipe(critical({
-      base: '/',
-      minify: true,
-      css: [main, contact],
-      width: 1000,
-      height: 1200,
-    }))
-    .on('error', function(err) { console.log(err.message); })
-    .pipe(gulp.dest('static/css/critical/contact/'));
+    // Contact page.
+    gulp.src('public/contact/index.html')
+      .pipe(critical({
+        base: '/',
+        minify: true,
+        css: [main, contact],
+        width: 1000,
+        height: 1200,
+      }))
+      .on('error', function(err) { console.log(err.message); })
+      .pipe(gulp.dest('static/css/critical/contact/'));
+  }, 1000);
+
 });
 
 
