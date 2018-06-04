@@ -342,7 +342,7 @@ gulp.task('critical', function () {
     .pipe(critical({
       base: '/',
       minify: true,
-      css: [main, contact],
+      css: [main, article],
       width: 1000,
       height: 600,
     }))
