@@ -16,17 +16,23 @@
   <!-- Main CSS. -->
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "main.css" }}" />
 
-  
-  <!-- Manual critical CSS. -->
-  <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "critical.css" }}" /> -->
 
-  <!-- Home page critical CSS. -->
+  <!-- Home / article listing / category critical CSS. -->
   <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}css/critical/index.css" /> -->
 
   {{ if and (eq .Type "articles") (eq .Kind "page") }}
   <!-- Single artile critical CSS -->
   <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}css/critical/articles/index.css" /> -->
   {{ end }}
+
+  {{ if and (eq .Type "contact") (eq .Kind "section") }}
+  <!-- Contact critical CSS. -->
+  <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}css/critical/contact/index.css" /> -->
+  {{ end }}
+  
+  
+  <!-- Manual critical CSS. -->
+  <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "critical.css" }}" /> -->
 
 
   <!-- Article-specific CSS. -->

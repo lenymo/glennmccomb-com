@@ -320,12 +320,10 @@ gulp.task('critical', function () {
   // Build CSS filename paths.
   var main = path + hashCSS['main.css'];
   var article = path + hashCSS['single-article.css'];
+  var contact = path + hashCSS['contact.css'];
 
   // Home page.
-  gulp.src([
-    'public/articles/index.html',
-    // 'public/articles/a-better-nba-box-score/index.html'
-  ])
+  gulp.src('public/articles/index.html')
     .pipe(critical({
       base: '/',
       // inline: true,
@@ -340,19 +338,28 @@ gulp.task('critical', function () {
 
 
   // Article page.
-  gulp.src([
-    // 'public/index.html',
-    'public/articles/a-better-nba-box-score/index.html'
-  ])
+  gulp.src('public/articles/a-better-nba-box-score/index.html')
     .pipe(critical({
       base: '/',
       minify: true,
-      css: [main, article],
+      css: [main, contact],
       width: 1000,
       height: 600,
     }))
     .on('error', function(err) { console.log(err.message); })
     .pipe(gulp.dest('static/css/critical/articles/'));
+
+  // Contact page.
+  gulp.src('public/contact/index.html')
+    .pipe(critical({
+      base: '/',
+      minify: true,
+      css: [main, contact],
+      width: 1000,
+      height: 1200,
+    }))
+    .on('error', function(err) { console.log(err.message); })
+    .pipe(gulp.dest('static/css/critical/contact/'));
 });
 
 
