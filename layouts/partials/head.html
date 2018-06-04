@@ -29,7 +29,7 @@
   <!-- Contact critical CSS. -->
   <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}css/critical/contact/index.css" /> -->
   {{ end }}
-  
+
   
   <!-- Manual critical CSS. -->
   <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "critical.css" }}" /> -->
@@ -110,14 +110,14 @@
   {{ end }}
   
   <!-- Description. -->
-  <!-- Articles. -->
   {{ if and (eq .Type "articles") (eq .Kind "page") }}
+    <!-- Articles. -->
     {{ $truncated := .Summary | truncate 190 "" }}
     {{ $summary := .Summary | markdownify }}
     <meta name="description" content="{{ if gt (len .Summary | markdownify ) (len $truncated | markdownify) }}{{ $truncated }}...{{ else }}{{ $summary }}{{ end }}" />
     <meta name="twitter:description" property="og:description" content="{{ if gt (len .Summary | markdownify ) (len $truncated | markdownify) }}{{ $truncated }}...{{ else }}{{ $summary }}{{ end }}" />
-  <!-- Everything else. -->
   {{ else }}
+    <!-- Everything else. -->
     {{ if isset .Params "description" }}
     <meta name="description" content="{{ .Params.description }}" />
     <meta name="twitter:description" property="og:description" content="{{ .Params.description }}" />
