@@ -89,7 +89,10 @@ gulp.task('react', function() {
 gulp.task('scss', function () {
 
   // Clear the static/css directory.
-  del(['static/css/**/*']);
+  del([
+    'static/css/*.css',
+    '!static/css/critical/**/*',
+  ]);
 
   // If dev flag doesn't exist.
   if ( argv.dev === undefined ) {
