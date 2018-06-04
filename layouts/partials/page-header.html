@@ -85,6 +85,11 @@
               {{ .Title }}
             {{ end }}
           </h1>
+          
+
+          <p class="page-header__sub-title">
+            
+          </p>
 
           <!-- Show categories in single article -->
           {{ if and (eq .Type "articles") (eq .Kind "page") }}
@@ -135,9 +140,5 @@
 
     </picture>
   </div>
-  <!-- <div class="page-header__featured-image" style="background-image:url({{ $uploadsResponsive }}{{ $.Scratch.Get "featured" }}-lqip{{ $.Scratch.Get "featured-extension" }})"></div> -->
-  {{ else }}
-  <!-- <div class="page-header__featured-image"></div> -->
   {{ end }}
-  <!-- <div class="page-header__featured-image" {{ with .Params.featured }}style="background-image:url({{ . }})"{{ end }}></div> -->
 </section><!-- .section__article-header -->
