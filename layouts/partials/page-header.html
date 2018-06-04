@@ -86,10 +86,11 @@
             {{ end }}
           </h1>
           
-
+          {{ with .Params.page_header_sub_title }}
           <p class="page-header__sub-title">
-            
+            {{ . }}
           </p>
+          {{ end }}
 
           <!-- Show categories in single article -->
           {{ if and (eq .Type "articles") (eq .Kind "page") }}
