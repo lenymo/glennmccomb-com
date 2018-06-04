@@ -311,10 +311,14 @@ gulp.task('compress-images', function() {
 
 // Generate & Inline Critical-path CSS
 gulp.task('critical', function () {
-  // console.log( hashCSS );
+
   var path = 'static/css/';
+
+  // Build CSS filename paths.
   var main = path + hashCSS['main.css'];
-  // console.log( main );
+  var article = path + hashCSS['single-article.css'];
+
+  // Home page.
   gulp.src([
     'public/index.html',
     // 'public/articles/a-better-nba-box-score/index.html'
@@ -330,6 +334,22 @@ gulp.task('critical', function () {
     }))
     .on('error', function(err) { console.log(err.message); })
     .pipe(gulp.dest('static/css/critical'));
+
+
+  // Article page.
+  gulp.src([
+    // 'public/index.html',
+    'public/articles/a-better-nba-box-score/index.html'
+  ])
+    .pipe(critical({
+      base: '/',
+      minify: true,
+      css: [main, article],
+      width: 1000,
+      height: 600,
+    }))
+    .on('error', function(err) { console.log(err.message); })
+    .pipe(gulp.dest('static/css/critical/articles/'));
 });
 
 
