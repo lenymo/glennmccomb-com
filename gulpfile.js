@@ -9,7 +9,6 @@ var gulp            = require('gulp');
 var sass            = require('gulp-sass');
 var exec            = require('child_process').exec;
 var critical        = require('critical').stream;
-var hashCSS         = require('./data/css/hash.json');
 var autoprefixer    = require('gulp-autoprefixer');
 var concat          = require('gulp-concat');
 var uglify          = require('gulp-uglify');
@@ -30,15 +29,9 @@ var gulpif          = require('gulp-if');
 var responsive      = require('gulp-responsive');
 var imagemin        = require('gulp-imagemin');
 var mozjpeg         = require('imagemin-mozjpeg');
-var sqip            = require('gulp-sqip');
 
-// Unused plugins.
-// Used to run tasks in sequence. I couldn't get it working.
-var run             = require('run-sequence');
-
-// Both of these are used to determine if files are newer / have changed.
-var newer           = require('gulp-newer');
-var changed         = require('gulp-changed');
+// Data.
+var hashCSS         = require('./data/css/hash.json');
 
 
 //
@@ -181,42 +174,6 @@ gulp.task('js', function() {
 
 
 //
-//  IMAGES HASHMAP
-//––––––––––––––––––––––––––––––––––––––––––––––––––
-
-// gulp.task('images', function() {
-//   // del(['static/img/**/*']);
-//   gulp.src('src/img/**/*')
-//     .pipe( hash() )
-//     .pipe( gulp.dest('static/img') )
-
-//     // Create a hash map.
-//     .pipe( hash.manifest('hash.json'), {
-//       deleteOld: true,
-//       sourceDir: 'static/images'
-//     })
-//     // Put the map in the data directory.
-//     .pipe( gulp.dest('data/images') );
-// });
-
-
-//
-//  ADMIN SCSS
-//––––––––––––––––––––––––––––––––––––––––––––––––––
-
-// Compile admin SCSS files to CSS
-// gulp.task('admin-scss', function () {
-//   gulp.src('src/admin/scss/**/*.scss')
-//     .pipe(sass().on('error', sass.logError))
-//     .pipe(sass({outputStyle : 'expanded'}))
-//     .pipe(autoprefixer({
-//       browsers : ['last 20 versions']
-//     }))
-//     .pipe(gulp.dest('static/admin/css'));
-// });
-
-
-//
 //  IMAGES
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
@@ -247,11 +204,6 @@ gulp.task('images', function() {
       silent: true // Don't spam the console
     }))
     .pipe(gulp.dest('static/img/uploads'));
-
-  // SQIP.
-  // gulp.src('src/img/uploads/**/*.{jpg,png}')
-  //   .pipe(sqip())
-  //   .pipe(gulp.dest('static/img/uploads'));
 
   // Featured images.
   gulp.src('src/img/uploads/featured-image-*.{jpg,png}')
@@ -286,7 +238,6 @@ gulp.task('compress-images', function() {
     'static/img/uploads/**/*.{jpg,png}',
     '!static/img/uploads/**/*-lqip.jpg'
     ])
-    // .pipe(newer('src/img/uploads/'))
     .pipe(imagemin([
       imagemin.gifsicle(),
       // imagemin.optipng({optimizationLevel: 9}),
@@ -376,30 +327,12 @@ gulp.task('critical', function (cb) {
 
 
 //
-//  BUILD
-//––––––––––––––––––––––––––––––––––––––––––––––––––
-
-// gulp.task('build', ['responsive-images', 'compress-images']);
-// gulp.task('build', ['compress-images']);
-// gulp.task('build', ['responsive-images']);
-
-
-// gulp.task('build', ['responsive-images'], function(callback) {
-//   run(['compress-images'], function() {
-//     callback();
-//   });
-// });
-
-
-
-//
 //  WATCH
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 // Watch asset folder for changes
 gulp.task('watch', ['scss', 'js', 'react'], function () {
   gulp.watch('src/scss/**/*', ['scss']);
-  // gulp.watch('src/admin/scss/**/*', ['admin-scss']);
   gulp.watch('src/js/**/*.js', ['js']);
   gulp.watch('src/img/uploads/**/*', ['images']);
   gulp.watch('src/react/**/*.js', ['react']);
