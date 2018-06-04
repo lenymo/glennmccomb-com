@@ -10,19 +10,19 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 // Article header.
-$article-header-padding-top-xs: $gutter*6 + $site-header-height-sm;
-$article-header-padding-bottom-xs: $gutter*3;
+$article-header-padding-top-xs: ($gutter * 6) + $site-header-height-sm;
+$article-header-padding-bottom-xs: $gutter * 3;
 
-$article-header-padding-top-sm: $gutter*8 + $site-header-height-sm;
-$article-header-padding-bottom-sm: $gutter*4;
+$article-header-padding-top-sm: ($gutter * 8) + $site-header-height-sm;
+$article-header-padding-bottom-sm: $gutter * 4;
 
-$article-header-padding-top-md: $gutter*10 + $site-header-height-md;
-$article-header-padding-bottom-md: $gutter*5;
+$article-header-padding-top-md: ($gutter * 10) + $site-header-height-md;
+$article-header-padding-bottom-md: $gutter * 5;
 
-$article-header-padding-top-lg: $gutter*12 + $site-header-height-lg;
+$article-header-padding-top-lg: ($gutter * 12) + $site-header-height-lg;
 $article-header-padding-bottom-lg: $gutter * 6;
 
-$article-header-padding-top-xl: $gutter*16 + $site-header-height-lg;
+$article-header-padding-top-xl: ($gutter * 16) + $site-header-height-lg;
 $article-header-padding-bottom-xl: $gutter * 6;
 
 // Comments.

@@ -11,15 +11,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="{{ .Description }}">
   <title>{{ if not .IsHome }}{{ if eq .Title "Nba" }}NBA{{ else }}{{ if and (eq .Type "work") (eq .Kind "section") }}Work{{ else }}{{ .Title }}{{ end }}{{ end }} | {{ end }}{{ .Site.Title }}</title>
+  
 
+  <!-- Main CSS. -->
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "main.css" }}" />
+
+  
+  <!-- Manual critical CSS. -->
   <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "critical.css" }}" /> -->
 
+  <!-- Home page critical CSS. -->
   <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}css/critical/index.css" /> -->
-  
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "main.css" }}" />
+
+  {{ if and (eq .Type "articles") (eq .Kind "page") }}
+  <!-- Single artile critical CSS -->
+  <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}css/critical/articles/index.css" /> -->
+  {{ end }}
+
 
   <!-- Article-specific CSS. -->
   {{ if and (eq .Type "articles") (eq .Kind "page") }}
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "single-article.css" }}" />
+
     {{ if isset .Params "custom_stylesheet" }}
       {{ $.Scratch.Add "stylesheet_filename" "article-" }}
       {{ $.Scratch.Add "stylesheet_filename" .Params.custom_stylesheet }}

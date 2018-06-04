@@ -75,11 +75,11 @@
 @import 'components/social-links';
 @import 'components/article-date';
 @import 'components/section-articles-summary';
-@import 'components/section-related-articles';
+// @import 'components/section-related-articles';
 @import 'components/article-summary';
 @import 'components/article-summary-featured';
 @import 'components/article-summary-parallax-hover';
-@import 'components/table-of-contents';
+// @import 'components/table-of-contents';
 @import 'components/highlight';
 @import 'components/tweet-widget';
 
@@ -89,8 +89,8 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 @import 'shortcodes/col';
-@import 'shortcodes/article-body-full-bleed';
-@import 'shortcodes/work-body-full-bleed';
+// @import 'shortcodes/article-body-full-bleed';
+// @import 'shortcodes/work-body-full-bleed';
 @import 'shortcodes/img';
 
 
@@ -99,7 +99,7 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 @import 'pages/home';
-@import 'pages/single-article';
+// @import 'pages/single-article';
 // @import 'pages/about';
 // @import 'pages/contact';
 
@@ -123,7 +123,7 @@
 //  THEMES
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-@import 'themes/default';
+// @import 'themes/default';
 
 
 // Basic 7-1 structure taken from:
