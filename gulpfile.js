@@ -320,7 +320,7 @@ gulp.task('critical', function () {
 
   // Home page.
   gulp.src([
-    'public/index.html',
+    'public/articles/index.html',
     // 'public/articles/a-better-nba-box-score/index.html'
   ])
     .pipe(critical({
