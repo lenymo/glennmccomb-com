@@ -13,72 +13,7 @@
   <title>{{ if not .IsHome }}{{ if eq .Title "Nba" }}NBA{{ else }}{{ if and (eq .Type "work") (eq .Kind "section") }}Work{{ else }}{{ .Title }}{{ end }}{{ end }} | {{ end }}{{ .Site.Title }}</title>
   
 
-  <!-- Main CSS. -->
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "main.css" }}" />
-
-
-  <!-- Home / article listing / category critical CSS. -->
-  <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}css/critical/index.css" /> -->
-
-  {{ if and (eq .Type "articles") (eq .Kind "page") }}
-  <!-- Single artile critical CSS -->
-  <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}css/critical/articles/index.css" /> -->
-  {{ end }}
-
-  {{ if and (eq .Type "contact") (eq .Kind "section") }}
-  <!-- Contact critical CSS. -->
-  <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}css/critical/contact/index.css" /> -->
-  {{ end }}
-
-  
-  <!-- Manual critical CSS. -->
-  <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "critical.css" }}" /> -->
-
-
-  <!-- Article-specific CSS. -->
-  {{ if and (eq .Type "articles") (eq .Kind "page") }}
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "single-article.css" }}" />
-
-    {{ if isset .Params "custom_stylesheet" }}
-      {{ $.Scratch.Add "stylesheet_filename" "article-" }}
-      {{ $.Scratch.Add "stylesheet_filename" .Params.custom_stylesheet }}
-      {{ $.Scratch.Add "stylesheet_filename" ".css" }}
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash ($.Scratch.Get "stylesheet_filename") }}" />
-    {{ end }}
-  {{ end }}
-
-  <!-- Work-specific CSS. -->
-  {{ if and (eq .Type "work") (eq .Kind "page") }}
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "work.css" }}" />
-    {{ if isset .Params "custom_stylesheet" }}
-      {{ $.Scratch.Add "stylesheet_filename" "work-" }}
-      {{ $.Scratch.Add "stylesheet_filename" .Params.custom_stylesheet }}
-      {{ $.Scratch.Add "stylesheet_filename" ".css" }}
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash ($.Scratch.Get "stylesheet_filename") }}" />
-    {{ end }}
-  {{ end }}
-
-  <!-- Work listing CSS. -->
-  {{ if and (eq .Type "work") (eq .Kind "section") }}
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "work.css" }}" />
-  {{ end }}
-  
-  <!-- Categories CSS. -->
-  {{ if eq .Type "categories" }}
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "categories.css" }}" />
-  {{ end }}
-  
-  <!-- About CSS. -->
-  {{ if eq .Type "about" }}
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "about.css" }}" />
-  {{ end }}
-
-  <!-- Contact CSS. -->
-  {{ if eq .Type "contact" }}
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "contact.css" }}" />
-  {{ end }}
-
-  <link href="https://fonts.googleapis.com/css?family=Volkhov:400,700" rel="stylesheet">
+  {{ partial "head-styles.html" . }}
   
   <!-- Favicons. -->
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/favicon/apple-touch-icon-114x114.png">
@@ -125,23 +60,6 @@
     <meta name="description" content="{{ .Site.Title }}" />
     <meta name="twitter:description" property="og:description" content="{{ .Site.Title }}" />
     {{ end }}
-  {{ end }}
-
-
-  {{ with .Params.featured_opacity }}
-  <style type="text/css">
-    .page-header__featured-image {
-      opacity: {{ . }};
-    }
-  </style>
-  {{ end }}
-
-  {{ with .Params.page_header_bg_color }}
-  <style type="text/css">
-    .section__page-header {
-      background-color: {{ . }} !important;
-    }
-  </style>
   {{ end }}
 
   {{ if .IsHome }}
