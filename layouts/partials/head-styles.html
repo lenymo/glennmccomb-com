@@ -4,19 +4,36 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 -->
 
+
+<!--
+//
+//  GENERIC CRITICAL CSS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+{{ $critical_css_hash := (index .Site.Data.css.hash "critical.css") }}
+{{ $critical_css_path := (printf "static/css/%s" $critical_css_hash) }}
+
+<style rel="stylesheet">{{ readFile $critical_css_path | safeCSS }}</style>
+
+
+<!--
+//
+//  PAGE-SPECIFIC CSS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
 {{ if and (eq .Type "articles") (eq .Kind "page") }}
 <!-- Single artile critical CSS -->
-<style>{{ readFile "/static/css/critical/articles/index.css" | safeCSS }}</style>
+<style rel="stylesheet">{{ readFile "/static/css/critical/articles/index.css" | safeCSS }}</style>
 <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}css/critical/articles/index.css" /> -->
 
 {{ else if and (eq .Type "contact") (eq .Kind "section") }}
 <!-- Contact critical CSS. -->
 <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}css/critical/contact/index.css" /> -->
-<style>{{ readFile "/static/css/critical/contact/index.css" | safeCSS }}</style>
+<style rel="stylesheet">{{ readFile "/static/css/critical/contact/index.css" | safeCSS }}</style>
 
 {{ else }}
 <!-- Home / article listing / category critical CSS. -->
-<style>{{ readFile "/static/css/critical/articles/index.css" | safeCSS }}</style>
+<style rel="stylesheet">{{ readFile "/static/css/critical/articles/index.css" | safeCSS }}</style>
 <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}css/critical/index.css" /> -->
 {{ end }}
 

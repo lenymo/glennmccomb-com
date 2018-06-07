@@ -19,3 +19,9 @@
 .article-header__categories {
   display: none;
 }
+
+.page-header__icon-wrapper {
+  svg {
+    max-width: 50px;
+  }
+}
