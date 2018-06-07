@@ -4,6 +4,11 @@
 //  CRITICAL
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
+
+//
+//  SITE NAV
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
 .site-nav__child-list {
   display: none;
 }
@@ -11,6 +16,22 @@
 .site-nav__nav-toggle {
   display: none;
 }
+
+
+//
+//  PAGE HEADER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.page-header__icon-wrapper {
+  svg {
+    max-width: 100px;
+  }
+}
+
+
+//
+//  ARTICLES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .article-summary__categories {
   display: none;
@@ -23,12 +44,6 @@
 
 .article-header__categories {
   display: none;
-}
-
-.page-header__icon-wrapper {
-  svg {
-    max-width: 100px;
-  }
 }
 
 .table-of-contents {
