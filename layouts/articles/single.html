@@ -39,6 +39,8 @@
     </article><!-- .article-body -->
   </section><!-- .section__article-body -->
 
+  {{ partial "related-articles" . }}
+
   <section class="section section__article-footer">
     <div class="container">
       <div class="row">
@@ -60,9 +62,6 @@
       </div>
     </div>
   </section><!-- .section section__article-footer -->
-
-
-  {{ partial "related-articles" . }}
 
   {{ partial "footer" . }}
 

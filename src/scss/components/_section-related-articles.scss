@@ -4,7 +4,7 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .section__related-articles {
-  background: $color-gray-e;
+  background: $color-gray-f;
 }
 
 .section__related-articles__title {
@@ -32,6 +32,16 @@
     .col__article-summary {
       &:nth-child(3) {
         display: none;
+      }
+    }
+  }
+}
+
+@include respond-between(sm, lg) {
+  .section__related-articles {
+    .col__article-summary {
+      .article-summary__content-wrapper {
+        min-height: 0;
       }
     }
   }
