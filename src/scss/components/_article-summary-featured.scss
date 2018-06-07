@@ -103,12 +103,12 @@
 //  2ND AND 3RD ROW
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-@include respond-between(sm, md) {
+@include respond-between(md, lg) {
   .section__articles-summary {
     .col__article-summary {
       &:nth-child(1n+2) {
         .article-summary__content-wrapper {
-          height: 280px;
+          height: 260px;
         }
       }
     }
@@ -171,7 +171,7 @@
 //  3RD ARTICLE ROW
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-@include respond-above(md) {
+@include respond-above(lg) {
   .section__articles-summary {
     .col__article-summary {
       &:nth-child(1n+4) {
