@@ -86,7 +86,8 @@
       width: 100%;
     }
 
-    &.-is-current {
+    &:focus {
+      color: $white;
     }
   }
 
