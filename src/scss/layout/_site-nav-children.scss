@@ -19,6 +19,7 @@
 @include respond-above(sm) {
   .site-nav__child-list {
     border-top: 5px solid $color-primary;
+    border-bottom: 5px solid $color-primary-darker;
     box-shadow: 0 10px 15px rgba($black, .1);
     display: none;
     left: 0;

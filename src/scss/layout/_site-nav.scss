@@ -74,10 +74,24 @@
     padding: $site-nav-item-padding-md;
     position: relative;
 
-    &:before {
+    &:focus {
+      color: $white;
+    }
+  }
+}
+
+
+//
+//  ACTIVE INDICATOR
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@include respond-above(sm) {
+  // Shared.
+  .site-nav__link {
+    &::before {
       background: transparent;
       content: '';
-      height: 5px;
+      height: 0;
       left: 0;
       margin-top: -5px;
       position: absolute;
@@ -85,37 +99,42 @@
       transition: all .1s ease;
       width: 100%;
     }
-
-    &:focus {
-      color: $white;
-    }
   }
 
+  // Hover effect.
   .site-nav__item {
     &:hover {
       .site-nav__link {
         background: $site-nav-item-bg-color-hover;
         color: $site-nav-item-font-color-hover;
 
-        &:before {
-          background: $white;
+        &::before {
+          background: lighten($color-primary, 20%);
+          height: 5px;
         }
       }
     }
   }
-  
+
   // Current item.
   .site-nav__item {
     &.-is-current {
       .site-nav__link {
-        &:before {
+        &::before {
           background: $site-nav-item-current-border-color;
           box-shadow: 0 0 5px lighten($site-nav-item-current-border-color, 5%);
+          height: 5px;
         }
       }
     }
   }
 }
+
+
+//
+//  ACTIVE INDICATOR
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
 
 
 //

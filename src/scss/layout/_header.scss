@@ -11,6 +11,7 @@
 
 .site-header {
   background-color: $site-header-bg-color;
+  background: linear-gradient(0, $color-primary, darken($color-primary, 2.5));
   left: 0;
   padding: $site-header-padding;
   position: absolute;
@@ -22,7 +23,7 @@
 @include respond-above(sm) {
   .site-header {
     border-bottom: 5px solid $color-primary;
-    border-top: 5px solid $color-primary-lightest;
+    border-top: 5px solid $color-primary-darkest;
   }
 }
 

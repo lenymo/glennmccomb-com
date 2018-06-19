@@ -5,13 +5,13 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 
-// Basics
+// Basics.
 $black: #000;
 $white: #fff;
 $color-blue: #284c71;
 
 
-// Grays
+// Grays.
 // $gray-mixer: #284c71;
 $gray-mixer: #2868a9;
 $color-gray-f: mix(#f8f8f8, $gray-mixer, 97%);
@@ -31,7 +31,7 @@ $color-gray-2: mix(#222, $gray-mixer, 85%);
 $color-gray-1: mix(#111, $gray-mixer, 85%);
 
 
-// Utility colors
+// Utility colors.
 // $color-primary: $color-blue;
 // $color-primary: mix(#333, $gray-mixer, 60%);
 $color-primary: #2f3d4c;
