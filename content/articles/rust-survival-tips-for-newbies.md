@@ -12,25 +12,25 @@ dark_bg: true
 toc: true
 ---
 
-{{< lead >}}[Rust](http://rust.facepunch.com/) is one of the most popular titles in a new breed of first-person survival games pioneered by [DayZ](https://www.bistudio.com/games/dayz). The learning curve is savage and it's not always easy to figure out the best way to stay alive.{{< /lead >}}
+{{< lead >}}If you've just started playing [Rust](http://rust.facepunch.com/) or you're looking for tips to help get a base down you've landed in the right place.{{< /lead >}}
 
-If you've just started playing or you're struggling to get a base down you've landed in the right place. Rust is in [early access](https://en.wikipedia.org/wiki/Early_access) and [Facepunch](http://www.facepunchstudios.com/) are working to improve the experience for beginners before officially launching but unless you have friends who're already playing, you're on your own. 
+ Rust is in [early access](https://en.wikipedia.org/wiki/Early_access) and [Facepunch](http://www.facepunchstudios.com/) are working to improve the experience for beginners before officially launching but unless you have friends who're already playing, you're on your own.
 
-The first thing to know about Rust is that you will die. A lot. And that's ok. It's a grind and the more loot you've gathered when you die the more frustrating it is. It's a part of the game though so don't sweat it, and don't expect sympathy from other players.
+The first thing to know about Rust is that you will die. A lot. And that's ok. It's a grind and the more loot you've gathered when you die the more frustrating it is. It's a part of the game though so don't sweat it. And don't expect sympathy from other players.
 
 <small>**NOTE:** This article is written at the time of [devblog 192](https://rust.facepunch.com/blog/devblog-192/) and may be out of date and inaccurate after future updates.</small>
 
 ## Choosing a server
 
-In order to figure out the mechanics of the game a quiet server with less than 50 players is a good place to start. Intuition would suggest Facepunch's official servers are the safest place to start but they're riddled with cheaters and attract a less friendly crowd. 
+The best way to figure out the mechanics of the game is on a quiet server with less than 50 players. You'd think Facepunch's official servers would be the safest place to start but there tend to be cheaters on them and they attract a less friendly crowd. 
 
-A well maintained community server will keep tabs on cheaters and police players who are abusive or disrespectful. If you're playing on your own, look for solo/duo/trio servers as they restrict players to small groups and mean you'll avoid large clans and zergs.
+A well maintained community server will keep tabs on cheaters and police players who're abusive or disrespectful. If you're playing on your own, look for solo/duo/trio servers as they restrict players to small groups which helps avoid large clans and zergs.
 
-When you're learning the ropes other players are usually more hindrance than help so don't be scared to jump on an empty community server.
+When you're learning the ropes other players are usually more hindrance than help so don't be scared to jump on an empty server and go full PvE.
 
 ## The basics
 
-Once you've banged on a few trees and [nodes](https://rustlabs.com/item/rock) with your rock and collected some hemp (cloth) there are a few items you'll want to craft:
+Once you've banged on a few trees and [nodes](https://rustlabs.com/item/rock) with your rock and collected some hemp cloth there are a few items you'll want to craft:
 
 * [Stone Hatchet](https://rustlabs.com/item/stone-hatchet) <small>200 wood, 100 stone</small>
 * [Stone Pick Axe](https://rustlabs.com/item/stone-pickaxe) <small>200 wood, 100 stone</small>
