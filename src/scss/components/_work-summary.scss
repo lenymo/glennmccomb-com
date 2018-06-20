@@ -132,6 +132,13 @@
 
 .work-summary__title {
   margin-bottom: $gutter * .5;
+  font-size: $h1-font-size-sm;
+}
+
+@include respond-above(sm) {
+  .work-summary__title {
+    font-size: $h1-font-size;
+  }
 }
 
 

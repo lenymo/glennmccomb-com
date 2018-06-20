@@ -65,3 +65,15 @@
     }
   }
 }
+
+
+//
+//  LARGE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.btn {
+  &.-is-large {
+    border-radius: $button-border-radius-lg;
+    padding: $button-padding-lg;
+  }
+}
