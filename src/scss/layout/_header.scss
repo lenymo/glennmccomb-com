@@ -34,7 +34,7 @@
 
 .-has-transparent-site-header {
   .site-header {
-    background: transparent;
+    background: rgba($black, .1);
     border-bottom-color: transparent;
     border-top-color: $color-gray-1;
 

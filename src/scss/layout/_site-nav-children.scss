@@ -73,3 +73,27 @@
     }
   }
 }
+
+
+//
+//  TRANSPARENT SITE HEADER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@include respond-above(sm) {
+  .-has-transparent-site-header {
+
+    // The <ul>.
+    .site-nav__child-list {
+      border-bottom: transparent;
+      border-top: transparent;
+      background-color: rgba($black, .2);
+    }
+  
+    // The link.
+    .site-nav__child-link {
+      &:hover {
+        background-color: rgba($black, .1)
+      }
+    }
+  }
+}

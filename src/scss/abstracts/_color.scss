@@ -31,9 +31,10 @@ $color-gray-2: mix(#222, $gray-mixer, 85%);
 $color-gray-1: mix(#111, $gray-mixer, 85%);
 
 
-// Utility colors.
-// $color-primary: $color-blue;
-// $color-primary: mix(#333, $gray-mixer, 60%);
+//
+//  PRIMARY
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
 $color-primary: #2f3d4c;
 // $color-primary-darker: #212f3d;
 // $color-primary-lighter: #23609e;
@@ -43,4 +44,10 @@ $color-primary-darkest: darken($color-primary, 10%);
 $color-primary-lighter: lighten($color-primary, 5%);
 $color-primary-lightest: lighten($color-primary, 10%);
 
-$color-secondary: #ff851b;
+
+//
+//  SECONDARY
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// $color-secondary: #ff851b;
+$color-secondary: #3182d8;
