@@ -10,7 +10,7 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .btn {
-  background-color: $button-background-color;
+  background-color: $button-bg;
   border: 0;
   border-radius: $button-border-radius;
   color: $button-font-color;
@@ -37,8 +37,31 @@
     &:hover,
     &:focus,
     &:active {
-      background-color: $button-background-color-hover;
+      background-color: $button-bg-hover;
       color: $button-font-color-hover;
+    }
+  }
+}
+
+
+//
+//  SECONDARY
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.btn {
+  &.-has-color-secondary {
+    background-color: $button-bg-secondary;
+  }
+}
+
+@include respond-above(sm) {
+  .btn {
+    &.-has-color-secondary {
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: $button-bg-secondary-hover;
+      }
     }
   }
 }
