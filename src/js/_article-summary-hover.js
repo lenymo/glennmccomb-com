@@ -16,9 +16,7 @@ var ArticleSummaryHover = (function() {
     transformModX: 1,
     transformModY: 1.5,
     transformPerspective: '600px',
-    // transformScale: 1.015,
     transformScale: 1.01,
-
     mouseOverToggleClass: '-is-being-hovered'
   };
 
@@ -78,32 +76,80 @@ var ArticleSummaryHover = (function() {
 
   function processMouseMoveEvent(e) {
     
-    // Get mouse pos on document.
+    // Declare variables.
     var article;
-    var mouseX = e.pageX;
-    var mouseY = e.pageY;
+    var mouseX;
+    var mouseY;
     var rect;
     var rectMouseXPercent;
     var scrollPosY;
     var rectMouseYPercent;
     var transformCSS;
 
+    // Get mouse pos on document.
+    mouseX = e.pageX;
+    mouseY = e.pageY;
+
+    // Instantiate article tile.
     article = this;
 
     // Get the dimensions of the article summary.
     rect = this.getBoundingClientRect();
 
-    // Get the user's mouse position from left-to-right as a percentage.
+    // Get the user's mouse position from left-to-right 
+    // as a percentage.
     rectMouseXPercent = getMouseXPercent( rect, mouseX );
-    // console.log( 'rectMouseXPercent: ' + rectMouseXPercent );
 
-    // Get the user's mouse position from top-to-bottom as a percentage.
+    // Get the user's mouse position from top-to-bottom 
+    // as a percentage.
     rectMouseYPercent = getMouseYPercent( rect, mouseY );
-    // console.log( 'rectMouseYPercent: ' + rectMouseYPercent );
 
+    // 
     applyCSSTransforms( article, rect, rectMouseXPercent, rectMouseYPercent );
 
   } // processMouseMoveEvent()
+
+
+  //
+  //  PROCESS MOUSE ENTER EVENT
+  //––––––––––––––––––––––––––––––––––––––––––––––––––
+
+  function processMouseEnterEvent(e) {
+
+    // Declare variables.
+    var article;
+
+    // Instantiate article tile.
+    article = this;
+
+    // Add the mouse over toggle class to the article tile.
+    article.classList.add( config.mouseOverToggleClass );
+
+  } // processMouseEnterEvent()
+
+
+  //
+  //  PROCESS MOUSE LEAVE EVENT
+  //––––––––––––––––––––––––––––––––––––––––––––––––––
+
+  function processMouseLeaveEvent(e) {
+
+    // Declare variables.
+    var article;
+
+    // Instantiate article.
+    article = this;
+
+    // Remove transform effect.
+    article.style.transform = '';
+
+    // Remove transform effect from featured image.
+    article.querySelector('.article-summary__featured-image').style.transform = '';
+
+    // Remove the mouse over toggle class.
+    article.classList.remove( config.mouseOverToggleClass );
+
+  } // processMouseLeaveEvent()
 
 
   //
@@ -112,6 +158,7 @@ var ArticleSummaryHover = (function() {
   
   function getMouseXPercent( rect, mouseX ) {
 
+    // Declare variables.
     var rectOffsetX;
     var rectMouseX;
     var rectMouseXPercent;
@@ -149,6 +196,7 @@ var ArticleSummaryHover = (function() {
 
   function getMouseYPercent( rect, mouseY, scrollY ) {
 
+    // Declare variables.
     var scrollPosY;
     var rectOffsetY;
     var rectMouseY;
@@ -190,6 +238,7 @@ var ArticleSummaryHover = (function() {
 
   function applyCSSTransforms( article, rect, rectMouseXPercent, rectMouseYPercent ) {
 
+    // Declare variables.
     var transformCSS;
     var articleImage;
     var imageTransformCSS;
@@ -203,7 +252,6 @@ var ArticleSummaryHover = (function() {
     ) {
 
       // Build the transform CSS.
-      // transformCSS = 'perspective(' + config.transformPerspective + ') ';
       transformCSS = 'perspective(' + (rect.width / 2) + 'px) ';
       transformCSS += 'scale(' + config.transformScale + ') ';
       transformCSS += 'rotateY(' + rectMouseXPercent + 'deg) ';
@@ -222,9 +270,7 @@ var ArticleSummaryHover = (function() {
 
       // Build the image transform CSS.
       imageTransformCSS = 'scale(1.025) ';
-
       imageTransformCSS += 'translateX(' + (rectMouseXPercent * 8) * -1 + 'px) ';
-
       imageTransformCSS += 'translateY(' + (rectMouseYPercent * 6) + 'px) ';
 
       // Apply the image transform CSS.
@@ -234,38 +280,12 @@ var ArticleSummaryHover = (function() {
 
 
   //
-  //  PROCESS MOUSE ENTER EVENT
-  //––––––––––––––––––––––––––––––––––––––––––––––––––
-
-  function processMouseEnterEvent(e) {
-
-    this.classList.add( config.mouseOverToggleClass );
-
-  } // processMouseEnterEvent()
-
-
-  //
-  //  PROCESS MOUSE LEAVE EVENT
-  //––––––––––––––––––––––––––––––––––––––––––––––––––
-
-  function processMouseLeaveEvent(e) {
-
-    // Remove transform effect.
-    this.style.transform = '';
-
-    // Remove transform effect from featured image.
-    this.querySelector('.article-summary__featured-image').style.transform = '';
-
-    this.classList.remove( config.mouseOverToggleClass );
-
-  } // processMouseLeaveEvent()
-
-
-  //
   //  INIT
   //––––––––––––––––––––––––––––––––––––––––––––––––––
 
   function init() {
+
+    // Run functions.
     handleArticleSummaryHover();
   }
 
