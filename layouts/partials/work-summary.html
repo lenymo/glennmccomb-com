@@ -9,7 +9,9 @@
       <div class="row row__work-summary">
         <div class="col-sm-6 col-md-4 offset-md-1 col-lg-3 offset-lg-2 col__work-summary col__work-summary--image">
           {{ if isset .Params "tile_image" }}
-            <img src="{{ .Params.tile_image  }}" class="work-summary__image" alt="">
+            <a class="work-summary__image-link" href="{{ .Permalink }}" title="{{ .Title }}">
+              <img src="{{ .Params.tile_image  }}" class="work-summary__image" alt="">
+            </a>
           {{ end }}
         </div>
 
@@ -18,14 +20,16 @@
             {{ .Date.Format "January" }} {{ .Date.Format "2006" }}
           </p>
           <h2 class="work-summary__title">
-            {{ .Title }}
+            <a class="work-summary__title__anchor" href="{{ .Permalink }}" title="{{ .Title }}">
+              {{ .Title }}
+            </a>
           </h2>
 
           <p class="work-summary__excerpt">
             {{ with .Params.summary }}{{ . }}{{ end }}
           </p>
 
-          <a href="{{ .Permalink }}" class="btn work-summary__button">
+          <a href="{{ .Permalink }}" class="btn work-summary__button -has-color-secondary" title="{{ .Title }}">
             Learn more
           </a>
         </div><!-- .col -->
