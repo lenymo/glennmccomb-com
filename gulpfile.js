@@ -289,7 +289,7 @@ gulp.task('critical', function (cb) {
         // inline: true,
         minify: true,
         css: [main],
-        width: 1000,
+        width: 1200,
         height: 600,
         // src: 'public/index.html';
       }))
@@ -303,7 +303,7 @@ gulp.task('critical', function (cb) {
         base: '/',
         minify: true,
         css: [main, article],
-        width: 1000,
+        width: 1200,
         height: 600,
       }))
       .on('error', function(err) { console.log(err.message); })
@@ -315,7 +315,7 @@ gulp.task('critical', function (cb) {
         base: '/',
         minify: true,
         css: [main, contact],
-        width: 1000,
+        width: 1200,
         height: 1200,
       }))
       .on('error', function(err) { console.log(err.message); })
