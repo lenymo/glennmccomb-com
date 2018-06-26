@@ -134,125 +134,6 @@ var HandleForms = (function() {
 
 
   //
-  //  HANDLE CONTACT FORM SUBMISSION
-  //––––––––––––––––––––––––––––––––––––––––––––––––––
-
-  function handleContactFormSubmission() {
-
-    // Toggle classes.
-    var sendingClass = '-is-sending';
-    var sentClass = '-is-sent';
-    var doneClass = '-is-done';
-    var thanksClass = '-is-thankful';
-
-    var sendingDelay = 1000;
-    
-    // Get contact form.
-    var contactForm = document.querySelector('.form__contact');
-
-    // If the contact form exists.
-    if ( contactForm !== null && contactForm.length > 0 ) {
-
-      // Listen for form submission event.
-      contactForm.addEventListener('submit', function(e) {
-
-        // Stop the form from submitting.
-        e.preventDefault();
-
-        // Get the form action.
-        var form = this;
-        var action = form.action;
-
-        // Get form fields.
-        var nameField = document.querySelector('.form__field--name');
-        var emailField = document.querySelector('.form__field--email');
-        var messageField = document.querySelector('.form__field--message');
-        var honeypotField = document.querySelector('.form__field--ponyhot');
-
-        // Get the form field values (name, email, message).
-        var name = nameField.value;
-        var email = emailField.value;
-        var message = messageField.value;
-        var honeypot = honeypotField.value;
-
-        // If there's no honeypot.
-        if ( ! honeypot ) {
-
-          // Add the sending class.
-          form.classList.add( sendingClass );
-
-          // Put together the request string.
-          var requestString = '?form-name=contact';
-          requestString += '&name=' + name;
-          requestString += '&email=' + email;
-          requestString += '&message=' + message;
-
-          // Build the request URL.
-          var requestUrl = action + requestString;
-
-          // Encode the URL.
-          requestUrl = encodeURI(requestUrl);
-
-          // Create a new request.
-          var request = new XMLHttpRequest();
-
-          // Open the request.
-          request.open('POST', requestUrl, true);
-
-          // When the request is loaded.
-          request.onload = function() {
-
-            // If it was successful.
-            if (request.status >= 200 && request.status < 400) {
-
-              // console.log('Success');
-
-              setTimeout( function() {
-                form.classList.add( sentClass );
-              }, sendingDelay );
-
-              setTimeout( function() {
-                form.classList.add( doneClass );
-              }, sendingDelay * 2 );
-
-              setTimeout( function() {
-                form.classList.add( thanksClass );
-
-                // Empty fields.
-                nameField.value = '';
-                emailField.value = '';
-                messageField.value = '';
-
-                // Remove the -has-text class from email field.
-                emailField.classList.remove('-has-text');
-
-                // Reset the form.
-                form.reset();
-
-              }, sendingDelay * 3 );
-
-            // If the server was contacted but submissions was unsuccessful.
-            } else {
-              // console.log('Server was reached but it returned an error');
-            }
-          }; // request.onload = function() {
-
-          // Handle errors.
-          request.onerror = function() {
-            // console.log('There was a connection error of some sort.');
-          };
-
-          // Send the request.
-          request.send();
-
-        } // if ( ! honeypot ) {
-
-      }); // contactForm.addEventListener('submit', function(e)
-    } // if ( contactForm.length > 0 )
-  } // handleContactFormSubmission()
-
-
-  //
   //  INIT
   //––––––––––––––––––––––––––––––––––––––––––––––––––
 
@@ -260,7 +141,6 @@ var HandleForms = (function() {
     monitorInputs();
     monitorEmailInputs();
     monitorSelectInputs();
-    handleContactFormSubmission();
   }
 
 
