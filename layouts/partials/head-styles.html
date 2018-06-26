@@ -22,7 +22,7 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 -->
 {{ if and (eq .Type "articles") (eq .Kind "page") }}
-<!-- Single artile critical CSS -->
+<!-- Single article critical CSS -->
 <style rel="stylesheet">{{ readFile "/static/css/critical/articles/index.css" | safeCSS }}</style>
 <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}css/critical/articles/index.css" /> -->
 
@@ -33,7 +33,8 @@
 
 {{ else }}
 <!-- Home / article listing / category critical CSS. -->
-<style rel="stylesheet">{{ readFile "/static/css/critical/articles/index.css" | safeCSS }}</style>
+<meta name="article-index">
+<style rel="stylesheet">{{ readFile "/static/css/critical/index.css" | safeCSS }}</style>
 <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}css/critical/index.css" /> -->
 {{ end }}
 

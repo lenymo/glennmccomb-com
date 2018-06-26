@@ -283,22 +283,20 @@ gulp.task('critical', function (cb) {
   // Wait until Hugo has finished building.
   setTimeout(function() {
 
-    // Home page.
+    // Home page / article listing.
     gulp.src('public/articles/index.html')
       .pipe(critical({
         base: '/',
-        // inline: true,
         minify: true,
         css: [main],
         width: 1200,
-        height: 800,
-        // src: 'public/index.html';
+        height: 900,
       }))
       .on('error', function(err) { console.log(err.message); })
-      .pipe(gulp.dest('static/css/critical'));
+      .pipe(gulp.dest('static/css/critical/'));
 
 
-    // Article page.
+    // Single article.
     gulp.src('public/articles/a-better-nba-box-score/index.html')
       .pipe(critical({
         base: '/',
