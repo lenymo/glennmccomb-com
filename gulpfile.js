@@ -280,6 +280,7 @@ gulp.task('critical', function (cb) {
     cb(err);
   });
 
+  // Wait until Hugo has finished building.
   setTimeout(function() {
 
     // Home page.
@@ -290,7 +291,7 @@ gulp.task('critical', function (cb) {
         minify: true,
         css: [main],
         width: 1200,
-        height: 600,
+        height: 800,
         // src: 'public/index.html';
       }))
       .on('error', function(err) { console.log(err.message); })
