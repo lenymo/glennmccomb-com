@@ -29,7 +29,7 @@ $form-field-border-width: 2px;
 // Border colors.
 $form-field-border-color: $color-gray-d;
 $form-field-border-color-focus: $color-gray-8;
-$form-field-border-color-error: $color-secondary;
+$form-field-border-color-error: $color-danger;
 $form-field-border-color-error-focus: darken($form-field-border-color-error, 15%);
 
 
