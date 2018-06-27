@@ -64,6 +64,7 @@ var HandleContactForm = (function() {
     var doneClass;
     var thanksClass;
     var sendingDelay;
+    var messageIsValid = false;
 
     // Toggle classes.
     sendingClass = config.sendingClass;
@@ -93,79 +94,91 @@ var HandleContactForm = (function() {
     // If there's no honeypot data.
     if ( ! honeypot ) {
 
-      // Add the sending class to the form.
-      form.classList.add( sendingClass );
+      // Validate the message. Make sure it's not spam.
+      messageIsValid = validateMessage( message );
 
-      // Put together the request string based on form fields.
-      var requestString = '?form-name=contact';
-      requestString += '&name=' + name;
-      requestString += '&email=' + email;
-      requestString += '&message=' + message;
+      console.log( messageIsValid );
 
-      // Build the request URL.
-      var requestUrl = action + requestString;
+      // If the message is valid.
+      if ( messageIsValid ) {
 
-      // Encode the URL.
-      requestUrl = encodeURI(requestUrl);
+        // Add the sending class to the form.
+        form.classList.add( sendingClass );
 
-      // Create a new request.
-      var request = new XMLHttpRequest();
+        // Put together the request string based on form fields.
+        var requestString = '?form-name=contact';
+        requestString += '&name=' + name;
+        requestString += '&email=' + email;
+        requestString += '&message=' + message;
 
-      // Open the request.
-      request.open('POST', requestUrl, true);
+        // Build the request URL.
+        var requestUrl = action + requestString;
 
-      // When the request is loaded.
-      request.onload = function() {
+        // Encode the URL.
+        requestUrl = encodeURI(requestUrl);
 
-        // If it was successful.
-        if (request.status >= 200 && request.status < 400) {
+        // Create a new request.
+        var request = new XMLHttpRequest();
 
-          setTimeout( function() {
+        // Open the request.
+        request.open('POST', requestUrl, true);
 
-            // Add the sent class to the form.
-            form.classList.add( sentClass );
-          }, sendingDelay );
+        // When the request is loaded.
+        request.onload = function() {
 
-          setTimeout( function() {
+          // If it was successful.
+          if (request.status >= 200 && request.status < 400) {
 
-            // Add the done class to the form.
-            form.classList.add( doneClass );
-          }, sendingDelay * 2 );
+            setTimeout( function() {
 
-          setTimeout( function() {
+              // Add the sent class to the form.
+              form.classList.add( sentClass );
+            }, sendingDelay );
 
-            // Add the thanks class to the form.
-            form.classList.add( thanksClass );
+            setTimeout( function() {
 
-            // Empty fields.
-            nameField.value = '';
-            emailField.value = '';
-            messageField.value = '';
+              // Add the done class to the form.
+              form.classList.add( doneClass );
+            }, sendingDelay * 2 );
 
-            // Remove the .-has-text class from email field.
-            emailField.classList.remove('-has-text');
+            setTimeout( function() {
 
-            // Reset the form.
-            form.reset();
+              // Add the thanks class to the form.
+              form.classList.add( thanksClass );
 
-          }, sendingDelay * 3 );
+              // Empty fields.
+              nameField.value = '';
+              emailField.value = '';
+              messageField.value = '';
 
-        // If the server was contacted but submissions was unsuccessful.
-        } else {
-          // console.log('Server was reached but it returned an error');
-        }
-      }; // request.onload = function() {
+              // Remove the .-has-text class from email field.
+              emailField.classList.remove('-has-text');
 
-      // Handle errors.
-      request.onerror = function() {
-        // console.log('There was a connection error of some sort.');
-      };
+              // Reset the form.
+              form.reset();
 
-      // Send the request.
-      request.send();
+            }, sendingDelay * 3 );
 
+          // If the server was contacted but submissions was unsuccessful.
+          } else {
+            // console.log('Server was reached but it returned an error');
+          }
+        }; // request.onload = function() {
+
+        // Handle errors.
+        request.onerror = function() {
+          // console.log('There was a connection error of some sort.');
+        };
+
+        // Send the request.
+        request.send();
+
+      // If message is NOT valid.
+      } else {
+
+      } // If message is NOT valid.
     } // if ( ! honeypot )
-  }
+  } // handleContactFormSubmission()
   
 
   //
@@ -175,8 +188,31 @@ var HandleContactForm = (function() {
   function validateMessage( message ) {
 
     // Declare variables.
-    var messageIsValid = false;
+    var messageIsValid = true;
+    var antiSpamKeywords = config.antiSpamKeywords;
+    var antiSpamKeyword;
+    var messageLowercase;
 
+    // Convert message to lowercase.
+    messageLowercase = message.toLowerCase();
+
+    console.log( messageLowercase );    
+
+    for (var i = 0; i < antiSpamKeywords.length; i++) {
+      
+      // Instantiate keyword.
+      antiSpamKeyword = antiSpamKeywords[i];
+
+      // If the keyword is in the message.
+      if ( messageLowercase.indexOf( antiSpamKeyword ) > 0 ) {
+
+        // Set form as invalid.
+        messageIsValid = false;
+        console.log( 'Anti-span keyword ' + antiSpamKeyword + ' was found in the message.' );
+      }
+    }
+
+    // Return the form status.
     return messageIsValid;
   }
   
