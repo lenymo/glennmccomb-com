@@ -65,6 +65,7 @@ var HandleContactForm = (function() {
     var thanksClass;
     var sendingDelay;
     var messageIsValid = false;
+    var formError;
 
     // Toggle classes.
     sendingClass = config.sendingClass;
@@ -91,6 +92,9 @@ var HandleContactForm = (function() {
     var message = messageField.value;
     var honeypot = honeypotField.value;
 
+    // Get the form error elements.
+    formError = document.querySelector('.form__error');
+
     // If there's no honeypot data.
     if ( ! honeypot ) {
 
@@ -101,6 +105,9 @@ var HandleContactForm = (function() {
 
       // If the message is valid.
       if ( messageIsValid ) {
+
+        // Clear any error messages.
+        formError.innerHTML = '';
 
         // Add the sending class to the form.
         form.classList.add( sendingClass );
@@ -176,6 +183,12 @@ var HandleContactForm = (function() {
       // If message is NOT valid.
       } else {
 
+        // If the form error element exists.
+        if ( formError ) {
+
+          // Update the error message.
+          formError.innerHTML = 'Sorry but your message was deemed to be spam.';
+        }
       } // If message is NOT valid.
     } // if ( ! honeypot )
   } // handleContactFormSubmission()
@@ -194,9 +207,7 @@ var HandleContactForm = (function() {
     var messageLowercase;
 
     // Convert message to lowercase.
-    messageLowercase = message.toLowerCase();
-
-    console.log( messageLowercase );    
+    messageLowercase = message.toLowerCase(); 
 
     for (var i = 0; i < antiSpamKeywords.length; i++) {
       
@@ -204,7 +215,7 @@ var HandleContactForm = (function() {
       antiSpamKeyword = antiSpamKeywords[i];
 
       // If the keyword is in the message.
-      if ( messageLowercase.indexOf( antiSpamKeyword ) > 0 ) {
+      if ( messageLowercase.indexOf( antiSpamKeyword ) >= 0 ) {
 
         // Set form as invalid.
         messageIsValid = false;

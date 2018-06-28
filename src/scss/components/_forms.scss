@@ -490,6 +490,18 @@ textarea.form__field {
 
 
 //
+//  FORM ERROR
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.form__error {
+  color: rgba($white, .5);
+  font-size: $small-font-size;
+  margin-top: $gutter * .5;
+}
+
+
+
+//
 //  DARK BG
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
