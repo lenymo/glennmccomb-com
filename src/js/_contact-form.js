@@ -23,7 +23,9 @@ var HandleContactForm = (function() {
       'cash',
       'alexa',
       'seo',
-      'bit.ly'
+      'bit.ly',
+      'lender',
+      'payday'
     ]
   };
   
