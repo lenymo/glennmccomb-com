@@ -22,7 +22,8 @@ var HandleContactForm = (function() {
       'income',
       'cash',
       'alexa',
-      'seo'
+      'seo',
+      'bit.ly'
     ]
   };
   
