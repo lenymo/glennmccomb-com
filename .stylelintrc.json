@@ -1,0 +1,10 @@
+{
+  "rules": {
+    "block-closing-brace-empty-line-before": "never",
+    "indentation": 2,
+    "length-zero-no-unit": true,
+    "property-case": "lower",
+    "selector-list-comma-newline-after": "always",
+    "unit-case": "lower"
+  }
+}
