@@ -87,7 +87,7 @@ var HandleContactForm = (function() {
     var nameField = document.querySelector('.form__field--name');
     var emailField = document.querySelector('.form__field--email');
     var messageField = document.querySelector('.form__field--message');
-    var honeypotField = document.querySelector('.form__field--ponyhot');
+    var honeypotField = document.querySelector('.form__field--phone');
 
     // Get the form field values (name, email, message).
     var name = nameField.value;
@@ -193,6 +193,16 @@ var HandleContactForm = (function() {
           formError.innerHTML = 'Sorry but your message was deemed to be spam.';
         }
       } // If message is NOT valid.
+    
+      // If honeypot.
+    } else {
+
+      // If the form error element exists.
+      if (formError) {
+
+        // Update the error message.
+        formError.innerHTML = 'Sorry but you filled in the bot field.';
+      }
     } // if ( ! honeypot )
   } // handleContactFormSubmission()
   
