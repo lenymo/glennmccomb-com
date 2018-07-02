@@ -29,11 +29,10 @@ var HandleContactForm = (function() {
       'viagra'
     ]
   };
-  
 
 
   //
-  //  HANDLE CONTACT FORM SUBMISSION
+  //  HANDLE CONTACT FORM
   //––––––––––––––––––––––––––––––––––––––––––––––––––
 
   function handleContactForm() {
@@ -50,7 +49,7 @@ var HandleContactForm = (function() {
       // Listen for form submission event.
       contactForm.addEventListener('submit', handleContactFormSubmission); // contactForm.addEventListener('submit', function(e)
     } // if ( contactForm.length > 0 )
-  } // handleContactFormSubmission()
+  } // handleContactForm()
 
 
   //
@@ -239,7 +238,7 @@ var HandleContactForm = (function() {
 
     // Return the form status.
     return messageIsValid;
-  }
+  } // validateMessage.
   
 
   //
