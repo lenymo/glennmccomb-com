@@ -25,7 +25,8 @@ var HandleContactForm = (function() {
       'seo',
       'bit.ly',
       'lender',
-      'payday'
+      'payday',
+      'viagra'
     ]
   };
   
