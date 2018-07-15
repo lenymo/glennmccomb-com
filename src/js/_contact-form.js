@@ -99,7 +99,7 @@ var HandleContactForm = (function() {
     formError = document.querySelector('.form__error');
 
     // If there's no honeypot data.
-    if ( ! honeypot ) {
+    // if ( ! honeypot ) {
 
       // Validate the message. Make sure it's not spam.
       messageIsValid = validateMessage( message );
@@ -195,15 +195,15 @@ var HandleContactForm = (function() {
       } // If message is NOT valid.
     
       // If honeypot.
-    } else {
+    // } else {
 
-      // If the form error element exists.
-      if (formError) {
+    //   // If the form error element exists.
+    //   if (formError) {
 
-        // Update the error message.
-        formError.innerHTML = 'Sorry but you filled in the bot field.';
-      }
-    } // if ( ! honeypot )
+    //     // Update the error message.
+    //     formError.innerHTML = 'Sorry but you filled in the bot field.';
+    //   }
+    // } // if ( ! honeypot )
   } // handleContactFormSubmission()
   
 
