@@ -15,6 +15,7 @@ class LastFM extends React.Component {
     super();
 
     this.requestData = this.requestData.bind(this);
+    this.renderLastFMHeader = this.renderLastFMHeader.bind(this);
     // this.lambdaFunction = this.lambdaFunction.bind(this);
 
     // Set initial state.
@@ -132,6 +133,24 @@ class LastFM extends React.Component {
       });
   }
 
+
+  //
+  //  RENDER HEADER
+  //––––––––––––––––––––––––––––––––––––––––––––––––––
+
+  renderLastFMHeader() {
+    return(
+      <div className="row">
+        <div className="col-sm-12">
+          <h2>
+            Music
+          </h2>
+          <p>Scrobbled on <a href="http://last.fm/user/elgyn2">last.fm</a> since May 2005.</p>
+        </div>
+      </div>
+    )
+  }
+
   
   //
   //  RENDER
@@ -148,33 +167,43 @@ class LastFM extends React.Component {
     // If there are items, render them, 
     // else render the placeholder.
     return items.length ? (
-      <div className="row row__last-fm">
-        <PeriodNav 
-          requestData={this.requestData} 
-          period={this.state.period}
-        />
-        {items.map((item, index) => 
-          <Artist 
-            key={item.name} 
-            artist={item} 
-            image={item.image[3]}
-            rank={index + 1}
-            colClasses={colClasses}
-            index={index}
-          />
-        )}
-      </div>
+      <section className="section section__about-music">
+        <div className="container container__about-music">
+        {this.renderLastFMHeader()}
+          <div className="row row__last-fm">
+            <PeriodNav 
+              requestData={this.requestData} 
+              period={this.state.period}
+            />
+            {items.map((item, index) => 
+              <Artist 
+                key={item.name} 
+                artist={item} 
+                image={item.image[3]}
+                rank={index + 1}
+                colClasses={colClasses}
+                index={index}
+              />
+            )}
+          </div>
+        </div>
+      </section>
     ) : (
-      <div className="row row__last-fm">
-        <PeriodNav 
-          requestData={this.requestData} 
-          period={this.state.period} 
-        />
-        <ArtistsPlaceholder 
-          colClasses={colClasses} 
-          limit={limit}
-        />
-      </div>
+      <section className="section section__about-music">
+        <div className="container container__about-music">
+          {this.renderLastFMHeader()}
+          <div className="row row__last-fm">
+            <PeriodNav 
+              requestData={this.requestData} 
+              period={this.state.period} 
+            />
+            <ArtistsPlaceholder 
+              colClasses={colClasses} 
+              limit={limit}
+            />
+          </div>
+        </div>
+      </section>
     )
   }
 }
