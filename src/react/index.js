@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import LastFM from './components/LastFM';
+import App from './App';
+// import LastFM from './components/LastFM';
 
 ReactDOM.render (
-  <LastFM />, 
+  <App />, 
   document.getElementById('last-fm')
 );

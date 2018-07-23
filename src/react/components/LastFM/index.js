@@ -95,9 +95,9 @@ class LastFM extends React.Component {
     // How many records to return.
     let limit = this.limit;
 
-    let url = '/.netlify/functions/lastfm';
+    const url = '/.netlify/functions/lastfm';
 
-    let data = {
+    const data = {
       limit: limit,
       period: period
     }
