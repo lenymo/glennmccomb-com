@@ -87,20 +87,24 @@ class LastFM extends React.Component {
 
   requestData( period ) {
 
-    // clear state so old items disappear.
+    // Clear state so old items disappear.
     this.setState({
       artists: {}
     });
 
     // How many records to return.
-    var limit = this.limit;
+    let limit = this.limit;
 
-    fetch('/.netlify/functions/lastfm', {
+    let url = '/.netlify/functions/lastfm';
+
+    let data = {
+      limit: limit,
+      period: period
+    }
+
+    fetch(url, {
       method: 'POST',
-      body: JSON.stringify({
-        limit: limit,
-        period: period
-      })
+      body: JSON.stringify(data)
     })
     // fetch('http://localhost:9000/lastfm', {
     //   headers: {
@@ -111,10 +115,7 @@ class LastFM extends React.Component {
     //   },
     //   mode: 'no-cors',
     //   method: 'POST',
-    //   body: JSON.stringify({
-    //     limit: limit,
-    //     period: period
-    //   })
+    //   body: JSON.stringify(data)
     // })
     .then(response => response.json())
       .then(response => {
@@ -170,9 +171,9 @@ class LastFM extends React.Component {
           period={this.state.period} 
         />
         <ArtistsPlaceholder 
-            colClasses={colClasses} 
-            limit={limit}
-          />
+          colClasses={colClasses} 
+          limit={limit}
+        />
       </div>
     )
   }
