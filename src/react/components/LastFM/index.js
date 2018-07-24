@@ -145,7 +145,9 @@ class LastFM extends React.Component {
           <h2>
             Music
           </h2>
-          <p>Scrobbled on <a href="http://last.fm/user/elgyn2">last.fm</a> since May 2005.</p>
+          <p>
+            Scrobbled on <a href="http://last.fm/user/elgyn2">last.fm</a> since May 2005.
+          </p>
         </div>
       </div>
     )
@@ -169,7 +171,7 @@ class LastFM extends React.Component {
     return items.length ? (
       <section className="section section__about-music">
         <div className="container container__about-music">
-        {this.renderLastFMHeader()}
+          {this.renderLastFMHeader()}
           <div className="row row__last-fm">
             <PeriodNav 
               requestData={this.requestData} 
