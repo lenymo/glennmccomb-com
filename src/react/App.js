@@ -7,12 +7,16 @@
 import React from 'react';
 
 import LastFM from './components/LastFM';
+import Instagram from './components/Instagram';
 
 
 class App extends React.Component {
   render() {
     return(
-      <LastFM />
+      <div className="about-content">
+        <LastFM />
+        <Instagram />
+      </div>
     )
   }
 }
