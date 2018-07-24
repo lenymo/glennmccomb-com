@@ -6,6 +6,8 @@
 
 import React from 'react';
 
+import InstagramPost from './InstagramPost';
+
 class Instagram extends React.Component {
 
   constructor() {
@@ -52,13 +54,13 @@ class Instagram extends React.Component {
       .then(response => response.json())
         .then(response => {
 
-            // Get API response.
-            const data = response.data;
+          // Get API response.
+          const data = response.data;
 
-            // Update state.
-            this.setState({
-              posts: data,
-            });
+          // Update state.
+          this.setState({
+            posts: data,
+          });
         });
   }
 
@@ -68,9 +70,34 @@ class Instagram extends React.Component {
   //––––––––––––––––––––––––––––––––––––––––––––––––––
 
   render() {
+
+    let posts = this.state.posts;
+
+    console.log(posts);
+
     return (
       <section className="section section__about-instagram">
         <div className="container container__about-instagram">
+          <div className="row">
+            <div className="col-sm-12">
+              <h2>
+                Photography
+              </h2>
+              <p>
+                Photos I've posted on Instagram recently.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="row row__instagram">
+          {posts.length > 0 &&
+            posts.map((post, index) =>
+              <InstagramPost
+                key={post.id}
+                data={post}
+              />
+            )
+          }
         </div>
       </section>
     )
