@@ -73,8 +73,6 @@ class Instagram extends React.Component {
 
     let posts = this.state.posts;
 
-    console.log(posts);
-
     return (
       <section className="section section__about-instagram">
         <div className="container container__about-instagram">
@@ -89,7 +87,7 @@ class Instagram extends React.Component {
             </div>
           </div>
         </div>
-        <div className="row row__instagram">
+        <div className="about-instagram__row">
           {posts.length > 0 &&
             posts.map((post, index) =>
               <InstagramPost

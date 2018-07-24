@@ -362,3 +362,51 @@ $last-fm-artist-rank-size: 35px;
     // transform: scale(1);
   }
 }
+
+
+//
+//  INSTAGRAM
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.about-instagram__row {
+  // display: grid;
+  // grid-template-columns: repeat(auto-fill, minmax(640px, 1fr));
+  // grid-gap: 10px;
+  // grid-auto-rows: minmax(640px, auto);
+  // grid-auto-flow: dense;
+  // padding: 0;
+}
+
+.instagram-post {
+  // align-items: center;
+  // display: flex;
+  // justify-content: center;
+  position: relative;
+  max-width: 640px;
+}
+
+.instagram-post__image {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+.instagram-post__meta {
+  background-color: rgba($black, .5);
+  bottom: 0;
+  left: 0;
+  padding: $gutter;
+  position: absolute;
+  right: 0;
+}
+
+.instagram-post__caption {
+  color: rgba($white, .8);
+  font-size: rem(18px);
+  margin-bottom: 0;
+}
+
+.instagram-post__likes {
+  color: rgba($white, .5);
+  display: block;
+}

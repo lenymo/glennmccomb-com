@@ -30,19 +30,17 @@ class InstagramPost extends React.Component {
       caption = data.caption.text;
     }
 
-    console.log(likes);
-    console.log(image);
-    console.log(caption);
-
     return(
       <div className="instagram-post">
         <img src={image} className="instagram-post__image" />
-        <p className="instagram-post__caption">
-          {caption}
-        </p>
-        <small className="instagram-post__likes">
-          {likes} likes
-        </small>
+        <div className="instagram-post__meta">
+          <p className="instagram-post__caption">
+            {caption}
+          </p>
+          <small className="instagram-post__likes">
+            {likes} likes
+          </small>
+        </div>
       </div>
     )
   }
