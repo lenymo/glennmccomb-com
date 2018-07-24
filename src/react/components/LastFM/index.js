@@ -50,7 +50,7 @@ class LastFM extends React.Component {
   
   // requestData( period ) {
 
-  //   // clear state so old items disappear.
+  //   // Clear state so old items disappear.
   //   this.setState({
   //     artists: {}
   //   });
