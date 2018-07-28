@@ -380,10 +380,6 @@ $instagram-grid-padding: $gutter;
 //  INSTAGRAM POST
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-.instagram-post {
-  margin-bottom: $gutter * 2;
-}
-
 @include respond-above(sm) {
   .instagram-post {
     box-shadow: 0 2px 10px rgba($black, .1);
