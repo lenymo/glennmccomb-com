@@ -80,42 +80,7 @@ $last-fm-artist-rank-size: 35px;
     color: $white;
     text-decoration: none;
   }
-
-  // &.last-fm-artist--appear {
-  //   opacity: 0;
-  //   transform: scale(.975);
-  // }
-
-  // &.last-fm-artist--appear-active {
-  //   transform: scale(1);
-  //   opacity: 1;
-  // }
 }
-
-// @include respond-above(xs) {
-//   .last-fm-artist {
-//     height: 230px;
-//     margin-bottom: $gutter * 2;
-//   }
-// }
-
-// @include respond-above(sm) {
-//   .last-fm-artist {
-//     height: 320px;
-//   }
-// }
-
-// @include respond-above(md) {
-//   .last-fm-artist {
-//     height: 280px;
-//   }
-// }
-
-// @include respond-above(lg) {
-//   .last-fm-artist {
-//     height: 245px;
-//   }
-// }
 
 
 //
@@ -384,6 +349,11 @@ $instagram-grid-padding: $gutter;
   background-color: $color-gray-1;
 }
 
+
+//
+//  INSTAGRAM ROW
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
 @include respond-above(sm) {
   .about-instagram__row {
     columns: 3;
@@ -405,6 +375,11 @@ $instagram-grid-padding: $gutter;
   }
 }
 
+
+//
+//  INSTAGRAM POST
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
 .instagram-post {
   margin-bottom: $gutter * 2;
 }
@@ -417,16 +392,31 @@ $instagram-grid-padding: $gutter;
   }
 }
 
+
+//
+//  INSTAGRAM IMAGE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
 .instagram-post__image {
   display: block;
   height: auto;
   width: 100%;
 }
 
+
+//
+//  INSTAGRAM META
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
 .instagram-post__meta {
   background-color: $color-gray-2;
   padding: $gutter;
 }
+
+
+//
+//  INSTAGRAM CAPTION
+//––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .instagram-post__caption {
   font-size: rem(16px);
@@ -439,6 +429,11 @@ $instagram-grid-padding: $gutter;
     color: rgba($white, .5);
   }
 }
+
+
+//
+//  INSTAGRAM LIKES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .instagram-post__likes {
   color: rgba($white, .2);
