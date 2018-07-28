@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 class InstagramPost extends React.Component {
   render() {
 
-    console.log(this.props.data);
+    // console.log(this.props.data);
 
     let data = this.props.data;
 
@@ -38,7 +38,7 @@ class InstagramPost extends React.Component {
             {caption}
           </p>
           <small className="instagram-post__likes">
-            {likes} likes
+            &hearts; {likes}
           </small>
         </div>
       </div>

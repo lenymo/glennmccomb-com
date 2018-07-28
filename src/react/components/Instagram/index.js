@@ -74,7 +74,7 @@ class Instagram extends React.Component {
     let posts = this.state.posts;
 
     return (
-      <section className="section section__about-instagram">
+      <section className="section section__about-instagram -has-dark-bg">
         <div className="container container__about-instagram">
           <div className="row">
             <div className="col-sm-12">
