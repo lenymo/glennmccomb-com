@@ -132,12 +132,6 @@
 
 
 //
-//  ACTIVE INDICATOR
-//––––––––––––––––––––––––––––––––––––––––––––––––––
-
-
-
-//
 //  LINK CARET
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
@@ -154,5 +148,24 @@
     height: 0;
     vertical-align: middle;
     width: 0;
+  }
+}
+
+
+//
+//  TRANSPARENT HEADER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@include respond-above(sm) {
+  .-has-transparent-site-header {
+    .site-nav__item {
+      margin-bottom: -5px;
+      margin-top: -5px;
+    }
+
+    .site-nav__link {
+      padding-bottom: 20px;
+      padding-top: 20px;
+    }
   }
 }
