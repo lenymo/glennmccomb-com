@@ -142,7 +142,7 @@ class LastFM extends React.Component {
     return(
       <div className="row">
         <div className="col-sm-12">
-          <h2>
+          <h2 className="section__title -has-sub-title">
             Music
           </h2>
           <p>

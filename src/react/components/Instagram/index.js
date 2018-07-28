@@ -78,7 +78,7 @@ class Instagram extends React.Component {
         <div className="container container__about-instagram">
           <div className="row">
             <div className="col-sm-12">
-              <h2>
+              <h2 className="section__title -has-sub-title">
                 Photography
               </h2>
               <p>

@@ -421,7 +421,7 @@ $instagram-grid-padding: $gutter;
 .instagram-post__caption {
   font-size: rem(16px);
   line-height: 1.4;
-  margin-bottom: 0;
+  margin-bottom: $gutter * .25;
 }
 
 .instagram-post__meta {

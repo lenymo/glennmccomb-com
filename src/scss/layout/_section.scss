@@ -30,3 +30,10 @@
     padding: $section-padding-lg;
   }
 }
+
+
+.section__title {
+  &.-has-sub-title {
+    margin-bottom: $gutter * .5;
+  }
+}
