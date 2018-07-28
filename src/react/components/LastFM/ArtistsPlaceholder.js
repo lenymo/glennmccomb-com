@@ -23,6 +23,7 @@ class ArtistsPlaceholder extends React.Component {
               <div className="last-fm-artist__name"></div>
               <div className="last-fm-artist__play-count"></div>
             </div>
+            <div className="last-fm-artist__square"></div>
           </div>
         </div>
       );

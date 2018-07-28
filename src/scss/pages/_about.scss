@@ -68,9 +68,9 @@ $last-fm-artist-rank-size: 35px;
   border-radius: 2px;
   color: $white;
   display: block;
-  height: 200px;
+  // height: 200px;
   margin-bottom: $gutter;
-  padding: $gutter;
+  // padding: $gutter;
   position: relative;
   transition: all .2s ease;
 
@@ -92,30 +92,30 @@ $last-fm-artist-rank-size: 35px;
   // }
 }
 
-@include respond-above(xs) {
-  .last-fm-artist {
-    height: 230px;
-    margin-bottom: $gutter * 2;
-  }
-}
+// @include respond-above(xs) {
+//   .last-fm-artist {
+//     height: 230px;
+//     margin-bottom: $gutter * 2;
+//   }
+// }
 
-@include respond-above(sm) {
-  .last-fm-artist {
-    height: 320px;
-  }
-}
+// @include respond-above(sm) {
+//   .last-fm-artist {
+//     height: 320px;
+//   }
+// }
 
-@include respond-above(md) {
-  .last-fm-artist {
-    height: 280px;
-  }
-}
+// @include respond-above(md) {
+//   .last-fm-artist {
+//     height: 280px;
+//   }
+// }
 
-@include respond-above(lg) {
-  .last-fm-artist {
-    height: 245px;
-  }
-}
+// @include respond-above(lg) {
+//   .last-fm-artist {
+//     height: 245px;
+//   }
+// }
 
 
 //
@@ -301,6 +301,16 @@ $last-fm-artist-rank-size: 35px;
   100% {
     opacity: 1;
   }
+}
+
+
+//
+//  SQUARE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.last-fm-artist__square {
+  width: 100%;
+  padding-bottom: 100%;;
 }
 
 
