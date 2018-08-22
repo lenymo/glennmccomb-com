@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 33);
+/******/ 	return __webpack_require__(__webpack_require__.s = 32);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -4596,8 +4596,7 @@ module.exports = require("https");
 module.exports = require("zlib");
 
 /***/ }),
-/* 32 */,
-/* 33 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4617,35 +4616,17 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function handler(event, context, callback) {
 
   // Environment variable.
-  var apiKey = process.env.LASTFM_API_KEY;
+  var accessToken = process.env.INSTAGRAM_ACCESS_TOKEN;
 
-  // My username.
-  var username = 'elgyn2';
+  // User id (can be a number of self)
+  var userID = 'self';
 
   try {
-    // Get request data.
-    var payload = JSON.parse(event.body);
+    // Build Instagram API url.
+    var instagramUrl = 'https://api.instagram.com/v1/users/' + userID + '/media/recent/?access_token=' + accessToken;
 
-    var limit = payload.limit;
-    var period = payload.period;
-
-    // Build last.fm API url.
-    var lastFmUrl = 'https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=' + username + '&api_key=' + apiKey + '&format=json&period=' + period + '&limit=' + limit;
-
-    // // I used this to test that the last.fm URL was working.
-    // callback(null, {
-    //   // headers: {
-    //   //   'Content-Type': 'application/json',
-    //   //   'Accept': 'application/json',
-    //   //   "Access-Control-Allow-Origin" : "*",
-    //   //   "Access-Control-Allow-Credentials" : true
-    //   // },
-    //   statusCode: 200,
-    //   body: JSON.stringify({lastFmUrl: lastFmUrl})
-    // });
-
-    // Last.fm API request.
-    (0, _nodeFetch2.default)(lastFmUrl, {
+    // Instagram API request.
+    (0, _nodeFetch2.default)(instagramUrl, {
       method: 'GET'
     }).then(function (response) {
       return response.json();
@@ -4672,7 +4653,7 @@ function handler(event, context, callback) {
 }
 
 //
-//  LAST.FM
+//  INSTAGRAM
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 /***/ })
