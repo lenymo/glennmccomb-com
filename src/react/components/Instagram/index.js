@@ -70,10 +70,6 @@ class Instagram extends React.Component {
   //––––––––––––––––––––––––––––––––––––––––––––––––––
 
   requestData() {
-
-    console.log('LAMBDA BE RUNNIN');
-    
-
     // clear state so old items disappear.
     this.setState({
       posts: {}
