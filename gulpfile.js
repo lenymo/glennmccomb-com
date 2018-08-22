@@ -273,6 +273,7 @@ gulp.task('critical', function (cb) {
   var main = path + hashCSS['main.css'];
   var article = path + hashCSS['single-article.css'];
   var contact = path + hashCSS['contact.css'];
+  var about = path + hashCSS['about.css'];
 
   exec('hugo', function(err, stdout, stderr) {
     console.log(stdout);
@@ -319,6 +320,18 @@ gulp.task('critical', function (cb) {
       }))
       .on('error', function(err) { console.log(err.message); })
       .pipe(gulp.dest('static/css/critical/contact/'));
+
+    // About page.
+    gulp.src('public/about/index.html')
+      .pipe(critical({
+        base: '/',
+        minify: true,
+        css: [main, about],
+        width: 1200,
+        height: 1200,
+      }))
+      .on('error', function (err) { console.log(err.message); })
+      .pipe(gulp.dest('static/css/critical/about/'));
   }, 1000);
 
 });

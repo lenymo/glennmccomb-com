@@ -31,6 +31,10 @@
 <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}css/critical/contact/index.css" /> -->
 <style rel="stylesheet">{{ readFile "/static/css/critical/contact/index.css" | safeCSS }}</style>
 
+{{ else if and (eq .Type "about") (eq .Kind "section") }}
+<!-- About critical CSS. -->
+<style rel="stylesheet">{{readFile "/static/css/critical/about/index.css" | safeCSS}}</style>
+
 {{ else }}
 <!-- Home / article listing / category critical CSS. -->
 <meta name="article-index">
