@@ -123,7 +123,7 @@ class LastFM extends React.Component {
 
         // console.log( response );
 
-        const {topartists:{artist: responseArtist}} = response;
+        const {topartists: {artist: responseArtist}} = response;
 
         // Update state.
         this.setState({
