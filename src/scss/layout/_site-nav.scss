@@ -89,7 +89,7 @@
   // Shared.
   .site-nav__link {
     &::before {
-      background: transparent;
+      background-color: transparent;
       content: '';
       height: 0;
       left: 0;
@@ -109,7 +109,7 @@
         color: $site-nav-item-font-color-hover;
 
         &::before {
-          background: lighten($color-primary, 20%);
+          background-color: lighten($color-primary, 20%);
           height: 5px;
         }
       }
@@ -121,7 +121,7 @@
     &.-is-current {
       .site-nav__link {
         &::before {
-          background: $site-nav-item-current-border-color;
+          background-color: $site-nav-item-current-border-color;
           box-shadow: 0 0 5px lighten($site-nav-item-current-border-color, 5%);
           height: 5px;
         }
@@ -161,11 +161,23 @@
     .site-nav__item {
       margin-bottom: -5px;
       margin-top: -5px;
+
+      &.-is-current {
+        .site-nav__link {
+          &::before {
+            margin-top: 0;
+          }
+        }
+      }
     }
 
     .site-nav__link {
       padding-bottom: 20px;
       padding-top: 20px;
+
+      &::before {
+        margin-top: 0;
+      }
     }
   }
 }
