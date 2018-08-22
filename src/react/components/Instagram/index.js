@@ -7,6 +7,7 @@
 import React from 'react';
 
 import InstagramPost from './InstagramPost';
+import { CLIENT_RENEG_WINDOW } from 'tls';
 
 class Instagram extends React.Component {
 
@@ -70,6 +71,9 @@ class Instagram extends React.Component {
   //––––––––––––––––––––––––––––––––––––––––––––––––––
 
   requestData() {
+
+    console.log('LAMBDA BE RUNNIN\'');
+    
 
     // clear state so old items disappear.
     this.setState({
