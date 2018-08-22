@@ -37,10 +37,10 @@ menu:
       Weight: '140'
       parent: "articles"
 
-    # - Identifier: about
-    #   Name: About
-    #   URL: /about/
-    #   Weight: '20'
+    - Identifier: about
+      Name: About
+      URL: /about/
+      Weight: '20'
 
     - Identifier: work
       Name: Work
