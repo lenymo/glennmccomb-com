@@ -1,10 +1,9 @@
 
 
 //
-//  HELLO
+//  LAST.FM
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-// const fetch = require('node-fetch');
 import fetch from 'node-fetch';
 
 export function handler(event, context, callback) {
@@ -14,7 +13,6 @@ export function handler(event, context, callback) {
 
   // My username.
   const username = 'elgyn2';
-
 
   try {
     // Get request data.
