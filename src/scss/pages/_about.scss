@@ -435,3 +435,40 @@ $instagram-grid-padding: $gutter;
   color: rgba($white, .2);
   display: block;
 }
+
+
+//
+//  LOADING
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.instagram-post--loading {
+  width: 100%;
+}
+
+
+//
+//  IMAGE PLACEHOLDER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.instagram-post__image--placeholder {
+  background-color: darken($color-gray-2, 3%);
+  padding-bottom: 100%;
+}
+
+//
+//  CAPTION PLACEHOLDER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.instagram-post__caption--placeholder {
+  background-color: darken($color-gray-2, 3%);
+  width: 80%;
+}
+
+//
+//  LIKES PLACEHOLDER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.instagram-post__likes--placeholder {
+  background-color: darken($color-gray-2, 3%);
+  width: 30px;
+}

@@ -16,7 +16,43 @@ class Instagram extends React.Component {
     this.requestData = this.requestData.bind(this);
 
     this.state = {
-      posts: []
+      posts: [{
+        id: 1,
+        loading: true
+      },{
+        id: 2,
+        loading: true
+      }, {
+        id: 3,
+        loading: true
+      }, {
+        id: 4,
+        loading: true
+      }, {
+        id: 5,
+        loading: true
+      }, {
+        id: 6,
+        loading: true
+      }, {
+        id: 7,
+        loading: true
+      }, {
+        id: 8,
+        loading: true
+      }, {
+        id: 9,
+        loading: true
+      }, {
+        id: 10,
+        loading: true
+      }, {
+        id: 11,
+        loading: true
+      }, {
+        id: 12,
+        loading: true
+      }]
     }
   }
 
@@ -61,6 +97,8 @@ class Instagram extends React.Component {
   //         this.setState({
   //           posts: data,
   //         });
+
+  //         console.log(this.state.posts);
   //       });
   // }
 
