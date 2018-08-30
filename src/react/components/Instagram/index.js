@@ -123,8 +123,6 @@ class Instagram extends React.Component {
       .then(response => response.json())
       .then(response => {
 
-        console.log(response);
-
         // Get API response.
         const data = response.data;
 
