@@ -17,6 +17,8 @@ class InstagramPost extends React.Component {
 
     const { loading } = data;
 
+    console.log(loading);
+
     // Generate a random number 0-100
     const randomHeight = Math.floor(Math.random() * 100);
     const randomHeightCss = {

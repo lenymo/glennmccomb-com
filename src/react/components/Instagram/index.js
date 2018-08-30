@@ -16,43 +16,45 @@ class Instagram extends React.Component {
     this.requestData = this.requestData.bind(this);
 
     this.state = {
-      posts: [{
-        id: 1,
-        loading: true
-      },{
-        id: 2,
-        loading: true
-      }, {
-        id: 3,
-        loading: true
-      }, {
-        id: 4,
-        loading: true
-      }, {
-        id: 5,
-        loading: true
-      }, {
-        id: 6,
-        loading: true
-      }, {
-        id: 7,
-        loading: true
-      }, {
-        id: 8,
-        loading: true
-      }, {
-        id: 9,
-        loading: true
-      }, {
-        id: 10,
-        loading: true
-      }, {
-        id: 11,
-        loading: true
-      }, {
-        id: 12,
-        loading: true
-      }]
+      posts: [
+        {
+          id: 1,
+          loading: true
+        },{
+          id: 2,
+          loading: true
+        }, {
+          id: 3,
+          loading: true
+        }, {
+          id: 4,
+          loading: true
+        }, {
+          id: 5,
+          loading: true
+        }, {
+          id: 6,
+          loading: true
+        }, {
+          id: 7,
+          loading: true
+        }, {
+          id: 8,
+          loading: true
+        }, {
+          id: 9,
+          loading: true
+        }, {
+          id: 10,
+          loading: true
+        }, {
+          id: 11,
+          loading: true
+        }, {
+          id: 12,
+          loading: true
+        }
+      ]
     }
   }
 
@@ -109,9 +111,9 @@ class Instagram extends React.Component {
 
   requestData() {
     // clear state so old items disappear.
-    this.setState({
-      posts: {}
-    });
+    // this.setState({
+    //   posts: {}
+    // });
 
     const url = '/.netlify/functions/instagram';
 
@@ -121,13 +123,19 @@ class Instagram extends React.Component {
       .then(response => response.json())
       .then(response => {
 
+        console.log(response);
+
         // Get API response.
         const data = response.data;
 
-        // Update state.
-        this.setState({
-          posts: data,
-        });
+        // If there's data.
+        if (data) {
+          // Update state.
+          this.setState({
+            posts: data,
+          });
+        }
+
       });
   }
 
