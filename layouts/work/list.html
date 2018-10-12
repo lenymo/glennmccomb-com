@@ -13,7 +13,7 @@
 
     {{ range $paginator.Pages }}
 
-      <section class="section section__work-summary section__work-summary--{{ $.Scratch.Get "i" }}">
+      <section class="section section__work-summary section__work-summary--{{ $.Scratch.Get "i" }}{{ with .Params.custom_class }} {{ . }}{{ end }}{{ with .Params.summary_dark_Bg }} -has-dark-bg{{ end }}">
 
         {{ partial "work-summary" . }}
         

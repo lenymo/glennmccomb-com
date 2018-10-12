@@ -40,9 +40,9 @@
 .section__work-summary {
 
   // Remove padding bottom.
-  &:nth-child(1n+2) {
-    padding-bottom: 0;
-  }
+  // &:nth-child(1n+2) {
+  //   padding-bottom: 0;
+  // }
 
   &:last-of-type {
     padding-bottom: $gutter * 2;
