@@ -10,7 +10,7 @@ Gulp is used to:
 
 - Compile SCSS into CSS and append a hash to file names.
 - Compile and minify vanilla JavaScript and append a hash to file names.
-- Create low-quality-image-placeholders (LQIP) while page is loading.
+- Create low-quality-image-placeholders ([LQIP](https://www.guypo.com/introducing-lqip-low-quality-image-placeholders)) while page is loading.
 - Compress images.
 - Create critical CSS for key pages.
 
@@ -31,7 +31,10 @@ Useful commands:
 
 Useful commands:
 
-`$ gulp` to watch *.scss and *.js files.
+`$ gulp` to watch SCSS and JavaScript files.
+
 `$ gulp images` to create responsive sizes of featured images and to generate LQIP images.
+
 `$ gulp compress-images` to run additional compression on images.
+
 `$ gulp critical` to generate critical CSS for key pages.
