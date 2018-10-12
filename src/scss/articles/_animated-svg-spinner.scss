@@ -1,0 +1,28 @@
+
+
+//
+//  ANIMATED SVG SPINER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.animated-svg-spinner {
+  .circle-svg {
+    max-width: 100px;
+  }
+
+  .circle-circle--basic {
+    display: block;
+    fill: $color-primary;
+  }
+
+  .circle-circle--stroked {
+    fill: transparent;
+    stroke: $color-primary;
+    stroke-width: 5px;
+  }
+
+  .circle-svg--stroked {
+    &:hover {
+      background: $color-gray-e;
+    }
+  }
+}
