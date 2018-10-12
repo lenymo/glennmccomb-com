@@ -4,7 +4,7 @@
 
 ### Tech stack
 
-Built using [Hugo](https://gohugo.io/). Content is managed via [Netlify CMS](https://www.netlifycms.org/).
+Built using [Hugo](https://gohugo.io/). Content is managed via [Netlify CMS](https://www.netlifycms.org/). Hosted on [Netlify](https://www.netlify.com/).
 
 Gulp is used to:
 
@@ -18,6 +18,8 @@ Webpack is used to:
 
 - Compile React.
 - Compile lambda functions.
+
+Comments are manage via [Disqus](https://disqus.com/) and are lazy-loaded using [disqusLoader](https://github.com/osvaldasvalutis/disqusLoader.js/) which you can learn about in [this CSS Tricks article](https://css-tricks.com/lazy-loading-disqus-comments/).
 
 ### Hugo
 
