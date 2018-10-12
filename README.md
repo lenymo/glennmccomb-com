@@ -2,9 +2,9 @@
 
 ### Tech stack
 
-The site is built using Hugo. Content is managed via Netlify CMS.
+Built using Hugo. Content is managed via Netlify CMS.
 
-Gulp is used to handle the following tasks:
+Gulp is used to:
 
 - Compile SCSS into CSS and append a hash to file names.
 - Compile and minify vanilla JavaScript and append a hash to file names.
