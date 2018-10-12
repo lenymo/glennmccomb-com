@@ -2,6 +2,8 @@
 
 ### Tech stack
 
+The site is built using Hugo. Content is managed by Netlify CMS.
+
 Gulp is used to handle the following tasks:
 
 - Compile SCSS into CSS and append a hash to file names.
