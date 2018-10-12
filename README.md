@@ -1,8 +1,10 @@
 ## GlennMcComb.com
 
+[https://glennmccomb.com](https://glennmccomb.com)
+
 ### Tech stack
 
-Built using Hugo. Content is managed via Netlify CMS.
+Built using [Hugo](https://gohugo.io/). Content is managed via [Netlify CMS](https://www.netlifycms.org/).
 
 Gulp is used to:
 
