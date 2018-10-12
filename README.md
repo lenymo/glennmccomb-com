@@ -30,6 +30,7 @@ Useful commands:
 ### Gulp
 
 Useful commands:
+
 `$ gulp` to watch *.scss and *.js files.
 `$ gulp images` to create responsive sizes of featured images and to generate LQIP images.
 `$ gulp compress-images` to run additional compression on images.
