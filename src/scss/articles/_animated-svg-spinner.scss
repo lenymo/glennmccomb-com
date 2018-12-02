@@ -26,12 +26,18 @@
     }
   }
 
+  // sm.
+  .circle-svg--sm {
+    max-width: 50px;
+  }
+
   // 2x.
   .circle-svg--2x {
     max-width: 200px;
   }
 
-  .circle-circle--2x {
-    stroke-width: 12px;
+  // Fat.
+  .circle-circle--fat {
+    stroke-width: 10px;
   }
 }

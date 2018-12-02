@@ -56,8 +56,25 @@ Which looks much better.
   <circle class="circle-circle circle-circle--stroked" cx="50%" cy="50%" r="47%"/>
 </svg>
 
-The `r` attribute defines the radius of the circle, relative to its overall size. In this case our circle is 50, and we've set our `r` to 47%. This is more like a magic number than we would like, but in our case it works fine, even if we increase the size of the circle and its stroke.
+The `r` attribute defines the radius of the circle, relative to its overall size. In this case our circle is 50, and we've set our `r` to 47%. This is more like a magic number than we would like, but in our case it works fine even when change size of the width of the `svg`.
+
+Half size:
+
+<svg class="circle-svg circle-svg--stroked circle-svg--sm" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle class="circle-circle circle-circle--stroked" cx="50%" cy="50%" r="47%"/>
+</svg>
+
+Double size:
 
 <svg class="circle-svg circle-svg--stroked circle-svg--2x" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <circle class="circle-circle circle-circle--stroked circle-circle--2x" cx="50%" cy="50%" r="47%"/>
+  <circle class="circle-circle circle-circle--stroked" cx="50%" cy="50%" r="47%"/>
 </svg>
+
+Notice that although our CSS stroke is set to 6px, it still scales with as size of the SVG shape changes. 
+
+When the spinner gets very small, we may want to increase the stroke width, and at that point we'll need to decrease the `circle`'s `r` attribute. Below is the half-size circle with `stroke-width: 10px` and `r="45%"`.
+
+<svg class="circle-svg circle-svg--stroked circle-svg--sm" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle class="circle-circle circle-circle--stroked circle-circle--fat" cx="50%" cy="50%" r="45%"/>
+</svg>
+
