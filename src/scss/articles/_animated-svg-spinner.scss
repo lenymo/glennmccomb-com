@@ -17,12 +17,21 @@
   .circle-circle--stroked {
     fill: transparent;
     stroke: $color-primary;
-    stroke-width: 5px;
+    stroke-width: 6px;
   }
 
   .circle-svg--stroked {
     &:hover {
       background: $color-gray-e;
     }
+  }
+
+  // 2x.
+  .circle-svg--2x {
+    max-width: 200px;
+  }
+
+  .circle-circle--2x {
+    stroke-width: 12px;
   }
 }

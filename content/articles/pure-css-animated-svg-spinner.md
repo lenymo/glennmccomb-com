@@ -10,14 +10,14 @@ We will start off with an SVG circle.
 
 {{< highlight html >}}
 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="50" cy="50" r="50"/>
+  <circle cx="50%" cy="50%" r="50%"/>
 </svg>
 {{< /highlight >}}
 
 Which renders in the page like so:
 
 <svg class="circle-svg circle-svg--basic" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <circle class="circle-circle circle-circle--basic" cx="50" cy="50" r="50"/>
+  <circle class="circle-circle circle-circle--basic" cx="50%" cy="50%" r="50%"/>
 </svg>
 
 This is how it looks unstyled. 
@@ -28,30 +28,36 @@ Next, we'll write some CSS to add a stroke and remove the fill.
 circle {
   fill: transparent;
   stroke: #2f3d4c;
-  stroke-width: 5px;
+  stroke-width: 6px;
 }
 {{< /highlight >}}
 
 Here's how it looks:
 
 <svg class="circle-svg circle-svg--stroked" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <circle class="circle-circle circle-circle--stroked" cx="50" cy="50" r="50"/>
+  <circle class="circle-circle circle-circle--stroked" cx="50%" cy="50%" r="50%"/>
 </svg>
 
 This doesn't look quite right. The stroke is rendering outside the SVG's viewbox (hover to see the viewbox).
 
-You might think there would be a `stroke-position` CSS rule which we could set to `inside` and have the stroke appear inside an SVG shape but unfortunately no such rule exists. Instead we have to modify the `r="50"` attribute of the SVG.
+You might think there would be a `stroke-position` CSS rule which we could set to `inside` and have the stroke appear inside an SVG shape, but unfortunately no such rule exists and the stroke renders with 3px either side of the shape.
+
+Instead we have to modify the `r="50%"` attribute of the SVG.
 
 {{< highlight html >}}
 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="50" cy="50" r="47"/>
+  <circle cx="50%" cy="50%" r="47%"/>
 </svg>
 {{< /highlight >}}
 
-It's looking much better.
+Which looks much better.
 
 <svg class="circle-svg circle-svg--stroked" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <circle class="circle-circle circle-circle--stroked" cx="50" cy="50" r="47"/>
+  <circle class="circle-circle circle-circle--stroked" cx="50%" cy="50%" r="47%"/>
 </svg>
 
-So what does the `r` attribute do, and why does this work?
+The `r` attribute defines the radius of the circle, relative to its overall size. In this case our circle is 50, and we've set our `r` to 47%. This is more like a magic number than we would like, but in our case it works fine, even if we increase the size of the circle and its stroke.
+
+<svg class="circle-svg circle-svg--stroked circle-svg--2x" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle class="circle-circle circle-circle--stroked circle-circle--2x" cx="50%" cy="50%" r="47%"/>
+</svg>
