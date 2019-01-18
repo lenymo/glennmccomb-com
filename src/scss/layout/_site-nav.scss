@@ -110,7 +110,7 @@
 
         &::before {
           background-color: lighten($color-primary, 20%);
-          box-shadow: 0 0 20px rgba($black, 0.5);
+          box-shadow: 0 0 20px rgba($black, 0.333);
           height: 5px;
         }
       }
@@ -125,7 +125,22 @@
           background-color: $site-nav-item-current-border-color;
           // box-shadow: 0 0 5px lighten($site-nav-item-current-border-color, 5%);
           box-shadow: 0 0 20px rgba($white, .5);
+          box-shadow: 0 0 25px rgba($white, .5), 0 0 2px rgba($black, 0.75);
           height: 5px;
+          transition: all .1s ease;
+        }
+      }
+    }
+
+    // Current item over.
+    &:hover {
+      &.-is-current {
+        .site-nav__link {
+          &::before {
+            box-shadow: 0 0 30px rgba($white, .75);
+            box-shadow: 0 0 30px rgba($white, .75), 0 0 2px rgba($black, 1);
+            transform: scaleX(1.025) scaleY(1.1);
+          }
         }
       }
     }
