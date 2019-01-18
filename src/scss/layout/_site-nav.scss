@@ -96,7 +96,7 @@
       margin-top: -5px;
       position: absolute;
       top: 0;
-      transition: all .1s ease;
+      transition: all .333s ease;
       width: 100%;
     }
   }
@@ -110,6 +110,7 @@
 
         &::before {
           background-color: lighten($color-primary, 20%);
+          box-shadow: 0 0 20px rgba($black, 0.5);
           height: 5px;
         }
       }
@@ -122,7 +123,8 @@
       .site-nav__link {
         &::before {
           background-color: $site-nav-item-current-border-color;
-          box-shadow: 0 0 5px lighten($site-nav-item-current-border-color, 5%);
+          // box-shadow: 0 0 5px lighten($site-nav-item-current-border-color, 5%);
+          box-shadow: 0 0 20px rgba($white, .5);
           height: 5px;
         }
       }
