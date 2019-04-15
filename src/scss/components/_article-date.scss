@@ -54,23 +54,23 @@ $article-date-size: 70px;
   text-transform: uppercase;
 }
 
-.article-date__year {
-  display: none;
-}
-
 // .article-date__year {
-//   bottom: 0;
-//   color: $color-gray-c;
-//   font-size: rem(12px);
-//   left: 50%;
-//   letter-spacing: 1px;
-//   line-height: 1;
-//   opacity: 0;
-//   position: absolute;
-//   transition: all .2s ease;
-//   transform: translateX(-50%);
-//   z-index: 0;
+//   display: none;
 // }
+
+.article-date__year {
+  bottom: 0;
+  color: $color-gray-c;
+  font-size: rem(12px);
+  left: 50%;
+  letter-spacing: 1px;
+  line-height: 1;
+  // opacity: 0;
+  position: absolute;
+  transition: all .2s ease;
+  transform: translateX(-50%);
+  z-index: 0;
+}
 
 // .article-date {
 //   &:hover {

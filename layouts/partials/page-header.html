@@ -30,7 +30,7 @@
 <section class="section section__page-header{{ with .Params.featured }} -has-featured{{ end }}{{ with .Params.dark_bg }} -has-dark-bg{{ end }}{{ $.Scratch.Get "page-header-classes" }}">
   <div class="container container__page-header">
 
-    <!-- Show date for articles -->
+    <!-- Show date for articles. -->
     {{ if and (eq .Type "articles") (eq .Kind "page") }}
     <date class="article-date article-header__date">
       <span class="article-date__month article-header__date-month">{{ .Date.Format "Jan" }}</span>
