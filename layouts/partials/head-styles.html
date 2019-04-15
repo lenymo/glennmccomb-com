@@ -21,22 +21,22 @@
 //  PAGE-SPECIFIC CSS
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 -->
-{{ if and (eq .Type "articles") (eq .Kind "page") }}
 <!-- Single article critical CSS -->
+{{ if and (eq .Type "articles") (eq .Kind "page") }}
 <style rel="stylesheet">{{ readFile "/static/css/critical/articles/index.css" | safeCSS }}</style>
 <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}css/critical/articles/index.css" /> -->
 
-{{ else if and (eq .Type "contact") (eq .Kind "section") }}
 <!-- Contact critical CSS. -->
+{{ else if and (eq .Type "contact") (eq .Kind "section") }}
 <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}css/critical/contact/index.css" /> -->
 <style rel="stylesheet">{{ readFile "/static/css/critical/contact/index.css" | safeCSS }}</style>
 
-{{ else if and (eq .Type "about") (eq .Kind "section") }}
 <!-- About critical CSS. -->
+{{ else if and (eq .Type "about") (eq .Kind "section") }}
 <style rel="stylesheet">{{readFile "/static/css/critical/about/index.css" | safeCSS}}</style>
 
-{{ else }}
 <!-- Home / article listing / category critical CSS. -->
+{{ else }}
 <meta name="article-index">
 <style rel="stylesheet">{{ readFile "/static/css/critical/index.css" | safeCSS }}</style>
 <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}css/critical/index.css" /> -->
