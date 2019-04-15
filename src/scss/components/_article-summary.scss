@@ -77,7 +77,6 @@
 }
 
 
-
 //
 //  DATE
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -99,6 +98,10 @@
 
   .article-date__day {
     font-size: rem(26px);
+  }
+
+  .article-date__year {
+    display: none;
   }
 }
 

@@ -4,6 +4,8 @@
 //  ARTICLE DATE
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
+$article-date-year-size: 30px;
+
 
 //
 //  VARIABLES
@@ -14,7 +16,7 @@ $article-date-size: 70px;
 
 
 //
-//  STYLES
+//  DATE
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .article-date {
@@ -30,6 +32,11 @@ $article-date-size: 70px;
   z-index: $z-index-article-date;
 }
 
+
+//
+//  MONTH
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
 .article-date__month {
   display: block;
   font-size: rem(14px);
@@ -38,6 +45,11 @@ $article-date-size: 70px;
   line-height: 1;
   text-transform: uppercase;
 }
+
+
+//
+//  DAY
+//––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .article-date__day {
   display: block;
@@ -49,33 +61,41 @@ $article-date-size: 70px;
 }
 
 .article-date__day-suffix {
-  display: none;
+  display: none; // <-- Hidden.
   font-size: rem(14px);
   text-transform: uppercase;
 }
 
-// .article-date__year {
-//   display: none;
-// }
+
+//
+//  YEAR
+//––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .article-date__year {
-  bottom: 0;
-  color: $color-gray-c;
-  font-size: rem(12px);
-  left: 50%;
-  letter-spacing: 1px;
-  line-height: 1;
-  // opacity: 0;
+  background: rgba($white, .75);
+  border-radius: 50%;
+  bottom: -$gutter * 1.25;
+  box-shadow: 0 0 0 7px rgba($white, .075);
+  font-size: rem(14px);
+  font-weight: bold;
+  height: $article-date-year-size;
+  left: 95%;
+  letter-spacing: .075em;
+  line-height: $article-date-year-size;
   position: absolute;
   transition: all .2s ease;
   transform: translateX(-50%);
+  width: $article-date-year-size;
   z-index: 0;
 }
 
-// .article-date {
-//   &:hover {
-//     .article-date__year {
-//       opacity: 1;
-//     }
-//   }
-// }
+.article-date__dot-device {
+  background: rgba($white, .75);
+  border-radius: 50%;
+  bottom: -$gutter * 2;
+  box-shadow: 0 0 0 7px rgba($white, .075);
+  height: $article-date-year-size * 0.333;
+  left: 125%;
+  position: absolute;
+  width: $article-date-year-size * 0.333;
+}

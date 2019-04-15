@@ -13,7 +13,9 @@ $color-rust-dark-gray: #232323;
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .rust-survival-tips {
-  .article-header__date {
+  .article-header__date,
+  .article-date__year,
+  .article-date__dot-device {
     background-color: $color-rust-red;
     box-shadow: 0 0 0 7px rgba($color-rust-red, .3);
     color: $color-rust-dark-gray;
