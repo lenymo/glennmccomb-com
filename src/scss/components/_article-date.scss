@@ -82,8 +82,8 @@ $article-date-size: 70px;
   left: 95%;
   letter-spacing: .075em;
   line-height: $article-date-year-size;
+  opacity: .66;
   position: absolute;
-  transition: all .2s ease;
   transform: translateX(-50%);
   width: $article-date-year-size;
   z-index: 0;
@@ -96,6 +96,7 @@ $article-date-size: 70px;
   box-shadow: 0 0 0 7px rgba($white, .075);
   height: $article-date-year-size * 0.333;
   left: 125%;
+  opacity: .333;
   position: absolute;
   width: $article-date-year-size * 0.333;
 }
