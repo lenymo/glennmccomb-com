@@ -1,9 +1,12 @@
 ---
 title: Pure CSS animated SVG spinner
 date: 2019-04-21T03:00:11.000Z
-toc: true
+featured: /img/uploads/featured-image-article-svg-spinner.jpg
 categories:
   - Development
+toc: true
+featured_opacity: '.15'
+dark_bg: true
 custom_class: animated-svg-spinner
 custom_stylesheet: animated-svg-spinner
 ---
