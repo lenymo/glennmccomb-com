@@ -12,7 +12,6 @@
 .animated-svg-spinner {
   .circle-svg {
     max-width: 100px;
-    overflow: visible;
   }
 
   .circle-svg--stroked {
@@ -98,7 +97,7 @@
 
   // Long stroke length.
   .circle-svg__circle--stroke-length-long {
-    stroke-dashoffset: 20;
+    stroke-dashoffset: 75;
   }
 
   // Short stroke length.
@@ -124,7 +123,7 @@
 @keyframes circle-svg__circle--stroke-dash-example {
   0%,
   100% {
-    stroke-dashoffset: 20;
+    stroke-dashoffset: 75;
   }
   
   50% {

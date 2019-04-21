@@ -20,6 +20,8 @@ A good loading indicator helps users feel a sense of progress, and the spinner w
   <circle class="circle-svg__circle circle-svg__circle--stroked circle-svg__circle--production circle-svg__circle--stroke-length circle-svg__circle--dash-offset-animated" cx="50" cy="50" r="45"/>
 </svg>
 
+If you'd like to see the whole thing straight-up, skip to [the final code](#the-final-code) or [check it out on Codepen](https://codepen.io/lenymo/pen/qwKPov).
+
 
 ## Creating an svg circle
 
@@ -127,7 +129,7 @@ We'll leverage this attribute to create a stroke dash which is the full circumfe
 
 This looks much the same as the circles from our previous examples but we can do *much* more with it.
 
-But first, some additional `<circle>` CSS. To make the stroke appear more "snake-like" we set `stroke-linecap` to `round`, and so as the `<circle>` rotates from the middle, we set `transform-origin` to `50% 50%`.
+But first, some additional `<circle>` CSS. To make the stroke appear more "snake-like" we'll set `stroke-linecap` to `round`, and so as the `<circle>` rotates from the middle, we'll set `transform-origin` to `50% 50%`.
 
 {{< highlight scss >}}
 circle {
@@ -140,7 +142,7 @@ circle {
 
 Next we'll use `stroke-dashoffset` to shift the starting point of the dash.
 
-`stroke-dashoffset: 20`
+`stroke-dashoffset: 75`
 
 <svg class="circle-svg circle-svg--stroked" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <circle class="circle-svg__circle circle-svg__circle--stroked circle-svg__circle--production circle-svg__circle--stroke-length circle-svg__circle--stroke-length-long" cx="50" cy="50" r="45"/>
@@ -152,11 +154,13 @@ Next we'll use `stroke-dashoffset` to shift the starting point of the dash.
   <circle class="circle-svg__circle circle-svg__circle--stroked circle-svg__circle--production circle-svg__circle--stroke-length circle-svg__circle--stroke-length-short" cx="50" cy="50" r="45"/>
 </svg>
 
-The initial state of `stroke-dashoffset: 0` doesn't change anything, but it does provide the starting point for our CSS animation which will move between the two.
+The initial state of `stroke-dashoffset: 75` doesn't change much, but it does provide the starting point for our CSS animation, which will move between `75` and `280`.
 
 <svg class="circle-svg circle-svg--stroked" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <circle class="circle-svg__circle circle-svg__circle--stroked circle-svg__circle--production circle-svg__circle--stroke-length circle-svg__circle--dash-offset-animated-example" cx="50" cy="50" r="45"/>
 </svg>
+
+## Adding animation
 
 Here we add a keyframe animation to `<circle>` which alternates between the two `stroke-dashoffset` values described above. We won't use this exact animation for our final spinner but it does help illustrate how it will work.
 
@@ -165,7 +169,7 @@ Here we add a keyframe animation to `<circle>` which alternates between the two 
 // stroke-dashoffset states.
 @keyframes circle--animation {
   0% {
-    stroke-dashoffset: 20;
+    stroke-dashoffset: 75;
   }
   
   50% {
@@ -192,7 +196,7 @@ circle {
 <small>NOTE: the animation shorthand is shown as an alternative. Don't use them both at the same time.</small>
 
 
-## Combining animations
+### Combining animations
 
 Next we'll combine two different animations at the same time. We rotate use a `linear` rotation animation on the outer `<svg>` element while at that same time running our `<circle>` animation from above. The `<svg>` animation will be 2 seconds long while the `<circle>` animation will have a duration of 1.4 seconds. This will help stagger the two animations.
 
@@ -221,7 +225,7 @@ svg {
 
 ### Adding pauses and rotations
 
-We're getting close to what we want but it's not quite there. The stroke should appear to be continuously chasing itself while never quite catching up. 
+We're getting close to what we want but it's not quite there. The stroke should appear to be continuously chasing itself while never quite catching up. Currently the start of the stroke appears to move backwards and we're going to fix it.
 
 Our `<svg>` animation is fine but we need to improve the `<circle>` animation by adding some pauses and rotation.
 
@@ -266,11 +270,11 @@ And here it is in combination with the `<circle>` animation.
   <circle class="circle-svg__circle circle-svg__circle--stroked circle-svg__circle--production circle-svg__circle--stroke-length circle-svg__circle--dash-offset-animated" cx="50" cy="50" r="45"/>
 </svg>
 
-To get a better sense of how the two animations work together, hover over the circle to see the bounding square of the `<svg>` element as it rotates. 
+To get a better sense of the two animations working together, hover over the circle to see the bounding square of the `<svg>` element as it rotates. 
 
-Regrettably, there is no magic formula here and I arrived at the above values after considerable experimentation.
+Regrettably, there is no magic formula here and I arrived at the values shown above after considerable experimentation.
 
-## The entire code
+## The final code
 
 Our `HTML` looks much the same as when we started:
 
@@ -331,10 +335,10 @@ circle {
 }
 {{< /highlight >}}
 
-### Notes
+## Notes
 
 For the sake of simplicity I've used element selectors in this article but if you use this code yourself I recommend class name selectors instead. Also, I've omitted browser prefixes, but if you're hand-coding this - as against using [autoprefixer](https://github.com/postcss/autoprefixer) - you should include vendor prefixes.
 
 ### Browser support
 
-According to CSS-Tricks, browser support for [stroke-dasharray](https://css-tricks.com/almanac/properties/s/stroke-dasharray/) and [stroke-dashoffset](https://css-tricks.com/almanac/properties/s/stroke-dashoffset/) goes back to IE 9 and Android 4.4, with full support in all other major browsers. If you're concerned about browser support, make sure you test it it out yourself or alternatively... use an animated GIF.
+According to CSS-Tricks, browser support for [stroke-dasharray](https://css-tricks.com/almanac/properties/s/stroke-dasharray/) and [stroke-dashoffset](https://css-tricks.com/almanac/properties/s/stroke-dashoffset/) goes back to IE 9 and Android 4.4, with full support in all other major browsers. If you want to use this and you're concerned about browser support, make sure you test it it out yourself. Or alternatively, use an animated GIF.
