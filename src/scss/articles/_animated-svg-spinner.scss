@@ -1,0 +1,153 @@
+
+
+//
+//  ANIMATED SVG SPINER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+
+//
+//  SVG
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.animated-svg-spinner {
+  .circle-svg {
+    max-width: 100px;
+    overflow: visible;
+  }
+
+  .circle-svg--stroked {
+    &:hover {
+      background: $color-gray-e;
+    }
+  }
+
+  // sm.
+  .circle-svg--sm {
+    max-width: 50px;
+  }
+
+  // 2x.
+  .circle-svg--2x {
+    max-width: 200px;
+  }
+
+  // Full rotation.
+  .circle-svg--full-rotation {
+    animation: 2s linear infinite circle-svg--full-rotation;
+  }
+}
+
+
+//
+//  SVG ANIMATIONS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@keyframes circle-svg--full-rotation {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg)
+  }
+}
+
+
+//
+//  CIRCLE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.animated-svg-spinner {
+  .circle-svg__circle {
+    transform-origin: 50% 50%;
+  }
+
+  .circle-svg__circle--basic {
+    display: block;
+    fill: $color-primary;
+  }
+
+  .circle-svg__circle--stroked {
+    fill: transparent;
+    stroke: $color-primary;
+    stroke-width: 10px;
+  }
+
+  // Fat.
+  .circle-svg__circle--fat {
+    stroke-width: 14px;
+  }
+
+  .circle-svg__circle--production {
+    stroke-linecap: round;
+  }
+
+  // Short dash array.
+  .circle-svg__circle--stroke-dash-array-short {
+    stroke-dasharray: 5;
+  }
+
+  // Medium dash array.
+  .circle-svg__circle--stroke-dash-array-medium {
+    stroke-dasharray: 24;
+  }
+
+  // Stroke length.
+  .circle-svg__circle--stroke-length {
+    stroke-dasharray: 285;
+  }
+
+  // Long stroke length.
+  .circle-svg__circle--stroke-length-long {
+    stroke-dashoffset: 20;
+  }
+
+  // Short stroke length.
+  .circle-svg__circle--stroke-length-short {
+    stroke-dashoffset: 280;
+  }
+
+  .circle-svg__circle--dash-offset-animated-example {
+    animation: 1.4s ease-in-out infinite both circle-svg__circle--stroke-dash-example;
+  }
+
+  .circle-svg__circle--dash-offset-animated {
+    animation: 1.4s ease-in-out infinite both circle-svg__circle;
+  }
+}
+
+
+//
+//  CIRCLE ANIMATIONS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// Basic demo animation.
+@keyframes circle-svg__circle--stroke-dash-example {
+  0%,
+  100% {
+    stroke-dashoffset: 20;
+  }
+  
+  50% {
+    stroke-dashoffset: 280;
+  }
+}
+
+// Actual final animation.
+@keyframes circle-svg__circle {
+  0%,
+  25% {
+    stroke-dashoffset: 280;
+    transform: rotate(0);
+  }
+  
+  50%,
+  75% {
+    stroke-dashoffset: 75;
+    transform: rotate(45deg);
+  }
+  
+  100% {
+    stroke-dashoffset: 280;
+    transform: rotate(360deg);
+  }
+}
