@@ -215,7 +215,8 @@ gulp.task("images", function() {
               width: "50%",
               rename: {
                 suffix: "-sm"
-              }
+              },
+              format: "jpg"
             }
           ]
         },
