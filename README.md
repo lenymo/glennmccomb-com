@@ -23,7 +23,7 @@ Comments are manage via [Disqus](https://disqus.com/) and are lazy-loaded using 
 
 ### Hugo
 
-This codebase is currently optimised for Hugo v0.55.
+This codebase is currently optimised for Hugo v0.55.3.
 
 Useful commands: 
 
