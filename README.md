@@ -1,8 +1,6 @@
-## GlennMcComb.com
-
 [https://glennmccomb.com](https://glennmccomb.com)
 
-### Tech stack
+## Tech stack
 
 Built using [Hugo](https://gohugo.io/). Content is managed via [Netlify CMS](https://www.netlifycms.org/). Hosted on [Netlify](https://www.netlify.com/).
 
@@ -21,7 +19,7 @@ Webpack is used to:
 
 Comments are manage via [Disqus](https://disqus.com/) and are lazy-loaded using [disqusLoader](https://github.com/osvaldasvalutis/disqusLoader.js/) which you can learn about in [this CSS Tricks article](https://css-tricks.com/lazy-loading-disqus-comments/).
 
-### Hugo
+## Hugo
 
 This codebase is currently optimised for Hugo v0.55.3.
 
@@ -31,7 +29,7 @@ Useful commands:
 
 `$ hugo version` to check current Hugo version.
 
-### Gulp
+## Gulp
 
 Useful commands:
 
@@ -43,7 +41,7 @@ Useful commands:
 
 `$ gulp critical` to generate critical CSS for key pages.
 
-### Webpack
+## Webpack
 
 Webpack is run using NPM scripts:
 
