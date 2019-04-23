@@ -232,13 +232,9 @@ Unfortunately you do still have to pass the radius, but if you set it up as a Sa
 
 ## Adding animation
 
-With that out of the way, it's time to work on our animations. 
+With that out of the way, it's time to work on some animations. 
 
-We'll add a keyframe animation to our `<circle>` which alternates between the two `stroke-dashoffset` values described above. We won't use this exact animation for our final spinner but it does help illustrate how it will work.
-
-<svg class="circle-svg circle-svg--stroked" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <circle class="circle-svg__circle circle-svg__circle--stroked circle-svg__circle--production circle-svg__circle--stroke-length circle-svg__circle--dash-offset-animated-basic" cx="50" cy="50" r="45"/>
-</svg>
+We'll add a keyframe animation to the `<circle>` which alternates between the `75` and `280` `stroke-dashoffset` values. We won't use this exact animation in our final spinner but it helps illustrate how it will work.
 
 {{< highlight scss >}}
 // Keyframe animation which transitions between
@@ -271,12 +267,18 @@ circle {
 
 <small>NOTE: The animation shorthand is shown as an alternative. Don't use them both at the same time.</small>
 
+And here's the animation:
+
+<svg class="circle-svg circle-svg--stroked" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle class="circle-svg__circle circle-svg__circle--stroked circle-svg__circle--production circle-svg__circle--stroke-length circle-svg__circle--dash-offset-animated-basic" cx="50" cy="50" r="45"/>
+</svg>
+
 
 ### Combining multiple animations
 
-Next we'll rotate the parent `<svg>` element at the same time that the `<circle>` animation shown above is running. 
+Next we'll rotate the parent `<svg>` element while the `<circle>` animation shown above continues to run. 
 
-The `<svg>` animation is simple - it smoothly rotates a full 360 degrees.
+The `<svg>` animation is simple - it smoothly rotates 360 degrees every 2 seconds.
 
 {{< highlight scss >}}
 @keyframes svg--animation {
@@ -301,11 +303,11 @@ Check it out:
   <circle class="circle-svg__circle circle-svg__circle--stroked circle-svg__circle--production circle-svg__circle--stroke-length circle-svg__circle--dash-offset-animated-basic" cx="50" cy="50" r="45"/>
 </svg>
 
-The `<svg>` animation is 2 seconds long while the `<circle>` animation lasts 1.4 seconds. They both loop infinitely and the difference in duration provides a stagger between them.
-
-We're getting close, but it's not quite what we're after.
+The two animations infinitely loop and the 0.6 second difference in duration means they're staggered and only meet exactly every 14 seconds.
 
 ### Adding pauses and rotations
+
+We're getting close now, but it's not quite there.
 
 The stroke should appear to continuously chase itself without ever catching up. Currently the "head" of the stroke appears to move backwards and we don't want that. Our `<svg>` animation is fine but we need to improve the `<circle>` keyframes with some pauses and rotation transforms.
 
@@ -328,8 +330,9 @@ The stroke should appear to continuously chase itself without ever catching up. 
 
   // Back to short dash, rotated back to starting position.
   // This is the "tail" of the stroke catching up to the head.
-  // The stroke moves backwards while at the same time it is 
-  // rotated forward to return to its starting position.
+  // The stroke moves backwards while at the same time the 
+  // entire circle is rotated forward to return to its 
+  // starting position.
   100% {
     stroke-dashoffset: 280;
     transform: rotate(360deg);
@@ -357,7 +360,7 @@ And there we go!
 
 To get a better sense of how the two animations work together, hover over the circle to see the bounding square of the `<svg>` element as it rotates. 
 
-The circle's stroke is still swinging back and forth like before (as defined by the changing `stroke-dashoffset` keyframe values) but the rotation we added compensates for the backward swing: At the same time that the stroke swings backwards, the rotation spins it forwards. 
+The circle's stroke is still swinging back and forth just like before (as defined by the changing `stroke-dashoffset` keyframe values) but the rotation we added compensates for the backward swing: At the same time that the stroke swings backwards, the rotation spins the circle forwards. 
 
 It's helpful to break the animation up into its constituent parts.
 
@@ -385,7 +388,7 @@ With everything:
 {{< /col >}}
 {{< /row >}}
 
-Regrettably, there's no magic formula to the timing of these animations. I discovered them after lengthy experiment.
+Regrettably, there's no magic formula to the timing of these animations. I discovered them only after lengthy experiment.
 
 ## The final code
 
