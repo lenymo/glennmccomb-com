@@ -23,6 +23,8 @@ Comments are manage via [Disqus](https://disqus.com/) and are lazy-loaded using 
 
 ### Hugo
 
+This codebase is currently optimised for Hugo v0.31.
+
 Useful commands: 
 
 `$ hugo server` to run a local environment. Runs at http://localhost:1313/ by default.
