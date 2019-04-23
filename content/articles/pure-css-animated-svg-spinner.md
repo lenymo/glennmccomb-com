@@ -74,7 +74,7 @@ We could override this on our `<svg>` using `overflow: visible` but we're better
 
 To fix this issue, it would make sense for there to be a CSS property such as `stroke-position` which we could set to `inside` so as the stroke would render inside the path of our `<circle>`. Unfortunately, no such property exists and the stroke renders `5px` either side of the circle's path.
 
-Instead we have to reduce the `<circle>`'s radius by updating the `r` attribute from `50` to `46`.
+Instead we have to reduce the `<circle>`'s radius by updating the `r` attribute from `50` to `45`.
 
 {{< highlight html >}}
 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -120,7 +120,7 @@ Next up we'll change the length of the stroke using the [stroke-dasharray](https
 
 ### Stroke dashes
 
-The `stroke-dasharray` property is used to add dashes of varying lengths to a stroke. It's like `border-style: dashed` but *much* more powerful. It accepts comma or space separated values which determine the length of a stroke's dashes and the gaps between them.  We'll be using a single value which means dash and gap are of equal length. 
+The `stroke-dasharray` property is used to add dashes of varying lengths to a stroke. It's like `border-style: dashed` but *much* more powerful. It accepts comma or space separated values which determine the length of a stroke's dashes and the gaps between them.  We'll be using a single value which means dashes and gaps are of equal length. 
 
 Here are some examples to demonstrate how it works:
 
@@ -144,11 +144,11 @@ We'll leverage this attribute to create a stroke dash which is the full circumfe
   <circle class="circle-svg__circle circle-svg__circle--stroked circle-svg__circle--stroke-length" cx="50" cy="50" r="45"/>
 </svg>
 
-This looks much the same as our previous stroked circle but we can do *much* more with it now.
+This looks a lot like our previous stroked circle but we can do *much* more with it now.
 
 First though, we'll write some additional `<circle>` CSS. 
 
-To make the stroke appear more "snake-like" we'll set `stroke-linecap` to `round`, and so as the `<circle>` rotates from the middle when we apply transforms, we'll set `transform-origin` to `50% 50%`.
+We can add rounded caps to the stroke by setting `stroke-linecap` to `round` and to ensure our `<circle>` rotates from the middle when we apply transforms, we'll set `transform-origin` to `50% 50%`.
 
 {{< highlight scss >}}
 circle {
@@ -177,13 +177,11 @@ The values `75` and `280` will provide the start and end points for our CSS anim
 
 ## Calculating dash array and offset values
 
-You may be wondering how we arrived at `stroke-dashoffset` values such as `280` and `75`. No, they were not pulled from thin air.
+You may be wondering how we arrived at `stroke-dashoffset` values such as `280` and `75`. They were not simply plucked from thin air.
 
 `stroke-dasharray` and `stroke-dashoffset` values are relative to the circumference of our `<circle>` element, which is in turn determined by the circle's radius. Changes to the circle's radius also change its circumference which, consequently, changes the length of the dashes - even if `stroke-dasharray` values aren't changed.
 
-Our original `<circle>` had a radius of `50`, and thus its circumference was `314.16`. We can calculate this using the formula `C = 2πR` which in our case is `2 x 3.1416 x 50 = 314.16`. By extension the circumference of our `<circle>` with radius of `45` is `282.74`, which we round up to 283.
-
-A `stroke-dasharray` of `100` will be `31.8%` of a circle with `r="50"` but `35.3%` of a circle with `r="45"`. We have to keep this in mind when adjusting the radius of the circle because it can throw *everything* out.
+Our original `<circle>` had a radius of `50`, and thus its circumference was `314.16`. We calculate this using the formula `C = 2πR` which in our case is `2 x 3.1416 x 50 = 314.16`. By extension the circumference of our `<circle>` with radius of `45` is `282.74`, which we round up to `283`.
 
 Here is the same `stroke-dasharray` of `100` applied to `<circle>`'s with different radii.
 
@@ -204,13 +202,15 @@ Radius 45:
 {{< /col >}}
 {{< /row >}}
 
-It's worth mentioning here that although both `stroke-dasharray` and `stroke-dashoffset` accept percentage values, these are relative to the parent `<svg>`'s `viewBox`, so in our case a dash array of `100%` is equivalent to `100`.
+A `stroke-dasharray` of `100` will be `31.8%` of a circle with `r="50"` but `35.3%` of a circle with `r="45"`. We have to keep this in mind when adjusting the radius of the circle because it can throw *everything* out. It's worth noting that these issues are avoided entirely if we simple set `overflow: visible` on the parent `<svg>`.
 
-It would be nice if `stroke-dasharray: 100%` covered the entire circumference of our circle, but alas, that's not how it works.
+It's also worth mentioning here that although both `stroke-dasharray` and `stroke-dashoffset` accept percentage values, these are relative to the parent `<svg>`'s `viewBox`, so in our case a stroke dash array of `100%` is equivalent to `100`.
+
+It would be great if `stroke-dasharray: 100%` covered the entire circumference of our circle, but alas, that's not how it works.
 
 ### A handy Sass function
 
-If you're into Sass I wrote a handy function which takes the legwork out of these calculations.
+If you're into Sass I wrote a function which takes the legwork out of these calculations.
 
 {{< highlight scss >}}
 @function get-dash-value($radius, $percentage) {
@@ -226,7 +226,7 @@ If you're into Sass I wrote a handy function which takes the legwork out of thes
 }
 {{< /highlight >}}
 
-It takes the radius of the circle and the percentage of the circle that you want the stroke to take up, and returns the correct value.
+It takes the radius of the circle and the percentage of the circle that you want the dash value to take up, and returns the correct value. It works for both array and offset values.
 
 Unfortunately you do still have to pass the radius, but if you set it up as a Sass variable you'll only need to declare it once. Learn more about how the function works [in this codepen](https://codepen.io/lenymo/pen/EJeVgG).
 
