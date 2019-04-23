@@ -278,9 +278,7 @@
 .table-of-contents__title {
   color: $color-gray-c;
   font-size: rem(16px);
-  letter-spacing: .05em;
   margin-bottom: $gutter * .5;
-  text-transform: uppercase;
 }
 
 @include respond-above(xs) {

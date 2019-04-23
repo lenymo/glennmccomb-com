@@ -49,6 +49,15 @@
 
 
 //
+//  SUPER TITLE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.page-header__super-title {
+  margin-bottom: $gutter * .5;
+}
+
+
+//
 //  TITLE
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
@@ -82,6 +91,10 @@
 .section__page-header {
   &.-has-dark-bg {
     background-color: $page-header-bg-dark;
+
+    .page-header__super-title {
+      color: rgba($white, .4);
+    }
 
     .page-header__title {
       color: $page-header-title-font-color-dark;
