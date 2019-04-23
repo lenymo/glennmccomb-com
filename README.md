@@ -27,6 +27,8 @@ Useful commands:
 
 `$ hugo server` to run a local environment. Runs at http://localhost:1313/ by default.
 
+`$ hugo version` to check current Hugo version.
+
 ### Gulp
 
 Useful commands:
@@ -38,3 +40,11 @@ Useful commands:
 `$ gulp compress-images` to run additional compression on images.
 
 `$ gulp critical` to generate critical CSS for key pages.
+
+### Webpack
+
+Webpack is run using NPM scripts:
+
+`$ npm start` to create a development build and start watching files in `/src/react/`.
+
+`$ npm run build` to create a production build (without watch).
