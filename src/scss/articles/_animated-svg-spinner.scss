@@ -16,7 +16,7 @@
 
   .circle-svg--stroked {
     &:hover {
-      background: $color-gray-e;
+      background: rgba($color-primary, 0.1);
     }
   }
 
@@ -92,7 +92,7 @@
 
   // Stroke length.
   .circle-svg__circle--stroke-length {
-    stroke-dasharray: 285;
+    stroke-dasharray: 283;
   }
 
   // Long stroke length.
@@ -105,8 +105,12 @@
     stroke-dashoffset: 280;
   }
 
-  .circle-svg__circle--dash-offset-animated-example {
+  .circle-svg__circle--dash-offset-animated-basic {
     animation: 1.4s ease-in-out infinite both circle-svg__circle--stroke-dash-example;
+  }
+
+  .circle-svg__circle--dash-offset-only {
+    animation: 1.4s ease-in-out infinite both circle-svg__circle--dash-offset-only;
   }
 
   .circle-svg__circle--dash-offset-animated {
@@ -128,6 +132,26 @@
   
   50% {
     stroke-dashoffset: 280;
+  }
+}
+
+// Actual final animation.
+@keyframes circle-svg__circle--dash-offset-only {
+  0%,
+  25% {
+    stroke-dashoffset: 280;
+    // transform: rotate(0);
+  }
+  
+  50%,
+  75% {
+    stroke-dashoffset: 75;
+    // transform: rotate(45deg);
+  }
+  
+  100% {
+    stroke-dashoffset: 280;
+    // transform: rotate(360deg);
   }
 }
 
