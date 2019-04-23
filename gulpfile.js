@@ -13,11 +13,6 @@ var uglify = require("gulp-uglify");
 var hash = require("gulp-hash");
 var del = require("del");
 
-// Webpack.
-// var webpack         = require('webpack');
-// var webpackStream   = require('webpack-stream');
-// var webpackConfig   = require('./webpack.config.js');
-
 // Dev only source maps.
 var sourcemaps = require("gulp-sourcemaps");
 var argv = require("yargs").argv;
@@ -30,46 +25,6 @@ var mozjpeg = require("imagemin-mozjpeg");
 
 // Data.
 var hashCSS = require("./data/css/hash.json");
-
-// //
-// //  REACT
-// //––––––––––––––––––––––––––––––––––––––––––––––––––
-
-// gulp.task('react', function() {
-
-//   // If dev flag doesn't exist.
-//   if ( argv.dev === undefined ) {
-
-//     // Set dev flag to false.
-//     argv.dev = false;
-//   }
-
-//   // If this is DEV.
-//   if ( argv.dev ) {
-
-//     webpackConfig.plugins = [
-//       new webpack.DefinePlugin({
-//         'process.env.NODE_ENV': '"development"'
-//       })
-//     ];
-
-//     return webpackStream( webpackConfig )
-//       .on('error', function handleError() {
-//         this.emit('end'); // Recover from errors
-//       })
-//       .pipe( gulp.dest('static/js') );
-
-//   // If this is NOT dev (i.e. production).
-//   } else {
-
-//     // webpackConfig.plugins = [
-//     //   new webpack.DefinePlugin({
-//     //     'process.env.NODE_ENV': '"production"'
-//     //   })
-//     // ];
-//   }
-
-// });
 
 //
 //  SCSS
@@ -235,7 +190,6 @@ gulp.task("images", function() {
 //  COMPRESS IMAGES
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-// gulp.task('compress-images', ['images'], function() {
 gulp.task("compress-images", function() {
   // All JPGs and PNGs except those with -lqip suffix.
   gulp
@@ -370,7 +324,6 @@ gulp.task("watch", ["scss", "js"], function() {
   gulp.watch("src/scss/**/*", ["scss"]);
   gulp.watch("src/js/**/*.js", ["js"]);
   gulp.watch("src/img/uploads/**/*", ["images"]);
-  // gulp.watch('src/react/**/*.js', ['react']);
 });
 
 //
