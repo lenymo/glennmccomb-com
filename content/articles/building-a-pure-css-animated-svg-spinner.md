@@ -1,5 +1,5 @@
 ---
-title: Building a Pure CSS animated SVG spinner
+title: Building a pure CSS animated SVG spinner
 date: 2019-04-23T09:00:11.000Z
 featured: /img/uploads/featured-image-article-svg-spinner.jpg
 categories:
