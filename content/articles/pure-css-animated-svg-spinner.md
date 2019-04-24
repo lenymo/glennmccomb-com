@@ -52,7 +52,7 @@ If you haven't styled SVGs before, the `fill` property works much like `backgrou
 
 ## Adding stroke
 
-Next, we'll add a stroke and remove the fill:
+Next, we'll add a 10 pixel stroke and remove the fill:
 
 {{< highlight scss >}}
 circle {
@@ -88,7 +88,7 @@ This looks much better:
   <circle class="circle-svg__circle circle-svg__circle--stroked" cx="50" cy="50" r="45"/>
 </svg>
 
-It's not ideal to hard-code the radius in this way but it's not possible to set this via CSS because there's no CSS property for the `r` attribute. It *does* at least scale proportionately when we change the size of the parent `<svg>` element as shown below.
+It's not ideal to hard-code the radius in this way but it's not possible to set it via CSS. It *does* at least scale proportionately when we change the size of the parent `<svg>` element as shown below.
 
 Half size:
 
@@ -102,11 +102,15 @@ Double size:
   <circle class="circle-svg__circle circle-svg__circle--stroked" cx="50" cy="50" r="45"/>
 </svg>
 
-Note that in both examples, despite a `stroke-width` of `10px`, the stroke scales when the `<svg>` changes size.
+Note that in both examples, despite a `stroke-width` of `10px`, the stroke width scales when the `<svg>` changes size.
 
 ### Thicker stroke
 
 As the spinner gets smaller we may want to increase the `<circle>`'s stroke width so it's a little chunkier. However, when we increase the stroke width, the circle once again grows larger than the parent SVG, so we have to further decrease the circle's `r` attribute.
+
+<svg class="circle-svg circle-svg--stroked circle-svg--sm" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle class="circle-svg__circle circle-svg__circle--stroked circle-svg__circle--fat" cx="50" cy="50" r="45"/>
+</svg>
 
 Below is the half-size circle with `stroke-width: 14px` and `r="42"`.
 
@@ -116,7 +120,7 @@ Below is the half-size circle with `stroke-width: 14px` and `r="42"`.
 
 ## Changing the stroke's length
 
-Next up we'll change the length of the stroke using the [stroke-dasharray](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dasharray) and [stroke-dashoffset](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dashoffset) SVG attributes. Both of these are presentation attributes and can be styled via CSS, allowing us to utilise the power of CSS animations.
+Next up we'll change the length of the stroke using the [stroke-dasharray](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dasharray) and [stroke-dashoffset](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dashoffset) SVG attributes. They are both presentation attributes and can be styled via CSS, allowing us to utilise the power of CSS animations.
 
 ### Stroke dashes
 
@@ -177,34 +181,34 @@ The values `75` and `280` will provide the start and end points for our CSS anim
 
 ## Calculating dash array and offset values
 
-You may be wondering how we arrived at `stroke-dashoffset` values such as `280` and `75`. They were not simply plucked from thin air.
+You may be wondering how we arrived at the `stroke-dasharray` value of `283` which covers the full circumference of the circle. No, it was not plucked from thin air.
 
 `stroke-dasharray` and `stroke-dashoffset` values are relative to the circumference of our `<circle>` element, which is in turn determined by the circle's radius. Changes to the circle's radius also change its circumference which, consequently, changes the length of the dashes - even if `stroke-dasharray` values aren't changed.
 
 Our original `<circle>` had a radius of `50`, and thus its circumference was `314.16`. We calculate this using the formula `C = 2πR` which in our case is `2 x 3.1416 x 50 = 314.16`. By extension the circumference of our `<circle>` with radius of `45` is `282.74`, which we round up to `283`.
 
-Here is the same `stroke-dasharray` of `100` applied to `<circle>`'s with different radii.
+Here is the same `stroke-dasharray` of `157` applied to `<circle>`'s with different radii.
 
 {{< row >}}
 {{< col >}}
 Radius 50:
 
 <svg class="circle-svg circle-svg--stroked" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="overflow: visible">
-  <circle class="circle-svg__circle circle-svg__circle--stroked circle-svg__circle--production circle-svg__circle--stroke-dash-array-100" cx="50" cy="50" r="50"/>
+  <circle class="circle-svg__circle circle-svg__circle--stroked circle-svg__circle--production circle-svg__circle--stroke-dash-array-radius-example" cx="50" cy="50" r="50"/>
 </svg>
 {{< /col >}}
 {{< col >}}
 Radius 45:
 
 <svg class="circle-svg circle-svg--stroked" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="overflow: visible">
-  <circle class="circle-svg__circle circle-svg__circle--stroked circle-svg__circle--production circle-svg__circle--stroke-dash-array-100" cx="50" cy="50" r="45"/>
+  <circle class="circle-svg__circle circle-svg__circle--stroked circle-svg__circle--production circle-svg__circle--stroke-dash-array-radius-example" cx="50" cy="50" r="45"/>
 </svg>
 {{< /col >}}
 {{< /row >}}
 
-A `stroke-dasharray` of `100` will be `31.8%` of a circle with `r="50"` but `35.3%` of a circle with `r="45"`. We have to keep this in mind when adjusting the radius of the circle because it can throw *everything* out. It's worth noting that these issues are avoided entirely if we simple set `overflow: visible` on the parent `<svg>`.
+A `stroke-dasharray` of `157` will be `50%` of a circle with `r="50"` but `55.4%` of a circle with `r="45"`. We have to keep this in mind when adjusting the radius of the `<circle>` because it can throw *everything* out. It's worth noting that these issues are avoided entirely if we simply set `overflow: visible` on the parent `<svg>`.
 
-It's also worth mentioning here that although both `stroke-dasharray` and `stroke-dashoffset` accept percentage values, these are relative to the parent `<svg>`'s `viewBox`, so in our case a stroke dash array of `100%` is equivalent to `100`.
+It's also worth mentioning that although both `stroke-dasharray` and `stroke-dashoffset` accept percentage values, these are relative to the parent `<svg>`'s `viewBox`, so in our case a stroke dash array of `100%` is equivalent to `100` relative units.
 
 It would be great if `stroke-dasharray: 100%` covered the entire circumference of our circle, but alas, that's not how it works.
 
@@ -226,9 +230,9 @@ If you're into Sass I wrote a function which takes the legwork out of these calc
 }
 {{< /highlight >}}
 
-It takes the radius of the circle and the percentage of the circle that you want the dash value to take up, and returns the correct value. It works for both array and offset values.
+It takes the radius of the circle and the percentage of the circle that you want the dash value to cover, and returns the correct value in relative units. It works for both array and offset values.
 
-Unfortunately you do still have to pass the radius, but if you set it up as a Sass variable you'll only need to declare it once. Learn more about how the function works [in this codepen](https://codepen.io/lenymo/pen/EJeVgG).
+Unfortunately you do still have to pass the radius, but if you set it up as a Sass variable you'll only need to declare it once. See the function in action [in this codepen](https://codepen.io/lenymo/pen/EJeVgG).
 
 ## Adding animation
 
@@ -278,7 +282,7 @@ And here's the animation:
 
 Next we'll rotate the parent `<svg>` element while the `<circle>` animation shown above continues to run. 
 
-The `<svg>` animation is simple - it smoothly rotates 360 degrees every 2 seconds.
+The `<svg>` animation is simple - it loops infinitely and smoothly rotates 360 degrees every 2 seconds.
 
 {{< highlight scss >}}
 @keyframes svg--animation {
@@ -303,13 +307,13 @@ Check it out:
   <circle class="circle-svg__circle circle-svg__circle--stroked circle-svg__circle--production circle-svg__circle--stroke-length circle-svg__circle--dash-offset-animated-basic" cx="50" cy="50" r="45"/>
 </svg>
 
-The two animations infinitely loop and the 0.6 second difference in duration means they're staggered and only meet exactly every 14 seconds.
+Both animations loop infinitely and the 0.6 second difference in duration means they're staggered and only meet exactly every 14 seconds.
 
 ### Adding pauses and rotations
 
 We're getting close now, but it's not quite there.
 
-The stroke should appear to continuously chase itself without ever catching up. Currently the "head" of the stroke appears to move backwards and we don't want that. Our `<svg>` animation is fine but we need to improve the `<circle>` keyframes with some pauses and rotation transforms.
+The stroke should appear to continuously chase itself without ever catching up. Currently the "head" of the stroke appears to move backwards. We don't want that. Our `<svg>` animation is fine but we need to improve the `<circle>` keyframes with some pauses and rotation transforms.
 
 {{< highlight scss >}}
 @keyframes circle--animation {
@@ -344,13 +348,13 @@ circle {
 }
 {{< /highlight >}}
 
-Here is the above `<circle>` animation on its own.
+Here is the  `<circle>` animation on its own.
 
 <svg class="circle-svg circle-svg--stroked" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <circle class="circle-svg__circle circle-svg__circle--stroked circle-svg__circle--production circle-svg__circle--stroke-length circle-svg__circle--dash-offset-animated" cx="50" cy="50" r="45"/>
 </svg>
 
-And here it is in combination with the `<circle>` animation.
+And here it is in combination with the `<svg>` animation.
 
 <svg class="circle-svg circle-svg--stroked circle-svg--full-rotation" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <circle class="circle-svg__circle circle-svg__circle--stroked circle-svg__circle--production circle-svg__circle--stroke-length circle-svg__circle--dash-offset-animated" cx="50" cy="50" r="45"/>
@@ -358,7 +362,7 @@ And here it is in combination with the `<circle>` animation.
 
 And there we go!
 
-To get a better sense of how the two animations work together, hover over the circle to see the bounding square of the `<svg>` element as it rotates. 
+To get a better sense of how the two animations work together, hover over the circle to see the bounding square of the `<svg>` as it rotates. 
 
 The circle's stroke is still swinging back and forth just like before (as defined by the changing `stroke-dashoffset` keyframe values) but the rotation we added compensates for the backward swing: At the same time that the stroke swings backwards, the rotation spins the circle forwards. 
 
@@ -388,7 +392,35 @@ With everything:
 {{< /col >}}
 {{< /row >}}
 
-Regrettably, there's no magic formula to the timing of these animations. I discovered them only after lengthy experiment.
+There's no magic formula to the timing of these animations and I only discovered them after lengthy experiment.
+
+### Different sizes
+
+The cool thing about this is that because it's an SVG we can change the size by adjusting the `max-width` of the `<svg>` element.
+
+{{< row >}}
+{{< col >}}
+Quarter size:
+
+<svg class="circle-svg circle-svg--xs circle-svg--stroked circle-svg--full-rotation" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle class="circle-svg__circle circle-svg__circle--stroked circle-svg__circle--production circle-svg__circle--stroke-length circle-svg__circle--dash-offset-animated" cx="50" cy="50" r="45"/>
+</svg>
+{{< /col >}}
+{{< col >}}
+Half size:
+
+<svg class="circle-svg circle-svg--sm circle-svg--stroked circle-svg--full-rotation" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle class="circle-svg__circle circle-svg__circle--stroked circle-svg__circle--production circle-svg__circle--stroke-length circle-svg__circle--dash-offset-animated" cx="50" cy="50" r="45"/>
+</svg>
+{{< /col >}}
+{{< col >}}
+Double size:
+
+<svg class="circle-svg circle-svg--2x circle-svg--stroked circle-svg--full-rotation" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle class="circle-svg__circle circle-svg__circle--stroked circle-svg__circle--production circle-svg__circle--stroke-length circle-svg__circle--dash-offset-animated" cx="50" cy="50" r="45"/>
+</svg>
+{{< /col >}}
+{{< /row >}}
 
 ## The final code
 
