@@ -3,11 +3,6 @@ languageCode: en-us
 paginate: 12
 menu:
   main:
-    # - Identifier: home
-    #   Name: Home
-    #   URL: /
-    #   Weight: '10'
-
     - Identifier: articles
       Name: Articles
       URL: /articles/
@@ -51,11 +46,6 @@ menu:
       Name: Contact
       URL: /contact/
       Weight: '40'
-
-    # - Identifier: projects
-    #   Name: Projects
-    #   URL: /projects/
-    #   Weight: '20'
     
 taxonomies:
   category: categories
