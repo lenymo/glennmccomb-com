@@ -73,12 +73,12 @@
   .circle-svg__circle--stroked {
     fill: transparent;
     stroke: $color-primary;
-    stroke-width: 10px;
+    stroke-width: 10;
   }
 
   // Fat.
   .circle-svg__circle--fat {
-    stroke-width: 14px;
+    stroke-width: 14;
   }
 
   .circle-svg__circle--production {

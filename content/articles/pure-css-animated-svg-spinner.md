@@ -52,15 +52,17 @@ If you haven't styled SVGs before, the `fill` property works much like `backgrou
 
 ## Adding stroke
 
-Next, we'll add a 10 pixel stroke and remove the fill:
+Next, we'll add a [stroke-width](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-width) of `10` and remove the fill:
 
 {{< highlight scss >}}
 circle {
   fill: transparent;
   stroke: #2f3d4c;
-  stroke-width: 10px;
+  stroke-width: 10;
 }
 {{< /highlight >}}
+
+The stroke value of `10` is relative to the overall size of the `<svg>` element, as defined in its `viewBox` attribute. 
 
 Here's how it looks:
 
@@ -72,7 +74,7 @@ Not ideal. The `<circle>`'s stroke is rendering outside the bounds of the parent
 
 We could override this on our `<svg>` using `overflow: visible` but we're better off keeping the circle within the bounds of the parent SVG.
 
-To fix this issue, it would make sense for there to be a CSS property such as `stroke-position` which we could set to `inside` so as the stroke would render inside the path of our `<circle>`. Unfortunately, no such property exists and the stroke renders `5px` either side of the circle's path.
+To fix this issue, it would make sense for there to be a CSS property such as `stroke-position` which we could set to `inside` so as the stroke would render inside the path of our `<circle>`. Unfortunately, no such property exists and the stroke renders `5` relative units either side of the circle's path.
 
 Instead we have to reduce the `<circle>`'s radius by updating the `r` attribute from `50` to `45`.
 
@@ -88,7 +90,7 @@ This looks much better:
   <circle class="circle-svg__circle circle-svg__circle--stroked" cx="50" cy="50" r="45"/>
 </svg>
 
-It's not ideal to hard-code the radius in this way but it's not possible to set it via CSS. It *does* at least scale proportionately when we change the size of the parent `<svg>` element as shown below.
+It's not ideal to hard-code the radius in this way but it's not possible to set it via CSS. It *does* at least scale proportionately when we change the size of the parent `<svg>` element as demonstrated below.
 
 Half size:
 
@@ -102,7 +104,7 @@ Double size:
   <circle class="circle-svg__circle circle-svg__circle--stroked" cx="50" cy="50" r="45"/>
 </svg>
 
-Note that in both examples, despite a `stroke-width` of `10px`, the stroke width scales when the `<svg>` changes size.
+Note that in both examples, despite a `stroke-width` of `10`, the stroke scales when the `<svg>` changes size.
 
 ### Thicker stroke
 
@@ -112,7 +114,7 @@ As the spinner gets smaller we may want to increase the `<circle>`'s stroke widt
   <circle class="circle-svg__circle circle-svg__circle--stroked circle-svg__circle--fat" cx="50" cy="50" r="45"/>
 </svg>
 
-Below is the half-size circle with `stroke-width: 14px` and `r="42"`.
+Below is the half-size circle with `stroke-width: 14` and `r="42"`.
 
 <svg class="circle-svg circle-svg--stroked circle-svg--sm" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <circle class="circle-svg__circle circle-svg__circle--stroked circle-svg__circle--fat" cx="50" cy="50" r="42"/>
@@ -148,11 +150,11 @@ We'll leverage this attribute to create a stroke dash which is the full circumfe
   <circle class="circle-svg__circle circle-svg__circle--stroked circle-svg__circle--stroke-length" cx="50" cy="50" r="45"/>
 </svg>
 
-This looks a lot like our previous stroked circle but we can do *much* more with it now.
+This looks much like our previous stroked circle but we can do a *lot* more with it now.
 
-First though, we'll write some additional `<circle>` CSS. 
+But first, we'll write some additional `<circle>` CSS. 
 
-We can add rounded caps to the stroke by setting `stroke-linecap` to `round` and to ensure our `<circle>` rotates from the middle when we apply transforms, we'll set `transform-origin` to `50% 50%`.
+We can add rounded caps to the ends of the stroke by setting [stroke-linecap](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-linecap) to `round`. To ensure our `<circle>` rotates from the middle when we apply transforms, we'll set `transform-origin` to `50% 50%`.
 
 {{< highlight scss >}}
 circle {
@@ -183,7 +185,7 @@ The values `75` and `280` will provide the start and end points for our CSS anim
 
 You may be wondering how we arrived at the `stroke-dasharray` value of `283` which covers the full circumference of the circle. No, it was not plucked from thin air.
 
-`stroke-dasharray` and `stroke-dashoffset` values are relative to the circumference of our `<circle>` element, which is in turn determined by the circle's radius. Changes to the circle's radius also change its circumference which, consequently, changes the length of the dashes - even if `stroke-dasharray` values aren't changed.
+When applied to an SVG circle, `stroke-dasharray` and `stroke-dashoffset` values cover a different portion of a circle's circumference depending on the circle's radius. Changes to the circle's radius also change its circumference which, consequently, changes the length of the dashes - even if `stroke-dasharray` values aren't changed.
 
 Our original `<circle>` had a radius of `50`, and thus its circumference was `314.16`. We calculate this using the formula `C = 2πR` which in our case is `2 x 3.1416 x 50 = 314.16`. By extension the circumference of our `<circle>` with radius of `45` is `282.74`, which we round up to `283`.
 
@@ -206,7 +208,7 @@ Radius 45:
 {{< /col >}}
 {{< /row >}}
 
-A `stroke-dasharray` of `157` will be `50%` of a circle with `r="50"` but `55.4%` of a circle with `r="45"`. We have to keep this in mind when adjusting the radius of the `<circle>` because it can throw *everything* out. It's worth noting that these issues are avoided entirely if we simply set `overflow: visible` on the parent `<svg>`.
+A `stroke-dasharray` of `157` will be `50%` of a circle with `r="50"` but `55.4%` of a circle with `r="45"`. We have to keep this in mind when adjusting the radius of a `<circle>` because it can throw *everything* out. It's worth noting that these issues are avoided entirely if we simply set `overflow: visible` on the parent `<svg>`.
 
 It's also worth mentioning that although both `stroke-dasharray` and `stroke-dashoffset` accept percentage values, these are relative to the parent `<svg>`'s `viewBox`, so in our case a stroke dash array of `100%` is equivalent to `100` relative units.
 
@@ -232,7 +234,7 @@ If you're into Sass I wrote a function which takes the legwork out of these calc
 
 It takes the radius of the circle and the percentage of the circle that you want the dash value to cover, and returns the correct value in relative units. It works for both array and offset values.
 
-Unfortunately you do still have to pass the radius, but if you set it up as a Sass variable you'll only need to declare it once. See the function in action [in this codepen](https://codepen.io/lenymo/pen/EJeVgG).
+Unfortunately you do still have to pass the radius, but if you set it up as a Sass variable you'll only need to declare it once. Check out the function in action [in this codepen](https://codepen.io/lenymo/pen/EJeVgG).
 
 ## Adding animation
 
@@ -280,9 +282,7 @@ And here's the animation:
 
 ### Combining multiple animations
 
-Next we'll rotate the parent `<svg>` element while the `<circle>` animation shown above continues to run. 
-
-The `<svg>` animation is simple - it loops infinitely and smoothly rotates 360 degrees every 2 seconds.
+Next we'll rotate the parent `<svg>` element while the `<circle>` animation shown above continues to run.
 
 {{< highlight scss >}}
 @keyframes svg--animation {
@@ -301,6 +301,8 @@ svg {
 }
 {{< /highlight >}}
 
+The `<svg>` animation is simple - it loops infinitely and smoothly rotates 360 degrees every 2 seconds.
+
 Check it out:
 
 <svg class="circle-svg circle-svg--stroked circle-svg--full-rotation" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -311,7 +313,7 @@ Both animations loop infinitely and the 0.6 second difference in duration means 
 
 ### Adding pauses and rotations
 
-We're getting close now, but it's not quite there.
+Our spinner is getting close, but it's not quite there yet.
 
 The stroke should appear to continuously chase itself without ever catching up. Currently the "head" of the stroke appears to move backwards. We don't want that. Our `<svg>` animation is fine but we need to improve the `<circle>` keyframes with some pauses and rotation transforms.
 
@@ -354,7 +356,7 @@ Here is the  `<circle>` animation on its own.
   <circle class="circle-svg__circle circle-svg__circle--stroked circle-svg__circle--production circle-svg__circle--stroke-length circle-svg__circle--dash-offset-animated" cx="50" cy="50" r="45"/>
 </svg>
 
-And here it is in combination with the `<svg>` animation.
+And here it is in combination with the `<svg>`'s rotation animation.
 
 <svg class="circle-svg circle-svg--stroked circle-svg--full-rotation" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <circle class="circle-svg__circle circle-svg__circle--stroked circle-svg__circle--production circle-svg__circle--stroke-length circle-svg__circle--dash-offset-animated" cx="50" cy="50" r="45"/>
@@ -364,7 +366,7 @@ And there we go!
 
 To get a better sense of how the two animations work together, hover over the circle to see the bounding square of the `<svg>` as it rotates. 
 
-The circle's stroke is still swinging back and forth just like before (as defined by the changing `stroke-dashoffset` keyframe values) but the rotation we added compensates for the backward swing: At the same time that the stroke swings backwards, the rotation spins the circle forwards. 
+The circle's stroke is still swinging back and forth just like before (as defined by the changing `stroke-dashoffset` keyframe values) but the rotation we added compensates for the backward swing. In other words, at the same time that the stroke swings backwards, the rotation spins the circle forwards fast enough that it never appears to go backwards.
 
 It's helpful to break the animation up into its constituent parts.
 
@@ -396,7 +398,7 @@ There's no magic formula to the timing of these animations and I only discovered
 
 ### Different sizes
 
-The cool thing about this is that because it's an SVG we can change the size by adjusting the `max-width` of the `<svg>` element.
+Because the spinner is an SVG we can change the size by adjusting the width of the `<svg>` element.
 
 {{< row >}}
 {{< col >}}
