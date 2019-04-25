@@ -491,4 +491,6 @@ For the sake of simplicity I've used element selectors in this article but if yo
 
 ### Browser support
 
-According to CSS-Tricks, browser support for [stroke-dasharray](https://css-tricks.com/almanac/properties/s/stroke-dasharray/) and [stroke-dashoffset](https://css-tricks.com/almanac/properties/s/stroke-dashoffset/) goes back to IE 9 and Android 4.4, with full support in all other major browsers. If you want to use this and you're concerned about browser support, make sure you test it yourself. Or alternatively, use an animated GIF.
+Crucially, IE 11 and below do not support animation of the `stroke-dasharray` and `stroke-dashoffset` properties. This will be a *big* gotcha for a lot of people. Browser support for [stroke-dasharray](https://css-tricks.com/almanac/properties/s/stroke-dasharray/) and [stroke-dashoffset](https://css-tricks.com/almanac/properties/s/stroke-dashoffset/) does go back to IE 9 but this animation does not work in IE11.
+
+If you want to use this and you're concerned about browser support, make sure you test it yourself. Or alternatively, use an animated GIF.
