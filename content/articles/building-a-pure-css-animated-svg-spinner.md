@@ -20,7 +20,9 @@ A good loading indicator helps users feel a sense of progress, and the spinner w
   <circle class="circle-svg__circle circle-svg__circle--stroked circle-svg__circle--production circle-svg__circle--stroke-length circle-svg__circle--dash-offset-animated" cx="50" cy="50" r="45"/>
 </svg>
 
-Feel free to to skip to [the final code](#the-final-code) or check it out [on Codepen](https://codepen.io/lenymo/pen/qwKPov) to see how it works.
+We'll be making use of a couple of very handy SVG-specific CSS properties called `stroke-dasharray` and `stroke-dashoffset`. Feel free to to skip to [the final code](#the-final-code) or check it out [on Codepen](https://codepen.io/lenymo/pen/qwKPov) to see how it works.
+
+<small>NOTE: This spinner will not work in IE 11 and below.</small>
 
 
 ## Creating an SVG circle
