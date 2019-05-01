@@ -462,6 +462,8 @@ circle {
   fill: transparent;
   stroke: #2f3d4c;
   stroke-linecap: round;
+  stroke-dasharray: 283;
+  stroke-dashoffset: 280;
   stroke-width: 10px;
   transform-origin: 50% 50%;
 }
