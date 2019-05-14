@@ -17,7 +17,9 @@ class Artist extends React.Component {
   render() {
     const artist = this.props.artist;
 
-    const artistImage = this.props.image[3]["#text"];
+    const artistImage = this.props.image;
+    // const artistImageUrl;
+    console.log("artistImage", artistImage);
 
     const delay = this.props.index * 0.05;
 
