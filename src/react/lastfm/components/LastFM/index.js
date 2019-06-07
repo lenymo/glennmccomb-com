@@ -1,14 +1,12 @@
-
-
 //
 //  LAST FM
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-import React from 'react';
+import React from "react";
 
-import PeriodNav from './PeriodNav';
-import Artist from './Artist';
-import ArtistsPlaceholder from './ArtistsPlaceholder';
+import PeriodNav from "./PeriodNav";
+import Artist from "./Artist";
+import ArtistsPlaceholder from "./ArtistsPlaceholder";
 
 class LastFM extends React.Component {
   constructor() {
@@ -21,7 +19,7 @@ class LastFM extends React.Component {
     // Set initial state.
     this.state = {
       artists: [],
-      period: 'overall'
+      period: "overall"
     };
 
     // Determine how many last.fm artists are
@@ -29,25 +27,22 @@ class LastFM extends React.Component {
     this.limit = 12;
   }
 
-
   //
   //  COMPONENT WILL MOUNT
   //––––––––––––––––––––––––––––––––––––––––––––––––––
-  
-  componentWillMount() {
 
+  componentWillMount() {
     // Request last.fm data.
-    this.requestData( this.state.period );
+    this.requestData(this.state.period);
 
     // Call lambda function.
     // this.lambdaFunction( this.state.period );
   }
 
-
   //
   //  REQUEST DATA (DIRECT)
   //––––––––––––––––––––––––––––––––––––––––––––––––––
-  
+
   // requestData( period ) {
 
   //   // Clear state so old items disappear.
@@ -70,7 +65,7 @@ class LastFM extends React.Component {
   //   fetch( lastFmUrl )
   //   .then(response => response.json())
   //     .then(response => {
-          
+
   //         const {topartists:{artist: responseArtist}} = response;
 
   //         // Update state.
@@ -81,13 +76,11 @@ class LastFM extends React.Component {
   //     });
   // }
 
-
   //
   //  REQUEST DATA (LAMBDA)
   //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-  requestData( period ) {
-
+  requestData(period) {
     // Clear state so old items disappear.
     this.setState({
       artists: {}
@@ -96,34 +89,36 @@ class LastFM extends React.Component {
     // How many records to return.
     let limit = this.limit;
 
-    const url = '/.netlify/functions/lastfm';
+    // Netlify lambda function endpoint.
+    const url = "/.netlify/functions/lastfm";
 
     const data = {
       limit: limit,
       period: period
-    }
+    };
 
     fetch(url, {
-      method: 'POST',
+      method: "POST",
       body: JSON.stringify(data)
     })
-    // fetch('http://localhost:9000/lastfm', {
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //     'Accept': 'application/json',
-    //     'Access-Control-Allow-Origin' : '*', 
-    //     'Access-Control-Allow-Credentials' : true 
-    //   },
-    //   mode: 'no-cors',
-    //   method: 'POST',
-    //   body: JSON.stringify(data)
-    // })
-    .then(response => response.json())
+      // fetch('http://localhost:9000/lastfm', {
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //     'Accept': 'application/json',
+      //     'Access-Control-Allow-Origin' : '*',
+      //     'Access-Control-Allow-Credentials' : true
+      //   },
+      //   mode: 'no-cors',
+      //   method: 'POST',
+      //   body: JSON.stringify(data)
+      // })
+      .then(response => response.json())
       .then(response => {
-
         // console.log( response );
 
-        const {topartists: {artist: responseArtist}} = response;
+        const {
+          topartists: { artist: responseArtist }
+        } = response;
 
         // Update state.
         this.setState({
@@ -133,60 +128,56 @@ class LastFM extends React.Component {
       });
   }
 
-
   //
   //  RENDER HEADER
   //––––––––––––––––––––––––––––––––––––––––––––––––––
 
   renderLastFMHeader() {
-    return(
+    return (
       <div className="row">
         <div className="col-sm-12">
-          <h2 className="section__title -has-sub-title">
-            Music
-          </h2>
+          <h2 className="section__title -has-sub-title">Music</h2>
           <p>
-            Scrobbled on <a href="http://last.fm/user/elgyn2">last.fm</a> since May 2005.
+            Scrobbled on <a href="http://last.fm/user/elgyn2">last.fm</a> since
+            May 2005.
           </p>
         </div>
       </div>
-    )
+    );
   }
 
-  
   //
   //  RENDER
   //––––––––––––––––––––––––––––––––––––––––––––––––––
 
   render() {
-    
     let items = this.state.artists;
 
     const limit = this.limit;
 
-    const colClasses = 'col-sm-6 col-lg-4 col-xl-3 col__last-fm-artist';
+    const colClasses = "col-sm-6 col-lg-4 col-xl-3 col__last-fm-artist";
 
-    // If there are items, render them, 
+    // If there are items, render them,
     // else render the placeholder.
     return items.length ? (
       <section className="section section__about-music">
         <div className="container container__about-music">
           {this.renderLastFMHeader()}
           <div className="row row__last-fm">
-            <PeriodNav 
-              requestData={this.requestData} 
+            <PeriodNav
+              requestData={this.requestData}
               period={this.state.period}
             />
-            {items.map((item, index) => 
-              <Artist 
-                key={item.name} 
-                artist={item} 
+            {items.map((item, index) => (
+              <Artist
+                key={item.name}
+                artist={item}
                 image={item.image[3]}
                 rank={index + 1}
                 colClasses={colClasses}
                 index={index}
               />
-            )}
+            ))}
           </div>
         </div>
       </section>
@@ -195,21 +186,18 @@ class LastFM extends React.Component {
         <div className="container container__about-music">
           {this.renderLastFMHeader()}
           <div className="row row__last-fm">
-            <PeriodNav 
-              requestData={this.requestData} 
-              period={this.state.period} 
+            <PeriodNav
+              requestData={this.requestData}
+              period={this.state.period}
             />
-            <ArtistsPlaceholder 
-              colClasses={colClasses} 
-              limit={limit}
-            />
+            <ArtistsPlaceholder colClasses={colClasses} limit={limit} />
           </div>
         </div>
       </section>
-    )
+    );
   }
 }
 
 // const Artist = (props) =>
 
-export default LastFM
+export default LastFM;
