@@ -1,8 +1,8 @@
-{{ partial "head/head" . }}
+{{ partial "header/head" . }}
 
 <body class="{{ .Title | urlize }}{{ with .Params.custom_class }} page-{{ . }}{{ end }}">
 
-  {{ partial "header" . }}
+  {{ partial "header/header" . }}
 
   {{ partial "page-header" . }}
 
@@ -16,8 +16,8 @@
     </div><!-- .container -->
   </section><!-- .section__articles-summary -->
 
-  {{ partial "footer" . }}
+  {{ partial "footer/footer" . }}
 
-{{ partial "foot" . }}
+{{ partial "footer/foot" . }}
   
 </body>

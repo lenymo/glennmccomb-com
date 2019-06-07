@@ -1,8 +1,8 @@
-{{ partial "head/head" . }}
+{{ partial "header/head" . }}
 
 <body class="{{ .Title | urlize }}{{ with .Params.custom_class }} page-{{ . }}{{ end }}{{ with .Params.transparent_header }} -has-transparent-site-header{{ end }}">
 
-  {{ partial "header" . }}
+  {{ partial "header/header" . }}
 
   <section class="section section__page-header{{ with .Params.featured }} -has-featured{{ end }}{{ with .Params.dark_bg }} -has-dark-bg{{ end }}">
     <div class="container container__page-header">
@@ -110,8 +110,8 @@
 
   
 
-  {{ partial "footer" . }}
+  {{ partial "footer/footer" . }}
 
-{{ partial "foot" . }}
+{{ partial "footer/foot" . }}
   
 </body>

@@ -1,8 +1,8 @@
-{{ partial "head/head" . }}
+{{ partial "header/head" . }}
 
 <body class="{{ .Title | urlize }} work-{{ .Title | urlize }}">
 
-  {{ partial "header" . }}
+  {{ partial "header/header" . }}
 
   {{ partial "page-header" . }}
 
@@ -26,8 +26,8 @@
     {{ partial "pagination.html" . }}
 
 
-  {{ partial "footer" . }}
+  {{ partial "footer/footer" . }}
 
-{{ partial "foot" . }}
+{{ partial "footer/foot" . }}
   
 </body>

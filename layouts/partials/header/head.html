@@ -13,7 +13,7 @@
   <title>{{ if not .IsHome }}{{ if eq .Title "nba" }}NBA{{ else }}{{ if and (eq .Type "work") (eq .Kind "section") }}Work{{ else if eq .Type "categories" }}{{ title .Title }}{{ else }}{{ .Title }}{{ end }}{{ end }} | {{ end }}{{ .Site.Title }}</title>
   
 
-  {{ partial "head/head-styles" . }}
+  {{ partial "header/head-styles" . }}
   
   <!-- Favicons. -->
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/favicon/apple-touch-icon-114x114.png">

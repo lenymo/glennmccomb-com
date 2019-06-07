@@ -1,8 +1,8 @@
-{{ partial "head/head" . }}
+{{ partial "header/head" . }}
 
 <body class="single-work {{ with .Params.custom_class }} {{ . }}{{ end }}{{ with .Params.transparent_header }} -has-transparent-site-header{{ end }}">
 
-  {{ partial "header" . }}
+  {{ partial "header/header" . }}
 
   {{ partial "page-header" . }}
 
@@ -16,8 +16,8 @@
   </section><!-- .section__work-body -->
 
 
-  {{ partial "footer" . }}
+  {{ partial "footer/footer" . }}
 
-{{ partial "foot" . }}
+{{ partial "footer/foot" . }}
 
 </body>

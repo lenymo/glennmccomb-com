@@ -1,17 +1,17 @@
-{{ partial "head/head" . }}
+{{ partial "header/head" . }}
 
 <body class="{{ .Title | urlize }}{{ with .Params.custom_class }} page-{{ . }}{{ end }}{{ with .Params.transparent_header }} -has-transparent-site-header{{ end }}">
 
-  {{ partial "header" . }}
+  {{ partial "header/header" . }}
 
   {{ partial "page-header" . }}
 
   <div id="react-root"></div>
 
-  {{ partial "footer" . }}
+  {{ partial "footer/footer" . }}
 
 <script src="/js/lastfm.js"></script>
   
-{{ partial "foot" . }}
+{{ partial "footer/foot" . }}
 
 </body>
