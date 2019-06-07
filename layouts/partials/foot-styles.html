@@ -20,10 +20,10 @@
 
 <!--
 //
-//  PAGE-SPECIFIC
+//  PAGE-SPECIFIC CSS
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 -->
-<!-- Article-specific CSS. -->
+<!-- Article-specific -->
 {{ if and (eq .Type "articles") (eq .Kind "page") }}
 <link rel="preload" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "single-article.css" }}" as="style" onload="this.onload=null;this.rel='stylesheet'" />
 <noscript><link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "single-article.css" }}" /></noscript>
@@ -37,7 +37,7 @@
   {{ end }}
 {{ end }}
 
-<!-- Work-specific CSS. -->
+<!-- Work-specific -->
 {{ if and (eq .Type "work") (eq .Kind "page") }}
 <link rel="preload" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "work.css" }}" as="style" onload="this.onload=null;this.rel='stylesheet'" />
 <noscript><link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "work.css" }}" /></noscript>
@@ -50,25 +50,32 @@
   {{ end }}
 {{ end }}
 
-<!-- Work listing CSS. -->
+<!-- Work listing -->
 {{ if and (eq .Type "work") (eq .Kind "section") }}
 <link rel="preload" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "work.css" }}" as="style" onload="this.onload=null;this.rel='stylesheet'" />
 <noscript><link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "work.css" }}" /></noscript>
 {{ end }}
 
-<!-- Categories CSS. -->
+<!-- Categories -->
 {{ if eq .Type "categories" }}
 <link rel="preload" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "categories.css" }}" as="style" onload="this.onload=null;this.rel='stylesheet'" />
 <noscript><link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "categories.css" }}" /></noscript>
 {{ end }}
 
-<!-- About CSS. -->
+<!-- About -->
 {{ if eq .Type "about" }}
 <link rel="preload" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "about.css" }}" as="style" onload="this.onload=null;this.rel='stylesheet'" />
 <noscript><link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "about.css" }}" /></noscript>
 {{ end }}
 
-<!-- Contact CSS. -->
+
+<!-- Photography (same as about) -->
+{{ if eq .Type "photography" }}
+<link rel="preload" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "about.css" }}" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "about.css" }}" /></noscript>
+{{ end }}
+
+<!-- Contact -->
 {{ if eq .Type "contact" }}
 <link rel="preload" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "contact.css" }}" as="style" onload="this.onload=null;this.rel='stylesheet'" />
 <noscript><link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "contact.css" }}" /></noscript>
