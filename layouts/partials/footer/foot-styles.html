@@ -69,9 +69,9 @@
 {{ end }}
 
 
-<!-- Photography (same as about) -->
+<!-- Photography -->
 {{ if eq .Type "photography" }}
-<link rel="preload" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "about.css" }}" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<link rel="preload" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "photography.css" }}" as="style" onload="this.onload=null;this.rel='stylesheet'" />
 <noscript><link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "about.css" }}" /></noscript>
 {{ end }}
 
