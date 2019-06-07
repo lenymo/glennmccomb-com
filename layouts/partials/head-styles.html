@@ -18,24 +18,29 @@
 
 <!--
 //
-//  PAGE-SPECIFIC CSS
+//  PAGE-SPECIFIC CRITICAL CSS
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 -->
-<!-- Single article critical CSS -->
+<!-- Single article -->
 {{ if and (eq .Type "articles") (eq .Kind "page") }}
 <style rel="stylesheet">{{ readFile "/static/css/critical/articles/index.css" | safeCSS }}</style>
 <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}css/critical/articles/index.css" /> -->
 
-<!-- Contact critical CSS. -->
+<!-- Contact -->
 {{ else if and (eq .Type "contact") (eq .Kind "section") }}
 <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}css/critical/contact/index.css" /> -->
 <style rel="stylesheet">{{ readFile "/static/css/critical/contact/index.css" | safeCSS }}</style>
 
-<!-- About critical CSS. -->
+<!-- About -->
 {{ else if and (eq .Type "about") (eq .Kind "section") }}
 <style rel="stylesheet">{{readFile "/static/css/critical/about/index.css" | safeCSS}}</style>
 
-<!-- Home / article listing / category critical CSS. -->
+
+<!-- Photography -->
+{{ else if and (eq .Type "photography") (eq .Kind "section") }}
+<style rel="stylesheet">{{readFile "/static/css/critical/about/index.css" | safeCSS}}</style>
+
+<!-- Home / article listing / category -->
 {{ else }}
 <meta name="article-index">
 <style rel="stylesheet">{{ readFile "/static/css/critical/index.css" | safeCSS }}</style>

@@ -32,20 +32,25 @@ menu:
       Weight: '140'
       parent: "articles"
 
-    - Identifier: about
-      Name: About
-      URL: /about/
-      Weight: '20'
+    - Identifier: photography
+      Name: Photography
+      URL: /photography/
+      Weight: '30'
 
     - Identifier: work
       Name: Work
       URL: /work/
       Weight: '30'
 
+    - Identifier: about
+      Name: About
+      URL: /about/
+      Weight: '40'
+
     - Identifier: contact
       Name: Contact
       URL: /contact/
-      Weight: '40'
+      Weight: '50'
     
 taxonomies:
   category: categories
