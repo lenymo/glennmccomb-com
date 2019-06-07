@@ -1,12 +1,8 @@
-
-
 //
 //  TABLE OF CONTENTS
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 var ArticleSummaryHover = (function() {
-
-
   //
   //  CONFIG
   //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -15,18 +11,20 @@ var ArticleSummaryHover = (function() {
     onlyRunAbove: 992,
     transformModX: 1,
     transformModY: 1.5,
-    transformPerspective: '600px',
+    transformPerspective: "600px",
     transformScale: 1.01,
-    mouseOverToggleClass: '-is-being-hovered'
+    mouseOverToggleClass: "-is-being-hovered",
+    selectors: {
+      articleSummary: ".article-summary",
+      featuredImage: ".article-summary__featured-image"
+    }
   };
-
 
   //
   //  HANDLE TABLE OF CONTENTS
   //––––––––––––––––––––––––––––––––––––––––––––––––––
 
   function handleArticleSummaryHover() {
-
     // Declare variables.
     var articles;
     var article;
@@ -36,55 +34,46 @@ var ArticleSummaryHover = (function() {
     w = Helpers.getViewportWidth();
 
     // If viewport is wide enough.
-    if ( w >= config.onlyRunAbove ) {
-
+    if (w >= config.onlyRunAbove) {
       // If this is NOT an old version of IE
-      if ( Helpers.isIE() == false ) {
-
+      if (Helpers.isIE() == false) {
         // Get all article summaries.
-        articles = document.querySelectorAll('.article-summary');
+        articles = document.querySelectorAll(config.selectors.articleSummary);
 
         // If there are article summaries.
-        if ( articles ) {
-
+        if (articles) {
           // Loop through all article summary tiles.
-          for ( var i = 0; i < articles.length; i++ ) {
-
+          for (var i = 0; i < articles.length; i++) {
             // Make article variable more obvious.
             article = articles[i];
 
             // Listen for the mouse events.
             // Move.
-            article.addEventListener('mousemove', processMouseMoveEvent);
+            article.addEventListener("mousemove", processMouseMoveEvent);
 
             // Enter.
-            article.addEventListener('mouseenter', processMouseEnterEvent);
+            article.addEventListener("mouseenter", processMouseEnterEvent);
 
             // Leave.
-            article.addEventListener('mouseleave', processMouseLeaveEvent);
-
+            article.addEventListener("mouseleave", processMouseLeaveEvent);
           } // for ( var i = 0; i < articles.length; i++ )
         } // if ( articles )
       } // if ( Helpers.isIE() !== false )
     } // if ( w >= config.onlyRunAbove )
   } // handleArticleSummaryHover()
 
-
   //
   //  PROCESS MOUSE MOVE EVENT
   //––––––––––––––––––––––––––––––––––––––––––––––––––
 
   function processMouseMoveEvent(e) {
-    
     // Declare variables.
     var article;
     var mouseX;
     var mouseY;
     var rect;
     var rectMouseXPercent;
-    var scrollPosY;
     var rectMouseYPercent;
-    var transformCSS;
 
     // Get mouse pos on document.
     mouseX = e.pageX;
@@ -96,26 +85,23 @@ var ArticleSummaryHover = (function() {
     // Get the dimensions of the article summary.
     rect = this.getBoundingClientRect();
 
-    // Get the user's mouse position from left-to-right 
+    // Get the user's mouse position from left-to-right
     // as a percentage.
-    rectMouseXPercent = getMouseXPercent( rect, mouseX );
+    rectMouseXPercent = getMouseXPercent(rect, mouseX);
 
-    // Get the user's mouse position from top-to-bottom 
+    // Get the user's mouse position from top-to-bottom
     // as a percentage.
-    rectMouseYPercent = getMouseYPercent( rect, mouseY );
+    rectMouseYPercent = getMouseYPercent(rect, mouseY);
 
-    // 
-    applyCSSTransforms( article, rect, rectMouseXPercent, rectMouseYPercent );
-
+    //
+    applyCSSTransforms(article, rect, rectMouseXPercent, rectMouseYPercent);
   } // processMouseMoveEvent()
-
 
   //
   //  PROCESS MOUSE ENTER EVENT
   //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-  function processMouseEnterEvent(e) {
-
+  function processMouseEnterEvent() {
     // Declare variables.
     var article;
 
@@ -123,17 +109,14 @@ var ArticleSummaryHover = (function() {
     article = this;
 
     // Add the mouse over toggle class to the article tile.
-    article.classList.add( config.mouseOverToggleClass );
-
+    article.classList.add(config.mouseOverToggleClass);
   } // processMouseEnterEvent()
-
 
   //
   //  PROCESS MOUSE LEAVE EVENT
   //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-  function processMouseLeaveEvent(e) {
-
+  function processMouseLeaveEvent() {
     // Declare variables.
     var article;
 
@@ -141,23 +124,20 @@ var ArticleSummaryHover = (function() {
     article = this;
 
     // Remove transform effect.
-    article.style.transform = '';
+    article.style.transform = "";
 
     // Remove transform effect from featured image.
-    article.querySelector('.article-summary__featured-image').style.transform = '';
+    article.querySelector(config.selectors.featuredImage).style.transform = "";
 
     // Remove the mouse over toggle class.
-    article.classList.remove( config.mouseOverToggleClass );
-
+    article.classList.remove(config.mouseOverToggleClass);
   } // processMouseLeaveEvent()
-
 
   //
   //  GET RECT MOUSE X %
   //––––––––––––––––––––––––––––––––––––––––––––––––––
-  
-  function getMouseXPercent( rect, mouseX ) {
 
+  function getMouseXPercent(rect, mouseX) {
     // Declare variables.
     var rectOffsetX;
     var rectMouseX;
@@ -166,7 +146,7 @@ var ArticleSummaryHover = (function() {
     // Get the position of the article summary from the left of viewport.
     rectOffsetX = rect.left;
 
-    // This gives the mouse's position at the 
+    // This gives the mouse's position at the
     // very left of the rectangle as zero.
     rectMouseX = mouseX - rectOffsetX;
 
@@ -189,13 +169,11 @@ var ArticleSummaryHover = (function() {
     return rectMouseXPercent;
   } // getMouseXPercent()
 
-
   //
   //  GET RECT MOUSE Y %
   //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-  function getMouseYPercent( rect, mouseY, scrollY ) {
-
+  function getMouseYPercent(rect, mouseY) {
     // Declare variables.
     var scrollPosY;
     var rectOffsetY;
@@ -231,13 +209,16 @@ var ArticleSummaryHover = (function() {
     return rectMouseYPercent;
   } // getMouseYPercent()
 
-
   //
   //  APPLY CSS TRANSFORMS
   //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-  function applyCSSTransforms( article, rect, rectMouseXPercent, rectMouseYPercent ) {
-
+  function applyCSSTransforms(
+    article,
+    rect,
+    rectMouseXPercent,
+    rectMouseYPercent
+  ) {
     // Declare variables.
     var transformCSS;
     var articleImage;
@@ -246,45 +227,40 @@ var ArticleSummaryHover = (function() {
     // If the transforms aren't too extreme.
     if (
       rectMouseXPercent > -(0.5 * config.transformModX) - 1 &&
-      rectMouseXPercent < (0.5 * config.transformModX) + 1 &&
+      rectMouseXPercent < 0.5 * config.transformModX + 1 &&
       rectMouseYPercent > -(0.5 * config.transformModY) - 1 &&
-      rectMouseYPercent < (0.5 * config.transformModY) + 1
+      rectMouseYPercent < 0.5 * config.transformModY + 1
     ) {
-
       // Build the transform CSS.
-      transformCSS = 'perspective(' + (rect.width / 2) + 'px) ';
-      transformCSS += 'scale(' + config.transformScale + ') ';
-      transformCSS += 'rotateY(' + rectMouseXPercent + 'deg) ';
-      transformCSS += 'rotateX(' + rectMouseYPercent + 'deg)';
+      transformCSS = "perspective(" + rect.width / 2 + "px) ";
+      transformCSS += "scale(" + config.transformScale + ") ";
+      transformCSS += "rotateY(" + rectMouseXPercent + "deg) ";
+      transformCSS += "rotateX(" + rectMouseYPercent + "deg)";
 
       // Apply the transform CSS.
       article.style.transform = transformCSS;
     }
 
-
     // Find the featured image.
-    articleImage = article.querySelector('.article-summary__featured-image');
+    articleImage = article.querySelector(config.selectors.featuredImage);
 
     // If there's an article image.
-    if ( articleImage ) {
-
+    if (articleImage) {
       // Build the image transform CSS.
-      imageTransformCSS = 'scale(1.025) ';
-      imageTransformCSS += 'translateX(' + (rectMouseXPercent * 8) * -1 + 'px) ';
-      imageTransformCSS += 'translateY(' + (rectMouseYPercent * 6) + 'px) ';
+      imageTransformCSS = "scale(1.025) ";
+      imageTransformCSS += "translateX(" + rectMouseXPercent * 8 * -1 + "px) ";
+      imageTransformCSS += "translateY(" + rectMouseYPercent * 6 + "px) ";
 
       // Apply the image transform CSS.
       articleImage.style.transform = imageTransformCSS;
     }
   } // applyCSSTransforms()
 
-
   //
   //  INIT
   //––––––––––––––––––––––––––––––––––––––––––––––––––
 
   function init() {
-
     // Run functions.
     handleArticleSummaryHover();
   }
