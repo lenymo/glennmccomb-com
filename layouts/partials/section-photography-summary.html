@@ -3,7 +3,7 @@
       {{ $paginator := .Paginate (where .Data.Pages "Type" "photography") }}
 
       {{ range $paginator.Pages }}
-        {{ partial "photo-summary" . }}
+        {{ partial "photography-summary" . }}
       {{ end }}
     </div>
 

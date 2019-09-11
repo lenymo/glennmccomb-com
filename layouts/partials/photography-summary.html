@@ -2,9 +2,14 @@
   <img src="{{ .Params.featured }}" class="photography-summary__image">
 
   <div class="photography-summary__meta">
+    <small class="photography-summary__date">
+      {{ .Date.Format "2" }}<sup class="photography-summary__date-sup">{{ if in (slice 1 21 31) .Date.Day}}st{{ else if in (slice 2 22) .Date.Day}}nd{{ else if in (slice 3 23) .Date.Day}}rd{{ else }}th{{ end }}</sup> {{ .Date.Format "Jan 2006" }}
+    </small>
+
     <p class="photography-summary__caption">
       {{ .Title }}
     </p>
+    
     <small class="photography-summary__summary">
       {{ .Summary }}
     </small>

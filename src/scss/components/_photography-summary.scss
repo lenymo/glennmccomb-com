@@ -98,3 +98,23 @@
   color: rgba($white, .2);
   display: block;
 }
+
+
+//
+//  PHOTOGRAPHY SUMMARY DATE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.photography-summary__date {
+  color: rgba($white, .15);
+  display: block;
+  font-size: rem(12px);
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: $gutter * .4;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;  
+}
+
+.photography-summary__date-sup {
+  font-size: rem(7px);
+}
