@@ -48,3 +48,7 @@ Webpack is run using NPM scripts:
 `$ npm start` to create a development build and start watching files in `/src/react/`.
 
 `$ npm run build` to create a production build (without watch).
+
+## General notes
+
+Page header featured images are saved as plain JPG / PNGs in Photoshop with `featured-image-` prefix in `/src/img/uploads/`. These then need to be processed with `gulp images` and `gulp compress-images`, after which point they are compressed and copied to `static/img/uploads/`.
