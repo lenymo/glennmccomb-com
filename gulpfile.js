@@ -131,12 +131,12 @@ gulp.task("images", function() {
 
   // Copy all images from /src to /static.
   gulp
-    .src("src/img/uploads/**/*.{jpg,png,gif}")
+    .src("src/img/uploads/**/*.{jpg,jpeg,png,gif}")
     .pipe(gulp.dest("static/img/uploads"));
-
+``
   // LQIP (low quality image placeholders) for all JPG and PNGs.
   gulp
-    .src("src/img/uploads/**/*.{jpg,png}")
+    .src("src/img/uploads/**/*.{jpg,jpeg,png}")
     .pipe(
       responsive(
         {
@@ -161,7 +161,7 @@ gulp.task("images", function() {
 
   // Featured images.
   gulp
-    .src("src/img/uploads/featured-image-*.{jpg,png}")
+    .src("src/img/uploads/featured-image-*.{jpg,jpeg,png}")
     .pipe(
       responsive(
         {
@@ -194,7 +194,7 @@ gulp.task("compress-images", function() {
   // All JPGs and PNGs except those with -lqip suffix.
   gulp
     .src([
-      "static/img/uploads/**/*.{jpg,png}",
+      "static/img/uploads/**/*.{jpg,jpeg,png}",
       "!static/img/uploads/**/*-lqip.jpg"
     ])
     .pipe(
