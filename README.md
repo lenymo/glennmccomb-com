@@ -51,4 +51,6 @@ Webpack is run using NPM scripts:
 
 ## General notes
 
+### Page header images
+
 Page header featured images are saved as plain JPG / PNGs in Photoshop with `featured-image-` prefix in `/src/img/uploads/`. These then need to be processed with `gulp images` and `gulp compress-images`, after which point they are compressed and copied to `static/img/uploads/`.
