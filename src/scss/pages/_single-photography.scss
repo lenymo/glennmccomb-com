@@ -10,7 +10,7 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .single-photography__section {
-  background-color: $color-primary;
+  background-color: $color-primary-darker;
   padding-top: $site-header-height-xs;
   padding-bottom: 0;
 }
@@ -62,6 +62,15 @@
   max-width: 100%;
 }
 
+@include respond-above(lg) {
+  .single-photography__photo {
+    margin-left: auto;
+    margin-right: auto;
+    // max-width: none;
+    // width: 100%;
+  }
+}
+
 
 //
 //  FIGCAPTION
@@ -91,6 +100,14 @@
 .single-photography__meta {
   position: relative;
   z-index: $z-index-single-photography-meta;
+}
+
+@include respond-above(lg) {
+  .single-photography__meta {
+    max-width: 1520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 
