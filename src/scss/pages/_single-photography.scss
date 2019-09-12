@@ -1,0 +1,153 @@
+
+
+//
+//  SINGLE PHOTOGRAPHY
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+
+//
+//  SECTION
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.single-photography__section {
+  background-color: $color-primary;
+  padding-top: $site-header-height-xs;
+  padding-bottom: 0;
+}
+
+@include respond-above(xs) {
+  .single-photography__section {
+    padding-top: $site-header-height-sm;
+  }
+}
+
+@include respond-above(sm) {
+  .single-photography__section {
+    padding-top: $site-header-height-md;
+  }
+}
+
+@include respond-above(md) {
+  .single-photography__section {
+    padding-top: $site-header-height-lg;
+  }
+}
+
+@include respond-above(lg) {
+  .single-photography__section {
+    padding-top: $site-header-height-xl;
+  }
+}
+
+
+//
+//  FIGURE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.single-photography__figure {
+  display: block;
+  margin-bottom: 0;
+  position: relative;
+}
+
+
+//
+//  PHOTO
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.single-photography__photo {
+  display: block;
+  height: auto;
+  margin-bottom: 0;
+  max-width: 100%;
+}
+
+
+//
+//  FIGCAPTION
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.single-photography__figcaption {
+  background-color: rgba($black, 0.3);
+  border-top: 1px solid rgba($white, 0.25);
+  bottom: 0;
+  left: 0;
+  padding: $gutter;
+  position: absolute;
+  width: 100%;
+}
+
+@include respond-above(sm) {
+  .single-photography__figcaption {
+    padding: $gutter * 2;
+  }
+}
+
+
+//
+//  META
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.single-photography__meta {
+  position: relative;
+  z-index: $z-index-single-photography-meta;
+}
+
+
+//
+//  DATE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.single-photography__date {
+  color: rgba($white, 0.3);
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+
+
+//
+//  TITLE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.single-photography__title {
+  color: rgba($white, 0.8);
+  font-size: $h3-font-size-sm;
+  margin-bottom: 0;
+}
+
+@include respond-above(sm) {
+  .single-photography__title {
+    font-size: $h3-font-size;
+  }
+}
+
+
+//
+//  DESCRIPTION
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.single-photography__description {
+  p {
+    color: rgba($white, 0.4);
+    margin-bottom: 0;
+  }
+}
+
+
+//
+//  BACKGROUND DEVICE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.single-photography__background-device {
+  background: linear-gradient(15deg, rgba($black, 0.75) 0%, rgba($black, 0) 50%);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: $z-index-single-photography-background-device;
+}
