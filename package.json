@@ -43,6 +43,6 @@
     "yargs": "^10.1.2"
   },
   "devDependencies": {
-    "critical": "^1.3.4"
+    "critical": "^1.3.6"
   }
 }
