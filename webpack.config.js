@@ -44,7 +44,7 @@ if (ENV === "development") {
 // If the environment is production.
 if (ENV === "production") {
   // Watch.
-  baseConfig.watch = true;
+  baseConfig.watch = false;
 
   // Push a new item to the plugins array.
   baseConfig.plugins.push(new webpack.optimize.UglifyJsPlugin());
