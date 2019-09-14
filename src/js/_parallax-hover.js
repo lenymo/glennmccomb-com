@@ -119,6 +119,7 @@ var ParallaxHover = (function() {
   function processMouseLeaveEvent() {
     // Declare variables.
     var article;
+    var articleImage;
 
     // Instantiate article.
     article = this;
@@ -127,7 +128,11 @@ var ParallaxHover = (function() {
     article.style.transform = "";
 
     // Remove transform effect from featured image.
-    article.querySelector(config.selectors.featuredImage).style.transform = "";
+    articleImage = article.querySelector(config.selectors.featuredImage);
+
+    if (articleImage) {
+      articleImage.style.transform = "";
+    }
 
     // Remove the mouse over toggle class.
     article.classList.remove(config.mouseOverToggleClass);
