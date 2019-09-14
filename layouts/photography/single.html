@@ -15,12 +15,14 @@
         {{ range . }}
 
           {{ if eq $orientation "landscape" }}
-            {{ $lqip_scratch.Set "lqip" (.Resize "1600x q1").RelPermalink }}
+            {{ $lqip_scratch.Set "lqip" (.Resize "1600x q1") }}
+            {{ $lqip_scratch.Set "lqip" ($lqip_scratch.Get "lqip").RelPermalink }}
             {{ $lqip_scratch.Set "src" (.Resize "1600x q75").RelPermalink }}
-            {{ end }}
-            
-            {{ if eq $orientation "portrait" }}
-            {{ $lqip_scratch.Set "lqip" (.Resize "x1600 q1").RelPermalink }}
+          {{ end }}
+
+          {{ if eq $orientation "portrait" }}
+            {{ $lqip_scratch.Set "lqip" (.Resize "x1600 q1") }}
+            {{ $lqip_scratch.Set "lqip" ($lqip_scratch.Get "lqip").RelPermalink }}
             {{ $lqip_scratch.Set "src" (.Resize "x1600 q75").RelPermalink }}
           {{ end }}
 
