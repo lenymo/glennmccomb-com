@@ -2,7 +2,6 @@
 title: Clifton Hill McDonald's
 date: 2017-12-28T04:00:00.000Z
 dark_bg: true
-orientation: landscape
 resources:
 - name: featured
   src: clifton-hill-mcdonalds.jpg

@@ -2,7 +2,6 @@
 title: Merri Creek Trail
 date: 2019-01-15T04:00:00.000Z
 dark_bg: true
-orientation: landscape
 resources:
 - name: featured
   src: merri-creek-trail.jpg

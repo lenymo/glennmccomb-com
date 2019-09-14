@@ -14,7 +14,7 @@ alt="description of image"
     <img 
       class="photography-image__lqip lqip" 
       src="{{ .lqip }}" {{ with .alt }}alt="{{ . }}"{{ end }}
-      style="filter: blur(50px) saturate(75%); width: {{ .width }}px; height: {{ .height }}px"
+      style="filter: blur(50px) saturate(75%); width: {{ .width }}px; max-width: 100%;"
     >
   </div>
 </div>

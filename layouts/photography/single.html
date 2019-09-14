@@ -8,7 +8,6 @@
     <figure class="single-photography__figure">
       
       {{/* Create responsive images. */}}
-      {{ $orientation := .Params.Orientation }}
       {{ $lqip_scratch := newScratch }}
 
       {{ with .Resources.ByType "image" }}
@@ -17,14 +16,21 @@
           {{/*  Get image dimensions.  */}}
           {{ $width := .Width }}
           {{ $height := .Height }}
+          
+          {{/*  Get orientation.  */}}
+          {{ if gt $width $height }}
+            {{ $lqip_scratch.Set "orientation" "landscape" }}
+          {{ else if gt $height $width }}
+            {{ $lqip_scratch.Set "orientation" "portrait" }}
+          {{ end }}
+          {{ $orientation := $lqip_scratch.Get "orientation" }}
 
           {{ if eq $orientation "landscape" }}
             {{ $lqip_scratch.Set "lqip" (.Resize "400x q1") }}
             {{ $lqip_scratch.Set "lqip" ($lqip_scratch.Get "lqip").RelPermalink }}
             {{ $lqip_scratch.Set "src" (.Resize "1600x q75").RelPermalink }}
-          {{ end }}
 
-          {{ if eq $orientation "portrait" }}
+          {{ else if eq $orientation "portrait" }}
             {{ $lqip_scratch.Set "lqip" (.Resize "x400 q1") }}
             {{ $lqip_scratch.Set "lqip" ($lqip_scratch.Get "lqip").RelPermalink }}
             {{ $lqip_scratch.Set "src" (.Resize "x1600 q75").RelPermalink }}
