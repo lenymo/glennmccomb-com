@@ -124,7 +124,7 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .single-photography__date {
-  color: rgba($white, 0.3);
+  color: rgba($white, 0.5);
   display: block;
   font-size: 12px;
   font-weight: bold;
@@ -139,7 +139,7 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .single-photography__title {
-  color: rgba($white, 0.8);
+  color: rgba($white, 0.8) !important;
   font-size: $h3-font-size-sm;
   margin-bottom: 0;
 }
@@ -157,7 +157,7 @@
 
 .single-photography__description {
   p {
-    color: rgba($white, 0.4);
+    color: rgba($white, 0.5);
     margin-bottom: 0;
   }
 }
@@ -168,7 +168,7 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .single-photography__background-device {
-  background: linear-gradient(15deg, rgba($black, 0.75) 0%, rgba($black, 0) 50%);
+  background: linear-gradient(20deg, rgba($black, 0.8) 0%, rgba($black, 0) 70%);
   bottom: 0;
   left: 0;
   position: absolute;
