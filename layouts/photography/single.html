@@ -14,14 +14,18 @@
       {{ with .Resources.ByType "image" }}
         {{ range . }}
 
+          {{/*  Get image dimensions.  */}}
+          {{ $width := .Width }}
+          {{ $height := .Height }}
+
           {{ if eq $orientation "landscape" }}
-            {{ $lqip_scratch.Set "lqip" (.Resize "1600x q1") }}
+            {{ $lqip_scratch.Set "lqip" (.Resize "400x q1") }}
             {{ $lqip_scratch.Set "lqip" ($lqip_scratch.Get "lqip").RelPermalink }}
             {{ $lqip_scratch.Set "src" (.Resize "1600x q75").RelPermalink }}
           {{ end }}
 
           {{ if eq $orientation "portrait" }}
-            {{ $lqip_scratch.Set "lqip" (.Resize "x1600 q1") }}
+            {{ $lqip_scratch.Set "lqip" (.Resize "x400 q1") }}
             {{ $lqip_scratch.Set "lqip" ($lqip_scratch.Get "lqip").RelPermalink }}
             {{ $lqip_scratch.Set "src" (.Resize "x1600 q75").RelPermalink }}
           {{ end }}
@@ -29,7 +33,7 @@
           {{ $lqip := $lqip_scratch.Get "lqip" }}
           {{ $src := $lqip_scratch.Get "src" }}
 
-          {{ partial "photography-image" (dict "src" $src "lqip" $lqip "alt" .Title) }}
+          {{ partial "photography-image" (dict "src" $src "lqip" $lqip "width" $width "height" $height "alt" .Title) }}
           
         {{ end }}
       {{ end }}
