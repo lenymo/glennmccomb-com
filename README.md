@@ -49,6 +49,8 @@ Webpack is run using NPM scripts:
 
 `$ npm run build` to create a production build (without watch).
 
+Unfortunately anytime `$ gulp` run, a webpack production build needs to be regenerated before deploying. This is because `$ gulp` clears static files when it builds. It's annoying but I haven't bothered to develop a workaround.
+
 ## General notes
 
 ### Page header images
