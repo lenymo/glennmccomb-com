@@ -11,7 +11,7 @@
 
 .single-photography__section {
   background-color: $color-primary-darkest;
-  min-height: 2500px;
+  min-height: 250px;
   padding-top: $site-header-height-xs;
   padding-bottom: 0;
   text-align: center;
@@ -84,18 +84,19 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .single-photography__figcaption {
-  background-color: rgba($black, 0.3);
+  background-color: $color-primary-darkest;
   border-top: 1px solid rgba($white, 0.1);
-  bottom: 0;
-  left: 0;
   padding: $gutter;
-  position: absolute;
   width: 100%;
 }
 
 @include respond-above(sm) {
   .single-photography__figcaption {
+    background-color: rgba($black, 0.3);
+    bottom: 0;
+    left: 0;
     padding: $gutter * 2;
+    position: absolute;
   }
 }
 
@@ -168,11 +169,19 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .single-photography__background-device {
-  background: linear-gradient(20deg, rgba($black, 0.8) 0%, rgba($black, 0) 70%);
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: $z-index-single-photography-background-device;
+  display: none;
 }
+
+@include respond-above(sm) {
+  .single-photography__background-device {
+    background: linear-gradient(20deg, rgba($black, 0.8) 0%, rgba($black, 0) 70%);
+    bottom: 0;
+    display: block;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: $z-index-single-photography-background-device;
+  }
+}
+
