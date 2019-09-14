@@ -1,46 +1,51 @@
-<a href="{{ .Permalink }}" class="photography-summary">
-
-  {{/* Create responsive images. */}}
-  {{ $lqip_scratch := newScratch }}
-
-  {{ with .Resources.ByType "image" }}
-    {{ range . }}
-
-      {{/*  Get image dimensions.  */}}
-      {{ $width := .Width }}
-      {{ $height := .Height }}
-
-      {{/*  Get orientation.  */}}
-      {{ if gt $width $height }}
-        {{ $lqip_scratch.Set "orientation" "landscape" }}
-      {{ else if gt $height $width }}
-        {{ $lqip_scratch.Set "orientation" "portrait" }}
+<div class="parallax-hover">
+  <a href="{{ .Permalink }}" class="photography-summary">
+  
+    {{/* Create responsive images. */}}
+    {{ $lqip_scratch := newScratch }}
+  
+    {{ with .Resources.ByType "image" }}
+      {{ range . }}
+  
+        {{/*  Get image dimensions.  */}}
+        {{ $width := .Width }}
+        {{ $height := .Height }}
+  
+        {{/*  Get orientation.  */}}
+        {{ if gt $width $height }}
+          {{ $lqip_scratch.Set "orientation" "landscape" }}
+        {{ else if gt $height $width }}
+          {{ $lqip_scratch.Set "orientation" "portrait" }}
+        {{ end }}
+        {{ $orientation := $lqip_scratch.Get "orientation" }}
+  
+        {{ if eq $orientation "landscape" }}
+          {{ $lqip_scratch.Set "thumb" (.Resize "512x q80").RelPermalink }}
+        
+        {{ else if eq $orientation "portrait" }}
+          {{ $lqip_scratch.Set "thumb" (.Resize "x512 q80").RelPermalink }}
+        {{ end }}
+  
+        <img 
+          src="{{ $lqip_scratch.Get "thumb" }}"
+          class="photography-summary__image"
+        >
+  
       {{ end }}
-      {{ $orientation := $lqip_scratch.Get "orientation" }}
-
-      {{ if eq $orientation "landscape" }}
-        {{ $lqip_scratch.Set "thumb" (.Resize "512x q80").RelPermalink }}
-      
-      {{ else if eq $orientation "portrait" }}
-        {{ $lqip_scratch.Set "thumb" (.Resize "x512 q80").RelPermalink }}
-      {{ end }}
-
-      <img src="{{ $lqip_scratch.Get "thumb" }}" class="photography-summary__image">
-
     {{ end }}
-  {{ end }}
-
-  <div class="photography-summary__meta">
-    <small class="photography-summary__date">
-      {{ .Date.Format "2" }}<sup class="photography-summary__date-sup">{{ if in (slice 1 21 31) .Date.Day}}st{{ else if in (slice 2 22) .Date.Day}}nd{{ else if in (slice 3 23) .Date.Day}}rd{{ else }}th{{ end }}</sup> {{ .Date.Format "Jan 2006" }}
-    </small>
-
-    <p class="photography-summary__caption">
-      {{ .Title }}
-    </p>
-    
-    <small class="photography-summary__summary">
-      {{ .Summary }}
-    </small>
-  </div>
-</a>
+  
+    <div class="photography-summary__meta parallax-hover__content-wrapper">
+      <small class="photography-summary__date">
+        {{ .Date.Format "2" }}<sup class="photography-summary__date-sup">{{ if in (slice 1 21 31) .Date.Day}}st{{ else if in (slice 2 22) .Date.Day}}nd{{ else if in (slice 3 23) .Date.Day}}rd{{ else }}th{{ end }}</sup> {{ .Date.Format "Jan 2006" }}
+      </small>
+  
+      <p class="photography-summary__caption">
+        {{ .Title }}
+      </p>
+      
+      <small class="photography-summary__summary">
+        {{ .Summary }}
+      </small>
+    </div>
+  </a>
+</div>

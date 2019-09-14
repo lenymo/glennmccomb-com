@@ -4,13 +4,13 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 -->
 <div class="col-sm-12 col-md-6 col-lg-4 col__article-summary">
-  <article class="article-summary">
+  <article class="article-summary parallax-hover">
 
     <a href="{{ .Permalink }}" class="article-summary__link">
 
-      <div class="article-summary__featured-image" {{ with .Params.featured }} style="background-image:url({{ . }})"{{ end }}></div>
+      <div class="article-summary__featured-image parallax-hover__featured-image" {{ with .Params.featured }} style="background-image:url({{ . }})"{{ end }}></div>
 
-      <span class="article-summary__content-wrapper">
+      <span class="article-summary__content-wrapper parallax-hover__content-wrapper">
 
         {{ if .Params.categories }}
         <ul class="article-summary__categories">

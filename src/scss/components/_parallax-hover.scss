@@ -1,0 +1,42 @@
+
+
+//
+//  PARALLAX HOVER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@include respond-above(md) {
+  .parallax-hover {
+    box-shadow: 0 0 50px rgba($black, 0);
+    overflow: hidden;
+
+    &.-is-being-hovered {
+      box-shadow: 0 10px 50px rgba($black, .05);
+    }
+  }
+}
+
+
+//
+//  CONTENT WRAPPER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@include respond-above(md) {
+  .parallax-hover__content-wrapper {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+
+//
+//  FEATURED IMAGE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@include respond-above(md) {
+  .parallax-hover__featured-image {
+    background-color: $color-gray-f;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
