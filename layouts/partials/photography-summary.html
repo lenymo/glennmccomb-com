@@ -1,4 +1,4 @@
-<div class="photography-summary__wrapper parallax-hover">
+<div class="photography-summary__wrapper">
   <a href="{{ .Permalink }}" class="photography-summary">
   
     {{/* Create responsive images. */}}
@@ -34,7 +34,7 @@
       {{ end }}
     {{ end }}
   
-    <div class="photography-summary__meta parallax-hover__content-wrapper">
+    <div class="photography-summary__meta">
       <small class="photography-summary__date">
         {{ .Date.Format "2" }}<sup class="photography-summary__date-sup">{{ if in (slice 1 21 31) .Date.Day}}st{{ else if in (slice 2 22) .Date.Day}}nd{{ else if in (slice 3 23) .Date.Day}}rd{{ else }}th{{ end }}</sup> {{ .Date.Format "Jan 2006" }}
       </small>
