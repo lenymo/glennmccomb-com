@@ -5,6 +5,6 @@ dark_bg: true
 orientation: landscape
 resources:
 - name: featured
-  src: photo-emporium-levels.jpg
+  src: emporium-levels.jpg
 ---
 The Emporium in Melbourne.

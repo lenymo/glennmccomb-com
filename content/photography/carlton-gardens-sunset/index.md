@@ -5,6 +5,6 @@ dark_bg: true
 orientation: landscape
 resources:
 - name: featured
-  src: photo-carlton-gardens-sunset.jpg
+  src: carlton-gardens-sunset.jpg
 ---
 Spring has sprung.

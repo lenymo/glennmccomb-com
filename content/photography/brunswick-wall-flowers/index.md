@@ -5,6 +5,6 @@ dark_bg: true
 orientation: landscape
 resources:
 - name: featured
-  src: photo-brunswick-wall-flowers.jpg
+  src: brunswick-wall-flowers.jpg
 ---
 Something a little different.

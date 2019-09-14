@@ -5,6 +5,6 @@ dark_bg: true
 orientation: landscape
 resources:
 - name: featured
-  src: photo-fleming-park-sunset.jpg
+  src: fleming-park-sunset.jpg
 ---
 Nice afternoon for a walk.

@@ -5,6 +5,6 @@ dark_bg: true
 orientation: portrait
 resources:
   name: featured
-  src: photo-royal-arcade.jpg
+  src: royal-arcade.jpg
 ---
 Royal Arcade in Melbourne.

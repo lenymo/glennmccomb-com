@@ -5,6 +5,6 @@ dark_bg: true
 orientation: landscape
 resources:
 - name: featured
-  src: photo-merri-creek-trail.jpg
+  src: merri-creek-trail.jpg
 ---
 Soon there will be a bridge here.
