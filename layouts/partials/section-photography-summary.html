@@ -1,6 +1,6 @@
 <section class="section section__photography-summary -has-dark-bg">
     <div class="photography-summary__row">
-      {{ $paginator := .Paginate (where .Data.Pages "Type" "photography") }}
+      {{ $paginator := .Paginate (where .Data.Pages "Type" "photography") 24 }}
 
       {{ range $paginator.Pages }}
         {{ partial "photography-summary" . }}
