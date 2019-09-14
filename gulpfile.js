@@ -133,7 +133,7 @@ gulp.task("images", function() {
   gulp
     .src("src/img/uploads/**/*.{jpg,jpeg,png,gif}")
     .pipe(gulp.dest("static/img/uploads"));
-``
+  ``;
   // LQIP (low quality image placeholders) for all JPG and PNGs.
   gulp
     .src("src/img/uploads/**/*.{jpg,jpeg,png}")
@@ -236,6 +236,8 @@ gulp.task("critical", function(cb) {
   var article = path + hashCSS["single-article.css"];
   var contact = path + hashCSS["contact.css"];
   var about = path + hashCSS["about.css"];
+  var photography = path + hashCSS["photography.css"];
+  var singlePhotography = path + hashCSS["single-photography.css"];
 
   exec("hugo", function(err, stdout, stderr) {
     console.log(stdout);
@@ -312,6 +314,40 @@ gulp.task("critical", function(cb) {
         console.log(err.message);
       })
       .pipe(gulp.dest("static/css/critical/about/"));
+
+    // Photography index.
+    gulp
+      .src("public/photography/index.html")
+      .pipe(
+        critical({
+          base: "/",
+          minify: true,
+          css: [main, photography],
+          width: 1200,
+          height: 1200
+        })
+      )
+      .on("error", function(err) {
+        console.log(err.message);
+      })
+      .pipe(gulp.dest("static/css/critical/photography/"));
+
+    // Single photography.
+    gulp
+      .src("public/photography/brunswick-wall-flowers/index.html")
+      .pipe(
+        critical({
+          base: "/",
+          minify: true,
+          css: [main, singlePhotography],
+          width: 1200,
+          height: 1200
+        })
+      )
+      .on("error", function(err) {
+        console.log(err.message);
+      })
+      .pipe(gulp.dest("static/css/critical/single-photography/"));
   }, 1000);
 });
 

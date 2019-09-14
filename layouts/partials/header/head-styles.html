@@ -35,10 +35,13 @@
 {{ else if and (eq .Type "about") (eq .Kind "section") }}
 <style rel="stylesheet">{{readFile "/static/css/critical/about/index.css" | safeCSS}}</style>
 
-
-<!-- Photography (same as about) -->
+<!-- Photography index -->
 {{ else if and (eq .Type "photography") (eq .Kind "section") }}
-<style rel="stylesheet">{{readFile "/static/css/critical/about/index.css" | safeCSS}}</style>
+<style rel="stylesheet">{{readFile "/static/css/critical/photography/index.css" | safeCSS}}</style>
+
+<!-- Single photography -->
+{{ else if and (eq .Type "photography") (eq .Kind "page") }}
+<style rel="stylesheet">{{readFile "/static/css/critical/single-photography/index.css" | safeCSS}}</style>
 
 <!-- Home / article listing / category -->
 {{ else }}

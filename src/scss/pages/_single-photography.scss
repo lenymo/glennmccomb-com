@@ -11,6 +11,7 @@
 
 .single-photography__section {
   background-color: $color-primary-darkest;
+  min-height: 2500px;
   padding-top: $site-header-height-xs;
   padding-bottom: 0;
   text-align: center;
@@ -19,23 +20,27 @@
 @include respond-above(xs) {
   .single-photography__section {
     padding-top: $site-header-height-sm;
+    min-height: 200px;
   }
 }
 
 @include respond-above(sm) {
   .single-photography__section {
     padding-top: $site-header-height-md;
+    min-height: 300px;
   }
 }
 
 @include respond-above(md) {
   .single-photography__section {
+    min-height: 400px;
     padding-top: $site-header-height-lg;
   }
 }
 
 @include respond-above(lg) {
   .single-photography__section {
+    min-height: 500px;
     padding-top: $site-header-height-xl;
   }
 }
