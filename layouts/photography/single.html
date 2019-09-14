@@ -6,7 +6,33 @@
 
   <section class="section single-photography__section -has-dark-bg">
     <figure class="single-photography__figure">
-      {{ partial "photography-image" (dict "src" .Params.Featured "alt" .Title) }}
+      
+      {{/* Create responsive images. */}}
+      {{ $orientation := .Params.Orientation }}
+      {{ $lqip_scratch := newScratch }}
+
+      {{ with .Resources.ByType "image" }}
+        {{ range . }}
+
+          {{ if eq $orientation "landscape" }}
+            {{ $lqip_scratch.Set "lqip" (.Resize "1600x q1").RelPermalink }}
+            {{ $lqip_scratch.Set "src" (.Resize "1600x q75").RelPermalink }}
+            {{ end }}
+            
+            {{ if eq $orientation "portrait" }}
+            {{ $lqip_scratch.Set "lqip" (.Resize "x1600 q1").RelPermalink }}
+            {{ $lqip_scratch.Set "src" (.Resize "x1600 q75").RelPermalink }}
+          {{ end }}
+
+          {{ $lqip := $lqip_scratch.Get "lqip" }}
+          {{ $src := $lqip_scratch.Get "src" }}
+
+          {{ partial "photography-image" (dict "src" $src "lqip" $lqip "alt" .Title) }}
+          
+        {{ end }}
+      {{ end }}
+      {{/*  {{ partial "photography-image" (dict "src" .Params.Featured "alt" .Title) }}  */}}
+
       <figcaption class="single-photography__figcaption">
         <div class="single-photography__meta">
           <small class="single-photography__date">

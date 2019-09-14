@@ -54,3 +54,9 @@ Webpack is run using NPM scripts:
 ### Page header images
 
 Page header featured images are saved as plain JPG / PNGs in Photoshop with `featured-image-` prefix in `/src/img/uploads/`. These then need to be processed with `gulp images` and `gulp compress-images`, after which point they are compressed and copied to `static/img/uploads/`.
+
+### Photography images
+
+Photography images should have their widest side set to 1600 pixels. They are set up as [Hugo Page Resources](https://gohugo.io/content-management/page-resources/) and use [Hugo Image Processing](https://gohugo.io/content-management/page-resources/). They are co-located with photography items and described in the photography.md's frontmatter. 
+
+If image quality of image dimensions are adjusted, they are automatically regenerated and added to the `/resources/_gen/images/photography/post-name/image-name-hash.jpg`. It's important to note that old images are *not* removed during this process and they must be manually cleaned up with `$ hugo --gc`, which is Hugo's garbage collection.

@@ -1,5 +1,24 @@
 <a href="{{ .Permalink }}" class="photography-summary">
-  <img src="{{ .Params.featured }}" class="photography-summary__image">
+
+  {{/* Create responsive images. */}}
+  {{ $orientation := .Params.Orientation }}
+  {{ $lqip_scratch := newScratch }}
+
+  {{ with .Resources.ByType "image" }}
+    {{ range . }}
+
+      {{ if eq $orientation "landscape" }}
+        {{ $lqip_scratch.Set "thumb" (.Resize "512x q80").RelPermalink }}
+      {{ end }}
+
+      {{ if eq $orientation "portrait" }}
+        {{ $lqip_scratch.Set "thumb" (.Resize "x512 q80").RelPermalink }}
+      {{ end }}
+
+      <img src="{{ $lqip_scratch.Get "thumb" }}" class="photography-summary__image">
+
+    {{ end }}
+  {{ end }}
 
   <div class="photography-summary__meta">
     <small class="photography-summary__date">
