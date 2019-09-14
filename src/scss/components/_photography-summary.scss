@@ -30,12 +30,22 @@
 
 
 //
+//  WRAPPER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.photography-summary__wrapper {
+  width: 100%;
+}
+
+
+
+//
 //  PHOTOGRAPHY SUMMARY
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .photography-summary {
   text-decoration: none;
-  // width: 100%;
+  width: 100%;
 
   &:hover,
   &:active,
@@ -60,6 +70,8 @@
 
 .photography-summary__image {
   position: relative;
+  min-height: 100px;
+  width: 100%;
 }
 
 
