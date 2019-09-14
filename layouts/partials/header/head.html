@@ -37,14 +37,25 @@
   <meta content="{{ .Site.Data.site_settings.production_url }}{{ .Permalink }}" property="twitter:url" />
   <meta name="twitter:title" property="og:title" content="{{ .Title }}" />
   
-  <!-- Featured image. -->
+  {{ $production_url := $.Site.Data.site_settings.production_url }}
+  {{/*  Featured image.  */}}
   {{ with .Params.featured }}
-    {{ $production_url := $.Site.Data.site_settings.production_url }}
-  <meta property="og:image" content="{{ $production_url }}{{ . }}" />
-  <meta name="twitter:image" content="{{ $production_url }}{{ . }}" />
+    <meta property="og:image" content="{{ $production_url }}{{ . }}" />
+    <meta name="twitter:image" content="{{ $production_url }}{{ . }}" />
+  {{ end }}
+    
+  {{/*  Featured images using Hugo Page Resources.  */}}
+  {{ with (.Resources.ByType "image").Match "featured" }}
+    {{ range . }}
+
+      {{ $social := (.Resize "800x800 q100").RelPermalink }}
+      <meta property="og:image" content="{{ $production_url }}{{ $social }}" />
+      <meta name="twitter:image" content="{{ $production_url }}{{ $social }}" />
+      
+    {{ end }}
   {{ end }}
   
-  <!-- Description. -->
+  {{/*  Description.  */}}
   {{ if and (eq .Type "articles") (eq .Kind "page") }}
     <!-- Articles. -->
     {{ $truncated := .Summary | truncate 190 "" }}
