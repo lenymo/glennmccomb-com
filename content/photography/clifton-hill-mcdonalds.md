@@ -1,5 +1,5 @@
 ---
-title: Clifton Hill McDondalds
+title: Clifton Hill McDonald's
 date: 2017-12-28T04:00:00.000Z
 featured: /img/uploads/photo-clifton-hill-mcdonalds.jpg
 dark_bg: true
