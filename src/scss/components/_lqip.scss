@@ -1,0 +1,62 @@
+
+
+//
+//  LQIP
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+
+.lqip__figure {
+  position: relative;
+}
+
+
+//
+//  WRAPPER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.lqip__wrapper {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+
+  img {
+    margin-bottom: 0 !important;
+  }
+}
+
+
+//
+//  LQIP
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.lqip {
+  filter: blur(50px) saturate(75%);
+  max-width: 100%;
+  transform: scale(1.2);
+  transition: all 1s ease;
+}
+
+//
+//  FULL IMAGE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.lqip__full-image {
+  left: 0;
+  position: absolute;
+  top: 0;
+  max-width: 100%;
+}
+
+
+//
+//  FIGURE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.lqip__figure {
+  &.-image-has-loaded {
+    .lqip {
+      opacity: 0;
+    }
+  }
+}
+

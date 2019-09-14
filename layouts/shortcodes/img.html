@@ -33,9 +33,13 @@ class=""
   {{ $.Scratch.Add "sqip" $sqip }}
 
 {{ end }}
-<figure class="img-shortcode{{ if .Get "class" }} {{ .Get "class" }}{{ end }}" data-full="{{ .Get "src" }}">
-  <div class="img-shortcode__img-wrapper">
-    <img class="img-shortcode__img-lqip" src="{{ $.Scratch.Get "lqip" }}" {{ if .Get "alt" }}alt="{{ .Get "alt" }}"{{ end }} />
+<figure class="img-shortcode lqip__figure{{ if .Get "class" }} {{ .Get "class" }}{{ end }}" data-full="{{ .Get "src" }}" style="overflow: hidden;">
+  <div class="img-shortcode__img-wrapper lqip__wrapper">
+    <img 
+      class="img-shortcode__img-lqip lqip"
+      src="{{ $.Scratch.Get "lqip" }}" {{ if .Get "alt" }}alt="{{ .Get "alt" }}"{{ end }}
+      style="filter: blur(50px) saturate(75%);"
+    >
   </div>
   {{ if .Get "caption" }}<figcaption class="img-shortcode__caption">
     <p class="img-shortcode__caption-text">{{ .Get "caption" | markdownify }}</p>

@@ -1,0 +1,39 @@
+<!--
+//
+//  IMG
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+Params:
+src="URL"
+alt="description of image"
+caption="caption"
+url="http://"
+class=""
+-->
+{{ $lqip := newScratch }}
+{{ if in .src ".jpg" }}
+  {{ $src := .src }}
+
+  {{ $lqip_string := replace $src ".jpg" "-lqip.jpg" }}
+  {{ $lqip.Set "lqip" $lqip_string }}
+  {{/*  {{ .Scratch.Get "lqip" }}  */}}
+  {{ end }}
+  
+  
+  {{ if in .src ".png" }}
+  {{ $src := .src }}
+  
+  {{ $lqip_string := replace .src ".png" "-lqip.jpg" }}
+  {{ $lqip.Set "lqip" $lqip_string }}
+  {{/*  {{ .Scratch.Set "lqip" $lqip }}  */}}
+{{ end }}
+
+<div class="photography-image lqip__figure{{ with .class }} {{ . }}{{ end }}" data-full="{{ .src }}" style="overflow: hidden;">
+  <div class="photography-image__img-wrapper lqip__wrapper">
+    <img 
+      class="photography-image__lqip lqip" 
+      src="{{ $lqip.Get "lqip" }}" {{ with .alt }}alt="{{ . }}"{{ end }}
+      style="filter: blur(50px) saturate(75%);"
+    >
+  </div>
+</div>

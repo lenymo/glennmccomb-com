@@ -10,9 +10,10 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .single-photography__section {
-  background-color: $color-primary-darker;
+  background-color: $color-primary-darkest;
   padding-top: $site-header-height-xs;
   padding-bottom: 0;
+  text-align: center;
 }
 
 @include respond-above(xs) {
@@ -45,9 +46,10 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .single-photography__figure {
-  display: block;
+  display: inline-block;
   margin-bottom: 0;
   position: relative;
+  vertical-align: top;
 }
 
 
@@ -100,6 +102,7 @@
 .single-photography__meta {
   position: relative;
   z-index: $z-index-single-photography-meta;
+  text-align: left;
 }
 
 @include respond-above(lg) {

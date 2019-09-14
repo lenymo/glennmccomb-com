@@ -4,10 +4,6 @@
 //  IMG SHORTCODE
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-.img-shortcode {
-  position: relative;
-}
-
 .text-center {
   .img-shortcode {
     display: inline-block;
@@ -21,33 +17,7 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .img-shortcode__img-wrapper {
-  display: inline-block;
   margin-bottom: $gutter * .25;
-  overflow: hidden;
-  vertical-align: top;
-
-  img {
-    margin-bottom: 0 !important;
-  }
-} 
-
-//
-//  LQIP
-//––––––––––––––––––––––––––––––––––––––––––––––––––
-
-.img-shortcode__img-lqip {
-  filter: blur(50px) saturate(75%);
-  max-width: 100%;
-  transform: scale(1.2);
-  transition: all 1s ease;
-}
-
-.img-shortcode {
-  &.-image-has-loaded {
-    .img-shortcode__img-lqip {
-      opacity: 0;
-    }
-  }
 }
 
 
@@ -72,15 +42,3 @@
 //     }
 //   }
 // }
-
-
-//
-//  FULL
-//––––––––––––––––––––––––––––––––––––––––––––––––––
-
-.img-shortcode__img-full {
-  left: 0;
-  position: absolute;
-  top: 0;
-  max-width: 100%;
-}
