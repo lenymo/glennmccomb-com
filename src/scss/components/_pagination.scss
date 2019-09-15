@@ -20,17 +20,13 @@
   margin-right: $gutter * .125;
 }
 
-// .pagination__item--previous,
-// .pagination__item--next {
-//   display: none;
-// }
-
 .pagination__link {
   background: $color-gray-f;
   border-bottom: 3px solid $color-gray-d;
   color: $color-primary-lighter;
   display: block;
   font-weight: bold;
+  font-family: $heading-font-family;
   padding: ($gutter * .25) ($gutter * .75);
   transition: all .2s ease;
 }
@@ -87,5 +83,52 @@
 
   .pagination__link {
     padding: ($gutter * .5) $gutter;
+  }
+}
+
+
+//
+//  DARK THEME
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+//
+//  LINK
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.row__pagination {
+  &.-has-dark-theme {
+    .pagination__link {
+      background-color: $color-primary;
+      border-bottom: 3px solid $color-primary-lighter;
+    }
+
+    .pagination__link--first,
+    .pagination__link--previous,
+    .pagination__link--next,
+    .pagination__link--last {
+      background: transparent;
+      border-bottom-color: transparent;
+      color: $color-gray-a;
+    }
+    
+    @include respond-above(sm) {
+      .pagination__link {
+        &:hover {
+          background-color: $color-primary-darker;
+          border-bottom-color: $color-primary-lightest;
+        }
+      }
+    }
+
+    .pagination__link--current {
+      background-color: $color-primary-darker;
+      border-bottom-color: $color-secondary;
+      
+      @include respond-above(sm) {
+        &:hover {
+          border-bottom-color: $color-secondary;
+        }
+      }
+    }
   }
 }
