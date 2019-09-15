@@ -29,6 +29,8 @@ Useful commands:
 
 `$ hugo version` to check current Hugo version.
 
+### Upgrading
+
 To update hugo I use `$ brew upgrade hugo` which updates to the latest release. Hugo also needs to be updated in Netlify in `Settings -> Build & deploy -> Environment -> Environment variables -> HUGO_VERSION`.
 
 ## Gulp
