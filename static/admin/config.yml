@@ -31,6 +31,16 @@ collections:
       - {label: "Page header background color", name: "page_header_bg_color", widget: "string", required: false}
       - {label: "Table of Contents", name: "toc", widget: "boolean", required: false}
 
+  # Photography
+  - name: "photography"
+    label: "Photography"
+    folder: "content/photography"
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish date", name: "date", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ssZ"}
 
   # Contact.      
   - name: 'contact'
