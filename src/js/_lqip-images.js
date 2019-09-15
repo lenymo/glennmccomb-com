@@ -52,12 +52,15 @@ var LqipImages = (function() {
 
           // Add the loaded class to the full image.
           lqipFigure.classList.add(imageLoadedClass);
+
+          // Remove the loading class.
+          lqipFigure.classList.remove(imageLoadingClass);
         };
 
         // Add the src to the full image.
         fullImage.src = fullImageSrc;
 
-        // Add the appropriate BEM clas to the full image.
+        // Add the appropriate BEM class to the full image.
         fullImage.classList.add(fullImageClass);
 
         // Insert the full image before the LQIP image.
