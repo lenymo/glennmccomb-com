@@ -122,8 +122,8 @@
       {{ $featured := .Params.featured }}
       {{ $featured := strings.TrimSuffix ".jpg" $featured }}
       {{ $featured := strings.TrimPrefix $uploads $featured }}
-      {{ $.Scratch.Add "featured" $featured }}
-      {{ $.Scratch.Add "featured-extension" ".jpg" }}
+      {{ $.Scratch.Set "featured" $featured }}
+      {{ $.Scratch.Set "featured-extension" ".jpg" }}
     {{ end }}
   <div class="page-header__featured-image -is-object-fit-parent">
     <picture class="page-header__featured-image-picture -uses-object-fit" data-source="{{ $uploadsResponsive }}{{ $.Scratch.Get "featured" }}{{ $.Scratch.Get "featured-extension" }}">
