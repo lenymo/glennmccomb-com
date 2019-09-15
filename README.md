@@ -21,13 +21,15 @@ Comments are manage via [Disqus](https://disqus.com/) and are lazy-loaded using 
 
 ## Hugo
 
-This codebase is currently optimised for Hugo v0.55.3.
+This codebase is currently optimised for Hugo v0.58.2.
 
 Useful commands: 
 
 `$ hugo server` to run a local environment. Runs at http://localhost:1313/ by default.
 
 `$ hugo version` to check current Hugo version.
+
+To update hugo I use `$ brew upgrade hugo` which updates to the latest release. Hugo also needs to be updated in Netlify in `Settings -> Build & deploy -> Environment -> Environment variables -> HUGO_VERSION`.
 
 ## Gulp
 
