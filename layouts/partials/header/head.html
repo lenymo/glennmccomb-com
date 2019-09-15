@@ -48,7 +48,7 @@
   {{ with (.Resources.ByType "image").Match "featured" }}
     {{ range . }}
 
-      {{ $social := (.Resize "800x800 q100").RelPermalink }}
+      {{ $social := (.Resize "1200x630 q100").RelPermalink }}
       <meta property="og:image" content="{{ $production_url }}{{ $social }}" />
       <meta name="twitter:image" content="{{ $production_url }}{{ $social }}" />
       
