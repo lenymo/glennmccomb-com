@@ -6,8 +6,17 @@
 <section class="section section__articles-summary{{ if .IsHome }} -is-first-section{{ end }}">
   <div class="container container__articles-summary">
     <div class="row row__articles-summary">
+
+      {{/*
+        Get pages context. 
+        This is workaround for a Hugo change in v0.57 as described here:
+        https://gohugo.io/news/0.57.2-relnotes/
+      */}}
+      {{ $page_context := . }}
+      {{ if .IsHome }}{{ $page_context = .Site }}{{ end }}
+      {{ $pages := $page_context.RegularPages }}
     
-      {{ $paginator := .Paginate (where .Data.Pages "Type" "articles") }}
+      {{ $paginator := .Paginate (where $pages "Type" "articles") }}
 
       {{ range $paginator.Pages }}
         {{ partial "article-summary" . }}
