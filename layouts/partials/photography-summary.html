@@ -39,9 +39,9 @@
         {{ .Date.Format "2" }}<sup class="photography-summary__date-sup">{{ if in (slice 1 21 31) .Date.Day}}st{{ else if in (slice 2 22) .Date.Day}}nd{{ else if in (slice 3 23) .Date.Day}}rd{{ else }}th{{ end }}</sup> {{ .Date.Format "Jan 2006" }}
       </small>
   
-      <p class="photography-summary__caption">
+      <h3 class="photography-summary__caption">
         {{ .Title }}
-      </p>
+      </h3>
       
       <small class="photography-summary__summary">
         {{ .Summary }}
