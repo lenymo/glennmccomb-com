@@ -57,7 +57,13 @@
   
   {{/*  Description.  */}}
   {{ if and (eq .Type "articles") (eq .Kind "page") }}
-    <!-- Articles. -->
+    {{/*  Articles.  */}}
+    {{ $truncated := .Summary | truncate 190 "" }}
+    {{ $summary := .Summary | markdownify }}
+    <meta name="description" content="{{ if gt (len .Summary | markdownify ) (len $truncated | markdownify) }}{{ $truncated }}...{{ else }}{{ $summary }}{{ end }}" />
+    <meta name="twitter:description" property="og:description" content="{{ if gt (len .Summary | markdownify ) (len $truncated | markdownify) }}{{ $truncated }}...{{ else }}{{ $summary }}{{ end }}" />
+    {{/*  Photography.  */}}
+    {{ else if and (eq .Type "photography") (eq .Kind "page") }}
     {{ $truncated := .Summary | truncate 190 "" }}
     {{ $summary := .Summary | markdownify }}
     <meta name="description" content="{{ if gt (len .Summary | markdownify ) (len $truncated | markdownify) }}{{ $truncated }}...{{ else }}{{ $summary }}{{ end }}" />
