@@ -13,6 +13,7 @@
     {{ range .Data.Pages }}
     <item>
       <title>{{ .Title }}</title>
+      <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
       <link>{{ $permalink }}</link>
       <guid>{{ $permalink }}</guid>
       {{ with (.Resources.ByType "image").Match "featured" }}{{ range . }}<description>{{ $production_url }}{{ .RelPermalink }}</description>{{ end }}{{ end }}
