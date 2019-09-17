@@ -8,6 +8,13 @@ $photography-grid-padding: $gutter;
 
 .section__photography-summary {
   background-color: $color-gray-1;
+  border-top: 1px solid rgba($black, 0.25);
   padding-bottom: $photography-grid-padding;
   padding-top: $photography-grid-padding;
+}
+
+@include respond-above(lg) {
+  .section__photography-summary {
+    padding: ($gutter * 2) ($gutter * 1.5);
+  }  
 }
