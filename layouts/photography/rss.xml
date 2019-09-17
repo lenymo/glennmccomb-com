@@ -11,9 +11,9 @@
       <item>
         <title>{{ .Title }}</title>
         <link>{{ $production_url }}{{ .Permalink }}</link>
-        <description>{{ $production_url }}{{ .RelPermalink }}</description>
         {{ with (.Resources.ByType "image").Match "featured" }}
           {{ range . }}
+            <description>{{ $production_url }}{{ .RelPermalink }}</description>
             <content:encoded>
               {{ chomp "<![CDATA[\n" }}<img src="{{ $production_url }}{{ .RelPermalink }}" />{{ chomp "]]>\n" }}
             </content:encoded>
