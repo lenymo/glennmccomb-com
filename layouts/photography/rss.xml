@@ -1,6 +1,6 @@
 {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?>" | safeHTML }}
 {{ $production_url := $.Site.Data.site_settings.production_url }}
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>{{ .Title }}</title>
     <description>Recent content {{ if ne  .Title  .Site.Title }}{{ with .Title }}in {{.}} {{ end }}{{ end }}on {{ .Site.Title }}</description>
@@ -14,13 +14,9 @@
         <description>{{ .Content | html }}</description>
         {{ with (.Resources.ByType "image").Match "featured" }}
           {{ range . }}
-            <image>
-              <url>{{ $production_url }}{{ .RelPermalink }}</url>
-              <width>{{ .Width }}</width>
-              <height>{{ .Height }}</height>
-              <title>{{ .Title }}</title>
-              <link>{{ $production_url }}{{ .Permalink }}</link>
-            </image>
+            <content:encoded>
+              {{chomp "<![CDATA[\n"}}<img src="{{ $production_url }}{{ .RelPermalink }}" />{{chomp "]]>\n"}}
+            </content:encoded>
           {{ end }}
         {{ end }}
       </item>
