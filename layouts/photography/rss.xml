@@ -1,6 +1,6 @@
 {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?>" | safeHTML }}
 {{ $production_url := $.Site.Data.site_settings.production_url }}
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>{{ .Title }}</title>
     <description>Recent content {{ if ne  .Title  .Site.Title }}{{ with .Title }}in {{.}} {{ end }}{{ end }}on {{ .Site.Title }}</description>
@@ -15,8 +15,10 @@
         {{ with (.Resources.ByType "image").Match "featured" }}
           {{ range . }}
             <content:encoded>
-              {{chomp "<![CDATA[\n"}}<img src="{{ $production_url }}{{ .RelPermalink }}" />{{chomp "]]>\n"}}
+              {{ chomp "<![CDATA[\n" }}<img src="{{ $production_url }}{{ .RelPermalink }}" />{{ chomp "]]>\n" }}
             </content:encoded>
+            <media:content type="image/jpeg" medium="image" width="{{ .Width }}" height="{{ .Height }}"
+                  url="{{ $production_url }}{{ .RelPermalink }}" />
           {{ end }}
         {{ end }}
       </item>
