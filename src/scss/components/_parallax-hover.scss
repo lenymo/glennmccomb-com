@@ -8,6 +8,7 @@
   .parallax-hover {
     box-shadow: 0 0 50px rgba($black, 0);
     overflow: hidden;
+    -webkit-transition: all 0.05s ease;
 
     &.-is-being-hovered {
       box-shadow: 0 10px 50px rgba($black, .05);

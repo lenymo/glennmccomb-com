@@ -37,6 +37,18 @@
   width: 100%;
 }
 
+@include respond-above(md) {
+  .photography-summary__wrapper {
+    box-shadow: 0 10 50px rgba($black, 0);
+    box-shadow: 0 5px 15px rgba($black, 0), 0 10 50px rgba($black, 0);
+    
+    &.-is-being-hovered {
+      box-shadow: 0 10 50px rgba($black, .05);
+      box-shadow: 0 5px 15px rgba($black, .05), 0 10 50px rgba($black, .05);
+    }
+  }
+}
+
 
 
 //

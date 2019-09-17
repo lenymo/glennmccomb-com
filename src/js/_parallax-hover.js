@@ -15,8 +15,19 @@ var ParallaxHover = (function() {
     transformScale: 1.01,
     mouseOverToggleClass: "-is-being-hovered",
     selectors: {
-      articleSummary: ".parallax-hover",
+      wrapper: ".parallax-hover",
       featuredImage: ".parallax-hover__featured-image"
+    },
+    attributes: {
+      scale: "parallax-hover-scale"
+    },
+
+    // Phography specific settings.
+    photography: {
+      transformScale: 1.03,
+      transformModX: 2,
+      transformModY: 1.5,
+      className: "photography-summary__wrapper"
     }
   };
 
@@ -26,8 +37,8 @@ var ParallaxHover = (function() {
 
   function handleParallaxHover() {
     // Declare variables.
-    var articles;
-    var article;
+    var parallaxWrappers;
+    var wrapper;
     var w;
 
     // Get viewport width.
@@ -36,30 +47,30 @@ var ParallaxHover = (function() {
     // If viewport is wide enough.
     if (w >= config.onlyRunAbove) {
       // If this is NOT an old version of IE
-      if (Helpers.isIE() == false) {
-        // Get all article summaries.
-        articles = document.querySelectorAll(config.selectors.articleSummary);
+      if (Helpers.isIE() === false) {
+        // Get all wrappers.
+        parallaxWrappers = document.querySelectorAll(config.selectors.wrapper);
 
-        // If there are article summaries.
-        if (articles) {
-          // Loop through all article summary tiles.
-          for (var i = 0; i < articles.length; i++) {
-            // Make article variable more obvious.
-            article = articles[i];
+        // If there are wrappers.
+        if (parallaxWrappers) {
+          // Loop through all wrappers tiles.
+          for (var i = 0; i < parallaxWrappers.length; i++) {
+            // Instantiate wrapper.
+            wrapper = parallaxWrappers[i];
 
             // Listen for the mouse events.
             // Move.
-            article.addEventListener("mousemove", processMouseMoveEvent);
+            wrapper.addEventListener("mousemove", processMouseMoveEvent);
 
             // Enter.
-            article.addEventListener("mouseenter", processMouseEnterEvent);
+            wrapper.addEventListener("mouseenter", processMouseEnterEvent);
 
             // Leave.
-            article.addEventListener("mouseleave", processMouseLeaveEvent);
-          } // for ( var i = 0; i < articles.length; i++ )
-        } // if ( articles )
-      } // if ( Helpers.isIE() !== false )
-    } // if ( w >= config.onlyRunAbove )
+            wrapper.addEventListener("mouseleave", processMouseLeaveEvent);
+          }
+        }
+      }
+    }
   }
 
   //
@@ -68,21 +79,28 @@ var ParallaxHover = (function() {
 
   function processMouseMoveEvent(e) {
     // Declare variables.
-    var article;
+    var wrapper;
     var mouseX;
     var mouseY;
     var rect;
     var rectMouseXPercent;
     var rectMouseYPercent;
 
+    // Instantiate parallax wrapper.
+    wrapper = this;
+
+    // Photography customisations.
+    if (wrapper.classList.contains(config.photography.className)) {
+      config.transformScale = config.photography.transformScale;
+      config.transformModX = config.photography.transformModX;
+      config.transformModY = config.photography.transformModY;
+    }
+
     // Get mouse pos on document.
     mouseX = e.pageX;
     mouseY = e.pageY;
 
-    // Instantiate article tile.
-    article = this;
-
-    // Get the dimensions of the article summary.
+    // Get the dimensions of the wrapper.
     rect = this.getBoundingClientRect();
 
     // Get the user's mouse position from left-to-right
@@ -94,7 +112,7 @@ var ParallaxHover = (function() {
     rectMouseYPercent = getMouseYPercent(rect, mouseY);
 
     // Apply CSS transformations.
-    applyCSSTransforms(article, rect, rectMouseXPercent, rectMouseYPercent);
+    applyCSSTransforms(wrapper, rect, rectMouseXPercent, rectMouseYPercent);
   }
 
   //
@@ -103,13 +121,13 @@ var ParallaxHover = (function() {
 
   function processMouseEnterEvent() {
     // Declare variables.
-    var article;
+    var wrapper;
 
-    // Instantiate article tile.
-    article = this;
+    // Instantiate wrapper.
+    wrapper = this;
 
-    // Add the mouse over toggle class to the article tile.
-    article.classList.add(config.mouseOverToggleClass);
+    // Add the mouse over toggle class to the wrapper.
+    wrapper.classList.add(config.mouseOverToggleClass);
   }
 
   //
@@ -118,24 +136,24 @@ var ParallaxHover = (function() {
 
   function processMouseLeaveEvent() {
     // Declare variables.
-    var article;
-    var articleImage;
+    var wrapper;
+    var wrapperImage;
 
-    // Instantiate article.
-    article = this;
+    // Instantiate wrapper.
+    wrapper = this;
 
     // Remove transform effect.
-    article.style.transform = "";
+    wrapper.style.transform = "";
 
     // Remove transform effect from featured image.
-    articleImage = article.querySelector(config.selectors.featuredImage);
+    wrapperImage = wrapper.querySelector(config.selectors.featuredImage);
 
-    if (articleImage) {
-      articleImage.style.transform = "";
+    if (wrapperImage) {
+      wrapperImage.style.transform = "";
     }
 
     // Remove the mouse over toggle class.
-    article.classList.remove(config.mouseOverToggleClass);
+    wrapper.classList.remove(config.mouseOverToggleClass);
   }
 
   //
@@ -219,14 +237,14 @@ var ParallaxHover = (function() {
   //––––––––––––––––––––––––––––––––––––––––––––––––––
 
   function applyCSSTransforms(
-    article,
+    wrapper,
     rect,
     rectMouseXPercent,
     rectMouseYPercent
   ) {
     // Declare variables.
     var transformCSS;
-    var articleImage;
+    var wrapperImage;
     var imageTransformCSS;
 
     // If the transforms aren't too extreme.
@@ -243,21 +261,21 @@ var ParallaxHover = (function() {
       transformCSS += "rotateX(" + rectMouseYPercent + "deg)";
 
       // Apply the transform CSS.
-      article.style.transform = transformCSS;
+      wrapper.style.transform = transformCSS;
     }
 
     // Find the featured image.
-    articleImage = article.querySelector(config.selectors.featuredImage);
+    wrapperImage = wrapper.querySelector(config.selectors.featuredImage);
 
-    // If there's an article image.
-    if (articleImage) {
+    // If there's an wrapper image.
+    if (wrapperImage) {
       // Build the image transform CSS.
       imageTransformCSS = "scale(1.025) ";
       imageTransformCSS += "translateX(" + rectMouseXPercent * 8 * -1 + "px) ";
       imageTransformCSS += "translateY(" + rectMouseYPercent * 6 + "px) ";
 
       // Apply the image transform CSS.
-      articleImage.style.transform = imageTransformCSS;
+      wrapperImage.style.transform = imageTransformCSS;
     }
   }
 
