@@ -8,22 +8,22 @@
     <language>{{.}}</language>{{end}}
     {{- if not .Date.IsZero }}<lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ end -}}
     {{ range .Data.Pages }}
-    <item>
-      <title>{{ .Title }}</title>
-      <link>{{ .Permalink }}</link>
-      <description>{{ .Content | html }}</description>
-      {{ with (.Resources.ByType "image").Match "featured" }}
-        {{ range . }}
-          <image>
-            <url>{{ $production_url }}{{ .RelPermalink }}</url>
-            <width>{{ .Width }}</width>
-            <height>{{ .Height }}</height>
-            <title>{{ .Title }}</title>
-            <link>{{ .Permalink }}</link>
-          </image>
+      <item>
+        <title>{{ .Title }}</title>
+        <link>{{ $production_url }}{{ .Permalink }}</link>
+        <description>{{ .Content | html }}</description>
+        {{ with (.Resources.ByType "image").Match "featured" }}
+          {{ range . }}
+            <image>
+              <url>{{ $production_url }}{{ .RelPermalink }}</url>
+              <width>{{ .Width }}</width>
+              <height>{{ .Height }}</height>
+              <title>{{ .Title }}</title>
+              <link>{{ $production_url }}{{ .Permalink }}</link>
+            </image>
+          {{ end }}
         {{ end }}
-      {{ end }}
-    </item>
+      </item>
     {{ end }}
   </channel>
 </rss>
