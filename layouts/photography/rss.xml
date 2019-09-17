@@ -8,16 +8,10 @@
     <generator>Hugo -- gohugo.io</generator>{{ with .Site.LanguageCode }}
     <language>{{.}}</language>{{end}}
     {{- if not .Date.IsZero }}<lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ end -}}
-    {{ range .Data.Pages }}
-    <item>
+    {{ range .Data.Pages }}<item>
       <title>{{ .Title }}</title>
       <link>{{ $production_url }}{{ .Permalink }}</link>
-      {{ with (.Resources.ByType "image").Match "featured" }}
-        {{ range . }}
-          <description>{{ $production_url }}{{ .RelPermalink }}</description>
-        {{ end }}
-      {{ end }}
-    </item>
-    {{ end }}
+      {{ with (.Resources.ByType "image").Match "featured" }}{{ range . }}<description>{{ $production_url }}{{ .RelPermalink }}</description>{{ end }}{{ end }}
+    </item>{{ end }}
   </channel>
 </rss>
