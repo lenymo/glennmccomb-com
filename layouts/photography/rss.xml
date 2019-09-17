@@ -4,6 +4,7 @@
   <channel>
     <title>{{ .Title }}</title>
     <link>{{ $production_url }}{{ .Permalink }}</link>
+    <guid>{{ $production_url }}{{ .Permalink }}</guid>
     <description>Recent content {{ if ne  .Title  .Site.Title }}{{ with .Title }}in {{.}} {{ end }}{{ end }}on {{ .Site.Title }}</description>
     <generator>Hugo -- gohugo.io</generator>{{ with .Site.LanguageCode }}
     <language>{{.}}</language>{{end}}
