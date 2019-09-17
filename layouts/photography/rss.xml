@@ -11,7 +11,7 @@
       <item>
         <title>{{ .Title }}</title>
         <link>{{ $production_url }}{{ .Permalink }}</link>
-        <description>{{ .Content | html }}</description>
+        <description>{{ $production_url }}{{ .RelPermalink }}</description>
         {{ with (.Resources.ByType "image").Match "featured" }}
           {{ range . }}
             <content:encoded>
