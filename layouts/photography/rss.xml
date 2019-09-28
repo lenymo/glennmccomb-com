@@ -5,7 +5,6 @@
   <channel>
     <title>{{ .Title }}</title>
     <link>{{ $permalink }}</link>
-    {{ printf "<atom:link href=%q rel=\"self\" type=%q />" $permalink .MediaType | safeHTML }}
     <description>Recent content {{ if ne  .Title  .Site.Title }}{{ with .Title }}in {{.}} {{ end }}{{ end }}on {{ .Site.Title }}</description>
     <generator>Hugo -- gohugo.io</generator>{{ with .Site.LanguageCode }}
     <language>{{.}}</language>{{end}}
