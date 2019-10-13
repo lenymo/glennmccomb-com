@@ -15,7 +15,7 @@
       <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
       <link>{{ $production_url }}{{ .RelPermalink }}</link>
       <guid>{{ $production_url }}{{ .RelPermalink }}</guid>
-      {{ with (.Resources.ByType "image").Match "featured" }}{{ range . }}<description>{{ $production_url }}{{ .RelPermalink }}</description>{{ end }}{{ end }}
+      {{ with (.Resources.ByType "image") }}{{ range . }}<description>{{ $production_url }}{{ .RelPermalink }}</description>{{ end }}{{ end }}
     </item>
     {{ end }}
   </channel>

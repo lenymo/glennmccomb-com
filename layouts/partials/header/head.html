@@ -45,13 +45,15 @@
   {{ end }}
     
   {{/*  Featured images using Hugo Page Resources.  */}}
-  {{ with (.Resources.ByType "image").Match "featured" }}
-    {{ range . }}
+  {{ if and (eq .Type "photography") (eq .Kind "page") }}
+    {{ with (.Resources.ByType "image") }}
+      {{ range . }}
 
-      {{ $social := (.Fill "1200x630 q100").RelPermalink }}
-      <meta property="og:image" content="{{ $production_url }}{{ $social }}" />
-      <meta name="twitter:image" content="{{ $production_url }}{{ $social }}" />
-      
+        {{ $social := (.Fill "1200x630 q100").RelPermalink }}
+        <meta property="og:image" content="{{ $production_url }}{{ $social }}" />
+        <meta name="twitter:image" content="{{ $production_url }}{{ $social }}" />
+        
+      {{ end }}
     {{ end }}
   {{ end }}
   
@@ -62,8 +64,8 @@
     {{ $summary := .Summary | markdownify }}
     <meta name="description" content="{{ if gt (len .Summary | markdownify ) (len $truncated | markdownify) }}{{ $truncated }}...{{ else }}{{ $summary }}{{ end }}" />
     <meta name="twitter:description" property="og:description" content="{{ if gt (len .Summary | markdownify ) (len $truncated | markdownify) }}{{ $truncated }}...{{ else }}{{ $summary }}{{ end }}" />
-    {{/*  Photography.  */}}
-    {{ else if and (eq .Type "photography") (eq .Kind "page") }}
+  {{/*  Photography.  */}}
+  {{ else if and (eq .Type "photography") (eq .Kind "page") }}
     {{ $truncated := .Summary | truncate 190 "" }}
     {{ $summary := .Summary | markdownify }}
     <meta name="description" content="{{ if gt (len .Summary | markdownify ) (len $truncated | markdownify) }}{{ $truncated }}...{{ else }}{{ $summary }}{{ end }}" />
