@@ -15,11 +15,11 @@ class Artist extends React.Component {
   }
 
   render() {
-    const artist = this.props.artist;
+    const { index, artist, colClasses, rank } = this.props;
 
-    const artistImage = this.props.image["#text"];
+    // const artistImage = this.props.image["#text"];
 
-    const delay = this.props.index * 0.05;
+    const delay = index * 0.05;
 
     //
     //  STYLES
@@ -37,10 +37,10 @@ class Artist extends React.Component {
       animationDelay: delay + "s"
     };
 
-    const backgroundImageStyles = {
-      backgroundImage: "url(" + artistImage + ")",
-      animationDelay: delay + "s"
-    };
+    // const backgroundImageStyles = {
+    //   backgroundImage: "url(" + artistImage + ")",
+    //   animationDelay: delay + "s"
+    // };
 
     const overlayStyles = {
       animationDelay: delay + "s"
@@ -50,15 +50,15 @@ class Artist extends React.Component {
     const playCount = this.formatPlayCount(artist.playcount);
 
     return (
-      <div className={this.props.colClasses} key={artist.name}>
+      <div className={colClasses} key={artist.name}>
         <a
-          key={this.props.rank}
+          key={rank}
           href={artist.url}
           className="last-fm-artist -is-artist"
           target="_blank"
         >
           <div className="last-fm-artist__rank" style={rankStyles}>
-            {this.props.rank}
+            {rank}
           </div>
           <div className="last-fm-artist__meta">
             <h3 className="last-fm-artist__name" style={nameStyles}>
@@ -67,15 +67,17 @@ class Artist extends React.Component {
             <p className="last-fm-artist__play-count" style={playcountStyles}>
               {playCount} plays
             </p>
-            <img
+            {/* <img
               className="last-fm-artist__image"
               src={artistImage}
               alt={artist.name}
-            />
+            /> */}
           </div>
           <div
             className="last-fm-artist__background-image"
-            style={backgroundImageStyles}
+            style={{
+              opacity: 100 - index * 2
+            }}
           />
           <div className="last-fm-artist__overlay" style={overlayStyles} />
           <div className="last-fm-artist__square" />
