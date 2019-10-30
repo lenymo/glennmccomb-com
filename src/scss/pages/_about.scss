@@ -89,6 +89,7 @@ $last-fm-artist-rank-size: 35px;
 
 .last-fm-artist__rank {
   background: $color-primary;
+  box-shadow: 0 2px 10px rgba($black, 0.2);
   border-radius: 2px;
   bottom: $gutter * 2;
   font-family: $heading-font-family;
