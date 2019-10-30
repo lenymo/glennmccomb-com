@@ -42,6 +42,10 @@ class Artist extends React.Component {
     //   animationDelay: delay + "s"
     // };
 
+    const backgroundImageStyles = {
+      backgroundColor: `rgba(28, 36, 44, ${1 - index * 0.05})`
+    };
+
     const overlayStyles = {
       animationDelay: delay + "s"
     };
@@ -75,11 +79,9 @@ class Artist extends React.Component {
           </div>
           <div
             className="last-fm-artist__background-image"
-            style={{
-              backgroundColor: `rgba(0,0,0, ${1 - index * 0.05})`
-            }}
+            style={backgroundImageStyles}
           />
-          {/* <div className="last-fm-artist__overlay" style={overlayStyles} /> */}
+          <div className="last-fm-artist__overlay" style={overlayStyles} />
           <div className="last-fm-artist__square" />
         </a>
       </div>
