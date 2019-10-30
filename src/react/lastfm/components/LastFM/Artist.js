@@ -42,8 +42,11 @@ class Artist extends React.Component {
     //   animationDelay: delay + "s"
     // };
 
+    const alpha = 1 - (1 - index * 0.05);
+
     const backgroundImageStyles = {
-      backgroundColor: `rgba(28, 36, 44, ${1 - index * 0.05})`
+      // $color-primary-darkest
+      backgroundColor: `rgba(28, 36, 44, ${alpha})`
     };
 
     const overlayStyles = {
