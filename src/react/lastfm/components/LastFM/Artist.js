@@ -79,7 +79,7 @@ class Artist extends React.Component {
               opacity: 100 - index * 2
             }}
           />
-          <div className="last-fm-artist__overlay" style={overlayStyles} />
+          {/* <div className="last-fm-artist__overlay" style={overlayStyles} /> */}
           <div className="last-fm-artist__square" />
         </a>
       </div>
