@@ -76,7 +76,7 @@ class Artist extends React.Component {
           <div
             className="last-fm-artist__background-image"
             style={{
-              opacity: 100 - index * 2
+              backgroundColor: `rgba(0,0,0, ${1 - index * 0.05})`
             }}
           />
           {/* <div className="last-fm-artist__overlay" style={overlayStyles} /> */}
