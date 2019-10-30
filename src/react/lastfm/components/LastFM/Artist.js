@@ -42,7 +42,7 @@ class Artist extends React.Component {
     //   animationDelay: delay + "s"
     // };
 
-    const alpha = 1 - (1 - index * 0.05);
+    const alpha = 1.5 - (1 - index * 0.05);
 
     const backgroundImageStyles = {
       // $color-primary-darkest
