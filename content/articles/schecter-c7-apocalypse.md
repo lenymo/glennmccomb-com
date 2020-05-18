@@ -4,16 +4,16 @@ date: '2020-05-17T15:31:24+11:00'
 featured: /img/uploads/featured-image-article-schecter-c7-apocalypse.jpg
 categories:
   - music
-featured_opacity: '.15'
+featured_opacity: '.4'
 custom_class: schecter-c7-apocalypse
 custom_stylesheet: schecter-c7-apocalypse
 dark_bg: true
-toc: true
 ---
+{{< lead >}}In early March of 2020 after months of searching and hunting, right before the Coronavirus lockdown kicked off in Australia, I bought my first ever 7-string - a [Schecter C-7 Apocalypse](https://www.schecterguitars.com/guitars/c-7-apocalypse-rusty-grey-detail).{{< /lead >}}
 
-In early March of 2020 after months of searching and hunting, right before the Coronavirus lockdown kicked off in Australia, I bought my first ever 7-string - a [Schecter C-7 Apocalypse](https://www.schecterguitars.com/guitars/c-7-apocalypse-rusty-grey-detail). I wasn't necessarily looking for a 7-string, but the more I researched, the more I began to think I'd like the extra range.
+Scroll down for pics.
 
-I started out with my heart set on an Ibanez. My first ever guitar was an Ibanez so it made sense to stick to familiar territory.
+When I started my search, I wasn't looking for a 7-string, but the more I researched, the more I began to think I'd like the extra range. I started out with my heart set on an Ibanez. My first ever guitar was an Ibanez so it made sense to stick to familiar territory.
 
 I loved the look of the natural finish on the Ibanez [RGA60AL](https://www.ibanez.com/na/products/detail/rga60al_1p_01.html) and in fact, if it came in a 7-string I probably would have bought it. I also looked long and hard at the RGAIX7U (which has a similar natural wood finish) but alas, it is not stocked in Australia - much like many of Ibanez's 7-strings.
 
