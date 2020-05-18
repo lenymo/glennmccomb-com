@@ -59,7 +59,7 @@ Unfortunately anytime `$ gulp` run, a webpack production build needs to be regen
 
 ### Page header images
 
-Page header featured images are saved as plain JPG / PNGs in Photoshop with `featured-image-` prefix in `/src/img/uploads/`. These then need to be processed with `gulp images` and `gulp compress-images`, after which point they are compressed and copied to `static/img/uploads/`.
+Page header featured images are saved as plain JPG / PNGs in Photoshop with `featured-image-` prefix in `/src/img/uploads/`. These then need to be processed with `gulp images` and `gulp compress-images`, after which point they are compressed and copied to `static/img/uploads/`. In generaly, these images are 1400 x 700, but it doesn't particularly matter since they are scaled to fit wherever they're displayed (in article summary tiles and in page headers).
 
 ### Photography images
 
