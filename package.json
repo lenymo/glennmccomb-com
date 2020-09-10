@@ -32,7 +32,7 @@
     "gulp-util": "^3.0.8",
     "imagemin-mozjpeg": "^7.0.0",
     "netlify-lambda": "^1.6.3",
-    "node-fetch": "^2.3.0",
+    "node-fetch": "^2.6.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-addons-css-transition-group": "^15.6.2",
