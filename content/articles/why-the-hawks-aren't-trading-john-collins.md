@@ -30,15 +30,15 @@ Interestingly, Atlanta will have a significant amount more cap space if they wai
 
 As an aside, Miami are taking advantage of fellow-2017 draftee Bam Adebayo's low 2021-22 cap hold, and won't pay him until next offseason in order to preserve cap space for their pursuit of Giannis.
 
-Currently, the Hawks have a projected $32m space next offseason including the new deals for Rondo, Gallinari and Kris Dunn, plus John Collins' $12.4m cap hold. 
+Currently, the Hawks have a projected $16.5m space next offseason including the new deals for Rondo, Gallinari and Kris Dunn, plus John Collins' $12.4m cap hold and a cap hold for the as-yet-unsigned Onyeka Okongwu. 
 
-The Hawks are still currently $9m below the salary cap floor for the upcoming season, but use that space on one year deals, they would still have $32m in the 2021-22 offseason (plus more if Kris Dunn opts out of the 2nd year of the contract he just signed).
+The Hawks are still currently $9m below the salary cap floor for the upcoming season, but use that space on one year deals, they would still have $16.5m in the 2021-22 offseason (plus $5m more if Kris Dunn opts out of the 2nd year of the contract he just signed).
 
-So if the Hawks don't extend Collins this offseason they will have $32m in space. Once that space has been used, they can sign Collins to whatever number they want under the salary cap rules.
+So if the Hawks don't extend Collins this offseason they will have $16.5m in space. Once that space has been used, they can sign Collins to whatever number they want under the salary cap rules.
 
-However it should be noted that if the Hawks use _all_ of their 2021-22 cap space _and_ sign Collins to his "max" starting at $32.6m, they will enter the luxury tax. They probably don't want to do at this stage of their rebuild. If they use all of their cap space Atlanta, anything north of $24m for Collins will push them into the tax.
+However it should be noted that if the Hawks use _all_ of their 2021-22 cap space _and_ sign Collins to his "max" starting at $32.6m, they will enter the luxury tax. They probably don't want to do at this stage of their rebuild. If they use all of their cap space Atlanta, anything north of $20m for Collins will push them into the tax.
 
-Note also that if Atlanta were to sign Bogdan Bogdanovic to the rumoured 4 years $72m deal (via Chris Kirschner), the Hawks' 2021-22 cap space would be reduced to something more like $14m (depending on whether Bogdan's contract is structured flat, ascending or descending).
+Note also that if Atlanta were to sign Bogdan Bogdanovic to the rumoured 4 years $72m deal (via Chris Kirschner), the Hawks' 2021-22 cap space would be reduced to almost nothing (depending on whether Bogdan's contract is structured flat, ascending or descending). In this case the timing of Collins' signing is a moot point.
 
 So it's a delicate balance. 
 
