@@ -8,7 +8,9 @@ categories:
 dark_bg: true
 ---
 
-{{< lead >}}There's a bunch of noise in the media right now suggesting that with Atlanta apparently unable to reach a contract extension agreement with John Collins, they will look to trade him. This speculation has only intensified with the Danilo Gallinari signing (since he is generally considered to play the same position as Collins at the 4).
+{{< lead >}}There's a bunch of noise in the media right now suggesting that with Atlanta apparently unable to reach a contract extension agreement with John Collins, they should look to trade him. {{< /lead >}}
+
+This speculation has only intensified with the Danilo Gallinari signing, since he is generally considered to play the same position as Collins at the 4.
 
 {{< tweet 1329960884232478722 >}}
 
