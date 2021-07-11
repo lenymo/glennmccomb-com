@@ -21,7 +21,7 @@ Comments are manage via [Disqus](https://disqus.com/) and are lazy-loaded using 
 
 ## Hugo
 
-This codebase is currently optimised for Hugo v0.58.2.
+This codebase is currently optimised for Hugo v0.85.0. Hugo is installed and managed by Brew.
 
 Useful commands: 
 
