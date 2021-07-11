@@ -1,4 +1,4 @@
 [build]
 functions = "lambda"
-#  command = "gulp build"
+command = "hugo"
 #  publish = "static"
