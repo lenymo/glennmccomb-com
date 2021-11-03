@@ -8,7 +8,11 @@
     "start": "NODE_ENV=development webpack",
     "start:lambda": "netlify-lambda serve src/lambda",
     "build": "NODE_ENV=production webpack",
-    "build:lambda": "netlify-lambda build src/lambda"
+    "build:lambda": "netlify-lambda build src/lambda",
+    "gulp": "gulp",
+    "gulp-images": "gulp images",
+    "gulp-compress-images": "gulp compress-images",
+    "gulp-critical": "gulp critical"
   },
   "keywords": [],
   "author": "Glenn McComb",
