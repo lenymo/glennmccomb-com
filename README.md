@@ -45,6 +45,10 @@ Useful commands:
 
 `$ gulp critical` to generate critical CSS for key pages.
 
+### Dependencies
+
+In order to build responsive images using `gulp-responsive`, `libvips` must be installed (which includes `sharp`). On macOS this can be done via `brew install vips`.
+
 ## Webpack
 
 Webpack is run using NPM scripts:
