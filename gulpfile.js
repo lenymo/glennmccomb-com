@@ -3,35 +3,35 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 // General.
-var gulp = require("gulp");
-var sass = require("gulp-sass");
-var exec = require("child_process").exec;
-var critical = require("critical").stream;
-var autoprefixer = require("gulp-autoprefixer");
-var concat = require("gulp-concat");
-var uglify = require("gulp-uglify");
-var hash = require("gulp-hash");
-var del = require("del");
+const { dest, src, series, watch } = require("gulp");
+const sass = require("gulp-sass");
+const exec = require("child_process").exec;
+const critical = require('critical');
+const autoprefixer = require("gulp-autoprefixer");
+const concat = require("gulp-concat");
+const uglify = require("gulp-uglify");
+const hash = require("gulp-hash");
+const del = require("del");
 
 // Dev only source maps.
-var sourcemaps = require("gulp-sourcemaps");
-var argv = require("yargs").argv;
-var gulpif = require("gulp-if");
+const sourcemaps = require("gulp-sourcemaps");
+const argv = require("yargs").argv;
+const gulpif = require("gulp-if");
 
 // Images.
-var responsive = require("gulp-responsive");
-var imagemin = require("gulp-imagemin");
-var mozjpeg = require("imagemin-mozjpeg");
+const responsive = require("gulp-responsive");
+const imagemin = require("gulp-imagemin");
+const mozjpeg = require("imagemin-mozjpeg");
 
 // Data.
-var hashCSS = require("./data/css/hash.json");
+const hashCSS = require("./data/css/hash.json");
 
 //
 //  SCSS
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 // Compile admin SCSS files to CSS
-gulp.task("scss", function() {
+function compileScss() {
   // Clear the static/css directory.
   del(["static/css/*.css", "!static/css/critical/**/*"]);
 
@@ -41,9 +41,7 @@ gulp.task("scss", function() {
     argv.dev = false;
   }
 
-  gulp
-    .src("src/scss/**/*.scss")
-
+  return src("src/scss/**/*.scss")
     // Initialise source maps for dev.
     .pipe(gulpif(argv.dev, sourcemaps.init()))
     .pipe(sass().on("error", sass.logError))
@@ -64,7 +62,7 @@ gulp.task("scss", function() {
     )
     .pipe(hash())
     .pipe(gulpif(argv.dev, sourcemaps.write()))
-    .pipe(gulp.dest("static/css"))
+    .pipe(dest("static/css"))
 
     // Create a hash map.
     .pipe(
@@ -75,14 +73,14 @@ gulp.task("scss", function() {
       }
     )
     // Put the map in the data directory.
-    .pipe(gulp.dest("data/css"));
-});
+    .pipe(dest("data/css"));
+}
 
 //
 //  JAVASCRIPT
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-gulp.task("js", function() {
+function compileJs() {
   // Clear the static/js directory.
   del(["static/js/**/*", "!static/js/bundle.js"]);
 
@@ -92,8 +90,7 @@ gulp.task("js", function() {
     argv.dev = false;
   }
 
-  gulp
-    .src("src/js/*.js")
+  src("src/js/*.js")
 
     // Initialise source maps for dev.
     .pipe(gulpif(argv.dev, sourcemaps.init()))
@@ -101,7 +98,7 @@ gulp.task("js", function() {
     .pipe(uglify().on("error", console.log))
     .pipe(hash())
     .pipe(gulpif(argv.dev, sourcemaps.write("./")))
-    .pipe(gulp.dest("static/js"))
+    .pipe(dest("static/js"))
 
     // Create a hash map.
     .pipe(
@@ -112,31 +109,29 @@ gulp.task("js", function() {
       }
     )
     // Put the map in the data directory.
-    .pipe(gulp.dest("data/js"));
+    .pipe(dest("data/js"));
 
   // Copy and minify vendor JS files.
-  gulp
-    .src("src/js/vendor/*.js")
+  return src("src/js/vendor/*.js")
     .pipe(uglify().on("error", console.log))
-    .pipe(gulp.dest("static/js/vendor"));
-});
+    .pipe(dest("static/js/vendor"));
+}
 
 //
 //  IMAGES
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-gulp.task("images", function() {
+function images() {
   // Clear the /static/img/uploads/ directory.
   del(["static/img/uploads/**/*"]);
 
   // Copy all images from /src to /static.
-  gulp
-    .src("src/img/uploads/**/*.{jpg,jpeg,png,gif}")
-    .pipe(gulp.dest("static/img/uploads"));
+  src("src/img/uploads/**/*.{jpg,jpeg,png,gif}")
+    .pipe(dest("static/img/uploads"));
   ``;
+
   // LQIP (low quality image placeholders) for all JPG and PNGs.
-  gulp
-    .src("src/img/uploads/**/*.{jpg,jpeg,png}")
+  src("src/img/uploads/**/*.{jpg,jpeg,png}")
     .pipe(
       responsive(
         {
@@ -157,11 +152,10 @@ gulp.task("images", function() {
         }
       )
     )
-    .pipe(gulp.dest("static/img/uploads"));
+    .pipe(dest("static/img/uploads"));
 
   // Featured images.
-  gulp
-    .src("src/img/uploads/featured-image-*.{jpg,jpeg,png}")
+  return src("src/img/uploads/featured-image-*.{jpg,jpeg,png}")
     .pipe(
       responsive(
         {
@@ -183,17 +177,16 @@ gulp.task("images", function() {
         }
       )
     )
-    .pipe(gulp.dest("static/img/uploads"));
-});
+    .pipe(dest("static/img/uploads"));
+};
 
 //
 //  COMPRESS IMAGES
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-gulp.task("compress-images", function() {
+function compressImages() {
   // All JPGs and PNGs except those with -lqip suffix.
-  gulp
-    .src([
+    src([
       "static/img/uploads/**/*.{jpg,jpeg,png}",
       "!static/img/uploads/**/*-lqip.jpg"
     ])
@@ -206,11 +199,10 @@ gulp.task("compress-images", function() {
         mozjpeg()
       ])
     )
-    .pipe(gulp.dest("static/img/uploads"));
+    .pipe(dest("static/img/uploads"));
 
   // Further LQIP images.
-  gulp
-    .src("!static/img/uploads/**/*-lqip.jpg")
+  return src("!static/img/uploads/**/*-lqip.jpg")
     .pipe(
       imagemin([
         imagemin.gifsicle(),
@@ -220,15 +212,15 @@ gulp.task("compress-images", function() {
         mozjpeg({ quality: 2 })
       ])
     )
-    .pipe(gulp.dest("static/img/uploads"));
-});
+    .pipe(dest("static/img/uploads"));
+};
 
 //
 //  CRITICAL CSS
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 // Generate & Inline Critical-path CSS
-gulp.task("critical", function(cb) {
+function criticalCss(cb) {
   var path = "static/css/";
 
   // Build CSS filename paths.
@@ -248,8 +240,7 @@ gulp.task("critical", function(cb) {
   // Wait until Hugo has finished building.
   setTimeout(function() {
     // Home page / article listing.
-    gulp
-      .src("public/articles/index.html")
+    src("public/articles/index.html")
       .pipe(
         critical({
           base: "/",
@@ -262,11 +253,10 @@ gulp.task("critical", function(cb) {
       .on("error", function(err) {
         console.log(err.message);
       })
-      .pipe(gulp.dest("static/css/critical/"));
+      .pipe(dest("static/css/critical/"));
 
     // Single article.
-    gulp
-      .src("public/articles/a-better-nba-box-score/index.html")
+    src("public/articles/a-better-nba-box-score/index.html")
       .pipe(
         critical({
           base: "/",
@@ -279,11 +269,10 @@ gulp.task("critical", function(cb) {
       .on("error", function(err) {
         console.log(err.message);
       })
-      .pipe(gulp.dest("static/css/critical/articles/"));
+      .pipe(dest("static/css/critical/articles/"));
 
     // Contact page.
-    gulp
-      .src("public/contact/index.html")
+    src("public/contact/index.html")
       .pipe(
         critical({
           base: "/",
@@ -296,11 +285,10 @@ gulp.task("critical", function(cb) {
       .on("error", function(err) {
         console.log(err.message);
       })
-      .pipe(gulp.dest("static/css/critical/contact/"));
+      .pipe(dest("static/css/critical/contact/"));
 
     // About page.
-    gulp
-      .src("public/about/index.html")
+    src("public/about/index.html")
       .pipe(
         critical({
           base: "/",
@@ -313,11 +301,10 @@ gulp.task("critical", function(cb) {
       .on("error", function(err) {
         console.log(err.message);
       })
-      .pipe(gulp.dest("static/css/critical/about/"));
+      .pipe(dest("static/css/critical/about/"));
 
     // Photography index.
-    gulp
-      .src("public/photography/index.html")
+    src("public/photography/index.html")
       .pipe(
         critical({
           base: "/",
@@ -330,11 +317,10 @@ gulp.task("critical", function(cb) {
       .on("error", function(err) {
         console.log(err.message);
       })
-      .pipe(gulp.dest("static/css/critical/photography/"));
+      .pipe(dest("static/css/critical/photography/"));
 
     // Single photography.
-    gulp
-      .src("public/photography/brunswick-wall-flowers/index.html")
+    src("public/photography/brunswick-wall-flowers/index.html")
       .pipe(
         critical({
           base: "/",
@@ -347,24 +333,33 @@ gulp.task("critical", function(cb) {
       .on("error", function(err) {
         console.log(err.message);
       })
-      .pipe(gulp.dest("static/css/critical/single-photography/"));
+      .pipe(dest("static/css/critical/single-photography/"));
   }, 1000);
-});
+};
 
 //
 //  WATCH
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-// Watch asset folder for changes
-gulp.task("watch", ["scss", "js"], function() {
-  gulp.watch("src/scss/**/*", ["scss"]);
-  gulp.watch("src/js/**/*.js", ["js"]);
-  gulp.watch("src/img/uploads/**/*", ["images"]);
-});
+function watchFiles() {
+  watch("src/scss/**/*", compileScss);
+  watch("src/extension/js/main.js", compileJs);
+  watch("src/img/uploads/**/*", images);
+}
 
 //
-//  DEFAULT
+//  EXPORTS
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-// Set watch as default task
-gulp.task("default", ["watch"]);
+exports.compileScss = compileScss;
+exports.compileJs = compileJs;
+exports.images = images;
+exports.compressImages = compressImages;
+exports.criticalCss = criticalCss;
+
+exports.watch = series(compileJs, compileScss, watchFiles);
+exports.default = series(
+  compileJs,
+  compileScss,
+  watchFiles
+);
