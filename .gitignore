@@ -13,6 +13,7 @@ node_modules/
 
 # Hugo files
 public/
+.hugo_build.lock
 
 # ignore packaged files
 *.7z
