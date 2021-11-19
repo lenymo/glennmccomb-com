@@ -202,7 +202,7 @@ function compressImages() {
     .pipe(dest("static/img/uploads"));
 
   // Further LQIP images.
-  return src("!static/img/uploads/**/*-lqip.jpg")
+  return src("static/img/uploads/**/*-lqip.jpg")
     .pipe(
       imagemin([
         imagemin.gifsicle(),
