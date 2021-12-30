@@ -38,4 +38,4 @@ There's an Archetype: Nolly preset used in the video which you can download here
 
 ## YouTube Video
 
-{{< youtube RDGDUTJmcyc >}}
+{{< youtube id="RDGDUTJmcyc" >}}
