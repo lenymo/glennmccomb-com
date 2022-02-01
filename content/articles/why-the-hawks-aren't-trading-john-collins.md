@@ -12,7 +12,7 @@ dark_bg: true
 
 This speculation has only intensified with the Danilo Gallinari signing, since he is generally considered to play the same position as Collins at the 4.
 
-{{< tweet 1329960884232478722 >}}
+{{< tweet id="1329960884232478722" user="ZachLowe_NBA" >}}
 
 I take the interest as an indication that Collins' is a coveted young player.
 

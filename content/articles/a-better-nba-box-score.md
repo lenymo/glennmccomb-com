@@ -28,7 +28,7 @@ Play-by-play data is added to the page below the box score in an iframe and form
 
 In the early stages of development [Kevin Arnovitz](https://twitter.com/kevinarnovitz) tweeted out offering cookies to whoever could resurrect the now defunct Firefox plugin that added Dean Oliver’s [four factors](http://www.basketball-reference.com/about/factors.html) to ESPN’s box scores:
 
-{{< tweet 794010513583677441 >}}
+{{< tweet id="794010513583677441" user="kevinarnovitz" >}}
 
 As an NBA fan who appreciates a well baked cookie, I got to work. As you can see below the extension adds quite a few additional team stats.
 
