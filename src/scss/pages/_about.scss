@@ -58,19 +58,18 @@
 //  LAST FM ARTIST
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-$last-fm-artist-rank-size: 35px;
+$last-fm-artist-rank-size: 41px;
+$last-fm-artist-tile-border-radius: 8px;
 
 .last-fm-artist {
   background-color: $color-gray-e;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 2px;
+  border-radius: $last-fm-artist-tile-border-radius;
   color: $white;
   display: block;
-  // height: 200px;
   margin-bottom: $gutter;
-  // padding: $gutter;
   position: relative;
   transition: all .2s ease;
 
@@ -89,8 +88,9 @@ $last-fm-artist-rank-size: 35px;
 
 .last-fm-artist__rank {
   background: $color-primary;
-  box-shadow: 0 2px 10px rgba($black, 0.2);
-  border-radius: 2px;
+  // box-shadow: 0 2px 10px rgba($black, 0.2);
+  border-radius: 6px;
+  border: 3px solid $white;
   bottom: $gutter * 2;
   font-family: $heading-font-family;
   font-size: rem(16px);
@@ -232,7 +232,7 @@ $last-fm-artist-rank-size: 35px;
   background-color: $color-primary-darkest;
   background-position: 50% 50%;
   background-size: cover;
-  border-radius: 2px;
+  border-radius: $last-fm-artist-tile-border-radius;
   height: 100%;
   left: 0;
   position: absolute;
@@ -248,7 +248,7 @@ $last-fm-artist-rank-size: 35px;
 .last-fm-artist__overlay {
   animation: .4s ease-in-out both last-fm-artist__background-image;
   background-image: linear-gradient(180deg, rgba($color-gray-1, 0), rgba($color-gray-1, .5));
-  border-radius: 2px;
+  border-radius: $last-fm-artist-tile-border-radius;
   bottom: 0;
   height: 100%;
   left: 0;
@@ -292,6 +292,7 @@ $last-fm-artist-rank-size: 35px;
 
     .last-fm-artist__rank {
       background-color: $color-gray-c;
+      border: 3px solid $white;
     }
 
     .last-fm-artist__name {
