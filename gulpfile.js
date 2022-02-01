@@ -6,7 +6,7 @@
 const { dest, src, series, watch } = require("gulp");
 const sass = require("gulp-sass");
 const exec = require("child_process").exec;
-const critical = require('critical');
+const critical = require('critical').stream;
 const autoprefixer = require("gulp-autoprefixer");
 const concat = require("gulp-concat");
 const uglify = require("gulp-uglify");
@@ -237,6 +237,9 @@ function criticalCss(cb) {
     cb(err);
   });
 
+  // How long to wait for Hugo to build.
+  const buildWait = 1000;
+
   // Wait until Hugo has finished building.
   setTimeout(function() {
     // Home page / article listing.
@@ -244,7 +247,6 @@ function criticalCss(cb) {
       .pipe(
         critical({
           base: "/",
-          minify: true,
           css: [main],
           width: 1200,
           height: 900
@@ -260,7 +262,6 @@ function criticalCss(cb) {
       .pipe(
         critical({
           base: "/",
-          minify: true,
           css: [main, article],
           width: 1200,
           height: 600
@@ -276,7 +277,6 @@ function criticalCss(cb) {
       .pipe(
         critical({
           base: "/",
-          minify: true,
           css: [main, contact],
           width: 1200,
           height: 1200
@@ -292,7 +292,6 @@ function criticalCss(cb) {
       .pipe(
         critical({
           base: "/",
-          minify: true,
           css: [main, about],
           width: 1200,
           height: 1200
@@ -308,7 +307,6 @@ function criticalCss(cb) {
       .pipe(
         critical({
           base: "/",
-          minify: true,
           css: [main, photography],
           width: 1200,
           height: 1200
@@ -324,7 +322,6 @@ function criticalCss(cb) {
       .pipe(
         critical({
           base: "/",
-          minify: true,
           css: [main, singlePhotography],
           width: 1200,
           height: 1200
@@ -334,7 +331,7 @@ function criticalCss(cb) {
         console.log(err.message);
       })
       .pipe(dest("static/css/critical/single-photography/"));
-  }, 1000);
+  }, buildWait);
 };
 
 //
