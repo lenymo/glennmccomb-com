@@ -43,7 +43,16 @@ Useful commands:
 
 `$ gulp compressImages` to run additional compression on images.
 
-`$ gulp criticalCss` to generate critical CSS for key pages.
+`$ gulp criticalCss` to generate critical CSS for key pages. In order for this to work locally, version `4.0.1` has been found to work reliably, however this caused deployment issues in Netlify so it is set to `1.3.10` in the repository.
+
+Build error:
+
+```
+static async releaseObject(client, remoteObject) {
+             ^^^^^^^^^^^^^
+SyntaxError: Unexpected identifier
+at createScript (vm.js:56:10)
+```
 
 ### Dependencies
 
