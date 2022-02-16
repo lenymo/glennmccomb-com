@@ -38,22 +38,22 @@ A player silhouette helps communicate the sport and distinguishes one app from t
 {{< row class="no-gutters" >}}
 {{< col class="col__now-apps-brand col__now-apps-brand--ale" >}}
 <h6>A-League</h6>
-### Football Now
+<h3>Football Now</h3>
 {{< img src="/img/uploads/work-nowapp-branding-player-ale.png" alt="A-League" class="app-player app-player--ale" >}}
 {{< /col >}}
 {{< col class="col__now-apps-brand col__now-apps-brand--nrl" >}}
 <h6>NRL</h6>
-### League Now
+<h3>League Now</h3>
 {{< img src="/img/uploads/work-nowapp-branding-player-nrl.png" alt="NRL" class="app-player app-player--nrl" >}}
 {{< /col >}}
 {{< col class="col__now-apps-brand col__now-apps-brand--afl" >}}
 <h6>AFL</h6>
-### Footy Now
+<h3>Footy Now</h3>
 {{< img src="/img/uploads/work-nowapp-branding-player-afl.png" alt="AFL" class="app-player app-player--afl" >}}
 {{< /col >}}
 {{< col class="col__now-apps-brand col__now-apps-brand--sru" >}}
 <h6>Super Rugby</h6>
-### Rugby Now
+<h3>Rugby Now</h3>
 {{< img src="/img/uploads/work-nowapp-branding-player-sru.png" alt="Super Rugby" class="app-player app-player--sru" >}}
 {{< /col >}}
 {{< /row >}}
