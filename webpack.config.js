@@ -9,7 +9,7 @@ const baseConfig = {
     lastfm: "./src/react/lastfm/index.js"
   },
   output: {
-    path: path.resolve(__dirname, "./static/js"),
+    path: path.resolve(__dirname, "./static/react"),
     filename: "[name].js"
   },
   // watch: true,
