@@ -112,9 +112,9 @@ function compileJs() {
     .pipe(dest("data/js"));
 
   // Copy and minify vendor JS files.
-  return src("src/js/vendor/*.js")
+  return src("src/js/vendor/*.js", {read: false})
     .pipe(uglify().on("error", console.log))
-    .pipe(dest("static/js/vendor"));
+    .pipe(dest("./static/js/vendor"));
 }
 
 //
