@@ -68,3 +68,10 @@ related:
     - name: categories
       weight: 130
       includeNewer: true
+
+# To allow HTML in templates, need to enable unsafe mode, as of 0.60.0:
+# https://gohugo.io/news/0.60.0-relnotes/
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
