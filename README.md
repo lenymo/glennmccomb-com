@@ -56,7 +56,7 @@ at createScript (vm.js:56:10)
 
 ### Dependencies
 
-In order to build responsive images using `gulp-responsive`, `libvips` must be installed (which includes `sharp`). On macOS this can be done via `brew install vips`.
+In order to build responsive images using `gulp-responsive`, `libvips` must be installed (which includes `sharp`). On macOS this can be done via `brew install vips`. Last tested working with `vips: stable 8.11.4 (bottled)`.
 
 ## Webpack
 
