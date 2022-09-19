@@ -34,7 +34,7 @@ Better suited to fit in a dense mix. The full-bodied shimmer effect tends to add
 
 There's an Archetype: Nolly preset used in the video which you can download here:
 
-- [Nolly - Omynel Clean](https://presetswap.com/presets/omynel-super-massive-clean).
+- <a href="/presets/Omynel-clean.xml" target="_blank">Nolly - Omynel Clean</a>.
 
 ## YouTube Video
 
