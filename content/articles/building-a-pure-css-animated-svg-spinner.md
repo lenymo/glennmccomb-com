@@ -491,7 +491,7 @@ circle {
 
 ## Notes
 
-For the sake of simplicity I've used element selectors in this article but if you use this code yourself I recommend class name selectors instead. Also, I've omitted browser prefixes, but if you're hand-coding this - as against using [autoprefixer](https://github.com/postcss/autoprefixer) - you should include vendor prefixes.
+For the sake of simplicity I've used element selectors in this article but if you use this code yourself I recommend class name selectors instead. Also, I've omitted browser prefixes, but if you're hand-coding this - as against using [autoprefixer](https://github.com/postcss/autoprefixer)   - you should include vendor prefixes. Use autoprefixer [online version](https://goonlinetools.com/autoprefixer/) that allows you to enter your non-prefixed CSS and gives you a autoprefixed CSS. 
 
 ### Browser support
 
