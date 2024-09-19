@@ -25,71 +25,28 @@ export const LastFM = () => {
   //  REQUEST DATA (DIRECT)
   //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-  // const requestData = (period) => {
-  //   // Clear state so old items disappear.
-  //   setArtists([]);
-
-  //   // My username.
-  //   var username = "elgyn2";
-
-  //   // My API key.
-  //   var apikey = import.meta.env.VITE_LASTFM_API_KEY;
-
-  //   // Build last.fm API url.
-  //   var lastFmUrl =
-  //     "https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=" +
-  //     username +
-  //     "&api_key=" +
-  //     apikey +
-  //     "&format=json&period=" +
-  //     period +
-  //     "&limit=" +
-  //     limit;
-
-  //   fetch(lastFmUrl)
-  //     .then((response) => response.json())
-  //     .then((response) => {
-  //       const {
-  //         topartists: { artist: responseArtist },
-  //       } = response;
-
-  //       // Update state.
-  //       setPeriod(period);
-  //       setArtists(responseArtist);
-  //     });
-  // };
-
-  //
-  //  REQUEST DATA (LAMBDA)
-  //––––––––––––––––––––––––––––––––––––––––––––––––––
-
   const requestData = (period) => {
     // Clear state so old items disappear.
     setArtists([]);
 
-    // Netlify lambda function endpoint.
-    const url = "/.netlify/functions/lastfm";
+    // My username.
+    var username = "elgyn2";
 
-    const data = {
-      limit: limit,
-      period: period,
-    };
+    // My API key.
+    var apikey = import.meta.env.VITE_LASTFM_API_KEY;
 
-    fetch(url, {
-      method: "POST",
-      body: JSON.stringify(data),
-    })
-      // fetch('http://localhost:9000/lastfm', {
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //     'Accept': 'application/json',
-      //     'Access-Control-Allow-Origin' : '*',
-      //     'Access-Control-Allow-Credentials' : true
-      //   },
-      //   mode: 'no-cors',
-      //   method: 'POST',
-      //   body: JSON.stringify(data)
-      // })
+    // Build last.fm API url.
+    var lastFmUrl =
+      "https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=" +
+      username +
+      "&api_key=" +
+      apikey +
+      "&format=json&period=" +
+      period +
+      "&limit=" +
+      limit;
+
+    fetch(lastFmUrl)
       .then((response) => response.json())
       .then((response) => {
         const {

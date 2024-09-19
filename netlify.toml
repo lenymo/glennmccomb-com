@@ -1,4 +1,3 @@
 [build]
-functions = "lambda"
 command = "hugo"
 #  publish = "static"
