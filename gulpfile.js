@@ -4,7 +4,7 @@
 
 // General.
 const { dest, src, series, watch } = require("gulp");
-const sass = require("gulp-sass");
+const sass = require("gulp-sass")(require("sass"));
 const exec = require("child_process").exec;
 const critical = require("critical").stream;
 const autoprefixer = require("gulp-autoprefixer");
