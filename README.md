@@ -21,7 +21,7 @@ Comments are manage via [Disqus](https://disqus.com/) and are lazy-loaded using 
 
 ## Node
 
-Recommended Node version is 20.
+Recommended Node version is 20.17.0.
 
 This needs to be managed in Netlify as an environment variable at `Site Configuration -> Environment variables -> NODE_VERSION`.
 
