@@ -20,9 +20,8 @@
   "license": "ISC",
   "dependencies": {
     "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
+    "babel-loader": "^9.2.1",
     "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
     "del": "^2.2.2",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^3.1.1",
@@ -35,7 +34,7 @@
     "gulp-uglify": "^2.1.2",
     "gulp-util": "^3.0.8",
     "imagemin-mozjpeg": "^7.0.0",
-    "netlify-lambda": "^2.0.15",
+    "netlify-lambda": "^2.0.16",
     "node-fetch": "^2.6.6",
     "prop-types": "^15.7.2",
     "react": "^18.3.1",
@@ -44,6 +43,7 @@
     "yargs": "^10.1.2"
   },
   "devDependencies": {
+    "@babel/preset-react": "^7.24.7",
     "@vitejs/plugin-react": "^4.3.1",
     "critical": "^4.0.1",
     "vite": "^5.4.6"
