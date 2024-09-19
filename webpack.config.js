@@ -5,12 +5,11 @@ var ENV = process.env.NODE_ENV;
 
 const baseConfig = {
   entry: {
-    instagram: "./src/react/instagram/index.js",
-    lastfm: "./src/react/lastfm/index.js"
+    lastfm: "./src/react/lastfm/index.js",
   },
   output: {
     path: path.resolve(__dirname, "./static/react"),
-    filename: "[name].js"
+    filename: "[name].js",
   },
   // watch: true,
   module: {
@@ -19,16 +18,16 @@ const baseConfig = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
-        }
-      }
-    ]
+          loader: "babel-loader",
+        },
+      },
+    ],
   },
   plugins: [
     new webpack.DefinePlugin({
-      "process.env.NODE_ENV": JSON.stringify(ENV)
-    })
-  ]
+      "process.env.NODE_ENV": JSON.stringify(ENV),
+    }),
+  ],
 };
 
 // If the environment is development.
