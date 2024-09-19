@@ -24,3 +24,6 @@ public/
 *.rar
 *.tar
 *.zip
+
+# Env files
+.env

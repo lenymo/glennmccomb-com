@@ -5,9 +5,10 @@
   "main": "index.js",
   "repository": "https://github.com/lenymo/glennmccomb-com",
   "scripts": {
-    "start": "NODE_ENV=development webpack",
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "start:lambda": "netlify-lambda serve src/lambda",
-    "build": "NODE_ENV=production webpack",
     "build:lambda": "netlify-lambda build src/lambda",
     "gulp": "gulp",
     "gulp-images": "gulp images",
@@ -40,11 +41,11 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "sharp": "^0.33.5",
-    "webpack": "^3.12.0",
-    "webpack-stream": "^4.0.3",
     "yargs": "^10.1.2"
   },
   "devDependencies": {
-    "critical": "^4.0.1"
+    "@vitejs/plugin-react": "^4.3.1",
+    "critical": "^4.0.1",
+    "vite": "^5.4.6"
   }
 }

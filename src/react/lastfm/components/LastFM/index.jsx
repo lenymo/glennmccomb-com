@@ -33,7 +33,7 @@ export const LastFM = () => {
   //   var username = "elgyn2";
 
   //   // My API key.
-  //   var apikey = "8a01aea061e32344de520401cc2e2028";
+  //   var apikey = import.meta.env.VITE_LASTFM_API_KEY;
 
   //   // Build last.fm API url.
   //   var lastFmUrl =
