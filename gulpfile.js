@@ -6,7 +6,7 @@
 const { dest, src, series, watch } = require("gulp");
 const sass = require("gulp-sass");
 const exec = require("child_process").exec;
-const critical = require('critical').stream;
+const critical = require("critical").stream;
 const autoprefixer = require("gulp-autoprefixer");
 const concat = require("gulp-concat");
 const uglify = require("gulp-uglify");
@@ -19,9 +19,11 @@ const argv = require("yargs").argv;
 const gulpif = require("gulp-if");
 
 // Images.
-const responsive = require("gulp-responsive");
 const imagemin = require("gulp-imagemin");
 const mozjpeg = require("imagemin-mozjpeg");
+const sharp = require("sharp");
+const fs = require("fs").promises;
+const path = require("path");
 
 // Data.
 const hashCSS = require("./data/css/hash.json");
@@ -41,39 +43,38 @@ function compileScss() {
     argv.dev = false;
   }
 
-  return src("src/scss/**/*.scss")
-    // Initialise source maps for dev.
-    .pipe(gulpif(argv.dev, sourcemaps.init()))
-    .pipe(sass().on("error", sass.logError))
-    .pipe(sass({ outputStyle: "compressed" }))
-    .pipe(gulpif(argv.dev, sourcemaps.write({ includeContent: false })))
-    .pipe(gulpif(argv.dev, sourcemaps.init({ loadMaps: true })))
-    .pipe(
-      autoprefixer({
-        browsers: [
-          "last 5 version",
-          "> 50%",
-          "Firefox < 20",
-          "safari 5",
-          "ie 8-11",
-          "android >=2.1"
-        ]
-      })
-    )
-    .pipe(hash())
-    .pipe(gulpif(argv.dev, sourcemaps.write()))
-    .pipe(dest("static/css"))
+  return (
+    src("src/scss/**/*.scss")
+      // Initialise source maps for dev.
+      .pipe(gulpif(argv.dev, sourcemaps.init()))
+      .pipe(sass().on("error", sass.logError))
+      .pipe(sass({ outputStyle: "compressed" }))
+      .pipe(gulpif(argv.dev, sourcemaps.write({ includeContent: false })))
+      .pipe(gulpif(argv.dev, sourcemaps.init({ loadMaps: true })))
+      .pipe(
+        autoprefixer({
+          browsers: [
+            "last 5 version",
+            "> 50%",
+            "Firefox < 20",
+            "safari 5",
+            "ie 8-11",
+            "android >=2.1",
+          ],
+        })
+      )
+      .pipe(hash())
+      .pipe(gulpif(argv.dev, sourcemaps.write()))
+      .pipe(dest("static/css"))
 
-    // Create a hash map.
-    .pipe(
-      hash.manifest("hash.json"),
-      {
+      // Create a hash map.
+      .pipe(hash.manifest("hash.json"), {
         deleteOld: true,
-        sourceDir: "static/css"
-      }
-    )
-    // Put the map in the data directory.
-    .pipe(dest("data/css"));
+        sourceDir: "static/css",
+      })
+      // Put the map in the data directory.
+      .pipe(dest("data/css"))
+  );
 }
 
 //
@@ -91,7 +92,6 @@ function compileJs() {
   }
 
   src("src/js/*.js")
-
     // Initialise source maps for dev.
     .pipe(gulpif(argv.dev, sourcemaps.init()))
     .pipe(concat("main.min.js"))
@@ -101,13 +101,10 @@ function compileJs() {
     .pipe(dest("static/js"))
 
     // Create a hash map.
-    .pipe(
-      hash.manifest("hash.json"),
-      {
-        deleteOld: true,
-        sourceDir: "static/js"
-      }
-    )
+    .pipe(hash.manifest("hash.json"), {
+      deleteOld: true,
+      sourceDir: "static/js",
+    })
     // Put the map in the data directory.
     .pipe(dest("data/js"));
 
@@ -121,64 +118,109 @@ function compileJs() {
 //  IMAGES
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-function images() {
+async function images() {
   // Clear the /static/img/uploads/ directory.
-  del(["static/img/uploads/**/*"]);
+  await del(["static/img/uploads/**/*"]);
 
   // Copy all images from /src to /static.
-  src("src/img/uploads/**/*.{jpg,jpeg,png,gif}")
-    .pipe(dest("static/img/uploads"));
-  ``;
+  src("src/img/uploads/**/*.{jpg,jpeg,png,gif}").pipe(
+    dest("static/img/uploads")
+  );
 
-  // LQIP (low quality image placeholders) for all JPG and PNGs.
-  src("src/img/uploads/**/*.{jpg,jpeg,png}")
-    .pipe(
-      responsive(
-        {
-          "*": [
-            {
-              width: "100%",
-              quality: 1,
-              format: "jpg",
-              rename: {
-                suffix: "-lqip",
-                extname: ".jpg"
-              }
-            }
-          ]
-        },
-        {
-          silent: true // Don't spam the console
-        }
-      )
-    )
-    .pipe(dest("static/img/uploads"));
+  // Process images
+  const srcDir = "src/img/uploads";
+  const destDir = "static/img/uploads";
 
-  // Featured images.
-  return src("src/img/uploads/featured-image-*.{jpg,jpeg,png}")
-    .pipe(
-      responsive(
-        {
-          "*": [
-            {
-              width: "50%",
-              rename: {
-                suffix: "-sm"
-              },
-              format: "jpg"
-            }
-          ]
-        },
-        {
-          // quality: 100,
-          // compressionLevel: 9,
-          progressive: true,
-          silent: true // Don't spam the console
+  const files = await fs.readdir(srcDir);
+
+  for (const file of files) {
+    if (file.match(/\.(jpg|jpeg|png)$/i)) {
+      const srcPath = path.join(srcDir, file);
+      const destPath = path.join(destDir, file);
+
+      try {
+        // LQIP (low quality image placeholders)
+        await sharp(srcPath)
+          .jpeg({ quality: 1 })
+          .toFile(path.join(destDir, `${path.parse(file).name}-lqip.jpg`));
+
+        // Featured images
+        if (file.startsWith("featured-image-")) {
+          const metadata = await sharp(srcPath).metadata();
+          await sharp(srcPath)
+            .resize({ width: Math.floor(metadata.width / 2) })
+            .jpeg({ progressive: true })
+            .toFile(path.join(destDir, `${path.parse(file).name}-sm.jpg`));
         }
-      )
-    )
-    .pipe(dest("static/img/uploads"));
-};
+      } catch (error) {
+        console.error(`Error processing ${file}:`, error);
+      }
+    }
+  }
+}
+
+//
+//  IMAGES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// function images() {
+//   // Clear the /static/img/uploads/ directory.
+//   del(["static/img/uploads/**/*"]);
+
+//   // Copy all images from /src to /static.
+//   src("src/img/uploads/**/*.{jpg,jpeg,png,gif}")
+//     .pipe(dest("static/img/uploads"));
+//   ``;
+
+//   // LQIP (low quality image placeholders) for all JPG and PNGs.
+//   src("src/img/uploads/**/*.{jpg,jpeg,png}")
+//     .pipe(
+//       responsive(
+//         {
+//           "*": [
+//             {
+//               width: "100%",
+//               quality: 1,
+//               format: "jpg",
+//               rename: {
+//                 suffix: "-lqip",
+//                 extname: ".jpg"
+//               }
+//             }
+//           ]
+//         },
+//         {
+//           silent: true // Don't spam the console
+//         }
+//       )
+//     )
+//     .pipe(dest("static/img/uploads"));
+
+//   // Featured images.
+//   return src("src/img/uploads/featured-image-*.{jpg,jpeg,png}")
+//     .pipe(
+//       responsive(
+//         {
+//           "*": [
+//             {
+//               width: "50%",
+//               rename: {
+//                 suffix: "-sm"
+//               },
+//               format: "jpg"
+//             }
+//           ]
+//         },
+//         {
+//           // quality: 100,
+//           // compressionLevel: 9,
+//           progressive: true,
+//           silent: true // Don't spam the console
+//         }
+//       )
+//     )
+//     .pipe(dest("static/img/uploads"));
+// };
 
 //
 //  COMPRESS IMAGES
@@ -186,17 +228,17 @@ function images() {
 
 function compressImages() {
   // All JPGs and PNGs except those with -lqip suffix.
-    src([
-      "static/img/uploads/**/*.{jpg,jpeg,png}",
-      "!static/img/uploads/**/*-lqip.jpg"
-    ])
+  src([
+    "static/img/uploads/**/*.{jpg,jpeg,png}",
+    "!static/img/uploads/**/*-lqip.jpg",
+  ])
     .pipe(
       imagemin([
         imagemin.gifsicle(),
         // imagemin.optipng({optimizationLevel: 9}),
         imagemin.optipng(),
         imagemin.svgo(),
-        mozjpeg()
+        mozjpeg(),
       ])
     )
     .pipe(dest("static/img/uploads"));
@@ -209,11 +251,11 @@ function compressImages() {
         // imagemin.optipng({optimizationLevel: 9}),
         imagemin.optipng(),
         imagemin.svgo(),
-        mozjpeg({ quality: 2 })
+        mozjpeg({ quality: 2 }),
       ])
     )
     .pipe(dest("static/img/uploads"));
-};
+}
 
 //
 //  CRITICAL CSS
@@ -231,7 +273,7 @@ function criticalCss(cb) {
   var photography = path + hashCSS["photography.css"];
   var singlePhotography = path + hashCSS["single-photography.css"];
 
-  exec("hugo", function(err, stdout, stderr) {
+  exec("hugo", function (err, stdout, stderr) {
     console.log(stdout);
     console.log(stderr);
     cb(err);
@@ -241,7 +283,7 @@ function criticalCss(cb) {
   const buildWait = 1000;
 
   // Wait until Hugo has finished building.
-  setTimeout(function() {
+  setTimeout(function () {
     // Home page / article listing.
     src("public/articles/index.html")
       .pipe(
@@ -249,10 +291,10 @@ function criticalCss(cb) {
           base: "/",
           css: [main],
           width: 1200,
-          height: 900
+          height: 900,
         })
       )
-      .on("error", function(err) {
+      .on("error", function (err) {
         console.log(err.message);
       })
       .pipe(dest("static/css/critical/"));
@@ -264,10 +306,10 @@ function criticalCss(cb) {
           base: "/",
           css: [main, article],
           width: 1200,
-          height: 600
+          height: 600,
         })
       )
-      .on("error", function(err) {
+      .on("error", function (err) {
         console.log(err.message);
       })
       .pipe(dest("static/css/critical/articles/"));
@@ -279,10 +321,10 @@ function criticalCss(cb) {
           base: "/",
           css: [main, contact],
           width: 1200,
-          height: 1200
+          height: 1200,
         })
       )
-      .on("error", function(err) {
+      .on("error", function (err) {
         console.log(err.message);
       })
       .pipe(dest("static/css/critical/contact/"));
@@ -294,10 +336,10 @@ function criticalCss(cb) {
           base: "/",
           css: [main, about],
           width: 1200,
-          height: 1200
+          height: 1200,
         })
       )
-      .on("error", function(err) {
+      .on("error", function (err) {
         console.log(err.message);
       })
       .pipe(dest("static/css/critical/about/"));
@@ -309,10 +351,10 @@ function criticalCss(cb) {
           base: "/",
           css: [main, photography],
           width: 1200,
-          height: 1200
+          height: 1200,
         })
       )
-      .on("error", function(err) {
+      .on("error", function (err) {
         console.log(err.message);
       })
       .pipe(dest("static/css/critical/photography/"));
@@ -324,15 +366,15 @@ function criticalCss(cb) {
           base: "/",
           css: [main, singlePhotography],
           width: 1200,
-          height: 1200
+          height: 1200,
         })
       )
-      .on("error", function(err) {
+      .on("error", function (err) {
         console.log(err.message);
       })
       .pipe(dest("static/css/critical/single-photography/"));
   }, buildWait);
-};
+}
 
 //
 //  WATCH
@@ -355,8 +397,4 @@ exports.compressImages = compressImages;
 exports.criticalCss = criticalCss;
 
 exports.watch = series(compileJs, compileScss, watchFiles);
-exports.default = series(
-  compileJs,
-  compileScss,
-  watchFiles
-);
+exports.default = series(compileJs, compileScss, watchFiles);

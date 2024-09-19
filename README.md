@@ -19,9 +19,15 @@ Webpack is used to:
 
 Comments are manage via [Disqus](https://disqus.com/) and are lazy-loaded using [disqusLoader](https://github.com/osvaldasvalutis/disqusLoader.js/) which you can learn about in [this CSS Tricks article](https://css-tricks.com/lazy-loading-disqus-comments/).
 
+## Node
+
+Recommended Node version is 20.
+
+This needs to be managed in Netlify as an environment variable at `Site Configuration -> Environment variables -> NODE_VERSION`.
+
 ## Hugo
 
-This codebase is currently optimised for Hugo v0.85.0. Hugo is installed and managed by Brew.
+This codebase is currently optimised for Hugo v0.89.0. Hugo is installed and managed by Brew.
 
 Useful commands: 
 
@@ -43,20 +49,11 @@ Useful commands:
 
 `$ gulp compressImages` to run additional compression on images.
 
-`$ gulp criticalCss` to generate critical CSS for key pages. In order for this to work locally, version `4.0.1` has been found to work reliably, however this caused deployment issues in Netlify so it is set to `1.3.10` in the repository.
-
-Build error:
-
-```
-static async releaseObject(client, remoteObject) {
-             ^^^^^^^^^^^^^
-SyntaxError: Unexpected identifier
-at createScript (vm.js:56:10)
-```
+`$ gulp criticalCss` to generate critical CSS for key pages.
 
 ### Dependencies
 
-In order to build responsive images using `gulp-responsive`, `libvips` must be installed (which includes `sharp`). On macOS this can be done via `brew install vips`. Last tested working with `vips: stable 8.11.4 (bottled)`.
+In order to build responsive images using `gulp-responsive`, `libvips` must be installed (which includes `sharp`). On macOS this can be done via `brew install vips`. Last tested working with `vips-8.15.3`.
 
 ## Webpack
 
