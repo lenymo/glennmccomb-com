@@ -40,7 +40,6 @@ export const PeriodNav = ({ requestData, period }) => {
         }
       >
         <a
-          href="javascript:void(0);"
           className="last-fm-period__link"
           onClick={() => requestData(periodNavItem.period)}
         >

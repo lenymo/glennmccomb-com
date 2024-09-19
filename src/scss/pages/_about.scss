@@ -1,9 +1,6 @@
-
-
 //
 //  ABOUT
 //––––––––––––––––––––––––––––––––––––––––––––––––––
-
 
 //
 //  LAST FM PERIOD NAV
@@ -20,10 +17,11 @@
 .last-fm-period__link {
   border-bottom: 3px solid $color-gray-e;
   color: $color-gray-a;
+  cursor: pointer;
   display: block;
   font-size: rem(12px);
-  padding: ($gutter * .25) ($gutter * .5);
-  transition: all .2s ease;
+  padding: ($gutter * 0.25) ($gutter * 0.5);
+  transition: all 0.2s ease;
 }
 
 .last-fm-period__list-item {
@@ -44,7 +42,7 @@
 @include respond-above(sm) {
   .last-fm-period__link {
     font-size: rem(16px);
-    padding: ($gutter * .5) $gutter;
+    padding: ($gutter * 0.5) $gutter;
 
     &:hover {
       border-bottom-color: $color-primary;
@@ -52,7 +50,6 @@
     }
   }
 }
-
 
 //
 //  LAST FM ARTIST
@@ -71,7 +68,7 @@ $last-fm-artist-tile-border-radius: 6px;
   display: block;
   margin-bottom: $gutter * 2;
   position: relative;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
 
   &:hover,
   &:active,
@@ -80,7 +77,6 @@ $last-fm-artist-tile-border-radius: 6px;
     text-decoration: none;
   }
 }
-
 
 //
 //  RANK
@@ -114,7 +110,7 @@ $last-fm-artist-tile-border-radius: 6px;
 .last-fm-artist {
   &.-is-artist {
     .last-fm-artist__rank {
-      animation: .4s ease-in-out both last-fm-artist__rank;
+      animation: 0.4s ease-in-out both last-fm-artist__rank;
     }
   }
 }
@@ -130,7 +126,6 @@ $last-fm-artist-tile-border-radius: 6px;
     color: $white;
   }
 }
-
 
 //
 //  META
@@ -152,7 +147,6 @@ $last-fm-artist-tile-border-radius: 6px;
   }
 }
 
-
 //
 //  NAME
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -166,7 +160,7 @@ $last-fm-artist-tile-border-radius: 6px;
 .last-fm-artist {
   &.-is-artist {
     .last-fm-artist__name {
-      animation: .1s ease-in-out both last-fm-artist__name;
+      animation: 0.1s ease-in-out both last-fm-artist__name;
     }
   }
 }
@@ -181,23 +175,22 @@ $last-fm-artist-tile-border-radius: 6px;
   }
 }
 
-
 //
 //  PLAY COUNT
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .last-fm-artist__play-count {
-  color: rgba($white, .5);
+  color: rgba($white, 0.5);
   font-size: rem(14px);
   font-weight: bold;
-  letter-spacing: .05em;
+  letter-spacing: 0.05em;
   margin-bottom: 0;
 }
 
 .last-fm-artist {
   &.-is-artist {
     .last-fm-artist__play-count {
-      animation: .1s ease-in-out both last-fm-artist__play-count;
+      animation: 0.1s ease-in-out both last-fm-artist__play-count;
     }
   }
 }
@@ -212,7 +205,6 @@ $last-fm-artist-tile-border-radius: 6px;
   }
 }
 
-
 //
 //  IMAGE
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -222,13 +214,12 @@ $last-fm-artist-tile-border-radius: 6px;
   max-width: 100%;
 }
 
-
 //
 //  BACKGROUND IMAGE
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .last-fm-artist__background-image {
-  animation: .4s ease-in-out both last-fm-artist__background-image;
+  animation: 0.4s ease-in-out both last-fm-artist__background-image;
   background-color: $color-primary-darkest;
   background-position: 50% 50%;
   background-size: cover;
@@ -240,14 +231,17 @@ $last-fm-artist-tile-border-radius: 6px;
   width: 100%;
 }
 
-
 //
 //  OVERLAY
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .last-fm-artist__overlay {
-  animation: .4s ease-in-out both last-fm-artist__background-image;
-  background-image: linear-gradient(180deg, rgba($color-gray-1, 0), rgba($color-gray-1, .5));
+  animation: 0.4s ease-in-out both last-fm-artist__background-image;
+  background-image: linear-gradient(
+    180deg,
+    rgba($color-gray-1, 0),
+    rgba($color-gray-1, 0.5)
+  );
   border-radius: $last-fm-artist-tile-border-radius;
   bottom: 0;
   height: 100%;
@@ -270,16 +264,14 @@ $last-fm-artist-tile-border-radius: 6px;
   }
 }
 
-
 //
 //  SQUARE
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .last-fm-artist__square {
   width: 100%;
-  padding-bottom: 100%;;
+  padding-bottom: 100%;
 }
-
 
 //
 //  LAST FM ARTIST PLACEHOLDER
@@ -340,5 +332,3 @@ $last-fm-artist-tile-border-radius: 6px;
     // transform: scale(1);
   }
 }
-
-

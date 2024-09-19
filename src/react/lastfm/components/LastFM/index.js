@@ -5,7 +5,7 @@
 import React, { useEffect, useState } from "react";
 
 import { PeriodNav } from "./PeriodNav";
-import Artist from "./Artist";
+import { Artist } from "./Artist";
 import { ArtistsPlaceholder } from "./ArtistsPlaceholder";
 
 export const LastFM = () => {
@@ -25,38 +25,39 @@ export const LastFM = () => {
   //  REQUEST DATA (DIRECT)
   //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-  // requestData( period ) {
-
+  // const requestData = (period) => {
   //   // Clear state so old items disappear.
-  //   this.setState({
-  //     artists: {}
-  //   });
+  //   setArtists([]);
 
   //   // My username.
-  //   var username = 'elgyn2';
+  //   var username = "elgyn2";
 
   //   // My API key.
-  //   var apikey = '8a01aea061e32344de520401cc2e2028';
-
-  //   // How many records to return.
-  //   var limit = this.limit;
+  //   var apikey = "8a01aea061e32344de520401cc2e2028";
 
   //   // Build last.fm API url.
-  //   var lastFmUrl = 'https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=' + username + '&api_key=' + apikey + '&format=json&period=' + period + '&limit=' + limit;
+  //   var lastFmUrl =
+  //     "https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=" +
+  //     username +
+  //     "&api_key=" +
+  //     apikey +
+  //     "&format=json&period=" +
+  //     period +
+  //     "&limit=" +
+  //     limit;
 
-  //   fetch( lastFmUrl )
-  //   .then(response => response.json())
-  //     .then(response => {
+  //   fetch(lastFmUrl)
+  //     .then((response) => response.json())
+  //     .then((response) => {
+  //       const {
+  //         topartists: { artist: responseArtist },
+  //       } = response;
 
-  //         const {topartists:{artist: responseArtist}} = response;
-
-  //         // Update state.
-  //         this.setState({
-  //           artists: responseArtist,
-  //           period: period
-  //         });
+  //       // Update state.
+  //       setPeriod(period);
+  //       setArtists(responseArtist);
   //     });
-  // }
+  // };
 
   //
   //  REQUEST DATA (LAMBDA)
@@ -64,7 +65,7 @@ export const LastFM = () => {
 
   const requestData = (period) => {
     // Clear state so old items disappear.
-    setArtists({});
+    setArtists([]);
 
     // Netlify lambda function endpoint.
     const url = "/.netlify/functions/lastfm";
@@ -111,8 +112,11 @@ export const LastFM = () => {
         <div className="col-sm-12">
           <h2 className="section__title -has-sub-title">Music</h2>
           <p>
-            Scrobbled on <a href="http://last.fm/user/elgyn2">last.fm</a> since
-            May 2005.
+            Scrobbled on{" "}
+            <a href="http://last.fm/user/elgyn2" target="_blank">
+              last.fm
+            </a>{" "}
+            since May 2005.
           </p>
         </div>
       </div>
