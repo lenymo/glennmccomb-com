@@ -10,7 +10,7 @@ const propTypes = {
   period: PropTypes.string.isRequired,
 };
 
-export const PeriodNav = () => {
+export const PeriodNav = ({ requestData, period }) => {
   const renderPeriodNav = () => {
     const periodNavItems = [
       {
@@ -36,13 +36,13 @@ export const PeriodNav = () => {
         key={periodNavItem.period}
         className={
           "last-fm-period__list-item" +
-          (periodNavItem.period === this.props.period ? " -is-current" : "")
+          (periodNavItem.period === period ? " -is-current" : "")
         }
       >
         <a
           href="javascript:void(0);"
           className="last-fm-period__link"
-          onClick={() => this.props.requestData(periodNavItem.period)}
+          onClick={() => requestData(periodNavItem.period)}
         >
           {periodNavItem.name}
         </a>

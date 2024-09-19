@@ -10,13 +10,12 @@ const propTypes = {
   colClasses: PropTypes.string.isRequired,
 };
 
-export const ArtistsPlaceholder = () => {
+export const ArtistsPlaceholder = ({ limit, colClasses }) => {
   const cols = [];
-  const limit = this.props.limit;
 
   for (var i = 0; i < limit; i++) {
     cols.push(
-      <div key={i} className={this.props.colClasses}>
+      <div key={i} className={colClasses}>
         <div className="last-fm-artist -is-placeholder">
           <div className="last-fm-artist__rank"></div>
           <div className="last-fm-artist__meta">

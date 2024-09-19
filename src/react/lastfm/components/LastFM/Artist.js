@@ -12,14 +12,12 @@ const propTypes = {
   colClasses: PropTypes.string.isRequired,
 };
 
-export const Artist = () => {
+export const Artist = ({ index, artist, colClasses, rank }) => {
   const formatPlayCount = (playCount) => {
     var formattedPlayCount = parseInt(playCount);
     formattedPlayCount = formattedPlayCount.toLocaleString();
     return formattedPlayCount;
   };
-
-  const { index, artist, colClasses, rank } = this.props;
 
   // const artistImage = this.props.image["#text"];
 
