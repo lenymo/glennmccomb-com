@@ -1,46 +1,42 @@
 class Hugo < Formula
   desc "Configurable static site generator"
   homepage "https://gohugo.io/"
-  url "https://github.com/gohugoio/hugo/archive/v0.99.0.tar.gz"
-  sha256 "7ad1d95c3fc9c0f880ba6fe3ff699b54bd38f7b2bda8e3706b087d368b7b77fb"
+  url "https://github.com/gohugoio/hugo.git",
+      tag:      "v0.120.1",
+      revision: "16fb2cae88eb6add7d12e9fbfcf01d8670e60a35"
   license "Apache-2.0"
   head "https://github.com/gohugoio/hugo.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5dc273e11cfec56ba3980e27c4f5dee35ac62bdd934c33033b6d9a219e680063"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "415f5dbf1963c522854b921f2397ee9a5f1d4bc32cdf35110a04063b0ea53d4f"
-    sha256 cellar: :any_skip_relocation, monterey:       "967f159befafb8f45943ddeabbd729f228e72d9ec1c066291950f9e692e382be"
-    sha256 cellar: :any_skip_relocation, big_sur:        "886ec66cddbdff606aff41a4b291085cd45b7d07aa6c9e183eae3294f5bbb11f"
-    sha256 cellar: :any_skip_relocation, catalina:       "239da3566587abf22a572f39c47c18e43b07d0d798fc4aedf6a6a2eacd43c673"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "818bae4236b5a1639f41fb2941a04feeb3fc63c149d59ffa499899673dcc9192"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a02f12a9862875fce89bdd7ae1694ae838e5b0df952930016527e7f2dc19f308"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f80c28b3011a209d7c7713e98cf0d315511ad26bd7d1a49e1b7eb4aaba01a2a3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a0a8a29d2ba8c8148d9f010cfa67b92fa473ee43d7b4d1b5c42e1b793ecced96"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b7beb929ad58612db9c44c3de77d17a06538a830d2d07b16c869faef29a83c63"
+    sha256 cellar: :any_skip_relocation, ventura:        "79d3a289cd2b30cedb057fc2f900097032194e19f2bd66cafc06c0587870ea52"
+    sha256 cellar: :any_skip_relocation, monterey:       "94a9d202d909f42e6eb27525051938988d8f915d937c1114ae85bd0743113e4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9bf79395ab6490c2e756ccbcbb30e3bada8f655e619d7c435f5655e62745e0cc"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "-tags", "extended"
+    ldflags = %W[
+      -s -w
+      -X github.com/gohugoio/hugo/common/hugo.commitHash=#{Utils.git_head}
+      -X github.com/gohugoio/hugo/common/hugo.buildDate=#{time.iso8601}
+      -X github.com/gohugoio/hugo/common/hugo.vendorInfo=brew
+    ]
+    system "go", "build", *std_go_args(ldflags: ldflags), "-tags", "extended"
 
-    # Install bash completion
-    output = Utils.safe_popen_read(bin/"hugo", "completion", "bash")
-    (bash_completion/"hugo").write output
-
-    # Install zsh completion
-    output = Utils.safe_popen_read(bin/"hugo", "completion", "zsh")
-    (zsh_completion/"_hugo").write output
-
-    # Install fish completion
-    output = Utils.safe_popen_read(bin/"hugo", "completion", "fish")
-    (fish_completion/"hugo.fish").write output
-
-    # Build man pages; target dir man/ is hardcoded :(
-    (Pathname.pwd/"man").mkpath
-    system bin/"hugo", "gen", "man"
-    man1.install Dir["man/*.1"]
+    generate_completions_from_executable(bin/"hugo", "completion")
+    system bin/"hugo", "gen", "man", "--dir", man1
   end
 
   test do
     site = testpath/"hops-yeast-malt-water"
-    system "#{bin}/hugo", "new", "site", site
-    assert_predicate testpath/"#{site}/config.toml", :exist?
+    system bin/"hugo", "new", "site", site
+    assert_predicate site/"hugo.toml", :exist?
+
+    assert_match version.to_s, shell_output(bin/"hugo version")
   end
 end
