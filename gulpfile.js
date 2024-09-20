@@ -47,8 +47,12 @@ function compileScss() {
     src("src/scss/**/*.scss")
       // Initialise source maps for dev.
       .pipe(gulpif(argv.dev, sourcemaps.init()))
-      .pipe(sass().on("error", sass.logError))
-      .pipe(sass({ outputStyle: "compressed" }))
+      .pipe(
+        sass
+          // Render synchronously which is x2 faster according to gulp-sass docs
+          .sync({ outputStyle: "compressed" })
+          .on("error", sass.logError)
+      )
       .pipe(gulpif(argv.dev, sourcemaps.write({ includeContent: false })))
       .pipe(gulpif(argv.dev, sourcemaps.init({ loadMaps: true })))
       .pipe(
@@ -81,9 +85,9 @@ function compileScss() {
 //  JAVASCRIPT
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-function compileJs() {
+async function compileJs() {
   // Clear the static/js directory.
-  del(["static/js/**/*", "!static/js/bundle.js"]);
+  await del(["static/js/**/*", "!static/js/bundle.js"]);
 
   // If dev flag doesn't exist.
   if (argv.dev === undefined) {
@@ -107,6 +111,14 @@ function compileJs() {
     })
     // Put the map in the data directory.
     .pipe(dest("data/js"));
+
+  // Ensure vendor directory exists
+  const vendorDir = "static/js/vendor";
+  try {
+    await fs.access(vendorDir);
+  } catch (error) {
+    await fs.mkdir(vendorDir, { recursive: true });
+  }
 
   // Copy and minify vendor JS files.
   return src("src/js/vendor/*.js")
