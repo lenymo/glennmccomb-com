@@ -27,7 +27,7 @@ This needs to be managed in Netlify as an environment variable at `Site Configur
 
 ## Hugo
 
-This codebase is currently optimised for Hugo v0.89.0. Hugo is installed and managed by Brew.
+This codebase is currently optimised for Hugo v0.95.0. Hugo is installed and managed by Brew.
 
 Useful commands: 
 
