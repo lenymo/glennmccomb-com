@@ -27,13 +27,15 @@ This needs to be managed in Netlify as an environment variable at `Site Configur
 
 ## Hugo
 
-This codebase is currently optimised for Hugo v0.95.0. Hugo is installed and managed by Brew.
+This codebase is currently optimised for Hugo v0.99.0. Hugo is installed and managed by Brew.
 
 Useful commands: 
 
 `$ hugo server` to run a local environment. Runs at http://localhost:1313/ by default.
 
 `$ hugo version` to check current Hugo version.
+
+To install the specific version of Hugo which this codebase is optimised for, use `$ brew install hugo.rb`.
 
 ### Upgrading
 
