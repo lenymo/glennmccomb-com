@@ -1,8 +1,9 @@
-
-
 //
 //  BOOTSTRAP 4 GRID
 //––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@use "abstracts/variables" as vars;
+@use "abstracts/media-queries" as media;
 
 @-ms-viewport {
   width: device-width;
@@ -22,33 +23,33 @@ html {
 .container {
   margin-left: auto;
   margin-right: auto;
-  padding-left: $gutter;
-  padding-right: $gutter;
+  padding-left: vars.$gutter;
+  padding-right: vars.$gutter;
   position: relative;
 }
 
-@include respond-above(xs) {
+@include media.respond-above(xs) {
   .container {
     max-width: 100%;
     width: 540px;
   }
 }
 
-@include respond-above(sm) {
+@include media.respond-above(sm) {
   .container {
     max-width: 100%;
     width: 720px;
   }
 }
 
-@include respond-above(md) {
+@include media.respond-above(md) {
   .container {
     max-width: 100%;
     width: 960px;
   }
 }
 
-@include respond-above(lg) {
+@include media.respond-above(lg) {
   .container {
     max-width: 100%;
     width: 1140px;
@@ -58,8 +59,8 @@ html {
 .container-fluid {
   margin-left: auto;
   margin-right: auto;
-  padding-right: $gutter;
-  padding-left: $gutter;
+  padding-right: vars.$gutter;
+  padding-left: vars.$gutter;
   position: relative;
 }
 
@@ -71,8 +72,8 @@ html {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-right: -$gutter;
-  margin-left: -$gutter;
+  margin-right: vars.$gutter * -1;
+  margin-left: vars.$gutter * -1;
 }
 
 .no-gutters {
@@ -80,8 +81,8 @@ html {
   margin-left: 0;
 }
 
-.no-gutters>.col,
-.no-gutters>[class*="col-"] {
+.no-gutters > .col,
+.no-gutters > [class*="col-"] {
   padding-right: 0;
   padding-left: 0;
 }
