@@ -1,9 +1,8 @@
-
-
 //
 //  FOOTER
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
+@use "sass:color";
 
 //
 //  STYLES
@@ -14,7 +13,6 @@
   color: $site-footer-font-color;
   text-align: center;
 }
-
 
 //
 //  FOOTER TOP
@@ -30,7 +28,6 @@
   }
 }
 
-
 //
 //  FOOTER BOTTOM
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -42,13 +39,13 @@
 
 .site-footer_developer-credits {
   color: $small-font-color;
-  margin-bottom: $gutter * .5;
+  margin-bottom: $gutter * 0.5;
 
   a {
-    color: lighten($small-font-color, 20%);
+    color: color.adjust($small-font-color, $lightness: 20%);
   }
 }
 
 .site-footer__copyright {
-  color: rgba($white, .25);
+  color: rgba($white, 0.25);
 }

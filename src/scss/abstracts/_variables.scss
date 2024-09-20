@@ -1,5 +1,3 @@
-
-
 //
 //  VARIABLES
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -14,42 +12,38 @@ $site-header-height-md: 67px;
 $site-header-height-lg: 67px;
 $site-header-height-xl: 67px;
 
-
 //
 //  ABSTRACTS
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-@import 'abstracts/color';
-@import 'abstracts/functions';
-@import 'abstracts/mixins';
-@import 'abstracts/media-queries';
-@import 'abstracts/z-index';
-
+@import "abstracts/color";
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/media-queries";
+@import "abstracts/z-index";
 
 //
 //  BASE
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-@import 'base/typography.vars';
-@import 'base/dark-bg.vars';
-
+@import "base/typography.vars";
+@import "base/dark-bg.vars";
 
 //
 //  LAYOUT
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-@import 'layout/footer.vars';
-@import 'layout/header.vars';
-@import 'layout/section.vars';
-@import 'layout/site-nav.vars';
-@import 'layout/site-nav-children.vars';
-
+@import "layout/footer.vars";
+@import "layout/header.vars";
+@import "layout/section.vars";
+@import "layout/site-nav.vars";
+@import "layout/site-nav-children.vars";
 
 //
 //  COMPONENTS
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-@import 'components/buttons.vars';
-@import 'components/forms.vars';
-@import 'components/page-header.vars';
-@import 'components/page-header-icon.vars';
+@import "components/buttons.vars";
+@import "components/forms.vars";
+@import "components/page-header.vars";
+@import "components/page-header-icon.vars";

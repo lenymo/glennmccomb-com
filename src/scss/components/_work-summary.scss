@@ -1,9 +1,6 @@
-
-
 //
 //  WORK SUMMARY
 //––––––––––––––––––––––––––––––––––––––––––––––––––
-
 
 //
 //  LAYOUT
@@ -32,13 +29,11 @@
   }
 }
 
-
 //
 //  REVERSE DIRECTIONS
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .section__work-summary {
-
   // Remove padding bottom.
   // &:nth-child(1n+2) {
   //   padding-bottom: 0;
@@ -61,7 +56,7 @@
 
 @include respond-above(sm) {
   .section__work-summary {
-    &:nth-child(2n+3) {
+    &:nth-child(2n + 3) {
       .col__work-summary--image {
         order: 2;
       }
@@ -81,7 +76,6 @@
   }
 }
 
-
 //
 //  IMAGE
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -95,7 +89,6 @@
   }
 }
 
-
 //
 //  DATE
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -104,11 +97,9 @@
   color: $small-font-color;
   font-size: $small-font-size;
   font-weight: bold;
-  margin-bottom: $gutter * .25;
+  margin-bottom: $gutter * 0.25;
   text-transform: uppercase;
 }
-
-
 
 //
 //  LINK
@@ -125,13 +116,12 @@
   }
 }
 
-
 //
 //  TITLE
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .work-summary__title {
-  margin-bottom: $gutter * .5;
+  margin-bottom: $gutter * 0.5;
   font-size: $h1-font-size-sm;
 }
 
@@ -141,8 +131,6 @@
   }
 }
 
-
-
 //
 //  SUMMARY
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -150,7 +138,6 @@
 .work-summary__excerpt {
   color: $base-font-color;
 }
-
 
 //
 //  BUTTON

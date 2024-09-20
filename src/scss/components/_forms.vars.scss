@@ -1,9 +1,8 @@
-
-
 //
 //  FORMS VARS
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
+@use "sass:color";
 
 //
 //  FIELD
@@ -30,8 +29,10 @@ $form-field-border-width: 2px;
 $form-field-border-color: $color-gray-d;
 $form-field-border-color-focus: $color-gray-8;
 $form-field-border-color-error: $color-danger;
-$form-field-border-color-error-focus: darken($form-field-border-color-error, 15%);
-
+$form-field-border-color-error-focus: color.adjust(
+  $form-field-border-color-error,
+  $lightness: -15%
+);
 
 //
 //  LABEL / SMART PLACEHOLDER
@@ -41,8 +42,14 @@ $form-field-placeholder-font-color: $color-gray-7;
 
 $form-field-placeholder-border-radius: 2px;
 
-$form-field-placeholder-background-color: darken($form-field-border-color, 10%);
-$form-field-placeholder-background-color-focus: darken($form-field-border-color-focus, 10%);
+$form-field-placeholder-background-color: color.adjust(
+  $form-field-border-color,
+  $lightness: -10%
+);
+$form-field-placeholder-background-color-focus: color.adjust(
+  $form-field-border-color-focus,
+  $lightness: -10%
+);
 $form-field-placeholder-background-color-error: $form-field-border-color-error;
 $form-field-placeholder-background-color-error-focus: $form-field-border-color-error-focus;
 
@@ -53,10 +60,10 @@ $form-field-placeholder-color-error-focus: $white;
 
 // Box shadow.
 $form-field-box-shadow: none;
-$form-field-box-shadow-focus: 0 5px 20px rgba($form-field-border-color, .2);
+$form-field-box-shadow-focus: 0 5px 20px rgba($form-field-border-color, 0.2);
 $form-field-box-shadow-error: none;
-$form-field-box-shadow-error-focus: 0 5px 20px rgba($form-field-border-color-error, .2);
-
+$form-field-box-shadow-error-focus: 0 5px 20px
+  rgba($form-field-border-color-error, 0.2);
 
 //
 //  CHECK VARIABLES
@@ -67,13 +74,12 @@ $form-check-border-color: $form-field-border-color;
 $form-check-border-color-focus: $form-field-border-color-focus;
 $form-check-checked-color: $color-gray-8;
 
-
 //
 //  DARK BG VARIABLES
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 // Field color.
-$dark-bg-form-field-background-color: rgba($black, .5);
+$dark-bg-form-field-background-color: rgba($black, 0.5);
 $dark-bg-form-field-font-color: $color-gray-f;
 
 // Border colors.
@@ -82,8 +88,14 @@ $dark-bg-form-field-border-color-focus: $color-gray-a;
 
 // Placeholder.
 $dark-bg-form-field-placeholder-font-color: $color-gray-7;
-$dark-bg-form-field-placeholder-background-color: darken($dark-bg-form-field-border-color, 15%);
-$dark-bg-form-field-placeholder-background-color-focus: darken($dark-bg-form-field-border-color-focus, 15%);
+$dark-bg-form-field-placeholder-background-color: color.adjust(
+  $dark-bg-form-field-border-color,
+  $lightness: -15%
+);
+$dark-bg-form-field-placeholder-background-color-focus: color.adjust(
+  $dark-bg-form-field-border-color-focus,
+  $lightness: -15%
+);
 
 $dark-bg-form-field-placeholder-color: $white;
 $dark-bg-form-field-placeholder-color-focus: $dark-bg-form-field-placeholder-color;

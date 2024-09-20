@@ -1,5 +1,3 @@
-
-
 //
 //  ARTICLE SUMMARY
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -13,7 +11,6 @@
     margin-bottom: $gutter * 2;
   }
 }
-
 
 //
 //  LINK
@@ -40,7 +37,6 @@
   }
 }
 
-
 //
 //  FEATURED IMAGE
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -65,7 +61,6 @@
   }
 }
 
-
 //
 //  CONTENT WRAPPER
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -76,14 +71,13 @@
   position: relative;
 }
 
-
 //
 //  DATE
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .article-summary__date {
   background: $white;
-  box-shadow: 0 0 0 5px rgba($black, .05);
+  box-shadow: 0 0 0 5px rgba($black, 0.05);
   display: block;
   height: 55px;
   position: absolute;
@@ -105,8 +99,6 @@
   }
 }
 
-
-
 //
 //  TITLE
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -114,10 +106,9 @@
 .article-summary__title {
   color: $link-font-color;
   line-height: 1.2;
-  margin-bottom: $gutter / 2;
+  margin-bottom: calc($gutter / 2);
   text-decoration: none;
 }
-
 
 //
 //  CATEGORIES
@@ -133,23 +124,23 @@
 }
 
 .article-summary__category {
-  background: rgba($black, .4);
+  background: rgba($black, 0.4);
   border-radius: 1000px;
-  color: rgba($white, .6);
+  color: rgba($white, 0.6);
   display: inline-block;
   font-size: rem(9px);
   font-weight: bold;
-  letter-spacing: .05em;
+  letter-spacing: 0.05em;
   line-height: 1.1;
-  padding: ($gutter / 3) ($gutter / 2);
+  padding: calc($gutter / 3) calc($gutter / 2);
   text-transform: uppercase;
   vertical-align: top;
 }
 
 @include respond-above(sm) {
   .article-summary__categories {
-    opacity: .5;
-    transition: all .4s ease;
+    opacity: 0.5;
+    transition: all 0.4s ease;
   }
 
   .article-summary__link {
@@ -164,7 +155,6 @@
     font-size: rem(10px);
   }
 }
-
 
 //
 //  EXCERPT
@@ -183,20 +173,19 @@
   }
 }
 
-
 //
 //  CUSTOM PADDING BETWEEN SM AND MD
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 @include respond-between(sm, md) {
   .row__articles-summary {
-    margin-left: - ($gutter * 1.5) / 2;
-    margin-right: - ($gutter * 1.5) / 2;
+    margin-left: calc(($gutter * 1.5) / 2) * -1;
+    margin-right: calc(($gutter * 1.5) / 2) * -1;
   }
 
   .col__article-summary {
-    padding-left: ($gutter * 1.5) / 2;
-    padding-right: ($gutter * 1.5) / 2;
+    padding-left: calc(($gutter * 1.5) / 2);
+    padding-right: calc(($gutter * 1.5) / 2);
   }
 
   .article-summary {

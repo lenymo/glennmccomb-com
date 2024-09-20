@@ -1,14 +1,16 @@
-
-
 //
 //  CATEGORY - DEVELOPMENT
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
+@use "sass:color";
+
 $page-header-bg-development: #233624;
 
 $page-header-development-icon-color: #5dc562;
-$page-header-development-icon-shadow: darken($page-header-development-icon-color, 25%);
-
+$page-header-development-icon-shadow: color.adjust(
+  $page-header-development-icon-color,
+  $lightness: -25%
+);
 
 //
 //  PAGE HEADER
@@ -17,7 +19,7 @@ $page-header-development-icon-shadow: darken($page-header-development-icon-color
 .category-development {
   .section__page-header {
     background-color: $page-header-bg-development;
-    background-image: url('/img/uploads/featured-image-category-development.png');
+    background-image: url("/img/uploads/featured-image-category-development.png");
     background-size: cover;
   }
 
@@ -31,15 +33,15 @@ $page-header-development-icon-shadow: darken($page-header-development-icon-color
     font-size: rem(40px);
     font-weight: bold;
     left: 50%;
-    letter-spacing: -.075em;
+    letter-spacing: -0.075em;
     line-height: 1;
     position: absolute;
     text-align: center;
     text-shadow: 0 4px 0 $page-header-development-icon-shadow;
     text-shadow: 0 1px 0 $page-header-development-icon-shadow,
-                 0 2px 0 $page-header-development-icon-shadow,
-                 0 3px 0 $page-header-development-icon-shadow,
-                 0 4px 0 $page-header-development-icon-shadow;
+      0 2px 0 $page-header-development-icon-shadow,
+      0 3px 0 $page-header-development-icon-shadow,
+      0 4px 0 $page-header-development-icon-shadow;
     top: 50%;
     transform: translateY(-50%) translateX(-50%);
   }

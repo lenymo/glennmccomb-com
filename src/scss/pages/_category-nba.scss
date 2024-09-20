@@ -1,15 +1,17 @@
-
-
 //
 //  CATEGORY - NBA
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
+@use "sass:color";
+
 // $page-header-bg-nba: #a93f25; // Spalding orange.
 $page-header-bg-nba: #802e1a; // Spalding orange (darker).
 
-$page-header-nba-icon-color: lighten($page-header-bg-nba, 25%);
-$page-header-nba-icon-shadow: darken($page-header-nba-icon-color, 35%);
-
+$page-header-nba-icon-color: color.adjust($page-header-bg-nba, $lightness: 25%);
+$page-header-nba-icon-shadow: color.adjust(
+  $page-header-nba-icon-color,
+  $lightness: -35%
+);
 
 //
 //  PAGE HEADER
@@ -18,7 +20,7 @@ $page-header-nba-icon-shadow: darken($page-header-nba-icon-color, 35%);
 .category-nba {
   .section__page-header {
     background-color: $page-header-bg-nba;
-    background-image: url('/img/uploads/featured-image-category-nba.png');
+    background-image: url("/img/uploads/featured-image-category-nba.png");
   }
 
   .page-header__icon {
@@ -40,13 +42,12 @@ $page-header-nba-icon-shadow: darken($page-header-nba-icon-color, 35%);
   }
 }
 
-
 //
 //  BASKETBALL ICON
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .category-nba {
-  .page-header__icon {    
+  .page-header__icon {
     background: $page-header-bg-nba;
 
     .basketball {
@@ -82,7 +83,6 @@ $page-header-nba-icon-shadow: darken($page-header-nba-icon-color, 35%);
     }
   }
 }
-
 
 //
 //  BASKETBALL COURT ICON

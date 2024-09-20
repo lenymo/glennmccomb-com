@@ -1,9 +1,8 @@
-
-
 //
 //  SITE NAV
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
+@use "sass:color";
 
 //
 //  NAV
@@ -25,7 +24,6 @@
   }
 }
 
-
 //
 //  ITEM
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -46,7 +44,6 @@
   }
 }
 
-
 //
 //  LINK
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -56,7 +53,7 @@
   color: $site-nav-item-font-color;
   display: block;
   padding: $site-nav-item-padding;
-  transition: all .15s ease;
+  transition: all 0.15s ease;
 }
 
 // Current item.
@@ -80,7 +77,6 @@
   }
 }
 
-
 //
 //  ACTIVE INDICATOR
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -90,13 +86,13 @@
   .site-nav__link {
     &::before {
       background-color: transparent;
-      content: '';
+      content: "";
       height: 0;
       left: 0;
       margin-top: -5px;
       position: absolute;
       top: 0;
-      transition: all .333s ease;
+      transition: all 0.333s ease;
       width: 100%;
     }
   }
@@ -109,7 +105,7 @@
         color: $site-nav-item-font-color-hover;
 
         &::before {
-          background-color: lighten($color-primary, 20%);
+          background-color: color.adjust($color-primary, $lightness: 20%);
           box-shadow: 0 0 20px rgba($black, 0.333);
           height: 5px;
         }
@@ -123,11 +119,10 @@
       .site-nav__link {
         &::before {
           background-color: $site-nav-item-current-border-color;
-          // box-shadow: 0 0 5px lighten($site-nav-item-current-border-color, 5%);
-          box-shadow: 0 0 20px rgba($white, .5);
-          box-shadow: 0 0 25px rgba($white, .5), 0 0 2px rgba($black, 0.75);
+          box-shadow: 0 0 20px rgba($white, 0.5);
+          box-shadow: 0 0 25px rgba($white, 0.5), 0 0 2px rgba($black, 0.75);
           height: 5px;
-          transition: all .1s ease;
+          transition: all 0.1s ease;
         }
       }
     }
@@ -137,8 +132,8 @@
       &.-is-current {
         .site-nav__link {
           &::before {
-            box-shadow: 0 0 30px rgba($white, .75);
-            box-shadow: 0 0 30px rgba($white, .75), 0 0 2px rgba($black, 1);
+            box-shadow: 0 0 30px rgba($white, 0.75);
+            box-shadow: 0 0 30px rgba($white, 0.75), 0 0 2px rgba($black, 1);
             transform: scaleX(1.025) scaleY(1.1);
           }
         }
@@ -146,7 +141,6 @@
     }
   }
 }
-
 
 //
 //  LINK CARET
@@ -167,7 +161,6 @@
     width: 0;
   }
 }
-
 
 //
 //  TRANSPARENT HEADER

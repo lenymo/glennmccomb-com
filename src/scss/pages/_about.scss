@@ -2,6 +2,8 @@
 //  ABOUT
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
+@use "sass:color";
+
 //
 //  LAST FM PERIOD NAV
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -309,7 +311,7 @@ $last-fm-artist-tile-border-radius: 6px;
     &:nth-child(#{$i}) {
       .last-fm-artist {
         &.-is-placeholder {
-          animation-delay: $i * (1s / 12);
+          animation-delay: $i * calc(1s / 12);
         }
       }
     }
@@ -323,7 +325,7 @@ $last-fm-artist-tile-border-radius: 6px;
   }
 
   25% {
-    background: darken($color-gray-e, 7.5%);
+    background: color.adjust($color-gray-e, $lightness: -7.5%);
     // transform: scale(1.015);
   }
 

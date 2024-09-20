@@ -1,16 +1,16 @@
-
-
 //
 //  BUTTONS VARS
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
+@use "sass:color";
+
 // Primary color.
 $button-bg: $color-primary;
-$button-bg-hover: lighten($color-primary, 5%);
+$button-bg-hover: color.adjust($color-primary, $lightness: 5%);
 
 // Secondary background color.
 $button-bg-secondary: $color-secondary;
-$button-bg-secondary-hover: lighten($color-secondary, 5%);
+$button-bg-secondary-hover: color.adjust($color-secondary, $lightness: 5%);
 
 $button-font-color: $white;
 $button-font-color-hover: $white;

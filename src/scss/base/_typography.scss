@@ -1,9 +1,6 @@
-
-
 //
 //  TYPOGRAPHY
 //––––––––––––––––––––––––––––––––––––––––––––––––––
-
 
 //
 //  STYLES
@@ -18,7 +15,6 @@ body {
   font-family: $base-font-family;
   line-height: $base-line-height;
 }
-
 
 //
 //  HEADINGS
@@ -38,12 +34,12 @@ h6 {
   margin-bottom: $heading-margin-bottom-xs;
 
   // Text transform.
-  @if $heading-text-transform != 'none' {
+  @if $heading-text-transform != "none" {
     text-transform: $heading-text-transform;
   }
 
   // Letter spacing.
-  @if $heading-letter-spacing != 'normal' {
+  @if $heading-letter-spacing != "normal" {
     letter-spacing: $heading-letter-spacing;
   }
 
@@ -119,10 +115,9 @@ h5 {
 h6 {
   font-family: $h6-font-family;
   font-size: $h6-font-size;
-  letter-spacing: .05em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
-
 
 //
 //  LINKS
@@ -151,7 +146,6 @@ a {
   }
 }
 
-
 //
 //  PARAGRAPH
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -172,7 +166,6 @@ p {
   }
 }
 
-
 //
 //  LEAD
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -192,7 +185,6 @@ p {
   }
 }
 
-
 //
 //  BLOCKQUOTE
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -207,7 +199,7 @@ blockquote {
 
   &:before,
   &:after {
-    content: '“';
+    content: "“";
     color: $color-gray-c;
     display: block;
     font-family: $base-font-family;
@@ -218,12 +210,12 @@ blockquote {
   }
 
   &:before {
-    line-height: .85;
+    line-height: 0.85;
   }
 
   &:after {
     bottom: 0;
-    content: '”';
+    content: "”";
     display: none;
     left: auto;
     line-height: 1px;
@@ -296,7 +288,6 @@ blockquote {
   }
 }
 
-
 //
 //  SMALL
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -323,7 +314,6 @@ p {
   }
 }
 
-
 //
 //  LISTS
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -333,7 +323,6 @@ ol {
   margin: 0;
   padding: 0;
 }
-
 
 //
 //  HR
@@ -345,7 +334,6 @@ hr {
   margin-bottom: $gutter * 2;
   margin-top: $gutter * 2;
 }
-
 
 //
 //  SITE CONTENT

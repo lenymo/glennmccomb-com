@@ -1,18 +1,16 @@
-
-
 //
 //  WORK
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 // Variables.
-@import 'abstracts/variables';
+@import "abstracts/variables";
 
 // Components.
-@import 'components/work-summary';
+@import "components/work-summary";
 
 // Shortcodes.
-@import 'shortcodes/work-body-full-bleed';
+@import "shortcodes/work-body-full-bleed";
 
 // Pages.
-@import 'pages/work';
-@import 'pages/single-work';
+@import "pages/work";
+@import "pages/single-work";

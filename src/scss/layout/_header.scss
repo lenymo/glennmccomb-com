@@ -1,9 +1,8 @@
-
-
 //
 //  HEADER
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
+@use "sass:color";
 
 //
 //  STYLES
@@ -11,7 +10,11 @@
 
 .site-header {
   background-color: $site-header-bg-color;
-  background: linear-gradient(0, $color-primary, darken($color-primary, 2.5));
+  background: linear-gradient(
+    0,
+    $color-primary,
+    color.adjust($color-primary, $lightness: -2.5%)
+  );
   left: 0;
   padding: $site-header-padding;
   position: absolute;
@@ -27,14 +30,13 @@
   }
 }
 
-
 //
 //  TRANSPARENT SITE HEADER
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .-has-transparent-site-header {
   .site-header {
-    background: rgba($black, .15);
+    background: rgba($black, 0.15);
     border-bottom-color: transparent;
     border-top-color: $color-gray-1;
 
@@ -61,11 +63,10 @@
 @include respond-below(sm) {
   .-has-transparent-site-header {
     .site-header {
-      transition: background .2s ease;
+      transition: background 0.2s ease;
     }
   }
 }
-
 
 //
 //  TRANSPARENT SITE HEADER (MENU OPEN)

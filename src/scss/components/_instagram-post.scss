@@ -2,8 +2,9 @@
 //  INSTAGRAM SECTION
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-$instagram-grid-padding: $gutter;
+@use "sass:color";
 
+$instagram-grid-padding: $gutter;
 
 //
 //  INSTAGRAM SECTION
@@ -14,7 +15,6 @@ $instagram-grid-padding: $gutter;
   padding-bottom: $instagram-grid-padding;
   padding-top: $instagram-grid-padding;
 }
-
 
 //
 //  INSTAGRAM ROW
@@ -41,19 +41,17 @@ $instagram-grid-padding: $gutter;
   }
 }
 
-
 //
 //  INSTAGRAM POST
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 @include respond-above(sm) {
   .instagram-post {
-    box-shadow: 0 2px 10px rgba($black, .1);
+    box-shadow: 0 2px 10px rgba($black, 0.1);
     display: inline-block;
     margin-bottom: $instagram-grid-padding;
   }
 }
-
 
 //
 //  INSTAGRAM IMAGE
@@ -65,7 +63,6 @@ $instagram-grid-padding: $gutter;
   width: 100%;
 }
 
-
 //
 //  INSTAGRAM META
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -75,7 +72,6 @@ $instagram-grid-padding: $gutter;
   padding: $gutter;
 }
 
-
 //
 //  INSTAGRAM CAPTION
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -83,25 +79,23 @@ $instagram-grid-padding: $gutter;
 .instagram-post__caption {
   font-size: rem(16px);
   line-height: 1.4;
-  margin-bottom: $gutter * .25;
+  margin-bottom: $gutter * 0.25;
 }
 
 .instagram-post__meta {
   .instagram-post__caption {
-    color: rgba($white, .5);
+    color: rgba($white, 0.5);
   }
 }
-
 
 //
 //  INSTAGRAM LIKES
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .instagram-post__likes {
-  color: rgba($white, .2);
+  color: rgba($white, 0.2);
   display: block;
 }
-
 
 //
 //  LOADING
@@ -111,13 +105,12 @@ $instagram-grid-padding: $gutter;
   width: 100%;
 }
 
-
 //
 //  IMAGE PLACEHOLDER
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .instagram-post__image--placeholder {
-  background-color: darken($color-gray-2, 3%);
+  background-color: color.adjust($color-gray-2, $lightness: -3%);
   padding-bottom: 100%;
 }
 
@@ -126,7 +119,7 @@ $instagram-grid-padding: $gutter;
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .instagram-post__caption--placeholder {
-  background-color: darken($color-gray-2, 3%);
+  background-color: color.adjust($color-gray-2, $lightness: -3%);
   width: 80%;
 }
 
@@ -135,6 +128,6 @@ $instagram-grid-padding: $gutter;
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 .instagram-post__likes--placeholder {
-  background-color: darken($color-gray-2, 3%);
+  background-color: color.adjust($color-gray-2, $lightness: -3%);
   width: 30px;
 }

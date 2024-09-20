@@ -1,9 +1,8 @@
-
-
 //
 //  COLOR
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
+@use "sass:color";
 
 // Basics.
 $black: #000;
@@ -11,7 +10,6 @@ $white: #fff;
 $color-blue: #284c71;
 
 $color-danger: #ff851b;
-
 
 // Grays.
 // $gray-mixer: #284c71;
@@ -32,7 +30,6 @@ $color-gray-3: mix(#333, $gray-mixer, 85%);
 $color-gray-2: mix(#222, $gray-mixer, 85%);
 $color-gray-1: mix(#111, $gray-mixer, 85%);
 
-
 //
 //  PRIMARY
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -40,12 +37,11 @@ $color-gray-1: mix(#111, $gray-mixer, 85%);
 $color-primary: #2f3d4c;
 // $color-primary-darker: #212f3d;
 // $color-primary-lighter: #23609e;
-$color-primary-darker: darken($color-primary, 5%);
-$color-primary-darkest: darken($color-primary, 10%);
+$color-primary-darker: color.adjust($color-primary, $lightness: -5%);
+$color-primary-darkest: color.adjust($color-primary, $lightness: -10%);
 
-$color-primary-lighter: lighten($color-primary, 5%);
-$color-primary-lightest: lighten($color-primary, 10%);
-
+$color-primary-lighter: color.adjust($color-primary, $lightness: 5%);
+$color-primary-lightest: color.adjust($color-primary, $lightness: 10%);
 
 //
 //  SECONDARY
