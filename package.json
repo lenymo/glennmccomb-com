@@ -31,7 +31,6 @@
     "gulp-uglify": "^2.1.2",
     "gulp-util": "^3.0.8",
     "imagemin-mozjpeg": "^7.0.0",
-    "netlify-lambda": "^2.0.16",
     "node-fetch": "^2.6.6",
     "prop-types": "^15.7.2",
     "react": "^18.3.1",
