@@ -2,7 +2,7 @@
 
 ## Tech stack
 
-Built using [Hugo](https://gohugo.io/). Content is managed via [Netlify CMS](https://www.netlifycms.org/). Hosted on [Netlify](https://www.netlify.com/).
+Built using [Hugo](https://gohugo.io/). Hosted on [Netlify](https://www.netlify.com/).
 
 Gulp is used to:
 
