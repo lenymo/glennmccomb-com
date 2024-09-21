@@ -2,7 +2,7 @@
 //  PARALLAX HOVER
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-var ParallaxHover = (function() {
+var ParallaxHover = (function () {
   //
   //  CONFIG
   //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -16,10 +16,10 @@ var ParallaxHover = (function() {
     mouseOverToggleClass: "-is-being-hovered",
     selectors: {
       wrapper: ".parallax-hover",
-      featuredImage: ".parallax-hover__featured-image"
+      featuredImage: ".parallax-hover__featured-image",
     },
     attributes: {
-      scale: "parallax-hover-scale"
+      scale: "parallax-hover-scale",
     },
 
     // Phography specific settings.
@@ -27,8 +27,8 @@ var ParallaxHover = (function() {
       transformScale: 1.03,
       transformModX: 2,
       transformModY: 1.5,
-      className: "photography-summary__wrapper"
-    }
+      className: "photography-summary__wrapper",
+    },
   };
 
   //
@@ -204,7 +204,7 @@ var ParallaxHover = (function() {
     var rectMouseYPercent;
 
     // Get Y scroll position.
-    scrollPosY = document.documentElement.scrollTop;
+    scrollPosY = window.scrollY;
 
     // Get the article summary's position from the top of the viewport.
     rectOffsetY = scrollPosY + rect.top;
@@ -267,7 +267,7 @@ var ParallaxHover = (function() {
     // Find the featured image.
     wrapperImage = wrapper.querySelector(config.selectors.featuredImage);
 
-    // If there's an wrapper image.
+    // If there's a wrapper image.
     if (wrapperImage) {
       // Build the image transform CSS.
       imageTransformCSS = "scale(1.025) ";
@@ -289,6 +289,6 @@ var ParallaxHover = (function() {
   }
 
   return {
-    init: init
+    init: init,
   };
 })();
