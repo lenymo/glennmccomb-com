@@ -2,7 +2,7 @@
 //  TABLE OF CONTENTS
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-var ArticleSummaryHover = (function() {
+export const ArticleSummaryHover = (function () {
   //
   //  CONFIG
   //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -16,8 +16,8 @@ var ArticleSummaryHover = (function() {
     mouseOverToggleClass: "-is-being-hovered",
     selectors: {
       articleSummary: ".article-summary",
-      featuredImage: ".article-summary__featured-image"
-    }
+      featuredImage: ".article-summary__featured-image",
+    },
   };
 
   //
@@ -266,6 +266,6 @@ var ArticleSummaryHover = (function() {
   }
 
   return {
-    init: init
+    init: init,
   };
 })();

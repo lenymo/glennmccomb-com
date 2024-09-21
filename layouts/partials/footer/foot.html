@@ -8,7 +8,7 @@
 {{ partial "footer/foot-styles" . }}
 
 <!-- JavaScript includes go here -->
-<script type="text/javascript" src="{{ .Site.BaseURL }}js/{{ index .Site.Data.js.hash "main.min.js" }}"></script>
+<script type="text/javascript" src="{{ .Site.BaseURL }}js/{{ index .Site.Data.js.hash `main.min.js` }}"></script>
 
 <!--
 //
@@ -40,7 +40,7 @@
         var disqus = document.querySelector('.disqus');
 
         // Toggle loading placeholder.
-        if ( placeholder.classList ) {
+        if (placeholder.classList) {
           placeholder.classList.add('-is-hidden'); // IE 10+
           disqus.classList.add('-has-loaded');
 

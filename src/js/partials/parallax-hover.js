@@ -2,7 +2,9 @@
 //  PARALLAX HOVER
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-var ParallaxHover = (function () {
+import { Helpers } from "./helpers";
+
+export const ParallaxHover = (function () {
   //
   //  CONFIG
   //––––––––––––––––––––––––––––––––––––––––––––––––––

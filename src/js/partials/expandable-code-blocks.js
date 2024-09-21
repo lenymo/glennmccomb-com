@@ -1,18 +1,13 @@
-
-
 //
 //  EXPANDABLE CODE BLOCKS
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-var ExpandableCodeBlocks = (function() {
-
-
+export const ExpandableCodeBlocks = (function () {
   //
   //  EXPANDABLE CODE BLOCKS
   //––––––––––––––––––––––––––––––––––––––––––––––––––
 
   function expandableCodeBlocks() {
-
     var expandClass;
 
     var highlights;
@@ -21,38 +16,35 @@ var ExpandableCodeBlocks = (function() {
     var code;
     var codeWidth;
 
-    expandClass = '-is-expandable';
+    expandClass = "-is-expandable";
 
     // Get all highlight elements.
-    highlights = document.querySelectorAll('.highlight');
+    highlights = document.querySelectorAll(".highlight");
 
     // If there are highlights.
-    if ( highlights ) {
-
+    if (highlights) {
       // Loop through all highlights.
-      for ( var i = 0; i < highlights.length; i++ ) {
-
+      for (var i = 0; i < highlights.length; i++) {
         // Get the width of the highlight.
         highlight = highlights[i];
 
         highlightWidth = highlight.offsetWidth;
 
         // Get the width of the child <code> element.
-        code = highlight.querySelector('code');
+        code = highlight.querySelector("code");
 
-        if ( code ) {
+        if (code) {
           codeWidth = code.offsetWidth;
         }
 
-        if ( highlightWidth && codeWidth ) {
-          if ( codeWidth > highlightWidth ) {
-            highlight.classList.add( expandClass );
+        if (highlightWidth && codeWidth) {
+          if (codeWidth > highlightWidth) {
+            highlight.classList.add(expandClass);
           }
         }
       } // for()
     } // if ( highlights )
   } // handleTableOfContents()
-
 
   //
   //  INIT
@@ -63,6 +55,6 @@ var ExpandableCodeBlocks = (function() {
   }
 
   return {
-    init: init
+    init: init,
   };
 })();

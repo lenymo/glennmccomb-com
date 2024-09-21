@@ -2,7 +2,7 @@
 //  LQIP IMAGES
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-var LqipImages = (function() {
+export const LqipImages = (function () {
   //
   //  HANDLE LQIP IMAGES
   //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -20,7 +20,7 @@ var LqipImages = (function() {
     var imageLoadedClass = "-image-has-loaded";
 
     // On page load.
-    window.onload = function() {
+    window.onload = function () {
       // Find all LQIP images on the page.
       lqipImages = document.querySelectorAll(lqipImagesSelector);
 
@@ -46,7 +46,7 @@ var LqipImages = (function() {
         fullImage = new Image();
 
         // When the full image has loaded.
-        fullImage.onload = function() {
+        fullImage.onload = function () {
           lqipImageWrapper = this.parentElement;
           lqipFigure = lqipImageWrapper.parentElement;
 
@@ -78,6 +78,6 @@ var LqipImages = (function() {
   }
 
   return {
-    init: init
+    init: init,
   };
 })();

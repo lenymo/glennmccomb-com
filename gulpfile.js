@@ -8,8 +8,8 @@ const sass = require("gulp-sass")(require("sass"));
 const exec = require("child_process").exec;
 const critical = require("critical").stream;
 const autoprefixer = require("gulp-autoprefixer");
-const concat = require("gulp-concat");
-const uglify = require("gulp-uglify");
+// const concat = require("gulp-concat");
+// const uglify = require("gulp-uglify");
 const hash = require("gulp-hash");
 const del = require("del");
 
@@ -27,6 +27,14 @@ const path = require("path");
 
 // Data.
 const hashCSS = require("./data/css/hash.json");
+
+// Rollup
+const rollup = require("rollup").rollup;
+const resolve = require("@rollup/plugin-node-resolve");
+const commonjs = require("@rollup/plugin-commonjs");
+const terser = require("@rollup/plugin-terser");
+const rollupSourcemaps = require("rollup-plugin-sourcemaps");
+const { createHash } = require("crypto");
 
 //
 //  SCSS
@@ -86,44 +94,46 @@ function compileScss() {
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 async function compileJs() {
-  // Clear the static/js directory.
-  await del(["static/js/**/*", "!static/js/bundle.js"]);
+  // Clear the static/js directory
+  await del(["static/js/**/*"]);
 
-  // If dev flag doesn't exist.
-  if (argv.dev === undefined) {
-    // Set dev flag to false.
-    argv.dev = false;
+  const dev = process.argv.includes("--dev");
+
+  const bundle = await rollup({
+    input: "src/js/main.js", // Main entry point
+    plugins: [
+      resolve(),
+      commonjs(),
+      dev && rollupSourcemaps(),
+      !dev && terser(),
+    ].filter(Boolean),
+  });
+
+  const { output } = await bundle.generate({
+    file: "static/js/bundle.js",
+    format: "es", // Use ES module format
+    sourcemap: dev,
+  });
+
+  const { code, map } = output[0];
+
+  // Generate hash
+  const hash = createHash("md5").update(code).digest("hex").slice(0, 8);
+  const fileName = `main.${hash}.min.js`;
+
+  // Write bundle
+  await fs.mkdir("static/js", { recursive: true });
+  await fs.writeFile(`static/js/${fileName}`, code);
+  if (dev) {
+    await fs.writeFile(`static/js/${fileName}.map`, map.toString());
   }
 
-  src("src/js/*.js")
-    // Initialise source maps for dev.
-    .pipe(gulpif(argv.dev, sourcemaps.init()))
-    .pipe(concat("main.min.js"))
-    .pipe(uglify().on("error", console.log))
-    .pipe(hash())
-    .pipe(gulpif(argv.dev, sourcemaps.write("./")))
-    .pipe(dest("static/js"))
-
-    // Create a hash map.
-    .pipe(hash.manifest("hash.json"), {
-      deleteOld: true,
-      sourceDir: "static/js",
-    })
-    // Put the map in the data directory.
-    .pipe(dest("data/js"));
-
-  // Ensure vendor directory exists
-  const vendorDir = "static/js/vendor";
-  try {
-    await fs.access(vendorDir);
-  } catch (error) {
-    await fs.mkdir(vendorDir, { recursive: true });
-  }
+  // Update hash manifest
+  const manifest = { "main.min.js": fileName };
+  await fs.writeFile("data/js/hash.json", JSON.stringify(manifest, null, 2));
 
   // Copy and minify vendor JS files.
-  return src("src/js/vendor/*.js")
-    .pipe(uglify().on("error", console.log))
-    .pipe(dest("static/js/vendor"));
+  return src("src/js/vendor/*.js").pipe(dest("static/js/vendor"));
 }
 
 //
@@ -170,69 +180,6 @@ async function images() {
     }
   }
 }
-
-//
-//  IMAGES
-//––––––––––––––––––––––––––––––––––––––––––––––––––
-
-// function images() {
-//   // Clear the /static/img/uploads/ directory.
-//   del(["static/img/uploads/**/*"]);
-
-//   // Copy all images from /src to /static.
-//   src("src/img/uploads/**/*.{jpg,jpeg,png,gif}")
-//     .pipe(dest("static/img/uploads"));
-//   ``;
-
-//   // LQIP (low quality image placeholders) for all JPG and PNGs.
-//   src("src/img/uploads/**/*.{jpg,jpeg,png}")
-//     .pipe(
-//       responsive(
-//         {
-//           "*": [
-//             {
-//               width: "100%",
-//               quality: 1,
-//               format: "jpg",
-//               rename: {
-//                 suffix: "-lqip",
-//                 extname: ".jpg"
-//               }
-//             }
-//           ]
-//         },
-//         {
-//           silent: true // Don't spam the console
-//         }
-//       )
-//     )
-//     .pipe(dest("static/img/uploads"));
-
-//   // Featured images.
-//   return src("src/img/uploads/featured-image-*.{jpg,jpeg,png}")
-//     .pipe(
-//       responsive(
-//         {
-//           "*": [
-//             {
-//               width: "50%",
-//               rename: {
-//                 suffix: "-sm"
-//               },
-//               format: "jpg"
-//             }
-//           ]
-//         },
-//         {
-//           // quality: 100,
-//           // compressionLevel: 9,
-//           progressive: true,
-//           silent: true // Don't spam the console
-//         }
-//       )
-//     )
-//     .pipe(dest("static/img/uploads"));
-// };
 
 //
 //  COMPRESS IMAGES
@@ -394,7 +341,7 @@ function criticalCss(cb) {
 
 function watchFiles() {
   watch("src/scss/**/*", compileScss);
-  watch("src/extension/js/main.js", compileJs);
+  watch("src/js/**/*", compileJs);
   watch("src/img/uploads/**/*", images);
 }
 
