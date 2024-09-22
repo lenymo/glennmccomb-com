@@ -5,51 +5,51 @@ menu:
   main:
     - Identifier: articles
       Name: Articles
-      URL: /articles/
+      pageref: /articles/
       Weight: '10'
 
     - Identifier: design
       Name: Design
-      URL: /categories/design/
+      pageref: /categories/design/
       Weight: '110'
       parent: "articles"
 
     - Identifier: development
       Name: Development
-      URL: /categories/development/
+      pageref: /categories/development/
       Weight: '120'
       parent: "articles"
 
     - Identifier: gaming
       Name: Gaming
-      URL: /categories/gaming/
+      pageref: /categories/gaming/
       Weight: '130'
       parent: "articles"
 
     - Identifier: nba
       Name: NBA
-      URL: /categories/nba/
+      pageref: /categories/nba/
       Weight: '140'
       parent: "articles"
 
     - Identifier: photography
       Name: Photography
-      URL: /photography/
+      pageref: /photography/
       Weight: '30'
 
     - Identifier: work
       Name: Work
-      URL: /work/
+      pageref: /work/
       Weight: '30'
 
     - Identifier: about
       Name: About
-      URL: /about/
+      pageref: /about/
       Weight: '40'
 
     - Identifier: contact
       Name: Contact
-      URL: /contact/
+      pageref: /contact/
       Weight: '50'
     
 taxonomies:

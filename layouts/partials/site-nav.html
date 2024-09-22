@@ -12,14 +12,14 @@
 
       {{ $identifier := .Identifier }}
 
-    <li class="site-nav__item site-nav_item--{{ .Identifier }}{{ if $currentPage.IsMenuCurrent "main" . }} -is-current{{ end }}{{ if $currentPage.HasMenuCurrent "main" . }} -is-current{{ end }}{{ if and (eq $pageKind "page") (eq $pageType $identifier) }} -is-current{{ end }}{{ if .HasChildren }} -has-children{{ end }}">
+    <li class="site-nav__item site-nav_item--{{ .Identifier }}{{ if $currentPage.IsMenuCurrent `main` . }} -is-current{{ end }}{{ if $currentPage.HasMenuCurrent `main` . }} -is-current{{ end }}{{ if and (eq $pageKind `page`) (eq $pageType $identifier) }} -is-current{{ end }}{{ if .HasChildren }} -has-children{{ end }}">
       <a href="{{.URL}}" class="site-nav__link{{ if .HasChildren }} -has-children{{ end }}">
         {{ .Name }}{{ if .HasChildren }} <span class="site-nav__link-caret"></span>{{ end }}
       </a>
       {{ if .HasChildren }}
         <ul class="site-nav__child-list">
         {{ range .Children }}
-          <li class="site-nav__child-item{{if $currentPage.IsMenuCurrent "main" . }} -is-current{{end}}">
+          <li class="site-nav__child-item{{if $currentPage.IsMenuCurrent `main` . }} -is-current{{end}}">
             <a href="{{.URL}}" class="site-nav__child-link">
               {{ .Name }}
             </a>
