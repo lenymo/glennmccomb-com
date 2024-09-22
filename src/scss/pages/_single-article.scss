@@ -325,7 +325,7 @@ $disqus-placeholder-height: 150px;
 }
 
 @include respond-above(xs) {
-  .article-body {
+  .article-body__content {
     img {
       margin-bottom: $base-margin-bottom;
     }

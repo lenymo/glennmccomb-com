@@ -1,5 +1,3 @@
-
-
 //
 //  TABLE OF CONTENTS
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -16,12 +14,13 @@
     li {
       display: block;
       line-height: 1.1;
-      margin-bottom: $gutter * .25;
+      margin-bottom: $gutter;
     }
 
     a {
       border: 0;
       color: $link-font-color;
+      font-weight: bold;
 
       &:hover {
         color: $link-font-color-hover;
@@ -29,99 +28,30 @@
     }
 
     ul {
-      margin-bottom: $gutter * .5;
-      margin-top: $gutter * .25;
+      margin-left: $gutter;
+      margin-top: $gutter * 0.75;
 
       ul {
-        margin-left: $gutter;
+        margin-left: $gutter * 2;
       }
     }
   }
 
-  // Neat implemention of custom list item numbers found here:
-  // https://scotch.io/tutorials/setup-a-react-environment-using-webpack-and-babel
-
-  // #TableOfContents {
-  //   position: relative;
-
-  //   &:before {
-  //     background: $color-gray-f;
-  //     content: '';
-  //     display: block;
-  //     height: 100%;
-  //     left: 12px;
-  //     position: absolute;
-  //     top: 0;
-  //     transform: translateX(-50%);
-  //     width: 5px;
-  //     z-index: 1;
-  //   }
-
-  //   > ul > li > ul > li {
-  //     counter-increment: a;
-
-  //     &:before {
-  //       background-color: $color-gray-e;
-  //       border-radius: 50%;
-  //       box-shadow: 0 0 4px 4px $white;
-  //       color: $color-gray-a;
-  //       content: counter(a);
-  //       display: inline-block;
-  //       font-size: rem(12px);
-  //       font-weight: bold;
-  //       height: 24px;
-  //       line-height: 24px;
-  //       margin-right: 10px;
-  //       position: relative;
-  //       text-align: center;
-  //       vertical-align: top;
-  //       width: 24px;
-  //       z-index: 2;
-  //     }
-  //   }
-  // }
-
   nav > ul > li > ul > li {
-    margin-bottom: $gutter;
+    margin-bottom: $gutter * 0.5;
 
     > a {
-      // font-weight: 400;
-    }
-
-    li > a {
-      color: $color-gray-8;
-      // font-weight: bold;
-      // text-transform: uppercase;
+      font-weight: 400;
     }
   }
 }
-
-// @include respond-above(xs) {
-//   .table-of-contents {
-//     ul {
-//       a {
-//         font-size: $article-font-size-sm;
-//       }
-//     }
-//   }
-// }
 
 @include respond-above(sm) {
   .table-of-contents {
     margin-bottom: 0;
 
-    ul {
-      li {
-        margin-bottom: $gutter * .5;
-      }
-
-      ul {
-        margin-top: $gutter * .5;
-      }
-    }
-
     nav > ul > li > ul > li {
-      margin-bottom: $gutter * 1.5;
+      margin-bottom: $gutter * 0.5;
     }
 
     &.-is-expanded {
@@ -129,7 +59,6 @@
     }
   }
 }
-
 
 //
 //  TOGGLE
@@ -161,7 +90,6 @@
   }
 }
 
-
 //
 //  TOGGLE ICON
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -182,7 +110,7 @@
   width: 100%;
 
   &:after {
-    content: '';
+    content: "";
     background: $white;
     display: block;
     height: 3px;
@@ -216,7 +144,6 @@
   display: none;
 }
 
-
 //
 //  TOGGLE LABEL
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -226,16 +153,14 @@
   display: inline-block;
   font-size: rem(12px);
   font-weight: bold;
-  letter-spacing: .05em;
+  letter-spacing: 0.05em;
   line-height: 1.1;
-  margin-left: $gutter * .5;
+  margin-left: $gutter * 0.5;
   text-align: left;
   text-transform: uppercase;
   vertical-align: top;
   width: 80px;
 }
-
-
 
 //
 //  WRAPPER
@@ -270,7 +195,6 @@
   }
 }
 
-
 //
 //  TITLE
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -278,7 +202,7 @@
 .table-of-contents__title {
   color: $color-gray-c;
   font-size: rem(16px);
-  margin-bottom: $gutter * .5;
+  margin-bottom: $gutter * 0.5;
 }
 
 @include respond-above(xs) {
@@ -290,6 +214,5 @@
 @include respond-above(sm) {
   .table-of-contents__title {
     font-size: rem(18px);
-    margin-bottom: $gutter * 1.5;
   }
 }
