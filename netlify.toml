@@ -1,3 +1,7 @@
 [build]
-command = "hugo"
-#  publish = "static"
+  command = "hugo"
+  functions = "netlify/functions"
+  #  publish = "static"
+
+[functions]
+  node_bundler = "esbuild"

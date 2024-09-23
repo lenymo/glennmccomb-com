@@ -25,32 +25,35 @@ export const LastFM = () => {
   //  REQUEST DATA (NETLIFY FUNCTION)
   //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-  const requestData = (period) => {
+  const requestData = async (period) => {
     // Clear state so old items disappear.
     setArtists([]);
 
     // Netlify lambda function endpoint.
-    const url = "/.netlify/functions/lastfm";
+    const url = `/.netlify/functions/lastfm?limit=${limit}&period=${period}`;
 
     const data = {
       limit: limit,
       period: period,
     };
 
-    fetch(url, {
+    const response = await fetch(url, {
       method: "POST",
       body: JSON.stringify(data),
-    })
-      .then((response) => response.json())
-      .then((response) => {
-        const {
-          topartists: { artist: responseArtist },
-        } = response;
+      headers: {
+        "Content-Type": "application/json",
+      },
+      mode: "no-cors",
+    });
+    console.log("response", response);
+    const result = await response.json();
+    const {
+      topartists: { artist: responseArtist },
+    } = result;
 
-        // Update state.
-        setPeriod(period);
-        setArtists(responseArtist);
-      });
+    // Update state.
+    setPeriod(period);
+    setArtists(responseArtist);
   };
 
   //
