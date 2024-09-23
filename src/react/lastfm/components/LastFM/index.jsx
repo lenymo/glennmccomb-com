@@ -22,31 +22,25 @@ export const LastFM = () => {
   }, []);
 
   //
-  //  REQUEST DATA (DIRECT)
+  //  REQUEST DATA (NETLIFY FUNCTION)
   //––––––––––––––––––––––––––––––––––––––––––––––––––
 
   const requestData = (period) => {
     // Clear state so old items disappear.
     setArtists([]);
 
-    // My username.
-    var username = "elgyn2";
+    // Netlify lambda function endpoint.
+    const url = "/.netlify/functions/lastfm";
 
-    // My API key.
-    var apikey = import.meta.env.VITE_LASTFM_API_KEY;
+    const data = {
+      limit: limit,
+      period: period,
+    };
 
-    // Build last.fm API url.
-    var lastFmUrl =
-      "https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=" +
-      username +
-      "&api_key=" +
-      apikey +
-      "&format=json&period=" +
-      period +
-      "&limit=" +
-      limit;
-
-    fetch(lastFmUrl)
+    fetch(url, {
+      method: "POST",
+      body: JSON.stringify(data),
+    })
       .then((response) => response.json())
       .then((response) => {
         const {
@@ -58,6 +52,44 @@ export const LastFM = () => {
         setArtists(responseArtist);
       });
   };
+
+  //
+  //  REQUEST DATA (DIRECT)
+  //––––––––––––––––––––––––––––––––––––––––––––––––––
+
+  // const requestData = (period) => {
+  //   // Clear state so old items disappear.
+  //   setArtists([]);
+
+  //   // My username.
+  //   var username = "elgyn2";
+
+  //   // My API key.
+  //   var apikey = import.meta.env.VITE_LASTFM_API_KEY;
+
+  //   // Build last.fm API url.
+  //   var lastFmUrl =
+  //     "https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=" +
+  //     username +
+  //     "&api_key=" +
+  //     apikey +
+  //     "&format=json&period=" +
+  //     period +
+  //     "&limit=" +
+  //     limit;
+
+  //   fetch(lastFmUrl)
+  //     .then((response) => response.json())
+  //     .then((response) => {
+  //       const {
+  //         topartists: { artist: responseArtist },
+  //       } = response;
+
+  //       // Update state.
+  //       setPeriod(period);
+  //       setArtists(responseArtist);
+  //     });
+  // };
 
   //
   //  RENDER HEADER
