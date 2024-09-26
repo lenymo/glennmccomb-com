@@ -12,6 +12,7 @@
     "start:lambda": "netlify-lambda serve src/lambda",
     "build:lambda": "netlify-lambda build src/lambda",
     "gulp": "gulp",
+    "gulp:watch": "gulp watchFiles",
     "gulp-images": "gulp images",
     "gulp-critical": "gulp criticalCss"
   },
@@ -23,7 +24,6 @@
     "del": "^2.2.2",
     "gulp": "^5.0.0",
     "gulp-autoprefixer": "^9.0.0",
-    "gulp-hash": "^4.2.2",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^1.12.1",
     "node-fetch": "^2.6.6",
@@ -41,6 +41,7 @@
     "critical": "^7.2.1",
     "rollup": "^4.22.4",
     "rollup-plugin-sourcemaps": "^0.6.3",
+    "through2": "^4.0.2",
     "vite": "^5.4.6"
   },
   "browserslist": [

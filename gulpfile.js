@@ -11,7 +11,7 @@ const sass = gulpSass(dartSass);
 import { exec } from "child_process";
 import { stream as critical } from "critical";
 import autoprefixer from "gulp-autoprefixer";
-import hash from "gulp-hash";
+import through2 from "through2";
 import del from "del";
 
 // Images.
@@ -34,31 +34,66 @@ import { createHash } from "crypto";
 //  SCSS
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-// Compile admin SCSS files to CSS
-function compileScss() {
-  // Clear the static/css directory.
-  del(["static/css/*.css", "!static/css/critical/**/*"]);
+/**
+ * Compile SCSS files to CSS
+ * This task:
+ * 1. Clears the static/css directory (preserving critical CSS)
+ * 2. Compiles and minifies SCSS files
+ * 3. Adds vendor prefixes
+ * 4. Hashes filenames based on content
+ * 5. Writes a manifest file with filename mappings
+ */
+async function compileScss() {
+  // Clear the static/css directory excluding critical CSS.
+  await del(["static/css/*.css", "!static/css/critical/**/*"]);
+
+  // Initialize an empty object to store the filename mappings
+  const manifest = {};
 
   return (
     src("src/scss/**/*.scss")
-      // Initialise source maps for dev.
-      .pipe(
-        sass
-          // Render synchronously which is x2 faster according to gulp-sass docs
-          .sync({ outputStyle: "compressed" })
-          .on("error", sass.logError)
-      )
+      // Compile SCSS to minified CSS
+      .pipe(sass.sync({ outputStyle: "compressed" }).on("error", sass.logError))
+      // Add vendor prefixes to CSS properties
       .pipe(autoprefixer())
-      .pipe(hash())
+      // Custom transform to hash filenames
+      .pipe(
+        through2.obj(function (file, enc, cb) {
+          if (file.isBuffer()) {
+            const hash = createHash("md5")
+              .update(file.contents)
+              .digest("hex")
+              .slice(0, 8);
+
+            // Get the original filename
+            const originalName = path.basename(file.path);
+
+            // Create a new filename with the hash
+            const hashedName = `${path.basename(
+              file.path,
+              ".css"
+            )}.${hash}.css`;
+
+            // Update the file's path with the new hashed filename
+            file.path = path.join(path.dirname(file.path), hashedName);
+
+            // Add the filename mapping to the manifest
+            manifest[originalName] = hashedName;
+          }
+          cb(null, file);
+        })
+      )
+      // Write the processed and renamed files to the destination
       .pipe(dest("static/css"))
 
-      // Create a hash map.
-      .pipe(hash.manifest("hash.json"), {
-        deleteOld: true,
-        sourceDir: "static/css",
+      // After all files have been processed
+      .on("end", async () => {
+        // Write the manifest file with filename mappings
+        await fs.writeFile(
+          "data/css/hash.json",
+          JSON.stringify(manifest, null, 2)
+        );
       })
-      // Put the map in the data directory.
-      .pipe(dest("data/css"))
   );
 }
 
@@ -300,6 +335,6 @@ function watchFiles() {
 //  EXPORTS
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-export { compileScss, compileJs, images, criticalCss };
+export { compileScss, compileJs, images, criticalCss, watchFiles };
 
-export default series(compileJs, compileScss, watchFiles);
+export default series(compileJs, compileScss);
