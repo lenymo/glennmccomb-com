@@ -48,18 +48,7 @@ function compileScss() {
           .sync({ outputStyle: "compressed" })
           .on("error", sass.logError)
       )
-      .pipe(
-        autoprefixer({
-          browsers: [
-            "last 5 version",
-            "> 50%",
-            "Firefox < 20",
-            "safari 5",
-            "ie 8-11",
-            "android >=2.1",
-          ],
-        })
-      )
+      .pipe(autoprefixer())
       .pipe(hash())
       .pipe(dest("static/css"))
 

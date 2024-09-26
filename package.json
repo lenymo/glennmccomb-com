@@ -22,7 +22,7 @@
     "@netlify/functions": "^2.8.1",
     "del": "^2.2.2",
     "gulp": "^5.0.0",
-    "gulp-autoprefixer": "^3.1.1",
+    "gulp-autoprefixer": "^9.0.0",
     "gulp-hash": "^4.2.2",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^1.12.1",
@@ -42,5 +42,13 @@
     "rollup": "^4.22.4",
     "rollup-plugin-sourcemaps": "^0.6.3",
     "vite": "^5.4.6"
-  }
+  },
+  "browserslist": [
+    "last 5 version",
+    "> 50%",
+    "Firefox < 20",
+    "safari 5",
+    "ie 8-11",
+    "android >=2.1"
+  ]
 }
