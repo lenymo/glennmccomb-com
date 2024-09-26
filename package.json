@@ -32,7 +32,7 @@
     "@rollup/plugin-terser": "^0.4.4",
     "@vitejs/plugin-react": "^4.3.1",
     "critical": "^7.2.1",
-    "del": "^2.2.2",
+    "del": "^7.1.0",
     "gulp": "^5.0.0",
     "gulp-autoprefixer": "^9.0.0",
     "gulp-sass": "^5.1.0",

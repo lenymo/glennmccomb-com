@@ -12,7 +12,7 @@ import { exec } from "child_process";
 import { stream as critical } from "critical";
 import autoprefixer from "gulp-autoprefixer";
 import through2 from "through2";
-import del from "del";
+import { deleteAsync } from "del";
 
 // Images.
 import sharp from "sharp";
@@ -45,7 +45,7 @@ import { createHash } from "crypto";
  */
 async function compileScss() {
   // Clear the static/css directory excluding critical CSS.
-  await del(["static/css/*.css", "!static/css/critical/**/*"]);
+  await deleteAsync(["static/css/*.css", "!static/css/critical/**/*"]);
 
   // Initialize an empty object to store the filename mappings
   const manifest = {};
@@ -103,7 +103,7 @@ async function compileScss() {
 
 async function compileJs() {
   // Clear the static/js directory
-  await del(["static/js/**/*"]);
+  await deleteAsync(["static/js/**/*"]);
 
   const dev = process.argv.includes("--dev");
 
@@ -150,7 +150,7 @@ async function compileJs() {
 
 async function images() {
   // Clear the /static/img/uploads/ directory.
-  await del(["static/img/uploads/**/*"]);
+  await deleteAsync(["static/img/uploads/**/*"]);
 
   // Process images
   const srcDir = "src/img/uploads";
