@@ -47,9 +47,7 @@ Useful commands:
 
 `$ gulp` to watch SCSS and JavaScript files.
 
-`$ gulp images` to create responsive sizes of featured images and to generate LQIP images.
-
-`$ gulp compressImages` to run additional compression on images.
+`$ gulp images` to create responsive sizes of featured images and to generate LQIP images. Also compresses all JPG and PNGs.
 
 `$ gulp criticalCss` to generate critical CSS for key pages.
 

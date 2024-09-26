@@ -3,38 +3,32 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 // General.
-const { dest, src, series, watch } = require("gulp");
-const sass = require("gulp-sass")(require("sass"));
-const exec = require("child_process").exec;
-const critical = require("critical").stream;
-const autoprefixer = require("gulp-autoprefixer");
-// const concat = require("gulp-concat");
-// const uglify = require("gulp-uglify");
-const hash = require("gulp-hash");
-const del = require("del");
-
-// Dev only source maps.
-const sourcemaps = require("gulp-sourcemaps");
-const argv = require("yargs").argv;
-const gulpif = require("gulp-if");
+import gulp from "gulp";
+const { dest, src, series, watch } = gulp;
+import * as dartSass from "sass";
+import gulpSass from "gulp-sass";
+const sass = gulpSass(dartSass);
+import { exec } from "child_process";
+import { stream as critical } from "critical";
+import autoprefixer from "gulp-autoprefixer";
+import hash from "gulp-hash";
+import del from "del";
 
 // Images.
-const imagemin = require("gulp-imagemin");
-const mozjpeg = require("imagemin-mozjpeg");
-const sharp = require("sharp");
-const fs = require("fs").promises;
-const path = require("path");
+import sharp from "sharp";
+import fs from "fs/promises";
+import path from "path";
 
 // Data.
-const hashCSS = require("./data/css/hash.json");
+import hashCSS from "./data/css/hash.json" assert { type: "json" };
 
 // Rollup
-const rollup = require("rollup").rollup;
-const resolve = require("@rollup/plugin-node-resolve");
-const commonjs = require("@rollup/plugin-commonjs");
-const terser = require("@rollup/plugin-terser");
-const rollupSourcemaps = require("rollup-plugin-sourcemaps");
-const { createHash } = require("crypto");
+import { rollup } from "rollup";
+import resolve from "@rollup/plugin-node-resolve";
+import commonjs from "@rollup/plugin-commonjs";
+import terser from "@rollup/plugin-terser";
+import rollupSourcemaps from "rollup-plugin-sourcemaps";
+import { createHash } from "crypto";
 
 //
 //  SCSS
@@ -45,24 +39,15 @@ function compileScss() {
   // Clear the static/css directory.
   del(["static/css/*.css", "!static/css/critical/**/*"]);
 
-  // If dev flag doesn't exist.
-  if (argv.dev === undefined) {
-    // Set dev flag to false.
-    argv.dev = false;
-  }
-
   return (
     src("src/scss/**/*.scss")
       // Initialise source maps for dev.
-      .pipe(gulpif(argv.dev, sourcemaps.init()))
       .pipe(
         sass
           // Render synchronously which is x2 faster according to gulp-sass docs
           .sync({ outputStyle: "compressed" })
           .on("error", sass.logError)
       )
-      .pipe(gulpif(argv.dev, sourcemaps.write({ includeContent: false })))
-      .pipe(gulpif(argv.dev, sourcemaps.init({ loadMaps: true })))
       .pipe(
         autoprefixer({
           browsers: [
@@ -76,7 +61,6 @@ function compileScss() {
         })
       )
       .pipe(hash())
-      .pipe(gulpif(argv.dev, sourcemaps.write()))
       .pipe(dest("static/css"))
 
       // Create a hash map.
@@ -144,11 +128,6 @@ async function images() {
   // Clear the /static/img/uploads/ directory.
   await del(["static/img/uploads/**/*"]);
 
-  // Copy all images from /src to /static.
-  src("src/img/uploads/**/*.{jpg,jpeg,png,gif}").pipe(
-    dest("static/img/uploads")
-  );
-
   // Process images
   const srcDir = "src/img/uploads";
   const destDir = "static/img/uploads";
@@ -156,14 +135,15 @@ async function images() {
   const files = await fs.readdir(srcDir);
 
   for (const file of files) {
+    // Only look for jpg and png.
     if (file.match(/\.(jpg|jpeg|png)$/i)) {
       const srcPath = path.join(srcDir, file);
       const destPath = path.join(destDir, file);
 
       try {
-        // LQIP (low quality image placeholders)
+        // Create low quality image placeholders of all JPG and PNG images
         await sharp(srcPath)
-          .jpeg({ quality: 1 })
+          .jpeg({ quality: 1, mozjpeg: true })
           .toFile(path.join(destDir, `${path.parse(file).name}-lqip.jpg`));
 
         // Featured images
@@ -171,49 +151,42 @@ async function images() {
           const metadata = await sharp(srcPath).metadata();
           await sharp(srcPath)
             .resize({ width: Math.floor(metadata.width / 2) })
-            .jpeg({ progressive: true })
+            .jpeg({ quality: 60 })
             .toFile(path.join(destDir, `${path.parse(file).name}-sm.jpg`));
+        }
+
+        // Compress JPGs without scaling
+        if (
+          file.endsWith(".jpg") &&
+          !file.endsWith("-lqip.jpg") &&
+          !file.endsWith("-sm.jpg")
+        ) {
+          // await fs.copyFile(srcPath, destPath);
+          await sharp(srcPath)
+            .jpeg({ quality: 60 })
+            .toFile(
+              path.join(
+                destDir,
+                `${path.parse(file).name}${path.parse(file).ext}`
+              )
+            );
+
+          // Compress PNGs without scaling
+        } else if (file.endsWith(".png")) {
+          await sharp(srcPath)
+            .png({ quality: 60 })
+            .toFile(
+              path.join(
+                destDir,
+                `${path.parse(file).name}${path.parse(file).ext}`
+              )
+            );
         }
       } catch (error) {
         console.error(`Error processing ${file}:`, error);
       }
     }
   }
-}
-
-//
-//  COMPRESS IMAGES
-//––––––––––––––––––––––––––––––––––––––––––––––––––
-
-function compressImages() {
-  // All JPGs and PNGs except those with -lqip suffix.
-  src([
-    "static/img/uploads/**/*.{jpg,jpeg,png}",
-    "!static/img/uploads/**/*-lqip.jpg",
-  ])
-    .pipe(
-      imagemin([
-        imagemin.gifsicle(),
-        // imagemin.optipng({optimizationLevel: 9}),
-        imagemin.optipng(),
-        imagemin.svgo(),
-        mozjpeg(),
-      ])
-    )
-    .pipe(dest("static/img/uploads"));
-
-  // Further LQIP images.
-  return src("static/img/uploads/**/*-lqip.jpg")
-    .pipe(
-      imagemin([
-        imagemin.gifsicle(),
-        // imagemin.optipng({optimizationLevel: 9}),
-        imagemin.optipng(),
-        imagemin.svgo(),
-        mozjpeg({ quality: 2 }),
-      ])
-    )
-    .pipe(dest("static/img/uploads"));
 }
 
 //
@@ -349,11 +322,6 @@ function watchFiles() {
 //  EXPORTS
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-exports.compileScss = compileScss;
-exports.compileJs = compileJs;
-exports.images = images;
-exports.compressImages = compressImages;
-exports.criticalCss = criticalCss;
+export { compileScss, compileJs, images, criticalCss };
 
-exports.watch = series(compileJs, compileScss, watchFiles);
-exports.default = series(compileJs, compileScss, watchFiles);
+export default series(compileJs, compileScss, watchFiles);

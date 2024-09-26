@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "repository": "https://github.com/lenymo/glennmccomb-com",
+  "type": "module",
   "scripts": {
     "start": "vite",
     "build": "vite build",
@@ -12,7 +13,6 @@
     "build:lambda": "netlify-lambda build src/lambda",
     "gulp": "gulp",
     "gulp-images": "gulp images",
-    "gulp-compress-images": "gulp compressImages",
     "gulp-critical": "gulp critical"
   },
   "keywords": [],
@@ -21,22 +21,17 @@
   "dependencies": {
     "@netlify/functions": "^2.8.1",
     "del": "^2.2.2",
-    "gulp": "^4.0.2",
+    "gulp": "^5.0.0",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-hash": "^4.2.2",
-    "gulp-if": "^2.0.2",
-    "gulp-imagemin": "^7.1.0",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^1.12.1",
-    "gulp-util": "^3.0.8",
-    "imagemin-mozjpeg": "^7.0.0",
     "node-fetch": "^2.6.6",
     "prop-types": "^15.7.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "sass": "^1.79.1",
-    "sharp": "^0.33.5",
-    "yargs": "^10.1.2"
+    "sharp": "^0.33.5"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^26.0.1",
