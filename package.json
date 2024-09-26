@@ -21,17 +21,10 @@
   "license": "ISC",
   "dependencies": {
     "@netlify/functions": "^2.8.1",
-    "del": "^2.2.2",
-    "gulp": "^5.0.0",
-    "gulp-autoprefixer": "^9.0.0",
-    "gulp-sass": "^5.1.0",
-    "gulp-sourcemaps": "^1.12.1",
     "node-fetch": "^2.6.6",
     "prop-types": "^15.7.2",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "sass": "^1.79.1",
-    "sharp": "^0.33.5"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^26.0.1",
@@ -39,8 +32,14 @@
     "@rollup/plugin-terser": "^0.4.4",
     "@vitejs/plugin-react": "^4.3.1",
     "critical": "^7.2.1",
+    "del": "^2.2.2",
+    "gulp": "^5.0.0",
+    "gulp-autoprefixer": "^9.0.0",
+    "gulp-sass": "^5.1.0",
     "rollup": "^4.22.4",
     "rollup-plugin-sourcemaps": "^0.6.3",
+    "sass": "^1.79.3",
+    "sharp": "^0.33.5",
     "through2": "^4.0.2",
     "vite": "^5.4.6"
   },
