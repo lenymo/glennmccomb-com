@@ -16,7 +16,7 @@ This speculation has only intensified with the Danilo Gallinari signing, since h
 
 I take the interest as an indication that Collins' is a coveted young player.
 
-Teams don't go through 3 year re-builds, only their promising young players at the earliest possible opportunity. It may be true that Collins has defensive limitations, but he's shown enough growth on that end of the floor that at this point, you wait and see.
+Teams don't go through 3 year re-builds, only to trade their promising young players at the earliest possible opportunity. It may be true that Collins has defensive limitations, but he's shown enough growth on that end of the floor that at this point, you wait and see.
 
 Right now, Collins wants a max contract, and the Hawks presumably don't want to pay him that much. This doesn't mean they should trade him. They can wait until next season and in the worst-case scenario, match any offer sheet that comes in.
 
