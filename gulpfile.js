@@ -152,35 +152,24 @@ async function images() {
           await sharp(srcPath)
             .resize({ width: Math.floor(metadata.width / 2) })
             .jpeg({ quality: 60 })
-            .toFile(path.join(destDir, `${path.parse(file).name}-sm.jpg`));
+            .toFile(
+              path.join(
+                destDir,
+                `${path.parse(file).name}-sm${path.parse(file).ext}`
+              )
+            );
         }
 
         // Compress JPGs without scaling
-        if (
-          file.endsWith(".jpg") &&
-          !file.endsWith("-lqip.jpg") &&
-          !file.endsWith("-sm.jpg")
-        ) {
+        // https://sharp.pixelplumbing.com/api-output#jpeg
+        if (file.endsWith(".jpg")) {
           // await fs.copyFile(srcPath, destPath);
-          await sharp(srcPath)
-            .jpeg({ quality: 60 })
-            .toFile(
-              path.join(
-                destDir,
-                `${path.parse(file).name}${path.parse(file).ext}`
-              )
-            );
+          await sharp(srcPath).jpeg({ quality: 60 }).toFile(destPath);
 
           // Compress PNGs without scaling
+          // https://sharp.pixelplumbing.com/api-output#png
         } else if (file.endsWith(".png")) {
-          await sharp(srcPath)
-            .png({ quality: 60 })
-            .toFile(
-              path.join(
-                destDir,
-                `${path.parse(file).name}${path.parse(file).ext}`
-              )
-            );
+          await sharp(srcPath).png({ quality: 60 }).toFile(destPath);
         }
       } catch (error) {
         console.error(`Error processing ${file}:`, error);
