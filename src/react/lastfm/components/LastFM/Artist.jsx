@@ -2,7 +2,7 @@
 //  ARTIST
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 const propTypes = {
@@ -13,8 +13,6 @@ const propTypes = {
 };
 
 export const Artist = ({ index, artist, colClasses, rank }) => {
-  const [artistImage, setArtistImage] = useState(null);
-
   const formatPlayCount = (playCount) => {
     var formattedPlayCount = parseInt(playCount);
     formattedPlayCount = formattedPlayCount.toLocaleString();
@@ -43,8 +41,8 @@ export const Artist = ({ index, artist, colClasses, rank }) => {
 
   const backgroundImageStyles = {
     backgroundColor: `rgba(28, 36, 44, ${alpha})`,
-    backgroundImage: "url(" + artistImage + ")",
-    animationDelay: delay + "s",
+    // backgroundImage: "url(" + artistImage + ")",
+    // animationDelay: delay + "s",
   };
 
   const overlayStyles = {
@@ -53,45 +51,6 @@ export const Artist = ({ index, artist, colClasses, rank }) => {
 
   // Get playcount.
   const playCount = formatPlayCount(artist.playcount);
-
-  //
-  //  GET ARTIST IMAGES
-  //––––––––––––––––––––––––––––––––––––––––––––––––––
-
-  const fetchArtistImages = async () => {
-    const url =
-      "https://musicbrainz.org/ws/2/artist/" +
-      artist.mbid +
-      "?inc=url-rels&fmt=json";
-
-    const response = await fetch(url);
-    const data = await response.json();
-
-    const relations = data.relations;
-    console.table(relations);
-
-    // Find image relation
-    for (let i = 0; i < relations.length; i++) {
-      if (relations[i].type === "image") {
-        let image_url = relations[i].url.resource;
-        if (image_url.startsWith("https://commons.wikimedia.org/wiki/File:")) {
-          const filename = image_url.substring(image_url.lastIndexOf("/") + 1);
-          image_url =
-            "https://commons.wikimedia.org/wiki/Special:Redirect/file/" +
-            filename;
-        }
-        console.log(image_url);
-        setArtistImage(image_url);
-      }
-    }
-  };
-
-  useEffect(() => {
-    console.log("artist.mbid", artist.mbid);
-    if (artist && artist.mbid && !artistImage) {
-      fetchArtistImages(artist.mbid);
-    }
-  }, [artist, artistImage]);
 
   return (
     <div className={colClasses} key={artist.name}>
